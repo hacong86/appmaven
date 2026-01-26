@@ -1,0 +1,54 @@
+# AppMaven Studio - Git Ignore
+
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary Files
+*.tmp
+*.bak
+*.cache
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment & Secrets
+.env
+.env.local
+.env.*.local
+secrets.txt
+*.key
+*.pem
+
+# Build & Distribution
+dist/
+build/
+.cache/
+
+# Dependencies (if using build tools later)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Large media files (track in Git LFS if needed)
+*.psd
+*.ai
+*.sketch
+
+# Testing
+coverage/
+.nyc_output/
+
+# Misc
+.sass-cache/

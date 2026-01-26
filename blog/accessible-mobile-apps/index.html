@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary Meta Tags -->
+  <title>Designing Accessible Mobile Apps: A WCAG Implementation Guide | AppMaven Studio Blog</title>
+  <meta name="title" content="Designing Accessible Mobile Apps: A WCAG Implementation Guide">
+  <meta name="description"
+    content="Learn how to design accessible mobile apps that work for everyone. Comprehensive guide covering WCAG guidelines, inclusive design principles, and practical accessibility testing strategies.">
+  <meta name="keywords"
+    content="accessibility, WCAG, inclusive design, mobile accessibility, a11y, accessible apps, screen readers, disability access">
+  <meta name="author" content="AppMaven Team">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://appmavenstudio.com/blog/accessible-mobile-apps/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://appmavenstudio.com/blog/accessible-mobile-apps/">
+  <meta property="og:title" content="Designing Accessible Mobile Apps: A WCAG Implementation Guide">
+  <meta property="og:description"
+    content="Learn how to design accessible mobile apps following WCAG guidelines and inclusive design principles.">
+  <meta property="og:image" content="https://appmavenstudio.com/assets/images/og-image.png">
+  <meta property="article:published_time" content="2026-01-20T09:00:00Z">
+  <meta property="article:author" content="AppMaven Team">
+  <meta property="article:section" content="Development">
+  <meta property="article:tag" content="Accessibility">
+  <meta property="article:tag" content="WCAG">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://appmavenstudio.com/blog/accessible-mobile-apps/">
+  <meta property="twitter:title" content="Designing Accessible Mobile Apps: A WCAG Implementation Guide">
+  <meta property="twitter:description" content="Learn how to design accessible mobile apps following WCAG guidelines.">
+  <meta property="twitter:image" content="https://appmavenstudio.com/assets/images/og-image.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/assets/images/logo/favicon.png">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/variables.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+
+  <!-- Schema.org BlogPosting Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Designing Accessible Mobile Apps: A WCAG Implementation Guide",
+    "description": "Learn how to design accessible mobile apps following WCAG guidelines and inclusive design principles.",
+    "image": "https://appmavenstudio.com/assets/images/og-image.png",
+    "author": {
+      "@type": "Organization",
+      "name": "AppMaven Studio",
+      "url": "https://appmavenstudio.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "AppMaven Studio",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://appmavenstudio.com/assets/images/logo/logo.png"
+      }
+    },
+    "datePublished": "2026-01-20T09:00:00Z",
+    "dateModified": "2026-01-20T09:00:00Z",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://appmavenstudio.com/blog/accessible-mobile-apps/"
+    },
+    "keywords": "accessibility, WCAG, inclusive design, mobile accessibility",
+    "articleSection": "Development",
+    "wordCount": "1180"
+  }
+  </script>
+
+  <style>
+    .article-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .article-hero {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      margin-bottom: var(--space-10);
+      background: var(--gradient-purple);
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+      flex-wrap: wrap;
+      margin-bottom: var(--space-8);
+      padding-bottom: var(--space-6);
+      border-bottom: 1px solid var(--glass-border);
+    }
+
+    .article-content {
+      line-height: var(--leading-relaxed);
+    }
+
+    .article-content h2 {
+      margin-top: var(--space-12);
+      margin-bottom: var(--space-6);
+      font-size: var(--text-3xl);
+    }
+
+    .article-content h3 {
+      margin-top: var(--space-8);
+      margin-bottom: var(--space-4);
+      font-size: var(--text-2xl);
+    }
+
+    .article-content p {
+      margin-bottom: var(--space-6);
+      color: var(--color-text-secondary);
+    }
+
+    .article-content ul,
+    .article-content ol {
+      margin-bottom: var(--space-6);
+      padding-left: var(--space-6);
+    }
+
+    .article-content li {
+      margin-bottom: var(--space-3);
+      color: var(--color-text-secondary);
+    }
+
+    .article-content code {
+      background: rgba(0, 212, 255, 0.1);
+      padding: var(--space-1) var(--space-2);
+      border-radius: var(--radius-sm);
+      font-family: 'Courier New', monospace;
+      font-size: 0.9em;
+    }
+
+    .author-bio {
+      background: var(--glass-bg);
+      border: var(--border-glass);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+      margin-top: var(--space-16);
+      display: flex;
+      gap: var(--space-6);
+      align-items: center;
+    }
+
+    .author-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: var(--radius-full);
+      background: var(--gradient-cyber);
+      flex-shrink: 0;
+    }
+
+    .share-buttons {
+      display: flex;
+      gap: var(--space-3);
+      margin-top: var(--space-10);
+      padding-top: var(--space-8);
+      border-top: 1px solid var(--glass-border);
+    }
+
+    .share-button {
+      padding: var(--space-3);
+      background: var(--glass-bg);
+      border: var(--border-glass);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+    }
+
+    .share-button:hover {
+      background: rgba(0, 212, 255, 0.1);
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      .author-bio {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <a href="#main-content" class="skip-to-main">Skip to main content</a>
+  <div class="cosmic-background"></div>
+
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar-container">
+      <a href="/" class="navbar-logo" aria-label="AppMaven Studio Home">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="32" height="32" rx="8" fill="url(#logo-gradient)" />
+          <path d="M16 8L24 24H8L16 8Z" fill="white" />
+          <defs>
+            <linearGradient id="logo-gradient" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#00d4ff" />
+              <stop offset="1" stop-color="#7c3aed" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <span>AppMaven Studio</span>
+      </a>
+      <button class="navbar-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="navbar-menu" role="menubar">
+        <li role="none"><a href="/" role="menuitem">Home</a></li>
+        <li role="none"><a href="/apps/" role="menuitem">Apps</a></li>
+        <li role="none"><a href="/blog/" role="menuitem" class="active">Blog</a></li>
+        <li role="none"><a href="/about/" role="menuitem">About</a></li>
+        <li role="none"><a href="/support/" role="menuitem">Support</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main-content" class="page-content">
+    <article class="section">
+      <div class="container article-container">
+
+        <nav aria-label="Breadcrumb" style="margin-bottom: var(--space-8);">
+          <ol
+            style="display: flex; gap: var(--space-2); list-style: none; padding: 0; color: var(--color-text-tertiary); font-size: var(--text-sm);">
+            <li><a href="/" style="color: var(--color-text-tertiary);">Home</a></li>
+            <li>/</li>
+            <li><a href="/blog/" style="color: var(--color-text-tertiary);">Blog</a></li>
+            <li>/</li>
+            <li style="color: var(--color-text-secondary);">Accessible Mobile Apps</li>
+          </ol>
+        </nav>
+
+        <header style="margin-bottom: var(--space-10);">
+          <div style="margin-bottom: var(--space-6);">
+            <span class="badge badge-tools">Tools & Tips</span>
+          </div>
+          <h1 style="margin-bottom: var(--space-6); font-size: var(--text-5xl);">
+            Designing Accessible Mobile Apps: A WCAG Implementation Guide
+          </h1>
+
+          <div class="article-meta">
+            <div style="display: flex; align-items: center; gap: var(--space-3);">
+              <div
+                style="width: 40px; height: 40px; background: var(--gradient-cyber); border-radius: var(--radius-full);">
+              </div>
+              <div>
+                <div style="font-weight: var(--font-semibold); color: var(--color-text-primary);">AppMaven Team</div>
+                <div style="font-size: var(--text-sm); color: var(--color-text-tertiary);">Developer & Writer</div>
+              </div>
+            </div>
+            <div style="color: var(--color-text-tertiary); font-size: var(--text-sm);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                style="display: inline; vertical-align: middle; margin-right: var(--space-1);">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                <line x1="16" y1="2" x2="16" y2="6" />
+                <line x1="8" y1="2" x2="8" y2="6" />
+                <line x1="3" y1="10" x2="21" y2="10" />
+              </svg>
+              Jan 20, 2026
+            </div>
+            <div style="color: var(--color-text-tertiary); font-size: var(--text-sm);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                style="display: inline; vertical-align: middle; margin-right: var(--space-1);">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+              10 min read
+            </div>
+          </div>
+        </header>
+
+        <div class="article-hero">
+          <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" opacity="0.4">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 6v6l4 2" />
+            </svg>
+          </div>
+        </div>
+
+        <div class="article-content">
+
+          <p class="lead"
+            style="font-size: var(--text-xl); color: var(--color-text-primary); margin-bottom: var(--space-8);">
+            Accessibility isn't optional—it's a fundamental right. Over 15% of the world's population lives with some
+            form of disability, and that number grows to 25% when considering temporary and situational disabilities.
+            Here's how we ensure our apps work for everyone, not just the average user.
+          </p>
+
+          <h2>Why Accessibility Matters</h2>
+          <p>
+            Building accessible apps isn't just about compliance or avoiding lawsuits. It's about reaching a broader
+            audience, improving usability for everyone, and doing the right thing. When you design for accessibility,
+            you create better experiences for all users—clearer navigation benefits everyone, not just screen reader
+            users.
+          </p>
+
+          <p>
+            At AppMaven Studio, we've found that accessibility considerations often lead to innovative design solutions.
+            Constraints breed creativity. Plus, many accessibility features benefit users in unexpected ways: captions
+            help people in noisy environments, voice control assists users with full hands, and high contrast modes
+            reduce eye strain.
+          </p>
+
+          <h2>Understanding WCAG Guidelines</h2>
+          <p>
+            The Web Content Accessibility Guidelines (WCAG) provide a framework for accessibility. While originally
+            designed for web content, the principles translate directly to mobile apps. WCAG is organized around four
+            principles: Perceivable, Operable, Understandable, and Robust (POUR).
+          </p>
+
+          <h3>The POUR Principles</h3>
+          <ul>
+            <li><strong>Perceivable:</strong> Information must be presentable in ways users can perceive. This means
+              providing text alternatives, captions, and ensuring sufficient color contrast.</li>
+            <li><strong>Operable:</strong> Interface components must be operable by all users. This includes keyboard
+              navigation, sufficient time to interact, and avoiding content that causes seizures.</li>
+            <li><strong>Understandable:</strong> Information and operation must be understandable. Use clear language,
+              predictable navigation, and help users avoid and correct mistakes.</li>
+            <li><strong>Robust:</strong> Content must work with current and future technologies, including assistive
+              technologies like screen readers.</li>
+          </ul>
+
+          <p>
+            WCAG has three conformance levels: A (minimum), AA (recommended for most content), and AAA (enhanced). We
+            target WCAG 2.1 Level AA for all our apps, which strikes a balance between accessibility and practical
+            implementation.
+          </p>
+
+          <h2>Screen Reader Support</h2>
+          <p>
+            Screen readers are essential for users with visual impairments. On Android, TalkBack is the primary screen
+            reader; on iOS, it's VoiceOver. Supporting screen readers requires intentional design and development.
+          </p>
+
+          <h3>Best Practices</h3>
+          <ul>
+            <li><strong>Meaningful Content Descriptions:</strong> Every interactive element needs a content description.
+              Don't just say "button"—explain what the button does: "Submit form" or "Add to cart."</li>
+            <li><strong>Logical Focus Order:</strong> Ensure screen readers navigate content in a logical sequence. Test
+              with your eyes closed—does the order make sense?</li>
+            <li><strong>Live Region Announcements:</strong> Use live regions to announce dynamic content changes. When a
+              form submission succeeds, screen reader users need to know.</li>
+            <li><strong>Avoid Redundant Descriptions:</strong> If a button has visible text, don't duplicate it in the
+              content description—the text is already read aloud.</li>
+            <li><strong>Group Related Content:</strong> Use proper semantic grouping for related items like form fields
+              or list items.</li>
+          </ul>
+
+          <p>
+            We test every feature with TalkBack and VoiceOver enabled. It's eye-opening to experience your app without
+            sight—you quickly discover navigation issues and unclear labels.
+          </p>
+
+          <h2>Color and Contrast</h2>
+          <p>
+            Color blindness affects approximately 8% of men and 0.5% of women. Relying solely on color to convey
+            information excludes these users.
+          </p>
+
+          <h3>Color Accessibility Guidelines</h3>
+          <ul>
+            <li><strong>Minimum Contrast Ratios:</strong> WCAG AA requires 4.5:1 contrast for normal text and 3:1 for
+              large text (18pt or 14pt bold). Use tools like Color Contrast Analyzer to verify.</li>
+            <li><strong>Don't Rely on Color Alone:</strong> Use icons, labels, or patterns in addition to color. Error
+              messages shouldn't just turn red—add an error icon and descriptive text.</li>
+            <li><strong>Test with Simulators:</strong> Use color blindness simulators to see how your UI appears to
+              users with different types of color vision deficiency.</li>
+            <li><strong>Support Dark Mode:</strong> Many users with light sensitivity or dyslexia prefer dark mode.
+              Ensure your app respects system appearance settings.</li>
+          </ul>
+
+          <p>
+            In our apps, we use shape, position, and text labels alongside color to convey state. A success message
+            might be green, but it also shows a checkmark icon and clear success text.
+          </p>
+
+          <h2>Touch Targets and Motor Accessibility</h2>
+          <p>
+            Users with motor impairments, arthritis, or tremors need adequately sized touch targets and forgiving
+            interactions.
+          </p>
+
+          <h3>Touch Target Recommendations</h3>
+          <ul>
+            <li><strong>Minimum Size:</strong> WCAG recommends 44x44 points (iOS) or 48x48dp (Android) for touch
+              targets. Smaller targets are difficult for many users.</li>
+            <li><strong>Adequate Spacing:</strong> Provide sufficient spacing between interactive elements to prevent
+              accidental taps.</li>
+            <li><strong>Avoid Time Limits:</strong> Don't force users to complete actions within arbitrary time limits.
+              If timeouts are necessary, allow users to extend or disable them.</li>
+            <li><strong>Support Multiple Input Methods:</strong> Support keyboard navigation, voice control, and switch
+              access in addition to touch.</li>
+            <li><strong>Avoid Precise Gestures:</strong> Multi-finger gestures and complex swipe patterns are difficult
+              for users with motor impairments. Provide alternative interaction methods.</li>
+          </ul>
+
+          <h2>Cognitive Accessibility</h2>
+          <p>
+            Cognitive disabilities range from dyslexia to memory impairments to attention disorders. Designing for
+            cognitive accessibility improves usability for everyone.
+          </p>
+
+          <h3>Design Strategies</h3>
+          <ul>
+            <li><strong>Simple, Clear Language:</strong> Avoid jargon and complex sentences. Write at a 6th to 8th grade
+              reading level for general audiences.</li>
+            <li><strong>Consistent Navigation:</strong> Keep navigation patterns consistent throughout your app. Users
+              shouldn't have to relearn how to navigate each screen.</li>
+            <li><strong>Clear Visual Hierarchy:</strong> Use headings, spacing, and visual grouping to organize content
+              logically.</li>
+            <li><strong>Error Prevention and Recovery:</strong> Prevent errors when possible with clear labels and
+              validation. When errors occur, provide clear instructions for fixing them.</li>
+            <li><strong>Reduce Cognitive Load:</strong> Don't overwhelm users with information. Break complex tasks into
+              smaller steps.</li>
+          </ul>
+
+          <h2>Testing for Accessibility</h2>
+          <p>
+            Automated testing catches many accessibility issues, but manual testing with real assistive technologies is
+            essential.
+          </p>
+
+          <h3>Testing Strategy</h3>
+          <ul>
+            <li><strong>Automated Tools:</strong> Use Android's Accessibility Scanner or iOS's Accessibility Inspector
+              to identify common issues.</li>
+            <li><strong>Screen Reader Testing:</strong> Test complete user flows with TalkBack (Android) and VoiceOver
+              (iOS) enabled.</li>
+            <li><strong>Keyboard Navigation:</strong> Ensure all functionality is accessible via keyboard (Bluetooth
+              keyboard on mobile).</li>
+            <li><strong>Color Contrast Analysis:</strong> Verify all text and interactive elements meet WCAG contrast
+              requirements.</li>
+            <li><strong>User Testing:</strong> Include users with disabilities in your testing process. They'll identify
+              issues automated tools miss.</li>
+          </ul>
+
+          <div
+            style="background: rgba(0, 212, 255, 0.1); border-left: 4px solid var(--color-accent); padding: var(--space-6); border-radius: var(--radius-md); margin: var(--space-10) 0;">
+            <h3 style="margin-top: 0;">Key Takeaways</h3>
+            <ul style="margin-bottom: 0;">
+              <li>Accessibility benefits everyone, not just users with disabilities</li>
+              <li>Target WCAG 2.1 Level AA for mobile apps</li>
+              <li>Test with screen readers—experience your app without sight</li>
+              <li>Ensure 4.5:1 contrast ratio and don't rely on color alone</li>
+              <li>Use 44x44pt minimum touch targets with adequate spacing</li>
+              <li>Include users with disabilities in your testing process</li>
+            </ul>
+          </div>
+
+          <h2>Conclusion</h2>
+          <p>
+            Accessibility is not a feature—it's a requirement. At AppMaven Studio, we integrate accessibility into our
+            design and development process from day one. It's far easier to build accessibility in than to retrofit it
+            later.
+          </p>
+
+          <p>
+            Start with awareness: understand that your users have diverse needs. Learn the WCAG guidelines and assistive
+            technology basics. Use automated tools, but don't rely on them exclusively—manual testing is irreplaceable.
+          </p>
+
+          <p>
+            Most importantly, involve users with disabilities in your design and testing process. They're the experts on
+            accessibility. Their feedback will transform your understanding and lead to better products for everyone.
+          </p>
+
+        </div>
+
+        <div class="share-buttons">
+          <span style="color: var(--color-text-tertiary); margin-right: var(--space-2);">Share:</span>
+          <button class="share-button" aria-label="Share on Twitter" onclick="shareOnTwitter()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
+            </svg>
+          </button>
+          <button class="share-button" aria-label="Share on Facebook" onclick="shareOnFacebook()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+            </svg>
+          </button>
+          <button class="share-button" aria-label="Share on LinkedIn" onclick="shareOnLinkedIn()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
+              <circle cx="4" cy="4" r="2" />
+            </svg>
+          </button>
+          <button class="share-button" aria-label="Copy link" onclick="copyLink()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" />
+              <path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="author-bio">
+          <div class="author-avatar"></div>
+          <div>
+            <h3 style="margin-bottom: var(--space-2);">About the Author</h3>
+            <p style="margin-bottom: var(--space-3); color: var(--color-text-secondary);">
+              The <strong>AppMaven Team</strong> consists of passionate developers and designers dedicated to creating
+              exceptional mobile experiences. We share insights from our journey building apps used by thousands of
+              users worldwide.
+            </p>
+            <a href="/about/" style="color: var(--color-accent); text-decoration: none; font-size: var(--text-sm);">
+              Learn more about us →
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <div style="display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-4);">
+            <img src="/assets/images/logo/appmaven_logo.png" alt="AppMaven Studio Logo"
+              style="height: 32px; width: 32px; border-radius: 8px;">
+            <span style="font-size: var(--text-xl); font-weight: var(--font-bold);">AppMaven Studio</span>
+          </div>
+          <p style="color: var(--color-text-secondary); margin-bottom: var(--space-4); line-height: 1.6;">
+            Crafting innovative mobile experiences that users love. We combine clean design with powerful functionality
+            to
+            build the future, one app at a time.
+          </p>
+        </div>
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/apps/">Apps</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/support/">Support</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="/terms-of-service.html">Terms of Service</a></li>
+            <li><a href="/data-deletion/">Data Deletion</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:hacong86@gmail.com">hacong86@gmail.com</a></li>
+            <li><a href="tel:+84972865336">+84 972 865 336</a></li>
+            <li><a href="https://github.com/hacong86" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 AppMaven Studio. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+  <script>
+    function shareOnTwitter() {
+      const url = encodeURIComponent(window.location.href);
+      const text = encodeURIComponent(document.title);
+      window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, '_blank', 'width=600,height=400');
+    }
+    function shareOnFacebook() {
+      const url = encodeURIComponent(window.location.href);
+      window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank', 'width=600,height=400');
+    }
+    function shareOnLinkedIn() {
+      const url = encodeURIComponent(window.location.href);
+      window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, '_blank', 'width=600,height=400');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        alert('Link copied to clipboard!');
+      });
+    }
+  </script>
+
+</body>
+
+</html>

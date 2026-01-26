@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Lịch Âm 2026 - Lịch Vạn Niên: Xem Ngày Tốt, Tử Vi & Phong Thủy</title>
+    <meta name="title" content="Lịch Âm 2026 - Lịch Vạn Niên: Xem Ngày Tốt, Tử Vi & Phong Thủy">
+    <meta name="description"
+        content="Lịch Vạn Niên 2026 là ứng dụng Lịch Việt chuẩn xác nhất. Xem ngày tốt xấu, giờ hoàng đạo, đổi lịch âm dương, tử vi trọn đời và ngũ hành phong thủy. Tải ngay miễn phí.">
+    <meta name="keywords"
+        content="lịch âm 2026, lịch vạn niên, xem ngày tốt xấu, lịch việt, đổi lịch âm dương, tử vi, phong thủy, xem tuổi, ngày hoàng đạo, văn khấn">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://appmavenstudio.com/apps/lich-am-2026/">
+    <meta property="og:title" content="Lịch Âm 2026 - Lịch Vạn Niên Chuẩn Nhất">
+    <meta property="og:description"
+        content="Tra cứu lịch âm dương, xem ngày tốt động thổ, cưới hỏi. Ứng dụng Lịch Vạn Niên không thể thiếu cho người Việt.">
+    <meta property="og:image" content="/assets/images/apps/lich-am-2026/licham01.webp">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://appmavenstudio.com/apps/lich-am-2026/">
+    <meta property="twitter:title" content="Lịch Âm 2026 - Lịch Vạn Niên">
+    <meta property="twitter:description" content="Xem lịch âm, tử vi, phong thủy chuẩn xác trên điện thoại.">
+    <meta property="twitter:image" content="/assets/images/apps/lich-am-2026/licham01.webp">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/images/logo/favicon.png">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/assets/css/variables.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/components.css">
+
+    <style>
+        /* Bento Grid Layout Specifics */
+        .bento-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--space-8) var(--space-4);
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: auto auto auto;
+            gap: var(--space-6);
+        }
+
+        .bento-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-xl);
+            padding: var(--space-8);
+            overflow: hidden;
+            position: relative;
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .bento-card:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Grid Areas */
+        .area-header {
+            grid-column: span 12;
+            grid-row: span 1;
+            display: flex;
+            align-items: center;
+            gap: var(--space-8);
+        }
+
+        @media (min-width: 992px) {
+            .area-header {
+                grid-column: span 9;
+            }
+
+            .area-safety {
+                grid-column: span 3;
+                grid-row: span 1;
+            }
+
+            .area-overview {
+                grid-column: span 5;
+            }
+
+            .area-features {
+                grid-column: span 7;
+            }
+
+            .area-gallery {
+                grid-column: span 7;
+            }
+
+            .area-faq {
+                grid-column: span 5;
+            }
+        }
+
+        @media (max-width: 991px) {
+
+            .area-header,
+            .area-safety,
+            .area-overview,
+            .area-features,
+            .area-gallery,
+            .area-faq {
+                grid-column: span 12;
+            }
+        }
+
+        /* Header Content */
+        .app-icon-large {
+            width: 120px;
+            height: 120px;
+            border-radius: var(--radius-xl);
+            box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
+            /* Red glow for Lịch Âm */
+            flex-shrink: 0;
+        }
+
+        /* Store Buttons CSS */
+        .store-button {
+            display: inline-flex;
+            align-items: center;
+            background: #000;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 6px 16px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin-right: 12px;
+            margin-bottom: 12px;
+        }
+
+        .store-button:hover {
+            background: #1a1a1a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .store-button svg {
+            width: 24px;
+            height: 24px;
+            margin-right: 12px;
+            fill: currentColor;
+        }
+
+        .store-button-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            line-height: 1.2;
+        }
+
+        .store-button-subtitle {
+            font-size: 10px;
+            text-transform: uppercase;
+            opacity: 0.8;
+        }
+
+        .store-button-title {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        /* Feature List */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-6);
+        }
+
+        .feature-item {
+            display: flex;
+            gap: var(--space-3);
+        }
+
+        .feature-icon-box {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Screenshots */
+        .screenshot-scroll {
+            display: flex;
+            gap: var(--space-4);
+            overflow-x: auto;
+            padding-bottom: var(--space-4);
+            scrollbar-width: thin;
+            scrollbar-color: var(--color-accent) transparent;
+        }
+
+        .screenshot-img {
+            height: 400px;
+            width: auto;
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Sidebar Links */
+        .safety-link {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            padding: var(--space-3);
+            border-radius: var(--radius-md);
+            color: var(--color-text-secondary);
+            transition: all 0.2s;
+        }
+
+        .safety-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        /* FAQ */
+        .faq-summary {
+            padding: var(--space-4);
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--space-3);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+
+        .faq-summary:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        details[open] .faq-summary {
+            background: rgba(239, 68, 68, 0.2);
+            /* Red accent */
+        }
+
+        .faq-text {
+            padding: var(--space-4);
+            color: var(--color-text-secondary);
+        }
+
+        .seo-content-section {
+            margin-top: var(--space-8);
+            padding-top: var(--space-8);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--color-text-secondary);
+        }
+
+        .seo-content-section h2 {
+            color: #fca5a5;
+            /* Light red */
+            margin-top: var(--space-6);
+        }
+
+        .seo-content-section h3 {
+            color: #fee2e2;
+            margin-top: var(--space-4);
+            margin-bottom: var(--space-2);
+            font-size: 1.1rem;
+        }
+
+        .seo-content-section p {
+            margin-bottom: var(--space-4);
+            line-height: 1.7;
+        }
+
+        h2 {
+            margin-bottom: var(--space-4);
+            font-size: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: var(--space-2);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="navbar-container">
+            <a href="/" class="navbar-logo" aria-label="AppMaven Studio Home">
+                <img src="/assets/images/logo/appmaven_logo.png" alt="AppMaven Studio Logo"
+                    style="height: 32px; width: 32px; border-radius: 8px;">
+                <span>AppMaven Studio</span>
+            </a>
+
+            <button class="navbar-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="navbar-menu" role="menubar">
+                <li role="none"><a href="/" role="menuitem">Home</a></li>
+                <li role="none"><a href="/apps/" role="menuitem">Apps</a></li>
+                <li role="none"><a href="/blog/" role="menuitem">Blog</a></li>
+                <li role="none"><a href="/about/" role="menuitem">About</a></li>
+                <li role="none"><a href="/support/" role="menuitem">Support</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Cosmic Background -->
+    <div class="cosmic-background"></div>
+
+    <!-- Main Content: Bento Grid -->
+    <main style="padding-top: calc(var(--header-height) + var(--space-4)); padding-bottom: var(--space-12);">
+
+        <div class="bento-container">
+
+            <!-- 1. Header Area -->
+            <div class="bento-card area-header">
+                <img src="/assets/images/apps/lich-am-2026/icon.webp" alt="Lịch Âm 2026 Logo" class="app-icon-large">
+                <div>
+                    <h1
+                        style="font-size: 2.5rem; font-weight: 700; background: linear-gradient(to right, #fff, #fb7185); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: var(--space-2);">
+                        Lịch Âm 2026 - Lịch Vạn Niên
+                    </h1>
+                    <p style="font-size: 1.25rem; color: var(--color-text-secondary); max-width: 600px;">
+                        Tra cứu lịch âm dương, ngày tốt xấu, phong thủy và tử vi. Ứng dụng "Lịch Vạn Niên" bỏ túi không
+                        thể thiếu
+                        của người Việt.
+                    </p>
+
+                    <div style="margin-top: var(--space-6); display: flex; flex-wrap: wrap;">
+                        <!-- Google Play Button -->
+                        <a href="https://play.google.com/store/apps/details?id=com.appmaven.licham2026" target="_blank"
+                            rel="noopener noreferrer" class="store-button">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.36,13.08L18.81,13.96L16.07,11.23L18.81,8.5L20.36,9.38C20.9,9.7 21.25,10.26 21.25,10.88V11.58C21.25,12.19 20.9,12.76 20.36,13.08M16.81,7.35L14.54,9.62L6.05,1.13L16.81,7.35Z" />
+                            </svg>
+                            <div class="store-button-content">
+                                <span class="store-button-subtitle">Get it on</span>
+                                <span class="store-button-title">Google Play</span>
+                            </div>
+                        </a>
+
+                        <!-- App Store Button (Coming Soon) -->
+                        <a href="#" class="store-button" style="opacity: 0.7; cursor: not-allowed;"
+                            onclick="return false;">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.13 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.43,15.65 20.08,16.66 20.08,16.66C20.03,16.8 19.7,17.96 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.37 12.36,4.26 13,3.5Z" />
+                            </svg>
+                            <div class="store-button-content">
+                                <span class="store-button-subtitle">Coming Soon to</span>
+                                <span class="store-button-title">App Store</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Data Safety & Privacy (Top Right Sidebar) -->
+            <div class="bento-card area-safety" style="display: flex; flex-direction: column; justify-content: center;">
+                <h3 style="margin-bottom: var(--space-4); font-size: 1.1rem; color: #fca5a5;">An Toàn & Bảo Mật</h3>
+                <div style="display: flex; flex-direction: column; gap: var(--space-2);">
+                    <a href="/privacy-policy.html" class="safety-link">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        </svg>
+                        Chính Sách Quyền Riêng Tư
+                    </a>
+                    <a href="/data-deletion/" class="safety-link">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                        </svg>
+                        Yêu Cầu Xóa Dữ Liệu
+                    </a>
+                </div>
+                <div
+                    style="margin-top: auto; padding-top: var(--space-4); font-size: 0.75rem; color: var(--color-text-tertiary); border-top: 1px solid rgba(255,255,255,0.05);">
+                    AppMaven Developer Portal.<br>© 2026. All rights reserved.<br>Phát triển cho người Việt.
+                </div>
+            </div>
+
+            <!-- 3. Overview -->
+            <div class="bento-card area-overview">
+                <h2>Lịch Vạn Niên Cho Người Việt</h2>
+                <p style="color: var(--color-text-secondary); line-height: 1.7;">
+                    <strong>Lịch Âm 2026 - Lịch Vạn Niên</strong> là ứng dụng không thể thiếu cho những ai quan tâm đến
+                    văn hóa,
+                    tín ngưỡng và phong tục Việt Nam.
+                </p>
+                <p style="color: var(--color-text-secondary); line-height: 1.7; margin-top: var(--space-4);">
+                    Với giao diện thân thiện, trực quan, chúng tôi cung cấp trọn bộ công cụ giúp bạn dễ dàng tra cứu
+                    ngày âm
+                    dương, xem ngày tốt khởi sự, và khám phá các khía cạnh thú vị của tử vi phong thủy ngay trên điện
+                    thoại của
+                    bạn.
+                </p>
+            </div>
+
+            <!-- 4. Key Features -->
+            <div class="bento-card area-features">
+                <h2>Tính Năng Nổi Bật</h2>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon-box">📅</div>
+                        <div>
+                            <h4 style="color: white; margin-bottom: 2px;">Lịch Âm Dương</h4>
+                            <p style="font-size: 0.85rem; color: var(--color-text-tertiary);">Xem song song, chi tiết
+                                ngày hoàng đạo.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-box">🔄</div>
+                        <div>
+                            <h4 style="color: white; margin-bottom: 2px;">Đổi Ngày Nhanh</h4>
+                            <p style="font-size: 0.85rem; color: var(--color-text-tertiary);">Chuyển đổi Dương - Âm
+                                chính xác tuyệt
+                                đối.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-box">⛩️</div>
+                        <div>
+                            <h4 style="color: white; margin-bottom: 2px;">Tử Vi & Phong Thủy</h4>
+                            <p style="font-size: 0.85rem; color: var(--color-text-tertiary);">Xem tuổi, mệnh, ngũ hành,
+                                ngày khai
+                                trương.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-box">🎊</div>
+                        <div>
+                            <h4 style="color: white; margin-bottom: 2px;">Văn Hóa Việt</h4>
+                            <p style="font-size: 0.85rem; color: var(--color-text-tertiary);">Văn khấn, ngày lễ, tiết
+                                khí 24 mùa.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Screenshots -->
+            <div class="bento-card area-gallery">
+                <h2 style="display: flex; justify-content: space-between; align-items: center;">
+                    Giao Diện Ứng Dụng
+                    <span style="font-size: 0.9rem; font-weight: normal; color: var(--color-text-tertiary);">Vuốt để xem
+                        thêm</span>
+                </h2>
+                <div class="screenshot-scroll">
+                    <img src="/assets/images/apps/lich-am-2026/licham01.webp" alt="Lịch Âm 2026 Giao Diện Chính"
+                        class="screenshot-img">
+                    <img src="/assets/images/apps/lich-am-2026/licham02.webp" alt="Xem Ngày Tốt Xấu"
+                        class="screenshot-img">
+                    <img src="/assets/images/apps/lich-am-2026/licham03.webp" alt="Tử Vi Phong Thủy"
+                        class="screenshot-img">
+                    <img src="/assets/images/apps/lich-am-2026/licham04.webp" alt="Đổi Lịch Âm Dương"
+                        class="screenshot-img">
+                </div>
+            </div>
+
+            <!-- 6. FAQ -->
+            <div class="bento-card area-faq">
+                <h2>Câu Hỏi Thường Gặp (FAQ)</h2>
+
+                <details>
+                    <summary class="faq-summary">Ứng dụng có miễn phí không?</summary>
+                    <div class="faq-text">
+                        Chắc chắn rồi. <strong>Lịch Âm 2026</strong> hoàn toàn miễn phí để tải về và sử dụng. Chúng tôi
+                        phát triển
+                        với mong muốn gìn giữ nét đẹp văn hóa Việt.
+                    </div>
+                </details>
+
+                <details>
+                    <summary class="faq-summary">Có cần kết nối mạng để xem lịch không?</summary>
+                    <div class="faq-text">
+                        Các tính năng cơ bản như xem lịch ngày, lịch tháng, đổi ngày âm dương đều hoạt động
+                        <strong>Offline</strong>
+                        (không cần mạng). Một số tính năng cập nhật sự kiện hoặc tử vi nâng cao có thể cần kết nối
+                        internet.
+                    </div>
+                </details>
+
+                <details>
+                    <summary class="faq-summary">Ứng dụng có tính ngày nhuận không?</summary>
+                    <div class="faq-text">
+                        Có. Hệ thống thuật toán của chúng tôi được xây dựng dựa trên quy chuẩn Lịch Vạn Niên quốc gia,
+                        đảm bảo tính
+                        chính xác tuyệt đối cho các năm có tháng nhuận.
+                    </div>
+                </details>
+
+            </div>
+
+            <!-- 7. Detailed Description (SEO Content) -->
+            <div class="bento-card" style="grid-column: span 12; margin-top: var(--space-6);">
+                <div class="seo-content-section" style="border-top: none; padding-top: 0; margin-top: 0;">
+                    <h2>Lịch Âm 2026 - Lịch Vạn Niên Tốt Nhất Cho Người Việt</h2>
+
+                    <p>
+                        Văn hóa phương Đông nói chung và người Việt Nam nói riêng luôn coi trọng việc xem ngày giờ. Từ
+                        cưới hỏi, động
+                        thổ, khai trương cho đến xuất hành, việc chọn được "ngày lành tháng tốt" giúp tâm lý vững vàng
+                        và công việc
+                        hanh thông. <strong>Lịch Âm 2026</strong> ra đời với sứ mệnh đó - trở thành cuốn cẩm nang số tin
+                        cậy trong
+                        túi bạn.
+                    </p>
+
+                    <h3>Tính Năng Chi Tiết & Lợi Ích</h3>
+                    <p>Không chỉ là một cuốn lịch đơn thuần, ứng dụng tích hợp:</p>
+                    <ul>
+                        <li><strong>Lịch Ngày & Lịch Tháng:</strong> Hiển thị can chi, hoàng đạo, hắc đạo, trực, sao, và
+                            các khung
+                            giờ tốt trong ngày.</li>
+                        <li><strong>Xem Ngày Tốt:</strong> Tra cứu nhanh ngày tốt cho từng công việc cụ thể như cưới
+                            hỏi, xây nhà,
+                            mua xe, khai trương.</li>
+                        <li><strong>Đổi Lịch Âm Dương:</strong> Công cụ chuyển đổi thông minh, hỗ trợ tra cứu ngược
+                            xuôi, tính chính
+                            xác các năm nhuận.</li>
+                        <li><strong>Tử Vi & Vận Hạn:</strong> Xem sao chiếu mệnh, hạn Tam Tai, Hoang Ốc, Kim Lâu cho
+                            từng tuổi.</li>
+                        <li><strong>Phong Thủy Ngũ Hành:</strong> Kiến thức về tương sinh tương khắc, màu sắc hợp mệnh,
+                            hướng xuất
+                            hành may mắn.</li>
+                        <li><strong>Văn Khấn Cổ Truyền:</strong> Tuyển tập các bài văn khấn nôm trong các dịp lễ, tết,
+                            giỗ chạp.
+                        </li>
+                    </ul>
+
+                    <h3>Tại Sao Chọn Lịch Âm 2026?</h3>
+                    <p>
+                        Giữa hàng trăm ứng dụng lịch trên kho tải, Lịch Âm 2026 nổi bật nhờ <strong>giao diện hiện
+                            đại</strong>,
+                        không gây rối mắt, tối ưu trải nghiệm người dùng. Dữ liệu được biên soạn kỹ lưỡng từ các chuyên
+                        gia phong
+                        thủy và văn hóa, đảm bảo độ tin cậy cao nhất.
+                    </p>
+
+                    <p style="margin-top: var(--space-8); font-size: 0.9rem; opacity: 0.7;">
+                        <em>Tải ngay Lịch Âm 2026 - Lịch Vạn Niên để làm chủ thời gian và vận mệnh. Ứng dụng nhẹ, mượt
+                            mà trên mọi
+                            thiết bị Android. Chúc quý khách một năm mới An Khang Thịnh Vượng - Vạn Sự Như Ý!</em>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div
+                        style="display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-4);">
+                        <img src="/assets/images/logo/appmaven_logo.png" alt="AppMaven Studio Logo"
+                            style="height: 32px; width: 32px; border-radius: 8px;">
+                        <span style="font-size: var(--text-xl); font-weight: var(--font-bold);">AppMaven Studio</span>
+                    </div>
+                    <p style="color: var(--color-text-secondary); margin-bottom: var(--space-4); line-height: 1.6;">
+                        Kiến tạo trải nghiệm di động đột phá. Chúng tôi kết hợp thiết kế tinh tế với công nghệ mạnh mẽ
+                        để xây dựng
+                        tương lai, qua từng ứng dụng.
+                    </p>
+                </div>
+                <div class="footer-column">
+                    <h4>Liên Kết Nhanh</h4>
+                    <ul>
+                        <li><a href="/">Trang Chủ</a></li>
+                        <li><a href="/apps/">Ứng Dụng</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/about/">Về Chúng Tôi</a></li>
+                        <li><a href="/support/">Hỗ Trợ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Pháp Lý</h4>
+                    <ul>
+                        <li><a href="/privacy-policy.html">Chính Sách Riêng Tư</a></li>
+                        <li><a href="/terms-of-service.html">Điều Khoản Dịch Vụ</a></li>
+                        <li><a href="/data-deletion/">Xóa Dữ Liệu</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Liên Hệ</h4>
+                    <ul>
+                        <li><a href="mailto:hacong86@gmail.com">hacong86@gmail.com</a></li>
+                        <li><a href="tel:+84972865336">+84 972 865 336</a></li>
+                        <li><a href="https://github.com/hacong86" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AppMaven Studio. Bảo lưu mọi quyền.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/assets/js/main.js"></script>
+
+</body>
+
+</html>

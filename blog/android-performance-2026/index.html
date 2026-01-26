@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary Meta Tags -->
+  <title>Optimizing Android App Performance in 2026: A Developer's Guide | AppMaven Studio Blog</title>
+  <meta name="title" content="Optimizing Android App Performance in 2026: A Developer's Guide">
+  <meta name="description"
+    content="Learn proven techniques to optimize Android app performance. Explore profiling tools, memory management, battery efficiency, and launch time improvements that keep apps running smoothly.">
+  <meta name="keywords"
+    content="android performance, app optimization, memory management, battery efficiency, profiling tools, android development, mobile performance">
+  <meta name="author" content="AppMaven Team">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://appmavenstudio.com/blog/android-performance-2026/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://appmavenstudio.com/blog/android-performance-2026/">
+  <meta property="og:title" content="Optimizing Android App Performance in 2026: A Developer's Guide">
+  <meta property="og:description"
+    content="Learn proven techniques to optimize Android app performance including profiling, memory management, and battery efficiency.">
+  <meta property="og:image" content="https://appmavenstudio.com/assets/images/og-image.png">
+  <meta property="article:published_time" content="2026-01-10T09:00:00Z">
+  <meta property="article:author" content="AppMaven Team">
+  <meta property="article:section" content="Development">
+  <meta property="article:tag" content="Android">
+  <meta property="article:tag" content="Performance">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://appmavenstudio.com/blog/android-performance-2026/">
+  <meta property="twitter:title" content="Optimizing Android App Performance in 2026">
+  <meta property="twitter:description" content="Learn proven techniques to optimize Android app performance.">
+  <meta property="twitter:image" content="https://appmavenstudio.com/assets/images/og-image.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/assets/images/logo/favicon.png">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/variables.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+
+  <!-- Schema.org BlogPosting Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Optimizing Android App Performance in 2026: A Developer's Guide",
+    "description": "Learn proven techniques to optimize Android app performance including profiling, memory management, and battery efficiency.",
+    "image": "https://appmavenstudio.com/assets/images/og-image.png",
+    "author": {
+      "@type": "Organization",
+      "name": "AppMaven Studio",
+      "url": "https://appmavenstudio.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "AppMaven Studio",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://appmavenstudio.com/assets/images/logo/logo.png"
+      }
+    },
+    "datePublished": "2026-01-10T09:00:00Z",
+    "dateModified": "2026-01-10T09:00:00Z",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://appmavenstudio.com/blog/android-performance-2026/"
+    },
+    "keywords": "android performance, app optimization, memory management",
+    "articleSection": "Development",
+    "wordCount": "1150"
+  }
+  </script>
+
+  <style>
+    .article-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .article-hero {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      margin-bottom: var(--space-10);
+      background: var(--gradient-purple);
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+      flex-wrap: wrap;
+      margin-bottom: var(--space-8);
+      padding-bottom: var(--space-6);
+      border-bottom: 1px solid var(--glass-border);
+    }
+
+    .article-content {
+      line-height: var(--leading-relaxed);
+    }
+
+    .article-content h2 {
+      margin-top: var(--space-12);
+      margin-bottom: var(--space-6);
+      font-size: var(--text-3xl);
+    }
+
+    .article-content h3 {
+      margin-top: var(--space-8);
+      margin-bottom: var(--space-4);
+      font-size: var(--text-2xl);
+    }
+
+    .article-content p {
+      margin-bottom: var(--space-6);
+      color: var(--color-text-secondary);
+    }
+
+    .article-content ul,
+    .article-content ol {
+      margin-bottom: var(--space-6);
+      padding-left: var(--space-6);
+    }
+
+    .article-content li {
+      margin-bottom: var(--space-3);
+      color: var(--color-text-secondary);
+    }
+
+    .article-content code {
+      background: rgba(0, 212, 255, 0.1);
+      padding: var(--space-1) var(--space-2);
+      border-radius: var(--radius-sm);
+      font-family: 'Courier New', monospace;
+      font-size: 0.9em;
+    }
+
+    .author-bio {
+      background: var(--glass-bg);
+      border: var(--border-glass);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+      margin-top: var(--space-16);
+      display: flex;
+      gap: var(--space-6);
+      align-items: center;
+    }
+
+    .author-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: var(--radius-full);
+      background: var(--gradient-cyber);
+      flex-shrink: 0;
+    }
+
+    .share-buttons {
+      display: flex;
+      gap: var(--space-3);
+      margin-top: var(--space-10);
+      padding-top: var(--space-8);
+      border-top: 1px solid var(--glass-border);
+    }
+
+    .share-button {
+      padding: var(--space-3);
+      background: var(--glass-bg);
+      border: var(--border-glass);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+    }
+
+    .share-button:hover {
+      background: rgba(0, 212, 255, 0.1);
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      .author-bio {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <a href="#main-content" class="skip-to-main">Skip to main content</a>
+  <div class="cosmic-background"></div>
+
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar-container">
+      <a href="/" class="navbar-logo" aria-label="AppMaven Studio Home">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="32" height="32" rx="8" fill="url(#logo-gradient)" />
+          <path d="M16 8L24 24H8L16 8Z" fill="white" />
+          <defs>
+            <linearGradient id="logo-gradient" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#00d4ff" />
+              <stop offset="1" stop-color="#7c3aed" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <span>AppMaven Studio</span>
+      </a>
+      <button class="navbar-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="navbar-menu" role="menubar">
+        <li role="none"><a href="/" role="menuitem">Home</a></li>
+        <li role="none"><a href="/apps/" role="menuitem">Apps</a></li>
+        <li role="none"><a href="/blog/" role="menuitem" class="active">Blog</a></li>
+        <li role="none"><a href="/about/" role="menuitem">About</a></li>
+        <li role="none"><a href="/support/" role="menuitem">Support</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main-content" class="page-content">
+    <article class="section">
+      <div class="container article-container">
+
+        <nav aria-label="Breadcrumb" style="margin-bottom: var(--space-8);">
+          <ol
+            style="display: flex; gap: var(--space-2); list-style: none; padding: 0; color: var(--color-text-tertiary); font-size: var(--text-sm);">
+            <li><a href="/" style="color: var(--color-text-tertiary);">Home</a></li>
+            <li>/</li>
+            <li><a href="/blog/" style="color: var(--color-text-tertiary);">Blog</a></li>
+            <li>/</li>
+            <li style="color: var(--color-text-secondary);">Android Performance</li>
+          </ol>
+        </nav>
+
+        <header style="margin-bottom: var(--space-10);">
+          <div style="margin-bottom: var(--space-6);">
+            <span class="badge badge-productivity">Development</span>
+          </div>
+          <h1 style="margin-bottom: var(--space-6); font-size: var(--text-5xl);">
+            Optimizing Android App Performance in 2026: A Developer's Guide
+          </h1>
+
+          <div class="article-meta">
+            <div style="display: flex; align-items: center; gap: var(--space-3);">
+              <div
+                style="width: 40px; height: 40px; background: var(--gradient-cyber); border-radius: var(--radius-full);">
+              </div>
+              <div>
+                <div style="font-weight: var(--font-semibold); color: var(--color-text-primary);">AppMaven Team</div>
+                <div style="font-size: var(--text-sm); color: var(--color-text-tertiary);">Developer & Writer</div>
+              </div>
+            </div>
+            <div style="color: var(--color-text-tertiary); font-size: var(--text-sm);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                style="display: inline; vertical-align: middle; margin-right: var(--space-1);">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                <line x1="16" y1="2" x2="16" y2="6" />
+                <line x1="8" y1="2" x2="8" y2="6" />
+                <line x1="3" y1="10" x2="21" y2="10" />
+              </svg>
+              Jan 10, 2026
+            </div>
+            <div style="color: var(--color-text-tertiary); font-size: var(--text-sm);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                style="display: inline; vertical-align: middle; margin-right: var(--space-1);">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+              8 min read
+            </div>
+          </div>
+        </header>
+
+        <div class="article-hero">
+          <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" opacity="0.4">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+            </svg>
+          </div>
+        </div>
+
+        <div class="article-content">
+
+          <p class="lead"
+            style="font-size: var(--text-xl); color: var(--color-text-primary); margin-bottom: var(--space-8);">
+            Performance isn't just a technical metric—it's a user experience imperative. In 2026, with users expecting
+            instant responses and seamless interactions, optimizing your Android app's performance is more critical than
+            ever. Here's how we keep our apps running smoothly across diverse devices.
+          </p>
+
+          <h2>Why Performance Matters</h2>
+          <p>
+            Studies consistently show that users abandon apps that are slow or unresponsive. A delay of just 100
+            milliseconds can reduce conversion rates by 7%. More importantly, poor performance leads to negative
+            reviews, decreased retention, and ultimately, uninstalls.
+          </p>
+
+          <p>
+            At AppMaven Studio, we've learned that performance optimization isn't a one-time task—it's an ongoing
+            commitment. Every feature we add, every line of code we write, is evaluated through the lens of performance
+            impact.
+          </p>
+
+          <h2>1. Profiling: Know Before You Optimize</h2>
+          <p>
+            The first rule of optimization: never guess. Android Studio's Profiler is your best friend for identifying
+            bottlenecks.
+          </p>
+
+          <h3>Essential Profiling Tools</h3>
+          <ul>
+            <li><strong>CPU Profiler:</strong> Identify methods consuming excessive CPU time. Look for unnecessary
+              loops, inefficient algorithms, or blocking operations on the main thread.</li>
+            <li><strong>Memory Profiler:</strong> Track memory allocations, identify leaks, and monitor garbage
+              collection events. Memory leaks are silent killers of app performance.</li>
+            <li><strong>Network Profiler:</strong> Analyze network requests, payload sizes, and connection times. Slow
+              or excessive network calls directly impact perceived performance.</li>
+            <li><strong>Energy Profiler:</strong> Monitor battery consumption. Users quickly uninstall apps that drain
+              their battery.</li>
+          </ul>
+
+          <p>
+            We profile our apps regularly during development, not just when performance issues arise. This proactive
+            approach helps us catch regressions before they reach users.
+          </p>
+
+          <h2>2. Memory Management Best Practices</h2>
+          <p>
+            Memory is a finite resource on mobile devices. Poor memory management leads to frequent garbage collection
+            pauses, out-of-memory crashes, and sluggish UI.
+          </p>
+
+          <h3>Key Strategies</h3>
+          <ul>
+            <li><strong>Avoid Memory Leaks:</strong> Use weak references for listeners and callbacks. Always unregister
+              receivers and cancel background tasks in lifecycle methods.</li>
+            <li><strong>Optimize Bitmap Loading:</strong> Use libraries like Coil or Glide that handle image caching and
+              downsampling automatically. Never load full-resolution images when thumbnails suffice.</li>
+            <li><strong>Be Mindful of Context:</strong> Holding references to Activity contexts can prevent garbage
+              collection. Use Application context when appropriate.</li>
+            <li><strong>Leverage ViewBinding:</strong> It's more efficient than findViewById and helps prevent memory
+              leaks compared to synthetic properties.</li>
+          </ul>
+
+          <p>
+            In our apps, we use LeakCanary during development to detect memory leaks immediately. It's caught numerous
+            issues that would have otherwise made it to production.
+          </p>
+
+          <h2>3. Launch Time Optimization</h2>
+          <p>
+            First impressions matter. Users judge your app within the first few seconds. A slow launch time creates
+            immediate frustration.
+          </p>
+
+          <h3>Cold Start Optimization</h3>
+          <ul>
+            <li><strong>Defer Non-Critical Initialization:</strong> Only initialize components critical for the first
+              screen. Move other initialization to background threads or lazy-load when needed.</li>
+            <li><strong>Use App Startup Library:</strong> Google's App Startup library provides a structured way to
+              initialize components without multiple ContentProviders.</li>
+            <li><strong>Avoid Heavy Operations in Application.onCreate():</strong> This blocks app launch. Consider
+              using coroutines for async initialization.</li>
+            <li><strong>Optimize Layout Hierarchy:</strong> Deep or complex layouts increase inflation time. Use
+              ConstraintLayout to flatten hierarchies.</li>
+          </ul>
+
+          <p>
+            We measure launch time using Android Vitals in Play Console. Our target: under 1.5 seconds for cold starts
+            on mid-range devices.
+          </p>
+
+          <h2>4. UI Rendering and Frame Rate</h2>
+          <p>
+            Smooth UI is non-negotiable. Android targets 60 FPS (or 120 FPS on modern devices), meaning each frame has
+            only 16 milliseconds to render.
+          </p>
+
+          <h3>Achieving 60 FPS</h3>
+          <ul>
+            <li><strong>Keep Main Thread Free:</strong> Never perform network, database, or file I/O on the main thread.
+              Use coroutines, WorkManager, or background threads.</li>
+            <li><strong>Optimize RecyclerView:</strong> Use DiffUtil for efficient updates. Set fixed size and enable
+              nested scrolling optimization. Prefetch items using LinearLayoutManager's prefetch feature.</li>
+            <li><strong>Reduce Overdraw:</strong> Use Android Studio's GPU Overdraw visualization. Remove unnecessary
+              backgrounds in view hierarchies.</li>
+            <li><strong>Profile GPU Rendering:</strong> Enable "Profile GPU Rendering" in Developer Options. Green bars
+              below the 16ms line indicate smooth rendering.</li>
+          </ul>
+
+          <h2>5. Battery Efficiency</h2>
+          <p>
+            Users are acutely aware of which apps drain their battery. Poor battery optimization leads to uninstalls and
+            negative reviews.
+          </p>
+
+          <h3>Battery Optimization Techniques</h3>
+          <ul>
+            <li><strong>Batch Network Requests:</strong> Combine multiple small requests when possible. Use WorkManager
+              with constraints to defer non-urgent work.</li>
+            <li><strong>Optimize Location Updates:</strong> Use coarse location when high accuracy isn't needed. Request
+              location updates only when necessary and use fused location provider.</li>
+            <li><strong>Reduce Wake Locks:</strong> Minimize screen wake locks. Use high-priority notifications
+              sparingly.</li>
+            <li><strong>Test with Battery Historian:</strong> This tool provides detailed battery consumption analysis.
+            </li>
+          </ul>
+
+          <h2>6. Network Performance</h2>
+          <p>
+            Network latency is often the biggest performance bottleneck in modern apps.
+          </p>
+
+          <h3>Network Optimization</h3>
+          <ul>
+            <li><strong>Use HTTP/2 or HTTP/3:</strong> These protocols support multiplexing and reduce overhead.</li>
+            <li><strong>Implement Caching:</strong> Use OkHttp's cache for network responses. Implement offline-first
+              architecture where appropriate.</li>
+            <li><strong>Compress Data:</strong> Use gzip compression for text-based payloads. Consider binary formats
+              like Protocol Buffers for large datasets.</li>
+            <li><strong>Prefetch Strategically:</strong> Predict user actions and prefetch data, but avoid
+              over-fetching.</li>
+          </ul>
+
+          <div
+            style="background: rgba(0, 212, 255, 0.1); border-left: 4px solid var(--color-accent); padding: var(--space-6); border-radius: var(--radius-md); margin: var(--space-10) 0;">
+            <h3 style="margin-top: 0;">Key Takeaways</h3>
+            <ul style="margin-bottom: 0;">
+              <li>Profile before optimizing—data beats assumptions</li>
+              <li>Memory leaks are performance killers—use LeakCanary</li>
+              <li>Launch time under 1.5 seconds is critical for first impressions</li>
+              <li>Maintain 60 FPS by keeping the main thread free</li>
+              <li>Battery efficiency directly impacts user retention</li>
+            </ul>
+          </div>
+
+          <h2>Conclusion</h2>
+          <p>
+            Performance optimization is a continuous journey, not a destination. At AppMaven Studio, we've integrated
+            performance monitoring into our development workflow. We set performance budgets for key metrics and reject
+            changes that regress performance without justification.
+          </p>
+
+          <p>
+            The tools are available—Android Studio's Profiler, Firebase Performance Monitoring, Android Vitals. The
+            challenge is building a culture where performance is everyone's responsibility, from designers to developers
+            to product managers.
+          </p>
+
+          <p>
+            Start small: pick one area (launch time, memory, or battery) and measure your baseline. Set a target. Make
+            incremental improvements. Your users will notice, and your app's ratings will reflect it.
+          </p>
+
+        </div>
+
+        <div class="share-buttons">
+          <span style="color: var(--color-text-tertiary); margin-right: var(--space-2);">Share:</span>
+          <button class="share-button" aria-label="Share on Twitter" onclick="shareOnTwitter()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
+            </svg>
+          </button>
+          <button class="share-button" aria-label="Share on Facebook" onclick="shareOnFacebook()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+            </svg>
+          </button>
+          <button class="share-button" aria-label="Share on LinkedIn" onclick="shareOnLinkedIn()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
+              <circle cx="4" cy="4" r="2" />
+            </svg>
+          </button>
+          <button class="share-button" aria-label="Copy link" onclick="copyLink()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" />
+              <path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="author-bio">
+          <div class="author-avatar"></div>
+          <div>
+            <h3 style="margin-bottom: var(--space-2);">About the Author</h3>
+            <p style="margin-bottom: var(--space-3); color: var(--color-text-secondary);">
+              The <strong>AppMaven Team</strong> consists of passionate developers and designers dedicated to creating
+              exceptional mobile experiences. We share insights from our journey building apps used by thousands of
+              users worldwide.
+            </p>
+            <a href="/about/" style="color: var(--color-accent); text-decoration: none; font-size: var(--text-sm);">
+              Learn more about us →
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <div style="display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-4);">
+            <img src="/assets/images/logo/appmaven_logo.png" alt="AppMaven Studio Logo"
+              style="height: 32px; width: 32px; border-radius: 8px;">
+            <span style="font-size: var(--text-xl); font-weight: var(--font-bold);">AppMaven Studio</span>
+          </div>
+          <p style="color: var(--color-text-secondary); margin-bottom: var(--space-4); line-height: 1.6;">
+            Crafting innovative mobile experiences that users love. We combine clean design with powerful functionality
+            to
+            build the future, one app at a time.
+          </p>
+        </div>
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/apps/">Apps</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/support/">Support</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="/terms-of-service.html">Terms of Service</a></li>
+            <li><a href="/data-deletion/">Data Deletion</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:hacong86@gmail.com">hacong86@gmail.com</a></li>
+            <li><a href="tel:+84972865336">+84 972 865 336</a></li>
+            <li><a href="https://github.com/hacong86" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 AppMaven Studio. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+  <script>
+    function shareOnTwitter() {
+      const url = encodeURIComponent(window.location.href);
+      const text = encodeURIComponent(document.title);
+      window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, '_blank', 'width=600,height=400');
+    }
+    function shareOnFacebook() {
+      const url = encodeURIComponent(window.location.href);
+      window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank', 'width=600,height=400');
+    }
+    function shareOnLinkedIn() {
+      const url = encodeURIComponent(window.location.href);
+      window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, '_blank', 'width=600,height=400');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        alert('Link copied to clipboard!');
+      });
+    }
+  </script>
+
+</body>
+
+</html>

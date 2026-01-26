@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary Meta Tags -->
+  <title>Behind the Scenes: Our App Design Process at AppMaven Studio | Blog</title>
+  <meta name="title" content="Behind the Scenes: Our App Design Process at AppMaven Studio">
+  <meta name="description"
+    content="Go behind the scenes of AppMaven's app design process. Learn how we approach UX design, user research, prototyping, and product development to create exceptional mobile experiences.">
+  <meta name="keywords"
+    content="app design, UX design, product development, user research, design process, mobile design, prototyping, user experience">
+  <meta name="author" content="AppMaven Team">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://appmavenstudio.com/blog/app-design-process/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://appmavenstudio.com/blog/app-design-process/">
+  <meta property="og:title" content="Behind the Scenes: Our App Design Process at AppMaven Studio">
+  <meta property="og:description"
+    content="Learn how we approach app design, from user research to final implementation, to create exceptional mobile experiences.">
+  <meta property="og:image" content="https://appmavenstudio.com/assets/images/og-image.png">
+  <meta property="article:published_time" content="2026-01-05T09:00:00Z">
+  <meta property="article:author" content="AppMaven Team">
+  <meta property="article:section" content="Design">
+  <meta property="article:tag" content="Design">
+  <meta property="article:tag" content="UX">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://appmavenstudio.com/blog/app-design-process/">
+  <meta property="twitter:title" content="Behind the Scenes: Our App Design Process at AppMaven Studio">
+  <meta property="twitter:description" content="Learn how we approach app design and product development.">
+  <meta property="twitter:image" content="https://appmavenstudio.com/assets/images/og-image.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/assets/images/logo/favicon.png">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/variables.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+
+  <!-- Schema.org BlogPosting Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Behind the Scenes: Our App Design Process at AppMaven Studio",
+    "description": "Learn how we approach app design, from user research to final implementation, to create exceptional mobile experiences.",
+    "image": "https://appmavenstudio.com/assets/images/og-image.png",
+    "author": {
+      "@type": "Organization",
+      "name": "AppMaven Studio",
+      "url": "https://appmavenstudio.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "AppMaven Studio",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://appmavenstudio.com/assets/images/logo/logo.png"
+      }
+    },
+    "datePublished": "2026-01-05T09:00:00Z",
+    "dateModified": "2026-01-05T09:00:00Z",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://appmavenstudio.com/blog/app-design-process/"
+    },
+    "keywords": "app design, UX design, product development, user research",
+    "articleSection": "Design",
+    "wordCount": "1160"
+  }
+  </script>
+
+  <style>
+    .article-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .article-hero {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      margin-bottom: var(--space-10);
+      background: var(--gradient-purple);
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+      flex-wrap: wrap;
+      margin-bottom: var(--space-8);
+      padding-bottom: var(--space-6);
+      border-bottom: 1px solid var(--glass-border);
+    }
+
+    .article-content {
+      line-height: var(--leading-relaxed);
+    }
+
+    .article-content h2 {
+      margin-top: var(--space-12);
+      margin-bottom: var(--space-6);
+      font-size: var(--text-3xl);
+    }
+
+    .article-content h3 {
+      margin-top: var(--space-8);
+      margin-bottom: var(--space-4);
+      font-size: var(--text-2xl);
+    }
+
+    .article-content p {
+      margin-bottom: var(--space-6);
+      color: var(--color-text-secondary);
+    }
+
+    .article-content ul,
+    .article-content ol {
+      margin-bottom: var(--space-6);
+      padding-left: var(--space-6);
+    }
+
+    .article-content li {
+      margin-bottom: var(--space-3);
+      color: var(--color-text-secondary);
+    }
+
+    .article-content code {
+      background: rgba(0, 212, 255, 0.1);
+      padding: var(--space-1) var(--space-2);
+      border-radius: var(--radius-sm);
+      font-family: 'Courier New', monospace;
+      font-size: 0.9em;
+    }
+
+    .author-bio {
+      background: var(--glass-bg);
+      border: var(--border-glass);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+      margin-top: var(--space-16);
+      display: flex;
+      gap: var(--space-6);
+      align-items: center;
+    }
+
+    .author-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: var(--radius-full);
+      background: var(--gradient-cyber);
+      flex-shrink: 0;
+    }
+
+    .share-buttons {
+      display: flex;
+      gap: var(--space-3);
+      margin-top: var(--space-10);
+      padding-top: var(--space-8);
+      border-top: 1px solid var(--glass-border);
+    }
+
+    .share-button {
+      padding: var(--space-3);
+      background: var(--glass-bg);
+      border: var(--border-glass);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+    }
+
+    .share-button:hover {
+      background: rgba(0, 212, 255, 0.1);
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      .author-bio {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <a href="#main-content" class="skip-to-main">Skip to main content</a>
+  <div class="cosmic-background"></div>
+
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar-container">
+      <a href="/" class="navbar-logo" aria-label="AppMaven Studio Home">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="32" height="32" rx="8" fill="url(#logo-gradient)" />
+          <path d="M16 8L24 24H8L16 8Z" fill="white" />
+          <defs>
+            <linearGradient id="logo-gradient" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#00d4ff" />
+              <stop offset="1" stop-color="#7c3aed" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <span>AppMaven Studio</span>
+      </a>
+      <button class="navbar-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="navbar-menu" role="menubar">
+        <li role="none"><a href="/" role="menuitem">Home</a></li>
+        <li role="none"><a href="/apps/" role="menuitem">Apps</a></li>
+        <li role="none"><a href="/blog/" role="menuitem" class="active">Blog</a></li>
+        <li role="none"><a href="/about/" role="menuitem">About</a></li>
+        <li role="none"><a href="/support/" role="menuitem">Support</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main-content" class="page-content">
+    <article class="section">
+      <div class="container article-container">
+
+        <nav aria-label="Breadcrumb" style="margin-bottom: var(--space-8);">
+          <ol
+            style="display: flex; gap: var(--space-2); list-style: none; padding: 0; color: var(--color-text-tertiary); font-size: var(--text-sm);">
+            <li><a href="/" style="color: var(--color-text-tertiary);">Home</a></li>
+            <li>/</li>
+            <li><a href="/blog/" style="color: var(--color-text-tertiary);">Blog</a></li>
+            <li>/</li>
+            <li style="color: var(--color-text-secondary);">App Design Process</li>
+          </ol>
+        </nav>
+
+        <header style="margin-bottom: var(--space-10);">
+          <div style="margin-bottom: var(--space-6);">
+            <span class="badge badge-lifestyle">Design</span>
+          </div>
+          <h1 style="margin-bottom: var(--space-6); font-size: var(--text-5xl);">
+            Behind the Scenes: Our App Design Process at AppMaven Studio
+          </h1>
+
+          <div class="article-meta">
+            <div style="display: flex; align-items: center; gap: var(--space-3);">
+              <div
+                style="width: 40px; height: 40px; background: var(--gradient-cyber); border-radius: var(--radius-full);">
+              </div>
+              <div>
+                <div style="font-weight: var(--font-semibold); color: var(--color-text-primary);">AppMaven Team</div>
+                <div style="font-size: var(--text-sm); color: var(--color-text-tertiary);">Developer & Writer</div>
+              </div>
+            </div>
+            <div style="color: var(--color-text-tertiary); font-size: var(--text-sm);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                style="display: inline; vertical-align: middle; margin-right: var(--space-1);">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                <line x1="16" y1="2" x2="16" y2="6" />
+                <line x1="8" y1="2" x2="8" y2="6" />
+                <line x1="3" y1="10" x2="21" y2="10" />
+              </svg>
+              Jan 5, 2026
+            </div>
+            <div style="color: var(--color-text-tertiary); font-size: var(--text-sm);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                style="display: inline; vertical-align: middle; margin-right: var(--space-1);">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+              9 min read
+            </div>
+          </div>
+        </header>
+
+        <div class="article-hero">
+          <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" opacity="0.4">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+          </div>
+        </div>
+
+        <div class="article-content">
+
+          <p class="lead"
+            style="font-size: var(--text-xl); color: var(--color-text-primary); margin-bottom: var(--space-8);">
+            Great apps don't happen by accident. They're the result of deliberate, methodical design processes that
+            prioritize user needs over developer preferences. Here's an honest look at how we design apps at AppMaven
+            Studio—the good, the challenging, and the lessons we've learned along the way.
+          </p>
+
+          <h2>It Starts with a Problem, Not a Solution</h2>
+          <p>
+            The biggest mistake in app design is starting with a solution. "We should build an app that does X" is
+            backwards thinking. Instead, we start with questions: What problem exists? Who experiences this problem? How
+            do they currently solve it? What are the pain points?
+          </p>
+
+          <p>
+            For every app we've built, we've spent weeks in problem discovery before writing a single line of code or
+            creating any wireframes. This groundwork prevents the classic trap of building something nobody wants.
+          </p>
+
+          <h2>Phase 1: Discovery and Research</h2>
+          <p>
+            Discovery is where we develop deep empathy for users and understanding of the problem space.
+          </p>
+
+          <h3>User Interviews</h3>
+          <ul>
+            <li><strong>Find Real Users:</strong> We interview people who experience the problem we're investigating—not
+              friends or family who want to be supportive. Real users provide honest, sometimes harsh, feedback.</li>
+            <li><strong>Ask Open-Ended Questions:</strong> "Tell me about the last time you tried to..." rather than
+              "Would you use an app that...?" People are terrible at predicting what they'll do, but excellent at
+              describing what they've done.</li>
+            <li><strong>Listen for Pain, Not Features:</strong> Users describe symptoms and frustrations. Our job is
+              diagnosing the underlying problem. When someone says "I wish this app had..." we ask "What are you trying
+              to accomplish?"</li>
+          </ul>
+
+          <h3>Competitive Analysis</h3>
+          <ul>
+            <li><strong>Study Existing Solutions:</strong> What apps or methods do people currently use? What do they
+              like? What frustrates them? Often, the opportunity is in solving the frustrations, not copying the
+              successes.</li>
+            <li><strong>Identify Gaps:</strong> Where do existing solutions fall short? Is there an underserved user
+              segment? A use case nobody addresses well?</li>
+            <li><strong>Learn from App Store Reviews:</strong> Reviews reveal user sentiment in their own words. We mine
+              reviews of competing apps for feature requests and complaints.</li>
+          </ul>
+
+          <p>
+            For one of our productivity apps, we spent six weeks interviewing users and analyzing competitors before
+            designing anything. That research prevented us from building features users didn't want and revealed two
+            critical needs competitors ignored.
+          </p>
+
+          <h2>Phase 2: Strategy and Positioning</h2>
+          <p>
+            With research complete, we define what we're building and why it matters.
+          </p>
+
+          <h3>Problem Statement</h3>
+          <p>
+            We write a clear problem statement: "[User type] needs [solution] because [reason]." This becomes our north
+            star. When we debate features or design decisions later, we return to this statement.
+          </p>
+
+          <h3>User Personas</h3>
+          <ul>
+            <li><strong>Based on Real Data:</strong> Personas summarize research findings, not stereotypes. We create
+              2-3 personas representing different user segments we're designing for.</li>
+            <li><strong>Include Goals and Context:</strong> What are they trying to achieve? What constraints do they
+              face (time, technical skill, environment)? What frustrates them?</li>
+            <li><strong>Use Throughout Design:</strong> When designing features, we ask "How would Sarah use this?"
+              using our persona names. It keeps design user-centered.</li>
+          </ul>
+
+          <h3>Core Experience</h3>
+          <p>
+            We define the one core experience that must be excellent. Apps fail when they try to do everything
+            adequately rather than one thing exceptionally. What's the one flow that, if perfect, makes the app
+            valuable?
+          </p>
+
+          <h2>Phase 3: Ideation and Concepts</h2>
+          <p>
+            Now we explore solutions. This phase is divergent—we generate many ideas before converging on the best one.
+          </p>
+
+          <h3>Sketching and Wireframes</h3>
+          <ul>
+            <li><strong>Quantity Over Quality:</strong> We sketch many concepts quickly. Rough sketches prevent
+              attachment to ideas and encourage exploration.</li>
+            <li><strong>Focus on Flow, Not Visuals:</strong> Early sketches focus on information architecture and user
+              flow. Visual polish comes later.</li>
+            <li><strong>Explore Extremes:</strong> We deliberately explore extreme approaches—minimalist, feature-rich,
+              unconventional navigation. This prevents defaulting to the obvious solution.</li>
+          </ul>
+
+          <h3>User Stories and Flows</h3>
+          <ul>
+            <li><strong>Map Complete Journeys:</strong> We document complete user journeys from motivation through task
+              completion. This reveals gaps and edge cases sketches miss.</li>
+            <li><strong>Happy and Unhappy Paths:</strong> What happens when things go right? What about errors, slow
+              networks, or first-time users?</li>
+            <li><strong>Reduce Friction:</strong> Every screen and tap is friction. Can we eliminate steps? Defer
+              decisions? Remember preferences?</li>
+          </ul>
+
+          <h2>Phase 4: Prototyping and Testing</h2>
+          <p>
+            Prototypes answer questions: Does this solution work? Can users accomplish their goals? What confuses them?
+          </p>
+
+          <h3>Fidelity Progression</h3>
+          <ul>
+            <li><strong>Low-Fidelity First:</strong> Paper prototypes or basic digital wireframes test concepts without
+              investing in polish. We can iterate quickly based on feedback.</li>
+            <li><strong>Interactive Prototypes:</strong> Tools like Figma let us create clickable prototypes that feel
+              like real apps. This reveals interaction issues static mockups hide.</li>
+            <li><strong>High-Fidelity Prototypes:</strong> Once the concept is validated, we add visual design,
+              animation, and realistic content.</li>
+          </ul>
+
+          <h3>Usability Testing</h3>
+          <ul>
+            <li><strong>Test Early and Often:</strong> We test prototypes with real users throughout design. Five users
+              typically reveal 85% of usability issues.</li>
+            <li><strong>Task-Based Testing:</strong> We give users realistic tasks and observe. Where do they hesitate?
+              What confuses them? What delights them?</li>
+            <li><strong>Think Aloud Protocol:</strong> We ask users to narrate their thought process. "I'm looking
+              for... I expected... I'm confused by..." This reveals mental models.</li>
+            <li><strong>Iterate Based on Findings:</strong> Testing is worthless if we don't act on findings. We
+              prioritize issues and iterate the design.</li>
+          </ul>
+
+          <p>
+            We've discarded entire interaction models after testing. It's humbling but essential. What makes sense to
+            designers who live in the app doesn't always make sense to users seeing it for the first time.
+          </p>
+
+          <h2>Phase 5: Visual Design</h2>
+          <p>
+            With validated interactions and flows, we layer on visual design that enhances usability and creates
+            emotional connection.
+          </p>
+
+          <h3>Design System Foundation</h3>
+          <ul>
+            <li><strong>Color Palette:</strong> We choose colors that reflect brand personality and ensure accessibility
+              (WCAG contrast requirements).</li>
+            <li><strong>Typography:</strong> Readable fonts sized appropriately for mobile. Hierarchy that guides
+              attention.</li>
+            <li><strong>Spacing and Layout:</strong> Consistent spacing system creates visual rhythm and polish.</li>
+            <li><strong>Components:</strong> We design reusable components (buttons, cards, inputs) ensuring consistency
+              across the app.</li>
+          </ul>
+
+          <h3>Motion and Interaction</h3>
+          <ul>
+            <li><strong>Purposeful Animation:</strong> Animation guides attention, provides feedback, and creates
+              delight—but only when purposeful. Gratuitous animation annoys users.</li>
+            <li><strong>State Communication:</strong> Visual feedback for loading, success, errors, and disabled states
+              prevents user confusion.</li>
+            <li><strong>Platform Conventions:</strong> We follow iOS and Android design guidelines. Users have platform
+              expectations—fighting them creates friction.</li>
+          </ul>
+
+          <h2>Phase 6: Development and Refinement</h2>
+          <p>
+            Design doesn't stop when development begins—it continues throughout implementation.
+          </p>
+
+          <h3>Design-Development Collaboration</h3>
+          <ul>
+            <li><strong>Shared Understanding:</strong> Designers and developers work together, not in isolation. We
+              discuss feasibility, performance implications, and edge cases together.</li>
+            <li><strong>Design Specs:</strong> We provide clear specifications—measurements, colors, states,
+              animations—but remain flexible. Implementation realities sometimes require design adjustments.</li>
+            <li><strong>Review Builds:</strong> Designers test builds throughout development, catching visual bugs and
+              interaction issues early.</li>
+          </ul>
+
+          <h3>Beta Testing</h3>
+          <ul>
+            <li><strong>Real-World Usage:</strong> Beta testers use the app in their actual context—revealing issues lab
+              testing misses.</li>
+            <li><strong>Analytics Integration:</strong> We track how beta users actually use the app. Which features do
+              they use? Where do they get stuck?</li>
+            <li><strong>Feedback Loops:</strong> Beta testers provide qualitative feedback complementing quantitative
+              analytics.</li>
+          </ul>
+
+          <h2>Phase 7: Launch and Learning</h2>
+          <p>
+            Launch is the beginning, not the end. Real users at scale reveal what testing cannot.
+          </p>
+
+          <h3>Post-Launch Monitoring</h3>
+          <ul>
+            <li><strong>Analytics Review:</strong> Are users completing key flows? Where do they drop off? What features
+              go unused?</li>
+            <li><strong>App Store Reviews:</strong> Reviews reveal user sentiment and feature requests. We read every
+              review.</li>
+            <li><strong>Support Inquiries:</strong> Support tickets identify pain points and confusing interfaces.</li>
+          </ul>
+
+          <h3>Continuous Improvement</h3>
+          <p>
+            We maintain a prioritized backlog of improvements based on data and feedback. Each update addresses
+            high-priority issues and adds carefully considered features. Design is never "done"—it evolves with user
+            needs.
+          </p>
+
+          <div
+            style="background: rgba(0, 212, 255, 0.1); border-left: 4px solid var(--color-accent); padding: var(--space-6); border-radius: var(--radius-md); margin: var(--space-10) 0;">
+            <h3 style="margin-top: 0;">Key Takeaways</h3>
+            <ul style="margin-bottom: 0;">
+              <li>Start with problem discovery, not solutions—understand users first</li>
+              <li>Test early and often with real users, not assumptions</li>
+              <li>Focus on one core experience that must be exceptional</li>
+              <li>Use low-fidelity prototypes early to test concepts cheaply</li>
+              <li>Design and development are collaborative, not sequential</li>
+              <li>Launch is just the beginning—iterate based on real usage</li>
+            </ul>
+          </div>
+
+          <h2>Conclusion</h2>
+          <p>
+            Our design process is structured but flexible. We follow these phases for every app, but the timeline and
+            emphasis vary based on project complexity and uncertainty. A simple utility app might spend less time in
+            research than a novel concept.
+          </p>
+
+          <p>
+            The common thread is user-centricity. Every decision—from feature prioritization to button placement—is
+            guided by user needs and validated through testing. We design for real people solving real problems, not for
+            design awards or personal preferences.
+          </p>
+
+          <p>
+            Great design requires both creativity and rigor—imagination to envision better experiences, and discipline
+            to validate ideas through research and testing. This process isn't glamorous, but it works. It's how we've
+            built apps people actually use and enjoy.
+          </p>
+
+        </div>
+
+        <div class="share-buttons">
+          <span style="color: var(--color-text-tertiary); margin-right: var(--space-2);">Share:</span>
+          <button class="share-button" aria-label="Share on Twitter" onclick="shareOnTwitter()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
+            </svg>
+          </button>
+          <button class="share-button" aria-label="Share on Facebook" onclick="shareOnFacebook()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+            </svg>
+          </button>
+          <button class="share-button" aria-label="Share on LinkedIn" onclick="shareOnLinkedIn()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
+              <circle cx="4" cy="4" r="2" />
+            </svg>
+          </button>
+          <button class="share-button" aria-label="Copy link" onclick="copyLink()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" />
+              <path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="author-bio">
+          <div class="author-avatar"></div>
+          <div>
+            <h3 style="margin-bottom: var(--space-2);">About the Author</h3>
+            <p style="margin-bottom: var(--space-3); color: var(--color-text-secondary);">
+              The <strong>AppMaven Team</strong> consists of passionate developers and designers dedicated to creating
+              exceptional mobile experiences. We share insights from our journey building apps used by thousands of
+              users worldwide.
+            </p>
+            <a href="/about/" style="color: var(--color-accent); text-decoration: none; font-size: var(--text-sm);">
+              Learn more about us →
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <div style="display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-4);">
+            <img src="/assets/images/logo/appmaven_logo.png" alt="AppMaven Studio Logo"
+              style="height: 32px; width: 32px; border-radius: 8px;">
+            <span style="font-size: var(--text-xl); font-weight: var(--font-bold);">AppMaven Studio</span>
+          </div>
+          <p style="color: var(--color-text-secondary); margin-bottom: var(--space-4); line-height: 1.6;">
+            Crafting innovative mobile experiences that users love. We combine clean design with powerful functionality
+            to
+            build the future, one app at a time.
+          </p>
+        </div>
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/apps/">Apps</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/support/">Support</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="/terms-of-service.html">Terms of Service</a></li>
+            <li><a href="/data-deletion/">Data Deletion</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:hacong86@gmail.com">hacong86@gmail.com</a></li>
+            <li><a href="tel:+84972865336">+84 972 865 336</a></li>
+            <li><a href="https://github.com/hacong86" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 AppMaven Studio. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+  <script>
+    function shareOnTwitter() {
+      const url = encodeURIComponent(window.location.href);
+      const text = encodeURIComponent(document.title);
+      window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, '_blank', 'width=600,height=400');
+    }
+    function shareOnFacebook() {
+      const url = encodeURIComponent(window.location.href);
+      window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank', 'width=600,height=400');
+    }
+    function shareOnLinkedIn() {
+      const url = encodeURIComponent(window.location.href);
+      window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, '_blank', 'width=600,height=400');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        alert('Link copied to clipboard!');
+      });
+    }
+  </script>
+
+</body>
+
+</html>

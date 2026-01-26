@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Trial Shield: Subscription Manager & Free Trial Tracker | Privacy First</title>
+    <meta name="title" content="Trial Shield: Subscription Manager & Free Trial Tracker | Privacy First">
+    <meta name="description"
+        content="Take control of your digital spending with Trial Shield. The offline subscription manager that tracks renewals and sends free trial alerts. No bank connection required.">
+    <meta name="keywords"
+        content="subscription manager, free trial tracker, cancel subscription reminder, privacy finance app, offline budget tracker, digital spending manager, renewal alerts">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://appmavenstudio.com/apps/trial-shield/">
+    <meta property="og:title" content="Trial Shield: Stop Surprise Subscription Charges">
+    <meta property="og:description"
+        content="Easily track renewal dates, avoid unexpected charges, and stay organized with smart reminders. 100% Offline. Privacy First.">
+    <meta property="og:image" content="/assets/images/apps/trial-shield/Trial Shield.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://appmavenstudio.com/apps/trial-shield/">
+    <meta property="twitter:title" content="Trial Shield: Subscription Manager">
+    <meta property="twitter:description" content="Never forget to cancel a free trial again. Get Trial Shield today.">
+    <meta property="twitter:image" content="/assets/images/apps/trial-shield/Trial Shield.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/images/logo/favicon.png">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/assets/css/variables.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/components.css">
+
+    <style>
+        /* Bento Grid Layout Specifics */
+        .bento-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--space-8) var(--space-4);
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: auto auto auto;
+            gap: var(--space-6);
+        }
+
+        .bento-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-xl);
+            padding: var(--space-8);
+            overflow: hidden;
+            position: relative;
+            background: rgba(17, 24, 39, 0.7);
+            /* Darker base for better contrast */
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .bento-card:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Grid Areas */
+        .area-header {
+            grid-column: span 12;
+            grid-row: span 1;
+            display: flex;
+            align-items: center;
+            gap: var(--space-8);
+        }
+
+        @media (min-width: 992px) {
+            .area-header {
+                grid-column: span 9;
+            }
+
+            .area-safety {
+                grid-column: span 3;
+                grid-row: span 1;
+            }
+
+            .area-overview {
+                grid-column: span 5;
+            }
+
+            .area-features {
+                grid-column: span 7;
+            }
+
+            .area-gallery {
+                grid-column: span 7;
+            }
+
+            .area-faq {
+                grid-column: span 5;
+            }
+        }
+
+        @media (max-width: 991px) {
+
+            .area-header,
+            .area-safety,
+            .area-overview,
+            .area-features,
+            .area-gallery,
+            .area-faq {
+                grid-column: span 12;
+            }
+        }
+
+        /* Header Content */
+        .app-icon-large {
+            width: 120px;
+            height: 120px;
+            border-radius: var(--radius-xl);
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+            /* Green glow for Trial Shield */
+            flex-shrink: 0;
+        }
+
+        /* Store Buttons CSS */
+        .store-button {
+            display: inline-flex;
+            align-items: center;
+            background: #000;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 6px 16px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin-right: 12px;
+            margin-bottom: 12px;
+        }
+
+        .store-button:hover {
+            background: #1a1a1a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .store-button svg {
+            width: 24px;
+            height: 24px;
+            margin-right: 12px;
+            fill: currentColor;
+        }
+
+        .store-button-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            line-height: 1.2;
+        }
+
+        .store-button-subtitle {
+            font-size: 10px;
+            text-transform: uppercase;
+            opacity: 0.8;
+        }
+
+        .store-button-title {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        /* Feature List */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-6);
+        }
+
+        .feature-item {
+            display: flex;
+            gap: var(--space-3);
+        }
+
+        .feature-icon-box {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Screenshots */
+        .screenshot-scroll {
+            display: flex;
+            gap: var(--space-4);
+            overflow-x: auto;
+            padding-bottom: var(--space-4);
+            scrollbar-width: thin;
+            scrollbar-color: var(--color-accent) transparent;
+        }
+
+        .screenshot-img {
+            height: 400px;
+            width: auto;
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-right: 10px;
+        }
+
+        /* Sidebar Links */
+        .safety-link {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            padding: var(--space-3);
+            border-radius: var(--radius-md);
+            color: var(--color-text-secondary);
+            transition: all 0.2s;
+        }
+
+        .safety-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        /* FAQ */
+        .faq-summary {
+            padding: var(--space-4);
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--space-3);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+
+        .faq-summary:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        details[open] .faq-summary {
+            background: rgba(16, 185, 129, 0.2);
+            /* Emerald accent */
+        }
+
+        .faq-text {
+            padding: var(--space-4);
+            color: var(--color-text-secondary);
+        }
+
+        .seo-content-section {
+            margin-top: var(--space-8);
+            padding-top: var(--space-8);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--color-text-secondary);
+        }
+
+        .seo-content-section h2 {
+            color: #6ee7b7;
+            /* Emerald-300 */
+            margin-top: var(--space-6);
+        }
+
+        .seo-content-section h3 {
+            color: #a7f3d0;
+            margin-top: var(--space-4);
+            margin-bottom: var(--space-2);
+            font-size: 1.1rem;
+        }
+
+        .seo-content-section p {
+            margin-bottom: var(--space-4);
+            line-height: 1.7;
+        }
+
+        h2 {
+            margin-bottom: var(--space-4);
+            font-size: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: var(--space-2);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="navbar-container">
+            <a href="/" class="navbar-logo" aria-label="AppMaven Studio Home">
+                <img src="/assets/images/logo/appmaven_logo.png" alt="AppMaven Studio Logo"
+                    style="height: 32px; width: 32px; border-radius: 8px;">
+                <span>AppMaven Studio</span>
+            </a>
+
+            <button class="navbar-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="navbar-menu" role="menubar">
+                <li role="none"><a href="/" role="menuitem">Home</a></li>
+                <li role="none"><a href="/apps/" role="menuitem">Apps</a></li>
+                <li role="none"><a href="/blog/" role="menuitem">Blog</a></li>
+                <li role="none"><a href="/about/" role="menuitem">About</a></li>
+                <li role="none"><a href="/support/" role="menuitem">Support</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Cosmic Background -->
+    <div class="cosmic-background"></div>
+
+    <!-- Main Content: Bento Grid -->
+    <main style="padding-top: calc(var(--header-height) + var(--space-4)); padding-bottom: var(--space-12);">
+
+        <div class="bento-container">
+
+            <!-- 1. Header Area -->
+            <div class="bento-card area-header">
+                <!-- Using icon.webp which is typically the high-res file -->
+                <img src="/assets/images/apps/trial-shield/icon.webp" alt="Trial Shield Logo" class="app-icon-large">
+                <div>
+                    <h1
+                        style="font-size: 2.5rem; font-weight: 700; background: linear-gradient(to right, #fff, #34d399); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: var(--space-2);">
+                        Trial Shield: Subscription Manager
+                    </h1>
+                    <p style="font-size: 1.25rem; color: var(--color-text-secondary); max-width: 600px;">
+                        Take control of your digital spending. The privacy-first tracked for renewals and free trials.
+                        100% Offline.
+                    </p>
+
+                    <div style="margin-top: var(--space-6); display: flex; flex-wrap: wrap;">
+                        <!-- Google Play Button -->
+                        <a href="https://play.google.com/store/apps/details?id=com.appmaven.trialshield" target="_blank"
+                            rel="noopener noreferrer" class="store-button">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.36,13.08L18.81,13.96L16.07,11.23L18.81,8.5L20.36,9.38C20.9,9.7 21.25,10.26 21.25,10.88V11.58C21.25,12.19 20.9,12.76 20.36,13.08M16.81,7.35L14.54,9.62L6.05,1.13L16.81,7.35Z" />
+                            </svg>
+                            <div class="store-button-content">
+                                <span class="store-button-subtitle">Get it on</span>
+                                <span class="store-button-title">Google Play</span>
+                            </div>
+                        </a>
+
+                        <!-- App Store Button (Coming Soon) -->
+                        <a href="#" class="store-button" style="opacity: 0.7; cursor: not-allowed;"
+                            onclick="return false;">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.13 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.43,15.65 20.08,16.66 20.08,16.66C20.03,16.8 19.7,17.96 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.37 12.36,4.26 13,3.5Z" />
+                            </svg>
+                            <div class="store-button-content">
+                                <span class="store-button-subtitle">Coming Soon to</span>
+                                <span class="store-button-title">App Store</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Data Safety & Privacy (Top Right Sidebar) -->
+            <div class="bento-card area-safety" style="display: flex; flex-direction: column; justify-content: center;">
+                <h3 style="margin-bottom: var(--space-4); font-size: 1.1rem; color: #6ee7b7;">Data Safety & Privacy</h3>
+                <div style="display: flex; flex-direction: column; gap: var(--space-2);">
+                    <a href="/privacy-policy.html" class="safety-link">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        </svg>
+                        Privacy Policy
+                    </a>
+                    <a href="/data-deletion/" class="safety-link">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                        </svg>
+                        Request Data Deletion
+                    </a>
+                </div>
+                <div
+                    style="margin-top: auto; padding-top: var(--space-4); font-size: 0.75rem; color: var(--color-text-tertiary); border-top: 1px solid rgba(255,255,255,0.05);">
+                    AppMaven Developer Portal.<br>© 2026. All rights reserved.<br>100% Offline. Encrypted.
+                </div>
+            </div>
+
+            <!-- 3. Overview -->
+            <div class="bento-card area-overview">
+                <h2>Avoid Subscription Traps</h2>
+                <p style="color: var(--color-text-secondary); line-height: 1.7;">
+                    Most productivity apps want your data. <strong>Trial Shield</strong> wants you to keep your money.
+                    It is the
+                    privacy-first subscription and free-trial manager that lives on your device.
+                </p>
+                <p style="color: var(--color-text-secondary); line-height: 1.7; margin-top: var(--space-4);">
+                    Easily track renewal dates, avoid unexpected charges, and stay organized. <br>
+                    <strong style="color: #6ee7b7;">No bank connection required. No account needed.</strong>
+                </p>
+            </div>
+
+            <!-- 4. Key Features -->
+            <div class="bento-card area-features">
+                <h2>Key Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon-box">📅</div>
+                        <div>
+                            <h4 style="color: white; margin-bottom: 2px;">Track Renewals</h4>
+                            <p style="font-size: 0.85rem; color: var(--color-text-tertiary);">See all upcoming charges
+                                in one view.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-box">🛡️</div>
+                        <div>
+                            <h4 style="color: white; margin-bottom: 2px;">Free Trial Shield</h4>
+                            <p style="font-size: 0.85rem; color: var(--color-text-tertiary);">Get alerts before the
+                                trial ends.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-box">💰</div>
+                        <div>
+                            <h4 style="color: white; margin-bottom: 2px;">Spend Overview</h4>
+                            <p style="font-size: 0.85rem; color: var(--color-text-tertiary);">Total monthly & yearly
+                                expenses.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-box">🔒</div>
+                        <div>
+                            <h4 style="color: white; margin-bottom: 2px;">Privacy First</h4>
+                            <p style="font-size: 0.85rem; color: var(--color-text-tertiary);">Data never leaves your
+                                device.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Screenshots -->
+            <div class="bento-card area-gallery">
+                <h2 style="display: flex; justify-content: space-between; align-items: center;">
+                    In Action
+                    <span style="font-size: 0.9rem; font-weight: normal; color: var(--color-text-tertiary);">Swipe to
+                        see
+                        more</span>
+                </h2>
+                <div class="screenshot-scroll">
+                    <img src="/assets/images/apps/trial-shield/Trial Shield 1.png" alt="Dashboard"
+                        class="screenshot-img">
+                    <img src="/assets/images/apps/trial-shield/Trial Shield 2.png" alt="Spending Overview"
+                        class="screenshot-img">
+                    <img src="/assets/images/apps/trial-shield/Trial Shield 3.png" alt="Add Subscription"
+                        class="screenshot-img">
+                    <img src="/assets/images/apps/trial-shield/Trial Shield.png" alt="Notifications"
+                        class="screenshot-img">
+                </div>
+            </div>
+
+            <!-- 6. FAQ -->
+            <div class="bento-card area-faq">
+                <h2>FAQ</h2>
+
+                <details>
+                    <summary class="faq-summary">Do you connect to my bank?</summary>
+                    <div class="faq-text">
+                        No. Trial Shield is a manual tracker. We do not ask for banking credentials or read your SMS.
+                        This ensures 100% privacy and security for your financial data.
+                    </div>
+                </details>
+
+                <details>
+                    <summary class="faq-summary">Does it work offline?</summary>
+                    <div class="faq-text">
+                        Yes. All data is stored locally on your device's internal database. You don't need an internet
+                        connection to view or edit your subscriptions.
+                    </div>
+                </details>
+
+                <details>
+                    <summary class="faq-summary">What is the Biometric Lock?</summary>
+                    <div class="faq-text">
+                        This is a Premium feature that allows you to lock the app using your phone's fingerprint or face
+                        unlock, adding an extra layer of security to your data.
+                    </div>
+                </details>
+
+                <details>
+                    <summary class="faq-summary">Can I backup my data?</summary>
+                    <div class="faq-text">
+                        Yes, you can export your entire subscription list to a JSON file for backup and import it later
+                        or on another device.
+                    </div>
+                </details>
+
+            </div>
+
+            <!-- 7. Detailed Description (SEO Content) -->
+            <div class="bento-card" style="grid-column: span 12; margin-top: var(--space-6);">
+                <div class="seo-content-section" style="border-top: none; padding-top: 0; margin-top: 0;">
+                    <h2>Why Trial Shield is the Must-Have Subscription Manager</h2>
+
+                    <p>
+                        In the subscription economy, it is easy to lose track of where your money is going.
+                        <strong>Trial Shield</strong> creates clarity from the chaos. As dedicated <strong>subscription
+                            manager app</strong>, it helps you consolidate all your recurring payments—streaming
+                        services, cloud storage, fitness apps—into one clean, dark-mode dashboard.
+                    </p>
+
+                    <h3>The Ultimate Free Trial Tracker</h3>
+                    <p>
+                        We've all been there: signing up for a "free 7-day trial" and forgetting to cancel, only to be
+                        charged $50 a week later. Trial Shield is your personal <strong>cancel free trial
+                            reminder</strong>. When you add a trial, our system automatically schedules robust alerts:
+                        one warning a few days before, and a "Final Call" on the last day. Save hundreds of dollars a
+                        year by stopping <strong>unexpected charges</strong> before they happen.
+                    </p>
+
+                    <h3>Privacy-First: No Banks, No Spying</h3>
+                    <p>
+                        Most finance apps want your bank login or access to read your SMS messages. We don't. Trial
+                        Shield is built on a <strong>Privacy First</strong> architecture. We are an <strong>offline
+                            subscription tracker</strong>; your data lives in a secure Sandbox on your phone and never
+                        touches our servers. This makes it the perfect tool for privacy-conscious users who want to
+                        manage their budget without exposing their financial life.
+                    </p>
+
+                    <h3>Reliable Alerts on Android 12-15</h3>
+                    <p>
+                        Notifications on modern Android can be tricky due to battery optimization. Trial Shield utilizes
+                        a custom hybrid WorkManager + AlarmManager system designed explicitly for Android 12 through 15.
+                        This ensures your <strong>renewal alerts</strong> arrive exactly at 9:00 AM, every time. We even
+                        include a persistence check to ensure you never miss a bill.
+                    </p>
+
+                    <h3>Understand Your Digital Spending</h3>
+                    <p>
+                        Knowledge is power. Trial Shield provides a powerful <strong>spend overview</strong> that
+                        instantly calculates your total monthly and yearly liability. View your spending separated by
+                        currency without messy conversions. Whether you are a student managing a tight budget or a
+                        freelancer tracking software costs, this <strong>digital spending manager</strong> gives you the
+                        financial visibility you need.
+                    </p>
+
+                    <p style="margin-top: var(--space-8); font-size: 0.9rem; opacity: 0.7;">
+                        <em>Take back control of your wallet. Download Trial Shield today. Works offline. No ads
+                            (Premium). Secure.</em>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div
+                        style="display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-4);">
+                        <img src="/assets/images/logo/appmaven_logo.png" alt="AppMaven Studio Logo"
+                            style="height: 32px; width: 32px; border-radius: 8px;">
+                        <span style="font-size: var(--text-xl); font-weight: var(--font-bold);">AppMaven Studio</span>
+                    </div>
+                    <p style="color: var(--color-text-secondary); margin-bottom: var(--space-4); line-height: 1.6;">
+                        Crafting innovative mobile experiences that users love. We combine clean design with powerful
+                        functionality to
+                        build the future, one app at a time.
+                    </p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/apps/">Apps</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="/support/">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="/data-deletion/">Data Deletion</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:hacong86@gmail.com">hacong86@gmail.com</a></li>
+                        <li><a href="tel:+84972865336">+84 972 865 336</a></li>
+                        <li><a href="https://github.com/hacong86" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AppMaven Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/assets/js/main.js"></script>
+
+</body>
+
+</html>

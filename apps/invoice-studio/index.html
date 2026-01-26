@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Tạo Hóa Đơn & Quản Lý Shop: App Báo Giá Chuyên Nghiệp | AppMaven Studio</title>
+    <meta name="title" content="Tạo Hóa Đơn & Quản Lý Shop: App Báo Giá Chuyên Nghiệp | AppMaven Studio">
+    <meta name="description"
+        content="Ứng dụng tạo hóa đơn, báo giá, quản lý đơn hàng số 1 cho chủ shop online và freelancer. Nhập liệu bằng giọng nói, tạo VietQR, quản lý công nợ, in hóa đơn nhanh chóng.">
+    <meta name="keywords"
+        content="tạo hóa đơn, quản lý shop, báo giá, sổ bán hàng, quản lý thu chi, in hóa đơn, vietqr, quản lý công nợ, kinh doanh online">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://appmavenstudio.com/apps/invoice-studio/">
+    <meta property="og:title" content="Tạo Hóa Đơn - Giải Pháp Quản Lý Shop 4.0">
+    <meta property="og:description"
+        content="Tạo đơn hàng, gửi báo giá chỉ trong 15 giây. Bảo mật tuyệt đối, hỗ trợ VietQR và nhập liệu giọng nói thông minh.">
+    <meta property="og:image" content="/assets/images/apps/invoice-studio/taohoadon01.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://appmavenstudio.com/apps/invoice-studio/">
+    <meta property="twitter:title" content="Tạo Hóa Đơn & Quản Lý Shop">
+    <meta property="twitter:description"
+        content="Tạm biệt sổ sách thủ công. Quản lý kinh doanh chuyên nghiệp ngay trên điện thoại.">
+    <meta property="twitter:image" content="/assets/images/apps/invoice-studio/taohoadon01.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/images/logo/favicon.png">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/assets/css/variables.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/components.css">
+
+    <style>
+        /* Bento Grid Layout Specifics */
+        .bento-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--space-8) var(--space-4);
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: auto auto auto;
+            gap: var(--space-6);
+        }
+
+        .bento-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-xl);
+            padding: var(--space-8);
+            overflow: hidden;
+            position: relative;
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .bento-card:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Grid Areas */
+        .area-header {
+            grid-column: span 12;
+            grid-row: span 1;
+            display: flex;
+            align-items: center;
+            gap: var(--space-8);
+        }
+
+        @media (min-width: 992px) {
+            .area-header {
+                grid-column: span 9;
+            }
+
+            .area-safety {
+                grid-column: span 3;
+                grid-row: span 1;
+            }
+
+            .area-overview {
+                grid-column: span 5;
+            }
+
+            .area-features {
+                grid-column: span 7;
+            }
+
+            .area-gallery {
+                grid-column: span 7;
+            }
+
+            .area-faq {
+                grid-column: span 5;
+            }
+        }
+
+        @media (max-width: 991px) {
+
+            .area-header,
+            .area-safety,
+            .area-overview,
+            .area-features,
+            .area-gallery,
+            .area-faq {
+                grid-column: span 12;
+            }
+        }
+
+        /* Header Content */
+        .app-icon-large {
+            width: 120px;
+            height: 120px;
+            border-radius: var(--radius-xl);
+            box-shadow: 0 0 20px rgba(5, 150, 105, 0.4);
+            /* Emerald Green glow */
+            flex-shrink: 0;
+        }
+
+        /* Store Buttons CSS */
+        .store-button {
+            display: inline-flex;
+            align-items: center;
+            background: #000;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 6px 16px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin-right: 12px;
+            margin-bottom: 12px;
+        }
+
+        .store-button:hover {
+            background: #1a1a1a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .store-button svg {
+            width: 24px;
+            height: 24px;
+            margin-right: 12px;
+            fill: currentColor;
+        }
+
+        .store-button-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            line-height: 1.2;
+        }
+
+        .store-button-subtitle {
+            font-size: 10px;
+            text-transform: uppercase;
+            opacity: 0.8;
+        }
+
+        .store-button-title {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        /* Feature List */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-6);
+        }
+
+        .feature-item {
+            display: flex;
+            gap: var(--space-3);
+        }
+
+        .feature-icon-box {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Screenshots */
+        .screenshot-scroll {
+            display: flex;
+            gap: var(--space-4);
+            overflow-x: auto;
+            padding-bottom: var(--space-4);
+            scrollbar-width: thin;
+            scrollbar-color: var(--color-accent) transparent;
+        }
+
+        .screenshot-img {
+            height: 400px;
+            width: auto;
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Sidebar Links */
+        .safety-link {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            padding: var(--space-3);
+            border-radius: var(--radius-md);
+            color: var(--color-text-secondary);
+            transition: all 0.2s;
+        }
+
+        .safety-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        /* FAQ */
+        .faq-summary {
+            padding: var(--space-4);
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--space-3);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+
+        .faq-summary:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        details[open] .faq-summary {
+            background: rgba(16, 185, 129, 0.2);
+            /* Emerald accent */
+        }
+
+        .faq-text {
+            padding: var(--space-4);
+            color: var(--color-text-secondary);
+        }
+
+        .seo-content-section {
+            margin-top: var(--space-8);
+            padding-top: var(--space-8);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--color-text-secondary);
+        }
+
+        .seo-content-section h2 {
+            color: #6ee7b7;
+            /* Light emerald */
+            margin-top: var(--space-6);
+        }
+
+        .seo-content-section h3 {
+            color: #d1fae5;
+            margin-top: var(--space-4);
+            margin-bottom: var(--space-2);
+            font-size: 1.1rem;
+        }
+
+        .seo-content-section p {
+            margin-bottom: var(--space-4);
+            line-height: 1.7;
+        }
+
+        .seo-content-section ul {
+            margin-bottom: var(--space-4);
+            padding-left: var(--space-6);
+            line-height: 1.7;
+        }
+
+        .seo-content-section li {
+            margin-bottom: var(--space-2);
+        }
+
+        h2 {
+            margin-bottom: var(--space-4);
+            font-size: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: var(--space-2);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="navbar-container">
+            <a href="/" class="navbar-logo" aria-label="AppMaven Studio Home">
+                <img src="/assets/images/logo/appmaven_logo.png" alt="AppMaven Studio Logo"
+                    style="height: 32px; width: 32px; border-radius: 8px;">
+                <span>AppMaven Studio</span>
+            </a>
+
+            <button class="navbar-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="navbar-menu" role="menubar">
+                <li role="none"><a href="/" role="menuitem">Home</a></li>
+                <li role="none"><a href="/apps/" role="menuitem">Apps</a></li>
+                <li role="none"><a href="/blog/" role="menuitem">Blog</a></li>
+                <li role="none"><a href="/about/" role="menuitem">About</a></li>
+                <li role="none"><a href="/support/" role="menuitem">Support</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Cosmic Background -->
+    <div class="cosmic-background"></div>
+
+    <!-- Main Content: Bento Grid -->
+    <main style="padding-top: calc(var(--header-height) + var(--space-4)); padding-bottom: var(--space-12);">
+
+        <div class="bento-container">
+
+            <!-- 1. Header Area -->
+            <div class="bento-card area-header">
+                <img src="/assets/images/apps/invoice-studio/icon.webp" alt="Invoice Studio Logo"
+                    class="app-icon-large">
+                <div>
+                    <h1
+                        style="font-size: 2.5rem; font-weight: 700; background: linear-gradient(to right, #fff, #34d399); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: var(--space-2);">
+                        Tạo Hóa Đơn & Quản Lý Shop
+                    </h1>
+                    <p style="font-size: 1.25rem; color: var(--color-text-secondary); max-width: 600px;">
+                        Giải pháp 4.0 cho chủ shop online. Tạo báo giá, đơn hàng, hóa đơn chỉ trong 15 giây. Nhập liệu
+                        giọng nói cực nhanh.
+                    </p>
+
+                    <div style="margin-top: var(--space-6); display: flex; flex-wrap: wrap;">
+                        <!-- Google Play Button -->
+                        <a href="https://play.google.com/store/apps/details?id=com.appmaven.invoicemake" target="_blank"
+                            rel="noopener noreferrer" class="store-button">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.36,13.08L18.81,13.96L16.07,11.23L18.81,8.5L20.36,9.38C20.9,9.7 21.25,10.26 21.25,10.88V11.58C21.25,12.19 20.9,12.76 20.36,13.08M16.81,7.35L14.54,9.62L6.05,1.13L16.81,7.35Z" />
+                            </svg>
+                            <div class="store-button-content">
+                                <span class="store-button-subtitle">Get it on</span>
+                                <span class="store-button-title">Google Play</span>
+                            </div>
+                        </a>
+
+                        <!-- App Store Button (Coming Soon) -->
+                        <a href="#" class="store-button" style="opacity: 0.7; cursor: not-allowed;"
+                            onclick="return false;">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.13 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.43,15.65 20.08,16.66 20.08,16.66C20.03,16.8 19.7,17.96 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.37 12.36,4.26 13,3.5Z" />
+                            </svg>
+                            <div class="store-button-content">
+                                <span class="store-button-subtitle">Coming Soon to</span>
+                                <span class="store-button-title">App Store</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Data Safety & Privacy (Top Right Sidebar) -->
+            <div class="bento-card area-safety" style="display: flex; flex-direction: column; justify-content: center;">
+                <h3 style="margin-bottom: var(--space-4); font-size: 1.1rem; color: #6ee7b7;">Bảo Mật & Riêng Tư</h3>
+                <div style="display: flex; flex-direction: column; gap: var(--space-2);">
+                    <a href="/privacy-policy.html" class="safety-link">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        </svg>
+                        Chính Sách Quyền Riêng Tư
+                    </a>
+                    <a href="/data-deletion/" class="safety-link">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                        </svg>
+                        Yêu Cầu Xóa Dữ Liệu
+                    </a>
+                </div>
+                <div
+                    style="margin-top: auto; padding-top: var(--space-4); font-size: 0.75rem; color: var(--color-text-tertiary); border-top: 1px solid rgba(255,255,255,0.05);">
+                    AppMaven Developer Portal.<br>© 2026. All rights reserved.<br>Dữ liệu 100% Offline trên máy bạn.
+                </div>
+            </div>
+
+            <!-- 3. Overview -->
+            <div class="bento-card area-overview">
+                <h2>Giải Pháp Quản Lý Kinh Doanh Trong Tầm Tay</h2>
+                <p style="color: var(--color-text-secondary); line-height: 1.7;">
+                    Bạn là chủ shop online, người bán hàng tạp hóa hay freelancer? Bạn cần sự chuyên nghiệp nhưng ngại
+                    sổ sách rườm rà hay phần mềm máy tính phức tạp?
+                </p>
+                <p style="color: var(--color-text-secondary); line-height: 1.7; margin-top: var(--space-4);">
+                    <strong>Tạo Hóa Đơn & Quản Lý Shop</strong> là ứng dụng thuần Việt, thiết kế riêng cho thói quen
+                    kinh doanh của người Việt. Giúp bạn tạo báo giá, đơn hàng và quản lý công nợ một cách chính xác, an
+                    toàn, mọi lúc mọi nơi.
+                </p>
+            </div>
+
+            <!-- 4. Key Features -->
+            <div class="bento-card area-features">
+                <h2>Tính Năng Nổi Bật</h2>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon-box">🎙️</div>
+                        <div>
+                            <h4 style="color: white; margin-bottom: 2px;">Nhập Liệu Giọng Nói</h4>
+                            <p style="font-size: 0.85rem; color: var(--color-text-tertiary);">Nói tên sản phẩm, app tự
+                                điền thông tin.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-box">📄</div>
+                        <div>
+                            <h4 style="color: white; margin-bottom: 2px;">Bộ 3 Chứng Từ</h4>
+                            <p style="font-size: 0.85rem; color: var(--color-text-tertiary);">Tạo Báo Giá - Đơn Hàng -
+                                Hóa Đơn 3in1.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-box">💰</div>
+                        <div>
+                            <h4 style="color: white; margin-bottom: 2px;">Quản Lý Sổ Nợ</h4>
+                            <p style="font-size: 0.85rem; color: var(--color-text-tertiary);">Theo dõi ai nợ, ai đã trả
+                                tự động.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-box">💳</div>
+                        <div>
+                            <h4 style="color: white; margin-bottom: 2px;">VietQR Thông Minh</h4>
+                            <p style="font-size: 0.85rem; color: var(--color-text-tertiary);">Tạo QR chuyển khoản kèm số
+                                tiền chuẩn xác.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Screenshots -->
+            <div class="bento-card area-gallery">
+                <h2 style="display: flex; justify-content: space-between; align-items: center;">
+                    Giao Diện Ứng Dụng
+                    <span style="font-size: 0.9rem; font-weight: normal; color: var(--color-text-tertiary);">Vuốt để xem
+                        thêm</span>
+                </h2>
+                <div class="screenshot-scroll">
+                    <img src="/assets/images/apps/invoice-studio/taohoadon01.png" alt="Tạo Hóa Đơn Trang Chủ"
+                        class="screenshot-img">
+                    <img src="/assets/images/apps/invoice-studio/taohoadon02.png" alt="Tạo Báo Giá Chuyên Nghiệp"
+                        class="screenshot-img">
+                    <img src="/assets/images/apps/invoice-studio/taohoadon03.png" alt="Quản Lý Đơn Hàng"
+                        class="screenshot-img">
+                    <img src="/assets/images/apps/invoice-studio/taohoadon04.png" alt="Quản Lý Công Nợ"
+                        class="screenshot-img">
+                    <img src="/assets/images/apps/invoice-studio/taohoadon05.png" alt="Thống Kê Doanh Thu"
+                        class="screenshot-img">
+                </div>
+            </div>
+
+            <!-- 6. FAQ -->
+            <div class="bento-card area-faq">
+                <h2>Câu Hỏi Thường Gặp (FAQ)</h2>
+
+                <details>
+                    <summary class="faq-summary">Dữ liệu khách hàng có bị lộ không?</summary>
+                    <div class="faq-text">
+                        Tuyệt đối không. Ứng dụng hoạt động với cơ chế <strong>Offline First</strong> (Ưu tiếp Offline).
+                        Mọi thông tin về doanh thu, khách hàng được lưu trữ cục bộ trên máy của bạn, không gửi lên máy
+                        chủ online nào cả.
+                    </div>
+                </details>
+
+                <details>
+                    <summary class="faq-summary">Tôi có thể in hóa đơn ra giấy không?</summary>
+                    <div class="faq-text">
+                        Có. Ứng dụng hỗ trợ kết nối với máy in nhiệt qua Bluetooth hoặc Wifi để in hóa đơn giấy chuyên
+                        nghiệp. Ngoài ra bạn có thể xuất file ảnh sắc nét để gửi qua Zalo/Messenger.
+                    </div>
+                </details>
+
+                <details>
+                    <summary class="faq-summary">Chức năng bảo mật hoạt động thế nào?</summary>
+                    <div class="faq-text">
+                        Bạn có thể khóa ứng dụng bằng mật khẩu, vân tay hoặc FaceID. Điều này đảm bảo chỉ mình bạn mới
+                        có thể mở ứng dụng và xem các số liệu nhạy cảm về doanh thu.
+                    </div>
+                </details>
+
+            </div>
+
+            <!-- 7. Detailed Description (SEO Content) -->
+            <div class="bento-card" style="grid-column: span 12; margin-top: var(--space-6);">
+                <div class="seo-content-section" style="border-top: none; padding-top: 0; margin-top: 0;">
+                    <h2>Tại Sao Người Việt Tin Dùng "Tạo Hóa Đơn"?</h2>
+
+                    <p>
+                        Kinh doanh thời 4.0 đòi hỏi tốc độ và sự chuyên nghiệp. Khách hàng không muốn chờ đợi một báo
+                        giá viết tay nguệch ngoạc. <strong>Tạo Hóa Đơn & Quản Lý Shop</strong> giúp bạn nâng tầm hình
+                        ảnh cửa hàng chỉ với một chiếc điện thoại.
+                    </p>
+
+                    <h3>Bộ Công Cụ 3-Trong-1 Mạnh Mẽ</h3>
+                    <ul>
+                        <li><strong>Báo Giá (Quotation):</strong> Gửi báo giá đẹp, chi tiết để chốt đơn nhanh hơn.</li>
+                        <li><strong>Đơn Hàng (Order):</strong> Chốt số lượng, giá cả với khách hàng trước khi giao.</li>
+                        <li><strong>Hóa Đơn (Invoice):</strong> Tính toán tổng tiền, chiết khấu tự động. Chuyển đổi từ
+                            báo giá sang hóa đơn chỉ với 1 cú chạm.</li>
+                    </ul>
+
+                    <h3>Quản Lý Công Nợ & CRM</h3>
+                    <p>
+                        Quên đi nỗi lo thất thoát tiền bạc. <strong>Sổ Nợ Điện Tử</strong> tự động theo dõi ai đã trả
+                        tiền, ai còn nợ (unpaid). Danh bạ khách hàng lưu trữ lịch sử mua sắm giúp bạn chăm sóc khách
+                        hàng tốt hơn (CRM).
+                    </p>
+
+                    <h3>Thanh Toán Hiện Đại Cùng VietQR</h3>
+                    <p>
+                        Tự động tạo mã QR chuyển khoản bao gồm chính xác số tiền và nội dung đơn hàng. Khách hàng chỉ
+                        cần quét và thanh toán, tránh nhầm lẫn số tiền hoặc số tài khoản.
+                    </p>
+
+                    <p style="margin-top: var(--space-8); font-size: 0.9rem; opacity: 0.7;">
+                        <em>Tải ngay Tạo Hóa Đơn để trải nghiệm giải pháp quản lý kinh doanh "trong lòng bàn tay". Phù
+                            hợp cho chủ shop online, cửa hàng tạp hóa, nhà thầu xây dựng và freelancer. Tiết kiệm thời
+                            gian, tối ưu lợi nhuận ngay hôm nay!</em>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div
+                        style="display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-4);">
+                        <img src="/assets/images/logo/appmaven_logo.png" alt="AppMaven Studio Logo"
+                            style="height: 32px; width: 32px; border-radius: 8px;">
+                        <span style="font-size: var(--text-xl); font-weight: var(--font-bold);">AppMaven Studio</span>
+                    </div>
+                    <p style="color: var(--color-text-secondary); margin-bottom: var(--space-4); line-height: 1.6;">
+                        Kiến tạo trải nghiệm di động đột phá. Chúng tôi kết hợp thiết kế tinh tế với công nghệ mạnh mẽ
+                        để xây dựng
+                        tương lai, qua từng ứng dụng.
+                    </p>
+                </div>
+                <div class="footer-column">
+                    <h4>Liên Kết Nhanh</h4>
+                    <ul>
+                        <li><a href="/">Trang Chủ</a></li>
+                        <li><a href="/apps/">Ứng Dụng</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/about/">Về Chúng Tôi</a></li>
+                        <li><a href="/support/">Hỗ Trợ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Pháp Lý</h4>
+                    <ul>
+                        <li><a href="/privacy-policy.html">Chính Sách Riêng Tư</a></li>
+                        <li><a href="/terms-of-service.html">Điều Khoản Dịch Vụ</a></li>
+                        <li><a href="/data-deletion/">Xóa Dữ Liệu</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Liên Hệ</h4>
+                    <ul>
+                        <li><a href="mailto:hacong86@gmail.com">hacong86@gmail.com</a></li>
+                        <li><a href="tel:+84972865336">+84 972 865 336</a></li>
+                        <li><a href="https://github.com/hacong86" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AppMaven Studio. Bảo lưu mọi quyền.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/assets/js/main.js"></script>
+
+</body>
+
+</html>

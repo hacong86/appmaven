@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Server Test - AppMaven Studio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #0a0e27;
+      color: white;
+    }
+    .success {
+      background: rgba(16, 185, 129, 0.2);
+      border: 2px solid #10b981;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+    h1 { color: #1a75ff; }
+    a {
+      color: #1a75ff;
+      text-decoration: none;
+      padding: 10px 20px;
+      background: rgba(26, 117, 255, 0.2);
+      border-radius: 6px;
+      display: inline-block;
+      margin: 10px 5px;
+    }
+    a:hover { background: rgba(26, 117, 255, 0.4); }
+    code {
+      background: rgba(255,255,255,0.1);
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+  <div class="success">
+    <h1>✅ Server đang chạy thành công!</h1>
+    <p><strong>Port:</strong> 8000</p>
+    <p><strong>Status:</strong> HTTP 200 OK</p>
+    <p><strong>Time:</strong> <span id="time"></span></p>
+  </div>
+
+  <h2>📋 Test Links:</h2>
+  <div>
+    <a href="/index.html">Homepage</a>
+    <a href="/apps/">Apps Listing</a>
+    <a href="/blog/">Blog</a>
+    <a href="/about/">About</a>
+    <a href="/support/">Support</a>
+  </div>
+
+  <h2>🎨 CSS Files:</h2>
+  <div>
+    <a href="/assets/css/variables.css">variables.css</a>
+    <a href="/assets/css/main.css">main.css</a>
+    <a href="/assets/css/components.css">components.css</a>
+  </div>
+
+  <h2>💡 Tips:</h2>
+  <ul>
+    <li>Nếu trang chính không load, thử <code>Ctrl + Shift + R</code> (hard refresh)</li>
+    <li>Clear browser cache nếu vẫn không work</li>
+    <li>Kiểm tra Console (F12) để xem lỗi</li>
+  </ul>
+
+  <script>
+    document.getElementById('time').textContent = new Date().toLocaleTimeString();
+  </script>
+</body>
+</html>

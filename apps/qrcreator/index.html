@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>QRCreator: Advanced QR Code Generator & Scanner | AppMaven Studio</title>
+    <meta name="title" content="QRCreator: Advanced QR Code Generator & Scanner | AppMaven Studio">
+    <meta name="description"
+        content="The all-in-one QR solution. Generate custom QR codes for Wi-Fi, URLs, contacts, and more. Scan instantly with the built-in reader. Secure, fast, and user-friendly.">
+    <meta name="keywords"
+        content="qr code generator, qr scanner, custom qr code, wifi qr code, vcard generator, barcode scanner, secure qr code, qr code manager">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://appmavenstudio.com/apps/qrcreator/">
+    <meta property="og:title" content="QRCreator: Generate & Scan QR Codes Pro">
+    <meta property="og:description"
+        content="Create stylized QR codes with logos and colors. Scan anything in seconds. The ultimate tool for business and personal use.">
+    <meta property="og:image" content="/assets/images/apps/qrcreator/qrcreator01.webp">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://appmavenstudio.com/apps/qrcreator/">
+    <meta property="twitter:title" content="QRCreator: The Power of QR in Your Pocket">
+    <meta property="twitter:description" content="Generate, customize, and scan. Your complete QR toolkit.">
+    <meta property="twitter:image" content="/assets/images/apps/qrcreator/qrcreator01.webp">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/images/logo/favicon.png">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/assets/css/variables.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/components.css">
+
+    <style>
+        /* Bento Grid Layout Specifics */
+        .bento-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--space-8) var(--space-4);
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: auto auto auto;
+            gap: var(--space-6);
+        }
+
+        .bento-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-xl);
+            padding: var(--space-8);
+            overflow: hidden;
+            position: relative;
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .bento-card:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Grid Areas */
+        .area-header {
+            grid-column: span 12;
+            grid-row: span 1;
+            display: flex;
+            align-items: center;
+            gap: var(--space-8);
+        }
+
+        @media (min-width: 992px) {
+            .area-header {
+                grid-column: span 9;
+            }
+
+            .area-safety {
+                grid-column: span 3;
+                grid-row: span 1;
+            }
+
+            .area-overview {
+                grid-column: span 5;
+            }
+
+            .area-features {
+                grid-column: span 7;
+            }
+
+            .area-gallery {
+                grid-column: span 7;
+            }
+
+            .area-faq {
+                grid-column: span 5;
+            }
+        }
+
+        @media (max-width: 991px) {
+
+            .area-header,
+            .area-safety,
+            .area-overview,
+            .area-features,
+            .area-gallery,
+            .area-faq {
+                grid-column: span 12;
+            }
+        }
+
+        /* Header Content */
+        .app-icon-large {
+            width: 120px;
+            height: 120px;
+            border-radius: var(--radius-xl);
+            box-shadow: 0 0 20px rgba(124, 58, 237, 0.4);
+            /* Violet glow */
+            flex-shrink: 0;
+        }
+
+        /* Store Buttons CSS */
+        .store-button {
+            display: inline-flex;
+            align-items: center;
+            background: #000;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 6px 16px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin-right: 12px;
+            margin-bottom: 12px;
+        }
+
+        .store-button:hover {
+            background: #1a1a1a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .store-button svg {
+            width: 24px;
+            height: 24px;
+            margin-right: 12px;
+            fill: currentColor;
+        }
+
+        .store-button-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            line-height: 1.2;
+        }
+
+        .store-button-subtitle {
+            font-size: 10px;
+            text-transform: uppercase;
+            opacity: 0.8;
+        }
+
+        .store-button-title {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        /* Feature List */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-6);
+        }
+
+        .feature-item {
+            display: flex;
+            gap: var(--space-3);
+        }
+
+        .feature-icon-box {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Screenshots */
+        .screenshot-scroll {
+            display: flex;
+            gap: var(--space-4);
+            overflow-x: auto;
+            padding-bottom: var(--space-4);
+            scrollbar-width: thin;
+            scrollbar-color: var(--color-accent) transparent;
+        }
+
+        .screenshot-img {
+            height: 400px;
+            width: auto;
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Sidebar Links */
+        .safety-link {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            padding: var(--space-3);
+            border-radius: var(--radius-md);
+            color: var(--color-text-secondary);
+            transition: all 0.2s;
+        }
+
+        .safety-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        /* FAQ */
+        .faq-summary {
+            padding: var(--space-4);
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--space-3);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+
+        .faq-summary:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        details[open] .faq-summary {
+            background: rgba(139, 92, 246, 0.2);
+            /* Violet accent */
+        }
+
+        .faq-text {
+            padding: var(--space-4);
+            color: var(--color-text-secondary);
+        }
+
+        .seo-content-section {
+            margin-top: var(--space-8);
+            padding-top: var(--space-8);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--color-text-secondary);
+        }
+
+        .seo-content-section h2 {
+            color: #a78bfa;
+            /* Light violet */
+            margin-top: var(--space-6);
+        }
+
+        .seo-content-section h3 {
+            color: #ddd6fe;
+            margin-top: var(--space-4);
+            margin-bottom: var(--space-2);
+            font-size: 1.1rem;
+        }
+
+        .seo-content-section p {
+            margin-bottom: var(--space-4);
+            line-height: 1.7;
+        }
+
+        .seo-content-section ul {
+            margin-bottom: var(--space-4);
+            padding-left: var(--space-6);
+            line-height: 1.7;
+        }
+
+        .seo-content-section li {
+            margin-bottom: var(--space-2);
+        }
+
+
+        h2 {
+            margin-bottom: var(--space-4);
+            font-size: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: var(--space-2);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="navbar-container">
+            <a href="/" class="navbar-logo" aria-label="AppMaven Studio Home">
+                <img src="/assets/images/logo/appmaven_logo.png" alt="AppMaven Studio Logo"
+                    style="height: 32px; width: 32px; border-radius: 8px;">
+                <span>AppMaven Studio</span>
+            </a>
+
+            <button class="navbar-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="navbar-menu" role="menubar">
+                <li role="none"><a href="/" role="menuitem">Home</a></li>
+                <li role="none"><a href="/apps/" role="menuitem">Apps</a></li>
+                <li role="none"><a href="/blog/" role="menuitem">Blog</a></li>
+                <li role="none"><a href="/about/" role="menuitem">About</a></li>
+                <li role="none"><a href="/support/" role="menuitem">Support</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Cosmic Background -->
+    <div class="cosmic-background"></div>
+
+    <!-- Main Content: Bento Grid -->
+    <main style="padding-top: calc(var(--header-height) + var(--space-4)); padding-bottom: var(--space-12);">
+
+        <div class="bento-container">
+
+            <!-- 1. Header Area -->
+            <div class="bento-card area-header">
+                <img src="/assets/images/apps/qrcreator/icon.webp" alt="QRCreator Logo" class="app-icon-large">
+                <div>
+                    <h1
+                        style="font-size: 2.5rem; font-weight: 700; background: linear-gradient(to right, #fff, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: var(--space-2);">
+                        QRCreator
+                    </h1>
+                    <p style="font-size: 1.25rem; color: var(--color-text-secondary); max-width: 600px;">
+                        Your all-in-one solution for generating, customizing, and scanning QR codes. Professional, fast,
+                        and secure.
+                    </p>
+
+                    <div style="margin-top: var(--space-6); display: flex; flex-wrap: wrap;">
+                        <!-- Google Play Button -->
+                        <a href="https://play.google.com/store/apps/details?id=com.appmaven.qrcreator" target="_blank"
+                            rel="noopener noreferrer" class="store-button">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.36,13.08L18.81,13.96L16.07,11.23L18.81,8.5L20.36,9.38C20.9,9.7 21.25,10.26 21.25,10.88V11.58C21.25,12.19 20.9,12.76 20.36,13.08M16.81,7.35L14.54,9.62L6.05,1.13L16.81,7.35Z" />
+                            </svg>
+                            <div class="store-button-content">
+                                <span class="store-button-subtitle">Get it on</span>
+                                <span class="store-button-title">Google Play</span>
+                            </div>
+                        </a>
+
+                        <!-- App Store Button (Coming Soon) -->
+                        <a href="#" class="store-button" style="opacity: 0.7; cursor: not-allowed;"
+                            onclick="return false;">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.13 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.43,15.65 20.08,16.66 20.08,16.66C20.03,16.8 19.7,17.96 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.37 12.36,4.26 13,3.5Z" />
+                            </svg>
+                            <div class="store-button-content">
+                                <span class="store-button-subtitle">Coming Soon to</span>
+                                <span class="store-button-title">App Store</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Data Safety & Privacy (Top Right Sidebar) -->
+            <div class="bento-card area-safety" style="display: flex; flex-direction: column; justify-content: center;">
+                <h3 style="margin-bottom: var(--space-4); font-size: 1.1rem; color: #a78bfa;">Data Safety & Privacy</h3>
+                <div style="display: flex; flex-direction: column; gap: var(--space-2);">
+                    <a href="/privacy-policy.html" class="safety-link">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        </svg>
+                        Privacy Policy
+                    </a>
+                    <a href="/data-deletion/" class="safety-link">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2-2v2" />
+                        </svg>
+                        Request Data Deletion
+                    </a>
+                </div>
+                <div
+                    style="margin-top: auto; padding-top: var(--space-4); font-size: 0.75rem; color: var(--color-text-tertiary); border-top: 1px solid rgba(255,255,255,0.05);">
+                    AppMaven Developer Portal.<br>© 2026. All rights reserved.<br>SEO Optimized. Compliant.
+                </div>
+            </div>
+
+            <!-- 3. Overview -->
+            <div class="bento-card area-overview">
+                <h2>Transform How You Share</h2>
+                <p style="color: var(--color-text-secondary); line-height: 1.7;">
+                    Use <strong>QRCreator</strong> to generate codes for URLs, Wi-Fi passwords, contact info (vCards),
+                    and geographical locations.
+                </p>
+                <p style="color: var(--color-text-secondary); line-height: 1.7; margin-top: var(--space-4);">
+                    Whether you're a business streamlining marketing or an individual sharing info quickly, our
+                    intuitive design makes it effortless. Plus, the built-in scanner means you don't need another app to
+                    read codes.
+                </p>
+            </div>
+
+            <!-- 4. Key Features -->
+            <div class="bento-card area-features">
+                <h2>Key Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon-box">⚡</div>
+                        <div>
+                            <h4 style="color: white; margin-bottom: 2px;">Generate Anything</h4>
+                            <p style="font-size: 0.85rem; color: var(--color-text-tertiary);">URLs, Text, Wi-Fi,
+                                Contacts, Events.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-box">🎨</div>
+                        <div>
+                            <h4 style="color: white; margin-bottom: 2px;">Custom Design</h4>
+                            <p style="font-size: 0.85rem; color: var(--color-text-tertiary);">Change colors, add logos,
+                                adjust size.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-box">📷</div>
+                        <div>
+                            <h4 style="color: white; margin-bottom: 2px;">Smart Scanner</h4>
+                            <p style="font-size: 0.85rem; color: var(--color-text-tertiary);">Instant scan with
+                                auto-action triggers.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-box">📂</div>
+                        <div>
+                            <h4 style="color: white; margin-bottom: 2px;">Library Manager</h4>
+                            <p style="font-size: 0.85rem; color: var(--color-text-tertiary);">Save, organize, and edit
+                                your codes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Screenshots -->
+            <div class="bento-card area-gallery">
+                <h2 style="display: flex; justify-content: space-between; align-items: center;">
+                    In Action
+                    <span style="font-size: 0.9rem; font-weight: normal; color: var(--color-text-tertiary);">Swipe to
+                        see
+                        more</span>
+                </h2>
+                <div class="screenshot-scroll">
+                    <img src="/assets/images/apps/qrcreator/qrcreator01.webp" alt="Generate QR Codes"
+                        class="screenshot-img">
+                    <img src="/assets/images/apps/qrcreator/qrcreator02.webp" alt="Scan QR Codes"
+                        class="screenshot-img">
+                    <img src="/assets/images/apps/qrcreator/qrcreator03.webp" alt="Customization Options"
+                        class="screenshot-img">
+                    <img src="/assets/images/apps/qrcreator/qrcreator04.webp" alt="History and Library"
+                        class="screenshot-img">
+                </div>
+            </div>
+
+            <!-- 6. FAQ -->
+            <div class="bento-card area-faq">
+                <h2>FAQ</h2>
+
+                <details>
+                    <summary class="faq-summary">Can I add my logo to the QR code?</summary>
+                    <div class="faq-text">
+                        Yes! QRCreator allows you to overlay custom logos or images on your QR codes to make them stand
+                        out and match your brand identity.
+                    </div>
+                </details>
+
+                <details>
+                    <summary class="faq-summary">Does it support Wi-Fi codes?</summary>
+                    <div class="faq-text">
+                        Absolutely. You can create a QR code containing your Wi-Fi credentials. Guests just scan it to
+                        connect instantly—no typing passwords required.
+                    </div>
+                </details>
+
+                <details>
+                    <summary class="faq-summary">Is my data secure?</summary>
+                    <div class="faq-text">
+                        Your privacy is our priority. QR code data is generally stored locally on your device. We do not
+                        require account registration to use the core features.
+                    </div>
+                </details>
+
+            </div>
+
+            <!-- 7. Detailed Description (SEO Content) -->
+            <div class="bento-card" style="grid-column: span 12; margin-top: var(--space-6);">
+                <div class="seo-content-section" style="border-top: none; padding-top: 0; margin-top: 0;">
+                    <h2>The Ultimate Tool for the QR Age</h2>
+
+                    <p>
+                        From contactless menus to digital business cards, QR codes are everywhere.
+                        <strong>QRCreator</strong> puts the power to create and read them in your pocket. It's not just
+                        a utility; it's a productivity booster for professionals and everyday users alike.
+                    </p>
+
+                    <h3>Create Custom Codes for Every Need</h3>
+                    <ul>
+                        <li><strong>Marketing:</strong> Direct customers to your website or social media.</li>
+                        <li><strong>Networking:</strong> Share your contact info (vCard) with a single scan.</li>
+                        <li><strong>Events:</strong> Distribute calendar events and locations seamlessly.</li>
+                        <li><strong>Security:</strong> Password-protect sensitive codes or encrypt content.</li>
+                    </ul>
+
+                    <h3>Manage & Organize</h3>
+                    <p>
+                        Don't just generate and forget. The <strong>Library Management</strong> feature lets you save
+                        your codes, categorize them, and retrieve them whenever you need to print or share. You can even
+                        edit existing codes to update information without starting from scratch.
+                    </p>
+
+                    <p style="margin-top: var(--space-8); font-size: 0.9rem; opacity: 0.7;">
+                        <em>Download QRCreator now and streamline how you share the world. Simple, powerful, and free to
+                            try on Android.</em>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div
+                        style="display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-4);">
+                        <img src="/assets/images/logo/appmaven_logo.png" alt="AppMaven Studio Logo"
+                            style="height: 32px; width: 32px; border-radius: 8px;">
+                        <span style="font-size: var(--text-xl); font-weight: var(--font-bold);">AppMaven Studio</span>
+                    </div>
+                    <p style="color: var(--color-text-secondary); margin-bottom: var(--space-4); line-height: 1.6;">
+                        Crafting innovative mobile experiences that users love. We combine clean design with powerful
+                        functionality
+                        to
+                        build the future, one app at a time.
+                    </p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/apps/">Apps</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="/support/">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="/data-deletion/">Data Deletion</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:hacong86@gmail.com">hacong86@gmail.com</a></li>
+                        <li><a href="tel:+84972865336">+84 972 865 336</a></li>
+                        <li><a href="https://github.com/hacong86" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AppMaven Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/assets/js/main.js"></script>
+
+</body>
+
+</html>

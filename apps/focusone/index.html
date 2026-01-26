@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>FocusOne: Daily Focus Planner | Minimalist ADHD Friendly To-Do List</title>
+    <meta name="title" content="FocusOne: Daily Focus Planner | Minimalist ADHD Friendly To-Do List">
+    <meta name="description"
+        content="Stop overthinking and start finishing with FocusOne. The minimalist daily planner for radical single-tasking. Perfect for ADHD and overcoming procrastination. Set one goal, keep your streak.">
+    <meta name="keywords"
+        content="daily focus planner, minimalist to-do list, ADHD friendly planner, single tasking app, procrastination helper, habit tracker streak, deep work tool">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://appmavenstudio.com/apps/focusone/">
+    <meta property="og:title" content="FocusOne: Master the Art of Doing One Thing Well">
+    <meta property="og:description"
+        content="Overwhelmed? FocusOne asks one simple question: What is the ONE most important thing you will finish today?">
+    <meta property="og:image" content="/assets/images/apps/focusone/FocusOne_1.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://appmavenstudio.com/apps/focusone/">
+    <meta property="twitter:title" content="FocusOne: Daily Focus Planner">
+    <meta property="twitter:description"
+        content="Radical single-tasking for a distracted world. Download FocusOne today.">
+    <meta property="twitter:image" content="/assets/images/apps/focusone/FocusOne_1.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/images/logo/favicon.png">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/assets/css/variables.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/components.css">
+
+    <style>
+        /* Bento Grid Layout Specifics */
+        .bento-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--space-8) var(--space-4);
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: auto auto auto;
+            gap: var(--space-6);
+        }
+
+        .bento-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-xl);
+            padding: var(--space-8);
+            overflow: hidden;
+            position: relative;
+            background: rgba(17, 24, 39, 0.7);
+            /* Darker base for better contrast */
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .bento-card:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Grid Areas */
+        .area-header {
+            grid-column: span 12;
+            grid-row: span 1;
+            display: flex;
+            align-items: center;
+            gap: var(--space-8);
+        }
+
+        @media (min-width: 992px) {
+            .area-header {
+                grid-column: span 9;
+            }
+
+            .area-safety {
+                grid-column: span 3;
+                grid-row: span 1;
+            }
+
+            .area-overview {
+                grid-column: span 5;
+            }
+
+            .area-features {
+                grid-column: span 7;
+            }
+
+            .area-gallery {
+                grid-column: span 7;
+            }
+
+            .area-faq {
+                grid-column: span 5;
+            }
+        }
+
+        @media (max-width: 991px) {
+
+            .area-header,
+            .area-safety,
+            .area-overview,
+            .area-features,
+            .area-gallery,
+            .area-faq {
+                grid-column: span 12;
+            }
+        }
+
+        /* Header Content */
+        .app-icon-large {
+            width: 120px;
+            height: 120px;
+            border-radius: var(--radius-xl);
+            box-shadow: 0 0 20px rgba(255, 152, 0, 0.3);
+            /* Orange glow for FocusOne */
+            flex-shrink: 0;
+        }
+
+        /* Store Buttons CSS */
+        .store-button {
+            display: inline-flex;
+            align-items: center;
+            background: #000;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 6px 16px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin-right: 12px;
+            margin-bottom: 12px;
+        }
+
+        .store-button:hover {
+            background: #1a1a1a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .store-button svg {
+            width: 24px;
+            height: 24px;
+            margin-right: 12px;
+            fill: currentColor;
+        }
+
+        .store-button-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            line-height: 1.2;
+        }
+
+        .store-button-subtitle {
+            font-size: 10px;
+            text-transform: uppercase;
+            opacity: 0.8;
+        }
+
+        .store-button-title {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        /* Feature List */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-6);
+        }
+
+        .feature-item {
+            display: flex;
+            gap: var(--space-3);
+        }
+
+        .feature-icon-box {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Screenshots */
+        .screenshot-scroll {
+            display: flex;
+            gap: var(--space-4);
+            overflow-x: auto;
+            padding-bottom: var(--space-4);
+            scrollbar-width: thin;
+            scrollbar-color: var(--color-accent) transparent;
+        }
+
+        .screenshot-img {
+            height: 400px;
+            width: auto;
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Sidebar Links */
+        .safety-link {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            padding: var(--space-3);
+            border-radius: var(--radius-md);
+            color: var(--color-text-secondary);
+            transition: all 0.2s;
+        }
+
+        .safety-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        /* FAQ */
+        .faq-summary {
+            padding: var(--space-4);
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--space-3);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+
+        .faq-summary:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        details[open] .faq-summary {
+            background: rgba(255, 152, 0, 0.2);
+            /* Orange accent */
+        }
+
+        .faq-text {
+            padding: var(--space-4);
+            color: var(--color-text-secondary);
+        }
+
+        .seo-content-section {
+            margin-top: var(--space-8);
+            padding-top: var(--space-8);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--color-text-secondary);
+        }
+
+        .seo-content-section h2 {
+            color: #fed7aa;
+            /* Light orange */
+            margin-top: var(--space-6);
+        }
+
+        .seo-content-section h3 {
+            color: #ffedd5;
+            margin-top: var(--space-4);
+            margin-bottom: var(--space-2);
+            font-size: 1.1rem;
+        }
+
+        .seo-content-section p {
+            margin-bottom: var(--space-4);
+            line-height: 1.7;
+        }
+
+        h2 {
+            margin-bottom: var(--space-4);
+            font-size: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: var(--space-2);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="navbar-container">
+            <a href="/" class="navbar-logo" aria-label="AppMaven Studio Home">
+                <img src="/assets/images/logo/appmaven_logo.png" alt="AppMaven Studio Logo"
+                    style="height: 32px; width: 32px; border-radius: 8px;">
+                <span>AppMaven Studio</span>
+            </a>
+
+            <button class="navbar-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="navbar-menu" role="menubar">
+                <li role="none"><a href="/" role="menuitem">Home</a></li>
+                <li role="none"><a href="/apps/" role="menuitem">Apps</a></li>
+                <li role="none"><a href="/blog/" role="menuitem">Blog</a></li>
+                <li role="none"><a href="/about/" role="menuitem">About</a></li>
+                <li role="none"><a href="/support/" role="menuitem">Support</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Cosmic Background -->
+    <div class="cosmic-background"></div>
+
+    <!-- Main Content: Bento Grid -->
+    <main style="padding-top: calc(var(--header-height) + var(--space-4)); padding-bottom: var(--space-12);">
+
+        <div class="bento-container">
+
+            <!-- 1. Header Area -->
+            <div class="bento-card area-header">
+                <!-- Using icon.webp which is the high-res file -->
+                <img src="/assets/images/apps/focusone/icon.webp" alt="FocusOne Logo" class="app-icon-large">
+                <div>
+                    <h1
+                        style="font-size: 2.5rem; font-weight: 700; background: linear-gradient(to right, #fff, #fb923c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: var(--space-2);">
+                        FocusOne: Daily Focus Planner
+                    </h1>
+                    <p style="font-size: 1.25rem; color: var(--color-text-secondary); max-width: 600px;">
+                        Stop overplanning. Start finishing. The minimalist productivity tool for radical single-tasking.
+                    </p>
+
+                    <div style="margin-top: var(--space-6); display: flex; flex-wrap: wrap;">
+                        <!-- Google Play Button -->
+                        <a href="https://play.google.com/store/apps/details?id=com.appmaven.focusone" target="_blank"
+                            rel="noopener noreferrer" class="store-button">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.36,13.08L18.81,13.96L16.07,11.23L18.81,8.5L20.36,9.38C20.9,9.7 21.25,10.26 21.25,10.88V11.58C21.25,12.19 20.9,12.76 20.36,13.08M16.81,7.35L14.54,9.62L6.05,1.13L16.81,7.35Z" />
+                            </svg>
+                            <div class="store-button-content">
+                                <span class="store-button-subtitle">Get it on</span>
+                                <span class="store-button-title">Google Play</span>
+                            </div>
+                        </a>
+
+                        <!-- App Store Button (Coming Soon) -->
+                        <a href="#" class="store-button" style="opacity: 0.7; cursor: not-allowed;"
+                            onclick="return false;">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.13 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.43,15.65 20.08,16.66 20.08,16.66C20.03,16.8 19.7,17.96 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.37 12.36,4.26 13,3.5Z" />
+                            </svg>
+                            <div class="store-button-content">
+                                <span class="store-button-subtitle">Coming Soon to</span>
+                                <span class="store-button-title">App Store</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Data Safety & Privacy (Top Right Sidebar) -->
+            <div class="bento-card area-safety" style="display: flex; flex-direction: column; justify-content: center;">
+                <h3 style="margin-bottom: var(--space-4); font-size: 1.1rem; color: #fdba74;">Data Safety & Privacy</h3>
+                <div style="display: flex; flex-direction: column; gap: var(--space-2);">
+                    <a href="/privacy-policy.html" class="safety-link">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        </svg>
+                        Privacy Policy
+                    </a>
+                    <a href="/data-deletion/" class="safety-link">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                        </svg>
+                        Request Data Deletion
+                    </a>
+                </div>
+                <div
+                    style="margin-top: auto; padding-top: var(--space-4); font-size: 0.75rem; color: var(--color-text-tertiary); border-top: 1px solid rgba(255,255,255,0.05);">
+                    AppMaven Developer Portal.<br>© 2026. All rights reserved.<br>SEO Optimized. Compliant.
+                </div>
+            </div>
+
+            <!-- 3. Overview -->
+            <div class="bento-card area-overview">
+                <h2>Feeling Overwhelmed?</h2>
+                <p style="color: var(--color-text-secondary); line-height: 1.7;">
+                    Most productivity apps get cluttered fast—endless tasks, endless guilt. <strong>FocusOne</strong> is
+                    a
+                    minimalist daily planner that helps you <strong>stop overthinking</strong> and start doing.
+                </p>
+                <p style="color: var(--color-text-secondary); line-height: 1.7; margin-top: var(--space-4);">
+                    Instead of managing 50 tasks, FocusOne asks one simple question: <br>
+                    <em
+                        style="color: white; font-style: normal; display: block; margin-top: 8px; border-left: 3px solid #f97316; padding-left: 12px;">"What
+                        is the ONE most important thing you will finish today?"</em>
+                </p>
+            </div>
+
+            <!-- 4. Key Features -->
+            <div class="bento-card area-features">
+                <h2>Key Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon-box">🎯</div>
+                        <div>
+                            <h4 style="color: white; margin-bottom: 2px;">One Daily Goal</h4>
+                            <p style="font-size: 0.85rem; color: var(--color-text-tertiary);">Set your main priority in
+                                seconds.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-box">✅</div>
+                        <div>
+                            <h4 style="color: white; margin-bottom: 2px;">Commit & Finish</h4>
+                            <p style="font-size: 0.85rem; color: var(--color-text-tertiary);">No endless tweaking. More
+                                action.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-box">🔥</div>
+                        <div>
+                            <h4 style="color: white; margin-bottom: 2px;">Streak Motivation</h4>
+                            <p style="font-size: 0.85rem; color: var(--color-text-tertiary);">Don't break the chain
+                                habit tracker.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-box">🧠</div>
+                        <div>
+                            <h4 style="color: white; margin-bottom: 2px;">ADHD Friendly</h4>
+                            <p style="font-size: 0.85rem; color: var(--color-text-tertiary);">Minimalist, fast,
+                                distraction-free.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Screenshots -->
+            <div class="bento-card area-gallery">
+                <h2 style="display: flex; justify-content: space-between; align-items: center;">
+                    In Action
+                    <span style="font-size: 0.9rem; font-weight: normal; color: var(--color-text-tertiary);">Swipe to
+                        see
+                        more</span>
+                </h2>
+                <div class="screenshot-scroll">
+                    <img src="/assets/images/apps/focusone/FocusOne_1.png" alt="Set One Daily Goal"
+                        class="screenshot-img">
+                    <img src="/assets/images/apps/focusone/FocusOne_2.png" alt="Lock Your Commitment"
+                        class="screenshot-img">
+                    <img src="/assets/images/apps/focusone/FocusOne_3.png" alt="Build Consistent Streaks"
+                        class="screenshot-img">
+                    <img src="/assets/images/apps/focusone/FocusOne_4.png" alt="Daily Inspiration Unlock"
+                        class="screenshot-img">
+                </div>
+            </div>
+
+            <!-- 6. FAQ -->
+            <div class="bento-card area-faq">
+                <h2>FAQ</h2>
+
+                <details>
+                    <summary class="faq-summary">Why only one task?</summary>
+                    <div class="faq-text">
+                        Radical single-tasking removes decision fatigue. By committing to just one major goal, you
+                        ensure meaningful progress every single day.
+                    </div>
+                </details>
+
+                <details>
+                    <summary class="faq-summary">Can I edit my goal?</summary>
+                    <div class="faq-text">
+                        No. FocusOne uses a "Commitment Lock". Once you set today's goal, there's no edit button. You
+                        must finish it or face a broken streak. This forces you to be intentional.
+                    </div>
+                </details>
+
+                <details>
+                    <summary class="faq-summary">Is it good for ADHD?</summary>
+                    <div class="faq-text">
+                        Yes! Many users with ADHD find massive to-do lists overwhelming. FocusOne's minimalist approach
+                        reduces anxiety by focusing on just the immediate next step.
+                    </div>
+                </details>
+
+                <details>
+                    <summary class="faq-summary">Is it free?</summary>
+                    <div class="faq-text">
+                        FocusOne is free to download and use. We believe productivity should be accessible to everyone
+                        who wants to improve their focus.
+                    </div>
+                </details>
+
+            </div>
+
+            <!-- 7. Detailed Description (SEO Content) -->
+            <div class="bento-card" style="grid-column: span 12; margin-top: var(--space-6);">
+                <div class="seo-content-section" style="border-top: none; padding-top: 0; margin-top: 0;">
+                    <h2>Why FocusOne is the Best Minimalist Daily Planner in 2026</h2>
+
+                    <p>
+                        In an era of endless notifications and complex project management tools,
+                        <strong>FocusOne</strong> stands out by doing less, so you can achieve more. As a premier
+                        <strong>daily focus planner</strong>, it strips away the noise of traditional to-do lists,
+                        helping you master the art of single-tasking. It is not just an app; it is a philosophy designed
+                        to combat burnout and decision fatigue.
+                    </p>
+
+                    <h3>The Ultimate ADHD Friendly Planner</h3>
+                    <p>
+                        For neurodivergent brains, a long list of tasks can be paralyzing—a phenomenon known as "wall of
+                        awful." FocusOne is designed as an <strong>ADHD friendly planner</strong> that removes this
+                        friction. By forcing you to choose only one priority, it provides clear executive direction. The
+                        interface is high-contrast, distraction-free, and intentionally limited in functionality to
+                        prevent "procrasti-planning" (spending hours organizing tasks instead of doing them).
+                    </p>
+
+                    <h3>Overcoming Procrastination with Commitment</h3>
+                    <p>
+                        What makes FocusOne unique is its "Commitment Lock" feature. Unlike other <strong>to-do list
+                            apps</strong> where you can endlessly reschedule tasks, FocusOne requires you to commit.
+                        This psychological trigger shifts your mindset from "I might do this" to "I must do this." It is
+                        the perfect <strong>procrastination helper</strong> for students, freelancers, and anyone
+                        struggling to self-motivate.
+                    </p>
+
+                    <h3>Build Habits with Streak Motivation</h3>
+                    <p>
+                        Consistency is key to success. FocusOne includes a built-in <strong>habit tracker
+                            streak</strong> system inspired by the "Don't Break the Chain" method. Seeing your visual
+                        progress daily releases dopamine and encourages you to show up, even on hard days. Unlock daily
+                        inspiration quotes as rewards for your discipline, turning your daily productivity into a
+                        satisfying game.
+                    </p>
+
+                    <h3>Deep Work Tool for Radical Focus</h3>
+                    <p>
+                        In a distracted world, the ability to perform deep work is a superpower. FocusOne acts as your
+                        personal intent shield. By having your <strong>one daily goal</strong> clearly visible, you can
+                        easily re-orient yourself whenever you get distracted. Whether you are writing a book, coding a
+                        feature, or studying for exams, FocusOne is the essential <strong>deep work tool</strong> to
+                        keep you on track.
+                    </p>
+
+                    <p style="margin-top: var(--space-8); font-size: 0.9rem; opacity: 0.7;">
+                        <em>Download FocusOne today and experience the clarity of minimalism. Optimized for Android
+                            devices. Perfect for users seeking: simple daily planners, motivation apps, ADHD tools, and
+                            focus boosters.</em>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div
+                        style="display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-4);">
+                        <img src="/assets/images/logo/appmaven_logo.png" alt="AppMaven Studio Logo"
+                            style="height: 32px; width: 32px; border-radius: 8px;">
+                        <span style="font-size: var(--text-xl); font-weight: var(--font-bold);">AppMaven Studio</span>
+                    </div>
+                    <p style="color: var(--color-text-secondary); margin-bottom: var(--space-4); line-height: 1.6;">
+                        Crafting innovative mobile experiences that users love. We combine clean design with powerful
+                        functionality to
+                        build the future, one app at a time.
+                    </p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/apps/">Apps</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="/support/">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="/data-deletion/">Data Deletion</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:hacong86@gmail.com">hacong86@gmail.com</a></li>
+                        <li><a href="tel:+84972865336">+84 972 865 336</a></li>
+                        <li><a href="https://github.com/hacong86" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AppMaven Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/assets/js/main.js"></script>
+
+</body>
+
+</html>

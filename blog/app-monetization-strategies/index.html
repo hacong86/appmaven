@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary Meta Tags -->
+  <title>App Monetization Strategies: Balancing Revenue and User Experience | AppMaven Studio Blog</title>
+  <meta name="title" content="App Monetization Strategies: Balancing Revenue and User Experience">
+  <meta name="description"
+    content="Discover effective app monetization strategies including AdMob, subscriptions, and in-app purchases. Learn how to generate revenue without compromising user experience.">
+  <meta name="keywords"
+    content="app monetization, AdMob, subscriptions, in-app purchases, IAP, mobile advertising, freemium, app revenue">
+  <meta name="author" content="AppMaven Team">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://appmavenstudio.com/blog/app-monetization-strategies/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://appmavenstudio.com/blog/app-monetization-strategies/">
+  <meta property="og:title" content="App Monetization Strategies: Balancing Revenue and User Experience">
+  <meta property="og:description"
+    content="Learn effective strategies for monetizing mobile apps while maintaining positive user experience.">
+  <meta property="og:image" content="https://appmavenstudio.com/assets/images/og-image.png">
+  <meta property="article:published_time" content="2025-12-20T09:00:00Z">
+  <meta property="article:author" content="AppMaven Team">
+  <meta property="article:section" content="Business">
+  <meta property="article:tag" content="Monetization">
+  <meta property="article:tag" content="Revenue">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://appmavenstudio.com/blog/app-monetization-strategies/">
+  <meta property="twitter:title" content="App Monetization Strategies: Balancing Revenue and User Experience">
+  <meta property="twitter:description" content="Learn effective strategies for monetizing mobile apps.">
+  <meta property="twitter:image" content="https://appmavenstudio.com/assets/images/og-image.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/assets/images/logo/favicon.png">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/variables.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+
+  <!-- Schema.org BlogPosting Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "App Monetization Strategies: Balancing Revenue and User Experience",
+    "description": "Learn effective strategies for monetizing mobile apps while maintaining positive user experience.",
+    "image": "https://appmavenstudio.com/assets/images/og-image.png",
+    "author": {
+      "@type": "Organization",
+      "name": "AppMaven Studio",
+      "url": "https://appmavenstudio.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "AppMaven Studio",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://appmavenstudio.com/assets/images/logo/logo.png"
+      }
+    },
+    "datePublished": "2025-12-20T09:00:00Z",
+    "dateModified": "2025-12-20T09:00:00Z",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://appmavenstudio.com/blog/app-monetization-strategies/"
+    },
+    "keywords": "app monetization, AdMob, subscriptions, in-app purchases",
+    "articleSection": "Business",
+    "wordCount": "1200"
+  }
+  </script>
+
+  <style>
+    .article-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .article-hero {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      margin-bottom: var(--space-10);
+      background: var(--gradient-purple);
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+      flex-wrap: wrap;
+      margin-bottom: var(--space-8);
+      padding-bottom: var(--space-6);
+      border-bottom: 1px solid var(--glass-border);
+    }
+
+    .article-content {
+      line-height: var(--leading-relaxed);
+    }
+
+    .article-content h2 {
+      margin-top: var(--space-12);
+      margin-bottom: var(--space-6);
+      font-size: var(--text-3xl);
+    }
+
+    .article-content h3 {
+      margin-top: var(--space-8);
+      margin-bottom: var(--space-4);
+      font-size: var(--text-2xl);
+    }
+
+    .article-content p {
+      margin-bottom: var(--space-6);
+      color: var(--color-text-secondary);
+    }
+
+    .article-content ul,
+    .article-content ol {
+      margin-bottom: var(--space-6);
+      padding-left: var(--space-6);
+    }
+
+    .article-content li {
+      margin-bottom: var(--space-3);
+      color: var(--color-text-secondary);
+    }
+
+    .article-content code {
+      background: rgba(0, 212, 255, 0.1);
+      padding: var(--space-1) var(--space-2);
+      border-radius: var(--radius-sm);
+      font-family: 'Courier New', monospace;
+      font-size: 0.9em;
+    }
+
+    .author-bio {
+      background: var(--glass-bg);
+      border: var(--border-glass);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+      margin-top: var(--space-16);
+      display: flex;
+      gap: var(--space-6);
+      align-items: center;
+    }
+
+    .author-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: var(--radius-full);
+      background: var(--gradient-cyber);
+      flex-shrink: 0;
+    }
+
+    .share-buttons {
+      display: flex;
+      gap: var(--space-3);
+      margin-top: var(--space-10);
+      padding-top: var(--space-8);
+      border-top: 1px solid var(--glass-border);
+    }
+
+    .share-button {
+      padding: var(--space-3);
+      background: var(--glass-bg);
+      border: var(--border-glass);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+    }
+
+    .share-button:hover {
+      background: rgba(0, 212, 255, 0.1);
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      .author-bio {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <a href="#main-content" class="skip-to-main">Skip to main content</a>
+  <div class="cosmic-background"></div>
+
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar-container">
+      <a href="/" class="navbar-logo" aria-label="AppMaven Studio Home">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="32" height="32" rx="8" fill="url(#logo-gradient)" />
+          <path d="M16 8L24 24H8L16 8Z" fill="white" />
+          <defs>
+            <linearGradient id="logo-gradient" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#00d4ff" />
+              <stop offset="1" stop-color="#7c3aed" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <span>AppMaven Studio</span>
+      </a>
+      <button class="navbar-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="navbar-menu" role="menubar">
+        <li role="none"><a href="/" role="menuitem">Home</a></li>
+        <li role="none"><a href="/apps/" role="menuitem">Apps</a></li>
+        <li role="none"><a href="/blog/" role="menuitem" class="active">Blog</a></li>
+        <li role="none"><a href="/about/" role="menuitem">About</a></li>
+        <li role="none"><a href="/support/" role="menuitem">Support</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main-content" class="page-content">
+    <article class="section">
+      <div class="container article-container">
+
+        <nav aria-label="Breadcrumb" style="margin-bottom: var(--space-8);">
+          <ol
+            style="display: flex; gap: var(--space-2); list-style: none; padding: 0; color: var(--color-text-tertiary); font-size: var(--text-sm);">
+            <li><a href="/" style="color: var(--color-text-tertiary);">Home</a></li>
+            <li>/</li>
+            <li><a href="/blog/" style="color: var(--color-text-tertiary);">Blog</a></li>
+            <li>/</li>
+            <li style="color: var(--color-text-secondary);">App Monetization Strategies</li>
+          </ol>
+        </nav>
+
+        <header style="margin-bottom: var(--space-10);">
+          <div style="margin-bottom: var(--space-6);">
+            <span class="badge badge-productivity">Business</span>
+          </div>
+          <h1 style="margin-bottom: var(--space-6); font-size: var(--text-5xl);">
+            App Monetization Strategies: Balancing Revenue and User Experience
+          </h1>
+
+          <div class="article-meta">
+            <div style="display: flex; align-items: center; gap: var(--space-3);">
+              <div
+                style="width: 40px; height: 40px; background: var(--gradient-cyber); border-radius: var(--radius-full);">
+              </div>
+              <div>
+                <div style="font-weight: var(--font-semibold); color: var(--color-text-primary);">AppMaven Team</div>
+                <div style="font-size: var(--text-sm); color: var(--color-text-tertiary);">Developer & Writer</div>
+              </div>
+            </div>
+            <div style="color: var(--color-text-tertiary); font-size: var(--text-sm);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                style="display: inline; vertical-align: middle; margin-right: var(--space-1);">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                <line x1="16" y1="2" x2="16" y2="6" />
+                <line x1="8" y1="2" x2="8" y2="6" />
+                <line x1="3" y1="10" x2="21" y2="10" />
+              </svg>
+              Dec 20, 2025
+            </div>
+            <div style="color: var(--color-text-tertiary); font-size: var(--text-sm);">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                style="display: inline; vertical-align: middle; margin-right: var(--space-1);">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+              9 min read
+            </div>
+          </div>
+        </header>
+
+        <div class="article-hero">
+          <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" opacity="0.4">
+              <line x1="12" y1="1" x2="12" y2="23" />
+              <path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" />
+            </svg>
+          </div>
+        </div>
+
+        <div class="article-content">
+
+          <p class="lead"
+            style="font-size: var(--text-xl); color: var(--color-text-primary); margin-bottom: var(--space-8);">
+            Monetization is a delicate balance. Push too hard and users flee. Too soft and you can't sustain
+            development. After years of experimentation across multiple apps, we've learned what works—and more
+            importantly, what doesn't. Here's our honest take on app monetization in 2025.
+          </p>
+
+          <h2>The Monetization Landscape</h2>
+          <p>
+            The mobile app economy has matured significantly. Users are more sophisticated—they understand free apps
+            come with trade-offs, but they're also less tolerant of predatory practices. The key is transparency and
+            value exchange.
+          </p>
+
+          <p>
+            At AppMaven Studio, we've tested various monetization models across our portfolio. Some apps rely primarily
+            on ads, others use subscriptions, and some combine multiple approaches. Each model has strengths and
+            appropriate use cases.
+          </p>
+
+          <h2>Mobile Advertising with AdMob</h2>
+          <p>
+            Advertising remains the most common monetization strategy for free apps. Google AdMob is the dominant
+            platform, and we've learned to use it effectively without degrading user experience.
+          </p>
+
+          <h3>Ad Formats That Work</h3>
+          <ul>
+            <li><strong>Banner Ads:</strong> Least intrusive but lowest revenue. Use them at natural content
+              breaks—bottom of screens in list views. Never cover interactive elements or navigation.</li>
+            <li><strong>Interstitial Ads:</strong> Full-screen ads between natural transition points. Show them after
+              completing tasks, not mid-action. Frequency matters—we cap at one interstitial per 3-minute session.</li>
+            <li><strong>Rewarded Ads:</strong> Our highest-performing format. Users voluntarily watch ads for in-app
+              rewards. The value exchange is transparent, creating goodwill rather than resentment.</li>
+            <li><strong>Native Ads:</strong> Blend with app content for higher engagement. These work well in content
+              feeds but require careful design integration.</li>
+          </ul>
+
+          <h3>AdMob Best Practices</h3>
+          <ul>
+            <li><strong>Mediation:</strong> Use AdMob mediation to compete multiple ad networks. This increases fill
+              rates and eCPM.</li>
+            <li><strong>Ad Placement:</strong> Test different placements and formats with AdMob A/B testing. Data beats
+              assumptions.</li>
+            <li><strong>User Segmentation:</strong> Consider showing fewer ads to highly engaged users to improve
+              retention. Some users are worth more as long-term fans than ad impressions.</li>
+            <li><strong>Load Timing:</strong> Preload ads to minimize wait times. Nothing frustrates users like watching
+              a loading spinner before an ad.</li>
+          </ul>
+
+          <p>
+            In our casual game apps, rewarded video ads generate 60% of ad revenue despite being only 20% of
+            impressions. Users willingly watch them for extra lives or coins, creating a win-win scenario.
+          </p>
+
+          <h2>Subscription Models</h2>
+          <p>
+            Subscriptions provide predictable recurring revenue and align developer and user incentives—you succeed when
+            users continue finding value. However, they require ongoing content or feature updates to justify recurring
+            payments.
+          </p>
+
+          <h3>Subscription Tiers</h3>
+          <ul>
+            <li><strong>Single Tier:</strong> Simplest approach. One subscription unlocks all premium features. Works
+              well when value proposition is clear.</li>
+            <li><strong>Multiple Tiers:</strong> Basic and Premium tiers cater to different user segments. Requires
+              careful feature differentiation to avoid decision paralysis.</li>
+            <li><strong>Freemium:</strong> Core features free, premium features subscription-locked. The free tier must
+              provide genuine value, not just a tease.</li>
+          </ul>
+
+          <h3>Making Subscriptions Work</h3>
+          <ul>
+            <li><strong>Free Trial:</strong> 3 to 7-day trials work best. Longer trials see lower conversion but users
+              who convert are stickier.</li>
+            <li><strong>Clear Value Communication:</strong> Users need to understand exactly what they're paying for.
+              List specific features, not vague "premium benefits."</li>
+            <li><strong>Pricing Psychology:</strong> Annual subscriptions at a discount (typically 15-20% off monthly)
+              encourage longer commitment and reduce churn.</li>
+            <li><strong>Grace Periods:</strong> Don't immediately lock features when payment fails. Grace periods and
+              renewal reminders reduce involuntary churn.</li>
+          </ul>
+
+          <p>
+            For our productivity apps, we use freemium subscriptions. The free tier provides genuine utility but has
+            reasonable limitations (storage caps, feature restrictions). About 3% of active users convert to
+            premium—industry-standard for freemium models.
+          </p>
+
+          <h2>In-App Purchases (IAP)</h2>
+          <p>
+            IAP works best for consumable items (game currency, boosts) or one-time feature unlocks. The key is avoiding
+            "pay-to-win" mechanics that frustrate non-paying users.
+          </p>
+
+          <h3>IAP Strategies</h3>
+          <ul>
+            <li><strong>Consumables:</strong> Items used up during gameplay. Pricing should feel fair—users balk at
+              feeling forced to pay to progress.</li>
+            <li><strong>Non-Consumables:</strong> One-time purchases like removing ads or unlocking features. These are
+              often the highest-converting IAP.</li>
+            <li><strong>Bundles:</strong> Package multiple items at a discount. Creates perceived value and increases
+              average transaction size.</li>
+            <li><strong>Limited-Time Offers:</strong> Strategic sales and special bundles drive urgency, but overuse
+              trains users to wait for discounts.</li>
+          </ul>
+
+          <h3>Ethical IAP Design</h3>
+          <ul>
+            <li><strong>No Dark Patterns:</strong> Don't trick users into purchases. Confirm high-value purchases and
+              allow reasonable refunds.</li>
+            <li><strong>Reasonable Pricing:</strong> Research competitive pricing. Users talk—exploitative pricing
+              damages reputation.</li>
+            <li><strong>Transparent Odds:</strong> If offering randomized rewards (loot boxes), disclose odds clearly.
+              Many jurisdictions legally require this.</li>
+            <li><strong>Parental Controls:</strong> For apps potentially used by children, implement purchase
+              confirmation and support family sharing restrictions.</li>
+          </ul>
+
+          <h2>Hybrid Monetization</h2>
+          <p>
+            Many successful apps combine multiple monetization methods. The trick is ensuring they don't conflict or
+            overwhelm users.
+          </p>
+
+          <h3>Effective Combinations</h3>
+          <ul>
+            <li><strong>Ads + Remove Ads IAP:</strong> Classic approach. Offer premium ad-free experience via one-time
+              purchase.</li>
+            <li><strong>Freemium + IAP:</strong> Subscription unlocks core features, IAP for consumables or cosmetics.
+              Common in productivity and game apps.</li>
+            <li><strong>Rewarded Ads + IAP:</strong> Users can earn premium currency via rewarded ads or purchase it
+              directly. Respects both time and money as valuable.</li>
+          </ul>
+
+          <p>
+            Our most successful app uses a hybrid model: free with ads, one-time IAP to remove ads ($2.99), and optional
+            premium subscription ($4.99/month) for advanced features. This captures different user segments—casual users
+            tolerate ads, medium users prefer ad-free, power users subscribe.
+          </p>
+
+          <h2>Measuring Success</h2>
+          <p>
+            Track the right metrics to optimize monetization without sacrificing user experience.
+          </p>
+
+          <h3>Key Metrics</h3>
+          <ul>
+            <li><strong>ARPU (Average Revenue Per User):</strong> Total revenue divided by total users. Measures overall
+              monetization effectiveness.</li>
+            <li><strong>ARPPU (Average Revenue Per Paying User):</strong> Revenue from paying users only. Indicates
+              pricing and conversion quality.</li>
+            <li><strong>LTV (Lifetime Value):</strong> Predicted total revenue from a user over their lifetime. Critical
+              for evaluating user acquisition costs.</li>
+            <li><strong>Ad eCPM:</strong> Effective cost per thousand impressions. Compare across formats and networks.
+            </li>
+            <li><strong>Conversion Rate:</strong> Percentage of users who make any purchase. Track by funnel stage to
+              identify friction points.</li>
+            <li><strong>Retention vs. Monetization:</strong> Monitor if aggressive monetization hurts retention.
+              Sometimes less aggressive monetization yields higher LTV through better retention.</li>
+          </ul>
+
+          <div
+            style="background: rgba(0, 212, 255, 0.1); border-left: 4px solid var(--color-accent); padding: var(--space-6); border-radius: var(--radius-md); margin: var(--space-10) 0;">
+            <h3 style="margin-top: 0;">Key Takeaways</h3>
+            <ul style="margin-bottom: 0;">
+              <li>Rewarded ads provide best user experience for ad monetization</li>
+              <li>Subscriptions require ongoing value delivery—not one-time downloads</li>
+              <li>Hybrid models can capture different user segments effectively</li>
+              <li>Transparency and ethical practices build long-term trust and revenue</li>
+              <li>Monitor retention alongside revenue—user loss costs more than immediate gains</li>
+              <li>Test pricing and formats with A/B testing, not assumptions</li>
+            </ul>
+          </div>
+
+          <h2>Conclusion</h2>
+          <p>
+            Monetization is not a zero-sum game between developers and users. The best strategies align incentives—when
+            users win, you win. Focus on providing genuine value, respect user time and attention, and be transparent
+            about costs.
+          </p>
+
+          <p>
+            Start with one monetization method and execute it well before adding complexity. Measure everything, iterate
+            based on data, and always ask: "Would I personally pay for this or tolerate these ads?" If the answer is no,
+            you have work to do.
+          </p>
+
+          <p>
+            Remember, sustainable revenue comes from satisfied users who stick around. Optimize for lifetime value, not
+            short-term extraction. Build something people love, and the revenue will follow.
+          </p>
+
+        </div>
+
+        <div class="share-buttons">
+          <span style="color: var(--color-text-tertiary); margin-right: var(--space-2);">Share:</span>
+          <button class="share-button" aria-label="Share on Twitter" onclick="shareOnTwitter()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
+            </svg>
+          </button>
+          <button class="share-button" aria-label="Share on Facebook" onclick="shareOnFacebook()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+            </svg>
+          </button>
+          <button class="share-button" aria-label="Share on LinkedIn" onclick="shareOnLinkedIn()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
+              <circle cx="4" cy="4" r="2" />
+            </svg>
+          </button>
+          <button class="share-button" aria-label="Copy link" onclick="copyLink()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" />
+              <path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="author-bio">
+          <div class="author-avatar"></div>
+          <div>
+            <h3 style="margin-bottom: var(--space-2);">About the Author</h3>
+            <p style="margin-bottom: var(--space-3); color: var(--color-text-secondary);">
+              The <strong>AppMaven Team</strong> consists of passionate developers and designers dedicated to creating
+              exceptional mobile experiences. We share insights from our journey building apps used by thousands of
+              users worldwide.
+            </p>
+            <a href="/about/" style="color: var(--color-accent); text-decoration: none; font-size: var(--text-sm);">
+              Learn more about us →
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <div style="display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-4);">
+            <img src="/assets/images/logo/appmaven_logo.png" alt="AppMaven Studio Logo"
+              style="height: 32px; width: 32px; border-radius: 8px;">
+            <span style="font-size: var(--text-xl); font-weight: var(--font-bold);">AppMaven Studio</span>
+          </div>
+          <p style="color: var(--color-text-secondary); margin-bottom: var(--space-4); line-height: 1.6;">
+            Crafting innovative mobile experiences that users love. We combine clean design with powerful functionality
+            to
+            build the future, one app at a time.
+          </p>
+        </div>
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/apps/">Apps</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/support/">Support</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="/terms-of-service.html">Terms of Service</a></li>
+            <li><a href="/data-deletion/">Data Deletion</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:hacong86@gmail.com">hacong86@gmail.com</a></li>
+            <li><a href="tel:+84972865336">+84 972 865 336</a></li>
+            <li><a href="https://github.com/hacong86" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 AppMaven Studio. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+  <script>
+    function shareOnTwitter() {
+      const url = encodeURIComponent(window.location.href);
+      const text = encodeURIComponent(document.title);
+      window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, '_blank', 'width=600,height=400');
+    }
+    function shareOnFacebook() {
+      const url = encodeURIComponent(window.location.href);
+      window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank', 'width=600,height=400');
+    }
+    function shareOnLinkedIn() {
+      const url = encodeURIComponent(window.location.href);
+      window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, '_blank', 'width=600,height=400');
+    }
+    function copyLink() {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        alert('Link copied to clipboard!');
+      });
+    }
+  </script>
+
+</body>
+
+</html>

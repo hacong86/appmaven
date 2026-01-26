@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir:*)",
+      "Bash(git init:*)",
+      "Bash(git branch:*)",
+      "Bash(tree:*)",
+      "Bash(curl:*)",
+      "Bash(test:*)",
+      "Bash(wc:*)",
+      "Bash(python:*)",
+      "Bash(powershell -Command:*)",
+      "Bash(tasklist:*)",
+      "Bash(ls:*)",
+      "Bash(netstat:*)",
+      "Bash(taskkill:*)"
+    ]
+  }
+}
