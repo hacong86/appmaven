@@ -254,10 +254,11 @@
 - [ ] WCAG 2.1 AA compliance check
 
 #### 3.4 Deployment
-- [ ] GitHub Pages setup hoặc Cloudflare Pages
-- [ ] Custom domain configuration
-- [ ] SSL/HTTPS verification
-- [ ] Submit sitemap to Google Search Console
+- [ ] Push code to remote repository (GitHub)
+- [ ] Configure GitHub Pages / Vercel
+- [ ] Verify production URL
+- [ ] Setup Custom Domain (appmavenstudio.com)
+
 
 ---
 
