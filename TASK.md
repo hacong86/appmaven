@@ -210,6 +210,7 @@
 - [x] Square Race (`apps/square-race/`)
 - [x] Dino Drop Master (`apps/dino-drop-master/`)
 - [x] QRCreator (`apps/qrcreator/`)
+- [x] Pictura: Art Puzzle Journey (`apps/pictura-art-puzzle-journey/`)
 
 #### 2.2 Blog Section
 - [x] Blog listing page (`blog/index.html`)
