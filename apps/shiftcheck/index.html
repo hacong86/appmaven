@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta Tags -->
+  <title>ShiftCheck - Checklist Vận Hành Ca Cho Quán Cafe & Shop Nhỏ | AppMaven Studio</title>
+  <meta name="title" content="ShiftCheck - Checklist Vận Hành Khai Ca Quán Cafe | AppMaven Studio">
+  <meta name="description"
+    content="ShiftCheck giúp bạn chuẩn hóa quy trình mở ca, giữa ca và đóng ca chỉ trong vài chạm. Checklist vận hành dành cho quán cafe, trà sữa, shop nhỏ.">
+  <meta name="keywords"
+    content="checklist ca làm việc, quản lý ca quán cafe, checklist vận hành, quy trình mở ca đóng ca, quản lý nhân viên quán cafe, shift management, store operations, daily checklist, employee task checklist">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://appmavenstudio.com/apps/shiftcheck/">
+  <meta property="og:title" content="ShiftCheck: Checklist Vận Hành Ca">
+  <meta property="og:description"
+    content="Giải pháp checklist mở ca, đóng ca cho quán nhỏ cực đơn giản. Mọi thứ trong vài thao tác, hoàn toàn trên thiết bị của bạn.">
+  <meta property="og:image" content="/assets/images/apps/shift-check/Icon_ChPlay.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://appmavenstudio.com/apps/shiftcheck/">
+  <meta property="twitter:title" content="ShiftCheck: Checklist Vận Hành Ca">
+  <meta property="twitter:description"
+    content="Giải pháp checklist mở ca, đóng ca cho quán nhỏ. Standardize store operations easily.">
+  <meta property="twitter:image" content="/assets/images/apps/shift-check/Icon_ChPlay.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/assets/images/logo/favicon.png">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/variables.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+
+  <style>
+    /* Bento Grid Layout Specifics */
+    .bento-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: var(--space-8) var(--space-4);
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: auto auto auto;
+      gap: var(--space-6);
+    }
+
+    .bento-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+      overflow: hidden;
+      position: relative;
+      background: rgba(17, 24, 39, 0.7);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .bento-card:hover {
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Grid Areas */
+    .area-header {
+      grid-column: span 12;
+      grid-row: span 1;
+      display: flex;
+      align-items: center;
+      gap: var(--space-8);
+    }
+
+    @media (min-width: 992px) {
+      .area-header {
+        grid-column: span 9;
+      }
+
+      .area-safety {
+        grid-column: span 3;
+        grid-row: span 1;
+      }
+
+      .area-overview {
+        grid-column: span 5;
+      }
+
+      .area-features {
+        grid-column: span 7;
+      }
+
+      .area-gallery {
+        grid-column: span 7;
+      }
+
+      .area-faq {
+        grid-column: span 5;
+      }
+    }
+
+    @media (max-width: 991px) {
+      .area-header,
+      .area-safety,
+      .area-overview,
+      .area-features,
+      .area-gallery,
+      .area-faq {
+        grid-column: span 12;
+      }
+    }
+
+    /* Header Content */
+    .app-icon-large {
+      width: 120px;
+      height: 120px;
+      border-radius: var(--radius-xl);
+      box-shadow: 0 0 20px rgba(52, 211, 153, 0.5);
+      flex-shrink: 0;
+    }
+
+    .store-badges {
+      display: flex;
+      gap: var(--space-4);
+      margin-top: var(--space-6);
+    }
+
+    .store-button {
+      display: inline-flex;
+      align-items: center;
+      background: #000;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      padding: 6px 16px;
+      color: white;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      margin-right: 12px;
+      margin-bottom: 12px;
+    }
+
+    .store-button:hover {
+      background: #1a1a1a;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .store-button svg {
+      width: 24px;
+      height: 24px;
+      margin-right: 12px;
+      fill: currentColor;
+    }
+
+    .store-button-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      line-height: 1.2;
+    }
+
+    .store-button-subtitle {
+      font-size: 10px;
+      text-transform: uppercase;
+      opacity: 0.8;
+    }
+
+    .store-button-title {
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    /* Feature List */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-6);
+    }
+
+    .feature-item {
+      display: flex;
+      gap: var(--space-3);
+    }
+
+    .feature-icon-box {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      flex-shrink: 0;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Screenshots */
+    .screenshot-scroll {
+      display: flex;
+      gap: var(--space-4);
+      overflow-x: auto;
+      padding-bottom: var(--space-4);
+      scrollbar-width: thin;
+      scrollbar-color: var(--color-accent) transparent;
+    }
+
+    .screenshot-img {
+      height: 450px;
+      width: auto;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* Sidebar Links */
+    .safety-link {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      padding: var(--space-3);
+      border-radius: var(--radius-md);
+      color: var(--color-text-secondary);
+      transition: all 0.2s;
+    }
+
+    .safety-link:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+    }
+
+    /* FAQ */
+    .faq-summary {
+      padding: var(--space-4);
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: var(--radius-md);
+      margin-bottom: var(--space-3);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+
+    .faq-summary:hover {
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    details[open] .faq-summary {
+      background: rgba(52, 211, 153, 0.2);
+    }
+
+    .faq-text {
+      padding: var(--space-4);
+      color: var(--color-text-secondary);
+    }
+
+    h2 {
+      margin-bottom: var(--space-4);
+      font-size: 1.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: var(--space-2);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar-container">
+      <a href="/" class="navbar-logo" aria-label="AppMaven Studio Home">
+        <img src="/assets/images/logo/appmaven_logo.png" alt="AppMaven Studio Logo"
+          style="height: 32px; width: 32px; border-radius: 8px;">
+        <span>AppMaven Studio</span>
+      </a>
+
+      <button class="navbar-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="navbar-menu" role="menubar">
+        <li role="none"><a href="/" role="menuitem">Home</a></li>
+        <li role="none"><a href="/apps/" role="menuitem" class="active">Apps</a></li>
+        <li role="none"><a href="/blog/" role="menuitem">Blog</a></li>
+        <li role="none"><a href="/about/" role="menuitem">About</a></li>
+        <li role="none"><a href="/support/" role="menuitem">Support</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Cosmic Background -->
+  <div class="cosmic-background"></div>
+
+  <!-- Main Content: Bento Grid -->
+  <main style="padding-top: calc(var(--header-height) + var(--space-4)); padding-bottom: var(--space-12);">
+
+    <div class="bento-container">
+
+      <!-- 1. Header Area -->
+      <div class="bento-card area-header">
+        <img src="/assets/images/apps/shift-check/Icon_ChPlay.png" alt="ShiftCheck Logo" class="app-icon-large">
+        <div>
+          <h1
+            style="font-size: 2.5rem; font-weight: 700; background: linear-gradient(to right, #fff, #6ee7b7); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: var(--space-2);">
+            ShiftCheck
+          </h1>
+          <p style="font-size: 1.25rem; color: var(--color-text-secondary); max-width: 600px;">
+            Checklist vận hành ca cho quán cafe, tiệm trà sữa và shop nhỏ.
+          </p>
+
+          <div class="store-badges" style="flex-wrap: wrap;">
+            <!-- Google Play Button -->
+            <a href="https://play.google.com/store/apps/details?id=com.appmaven.shiftcheck" target="_blank"
+              rel="noopener noreferrer" class="store-button">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.36,13.08L18.81,13.96L16.07,11.23L18.81,8.5L20.36,9.38C20.9,9.7 21.25,10.26 21.25,10.88V11.58C21.25,12.19 20.9,12.76 20.36,13.08M16.81,7.35L14.54,9.62L6.05,1.13L16.81,7.35Z" />
+              </svg>
+              <div class="store-button-content">
+                <span class="store-button-subtitle">Get it on</span>
+                <span class="store-button-title">Google Play</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Data Safety & Privacy -->
+      <div class="bento-card area-safety" style="display: flex; flex-direction: column; justify-content: center;">
+        <h3 style="margin-bottom: var(--space-4); font-size: 1.1rem; color: #6ee7b7;">Bảo Mật</h3>
+        <div style="display: flex; flex-direction: column; gap: var(--space-2);">
+          <a href="privacy-policy.html" class="safety-link">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+            Chính sách bảo mật
+          </a>
+          <a href="/data-deletion/" class="safety-link">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+            </svg>
+            Yêu cầu xóa dữ liệu
+          </a>
+        </div>
+        <div style="margin-top: auto; padding-top: var(--space-4); font-size: 0.75rem; color: var(--color-text-tertiary); border-top: 1px solid rgba(255,255,255,0.05);">
+          Hoạt động ngoại tuyến.<br>Dữ liệu lưu an toàn trên máy bạn.
+        </div>
+      </div>
+
+      <!-- 3. Overview -->
+      <div class="bento-card area-overview">
+        <h2>Tổng quan</h2>
+        <p style="color: var(--color-text-secondary); line-height: 1.7;">
+          Bạn là chủ quán cafe, quán ăn, trà sữa, salon hay shop bán lẻ? Nhân viên hay quên việc đầu ca? Bạn mệt mỏi vì phải nhắc đi nhắc lại?
+        </p>
+        <p style="color: var(--color-text-secondary); line-height: 1.7; margin-top: var(--space-4);">
+          <strong>ShiftCheck</strong> giúp bạn chuẩn hóa quy trình mở ca, giữa ca và đóng ca chỉ trong vài chạm, mọi việc đều quy củ hơn cho cả nhân viên cũ và mới.
+        </p>
+      </div>
+
+      <!-- 4. Key Features -->
+      <div class="bento-card area-features">
+        <h2>Tính năng chính</h2>
+        <div class="feature-grid">
+          <div class="feature-item">
+            <div class="feature-icon-box">📋</div>
+            <div>
+              <h4 style="color: white; margin-bottom: 2px;">Checklist theo ca</h4>
+              <p style="font-size: 0.85rem; color: var(--color-text-tertiary);">Có sẵn chuẩn mẫu cho quán cafe, dễ dàng thiết lập.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon-box">✅</div>
+            <div>
+              <h4 style="color: white; margin-bottom: 2px;">Tick hoàn thành</h4>
+              <p style="font-size: 0.85rem; color: var(--color-text-tertiary);">Nhân viên tick xong, chủ xem tiến độ realtime dễ dàng.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon-box">📸</div>
+            <div>
+              <h4 style="color: white; margin-bottom: 2px;">Ảnh xác nhận</h4>
+              <p style="font-size: 0.85rem; color: var(--color-text-tertiary);">Yêu cầu chụp lại ảnh đối với các công việc quan trọng.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon-box">🔍</div>
+            <div>
+              <h4 style="color: white; margin-bottom: 2px;">Lịch sử chi tiết</h4>
+              <p style="font-size: 0.85rem; color: var(--color-text-tertiary);">Xem lại checklist mỗi ngày để biết ai đã thực hiện gì.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Screenshots -->
+      <div class="bento-card area-gallery">
+        <h2 style="display: flex; justify-content: space-between; align-items: center;">
+          Giao diện ứng dụng
+          <span style="font-size: 0.9rem; font-weight: normal; color: var(--color-text-tertiary);">Lướt để xem thêm</span>
+        </h2>
+        <div class="screenshot-scroll">
+          <img src="/assets/images/apps/shift-check/Checklist01.png" alt="Màn hình giao việc" class="screenshot-img">
+          <img src="/assets/images/apps/shift-check/Checklist02.png" alt="Màn hình phân ca" class="screenshot-img">
+          <img src="/assets/images/apps/shift-check/Checklist03.png" alt="Tính năng checklist" class="screenshot-img">
+          <img src="/assets/images/apps/shift-check/Checklist04.png" alt="Tính năng chụp ảnh" class="screenshot-img">
+          <img src="/assets/images/apps/shift-check/Checklist05.png" alt="Lịch sử hoạt động" class="screenshot-img">
+          <img src="/assets/images/apps/shift-check/Checklist06.png" alt="Cài đặt hệ thống" class="screenshot-img">
+        </div>
+      </div>
+
+      <!-- 6. FAQ -->
+      <div class="bento-card area-faq">
+        <h2>Hỏi & Đáp</h2>
+        <details>
+          <summary class="faq-summary">Ứng dụng dành cho ai?</summary>
+          <div class="faq-text">
+            Chủ quán cafe nhỏ, trà sữa, quán ăn, salon và các shop bán lẻ có từ 1-10 nhân viên đang quản lý thủ công qua giấy hay chat hằng ngày.
+          </div>
+        </details>
+        <details>
+          <summary class="faq-summary">ShiftCheck có hoạt động ngoại tuyến (offline) không?</summary>
+          <div class="faq-text">
+            Có! Ứng dụng hoạt động cực mượt hoàn toàn không phụ thuộc mạng. Không lo bị lag server hay rớt kết nối.
+          </div>
+        </details>
+        <details>
+          <summary class="faq-summary">Sử dụng ShiftCheck có phức tạp với nhân viên mới không?</summary>
+          <div class="faq-text">
+            ShiftCheck cực đơn giản và trực quan. Không cần đào tạo, mọi nhân sự đều có thể sử dụng ngay trong 3 phút làm quen.
+          </div>
+        </details>
+        <details>
+          <summary class="faq-summary">Việc thiết lập các checklist có lâu không?</summary>
+          <div class="faq-text">
+            Rất nhanh! ShiftCheck cung cấp sẵn một chuỗi các checklist mở ca, đóng ca cho quán nước, quán cafe thường dùng. Không cần tạo lại từ đầu.
+          </div>
+        </details>
+      </div>
+
+      <!-- 7. Detailed SEO Content -->
+      <div class="bento-card" style="grid-column: span 12; margin-top: var(--space-6);">
+        <div class="seo-content-section" style="border-top: none; padding-top: 0; margin-top: 0;">
+          <h2>Tại sao nên sử dụng ShiftCheck cho quán Cafe, Quán Ăn và Cửa hàng nhỏ?</h2>
+          <p>
+            Bạn có thường xuyên nhận ra cửa hàng mở muộn chỉ vì quên bật máy pha cafe trước 15 phút? Hay dọn dẹp đóng ca qua loa dẫn đến việc thiếu chuẩn bị cho ngày làm mới? Hầu hết các chủ quán nhỏ đều đang quản lý, vận hành qua nhắc miệng dẫn đến tình trạng sai lệch nghiêm trọng đặc biệt khi có bạn nhân sự mới. Giải quyết với <strong>ShiftCheck - ứng dụng quản lý quy trình checklist ca làm việc</strong> tiên phong.
+          </p>
+          
+          <h3>Mọi thứ vào guồng - Tự động trơn tru</h3>
+          <p>
+            ShiftCheck KHÔNG PHẢI là một app quản trị quán bar quán ăn theo phong cách phức tạp. Chúng tôi tập trung giải quyết triệt để 1 vấn đề: <strong>nhân viên và quản lý có làm đủ, làm đúng lộ trình công việc hằng ngày hay không (mở ca, giữa ca, kết ca)</strong>.
+          </p>
+
+          <p>Nền tảng giúp bạn thực thi ngay quy trình chuẩn như chuỗi thương hiệu lớn mà chỉ với chi phí KHÔNG ĐỒNG. Mẫu checklist điển hình đã cài đặt sẵn:</p>
+
+          <ul>
+            <li>☑ Mở cửa, bật điện</li>
+            <li>☑ Kiểm tra máy pha cafe và nạp giấy in hóa đơn</li>
+            <li>☑ Kiểm tra đá, sữa, nguyên vật liệu tủ lạnh</li>
+            <li>☑ Lau dọn bàn ghế, quầy order</li>
+            <li>☑ Kiểm tra quỹ tiền lẻ</li>
+          </ul>
+
+          <h3>Một Ứng dụng Quản lý Ca Gọn Nhẹ Nhất</h3>
+          <p>
+            Với ShiftCheck, sự nặng nề của các phần mềm quản lý đa năng không còn là nỗi lo. Bạn thu được kết quả trực tiếp: Tải cực nhanh, setup trong vòng 3 phút, làm quen mà không cần đọc hướng dẫn. Mọi thứ được ghi nhận lại, chụp hình cho các checklist bắt buộc, và lịch sử luôn lưu trữ minh bạch. Đặc biệt, nó <strong>hoạt động 100% offline</strong> khi sóng yếu. Tải app ngay!
+          </p>
+
+          <p style="margin-top: var(--space-8); font-size: 0.9rem; opacity: 0.7;">
+            <em>Tải ngay cho thiết bị của bạn. Quản lý cửa hàng chuyên nghiệp hơn và để tâm trí bạn lo việc tăng trưởng, việc vận hành hãy để ShiftCheck.</em>
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <div style="display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-4);">
+            <img src="/assets/images/logo/appmaven_logo.png" alt="AppMaven Studio Logo"
+              style="height: 32px; width: 32px; border-radius: 8px;">
+            <span style="font-size: var(--text-xl); font-weight: var(--font-bold);">AppMaven Studio</span>
+          </div>
+          <p style="color: var(--color-text-secondary); margin-bottom: var(--space-4); line-height: 1.6;">
+            Mang đến các giải pháp công nghệ đơn giản và hiệu quả.
+          </p>
+        </div>
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/apps/">Apps</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/support/">Support</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="/terms-of-service.html">Terms of Service</a></li>
+            <li><a href="/data-deletion/">Data Deletion</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:hacong86@gmail.com">hacong86@gmail.com</a></li>
+            <li><a href="tel:+84972865336">+84 972 865 336</a></li>
+            <li><a href="https://github.com/hacong86" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 AppMaven Studio. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+
+</body>
+
+</html>
