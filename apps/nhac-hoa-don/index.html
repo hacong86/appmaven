@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta Tags -->
+  <title>Sổ Đóng Tiền - Nhắc hóa đơn | AppMaven Studio</title>
+  <meta name="title" content="Sổ Đóng Tiền - Nhắc hóa đơn | Nhắc tiền điện nước, internet, tiền nhà">
+  <meta name="description" content="Sổ Đóng Tiền giúp bạn theo dõi các khoản cần đóng định kỳ và nhắc đúng hạn để không quên thanh toán tiền điện, nước, internet, tiền nhà và nhiều hóa đơn khác.">
+  <meta name="keywords" content="nhắc hóa đơn, nhắc thanh toán, hóa đơn định kỳ, tiền điện nước, tiền nhà, internet, sổ đóng tiền, quản lý chi tiêu">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://appmavenstudio.com/apps/nhac-hoa-don/">
+  <meta property="og:title" content="Sổ Đóng Tiền - Nhắc hóa đơn">
+  <meta property="og:description" content="Nhắc tiền điện nước, internet, tiền nhà và hóa đơn định kỳ đúng hạn.">
+  <meta property="og:image" content="/assets/images/apps/nhac-hoa-don/Icon_app_512.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/assets/images/logo/favicon.png">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/variables.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+
+  <style>
+    .bento-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: var(--space-8) var(--space-4);
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: auto;
+      gap: var(--space-6);
+    }
+
+    .bento-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+      overflow: hidden;
+      position: relative;
+      background: rgba(17, 24, 39, 0.7);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .area-header { grid-column: span 9; display: flex; align-items: center; gap: var(--space-8); }
+    .area-safety { grid-column: span 3; display: flex; flex-direction: column; justify-content: center; }
+    .area-overview { grid-column: span 5; }
+    .area-features { grid-column: span 7; }
+    .area-gallery { grid-column: span 12; }
+    .area-seo { grid-column: span 12; }
+
+    @media (max-width: 991px) {
+      .area-header, .area-safety, .area-overview, .area-features, .area-gallery, .area-seo {
+        grid-column: span 12;
+      }
+    }
+
+    .app-icon-large {
+      width: 120px;
+      height: 120px;
+      border-radius: var(--radius-xl);
+      box-shadow: 0 0 20px rgba(251, 191, 36, 0.3);
+      flex-shrink: 0;
+    }
+
+    .store-button {
+      display: inline-flex;
+      align-items: center;
+      background: #000;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      padding: 6px 16px;
+      color: white;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      margin-top: var(--space-6);
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--space-6);
+    }
+
+    .feature-item { display: flex; gap: var(--space-3); }
+    .feature-icon-box {
+      width: 48px; height: 48px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-lg);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px; flex-shrink: 0;
+    }
+
+    .screenshot-scroll {
+      display: flex; gap: var(--space-4);
+      overflow-x: auto; padding-bottom: var(--space-4);
+    }
+
+    .screenshot-img {
+      height: 500px; width: auto;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .safety-link {
+      display: flex; align-items: center; gap: var(--space-3);
+      padding: var(--space-3); border-radius: var(--radius-md);
+      color: var(--color-text-secondary); text-decoration: none;
+    }
+
+    .safety-link:hover { background: rgba(255, 255, 255, 0.1); color: white; }
+
+    h2 { font-size: 1.5rem; margin-bottom: var(--space-4); color: white; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 8px; }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="/" class="navbar-logo">
+        <img src="/assets/images/logo/appmaven_logo.png" alt="AppMaven Studio Logo" style="height: 32px; width: 32px; border-radius: 8px;">
+        <span>AppMaven Studio</span>
+      </a>
+      <ul class="navbar-menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/apps/" class="active">Apps</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/support/">Support</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="cosmic-background"></div>
+
+  <main style="padding-top: calc(var(--header-height) + var(--space-4));">
+    <div class="bento-container">
+
+      <!-- Header -->
+      <div class="bento-card area-header">
+        <img src="/assets/images/apps/nhac-hoa-don/Icon_app_512.png" alt="Sổ Đóng Tiền Logo" class="app-icon-large">
+        <div>
+          <h1 style="font-size: 2.5rem; font-weight: 700; color: white; margin-bottom: 8px;">Sổ Đóng Tiền - Nhắc hóa đơn</h1>
+          <p style="font-size: 1.25rem; color: var(--color-text-secondary);">Nhắc tiền điện nước, internet, tiền nhà và hóa đơn định kỳ đúng hạn.</p>
+          <a href="#" class="store-button">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <svg width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.36,13.08L18.81,13.96L16.07,11.23L18.81,8.5L20.36,9.38C20.9,9.7 21.25,10.26 21.25,10.88V11.58C21.25,12.19 20.9,12.76 20.36,13.08M16.81,7.35L14.54,9.62L6.05,1.13L16.81,7.35Z"/></svg>
+              <div style="display: flex; flex-direction: column; line-height: 1.2;">
+                <span style="font-size: 10px; text-transform: uppercase; opacity: 0.8;">Get it on</span>
+                <span style="font-size: 16px; font-weight: 600;">Google Play</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Safety -->
+      <div class="bento-card area-safety">
+        <h3 style="color: var(--color-accent); margin-bottom: 16px;">Bảo Mật</h3>
+        <a href="privacy-policy.html" class="safety-link">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Chính sách bảo mật
+        </a>
+        <div style="margin-top: 16px; font-size: 0.8rem; color: var(--color-text-tertiary);">
+          Dữ liệu lưu an toàn trên máy bạn. Hoạt động ngoại tuyến.
+        </div>
+      </div>
+
+      <!-- Overview -->
+      <div class="bento-card area-overview">
+        <h2>Tổng quan</h2>
+        <p style="color: var(--color-text-secondary); line-height: 1.7;">
+          Sổ Đóng Tiền - Nhắc hóa đơn là ứng dụng giúp bạn theo dõi các khoản cần đóng định kỳ và nhắc đúng hạn để không quên thanh toán tiền điện, tiền nước, internet, tiền nhà và nhiều hóa đơn định kỳ khác.
+        </p>
+        <p style="color: var(--color-text-secondary); line-height: 1.7; margin-top: 16px;">
+          Thay vì phải nhớ thủ công hoặc ghi chú rời rạc, bạn chỉ cần tạo từng khoản cần đóng, chọn ngày đến hạn và chu kỳ lặp.
+        </p>
+      </div>
+
+      <!-- Features -->
+      <div class="bento-card area-features">
+        <h2>Tính năng nổi bật</h2>
+        <div class="feature-grid">
+          <div class="feature-item">
+            <div class="feature-icon-box">📅</div>
+            <div>
+              <h4 style="color: white; margin-bottom: 2px;">Chu kỳ linh hoạt</h4>
+              <p style="font-size: 0.85rem; color: var(--color-text-tertiary);">Đóng tiền hàng tháng, quý, năm hoặc tùy chỉnh.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon-box">🔔</div>
+            <div>
+              <h4 style="color: white; margin-bottom: 2px;">Nhắc đúng hạn</h4>
+              <p style="font-size: 0.85rem; color: var(--color-text-tertiary);">Thông báo nhắc trước hạn để không bị trễ hóa đơn.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon-box">✅</div>
+            <div>
+              <h4 style="color: white; margin-bottom: 2px;">Một chạm</h4>
+              <p style="font-size: 0.85rem; color: var(--color-text-tertiary);">Đánh dấu đã đóng cực nhanh, theo dõi trạng thái rõ ràng.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon-box">💾</div>
+            <div>
+              <h4 style="color: white; margin-bottom: 2px;">Offline & Tư hữu</h4>
+              <p style="font-size: 0.85rem; color: var(--color-text-tertiary);">Không cần tài khoản, dữ liệu chỉ nằm trên máy bạn.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gallery -->
+      <div class="bento-card area-gallery">
+        <h2>Giao diện ứng dụng</h2>
+        <div class="screenshot-scroll">
+          <img src="/assets/images/apps/nhac-hoa-don/nhac-hoa-don_01.png" alt="Sổ Đóng Tiền Screen 1" class="screenshot-img">
+          <img src="/assets/images/apps/nhac-hoa-don/nhac-hoa-don_02.png" alt="Sổ Đóng Tiền Screen 2" class="screenshot-img">
+          <img src="/assets/images/apps/nhac-hoa-don/nhac-hoa-don_03.png" alt="Sổ Đóng Tiền Screen 3" class="screenshot-img">
+          <img src="/assets/images/apps/nhac-hoa-don/nhac-hoa-don_04.png" alt="Sổ Đóng Tiền Screen 4" class="screenshot-img">
+          <img src="/assets/images/apps/nhac-hoa-don/nhac-hoa-don_05.png" alt="Sổ Đóng Tiền Screen 5" class="screenshot-img">
+        </div>
+      </div>
+
+      <!-- SEO Content -->
+      <div class="bento-card area-seo">
+        <h2>Vì sao Sổ Đóng Tiền hữu ích?</h2>
+        <div style="color: var(--color-text-secondary); line-height: 1.8;">
+          <p>Giảm nguy cơ quên đóng tiền và phát sinh phí trễ hạn. Theo dõi các khoản phải thanh toán rõ ràng hơn mỗi tháng. Dễ dùng cho cá nhân, gia đình, người đi làm, sinh viên hoặc người thuê nhà.</p>
+          <p>Nếu bạn đang tìm một ứng dụng <strong>nhắc hóa đơn</strong>, <strong>nhắc thanh toán tiền điện nước</strong>, internet hoặc tiền nhà bằng tiếng Việt, đây là lựa chọn gọn, dễ dùng và tập trung đúng vào nhu cầu nhắc đóng tiền định kỳ.</p>
+          <p>Tải Sổ Đóng Tiền ngay hôm nay để theo dõi hóa đơn định kỳ, nhận nhắc đúng hạn và giữ mọi khoản cần đóng luôn trong tầm kiểm soát.</p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 AppMaven Studio. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
