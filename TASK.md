@@ -11,10 +11,14 @@
 - [x] Task 8: Tạo trang `apps/nhac-hoa-don/index.html` (Sổ Đóng Tiền - Bento, SEO)
 - [x] Task 9: Cập nhật `apps/index.html` thêm card Sổ Đóng Tiền
 - [x] Task 10: Tạo trang `apps/chemlab/privacy-policy.html` (ChemLab)
-- [ ] Task 11: Commit các thay đổi lên GitHub
+- [x] Task 11: Tạo trang `apps/chemlab/index.html` (ChemLab - Bento, SEO)
+- [x] Task 12: Viết bài viết SEO Blog cho ChemLab (`blog/chemlab-periodic-table-chemistry-app/`)
+- [x] Task 13: Cập nhật `apps/index.html` và Homepage (`index.html`) thêm ChemLab
+- [x] Task 14: Commit các thay đổi lên GitHub (667ba68)
 
-- **Đã xong gần đây:** Hoàn thành Privacy Policy cho ứng dụng ChemLab. Cập nhật trang chính sách bảo mật chung của hệ thống.
-- **Đang làm tiếp gì:** Chờ task mới hoặc commit code.
+- **Đã xong gần đây:** Hoàn thành toàn diện nội dung cho **ChemLab**: Landing page Bento, Privacy Policy, SEO Blog article (English). Cập nhật trang danh mục ứng dụng và trang chủ.
+- **Đang làm tiếp gì:** Chờ yêu cầu mới từ người dùng.
+- **Updated at:** 2026-04-06 16:40 PM
 - **Updated at:** 2026-04-06
 
 ## Assumption Log
@@ -23,3 +27,5 @@
 - [2026-03-25] Package ID: `com.appmaven.shiftcheck`
 - [2026-03-25] Thư mục: `apps/shiftcheck`
 - [2026-03-29] Sổ Đóng Tiền: Folder `apps/nhac-hoa-don`, Icon `Icon_app_512.png`, Screenshots `nhac-hoa-don_01.png` to `05.png`
+- [2026-04-06] ChemLab: Folder `apps/chemlab`, Icon `PlayStore_icon.webp`, Screenshots `S1.webp` to `S6.webp`
+- [2026-04-06] Blog: `blog/chemlab-periodic-table-chemistry-app/` (English for International SEO)
