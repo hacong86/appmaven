@@ -10,7 +10,12 @@
 - [x] Task 7: Tạo trang `apps/nhac-hoa-don/privacy-policy.html` (Sổ Đóng Tiền)
 - [x] Task 8: Tạo trang `apps/nhac-hoa-don/index.html` (Sổ Đóng Tiền - Bento, SEO)
 - [x] Task 9: Cập nhật `apps/index.html` thêm card Sổ Đóng Tiền
-- [ ] Task 10: Commit các thay đổi lên GitHub
+- [x] Task 10: Tạo trang `apps/chemlab/privacy-policy.html` (ChemLab)
+- [ ] Task 11: Commit các thay đổi lên GitHub
+
+- **Đã xong gần đây:** Hoàn thành Privacy Policy cho ứng dụng ChemLab. Cập nhật trang chính sách bảo mật chung của hệ thống.
+- **Đang làm tiếp gì:** Chờ task mới hoặc commit code.
+- **Updated at:** 2026-04-06
 
 ## Assumption Log
 - [2026-03-25] Icon: `Icon_ChPlay.png` tại thư mục ảnh ShiftCheck
