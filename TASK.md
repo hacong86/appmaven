@@ -28,3 +28,20 @@
 - [2026-03-29] Sổ Đóng Tiền: Folder `apps/nhac-hoa-don`, Icon `Icon_app_512.png`, Screenshots `nhac-hoa-don_01.png` to `05.png`
 - [2026-04-06] ChemLab: Folder `apps/chemlab`, Icon `PlayStore_icon.webp`, Screenshots `S1.webp` to `S6.webp`
 - [2026-04-06] Blog: `blog/chemlab-periodic-table-chemistry-app/` (English for International SEO)
+
+---
+
+# Task: Thêm ứng dụng Thư Viện Văn Khấn Cổ Truyền
+
+## Checklist
+- [x] [2026-04-22] [Codex]: Đọc `TASK.md`, `PROGRESS.md`, tài liệu nguồn và xác nhận phạm vi triển khai
+- [x] [2026-04-22] [Codex]: Tạo trang `apps/van-khan-co-truyen/privacy-policy.html`
+- [x] [2026-04-22] [Codex]: Tạo trang `apps/van-khan-co-truyen/index.html`
+- [x] [2026-04-22] [Codex]: Cập nhật `apps/index.html` thêm card ứng dụng mới
+- [x] [2026-04-22] [Codex]: Cập nhật `privacy-policy.html` thêm link policy của ứng dụng
+- [x] [2026-04-22] [Codex]: Kiểm tra tổng thể các file vừa tạo/sửa
+- [ ] [2026-04-22] [Codex]: Stage, commit và push các file website của `Thư Viện Văn Khấn Cổ Truyền`
+
+## Assumption Log
+- [2026-04-22] [Codex]: Dùng slug `apps/van-khan-co-truyen` để khớp với thư mục assets `assets/images/apps/van-khan-co-truyen`
+- [2026-04-22] [Codex]: Dùng `doc/thuvienvankhan/Privacy Policy.md` làm nguồn chính cho policy page và `doc/thuvienvankhan/ASO_List.md` + screenshots làm nguồn cho app intro page

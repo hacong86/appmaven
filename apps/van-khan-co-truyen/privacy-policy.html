@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta Tags -->
+  <title>Chính sách bảo mật - Thư Viện Văn Khấn Cổ Truyền | AppMaven Studio</title>
+  <meta name="description"
+    content="Chính sách bảo mật dành cho ứng dụng Thư Viện Văn Khấn Cổ Truyền. Tìm hiểu cách dữ liệu được lưu cục bộ trên thiết bị và cách các dịch vụ bên thứ ba xử lý dữ liệu kỹ thuật.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/assets/images/logo/favicon.png">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/variables.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+
+  <style>
+    .policy-container {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: var(--space-10) var(--space-4) var(--space-12);
+    }
+
+    .policy-card {
+      background:
+        radial-gradient(circle at top right, rgba(245, 158, 11, 0.14), transparent 34%),
+        linear-gradient(145deg, rgba(122, 20, 20, 0.88), rgba(24, 24, 27, 0.92));
+      border: 1px solid rgba(255, 220, 170, 0.14);
+      border-radius: var(--radius-xl);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.28);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      padding: var(--space-8);
+    }
+
+    .policy-content {
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+    }
+
+    .policy-content h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: var(--space-2);
+      background: linear-gradient(to right, #fff6e8, #f59e0b);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .policy-content h2 {
+      font-size: 1.5rem;
+      color: white;
+      margin-top: var(--space-8);
+      margin-bottom: var(--space-4);
+      border-bottom: 1px solid rgba(255, 220, 170, 0.12);
+      padding-bottom: var(--space-2);
+    }
+
+    .policy-content h3 {
+      font-size: 1.16rem;
+      color: #fde7c6;
+      margin-top: var(--space-6);
+      margin-bottom: var(--space-3);
+    }
+
+    .policy-content p {
+      margin-bottom: var(--space-4);
+    }
+
+    .policy-content ul {
+      margin-bottom: var(--space-4);
+      padding-left: var(--space-6);
+    }
+
+    .policy-content li {
+      margin-bottom: var(--space-2);
+    }
+
+    .policy-content a {
+      color: #f8d29a;
+      text-decoration: none;
+    }
+
+    .policy-content a:hover {
+      text-decoration: underline;
+    }
+
+    .meta-box {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: var(--space-4);
+      margin: var(--space-6) 0 var(--space-8);
+    }
+
+    .meta-item {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 220, 170, 0.12);
+      border-radius: var(--radius-lg);
+      padding: var(--space-4);
+    }
+
+    .meta-label {
+      display: block;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--color-text-tertiary);
+      margin-bottom: 6px;
+    }
+
+    .highlight-box {
+      background: rgba(245, 158, 11, 0.08);
+      border-left: 4px solid #f59e0b;
+      border-radius: var(--radius-md);
+      padding: var(--space-4);
+      margin: var(--space-6) 0;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+      margin-bottom: var(--space-5);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 640px;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+
+    th,
+    td {
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(255, 220, 170, 0.08);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      color: white;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    code {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 6px;
+      padding: 2px 6px;
+      font-size: 0.95em;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar-container">
+      <a href="/" class="navbar-logo" aria-label="AppMaven Studio Home">
+        <img src="/assets/images/logo/appmaven_logo.png" alt="AppMaven Studio Logo"
+          style="height: 32px; width: 32px; border-radius: 8px;">
+        <span>AppMaven Studio</span>
+      </a>
+      <button class="navbar-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="navbar-menu" role="menubar">
+        <li role="none"><a href="/" role="menuitem">Home</a></li>
+        <li role="none"><a href="/apps/" role="menuitem" class="active">Apps</a></li>
+        <li role="none"><a href="/blog/" role="menuitem">Blog</a></li>
+        <li role="none"><a href="/about/" role="menuitem">About</a></li>
+        <li role="none"><a href="/support/" role="menuitem">Support</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Cosmic Background -->
+  <div class="cosmic-background"></div>
+
+  <main style="padding-top: calc(var(--header-height) + var(--space-4));">
+    <div class="policy-container">
+      <div class="policy-card">
+        <div class="policy-content">
+          <h1>Chính sách bảo mật cho Thư Viện Văn Khấn Cổ Truyền</h1>
+          <p>
+            Chính sách này áp dụng cho ứng dụng <strong>Thư Viện Văn Khấn Cổ Truyền</strong> (còn hiển thị trong app là
+            <strong>Văn Khấn Cổ Truyền</strong>) do <strong>AppMaven</strong> phát triển và phát hành trên Google Play.
+          </p>
+
+          <div class="meta-box">
+            <div class="meta-item">
+              <span class="meta-label">Gói ứng dụng</span>
+              <strong><code>com.appmaven.vankhan</code></strong>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Ngày hiệu lực</span>
+              <strong>22/04/2026</strong>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Phiên bản</span>
+              <strong>1.0</strong>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Email liên hệ</span>
+              <strong><a href="mailto:hacong86@gmail.com">hacong86@gmail.com</a></strong>
+            </div>
+          </div>
+
+          <div class="highlight-box">
+            <p style="margin: 0;">
+              Tóm tắt nhanh: ứng dụng không yêu cầu tài khoản, không vận hành backend riêng và phần lớn dữ liệu phục vụ
+              trải nghiệm được lưu cục bộ trên thiết bị của bạn. Một số dữ liệu kỹ thuật có thể được xử lý bởi các dịch
+              vụ bên thứ ba như Google AdMob hoặc Google Play Billing.
+            </p>
+          </div>
+
+          <h2>1. Giới thiệu</h2>
+          <p>
+            Chính sách Quyền riêng tư này giải thích cách dữ liệu được thu thập, sử dụng, lưu trữ và chia sẻ khi bạn cài
+            đặt hoặc sử dụng ứng dụng. Khi sử dụng ứng dụng, bạn được xem là đã đọc và đồng ý với các nội dung được nêu
+            trong chính sách này.
+          </p>
+
+          <h2>2. Nguyên tắc quyền riêng tư</h2>
+          <ul>
+            <li>Ứng dụng không yêu cầu đăng ký, đăng nhập hoặc tạo tài khoản.</li>
+            <li>Chúng tôi không thu thập họ tên, email, số điện thoại hoặc địa chỉ của bạn trên máy chủ riêng.</li>
+            <li>Ứng dụng không truy cập trực tiếp camera, micro, danh bạ, SMS, lịch, tệp cá nhân hay vị trí chính xác.</li>
+            <li>Nội dung cốt lõi của app được đóng gói sẵn để có thể sử dụng offline cho các chức năng chính.</li>
+          </ul>
+
+          <h2>3. Dữ liệu ứng dụng xử lý</h2>
+
+          <h3>3.1. Dữ liệu lưu cục bộ trên thiết bị</h3>
+          <p>
+            Ứng dụng sử dụng cơ chế lưu trữ cục bộ trên Android để ghi nhớ một số thông tin phục vụ trải nghiệm. Các dữ
+            liệu này không được gửi lên máy chủ riêng của nhà phát triển và thường sẽ bị xóa khi bạn gỡ ứng dụng hoặc xóa
+            dữ liệu app trong phần cài đặt của thiết bị.
+          </p>
+
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Loại dữ liệu</th>
+                  <th>Mục đích</th>
+                  <th>Ví dụ</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Danh sách bài khấn yêu thích</td>
+                  <td>Ghi nhớ các bài bạn đã đánh dấu để mở lại nhanh</td>
+                  <td>Danh sách ID bài khấn yêu thích</td>
+                </tr>
+                <tr>
+                  <td>Cỡ chữ, chế độ sáng/tối, tốc độ đọc hỗ trợ</td>
+                  <td>Duy trì trải nghiệm đọc phù hợp với lần dùng trước</td>
+                  <td><code>fontSize</code>, <code>darkMode</code>, <code>readerSpeed</code></td>
+                </tr>
+                <tr>
+                  <td>Thông tin bạn chủ động nhập để cá nhân hóa</td>
+                  <td>Chèn tên gia chủ, địa chỉ, ngày cúng vào bài văn khấn</td>
+                  <td>Họ tên, địa chỉ, ngày cúng</td>
+                </tr>
+                <tr>
+                  <td>Trạng thái Premium</td>
+                  <td>Xác định bạn đã mua gói gỡ quảng cáo hay chưa</td>
+                  <td><code>isPremium: true</code></td>
+                </tr>
+                <tr>
+                  <td>Một số cờ nội bộ của ứng dụng</td>
+                  <td>Điều tiết trải nghiệm như lần mở đầu hoặc khoảng nghỉ quảng cáo</td>
+                  <td>Dấu thời gian quảng cáo App Open gần nhất</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>
+            Thông tin bạn nhập trong các màn hình cá nhân hóa bài khấn chỉ nhằm hỗ trợ hiển thị nội dung đầy đủ hơn khi
+            đọc hoặc xem trước. Chúng tôi không sử dụng những thông tin này cho mục đích quảng cáo hoặc bán cho bên thứ
+            ba.
+          </p>
+
+          <h3>3.2. Dữ liệu có thể được xử lý bởi dịch vụ bên thứ ba</h3>
+
+          <h4 style="color: white; margin-top: var(--space-5); margin-bottom: var(--space-3);">Google AdMob</h4>
+          <p>
+            Nếu bạn đang dùng bản miễn phí, ứng dụng có thể hiển thị quảng cáo thông qua Google AdMob. Dịch vụ này có
+            thể xử lý dữ liệu kỹ thuật như địa chỉ IP, Advertising ID, thông tin thiết bị, tương tác quảng cáo hoặc dữ
+            liệu chẩn đoán để phân phối và đo lường quảng cáo.
+          </p>
+
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Loại dữ liệu</th>
+                  <th>Có thể thu thập</th>
+                  <th>Mục đích</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Địa chỉ IP, vị trí gần đúng suy ra từ IP</td>
+                  <td>Có</td>
+                  <td>Phân phối quảng cáo phù hợp khu vực, chống gian lận</td>
+                </tr>
+                <tr>
+                  <td>Advertising ID, mã định danh thiết bị quảng cáo</td>
+                  <td>Có</td>
+                  <td>Đo lường và cá nhân hóa quảng cáo theo cài đặt của người dùng</td>
+                </tr>
+                <tr>
+                  <td>Thông tin thiết bị, hệ điều hành, ngôn ngữ</td>
+                  <td>Có</td>
+                  <td>Đảm bảo tương thích và chẩn đoán lỗi hiển thị quảng cáo</td>
+                </tr>
+                <tr>
+                  <td>Tương tác với quảng cáo</td>
+                  <td>Có</td>
+                  <td>Đếm lượt hiển thị, lượt nhấp và tối ưu phân phối quảng cáo</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>
+            Xem thêm tại
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy
+              Policy</a>.
+          </p>
+
+          <h4 style="color: white; margin-top: var(--space-5); margin-bottom: var(--space-3);">Google Play Billing</h4>
+          <p>
+            Ứng dụng sử dụng Google Play Billing để xử lý gói mua hàng một lần giúp gỡ quảng cáo. Thông tin thanh toán
+            như thẻ, ví hoặc số dư được Google Play xử lý trực tiếp; nhà phát triển không nhìn thấy dữ liệu thẻ của bạn.
+            Ứng dụng chỉ nhận về thông tin cần thiết để xác nhận trạng thái đã mua.
+          </p>
+
+          <h4 style="color: white; margin-top: var(--space-5); margin-bottom: var(--space-3);">Google Fonts</h4>
+          <p>
+            Một số font chữ giao diện có thể được tải thông qua thư viện Google Fonts để duy trì phong cách hiển thị của
+            ứng dụng. Quá trình này có thể phát sinh các yêu cầu mạng tiêu chuẩn, trong đó Google có thể nhận được địa
+            chỉ IP và User-Agent như một phần của cơ chế phân phối tài nguyên.
+          </p>
+
+          <h3>3.3. Dữ liệu không được thu thập trực tiếp bởi ứng dụng</h3>
+          <ul>
+            <li>Họ tên, ngày sinh, giới tính, email hoặc số điện thoại của người dùng trên máy chủ riêng của nhà phát triển.</li>
+            <li>Địa chỉ nhà, danh bạ, SMS, lịch sử cuộc gọi.</li>
+            <li>Ảnh, video, tệp cá nhân, micro hoặc camera.</li>
+            <li>Vị trí chính xác (GPS), dữ liệu sức khỏe và dữ liệu sinh trắc học.</li>
+          </ul>
+
+          <h2>4. Mục đích sử dụng dữ liệu</h2>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Mục đích</th>
+                  <th>Dữ liệu liên quan</th>
+                  <th>Nguồn</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Duy trì chức năng ứng dụng</td>
+                  <td>Dữ liệu lưu cục bộ như yêu thích, cỡ chữ, thông tin cá nhân hóa</td>
+                  <td>Lưu trữ cục bộ trên thiết bị</td>
+                </tr>
+                <tr>
+                  <td>Hiển thị quảng cáo cho bản miễn phí</td>
+                  <td>Advertising ID, địa chỉ IP, dữ liệu thiết bị</td>
+                  <td>Google AdMob</td>
+                </tr>
+                <tr>
+                  <td>Xử lý và khôi phục giao dịch Premium</td>
+                  <td>Mã xác nhận mua hàng, trạng thái giao dịch</td>
+                  <td>Google Play Billing</td>
+                </tr>
+                <tr>
+                  <td>Chẩn đoán và tương thích dịch vụ bên thứ ba</td>
+                  <td>Dữ liệu thiết bị, dữ liệu chẩn đoán</td>
+                  <td>AdMob / Google Play</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>Chúng tôi không sử dụng dữ liệu của bạn để bán cho bên thứ ba hoặc để gửi email/SMS quảng cáo trực tiếp.</p>
+
+          <h2>5. Chia sẻ dữ liệu với bên thứ ba</h2>
+          <p>
+            Chúng tôi không bán, cho thuê hoặc trao đổi dữ liệu cá nhân của bạn. Một số dữ liệu kỹ thuật có thể được các
+            SDK bên thứ ba tự động xử lý theo chính sách của họ nhằm phục vụ quảng cáo, thanh toán hoặc phân phối tài
+            nguyên.
+          </p>
+
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Bên nhận dữ liệu</th>
+                  <th>Loại dữ liệu</th>
+                  <th>Mục đích</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Google LLC (AdMob)</td>
+                  <td>IP, vị trí gần đúng, Advertising ID, thông tin thiết bị, tương tác quảng cáo</td>
+                  <td>Phân phối và đo lường quảng cáo</td>
+                </tr>
+                <tr>
+                  <td>Google LLC (Google Play Billing)</td>
+                  <td>Thông tin giao dịch, mã xác minh mua hàng</td>
+                  <td>Xử lý thanh toán và khôi phục mua hàng</td>
+                </tr>
+                <tr>
+                  <td>Google LLC (Google Fonts)</td>
+                  <td>IP, User-Agent</td>
+                  <td>Phân phối font chữ</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>6. Cơ sở pháp lý xử lý dữ liệu</h2>
+          <p>Nếu bạn đang ở EU/EEA hoặc khu vực có quy định tương tự, cơ sở pháp lý có thể bao gồm:</p>
+          <ul>
+            <li><strong>Sự đồng ý:</strong> khi bạn đồng ý với quảng cáo được cá nhân hóa theo cơ chế của Google nếu có áp dụng.</li>
+            <li><strong>Lợi ích hợp pháp:</strong> duy trì app miễn phí thông qua quảng cáo không cá nhân hóa.</li>
+            <li><strong>Thực hiện hợp đồng:</strong> khi bạn chủ động mua gói Premium trong ứng dụng.</li>
+          </ul>
+
+          <h2>7. Lưu trữ và bảo mật dữ liệu</h2>
+          <ul>
+            <li>Dữ liệu cục bộ được lưu trong vùng lưu trữ riêng của ứng dụng trên thiết bị.</li>
+            <li>Dữ liệu do SDK bên thứ ba xử lý thường được truyền qua kết nối bảo mật như TLS/HTTPS.</li>
+            <li>Chúng tôi không vận hành máy chủ backend riêng để lưu dữ liệu cá nhân của người dùng cho ứng dụng này.</li>
+          </ul>
+          <p>
+            Dù chúng tôi áp dụng các biện pháp hợp lý để giảm thiểu rủi ro, không có phương thức truyền tải hoặc lưu trữ
+            điện tử nào đạt mức an toàn tuyệt đối 100%.
+          </p>
+
+          <h2>8. Thời gian lưu trữ dữ liệu</h2>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Loại dữ liệu</th>
+                  <th>Thời gian lưu</th>
+                  <th>Cách xóa</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Dữ liệu cục bộ do ứng dụng lưu</td>
+                  <td>Cho đến khi bạn xóa dữ liệu app hoặc gỡ ứng dụng</td>
+                  <td>Xóa dữ liệu ứng dụng trong cài đặt Android hoặc gỡ cài đặt</td>
+                </tr>
+                <tr>
+                  <td>Dữ liệu quảng cáo do AdMob xử lý</td>
+                  <td>Theo chính sách lưu trữ của Google</td>
+                  <td>Quản lý trong cài đặt quảng cáo của Android hoặc tài khoản Google</td>
+                </tr>
+                <tr>
+                  <td>Lịch sử giao dịch Premium</td>
+                  <td>Theo chính sách của Google Play</td>
+                  <td>Quản lý qua Google Play</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>9. Quyền của người dùng</h2>
+          <ul>
+            <li>Xem, chỉnh sửa hoặc xóa dữ liệu cá nhân hóa được lưu trong app bằng cách thay đổi hoặc xóa dữ liệu ứng dụng.</li>
+            <li>Tắt cá nhân hóa quảng cáo hoặc đặt lại Advertising ID trong cài đặt Android.</li>
+            <li>Mua gói Premium để loại bỏ quảng cáo trong ứng dụng.</li>
+            <li>Liên hệ với chúng tôi để đặt câu hỏi liên quan đến quyền riêng tư qua email <a
+                href="mailto:hacong86@gmail.com">hacong86@gmail.com</a>.</li>
+          </ul>
+          <p>
+            Nếu bạn muốn chúng tôi xác nhận rằng nhà phát triển không lưu dữ liệu cá nhân của bạn trên máy chủ riêng, bạn
+            có thể gửi email với tiêu đề <strong>“YÊU CẦU XÓA DỮ LIỆU — Văn Khấn Cổ Truyền”</strong>.
+          </p>
+
+          <h2>10. Quyền riêng tư của trẻ em</h2>
+          <p>
+            Ứng dụng không được thiết kế riêng cho trẻ em dưới 13 tuổi và không thuộc chương trình Designed for Families
+            của Google Play. Chúng tôi không cố ý thu thập dữ liệu cá nhân từ trẻ em dưới 13 tuổi.
+          </p>
+
+          <h2>11. Quyền Android mà ứng dụng có thể sử dụng</h2>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Quyền</th>
+                  <th>Mục đích</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>INTERNET</code></td>
+                  <td>Kết nối AdMob, Google Play Billing hoặc các tài nguyên mạng cần thiết như font chữ</td>
+                </tr>
+                <tr>
+                  <td><code>ACCESS_NETWORK_STATE</code></td>
+                  <td>Kiểm tra trạng thái mạng để tải hoặc hiển thị quảng cáo phù hợp</td>
+                </tr>
+                <tr>
+                  <td><code>AD_ID</code></td>
+                  <td>Hỗ trợ phân phối quảng cáo thông qua Advertising ID trên Android tương thích</td>
+                </tr>
+                <tr>
+                  <td><code>com.android.vending.BILLING</code></td>
+                  <td>Xử lý gói mua hàng trong ứng dụng</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Ứng dụng không yêu cầu các quyền nhạy cảm như camera, micro, danh bạ, SMS hoặc vị trí chính xác.</p>
+
+          <h2>12. Cookie và công nghệ theo dõi</h2>
+          <p>
+            Vì đây là ứng dụng di động, ứng dụng không sử dụng cookie trình duyệt. Tuy nhiên, dịch vụ quảng cáo có thể sử
+            dụng các định danh quảng cáo hoặc mã phiên tương đương để phục vụ phân phối quảng cáo.
+          </p>
+
+          <h2>13. Chuyển dữ liệu quốc tế</h2>
+          <p>
+            Dữ liệu do Google AdMob, Google Play Billing hoặc các dịch vụ Google liên quan xử lý có thể được chuyển đến
+            và xử lý tại các máy chủ của Google ở nhiều quốc gia, bao gồm Hoa Kỳ, theo chính sách của Google.
+          </p>
+
+          <h2>14. Thay đổi chính sách bảo mật</h2>
+          <p>
+            Chúng tôi có thể cập nhật chính sách này để phản ánh thay đổi về tính năng, SDK được sử dụng hoặc yêu cầu
+            pháp lý. Khi có cập nhật, ngày hiệu lực ở đầu tài liệu sẽ được điều chỉnh và phiên bản mới sẽ được công bố tại
+            cùng URL.
+          </p>
+
+          <h2>15. Căn cứ tham khảo và tuân thủ</h2>
+          <ul>
+            <li>Google Play Data Safety Requirements</li>
+            <li>Google AdMob Program Policies</li>
+            <li>Nghị định 13/2023/NĐ-CP về bảo vệ dữ liệu cá nhân tại Việt Nam</li>
+            <li>GDPR, CCPA/CPRA và COPPA ở phạm vi áp dụng liên quan</li>
+          </ul>
+
+          <h2>16. Liên hệ</h2>
+          <p>Nếu bạn có câu hỏi hoặc yêu cầu liên quan đến quyền riêng tư, vui lòng liên hệ:</p>
+          <p>
+            <strong>Nhà phát triển:</strong> AppMaven<br>
+            <strong>Email:</strong> <a href="mailto:hacong86@gmail.com">hacong86@gmail.com</a><br>
+            <strong>Website:</strong> <a href="https://appmavenstudio.com/" target="_blank"
+              rel="noopener noreferrer">https://appmavenstudio.com/</a>
+          </p>
+
+          <p
+            style="margin-top: var(--space-8); padding-top: var(--space-6); border-top: 1px solid rgba(255, 220, 170, 0.12); color: var(--color-text-tertiary);">
+            Chính sách này có hiệu lực từ ngày 22/04/2026. © 2026 AppMaven. Bảo lưu mọi quyền.
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 AppMaven Studio. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+
+</body>
+
+</html>

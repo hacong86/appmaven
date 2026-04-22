@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta Tags -->
+  <title>Thư Viện Văn Khấn Cổ Truyền - 104 Bài Văn Khấn Việt | AppMaven Studio</title>
+  <meta name="title" content="Thư Viện Văn Khấn Cổ Truyền - 104 Bài Văn Khấn Việt | AppMaven Studio">
+  <meta name="description"
+    content="Tra cứu 104 bài văn khấn cổ truyền Việt Nam theo từng nghi lễ, gia tiên, thần tài, lễ tết. Có cá nhân hóa bài khấn, chế độ đọc hỗ trợ và dùng offline.">
+  <meta name="keywords"
+    content="văn khấn cổ truyền, thư viện văn khấn, bài cúng gia tiên, văn khấn thần tài, văn khấn offline, văn khấn lễ tết, bài cúng Việt Nam, app văn khấn">
+  <link rel="canonical" href="https://appmavenstudio.com/apps/van-khan-co-truyen/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://appmavenstudio.com/apps/van-khan-co-truyen/">
+  <meta property="og:title" content="Thư Viện Văn Khấn Cổ Truyền">
+  <meta property="og:description"
+    content="104 bài văn khấn Việt được phân loại rõ ràng, cá nhân hóa nhanh chóng và hỗ trợ đọc tiện lợi ngay trên điện thoại.">
+  <meta property="og:image" content="https://appmavenstudio.com/assets/images/apps/van-khan-co-truyen/chplay.webp">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://appmavenstudio.com/apps/van-khan-co-truyen/">
+  <meta property="twitter:title" content="Thư Viện Văn Khấn Cổ Truyền">
+  <meta property="twitter:description"
+    content="Kho 104 bài văn khấn cổ truyền Việt Nam với chế độ đọc hỗ trợ, cá nhân hóa và tra cứu offline.">
+  <meta property="twitter:image" content="https://appmavenstudio.com/assets/images/apps/van-khan-co-truyen/chplay.webp">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/assets/images/logo/favicon.png">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/variables.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Thư Viện Văn Khấn Cổ Truyền",
+    "applicationCategory": "LifestyleApplication",
+    "operatingSystem": "Android",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "VND"
+    },
+    "downloadUrl": "https://play.google.com/store/apps/details?id=com.appmaven.vankhan",
+    "image": "https://appmavenstudio.com/assets/images/apps/van-khan-co-truyen/chplay.webp",
+    "description": "Ứng dụng tra cứu 104 bài văn khấn cổ truyền Việt Nam, hỗ trợ điền thông tin, xem trước nội dung và đọc hỗ trợ."
+  }
+  </script>
+
+  <style>
+    .bento-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: var(--space-8) var(--space-4);
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: var(--space-6);
+    }
+
+    .bento-card {
+      background:
+        radial-gradient(circle at top right, rgba(245, 158, 11, 0.18), transparent 38%),
+        linear-gradient(145deg, rgba(122, 20, 20, 0.88), rgba(24, 24, 27, 0.9));
+      border: 1px solid rgba(255, 220, 170, 0.14);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+      overflow: hidden;
+      position: relative;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.28);
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .bento-card:hover {
+      border-color: rgba(251, 191, 36, 0.26);
+    }
+
+    .area-header {
+      grid-column: span 12;
+      display: flex;
+      align-items: center;
+      gap: var(--space-8);
+    }
+
+    @media (min-width: 992px) {
+      .area-header {
+        grid-column: span 9;
+      }
+
+      .area-safety {
+        grid-column: span 3;
+      }
+
+      .area-overview {
+        grid-column: span 5;
+      }
+
+      .area-features {
+        grid-column: span 7;
+      }
+
+      .area-gallery {
+        grid-column: span 7;
+      }
+
+      .area-faq {
+        grid-column: span 5;
+      }
+    }
+
+    @media (max-width: 991px) {
+
+      .area-header,
+      .area-safety,
+      .area-overview,
+      .area-features,
+      .area-gallery,
+      .area-faq {
+        grid-column: span 12;
+      }
+    }
+
+    .app-icon-large {
+      width: 120px;
+      height: 120px;
+      border-radius: var(--radius-xl);
+      box-shadow: 0 0 28px rgba(245, 158, 11, 0.45);
+      flex-shrink: 0;
+    }
+
+    .header-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+      margin-top: var(--space-4);
+    }
+
+    .header-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255, 248, 235, 0.08);
+      border: 1px solid rgba(255, 220, 170, 0.14);
+      color: #fde7c6;
+      font-size: 0.92rem;
+    }
+
+    .store-button {
+      display: inline-flex;
+      align-items: center;
+      background: #000;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 8px;
+      padding: 6px 16px;
+      color: white;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      margin-right: 12px;
+      margin-bottom: 12px;
+    }
+
+    .store-button:hover {
+      background: #1a1a1a;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+      border-color: rgba(255, 255, 255, 0.38);
+    }
+
+    .store-button svg {
+      width: 24px;
+      height: 24px;
+      margin-right: 12px;
+      fill: currentColor;
+    }
+
+    .store-button-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      line-height: 1.2;
+    }
+
+    .store-button-subtitle {
+      font-size: 10px;
+      text-transform: uppercase;
+      opacity: 0.8;
+    }
+
+    .store-button-title {
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: var(--space-6);
+    }
+
+    .feature-item {
+      display: flex;
+      gap: var(--space-3);
+    }
+
+    .feature-icon-box {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, rgba(255, 245, 230, 0.12), rgba(245, 158, 11, 0.14));
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      flex-shrink: 0;
+      border: 1px solid rgba(255, 220, 170, 0.14);
+    }
+
+    .screenshot-scroll {
+      display: flex;
+      gap: var(--space-4);
+      overflow-x: auto;
+      padding-bottom: var(--space-4);
+      scrollbar-width: thin;
+      scrollbar-color: #f59e0b transparent;
+    }
+
+    .screenshot-img {
+      height: 420px;
+      width: auto;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(255, 220, 170, 0.12);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .safety-link {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      padding: var(--space-3);
+      border-radius: var(--radius-md);
+      color: var(--color-text-secondary);
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+
+    .safety-link:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: white;
+    }
+
+    .faq-summary {
+      padding: var(--space-4);
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: var(--radius-md);
+      margin-bottom: var(--space-3);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+
+    .faq-summary:hover {
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    details[open] .faq-summary {
+      background: rgba(245, 158, 11, 0.18);
+    }
+
+    .faq-text {
+      padding: var(--space-4);
+      color: var(--color-text-secondary);
+    }
+
+    .seo-content-section {
+      margin-top: var(--space-8);
+      color: var(--color-text-secondary);
+    }
+
+    .seo-content-section h2 {
+      color: #f8d29a;
+      margin-top: var(--space-6);
+    }
+
+    .seo-content-section h3 {
+      color: #fde7c6;
+      margin-top: var(--space-5);
+      margin-bottom: var(--space-2);
+      font-size: 1.1rem;
+    }
+
+    .seo-content-section p {
+      margin-bottom: var(--space-4);
+      line-height: 1.8;
+    }
+
+    .seo-content-section ul {
+      margin-bottom: var(--space-4);
+      padding-left: var(--space-6);
+      line-height: 1.8;
+    }
+
+    .seo-content-section li {
+      margin-bottom: var(--space-2);
+    }
+
+    h2 {
+      margin-bottom: var(--space-4);
+      font-size: 1.5rem;
+      border-bottom: 1px solid rgba(255, 220, 170, 0.12);
+      padding-bottom: var(--space-2);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar-container">
+      <a href="/" class="navbar-logo" aria-label="AppMaven Studio Home">
+        <img src="/assets/images/logo/appmaven_logo.png" alt="AppMaven Studio Logo"
+          style="height: 32px; width: 32px; border-radius: 8px;">
+        <span>AppMaven Studio</span>
+      </a>
+
+      <button class="navbar-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="navbar-menu" role="menubar">
+        <li role="none"><a href="/" role="menuitem">Home</a></li>
+        <li role="none"><a href="/apps/" role="menuitem" class="active">Apps</a></li>
+        <li role="none"><a href="/blog/" role="menuitem">Blog</a></li>
+        <li role="none"><a href="/about/" role="menuitem">About</a></li>
+        <li role="none"><a href="/support/" role="menuitem">Support</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Cosmic Background -->
+  <div class="cosmic-background"></div>
+
+  <!-- Main Content -->
+  <main style="padding-top: calc(var(--header-height) + var(--space-4)); padding-bottom: var(--space-12);">
+
+    <div class="bento-container">
+
+      <!-- Header -->
+      <div class="bento-card area-header">
+        <img src="/assets/images/apps/van-khan-co-truyen/chplay.webp" alt="Thư Viện Văn Khấn Cổ Truyền Logo"
+          class="app-icon-large">
+        <div>
+          <h1
+            style="font-size: 2.5rem; font-weight: 700; background: linear-gradient(to right, #fff6e8, #f59e0b); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: var(--space-2);">
+            Thư Viện Văn Khấn Cổ Truyền
+          </h1>
+          <p style="font-size: 1.2rem; color: var(--color-text-secondary); max-width: 640px;">
+            Kho 104 bài văn khấn Việt Nam được phân loại theo nghi lễ, gia tiên, thần tài và đời sống tâm linh, có cá
+            nhân hóa nội dung và chế độ đọc hỗ trợ ngay trên điện thoại.
+          </p>
+
+          <div class="header-chips">
+            <span class="header-chip">📿 104 bài văn khấn</span>
+            <span class="header-chip">🗂️ 7 danh mục chính</span>
+            <span class="header-chip">📴 Hoạt động offline</span>
+          </div>
+
+          <div style="margin-top: var(--space-6); display: flex; flex-wrap: wrap;">
+            <a href="https://play.google.com/store/apps/details?id=com.appmaven.vankhan" target="_blank"
+              rel="noopener noreferrer" class="store-button">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.36,13.08L18.81,13.96L16.07,11.23L18.81,8.5L20.36,9.38C20.9,9.7 21.25,10.26 21.25,10.88V11.58C21.25,12.19 20.9,12.76 20.36,13.08M16.81,7.35L14.54,9.62L6.05,1.13L16.81,7.35Z" />
+              </svg>
+              <div class="store-button-content">
+                <span class="store-button-subtitle">Get it on</span>
+                <span class="store-button-title">Google Play</span>
+              </div>
+            </a>
+
+            <a href="#" class="store-button" style="opacity: 0.72; cursor: not-allowed;" onclick="return false;">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.13 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.43,15.65 20.08,16.66 20.08,16.66C20.03,16.8 19.7,17.96 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.37 12.36,4.26 13,3.5Z" />
+              </svg>
+              <div class="store-button-content">
+                <span class="store-button-subtitle">Coming Soon to</span>
+                <span class="store-button-title">App Store</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Safety -->
+      <div class="bento-card area-safety" style="display: flex; flex-direction: column; justify-content: center;">
+        <h3 style="margin-bottom: var(--space-4); font-size: 1.1rem; color: #f8d29a;">Bảo mật & Hỗ trợ</h3>
+        <div style="display: flex; flex-direction: column; gap: var(--space-2);">
+          <a href="privacy-policy.html" class="safety-link">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+            Chính sách bảo mật
+          </a>
+          <a href="/data-deletion/" class="safety-link">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path
+                d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+            </svg>
+            Yêu cầu xóa dữ liệu
+          </a>
+          <a href="/support/" class="safety-link">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            </svg>
+            Trung tâm hỗ trợ
+          </a>
+        </div>
+        <div
+          style="margin-top: auto; padding-top: var(--space-4); font-size: 0.8rem; color: var(--color-text-tertiary); border-top: 1px solid rgba(255, 220, 170, 0.1);">
+          Nội dung cốt lõi được đóng gói sẵn trong app.<br>
+          Không cần đăng nhập để sử dụng.
+        </div>
+      </div>
+
+      <!-- Overview -->
+      <div class="bento-card area-overview">
+        <h2>Tổng quan ứng dụng</h2>
+        <p style="color: var(--color-text-secondary); line-height: 1.8;">
+          <strong>Thư Viện Văn Khấn Cổ Truyền</strong> giúp người dùng tra cứu nhanh các bài khấn chuẩn nghi thức Việt
+          Nam mà không cần lục tìm sách hay lưu nhiều bản ghi chú rời rạc.
+        </p>
+        <p style="color: var(--color-text-secondary); line-height: 1.8; margin-top: var(--space-4);">
+          Ứng dụng được thiết kế cho các dịp cúng gia tiên, thần tài, lễ tết, đi chùa, nghi lễ tang lễ và nhiều nhu cầu
+          tâm linh thường gặp trong đời sống. Mỗi bài đều có cấu trúc rõ ràng, phần dịp cúng, sắm lễ và nội dung văn
+          khấn để đọc thuận tiện hơn.
+        </p>
+      </div>
+
+      <!-- Features -->
+      <div class="bento-card area-features">
+        <h2>Tính năng nổi bật</h2>
+        <div class="feature-grid">
+          <div class="feature-item">
+            <div class="feature-icon-box">📚</div>
+            <div>
+              <h4 style="color: white; margin-bottom: 2px;">104 bài văn khấn</h4>
+              <p style="font-size: 0.86rem; color: var(--color-text-tertiary);">Bao phủ gia tiên, thần tài, lễ tết, đi chùa và nhiều nghi lễ đời sống.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon-box">🗂️</div>
+            <div>
+              <h4 style="color: white; margin-bottom: 2px;">Phân loại rõ ràng</h4>
+              <p style="font-size: 0.86rem; color: var(--color-text-tertiary);">Sắp xếp theo danh mục và chủ đề để tìm bài phù hợp nhanh hơn.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon-box">📝</div>
+            <div>
+              <h4 style="color: white; margin-bottom: 2px;">Cá nhân hóa bài khấn</h4>
+              <p style="font-size: 0.86rem; color: var(--color-text-tertiary);">Điền tên gia chủ, địa chỉ, ngày cúng rồi xem trước ngay trong app.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon-box">🎧</div>
+            <div>
+              <h4 style="color: white; margin-bottom: 2px;">Chế độ đọc hỗ trợ</h4>
+              <p style="font-size: 0.86rem; color: var(--color-text-tertiary);">Giao diện tập trung, cỡ chữ lớn và điều khiển phát thuận tiện khi hành lễ.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon-box">🔎</div>
+            <div>
+              <h4 style="color: white; margin-bottom: 2px;">Tìm kiếm dễ dàng</h4>
+              <p style="font-size: 0.86rem; color: var(--color-text-tertiary);">Tra cứu theo chủ đề, nghi lễ hoặc loại bài khấn mà không cần nhớ chính xác tên gọi.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon-box">📴</div>
+            <div>
+              <h4 style="color: white; margin-bottom: 2px;">Sử dụng offline</h4>
+              <p style="font-size: 0.86rem; color: var(--color-text-tertiary);">Nội dung chính có sẵn trên thiết bị, phù hợp cả khi không có kết nối mạng.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gallery -->
+      <div class="bento-card area-gallery">
+        <h2 style="display: flex; justify-content: space-between; align-items: center;">
+          Giao diện ứng dụng
+          <span style="font-size: 0.9rem; font-weight: normal; color: var(--color-text-tertiary);">Lướt để xem thêm</span>
+        </h2>
+        <div class="screenshot-scroll">
+          <img src="/assets/images/apps/van-khan-co-truyen/thu-vien-van-khan-co-truyen (1).webp"
+            alt="Màn hình thư viện văn khấn theo danh mục" class="screenshot-img">
+          <img src="/assets/images/apps/van-khan-co-truyen/thu-vien-van-khan-co-truyen (2).webp"
+            alt="Màn hình tìm và chọn bài văn khấn phù hợp" class="screenshot-img">
+          <img src="/assets/images/apps/van-khan-co-truyen/thu-vien-van-khan-co-truyen (3).webp"
+            alt="Màn hình nội dung bài văn khấn với hướng dẫn dịp cúng và sắm lễ" class="screenshot-img">
+          <img src="/assets/images/apps/van-khan-co-truyen/thu-vien-van-khan-co-truyen (4).webp"
+            alt="Màn hình điền thông tin để cá nhân hóa bài khấn" class="screenshot-img">
+          <img src="/assets/images/apps/van-khan-co-truyen/thu-vien-van-khan-co-truyen (5).webp"
+            alt="Màn hình xem trước bài văn khấn sau khi điền thông tin" class="screenshot-img">
+          <img src="/assets/images/apps/van-khan-co-truyen/thu-vien-van-khan-co-truyen (6).webp"
+            alt="Màn hình chế độ đọc hỗ trợ với điều khiển phát" class="screenshot-img">
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="bento-card area-faq">
+        <h2>Hỏi đáp nhanh</h2>
+
+        <details>
+          <summary class="faq-summary">Ứng dụng có cần mạng để đọc bài khấn không?</summary>
+          <div class="faq-text">
+            Không. Các tính năng cốt lõi như tra cứu bài khấn, xem nội dung, cá nhân hóa thông tin và chế độ đọc hỗ trợ
+            đều có thể sử dụng ngay trên thiết bị của bạn.
+          </div>
+        </details>
+
+        <details>
+          <summary class="faq-summary">App có phù hợp cho người lớn tuổi không?</summary>
+          <div class="faq-text">
+            Có. Giao diện được tối ưu để đọc dễ hơn, nội dung trình bày thoáng, và chế độ đọc hỗ trợ giúp theo dõi bài
+            khấn thuận tiện hơn khi đang hành lễ.
+          </div>
+        </details>
+
+        <details>
+          <summary class="faq-summary">Tôi có thể điền thông tin gia chủ vào bài khấn không?</summary>
+          <div class="faq-text">
+            Có. App cho phép nhập nhanh các thông tin cơ bản như tên gia chủ, địa chỉ, ngày cúng để tạo bản văn khấn
+            phù hợp trước khi sử dụng.
+          </div>
+        </details>
+
+        <details>
+          <summary class="faq-summary">Dữ liệu cá nhân của tôi được xử lý như thế nào?</summary>
+          <div class="faq-text">
+            Thông tin bạn nhập để cá nhân hóa bài khấn được lưu cục bộ trên thiết bị nhằm phục vụ trải nghiệm sử dụng.
+            Bạn có thể xem chi tiết tại trang <a href="privacy-policy.html" style="color: #f8d29a;">Chính sách bảo
+              mật</a>.
+          </div>
+        </details>
+      </div>
+
+      <!-- SEO Content -->
+      <div class="bento-card" style="grid-column: span 12; margin-top: var(--space-6);">
+        <div class="seo-content-section" style="margin-top: 0;">
+          <h2>Tại sao nên dùng Thư Viện Văn Khấn Cổ Truyền?</h2>
+
+          <p>
+            Trong nhiều gia đình Việt, việc tìm đúng bài văn khấn cho từng dịp như mùng 1, ngày rằm, khai trương, nhập
+            trạch hay lễ tết thường tốn khá nhiều thời gian. <strong>Thư Viện Văn Khấn Cổ Truyền</strong> tập hợp sẵn 104
+            bài văn khấn và sắp xếp theo nhóm nhu cầu để bạn mở ra là có thể dùng ngay.
+          </p>
+
+          <h3>Kho bài khấn phân loại theo từng nghi lễ</h3>
+          <p>
+            Ứng dụng tập trung vào những nhóm bài khấn người dùng thường cần nhất như gia tiên, thờ cúng thần, ngày lễ
+            tết, đi chùa đền, tang lễ, giải hạn sao và các nghi thức đời sống. Nhờ cách chia nhóm này, bạn không phải
+            tìm kiếm trong một danh sách dài thiếu ngữ cảnh.
+          </p>
+
+          <h3>Cá nhân hóa nội dung trước khi đọc</h3>
+          <p>
+            Thay vì tự sửa bằng tay, bạn chỉ cần nhập các thông tin cơ bản như tên gia chủ, địa chỉ hoặc ngày cúng rồi
+            xem trước nội dung hoàn chỉnh. Điều này giúp giảm nhầm lẫn và tăng sự thuận tiện khi sử dụng app trong các
+            dịp cần chuẩn bị nhanh.
+          </p>
+
+          <h3>Chế độ đọc hỗ trợ phù hợp lúc hành lễ</h3>
+          <p>
+            Ứng dụng có chế độ đọc hỗ trợ với giao diện tập trung, cỡ chữ rõ ràng và điều khiển phát thuận tiện. Đây là
+            điểm hữu ích khi bạn cần theo dõi bài khấn liên tục mà không phải cuộn tay nhiều lần trên điện thoại.
+          </p>
+
+          <h3>Phù hợp cho nhu cầu tra cứu hàng ngày và dịp đặc biệt</h3>
+          <ul>
+            <li>Tra cứu bài khấn gia tiên, thần tài, thổ địa nhanh ngay tại nhà.</li>
+            <li>Tìm bài dùng cho khai trương, nhập trạch, lễ tết, đi chùa hoặc nghi lễ đời sống.</li>
+            <li>Chuẩn bị bài khấn cho người thân với nội dung đã được cá nhân hóa sẵn.</li>
+            <li>Sử dụng khi không có internet nhờ nội dung chính được đóng gói trong app.</li>
+          </ul>
+
+          <p style="margin-top: var(--space-8); font-size: 0.94rem; opacity: 0.78;">
+            <em>Thư Viện Văn Khấn Cổ Truyền hướng đến một trải nghiệm đơn giản, trang trọng và dễ dùng để gìn giữ nét văn
+              hóa tâm linh Việt trên điện thoại thông minh.</em>
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <div style="display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-4);">
+            <img src="/assets/images/logo/appmaven_logo.png" alt="AppMaven Studio Logo"
+              style="height: 32px; width: 32px; border-radius: 8px;">
+            <span style="font-size: var(--text-xl); font-weight: var(--font-bold);">AppMaven Studio</span>
+          </div>
+          <p style="color: var(--color-text-secondary); margin-bottom: var(--space-4); line-height: 1.6;">
+            Xây dựng trải nghiệm di động trực quan, chỉn chu và tôn trọng quyền riêng tư cho người dùng Việt.
+          </p>
+        </div>
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/apps/">Apps</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/support/">Support</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="/terms-of-service.html">Terms of Service</a></li>
+            <li><a href="/data-deletion/">Data Deletion</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:hacong86@gmail.com">hacong86@gmail.com</a></li>
+            <li><a href="tel:+84972865336">+84 972 865 336</a></li>
+            <li><a href="https://github.com/hacong86" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 AppMaven Studio. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+
+</body>
+
+</html>
