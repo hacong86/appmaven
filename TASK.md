@@ -40,7 +40,7 @@
 - [x] [2026-04-22] [Codex]: Cập nhật `apps/index.html` thêm card ứng dụng mới
 - [x] [2026-04-22] [Codex]: Cập nhật `privacy-policy.html` thêm link policy của ứng dụng
 - [x] [2026-04-22] [Codex]: Kiểm tra tổng thể các file vừa tạo/sửa
-- [ ] [2026-04-22] [Codex]: Stage, commit và push các file website của `Thư Viện Văn Khấn Cổ Truyền`
+- [x] [2026-04-22] [Codex]: Stage, commit và push các file website của `Thư Viện Văn Khấn Cổ Truyền` (`079dcd7`)
 
 ## Assumption Log
 - [2026-04-22] [Codex]: Dùng slug `apps/van-khan-co-truyen` để khớp với thư mục assets `assets/images/apps/van-khan-co-truyen`

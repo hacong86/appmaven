@@ -19,3 +19,8 @@
 - [2026-04-22] [Codex] Đã xong gần đây: Kiểm tra nhanh route, link policy, link Google Play và số lượng card trong `apps/index.html`
 - [2026-04-22] [Codex] Đang làm tiếp gì: Xuất bản các trang mới bằng commit và push những file website liên quan, không đưa tài liệu nguồn nội bộ trong `doc/thuvienvankhan` lên remote
 - [2026-04-22] [Codex] Updated at: 2026-04-22 10:57:08
+
+- [2026-04-22] [Codex] Đã xong gần đây: Đã publish thành công các trang `apps/van-khan-co-truyen/` và `apps/van-khan-co-truyen/privacy-policy.html` lên `origin/main` qua commit `079dcd7`
+- [2026-04-22] [Codex] Đã xong gần đây: Bộ ảnh `assets/images/apps/van-khan-co-truyen/` đã được đưa lên cùng đợt publish để trang render đầy đủ
+- [2026-04-22] [Codex] Đang làm tiếp gì: Chờ GitHub Pages cập nhật và chờ người dùng kiểm tra bản live
+- [2026-04-22] [Codex] Updated at: 2026-04-22 11:02:11
