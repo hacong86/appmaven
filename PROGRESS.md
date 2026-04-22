@@ -22,5 +22,7 @@
 
 - [2026-04-22] [Codex] Đã xong gần đây: Đã publish thành công các trang `apps/van-khan-co-truyen/` và `apps/van-khan-co-truyen/privacy-policy.html` lên `origin/main` qua commit `079dcd7`
 - [2026-04-22] [Codex] Đã xong gần đây: Bộ ảnh `assets/images/apps/van-khan-co-truyen/` đã được đưa lên cùng đợt publish để trang render đầy đủ
-- [2026-04-22] [Codex] Đang làm tiếp gì: Chờ GitHub Pages cập nhật và chờ người dùng kiểm tra bản live
-- [2026-04-22] [Codex] Updated at: 2026-04-22 11:02:11
+- [2026-04-22] [Codex] Đã xong gần đây: Đã bỏ trường metadata `Phiên bản 1.0` khỏi trang `apps/van-khan-co-truyen/privacy-policy.html` để không phải cập nhật policy theo mỗi lần tăng version app
+- [2026-04-22] [Codex] Đã xong gần đây: Đã đồng bộ lại bản nguồn nội bộ `doc/thuvienvankhan/Privacy Policy.md` để tránh tái sinh thông tin version ở các lần dựng lại sau
+- [2026-04-22] [Codex] Đang làm tiếp gì: Chờ người dùng kiểm tra bản live sau khi publish lại policy page
+- [2026-04-22] [Codex] Updated at: 2026-04-22 11:07:42

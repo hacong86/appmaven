@@ -41,6 +41,7 @@
 - [x] [2026-04-22] [Codex]: Cập nhật `privacy-policy.html` thêm link policy của ứng dụng
 - [x] [2026-04-22] [Codex]: Kiểm tra tổng thể các file vừa tạo/sửa
 - [x] [2026-04-22] [Codex]: Stage, commit và push các file website của `Thư Viện Văn Khấn Cổ Truyền` (`079dcd7`)
+- [x] [2026-04-22] [Codex]: Bỏ metadata `Phiên bản 1.0` khỏi policy page của `Thư Viện Văn Khấn Cổ Truyền` và publish lại
 
 ## Assumption Log
 - [2026-04-22] [Codex]: Dùng slug `apps/van-khan-co-truyen` để khớp với thư mục assets `assets/images/apps/van-khan-co-truyen`
