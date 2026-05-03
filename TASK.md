@@ -64,3 +64,16 @@
 - [2026-05-03] [Codex]: Dùng slug `apps/quan-ly-xe-tai-xe-cong-nghe` để khớp thư mục assets và tối ưu từ khóa tiếng Việt
 - [2026-05-03] [Codex]: Dùng `doc/soxedv/ASO_listing.md` làm nguồn chính cho SEO page và `doc/soxedv/Privacy Policy.md` làm nguồn chính cho privacy page
 - [2026-05-03] [Codex]: Không hiển thị metadata `Phiên bản chính sách 1.0` trên privacy page để tránh phải cập nhật policy theo mỗi lần tăng version app
+
+---
+
+# Task: Cập nhật Privacy Policy Sổ Xe cho tính năng IAP
+
+## Checklist
+- [x] [2026-05-03] [Codex]: Đọc `TASK.md`, `PROGRESS.md`, nguồn `doc/soxedv/Privacy Policy.md` và trang HTML hiện tại
+- [x] [2026-05-03] [Codex]: Cập nhật `apps/quan-ly-xe-tai-xe-cong-nghe/privacy-policy.html` bổ sung Google Play Billing/IAP
+- [x] [2026-05-03] [Codex]: Kiểm tra lại nội dung HTML, đảm bảo không hiển thị metadata phiên bản chính sách
+- [x] [2026-05-03] [Codex]: Stage, commit và push bản cập nhật policy IAP cho Sổ Xe
+
+## Assumption Log
+- [2026-05-03] [Codex]: Chỉ cập nhật app-specific policy page của Sổ Xe; không sửa root `privacy-policy.html` vì trang root chỉ là danh sách/link tổng hợp.

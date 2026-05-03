@@ -8,7 +8,7 @@
   <!-- SEO Meta Tags -->
   <title>Chính sách bảo mật - Sổ Xe | AppMaven Studio</title>
   <meta name="description"
-    content="Chính sách bảo mật cho ứng dụng Sổ Xe. Tìm hiểu cách dữ liệu chi phí xe, doanh thu, bảo dưỡng và CSV được lưu cục bộ trên thiết bị.">
+    content="Chính sách bảo mật cho ứng dụng Sổ Xe: dữ liệu xe lưu cục bộ, quảng cáo AdMob, mua Sổ Xe Pro qua Google Play Billing và xuất CSV.">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/assets/images/logo/favicon.png">
@@ -218,6 +218,7 @@
             <p style="margin: 0;">
               Tóm tắt nhanh: Sổ Xe không yêu cầu tài khoản, không đồng bộ dữ liệu vận hành xe lên máy chủ riêng và không
               truy cập vị trí GPS chính xác. Dữ liệu bạn nhập được lưu cục bộ trong cơ sở dữ liệu nội bộ trên thiết bị.
+              Nếu bạn mua Sổ Xe Pro, giao dịch thanh toán được xử lý bởi Google Play Billing, không phải máy chủ của chúng tôi.
             </p>
           </div>
 
@@ -253,7 +254,27 @@
             <li>Không bán dữ liệu cá nhân cho bên thứ ba.</li>
           </ul>
 
-          <h3>2.3. Dữ liệu được xử lý bởi Google AdMob</h3>
+          <h3>2.3. Dữ liệu được xử lý bởi Google Play Billing</h3>
+          <p>
+            Nếu bạn chọn mua gói <strong>Sổ Xe Pro</strong> (mua một lần trong ứng dụng để gỡ quảng cáo), giao dịch sẽ
+            được xử lý hoàn toàn qua <strong>Google Play Billing</strong>. Ứng dụng không xử lý hoặc lưu trữ thông tin
+            thanh toán của bạn.
+          </p>
+          <ul>
+            <li>Phương thức thanh toán như thẻ, ví Google Pay hoặc phương thức khác chỉ do Google xử lý; ứng dụng không nhìn thấy dữ liệu này.</li>
+            <li>Ứng dụng có thể nhận purchase token và mã giao dịch để xác nhận giao dịch, sau đó lưu trạng thái Pro cục bộ trên thiết bị.</li>
+            <li>Tài khoản Google liên kết với giao dịch được Google dùng để hỗ trợ khôi phục giao dịch khi bạn cài lại ứng dụng.</li>
+          </ul>
+          <p>
+            Sổ Xe không gửi thông tin thanh toán tới máy chủ riêng vì ứng dụng không vận hành máy chủ lưu dữ liệu người dùng.
+            Mọi yêu cầu hoàn tiền, hỗ trợ giao dịch hoặc quản lý lịch sử mua hàng cần thực hiện qua Google Play:
+            <a href="https://play.google.com/store/account/orderhistory" target="_blank" rel="noopener noreferrer">Google
+              Play Order History</a> và
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy
+              Policy</a>.
+          </p>
+
+          <h3>2.4. Dữ liệu được xử lý bởi Google AdMob</h3>
           <p>
             Ứng dụng có thể hiển thị quảng cáo từ Google AdMob để duy trì hoạt động. Để phục vụ và đo lường quảng cáo,
             Google AdMob có thể tự động xử lý một số dữ liệu kỹ thuật, ví dụ:
@@ -286,11 +307,19 @@
               <tbody>
                 <tr>
                   <td>Internet</td>
-                  <td>Tải và hiển thị quảng cáo qua Google AdMob.</td>
+                  <td>Tải và hiển thị quảng cáo qua Google AdMob; giao tiếp với Google Play Billing khi bạn mua Sổ Xe Pro.</td>
                 </tr>
                 <tr>
-                  <td>Thông báo</td>
-                  <td>Hiển thị nhắc lịch bảo dưỡng khi bạn bật tính năng nhắc việc.</td>
+                  <td><code>com.android.vending.BILLING</code></td>
+                  <td>Xử lý giao dịch mua Sổ Xe Pro qua Google Play. Quyền này do hệ thống cấp và không hiển thị hộp thoại riêng.</td>
+                </tr>
+                <tr>
+                  <td>Thông báo (<code>POST_NOTIFICATIONS</code>)</td>
+                  <td>Hiển thị nhắc lịch bảo dưỡng đúng ngày bạn đã cài đặt. Trên Android 13+, hệ thống sẽ hỏi quyền sau bước onboarding.</td>
+                </tr>
+                <tr>
+                  <td>Khôi phục sau khởi động (<code>RECEIVE_BOOT_COMPLETED</code>)</td>
+                  <td>Đặt lại các lịch nhắc đã lên trước đó sau khi bạn khởi động lại điện thoại.</td>
                 </tr>
                 <tr>
                   <td>Lưu trữ hoặc truy cập tệp</td>
@@ -303,14 +332,18 @@
               </tbody>
             </table>
           </div>
-          <p>Ứng dụng không yêu cầu quyền truy cập danh bạ, tin nhắn, vị trí GPS chính xác hay micro.</p>
+          <p>
+            Ứng dụng không yêu cầu quyền truy cập danh bạ, tin nhắn, vị trí GPS chính xác hay micro. Toàn bộ thông báo
+            được lên lịch và hiển thị tại chỗ trên thiết bị (local notification); ứng dụng không gửi push notification
+            từ máy chủ.
+          </p>
 
           <h2>4. Cách ứng dụng sử dụng dữ liệu</h2>
           <p>Dữ liệu bạn nhập chỉ được sử dụng tại chỗ cho các mục đích sau:</p>
           <ul>
             <li>Tính toán lãi ròng theo ngày, tuần và tháng.</li>
             <li>Hiển thị dashboard, biểu đồ phân tích chi phí và doanh thu.</li>
-            <li>Nhắc lịch bảo dưỡng dựa trên km hoặc thời gian bạn cài đặt.</li>
+            <li>Hiển thị danh sách nhắc việc bảo dưỡng và lên lịch thông báo cục bộ trên thiết bị dựa trên km hoặc ngày bạn cài đặt.</li>
             <li>Tạo file CSV khi bạn yêu cầu xuất dữ liệu.</li>
           </ul>
           <p>
@@ -334,8 +367,8 @@
             <li>Xóa toàn bộ dữ liệu: vào Cài đặt thiết bị → Ứng dụng → Sổ Xe → Bộ nhớ → Xóa dữ liệu, hoặc gỡ cài đặt ứng dụng.</li>
           </ul>
           <p>
-            Đối với dữ liệu được Google AdMob xử lý, bạn có thể quản lý cá nhân hóa quảng cáo hoặc đặt lại Advertising
-            ID trong phần Cài đặt Google trên thiết bị Android.
+            Đối với dữ liệu được Google Play Billing hoặc Google AdMob xử lý, bạn có thể quản lý trực tiếp qua Google
+            Play và phần Cài đặt Google trên thiết bị Android, tương ứng với các mục 2.3 và 2.4 ở trên.
           </p>
 
           <h2>7. Trẻ em</h2>
@@ -349,13 +382,15 @@
           <p>Chúng tôi không bán, không cho thuê, không trao đổi dữ liệu cá nhân của bạn. Dữ liệu chỉ có thể được chia sẻ trong các trường hợp:</p>
           <ul>
             <li>Khi bạn chủ động chia sẻ file CSV qua email, Drive, ứng dụng nhắn tin hoặc ứng dụng khác.</li>
-            <li>Khi Google AdMob xử lý dữ liệu kỹ thuật để hiển thị và đo lường quảng cáo như mô tả ở mục 2.3.</li>
+            <li>Khi Google Play Billing xử lý giao dịch mua Sổ Xe Pro như mô tả ở mục 2.3.</li>
+            <li>Khi Google AdMob xử lý dữ liệu kỹ thuật để hiển thị và đo lường quảng cáo như mô tả ở mục 2.4.</li>
             <li>Khi có yêu cầu pháp lý hợp lệ từ cơ quan có thẩm quyền. Vì chúng tôi không lưu dữ liệu vận hành xe trên máy chủ riêng, phạm vi cung cấp được sẽ rất hạn chế.</li>
           </ul>
 
           <h2>9. Lưu giữ dữ liệu</h2>
           <ul>
             <li>Dữ liệu trên thiết bị được giữ lại cho đến khi bạn tự xóa, xóa dữ liệu ứng dụng hoặc gỡ ứng dụng.</li>
+            <li>Dữ liệu giao dịch Sổ Xe Pro do Google Play lưu giữ theo chính sách của Google; ứng dụng chỉ lưu trạng thái Pro cục bộ trên thiết bị.</li>
             <li>Dữ liệu AdMob được lưu giữ theo chính sách của Google.</li>
           </ul>
 

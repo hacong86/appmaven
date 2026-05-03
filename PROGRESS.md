@@ -37,3 +37,20 @@
 - [2026-05-03] [Codex] Đã xong gần đây: Cập nhật `apps/index.html`, `privacy-policy.html`, `sitemap.xml` và kiểm tra nhanh số lượng card, route, link, app id
 - [2026-05-03] [Codex] Đang làm tiếp gì: Chờ người dùng review hoặc yêu cầu publish lên GitHub Pages
 - [2026-05-03] [Codex] Updated at: 2026-05-03 11:08:57
+
+---
+
+- [2026-05-03] [Codex] Dự án hiện tại: AppMaven Studio Website
+- [2026-05-03] [Codex] Task đang làm: Cập nhật trang `apps/quan-ly-xe-tai-xe-cong-nghe/privacy-policy.html` cho tính năng IAP/Sổ Xe Pro theo nguồn `doc/soxedv/Privacy Policy.md`
+- [2026-05-03] [Codex] Đã xong gần đây: Đọc lại `TASK.md`, `PROGRESS.md`, tài liệu policy nguồn và trang HTML hiện tại; xác định cần thêm Google Play Billing, quyền Billing, cập nhật tham chiếu AdMob từ mục 2.3 sang 2.4
+- [2026-05-03] [Codex] Đang làm tiếp gì: Sửa HTML policy và kiểm tra không tái xuất hiện metadata phiên bản chính sách
+- [2026-05-03] [Codex] Updated at: 2026-05-03 12:23:26
+
+- [2026-05-03] [Codex] Đã xong gần đây: Đã cập nhật `apps/quan-ly-xe-tai-xe-cong-nghe/privacy-policy.html` bổ sung IAP/Sổ Xe Pro, Google Play Billing, quyền Billing, notification permissions và lưu giữ dữ liệu giao dịch qua Google Play
+- [2026-05-03] [Codex] Đã xong gần đây: Đã kiểm tra HTML có các cụm IAP cần thiết và không có metadata `Phiên bản chính sách`
+- [2026-05-03] [Codex] Đang làm tiếp gì: Chờ người dùng review hoặc yêu cầu commit/push bản cập nhật policy
+- [2026-05-03] [Codex] Updated at: 2026-05-03 12:24:41
+
+- [2026-05-03] [Codex] Đã xong gần đây: Chuẩn bị stage đúng 3 file `TASK.md`, `PROGRESS.md`, `apps/quan-ly-xe-tai-xe-cong-nghe/privacy-policy.html` và push bản cập nhật policy IAP; không đưa thư mục nguồn `doc/` vào commit
+- [2026-05-03] [Codex] Đang làm tiếp gì: Commit/push lên `origin/main`
+- [2026-05-03] [Codex] Updated at: 2026-05-03 12:29:48
