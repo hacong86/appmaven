@@ -73,7 +73,7 @@
 - [x] [2026-05-03] [Codex]: Đọc `TASK.md`, `PROGRESS.md`, nguồn `doc/soxedv/Privacy Policy.md` và trang HTML hiện tại
 - [x] [2026-05-03] [Codex]: Cập nhật `apps/quan-ly-xe-tai-xe-cong-nghe/privacy-policy.html` bổ sung Google Play Billing/IAP
 - [x] [2026-05-03] [Codex]: Kiểm tra lại nội dung HTML, đảm bảo không hiển thị metadata phiên bản chính sách
-- [x] [2026-05-03] [Codex]: Stage, commit và push bản cập nhật policy IAP cho Sổ Xe
+- [x] [2026-05-03] [Codex]: Stage, commit và push bản cập nhật policy IAP cho Sổ Xe lên `origin/main`
 
 ## Assumption Log
 - [2026-05-03] [Codex]: Chỉ cập nhật app-specific policy page của Sổ Xe; không sửa root `privacy-policy.html` vì trang root chỉ là danh sách/link tổng hợp.

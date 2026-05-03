@@ -54,3 +54,7 @@
 - [2026-05-03] [Codex] Đã xong gần đây: Chuẩn bị stage đúng 3 file `TASK.md`, `PROGRESS.md`, `apps/quan-ly-xe-tai-xe-cong-nghe/privacy-policy.html` và push bản cập nhật policy IAP; không đưa thư mục nguồn `doc/` vào commit
 - [2026-05-03] [Codex] Đang làm tiếp gì: Commit/push lên `origin/main`
 - [2026-05-03] [Codex] Updated at: 2026-05-03 12:29:48
+
+- [2026-05-03] [Codex] Đã xong gần đây: Đã commit và push bản cập nhật privacy policy IAP cho Sổ Xe lên `origin/main`
+- [2026-05-03] [Codex] Đang làm tiếp gì: Chờ người dùng kiểm tra bản publish hoặc yêu cầu mới
+- [2026-05-03] [Codex] Updated at: 2026-05-03 12:30:48
