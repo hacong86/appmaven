@@ -46,3 +46,21 @@
 ## Assumption Log
 - [2026-04-22] [Codex]: Dùng slug `apps/van-khan-co-truyen` để khớp với thư mục assets `assets/images/apps/van-khan-co-truyen`
 - [2026-04-22] [Codex]: Dùng `doc/thuvienvankhan/Privacy Policy.md` làm nguồn chính cho policy page và `doc/thuvienvankhan/ASO_List.md` + screenshots làm nguồn cho app intro page
+
+---
+
+# Task: Thêm ứng dụng Sổ Xe - Chi Phí & Lãi Ròng
+
+## Checklist
+- [x] [2026-05-03] [Codex]: Đọc `TASK.md`, `PROGRESS.md`, tài liệu `doc/soxedv` và kiểm tra assets app mới
+- [x] [2026-05-03] [Codex]: Tạo trang SEO `apps/quan-ly-xe-tai-xe-cong-nghe/index.html`
+- [x] [2026-05-03] [Codex]: Tạo trang `apps/quan-ly-xe-tai-xe-cong-nghe/privacy-policy.html`
+- [x] [2026-05-03] [Codex]: Cập nhật `apps/index.html` thêm card Sổ Xe
+- [x] [2026-05-03] [Codex]: Cập nhật `privacy-policy.html` thêm link policy Sổ Xe
+- [x] [2026-05-03] [Codex]: Cập nhật `sitemap.xml` cho app page và privacy page
+- [x] [2026-05-03] [Codex]: Kiểm tra tổng thể các file vừa tạo/sửa
+
+## Assumption Log
+- [2026-05-03] [Codex]: Dùng slug `apps/quan-ly-xe-tai-xe-cong-nghe` để khớp thư mục assets và tối ưu từ khóa tiếng Việt
+- [2026-05-03] [Codex]: Dùng `doc/soxedv/ASO_listing.md` làm nguồn chính cho SEO page và `doc/soxedv/Privacy Policy.md` làm nguồn chính cho privacy page
+- [2026-05-03] [Codex]: Không hiển thị metadata `Phiên bản chính sách 1.0` trên privacy page để tránh phải cập nhật policy theo mỗi lần tăng version app

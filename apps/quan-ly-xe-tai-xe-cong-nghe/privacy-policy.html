@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta Tags -->
+  <title>Chính sách bảo mật - Sổ Xe | AppMaven Studio</title>
+  <meta name="description"
+    content="Chính sách bảo mật cho ứng dụng Sổ Xe. Tìm hiểu cách dữ liệu chi phí xe, doanh thu, bảo dưỡng và CSV được lưu cục bộ trên thiết bị.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/assets/images/logo/favicon.png">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/variables.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+
+  <style>
+    .policy-container {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: var(--space-10) var(--space-4) var(--space-12);
+    }
+
+    .policy-card {
+      background:
+        radial-gradient(circle at top right, rgba(59, 130, 246, 0.16), transparent 34%),
+        linear-gradient(145deg, rgba(13, 43, 76, 0.88), rgba(20, 27, 38, 0.94));
+      border: 1px solid rgba(157, 210, 255, 0.16);
+      border-radius: var(--radius-xl);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.28);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      padding: var(--space-8);
+    }
+
+    .policy-content {
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+    }
+
+    .policy-content h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: var(--space-2);
+      background: linear-gradient(to right, #eff6ff, #22c55e);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .policy-content h2 {
+      font-size: 1.5rem;
+      color: white;
+      margin-top: var(--space-8);
+      margin-bottom: var(--space-4);
+      border-bottom: 1px solid rgba(157, 210, 255, 0.12);
+      padding-bottom: var(--space-2);
+    }
+
+    .policy-content h3 {
+      font-size: 1.16rem;
+      color: #bfdbfe;
+      margin-top: var(--space-6);
+      margin-bottom: var(--space-3);
+    }
+
+    .policy-content p {
+      margin-bottom: var(--space-4);
+    }
+
+    .policy-content ul {
+      margin-bottom: var(--space-4);
+      padding-left: var(--space-6);
+    }
+
+    .policy-content li {
+      margin-bottom: var(--space-2);
+    }
+
+    .policy-content a {
+      color: #93c5fd;
+      text-decoration: none;
+    }
+
+    .policy-content a:hover {
+      text-decoration: underline;
+    }
+
+    .meta-box {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: var(--space-4);
+      margin: var(--space-6) 0 var(--space-8);
+    }
+
+    .meta-item {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(157, 210, 255, 0.12);
+      border-radius: var(--radius-lg);
+      padding: var(--space-4);
+    }
+
+    .meta-label {
+      display: block;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--color-text-tertiary);
+      margin-bottom: 6px;
+    }
+
+    .highlight-box {
+      background: rgba(34, 197, 94, 0.08);
+      border-left: 4px solid #22c55e;
+      border-radius: var(--radius-md);
+      padding: var(--space-4);
+      margin: var(--space-6) 0;
+    }
+
+    .table-wrapper {
+      overflow-x: auto;
+      margin-bottom: var(--space-5);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 640px;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+
+    th,
+    td {
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(157, 210, 255, 0.08);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      color: white;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    code {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 6px;
+      padding: 2px 6px;
+      font-size: 0.95em;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar-container">
+      <a href="/" class="navbar-logo" aria-label="AppMaven Studio Home">
+        <img src="/assets/images/logo/appmaven_logo.png" alt="AppMaven Studio Logo"
+          style="height: 32px; width: 32px; border-radius: 8px;">
+        <span>AppMaven Studio</span>
+      </a>
+      <button class="navbar-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="navbar-menu" role="menubar">
+        <li role="none"><a href="/" role="menuitem">Home</a></li>
+        <li role="none"><a href="/apps/" role="menuitem" class="active">Apps</a></li>
+        <li role="none"><a href="/blog/" role="menuitem">Blog</a></li>
+        <li role="none"><a href="/about/" role="menuitem">About</a></li>
+        <li role="none"><a href="/support/" role="menuitem">Support</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="cosmic-background"></div>
+
+  <main style="padding-top: calc(var(--header-height) + var(--space-4));">
+    <div class="policy-container">
+      <div class="policy-card">
+        <div class="policy-content">
+          <h1>Chính sách bảo mật cho ứng dụng Sổ Xe</h1>
+          <p>
+            Chính sách này mô tả cách ứng dụng <strong>Sổ Xe - Chi Phí & Lãi Ròng</strong> xử lý dữ liệu khi bạn cài đặt
+            và sử dụng trên thiết bị di động. Ứng dụng được thiết kế theo nguyên tắc <strong>local-first</strong>: dữ liệu
+            vận hành xe của bạn được lưu trên chính thiết bị, không được tải lên máy chủ của chúng tôi.
+          </p>
+
+          <div class="meta-box">
+            <div class="meta-item">
+              <span class="meta-label">Ứng dụng</span>
+              <strong>Sổ Xe</strong>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">App ID</span>
+              <strong><code>com.appmaven.soxe</code></strong>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Ngày hiệu lực</span>
+              <strong>03/05/2026</strong>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Email liên hệ</span>
+              <strong><a href="mailto:hacong86@gmail.com">hacong86@gmail.com</a></strong>
+            </div>
+          </div>
+
+          <div class="highlight-box">
+            <p style="margin: 0;">
+              Tóm tắt nhanh: Sổ Xe không yêu cầu tài khoản, không đồng bộ dữ liệu vận hành xe lên máy chủ riêng và không
+              truy cập vị trí GPS chính xác. Dữ liệu bạn nhập được lưu cục bộ trong cơ sở dữ liệu nội bộ trên thiết bị.
+            </p>
+          </div>
+
+          <h2>1. Giới thiệu</h2>
+          <p>
+            Bằng việc cài đặt và sử dụng ứng dụng, bạn xác nhận đã đọc, hiểu và đồng ý với các nội dung trong chính sách
+            này. Nếu bạn không đồng ý, vui lòng không sử dụng ứng dụng.
+          </p>
+
+          <h2>2. Dữ liệu ứng dụng xử lý</h2>
+
+          <h3>2.1. Dữ liệu bạn tự nhập và lưu cục bộ</h3>
+          <p>Ứng dụng cho phép bạn ghi lại các thông tin liên quan đến vận hành xe:</p>
+          <ul>
+            <li>Thông tin xe: tên xe, biển số tùy chọn, loại xe, năng lượng sử dụng và số km hiện tại.</li>
+            <li>Khoản chi phí: đổ xăng, sạc điện, vá lốp, thay nhớt, sửa chữa, bảo hiểm, giấy tờ và các khoản tự định nghĩa.</li>
+            <li>Khoản doanh thu: số tiền, chiết khấu nền tảng, số thực nhận.</li>
+            <li>Lịch nhắc bảo dưỡng, lịch sử bảo dưỡng, sửa chữa và ghi chú do bạn nhập.</li>
+          </ul>
+
+          <p>
+            Toàn bộ dữ liệu trên được lưu trong cơ sở dữ liệu nội bộ trên thiết bị của bạn. Chúng tôi không đồng bộ,
+            không tải lên máy chủ và không truy cập từ xa các dữ liệu này.
+          </p>
+
+          <h3>2.2. Dữ liệu ứng dụng không thu thập trực tiếp</h3>
+          <ul>
+            <li>Không yêu cầu đăng ký, đăng nhập hay tạo tài khoản.</li>
+            <li>Không thu thập tên thật, số điện thoại, email hoặc địa chỉ của bạn trên máy chủ riêng.</li>
+            <li>Không thu thập danh bạ, tin nhắn SMS, lịch sử cuộc gọi.</li>
+            <li>Không truy cập vị trí GPS chính xác của bạn.</li>
+            <li>Không ghi âm, không quay phim, không nghe lén.</li>
+            <li>Không bán dữ liệu cá nhân cho bên thứ ba.</li>
+          </ul>
+
+          <h3>2.3. Dữ liệu được xử lý bởi Google AdMob</h3>
+          <p>
+            Ứng dụng có thể hiển thị quảng cáo từ Google AdMob để duy trì hoạt động. Để phục vụ và đo lường quảng cáo,
+            Google AdMob có thể tự động xử lý một số dữ liệu kỹ thuật, ví dụ:
+          </p>
+          <ul>
+            <li>Mã định danh quảng cáo (Advertising ID) của thiết bị.</li>
+            <li>Địa chỉ IP, thông tin thiết bị, hệ điều hành và ngôn ngữ.</li>
+            <li>Thông tin tương tác với quảng cáo như lượt xem hoặc lượt chạm.</li>
+            <li>Vị trí ước tính dựa trên IP, không phải GPS chính xác.</li>
+          </ul>
+
+          <p>
+            Việc xử lý này do Google thực hiện theo chính sách của họ. Bạn có thể tham khảo:
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy
+              Policy</a>,
+            <a href="https://policies.google.com/technologies/partner-sites" target="_blank"
+              rel="noopener noreferrer">How Google uses partner data</a> và
+            <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer">Ads Settings</a>.
+          </p>
+
+          <h2>3. Quyền truy cập thiết bị</h2>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Quyền hoặc khả năng</th>
+                  <th>Mục đích sử dụng</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Internet</td>
+                  <td>Tải và hiển thị quảng cáo qua Google AdMob.</td>
+                </tr>
+                <tr>
+                  <td>Thông báo</td>
+                  <td>Hiển thị nhắc lịch bảo dưỡng khi bạn bật tính năng nhắc việc.</td>
+                </tr>
+                <tr>
+                  <td>Lưu trữ hoặc truy cập tệp</td>
+                  <td>Xuất file CSV để bạn lưu hoặc chia sẻ dữ liệu khi cần.</td>
+                </tr>
+                <tr>
+                  <td>Chia sẻ</td>
+                  <td>Cho phép bạn chia sẻ file CSV qua ứng dụng khác do bạn chọn.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Ứng dụng không yêu cầu quyền truy cập danh bạ, tin nhắn, vị trí GPS chính xác hay micro.</p>
+
+          <h2>4. Cách ứng dụng sử dụng dữ liệu</h2>
+          <p>Dữ liệu bạn nhập chỉ được sử dụng tại chỗ cho các mục đích sau:</p>
+          <ul>
+            <li>Tính toán lãi ròng theo ngày, tuần và tháng.</li>
+            <li>Hiển thị dashboard, biểu đồ phân tích chi phí và doanh thu.</li>
+            <li>Nhắc lịch bảo dưỡng dựa trên km hoặc thời gian bạn cài đặt.</li>
+            <li>Tạo file CSV khi bạn yêu cầu xuất dữ liệu.</li>
+          </ul>
+          <p>
+            Chúng tôi không dùng dữ liệu của bạn để huấn luyện AI, không phân tích thói quen người dùng trên máy chủ
+            riêng và không gửi dữ liệu vận hành xe ra khỏi thiết bị.
+          </p>
+
+          <h2>5. Lưu trữ, bảo mật và sao lưu</h2>
+          <ul>
+            <li><strong>Vị trí lưu trữ:</strong> dữ liệu nằm trong vùng nhớ riêng của ứng dụng trên thiết bị, được Android cách ly với các ứng dụng khác.</li>
+            <li><strong>Sao lưu:</strong> ứng dụng không tự động sao lưu lên cloud. Nếu bạn bật Google Backup hoặc tính năng sao lưu hệ thống, dữ liệu app có thể được sao lưu theo cấu hình của hệ điều hành.</li>
+            <li><strong>Bảo mật thiết bị:</strong> khuyến nghị bạn đặt khóa màn hình, cập nhật hệ điều hành và bật mã hóa thiết bị nếu có.</li>
+            <li><strong>Mất thiết bị:</strong> nếu bạn mất hoặc reset máy mà không sao lưu, dữ liệu cục bộ có thể không thể khôi phục. Bạn nên xuất CSV định kỳ khi cần bản sao.</li>
+          </ul>
+
+          <h2>6. Quyền của người dùng</h2>
+          <ul>
+            <li>Xem dữ liệu: mở ứng dụng để xem mọi mục đã nhập.</li>
+            <li>Chỉnh sửa dữ liệu: sửa hoặc xóa từng khoản chi phí, doanh thu, lịch nhắc hoặc xe trong ứng dụng.</li>
+            <li>Xuất dữ liệu: dùng tính năng xuất CSV để lấy bản sao dữ liệu.</li>
+            <li>Xóa toàn bộ dữ liệu: vào Cài đặt thiết bị → Ứng dụng → Sổ Xe → Bộ nhớ → Xóa dữ liệu, hoặc gỡ cài đặt ứng dụng.</li>
+          </ul>
+          <p>
+            Đối với dữ liệu được Google AdMob xử lý, bạn có thể quản lý cá nhân hóa quảng cáo hoặc đặt lại Advertising
+            ID trong phần Cài đặt Google trên thiết bị Android.
+          </p>
+
+          <h2>7. Trẻ em</h2>
+          <p>
+            Ứng dụng được phân loại phù hợp với mọi lứa tuổi và không nhằm mục đích hướng tới trẻ em dưới 13 tuổi. Chúng
+            tôi không cố ý thu thập dữ liệu cá nhân của trẻ em. Nếu bạn là phụ huynh và muốn xóa dữ liệu trong ứng dụng,
+            có thể xóa dữ liệu app hoặc gỡ cài đặt ứng dụng trên thiết bị.
+          </p>
+
+          <h2>8. Chia sẻ dữ liệu với bên thứ ba</h2>
+          <p>Chúng tôi không bán, không cho thuê, không trao đổi dữ liệu cá nhân của bạn. Dữ liệu chỉ có thể được chia sẻ trong các trường hợp:</p>
+          <ul>
+            <li>Khi bạn chủ động chia sẻ file CSV qua email, Drive, ứng dụng nhắn tin hoặc ứng dụng khác.</li>
+            <li>Khi Google AdMob xử lý dữ liệu kỹ thuật để hiển thị và đo lường quảng cáo như mô tả ở mục 2.3.</li>
+            <li>Khi có yêu cầu pháp lý hợp lệ từ cơ quan có thẩm quyền. Vì chúng tôi không lưu dữ liệu vận hành xe trên máy chủ riêng, phạm vi cung cấp được sẽ rất hạn chế.</li>
+          </ul>
+
+          <h2>9. Lưu giữ dữ liệu</h2>
+          <ul>
+            <li>Dữ liệu trên thiết bị được giữ lại cho đến khi bạn tự xóa, xóa dữ liệu ứng dụng hoặc gỡ ứng dụng.</li>
+            <li>Dữ liệu AdMob được lưu giữ theo chính sách của Google.</li>
+          </ul>
+
+          <h2>10. Liên kết bên ngoài</h2>
+          <p>
+            Ứng dụng có thể chứa liên kết tới website hoặc dịch vụ bên ngoài, ví dụ trang chính sách của Google. Chúng
+            tôi không chịu trách nhiệm về nội dung và chính sách bảo mật của các bên đó.
+          </p>
+
+          <h2>11. Thay đổi chính sách</h2>
+          <p>
+            Chúng tôi có thể cập nhật chính sách bảo mật này khi ứng dụng có thay đổi về tính năng hoặc khi có yêu cầu
+            pháp lý mới. Bản mới sẽ được công bố tại cùng URL kèm ngày hiệu lực cập nhật.
+          </p>
+
+          <h2>12. Tuyên bố miễn trừ trách nhiệm</h2>
+          <p>
+            Sổ Xe là công cụ quản lý cá nhân độc lập. Ứng dụng không liên kết, không đại diện và không được tài trợ bởi
+            bất kỳ nền tảng gọi xe, giao hàng hay hãng sản xuất xe nào. Các tên thương hiệu xuất hiện trong ứng dụng nếu
+            có chỉ nhằm mục đích giúp người dùng phân loại và tự ghi chép dữ liệu.
+          </p>
+
+          <h2>13. Liên hệ</h2>
+          <p>Nếu bạn có câu hỏi, khiếu nại hoặc yêu cầu liên quan tới quyền riêng tư, vui lòng liên hệ:</p>
+          <p>
+            <strong>Email:</strong> <a href="mailto:hacong86@gmail.com">hacong86@gmail.com</a><br>
+            <strong>Nhà phát triển:</strong> AppMaven<br>
+            <strong>Tên ứng dụng:</strong> Sổ Xe (<code>com.appmaven.soxe</code>)
+          </p>
+
+          <p
+            style="margin-top: var(--space-8); padding-top: var(--space-6); border-top: 1px solid rgba(157, 210, 255, 0.12); color: var(--color-text-tertiary);">
+            Cập nhật lần cuối: 03/05/2026
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 AppMaven Studio. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+
+</body>
+
+</html>
