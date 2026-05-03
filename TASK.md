@@ -77,3 +77,16 @@
 
 ## Assumption Log
 - [2026-05-03] [Codex]: Chỉ cập nhật app-specific policy page của Sổ Xe; không sửa root `privacy-policy.html` vì trang root chỉ là danh sách/link tổng hợp.
+
+---
+
+# Task: Tối ưu giao diện mobile trang SEO Sổ Xe
+
+## Checklist
+- [x] [2026-05-03] [Codex]: Dùng skill `senior-frontend`, đọc `TASK.md`, `PROGRESS.md` và trang SEO Sổ Xe hiện tại
+- [x] [2026-05-03] [Codex]: Sửa responsive layout hero trên mobile để tránh text bị ép hẹp
+- [x] [2026-05-03] [Codex]: Kiểm tra diff, mobile viewport 390px và trạng thái Git sau khi sửa
+- [x] [2026-05-03] [Codex]: Stage, commit và push bản tối ưu mobile SEO Sổ Xe lên `origin/main`
+
+## Assumption Log
+- [2026-05-03] [Codex]: Chỉ sửa CSS/markup responsive trong `apps/quan-ly-xe-tai-xe-cong-nghe/index.html`, không đổi nội dung SEO chính hoặc các trang app khác.

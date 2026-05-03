@@ -94,6 +94,28 @@
       gap: var(--space-8);
     }
 
+    .hero-copy {
+      min-width: 0;
+    }
+
+    .app-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1.12;
+      background: linear-gradient(to right, #eff6ff, #22c55e);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: var(--space-2);
+    }
+
+    .app-subtitle {
+      font-size: 1.2rem;
+      color: var(--color-text-secondary);
+      line-height: 1.7;
+      max-width: 650px;
+    }
+
     @media (min-width: 992px) {
       .area-header {
         grid-column: span 9;
@@ -154,6 +176,7 @@
     .header-chip {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 8px;
       padding: 10px 14px;
       border-radius: 999px;
@@ -163,9 +186,17 @@
       font-size: 0.92rem;
     }
 
+    .store-actions {
+      margin-top: var(--space-6);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
     .store-button {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       background: #000;
       border: 1px solid rgba(255, 255, 255, 0.22);
       border-radius: 8px;
@@ -174,8 +205,6 @@
       text-decoration: none;
       transition: all 0.2s ease;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      margin-right: 12px;
-      margin-bottom: 12px;
     }
 
     .store-button:hover {
@@ -183,6 +212,18 @@
       transform: translateY(-2px);
       box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
       border-color: rgba(255, 255, 255, 0.38);
+    }
+
+    .store-button-disabled {
+      opacity: 0.72;
+      cursor: not-allowed;
+    }
+
+    .store-button-disabled:hover {
+      background: #000;
+      transform: none;
+      box-shadow: none;
+      border-color: rgba(255, 255, 255, 0.22);
     }
 
     .store-button svg {
@@ -338,6 +379,105 @@
       border-bottom: 1px solid rgba(157, 210, 255, 0.12);
       padding-bottom: var(--space-2);
     }
+
+    @media (max-width: 640px) {
+      .bento-container {
+        padding: var(--space-4) 14px;
+        gap: var(--space-4);
+      }
+
+      .bento-card {
+        padding: 22px 18px;
+        border-radius: 24px;
+      }
+
+      .area-header {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-5);
+        text-align: center;
+      }
+
+      .hero-copy {
+        width: 100%;
+      }
+
+      .app-icon-large {
+        width: 108px;
+        height: 108px;
+        border-radius: 22px;
+      }
+
+      .app-title {
+        max-width: 12ch;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: clamp(2rem, 10vw, 2.55rem);
+        line-height: 1.08;
+      }
+
+      .app-subtitle {
+        max-width: 30ch;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1rem;
+        line-height: 1.65;
+      }
+
+      .header-chips {
+        justify-content: center;
+        gap: 10px;
+        margin-top: var(--space-5);
+      }
+
+      .header-chip {
+        flex: 0 1 calc(50% - 6px);
+        min-width: 132px;
+        padding: 9px 12px;
+        font-size: 0.88rem;
+        line-height: 1.35;
+      }
+
+      .store-actions {
+        justify-content: center;
+        gap: 10px;
+        margin-top: var(--space-5);
+      }
+
+      .store-button {
+        min-width: 166px;
+        padding: 7px 14px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .bento-container {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+      .bento-card {
+        padding: 20px 16px;
+      }
+
+      .app-title {
+        max-width: 13ch;
+        font-size: clamp(1.9rem, 9.4vw, 2.25rem);
+      }
+
+      .app-subtitle {
+        max-width: 28ch;
+      }
+
+      .header-chip {
+        flex-basis: 100%;
+        max-width: 230px;
+      }
+
+      .store-button {
+        width: min(100%, 220px);
+      }
+    }
   </style>
 </head>
 
@@ -377,12 +517,11 @@
       <div class="bento-card area-header">
         <img src="/assets/images/apps/quan-ly-xe-tai-xe-cong-nghe/so-xe-play.webp"
           alt="Sổ Xe - Chi Phí & Lãi Ròng Logo" class="app-icon-large">
-        <div>
-          <h1
-            style="font-size: 2.5rem; font-weight: 700; background: linear-gradient(to right, #eff6ff, #22c55e); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: var(--space-2);">
+        <div class="hero-copy">
+          <h1 class="app-title">
             Sổ Xe - Chi Phí & Lãi Ròng
           </h1>
-          <p style="font-size: 1.2rem; color: var(--color-text-secondary); max-width: 650px;">
+          <p class="app-subtitle">
             Ứng dụng quản lý chi phí xe máy, doanh thu, lãi ròng và bảo dưỡng cho tài xế công nghệ, shipper và người
             dùng xe máy cần theo dõi vận hành rõ ràng hơn.
           </p>
@@ -394,7 +533,7 @@
             <span class="header-chip">📄 Xuất CSV</span>
           </div>
 
-          <div style="margin-top: var(--space-6); display: flex; flex-wrap: wrap;">
+          <div class="store-actions">
             <a href="https://play.google.com/store/apps/details?id=com.appmaven.soxe" target="_blank"
               rel="noopener noreferrer" class="store-button">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -407,7 +546,7 @@
               </div>
             </a>
 
-            <a href="#" class="store-button" style="opacity: 0.72; cursor: not-allowed;" onclick="return false;">
+            <span class="store-button store-button-disabled" aria-disabled="true">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.13 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.43,15.65 20.08,16.66 20.08,16.66C20.03,16.8 19.7,17.96 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.37 12.36,4.26 13,3.5Z" />
@@ -416,7 +555,7 @@
                 <span class="store-button-subtitle">Coming Soon to</span>
                 <span class="store-button-title">App Store</span>
               </div>
-            </a>
+            </span>
           </div>
         </div>
       </div>

@@ -58,3 +58,20 @@
 - [2026-05-03] [Codex] Đã xong gần đây: Đã commit và push bản cập nhật privacy policy IAP cho Sổ Xe lên `origin/main`
 - [2026-05-03] [Codex] Đang làm tiếp gì: Chờ người dùng kiểm tra bản publish hoặc yêu cầu mới
 - [2026-05-03] [Codex] Updated at: 2026-05-03 12:30:48
+
+---
+
+- [2026-05-03] [Codex] Dự án hiện tại: AppMaven Studio Website
+- [2026-05-03] [Codex] Task đang làm: Tối ưu giao diện mobile trang SEO `apps/quan-ly-xe-tai-xe-cong-nghe/index.html`
+- [2026-05-03] [Codex] Đã xong gần đây: Dùng skill `senior-frontend`, đọc handoff và xác định lỗi hero mobile do layout ngang ép phần text còn quá hẹp
+- [2026-05-03] [Codex] Đang làm tiếp gì: Sửa responsive hero/card/chip/store button cho màn hình nhỏ
+- [2026-05-03] [Codex] Updated at: 2026-05-03 13:45:26
+
+- [2026-05-03] [Codex] Đã xong gần đây: Đã chuyển hero mobile sang layout một cột, giảm padding/card width, căn giữa title/subtitle/chip/store buttons và thay App Store link giả bằng phần tử disabled
+- [2026-05-03] [Codex] Đã xong gần đây: Đã kiểm tra bằng browser ở viewport 390px; layout hero không còn bị ép chữ hẹp như ảnh người dùng gửi
+- [2026-05-03] [Codex] Đang làm tiếp gì: Chờ người dùng review hoặc yêu cầu commit/push
+- [2026-05-03] [Codex] Updated at: 2026-05-03 13:50:01
+
+- [2026-05-03] [Codex] Đã xong gần đây: Đã chuẩn bị stage đúng `TASK.md`, `PROGRESS.md`, `apps/quan-ly-xe-tai-xe-cong-nghe/index.html` cho bản tối ưu mobile SEO Sổ Xe; không đưa `doc/` vào commit
+- [2026-05-03] [Codex] Đang làm tiếp gì: Commit/push bản tối ưu mobile lên `origin/main`
+- [2026-05-03] [Codex] Updated at: 2026-05-03 13:52:02
