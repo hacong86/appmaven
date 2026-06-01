@@ -112,6 +112,13 @@
     <priority>0.3</priority>
   </url>
 
+  <url>
+    <loc>https://appmavenstudio.com/apps/rune-bounce/privacy-policy.html</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
   <!-- Blog -->
   <url>
     <loc>https://appmavenstudio.com/blog/</loc>
