@@ -9,7 +9,7 @@
   <title>Privacy Policy - Rune Bounce | AppMaven Studio</title>
   <meta name="title" content="Privacy Policy - Rune Bounce | AppMaven Studio">
   <meta name="description"
-    content="Privacy Policy for Rune Bounce. Learn how AppMaven handles local game progress, AdMob ads, Google Play Billing, Unity diagnostics, and privacy controls.">
+    content="Privacy Policy for Rune Bounce. Learn how AppMaven handles local game progress, AdMob ads, Google Play Billing, Unity Gaming Services Analytics, and privacy controls.">
   <meta name="robots" content="noindex, follow">
 
   <!-- Canonical URL -->
@@ -108,6 +108,13 @@
       border: 1px solid rgba(175, 230, 190, 0.12);
       border-radius: var(--radius-lg);
       padding: var(--space-4);
+      min-width: 0;
+    }
+
+    .meta-item strong {
+      display: block;
+      min-width: 0;
+      overflow-wrap: anywhere;
     }
 
     .meta-label {
@@ -133,6 +140,21 @@
       border-radius: var(--radius-md);
       padding: var(--space-4);
       margin: var(--space-6) 0;
+    }
+
+    .legal-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+      margin: var(--space-4) 0 var(--space-8);
+    }
+
+    .legal-links a {
+      border: 1px solid rgba(175, 230, 190, 0.18);
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 10px 14px;
+      color: #fde68a;
     }
 
     .table-wrapper {
@@ -167,6 +189,10 @@
       border-radius: 6px;
       padding: 2px 6px;
       font-size: 0.95em;
+      max-width: 100%;
+      white-space: normal;
+      overflow-wrap: anywhere;
+      word-break: break-word;
     }
   </style>
 </head>
@@ -240,12 +266,17 @@
             </div>
           </div>
 
+          <div class="legal-links">
+            <a href="/apps/rune-bounce/terms-of-service.html">Terms of Service</a>
+            <a href="/privacy-policy.html">AppMaven Privacy Overview</a>
+          </div>
+
           <div class="highlight-box">
             <p style="margin: 0;">
               Quick summary: Rune Bounce does not require an account, does not ask for your name, email, phone, or
               address, and saves game progress locally on your device. The Game uses Google AdMob for rewarded and
-              interstitial ads, Google Play Billing for in-app purchases, and Unity engine technology for the game
-              runtime.
+              interstitial ads, Google Play Billing for in-app purchases, and Unity Gaming Services Analytics for
+              anonymous, consent-gated gameplay analytics.
             </p>
           </div>
 
@@ -288,7 +319,7 @@
                 </tr>
                 <tr>
                   <td>Is data collected automatically?</td>
-                  <td><strong>Yes.</strong> Google AdMob automatically collects device/advertising identifiers, approximate location from IP, app interactions, and diagnostics. Unity processes limited technical/diagnostic data.</td>
+                  <td><strong>Yes.</strong> Google AdMob collects device/advertising identifiers, approximate location from IP, app interactions, and diagnostics; Unity Gaming Services Analytics collects anonymous gameplay/device data (consent-gated). Neither is linked to your name or email.</td>
                 </tr>
                 <tr>
                   <td>Is data sold?</td>
@@ -350,18 +381,27 @@
           </ul>
           <p>All user data collected by the Google Mobile Ads SDK is encrypted in transit using Transport Layer Security (TLS).</p>
 
-          <h3>3.3 Information processed by the Unity engine</h3>
+          <h3>3.3 Analytics collected by Unity (Unity Gaming Services Analytics)</h3>
           <p>
-            Rune Bounce is built with the <strong>Unity</strong> engine. The Unity engine and its core libraries may
-            process limited technical and diagnostic data (such as device model, operating system version, and
-            crash/performance information) that is necessary to run the Game reliably on your device.
+            Rune Bounce is built with the <strong>Unity</strong> engine and uses <strong>Unity Gaming Services (UGS)
+            Analytics</strong> to understand how the Game is played so we can improve it. This analytics data is
+            <strong>anonymous</strong> — it is <strong>not</strong> linked to your name, email, or any directly
+            identifying information (the Game has no account system).
           </p>
+          <p>Subject to your consent where required (see Section 5), Unity Analytics may collect:</p>
+          <ul>
+            <li><strong>Device identifiers</strong> (for example, an Android device/app identifier) and device information (device model, operating system version, language, region)</li>
+            <li><strong>IP address</strong> (used to estimate approximate location; not stored as precise location)</li>
+            <li><strong>Gameplay events</strong> — such as opening the Game (session), starting and completing a chapter, being defeated, levelling up, and how far you progress</li>
+            <li><strong>Monetization events</strong> — that an in-app purchase occurred (product purchased) and that a rewarded ad was watched, so we can measure performance (no payment card data)</li>
+          </ul>
           <p>
-            The Game <strong>does not currently enable Unity's gameplay analytics service</strong> (Unity Analytics /
-            Unity Gaming Services Analytics). We do not send your gameplay events or in-app purchase analytics to Unity
-            at this time. If we enable any Unity analytics functionality in the future, we will update this Privacy
-            Policy, request your consent where required by law, and describe the additional data collected before
-            activating it.
+            <strong>Consent and control:</strong> The Unity Analytics SDK starts in a dormant state and collects nothing
+            until data collection is enabled. We only enable it in line with your advertising/privacy consent (for users
+            in the EEA/UK/Switzerland, only after consent is given via the Google UMP consent prompt — see Section 5).
+            You can withdraw consent at any time using the in-Game <strong>Privacy options</strong>, which stops
+            collection. You may also request deletion of your analytics data; we send a deletion request to Unity on
+            your behalf.
           </p>
           <p>
             Any data processed by Unity is handled in accordance with the
@@ -412,12 +452,17 @@
             Where the consent form makes the option available, you can change or withdraw your consent at a later time.
             You can also control ad personalization at any time using your device settings (see Section 7).
           </p>
+          <p>
+            You can reopen the consent prompt at any time inside the Game via <strong>Settings &rarr; Privacy
+            options</strong>.
+          </p>
 
           <div class="note-box">
             <p style="margin: 0;">
-              <strong>Note:</strong> Until the in-app consent flow is fully enabled, the Game limits advertising in the
-              EEA/UK/Switzerland to non-personalized ads so that no personalized advertising identifier is used without
-              your consent.
+              <strong>Note:</strong> The consent prompt appears only where a consent message is required for your
+              region. If you have not given consent — or before the prompt becomes available — the Game serves
+              non-personalized ads and keeps anonymous analytics turned off, so that no personalized advertising
+              identifier is used without your consent.
             </p>
           </div>
 
@@ -467,7 +512,7 @@
                 </tr>
                 <tr>
                   <td><strong>Unity Technologies</strong></td>
-                  <td>Engine analytics and diagnostics</td>
+                  <td>Anonymous gameplay analytics, engine diagnostics</td>
                   <td><a href="https://unity.com/legal/game-player-and-app-user-privacy-policy" target="_blank" rel="noopener noreferrer">Unity Privacy Policy</a></td>
                 </tr>
               </tbody>
@@ -489,7 +534,8 @@
           <ul>
             <li><strong>Reset or delete your Advertising ID:</strong> On Android, go to <strong>Settings &rarr; Google &rarr; Ads</strong> (or <strong>Settings &rarr; Privacy &rarr; Ads</strong>) to reset your advertising ID or delete your advertising ID entirely. Deleting it stops apps from receiving it.</li>
             <li><strong>Opt out of personalized ads:</strong> In the same Android Ads settings, enable <strong>"Opt out of Ads Personalization."</strong></li>
-            <li><strong>Manage consent (EEA/UK/CH):</strong> Use the consent/privacy option in the Game to review or change your advertising consent at any time.</li>
+            <li><strong>Manage consent / Privacy options (EEA/UK/CH):</strong> Open <strong>Settings &rarr; Privacy options</strong> in the Game to review, change, or withdraw your advertising consent at any time. Withdrawing consent also turns off anonymous analytics collection.</li>
+            <li><strong>Analytics opt-out:</strong> Anonymous analytics stays off until your consent allows it. You can stop it at any time by withdrawing consent in <strong>Settings &rarr; Privacy options</strong>. To request deletion of analytics data already collected, contact us (see Section 8) and we will send a deletion request to Unity on your behalf.</li>
             <li><strong>Remove ads:</strong> Purchasing the "Remove Ads" in-app product stops the display of ads. Note that this stops the display of ads; minimal anti-fraud and diagnostic data may still be processed by the SDKs that remain in the app.</li>
             <li><strong>Delete local data:</strong> Uninstall the Game, or go to <strong>Android Settings &rarr; Apps &rarr; Rune Bounce &rarr; Storage &rarr; Clear data</strong>, to remove all locally stored progress and settings.</li>
           </ul>
@@ -498,6 +544,7 @@
           <ul>
             <li><strong>Local game data</strong> is retained on your device until you uninstall the Game or clear its data. We do not keep a copy on our servers.</li>
             <li><strong>Data processed by Google and Unity</strong> is retained according to their own retention policies (see the links in Section 6). You can exercise deletion and other rights directly with those providers, and you may also contact us at <a href="mailto:hacong86@gmail.com">hacong86@gmail.com</a> and we will pass on or assist with deletion requests where we are able.</li>
+            <li><strong>Unity Analytics data:</strong> Withdrawing consent in <strong>Settings &rarr; Privacy options</strong> stops further collection. On request, we will submit a data-deletion request to Unity for your device's analytics data.</li>
           </ul>
           <p>
             Because the Game uses no account system, we generally cannot identify a specific person's data on third-party
