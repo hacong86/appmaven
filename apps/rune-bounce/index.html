@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta Tags -->
+  <title>Rune Bounce: Magic Defense - Magic Brick Breaker Roguelite RPG</title>
+  <meta name="title" content="Rune Bounce: Magic Defense - Magic Brick Breaker Roguelite RPG">
+  <meta name="description"
+    content="Play Rune Bounce: Magic Defense on Android. Aim bouncing magic spells, break monster blocks, collect gear, choose roguelite upgrades, and defend the last gate.">
+  <meta name="keywords"
+    content="Rune Bounce, Rune Bounce Magic Defense, magic brick breaker, bounce spells game, roguelite RPG, wizard game Android, tower defense game, brick breaker RPG, spell bouncing, defend the gate">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://appmavenstudio.com/apps/rune-bounce/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://appmavenstudio.com/apps/rune-bounce/">
+  <meta property="og:title" content="Rune Bounce: Magic Defense">
+  <meta property="og:description"
+    content="Aim. Bounce. Defend the last gate. A magic brick breaker roguelite RPG for Android.">
+  <meta property="og:image"
+    content="https://appmavenstudio.com/assets/images/apps/rune-bounce-magic-defense/RuneBounce_Feature_graphic.webp">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://appmavenstudio.com/apps/rune-bounce/">
+  <meta property="twitter:title" content="Rune Bounce: Magic Defense">
+  <meta property="twitter:description"
+    content="Bounce magic spells, break blocks, and defend the gate in a roguelite RPG.">
+  <meta property="twitter:image"
+    content="https://appmavenstudio.com/assets/images/apps/rune-bounce-magic-defense/RuneBounce_Feature_graphic.webp">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/assets/images/logo/appmaven_logo.png">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/variables.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+
+  <style>
+    .rune-page {
+      color: var(--color-text-primary);
+      background:
+        linear-gradient(180deg, rgba(4, 12, 24, 0), rgba(4, 12, 24, 0.92) 720px),
+        radial-gradient(circle at 15% 30%, rgba(14, 165, 233, 0.16), transparent 28%),
+        radial-gradient(circle at 86% 18%, rgba(245, 158, 11, 0.14), transparent 24%),
+        #050b18;
+    }
+
+    .rune-hero {
+      position: relative;
+      min-height: 650px;
+      padding: calc(var(--header-height) + var(--space-10)) var(--space-4) var(--space-12);
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      background-image:
+        linear-gradient(90deg, rgba(3, 7, 18, 0.94) 0%, rgba(3, 7, 18, 0.72) 38%, rgba(3, 7, 18, 0.24) 68%, rgba(3, 7, 18, 0.58) 100%),
+        linear-gradient(0deg, rgba(4, 12, 24, 0.92) 0%, rgba(4, 12, 24, 0.12) 42%, rgba(4, 12, 24, 0.42) 100%),
+        url("/assets/images/apps/rune-bounce-magic-defense/RuneBounce_Feature_graphic.webp");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .rune-hero-content {
+      width: min(100%, 1180px);
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .rune-hero-copy {
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      color: #7dd3fc;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      letter-spacing: 0;
+      margin-bottom: var(--space-4);
+    }
+
+    .rune-hero h1 {
+      font-size: 4.5rem;
+      line-height: 0.96;
+      margin-bottom: var(--space-4);
+      color: #fff7d6;
+      text-shadow: 0 8px 30px rgba(0, 0, 0, 0.62);
+    }
+
+    .rune-hero p {
+      font-size: 1.22rem;
+      color: rgba(236, 245, 255, 0.86);
+      line-height: 1.7;
+      max-width: 690px;
+      margin-bottom: var(--space-6);
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+      margin-bottom: var(--space-6);
+    }
+
+    .hero-tag {
+      border: 1px solid rgba(125, 211, 252, 0.34);
+      color: #dbeafe;
+      background: rgba(8, 47, 73, 0.46);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-4);
+      align-items: center;
+    }
+
+    .play-button {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-3);
+      min-height: 52px;
+      padding: 10px 18px;
+      border-radius: 8px;
+      background: #facc15;
+      color: #111827;
+      font-weight: 800;
+      text-decoration: none;
+      box-shadow: 0 12px 34px rgba(250, 204, 21, 0.26);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .play-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 44px rgba(250, 204, 21, 0.34);
+    }
+
+    .play-button svg {
+      width: 24px;
+      height: 24px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+
+    .secondary-link {
+      color: #e0f2fe;
+      text-decoration: none;
+      font-weight: 700;
+      border-bottom: 1px solid rgba(224, 242, 254, 0.42);
+      padding-bottom: 2px;
+    }
+
+    .secondary-link:hover {
+      color: #fef3c7;
+      border-color: #fef3c7;
+    }
+
+    .section-band {
+      padding: var(--space-12) var(--space-4);
+    }
+
+    .section-inner {
+      width: min(100%, 1180px);
+      margin: 0 auto;
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: var(--space-8);
+    }
+
+    .section-heading h2 {
+      font-size: 2.25rem;
+      color: white;
+      margin-bottom: var(--space-3);
+    }
+
+    .section-heading p {
+      color: var(--color-text-secondary);
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.95fr);
+      gap: var(--space-8);
+      align-items: center;
+    }
+
+    .copy-block p {
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+      margin-bottom: var(--space-4);
+    }
+
+    .run-flow {
+      display: grid;
+      gap: var(--space-3);
+    }
+
+    .flow-step,
+    .feature-tile,
+    .faq-item {
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      background: rgba(15, 23, 42, 0.62);
+      border-radius: 8px;
+      padding: var(--space-5);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+    }
+
+    .flow-step {
+      display: grid;
+      grid-template-columns: 44px minmax(0, 1fr);
+      gap: var(--space-4);
+      align-items: start;
+    }
+
+    .step-number {
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #38bdf8, #facc15);
+      color: #08111f;
+      font-weight: 900;
+    }
+
+    .flow-step h3,
+    .feature-tile h3 {
+      color: white;
+      font-size: 1.05rem;
+      margin-bottom: var(--space-2);
+    }
+
+    .flow-step p,
+    .feature-tile p,
+    .faq-item p {
+      color: var(--color-text-secondary);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--space-5);
+    }
+
+    .feature-label {
+      display: inline-flex;
+      color: #fef3c7;
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0;
+      margin-bottom: var(--space-3);
+    }
+
+    .screenshot-band {
+      background: rgba(2, 6, 23, 0.44);
+      border-top: 1px solid rgba(148, 163, 184, 0.14);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.14);
+    }
+
+    .screenshot-scroll {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(250px, 320px);
+      gap: var(--space-5);
+      overflow-x: auto;
+      padding: var(--space-2) 0 var(--space-5);
+      scrollbar-width: thin;
+      scrollbar-color: #38bdf8 transparent;
+    }
+
+    .screenshot-card {
+      margin: 0;
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      border-radius: 8px;
+      background: rgba(15, 23, 42, 0.6);
+      overflow: hidden;
+    }
+
+    .screenshot-card img {
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      object-fit: cover;
+      display: block;
+      background: rgba(15, 23, 42, 0.92);
+    }
+
+    .screenshot-card figcaption {
+      min-height: 74px;
+      padding: var(--space-4);
+      color: var(--color-text-secondary);
+      line-height: 1.5;
+      font-size: 0.92rem;
+    }
+
+    .wide-feature {
+      display: grid;
+      grid-template-columns: minmax(280px, 0.84fr) minmax(0, 1.16fr);
+      gap: var(--space-8);
+      align-items: center;
+    }
+
+    .wide-feature img {
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid rgba(148, 163, 184, 0.22);
+      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
+      background: rgba(15, 23, 42, 0.72);
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-5);
+    }
+
+    .legal-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-4);
+      margin-top: var(--space-6);
+    }
+
+    .legal-links a {
+      color: #bae6fd;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .legal-links a:hover {
+      color: #fde68a;
+    }
+
+    .final-cta {
+      text-align: center;
+      padding-bottom: var(--space-12);
+    }
+
+    .final-cta p {
+      color: var(--color-text-secondary);
+      margin: 0 auto var(--space-6);
+      max-width: 720px;
+      line-height: 1.75;
+    }
+
+    @media (max-width: 900px) {
+      .rune-hero {
+        min-height: 620px;
+        background-position: 58% center;
+      }
+
+      .rune-hero h1 {
+        font-size: 3.1rem;
+      }
+
+      .two-column,
+      .wide-feature,
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 560px) {
+      .rune-hero {
+        min-height: 680px;
+        padding-bottom: var(--space-8);
+        background-image:
+          linear-gradient(90deg, rgba(3, 7, 18, 0.94), rgba(3, 7, 18, 0.64)),
+          linear-gradient(0deg, rgba(4, 12, 24, 0.95), rgba(4, 12, 24, 0.18)),
+          url("/assets/images/apps/rune-bounce-magic-defense/RuneBounce_Feature_graphic.webp");
+      }
+
+      .rune-hero h1 {
+        font-size: 2.45rem;
+        line-height: 1.05;
+      }
+
+      .rune-hero p {
+        font-size: 1rem;
+      }
+
+      .section-heading h2 {
+        font-size: 1.8rem;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .screenshot-scroll {
+        grid-auto-columns: minmax(220px, 78vw);
+      }
+
+      .cta-row,
+      .play-button {
+        width: 100%;
+      }
+
+      .play-button {
+        justify-content: center;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://appmavenstudio.com/apps/rune-bounce/#webpage",
+        "url": "https://appmavenstudio.com/apps/rune-bounce/",
+        "name": "Rune Bounce: Magic Defense",
+        "description": "Rune Bounce: Magic Defense is an Android magic brick breaker roguelite RPG where players aim bouncing spells, break monster blocks, collect gear, and defend the last gate.",
+        "inLanguage": "en-US",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "AppMaven Studio",
+          "url": "https://appmavenstudio.com/"
+        }
+      },
+      {
+        "@type": "MobileApplication",
+        "@id": "https://appmavenstudio.com/apps/rune-bounce/#app",
+        "name": "Rune Bounce: Magic Defense",
+        "operatingSystem": "Android",
+        "applicationCategory": "GameApplication",
+        "genre": ["Magic brick breaker", "Roguelite RPG", "Tower defense", "Arcade"],
+        "description": "Aim bouncing magic spells, break blocks, defeat bosses, collect gear, and defend the last gate.",
+        "url": "https://appmavenstudio.com/apps/rune-bounce/",
+        "downloadUrl": "https://play.google.com/store/apps/details?id=com.appmaven.runebounce",
+        "publisher": {
+          "@type": "Organization",
+          "name": "AppMaven Studio",
+          "url": "https://appmavenstudio.com/"
+        },
+        "image": "https://appmavenstudio.com/assets/images/apps/rune-bounce-magic-defense/RuneBounce_Feature_graphic.webp",
+        "screenshot": [
+          "https://appmavenstudio.com/assets/images/apps/rune-bounce-magic-defense/RuneBounce.webp",
+          "https://appmavenstudio.com/assets/images/apps/rune-bounce-magic-defense/BOUNCE_SPELLS_INTO_BATTLE.webp",
+          "https://appmavenstudio.com/assets/images/apps/rune-bounce-magic-defense/FACE_GIANT_BOSSES.webp",
+          "https://appmavenstudio.com/assets/images/apps/rune-bounce-magic-defense/LEVEL_UP_EVERY_RUN.webp",
+          "https://appmavenstudio.com/assets/images/apps/rune-bounce-magic-defense/BUILD_YOUR_LEGEND.webp",
+          "https://appmavenstudio.com/assets/images/apps/rune-bounce-magic-defense/OPEN_EPIC_CHESTS.webp"
+        ],
+        "privacyPolicy": "https://appmavenstudio.com/apps/rune-bounce/privacy-policy.html",
+        "termsOfService": "https://appmavenstudio.com/apps/rune-bounce/terms-of-service.html"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://appmavenstudio.com/apps/rune-bounce/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What kind of game is Rune Bounce: Magic Defense?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Rune Bounce: Magic Defense blends magic brick breaker aiming, roguelite upgrade choices, RPG-style gear progression, and gate defense combat."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where can I download Rune Bounce?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Rune Bounce is available on Google Play for Android devices through the official AppMaven Studio listing."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Rune Bounce require an account?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No account is required to play Rune Bounce. Game progress is saved locally on the player's device."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Rune Bounce include ads or in-app purchases?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Rune Bounce uses Google AdMob for rewarded and interstitial ads and Google Play Billing for in-app purchases such as virtual currency, remove ads options, and progression-related offers."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body class="rune-page">
+
+  <!-- Skip to Main Content -->
+  <a href="#main-content" class="skip-to-main">Skip to main content</a>
+
+  <!-- Navigation -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar-container">
+      <a href="/" class="navbar-logo" aria-label="AppMaven Studio Home">
+        <img src="/assets/images/logo/appmaven_logo.png" alt="AppMaven Studio Logo"
+          style="height: 32px; width: 32px; border-radius: 8px;">
+        <span>AppMaven Studio</span>
+      </a>
+
+      <button class="navbar-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="navbar-menu" role="menubar">
+        <li role="none"><a href="/" role="menuitem">Home</a></li>
+        <li role="none"><a href="/apps/" class="active" role="menuitem">Apps</a></li>
+        <li role="none"><a href="/blog/" role="menuitem">Blog</a></li>
+        <li role="none"><a href="/about/" role="menuitem">About</a></li>
+        <li role="none"><a href="/support/" role="menuitem">Support</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <section class="rune-hero" aria-label="Rune Bounce hero">
+      <div class="rune-hero-content">
+        <div class="rune-hero-copy">
+          <span class="eyebrow">Android magic brick breaker roguelite</span>
+          <h1>Rune Bounce: Magic Defense</h1>
+          <p>
+            Aim bouncing magic spells, shatter monster blocks, choose powerful upgrades, and hold the last gate against
+            waves of darkness. Every run is built around sharp angles, fast spell rebounds, and the next upgrade choice.
+          </p>
+          <div class="hero-tags" aria-label="Game genres and features">
+            <span class="hero-tag">Bounce spells</span>
+            <span class="hero-tag">Roguelite upgrades</span>
+            <span class="hero-tag">Boss fights</span>
+            <span class="hero-tag">Gear progression</span>
+          </div>
+          <div class="cta-row">
+            <a class="play-button" href="https://play.google.com/store/apps/details?id=com.appmaven.runebounce"
+              target="_blank" rel="noopener noreferrer" aria-label="Download Rune Bounce on Google Play">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
+              </svg>
+              <span>Get it on Google Play</span>
+            </a>
+            <a class="secondary-link" href="#screenshots">View screenshots</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-band">
+      <div class="section-inner two-column">
+        <div class="copy-block">
+          <div class="section-heading">
+            <span class="eyebrow">Aim. Bounce. Defend.</span>
+            <h2>A spell-bouncing defense game built for quick, tactical runs</h2>
+            <p>
+              Rune Bounce turns brick breaker aiming into a fantasy defense battle. Instead of clearing ordinary blocks,
+              you launch magic shots through enemy formations, bounce them off walls, trigger elemental effects, and
+              protect the gate before the darkness breaks through.
+            </p>
+          </div>
+          <p>
+            The game is designed for players who like arcade precision with RPG decisions. Each run asks you to read the
+            board, plan a ricochet path, pick upgrades, and build a wizard that can survive stronger waves and bosses.
+          </p>
+          <div class="legal-links" aria-label="Rune Bounce legal links">
+            <a href="/apps/rune-bounce/privacy-policy.html">Privacy Policy</a>
+            <a href="/apps/rune-bounce/terms-of-service.html">Terms of Service</a>
+            <a href="/support/">Support</a>
+          </div>
+        </div>
+
+        <div class="run-flow" aria-label="How a Rune Bounce run works">
+          <div class="flow-step">
+            <span class="step-number">1</span>
+            <div>
+              <h3>Line up the spell</h3>
+              <p>Choose the angle, predict rebounds, and send magic shots through as many enemies and blocks as possible.</p>
+            </div>
+          </div>
+          <div class="flow-step">
+            <span class="step-number">2</span>
+            <div>
+              <h3>Break the wave</h3>
+              <p>Use fire, frost, lightning, and smart ricochets to clear threats before they reach the gate.</p>
+            </div>
+          </div>
+          <div class="flow-step">
+            <span class="step-number">3</span>
+            <div>
+              <h3>Upgrade the build</h3>
+              <p>Pick cards, collect gear, open chests, and shape the next run around stronger spell combinations.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-band">
+      <div class="section-inner">
+        <div class="section-heading">
+          <span class="eyebrow">Key features</span>
+          <h2>Why Rune Bounce feels different</h2>
+          <p>
+            The core loop mixes brick breaker skill, roguelite replayability, and RPG collection without hiding the
+            actual gameplay behind menus.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          <div class="feature-tile">
+            <span class="feature-label">Bounce combat</span>
+            <h3>Spell shots that reward better angles</h3>
+            <p>Every launch can hit multiple targets when you read the arena and use walls, blocks, and enemy positions.</p>
+          </div>
+          <div class="feature-tile">
+            <span class="feature-label">Roguelite choices</span>
+            <h3>Level up every run</h3>
+            <p>Upgrade cards change your damage, elements, survivability, and strategy as the wave pressure grows.</p>
+          </div>
+          <div class="feature-tile">
+            <span class="feature-label">Magic defense</span>
+            <h3>Protect the last gate</h3>
+            <p>The goal is not just to score. You must stop waves before they overwhelm the gate you are defending.</p>
+          </div>
+          <div class="feature-tile">
+            <span class="feature-label">Boss battles</span>
+            <h3>Face giant enemies</h3>
+            <p>Boss waves push you to combine precise aiming with the build you have been shaping across the run.</p>
+          </div>
+          <div class="feature-tile">
+            <span class="feature-label">Gear and loot</span>
+            <h3>Build your legend</h3>
+            <p>Collect equipment, open chests, and keep improving your wizard between battles.</p>
+          </div>
+          <div class="feature-tile">
+            <span class="feature-label">Arcade RPG</span>
+            <h3>Fast sessions, long-term progress</h3>
+            <p>Rune Bounce works as a quick arcade game, while upgrades and gear give repeat runs a clear purpose.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-band screenshot-band" id="screenshots">
+      <div class="section-inner">
+        <div class="section-heading">
+          <span class="eyebrow">Screenshots</span>
+          <h2>See the bounce battles, bosses, upgrades, and loot</h2>
+          <p>
+            These screenshots show the real player-facing promise: spell rebounds in battle, progression choices,
+            boss encounters, and the gear chase that carries your wizard forward.
+          </p>
+        </div>
+
+        <div class="screenshot-scroll" aria-label="Rune Bounce screenshots">
+          <figure class="screenshot-card">
+            <img src="/assets/images/apps/rune-bounce-magic-defense/RuneBounce.webp"
+              alt="Rune Bounce main screen with wizard, battle button, coins, gems, and gear menu" loading="lazy">
+            <figcaption>Bounce into battle and start each run from the wizard's gate.</figcaption>
+          </figure>
+          <figure class="screenshot-card">
+            <img src="/assets/images/apps/rune-bounce-magic-defense/BOUNCE_SPELLS_INTO_BATTLE.webp"
+              alt="Rune Bounce gameplay showing magic spell shots bouncing through enemies and blocks" loading="lazy">
+            <figcaption>Aim bouncing spells through blocks, monsters, and narrow angles.</figcaption>
+          </figure>
+          <figure class="screenshot-card">
+            <img src="/assets/images/apps/rune-bounce-magic-defense/FACE_GIANT_BOSSES.webp"
+              alt="Rune Bounce boss battle with a giant enemy and spell projectiles in the arena" loading="lazy">
+            <figcaption>Boss fights test both your aim and your current upgrade build.</figcaption>
+          </figure>
+          <figure class="screenshot-card">
+            <img src="/assets/images/apps/rune-bounce-magic-defense/LEVEL_UP_EVERY_RUN.webp"
+              alt="Rune Bounce upgrade card selection with roguelite spell and stat choices" loading="lazy">
+            <figcaption>Pick upgrades during the run to change how your wizard fights.</figcaption>
+          </figure>
+          <figure class="screenshot-card">
+            <img src="/assets/images/apps/rune-bounce-magic-defense/BUILD_YOUR_LEGEND.webp"
+              alt="Rune Bounce gear inventory showing equipment and character progression" loading="lazy">
+            <figcaption>Build your legend with gear, stats, and long-term progression.</figcaption>
+          </figure>
+          <figure class="screenshot-card">
+            <img src="/assets/images/apps/rune-bounce-magic-defense/OPEN_EPIC_CHESTS.webp"
+              alt="Rune Bounce chest reward screen with loot and fantasy equipment" loading="lazy">
+            <figcaption>Open chests and collect loot to prepare for stronger waves.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-band">
+      <div class="section-inner wide-feature">
+        <img src="/assets/images/apps/rune-bounce-magic-defense/BUILD_YOUR_LEGEND.webp"
+          alt="Rune Bounce equipment progression screen showing a wizard build and gear slots" loading="lazy">
+        <div class="copy-block">
+          <div class="section-heading">
+            <span class="eyebrow">Progression</span>
+            <h2>From one clean shot to a stronger wizard build</h2>
+            <p>
+              Rune Bounce is built around the satisfying moment when a single spell rebound clears the board, but it
+              also gives each run a reason to matter. Collect resources, improve equipment, and return with a stronger
+              setup for harder waves.
+            </p>
+          </div>
+          <p>
+            The best runs are not only about raw power. They come from reading the field, choosing upgrades that fit the
+            enemies ahead, and using the right angle at the right moment.
+          </p>
+          <a class="secondary-link" href="https://play.google.com/store/apps/details?id=com.appmaven.runebounce"
+            target="_blank" rel="noopener noreferrer">Open Rune Bounce on Google Play</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-band">
+      <div class="section-inner">
+        <div class="section-heading">
+          <span class="eyebrow">FAQ</span>
+          <h2>Rune Bounce questions</h2>
+        </div>
+
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3>What kind of game is Rune Bounce: Magic Defense?</h3>
+            <p>
+              It is a magic brick breaker roguelite RPG. You aim spell shots, bounce them through enemies and blocks,
+              choose run upgrades, collect gear, and defend the gate.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>Where can I download Rune Bounce?</h3>
+            <p>
+              Rune Bounce is available on Google Play for Android devices through the official AppMaven Studio listing.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>Does Rune Bounce require an account?</h3>
+            <p>
+              No account is required. The game saves progress locally on your device and does not ask for your name,
+              email, phone number, or address.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>Does Rune Bounce include ads or in-app purchases?</h3>
+            <p>
+              Yes. The game uses Google AdMob for rewarded and interstitial ads, and Google Play Billing for purchases
+              such as virtual currency, remove ads options, and progression-related offers.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-band final-cta" aria-label="Download Rune Bounce">
+      <div class="section-inner">
+        <h2>Ready to defend the last gate?</h2>
+        <p>
+          Download Rune Bounce: Magic Defense on Android and start building your spell-bouncing wizard run.
+        </p>
+        <a class="play-button" href="https://play.google.com/store/apps/details?id=com.appmaven.runebounce"
+          target="_blank" rel="noopener noreferrer" aria-label="Get Rune Bounce on Google Play">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
+          </svg>
+          <span>Get it on Google Play</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <div style="display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-4);">
+            <img src="/assets/images/logo/appmaven_logo.png" alt="AppMaven Studio Logo"
+              style="height: 32px; width: 32px; border-radius: 8px;">
+            <span style="font-size: var(--text-xl); font-weight: var(--font-bold);">AppMaven Studio</span>
+          </div>
+          <p style="color: var(--color-text-secondary); margin-bottom: var(--space-4); line-height: 1.6;">
+            Crafting innovative mobile experiences that users love. We combine clean design with practical mobile
+            products for Android users.
+          </p>
+        </div>
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/apps/">Apps</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/support/">Support</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Rune Bounce</h4>
+          <ul>
+            <li><a href="/apps/rune-bounce/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="/apps/rune-bounce/terms-of-service.html">Terms of Service</a></li>
+            <li><a href="https://play.google.com/store/apps/details?id=com.appmaven.runebounce" target="_blank"
+                rel="noopener noreferrer">Google Play</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="mailto:hacong86@gmail.com">Email Us</a></li>
+            <li><a href="https://github.com/hacong86" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 AppMaven Studio. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+
+</body>
+
+</html>

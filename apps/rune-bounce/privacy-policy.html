@@ -397,11 +397,12 @@
           </ul>
           <p>
             <strong>Consent and control:</strong> The Unity Analytics SDK starts in a dormant state and collects nothing
-            until data collection is enabled. We only enable it in line with your advertising/privacy consent (for users
-            in the EEA/UK/Switzerland, only after consent is given via the Google UMP consent prompt — see Section 5).
-            You can withdraw consent at any time using the in-Game <strong>Privacy options</strong>, which stops
-            collection. You may also request deletion of your analytics data; we send a deletion request to Unity on
-            your behalf.
+            until it is enabled. Analytics has its <strong>own separate consent control, independent from advertising
+            consent</strong>. In the <strong>European Economic Area, the UK, and Switzerland it is OFF by
+            default</strong> and is only enabled if you turn it on; elsewhere it is on by default and you can turn it
+            off. You can change this at any time using the <strong>analytics switch in the in-Game Settings</strong>.
+            Turning it off stops collection. You may also request deletion of your analytics data; we send a deletion
+            request to Unity on your behalf.
           </p>
           <p>
             Any data processed by Unity is handled in accordance with the
@@ -461,8 +462,8 @@
             <p style="margin: 0;">
               <strong>Note:</strong> The consent prompt appears only where a consent message is required for your
               region. If you have not given consent — or before the prompt becomes available — the Game serves
-              non-personalized ads and keeps anonymous analytics turned off, so that no personalized advertising
-              identifier is used without your consent.
+              non-personalized ads, so that no personalized advertising identifier is used without your consent.
+              (Analytics is controlled separately — see Section 3.3.)
             </p>
           </div>
 
@@ -534,8 +535,8 @@
           <ul>
             <li><strong>Reset or delete your Advertising ID:</strong> On Android, go to <strong>Settings &rarr; Google &rarr; Ads</strong> (or <strong>Settings &rarr; Privacy &rarr; Ads</strong>) to reset your advertising ID or delete your advertising ID entirely. Deleting it stops apps from receiving it.</li>
             <li><strong>Opt out of personalized ads:</strong> In the same Android Ads settings, enable <strong>"Opt out of Ads Personalization."</strong></li>
-            <li><strong>Manage consent / Privacy options (EEA/UK/CH):</strong> Open <strong>Settings &rarr; Privacy options</strong> in the Game to review, change, or withdraw your advertising consent at any time. Withdrawing consent also turns off anonymous analytics collection.</li>
-            <li><strong>Analytics opt-out:</strong> Anonymous analytics stays off until your consent allows it. You can stop it at any time by withdrawing consent in <strong>Settings &rarr; Privacy options</strong>. To request deletion of analytics data already collected, contact us (see Section 8) and we will send a deletion request to Unity on your behalf.</li>
+            <li><strong>Manage consent / Privacy options (EEA/UK/CH):</strong> Open <strong>Settings &rarr; Privacy options</strong> in the Game to review, change, or withdraw your advertising consent at any time.</li>
+            <li><strong>Analytics opt-out:</strong> Anonymous analytics has its <strong>own switch in Settings</strong>, separate from advertising consent. In the EEA/UK/Switzerland it is off until you turn it on; elsewhere you can turn it off at any time. To request deletion of analytics data already collected, contact us (see Section 8) and we will send a deletion request to Unity on your behalf.</li>
             <li><strong>Remove ads:</strong> Purchasing the "Remove Ads" in-app product stops the display of ads. Note that this stops the display of ads; minimal anti-fraud and diagnostic data may still be processed by the SDKs that remain in the app.</li>
             <li><strong>Delete local data:</strong> Uninstall the Game, or go to <strong>Android Settings &rarr; Apps &rarr; Rune Bounce &rarr; Storage &rarr; Clear data</strong>, to remove all locally stored progress and settings.</li>
           </ul>
@@ -544,7 +545,7 @@
           <ul>
             <li><strong>Local game data</strong> is retained on your device until you uninstall the Game or clear its data. We do not keep a copy on our servers.</li>
             <li><strong>Data processed by Google and Unity</strong> is retained according to their own retention policies (see the links in Section 6). You can exercise deletion and other rights directly with those providers, and you may also contact us at <a href="mailto:hacong86@gmail.com">hacong86@gmail.com</a> and we will pass on or assist with deletion requests where we are able.</li>
-            <li><strong>Unity Analytics data:</strong> Withdrawing consent in <strong>Settings &rarr; Privacy options</strong> stops further collection. On request, we will submit a data-deletion request to Unity for your device's analytics data.</li>
+            <li><strong>Unity Analytics data:</strong> Turning off the <strong>analytics switch in Settings</strong> stops further collection. On request, we will submit a data-deletion request to Unity for your device's analytics data.</li>
           </ul>
           <p>
             Because the Game uses no account system, we generally cannot identify a specific person's data on third-party
