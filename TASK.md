@@ -90,3 +90,79 @@
 
 ## Assumption Log
 - [2026-05-03] [Codex]: Chỉ sửa CSS/markup responsive trong `apps/quan-ly-xe-tai-xe-cong-nghe/index.html`, không đổi nội dung SEO chính hoặc các trang app khác.
+
+---
+
+# Task: Tạo trang Chính sách bảo mật Rune Bounce
+
+## Checklist
+- [x] Đọc `TASK.md`, `PROGRESS.md`, file nguồn `doc/RuneBounce/Privacy Policy.md` và mẫu policy hiện có
+- [x] Tạo trang `apps/rune-bounce/privacy-policy.html` theo nội dung nguồn Rune Bounce
+- [x] Cập nhật `privacy-policy.html` thêm link chính sách bảo mật Rune Bounce
+- [x] Cập nhật `sitemap.xml` thêm URL policy Rune Bounce
+- [x] Kiểm tra HTML/link nội bộ và trạng thái thay đổi
+
+## Assumption Log
+- [2026-06-01] Dùng slug `apps/rune-bounce` cho Rune Bounce vì tên game là Rune Bounce và package là `com.appmaven.runebounce`.
+
+---
+
+# Task: Cập nhật legal pages Rune Bounce
+
+## Checklist
+- [x] Đọc `TASK.md`, `PROGRESS.md`, policy nguồn mới và Terms nguồn Rune Bounce
+- [x] Cập nhật `apps/rune-bounce/privacy-policy.html` theo policy nguồn mới
+- [x] Sửa layout package ID để không tràn khỏi khung
+- [x] Tạo trang `apps/rune-bounce/terms-of-service.html`
+- [x] Cập nhật `terms-of-service.html` và `sitemap.xml` để có link Terms Rune Bounce
+- [x] Kiểm tra nội dung/link responsive và push các file public lên GitHub
+
+## Assumption Log
+- [2026-06-01] Terms URL dùng `apps/rune-bounce/terms-of-service.html` để đồng bộ với policy URL hiện có.
+
+---
+
+# Task: Cập nhật Privacy Policy Rune Bounce - Analytics consent riêng
+
+## Checklist
+- [x] Đọc `TASK.md`, `PROGRESS.md`, nội dung đính kèm và trang `apps/rune-bounce/privacy-policy.html` hiện tại
+- [x] Cập nhật mô tả Unity Analytics theo nội dung mới
+- [x] Cập nhật phần consent/Privacy options để tách advertising consent và analytics switch
+- [x] Kiểm tra nội dung HTML và trạng thái Git
+
+## Assumption Log
+- [2026-06-01] Chỉ cập nhật trang `apps/rune-bounce/privacy-policy.html`; không sửa Terms vì nội dung đính kèm là Privacy Policy.
+
+---
+
+# Task: Tạo trang giới thiệu SEO Rune Bounce
+
+## Checklist
+- [x] [2026-06-09] [AGENTS Code]: Đọc `TASK.md`, `PROGRESS.md`, `doc/RuneBounce/ASO.md` và kiểm tra ảnh screenshot Rune Bounce
+- [x] [2026-06-09] [AGENTS Code]: Tạo trang SEO `apps/rune-bounce/index.html` dùng ảnh gameplay và nội dung ASO
+- [x] [2026-06-09] [AGENTS Code]: Cập nhật `apps/index.html` thêm card Rune Bounce vào danh sách game
+- [x] [2026-06-09] [AGENTS Code]: Cập nhật `sitemap.xml` thêm URL giới thiệu Rune Bounce
+- [x] [2026-06-09] [AGENTS Code]: Kiểm tra HTML, link ảnh, link Google Play, Privacy Policy và Terms of Service
+
+## Assumption Log
+- [2026-06-09] [AGENTS Code]: Dùng slug `apps/rune-bounce/` cho trang giới thiệu chính vì legal pages hiện đã nằm trong cùng thư mục này.
+- [2026-06-09] [AGENTS Code]: Dùng `assets/images/apps/rune-bounce-magic-defense/RuneBounce_Feature_graphic.webp` làm hero chính vì ảnh có logo game và gameplay rõ nhất.
+
+---
+
+# Task: Tạo Privacy Policy + Terms of Service cho game Trap Tower
+
+## Checklist
+- [x] [2026-06-15] Claude Code: Đọc `TASK.md`, `PROGRESS.md`, nguồn `doc/TrapTower/Privacy Policy.md`, `Terms of Service.md`, `ASO.md` và mẫu legal page hiện có (Rune Bounce)
+- [x] [2026-06-15] Claude Code: Tạo trang `apps/trap-tower/privacy-policy.html` theo nội dung nguồn (free + AdMob, không IAP, không Unity, lưu local)
+- [x] [2026-06-15] Claude Code: Tạo trang `apps/trap-tower/terms-of-service.html` theo nội dung nguồn; thay placeholder `YOUR-PRIVACY-URL` bằng link thật
+- [x] [2026-06-15] Claude Code: Cập nhật `privacy-policy.html` (root) thêm link Trap Tower
+- [x] [2026-06-15] Claude Code: Cập nhật `terms-of-service.html` (root) thêm link Trap Tower
+- [x] [2026-06-15] Claude Code: Cập nhật `sitemap.xml` thêm 2 URL legal Trap Tower
+- [x] [2026-06-15] Claude Code: Kiểm tra render desktop + mobile bằng browser; không còn placeholder; link nội bộ đúng
+- [ ] [2026-06-15] Claude Code: Commit/push các file public lên `origin/main` (không đưa `doc/` lên remote)
+
+## Assumption Log
+- [2026-06-15] Claude Code: Dùng slug `apps/trap-tower` khớp package `com.traptower.game`; legal pages đặt cùng thư mục để link đồng bộ.
+- [2026-06-15] Claude Code: Effective/Last updated = June 15, 2026 theo file nguồn; theme đỏ/hổ phách hợp chủ đề rage/troll của game.
+- [2026-06-15] Claude Code: Lỗi favicon 404 (`/assets/images/logo/favicon.png` không tồn tại) là vấn đề chung của toàn site, không phát sinh từ trang mới → ngoài phạm vi task này.

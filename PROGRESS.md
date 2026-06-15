@@ -79,3 +79,69 @@
 - [2026-05-03] [Codex] Đã xong gần đây: Đã commit và push bản tối ưu mobile trang SEO Sổ Xe lên `origin/main`
 - [2026-05-03] [Codex] Đang làm tiếp gì: Chờ người dùng kiểm tra bản publish hoặc yêu cầu mới
 - [2026-05-03] [Codex] Updated at: 2026-05-03 13:53:10
+
+---
+
+## Activity Log
+
+### [2026-06-01 17:20] AGENTS Code
+- Task: Tạo trang chính sách bảo mật cho game `Rune Bounce`
+- Files dự kiến: `apps/rune-bounce/privacy-policy.html`, `privacy-policy.html`, `sitemap.xml`, `TASK.md`, `PROGRESS.md`
+- Status: Đã đọc trạng thái dự án, file policy nguồn và mẫu HTML hiện có; đang chờ user duyệt phạm vi trước khi tạo trang.
+- Next: Sau khi được duyệt, tạo HTML từ `doc/RuneBounce/Privacy Policy.md`, nối link tổng hợp và kiểm tra.
+
+### [2026-06-01 17:26] AGENTS Code
+- Task: Tạo trang chính sách bảo mật cho game `Rune Bounce`
+- Files: `apps/rune-bounce/privacy-policy.html`, `privacy-policy.html`, `sitemap.xml`, `TASK.md`, `PROGRESS.md`
+- Status: ✅ Done — đã tạo policy page, thêm link vào trang privacy tổng, thêm URL vào sitemap và kiểm tra các cụm nội dung chính.
+- Next: Chờ user cung cấp thông tin game để tạo trang giới thiệu Rune Bounce sau.
+
+### [2026-06-01 18:47] AGENTS Code
+- Task: Cập nhật legal pages Rune Bounce theo nguồn mới và tạo Terms of Service
+- Files dự kiến: `apps/rune-bounce/privacy-policy.html`, `apps/rune-bounce/terms-of-service.html`, `terms-of-service.html`, `sitemap.xml`, `TASK.md`, `PROGRESS.md`
+- Status: Đã đọc policy nguồn mới, Terms nguồn và trang HTML hiện tại; đang cập nhật nội dung và sửa lỗi package ID tràn khung.
+- Next: Kiểm tra nội dung/link rồi commit/push các file public lên `origin/main`.
+
+### [2026-06-01 18:54] AGENTS Code
+- Task: Cập nhật legal pages Rune Bounce theo nguồn mới và tạo Terms of Service
+- Files: `apps/rune-bounce/privacy-policy.html`, `apps/rune-bounce/terms-of-service.html`, `terms-of-service.html`, `sitemap.xml`, `TASK.md`, `PROGRESS.md`
+- Status: ✅ Done — đã cập nhật policy với Unity Gaming Services Analytics, sửa package ID không tràn khung, tạo Terms page, thêm link terms tổng/sitemap và push public files qua commit `99f0c6c`.
+- Next: Chờ user cung cấp thông tin để tạo trang giới thiệu game Rune Bounce.
+
+### [2026-06-01 19:20] AGENTS Code
+- Task: Cập nhật `apps/rune-bounce/privacy-policy.html` theo nội dung Privacy Policy mới từ file đính kèm
+- Files dự kiến: `apps/rune-bounce/privacy-policy.html`, `TASK.md`, `PROGRESS.md`
+- Status: Đã đọc nội dung mới; đang cập nhật phần Unity Analytics để thể hiện analytics có switch riêng, độc lập với advertising consent.
+- Next: Kiểm tra HTML và trạng thái Git sau khi sửa.
+
+### [2026-06-01 19:20] AGENTS Code
+- Task: Cập nhật `apps/rune-bounce/privacy-policy.html` theo nội dung Privacy Policy mới từ file đính kèm
+- Files: `apps/rune-bounce/privacy-policy.html`, `TASK.md`, `PROGRESS.md`
+- Status: ✅ Done — đã cập nhật phần Unity Analytics, tách analytics switch khỏi advertising consent, cập nhật ghi chú consent, mục Privacy Controls và Data Retention; HTML có đủ thẻ đóng.
+- Next: Chờ yêu cầu commit/push nếu cần cập nhật bản live.
+
+### [2026-06-09 19:34] AGENTS Code
+- Task: Tạo trang giới thiệu SEO cho `Rune Bounce: Magic Defense`
+- Files dự kiến: `apps/rune-bounce/index.html`, `apps/index.html`, `sitemap.xml`, `TASK.md`, `PROGRESS.md`
+- Status: Đã đọc nội dung ASO, kiểm tra ảnh gameplay trong thư mục assets và xác định hero/gallery/FAQ/Google Play CTA cho trang giới thiệu.
+- Next: Tạo HTML trang app, thêm card vào danh sách Apps, thêm URL vào sitemap và kiểm tra link.
+
+### [2026-06-09 19:47] AGENTS Code
+- Task: Tạo trang giới thiệu SEO cho `Rune Bounce: Magic Defense`
+- Files: `apps/rune-bounce/index.html`, `apps/index.html`, `sitemap.xml`, `TASK.md`, `PROGRESS.md`
+- Status: ✅ Done — đã tạo trang giới thiệu SEO với hero gameplay, CTA Google Play, gallery screenshot, feature sections, FAQ schema; đã thêm card Rune Bounce vào Apps và thêm URL `/apps/rune-bounce/` vào sitemap.
+- Verification: `git diff --check` pass; JSON-LD parse OK; link/ảnh nội bộ tồn tại; Browser kiểm tra desktop 1366x768 và mobile 390x844 không thấy tràn chữ/ảnh.
+- Next: Chờ yêu cầu commit/push nếu cần đưa trang lên live.
+
+### [2026-06-09 19:57] AGENTS Code
+- Task: Commit/push trang giới thiệu SEO Rune Bounce lên GitHub
+- Files public đã publish: `apps/rune-bounce/index.html`, `apps/index.html`, `apps/rune-bounce/privacy-policy.html`, `sitemap.xml`, `assets/images/apps/rune-bounce-magic-defense/*`
+- Status: ✅ Done — đã commit `e9e3f74` và push lên `origin/main`; live URL `https://appmavenstudio.com/apps/rune-bounce/` trả 200 với đúng title và Google Play link.
+- Next: Theo dõi GitHub Pages/CDN nếu cần kiểm tra cache ở thiết bị khác.
+
+### [2026-06-15 22:30] Claude Code
+- Task: Tạo trang Privacy Policy + Terms of Service cho game `Trap Tower` để chuẩn bị xuất bản trên Google Play
+- Files: `apps/trap-tower/privacy-policy.html`, `apps/trap-tower/terms-of-service.html`, `privacy-policy.html`, `terms-of-service.html`, `sitemap.xml`, `TASK.md`, `PROGRESS.md`
+- Status: ✅ Done — đã tạo 2 legal page từ nguồn `doc/TrapTower` (game free + AdMob interstitial/rewarded, KHÔNG IAP, KHÔNG Unity, tiến độ lưu on-device), thay placeholder `YOUR-PRIVACY-URL` bằng link thật, nối link vào trang tổng và sitemap.
+- Verification: Browser kiểm tra desktop 1366px + mobile 390px → render đúng, không tràn chữ/ảnh, bảng AdMob scroll ngang gọn; không còn placeholder; chỉ còn lỗi favicon 404 chung của toàn site (ngoài phạm vi).
+- Next: Commit/push các file public lên `origin/main` (không đưa `doc/` nội bộ lên remote); sau khi GitHub Pages build, 2 URL legal trả 200 để dán vào Google Play Console.

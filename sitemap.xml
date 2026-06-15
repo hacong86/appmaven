@@ -133,6 +133,20 @@
     <priority>0.3</priority>
   </url>
 
+  <url>
+    <loc>https://appmavenstudio.com/apps/trap-tower/privacy-policy.html</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://appmavenstudio.com/apps/trap-tower/terms-of-service.html</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
   <!-- Blog -->
   <url>
     <loc>https://appmavenstudio.com/blog/</loc>
