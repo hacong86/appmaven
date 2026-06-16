@@ -145,3 +145,10 @@
 - Status: ✅ Done — đã tạo 2 legal page từ nguồn `doc/TrapTower` (game free + AdMob interstitial/rewarded, KHÔNG IAP, KHÔNG Unity, tiến độ lưu on-device), thay placeholder `YOUR-PRIVACY-URL` bằng link thật, nối link vào trang tổng và sitemap.
 - Verification: Browser kiểm tra desktop 1366px + mobile 390px → render đúng, không tràn chữ/ảnh, bảng AdMob scroll ngang gọn; không còn placeholder; chỉ còn lỗi favicon 404 chung của toàn site (ngoài phạm vi).
 - Next: Commit/push các file public lên `origin/main` (không đưa `doc/` nội bộ lên remote); sau khi GitHub Pages build, 2 URL legal trả 200 để dán vào Google Play Console.
+
+### [2026-06-16 17:35] Claude Code
+- Task: Tạo trang giới thiệu SEO tiếng Anh cho game `Trap Tower`
+- Files: `apps/trap-tower/index.html` (mới), `apps/index.html`, `sitemap.xml`, `TASK.md`, `PROGRESS.md`
+- Status: ✅ Done — landing page với hero feature graphic, 6 feature tiles (200 levels, 50 traps, touch+keyboard, instant restart, no-death, rewarded skip), gallery 6 screenshot thật có caption, wide feature no-death, FAQ 6 mục, CTA Google Play + App Store "Soon", JSON-LD WebPage/MobileApplication/FAQPage; nội dung từ ASO.md.
+- Verification: Browser desktop 1366px + mobile 390px → render đúng, không tràn, 0 lỗi console trên trang game; card Trap Tower hiển thị đúng trong lưới Apps.
+- Next: Commit/push các file public lên `origin/main`; sau khi GitHub Pages build, `https://appmavenstudio.com/apps/trap-tower/` trả 200.

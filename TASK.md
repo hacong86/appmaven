@@ -166,3 +166,20 @@
 - [2026-06-15] Claude Code: Dùng slug `apps/trap-tower` khớp package `com.traptower.game`; legal pages đặt cùng thư mục để link đồng bộ.
 - [2026-06-15] Claude Code: Effective/Last updated = June 15, 2026 theo file nguồn; theme đỏ/hổ phách hợp chủ đề rage/troll của game.
 - [2026-06-15] Claude Code: Lỗi favicon 404 (`/assets/images/logo/favicon.png` không tồn tại) là vấn đề chung của toàn site, không phát sinh từ trang mới → ngoài phạm vi task này.
+
+---
+
+# Task: Tạo trang giới thiệu SEO (tiếng Anh) cho game Trap Tower
+
+## Checklist
+- [x] [2026-06-16] Claude Code: Đọc `doc/TrapTower/ASO.md`, xem 6 screenshot + feature graphic + logo trong `assets/images/apps/trap-tower`, tham chiếu mẫu Rune Bounce
+- [x] [2026-06-16] Claude Code: Tạo trang `apps/trap-tower/index.html` (hero feature graphic, 6 feature tiles, gallery 6 screenshot có caption, wide feature no-death, FAQ, CTA, JSON-LD WebPage/MobileApplication/FAQPage)
+- [x] [2026-06-16] Claude Code: Thêm card Trap Tower vào `apps/index.html` (Google Play + App Store "Soon")
+- [x] [2026-06-16] Claude Code: Thêm URL `/apps/trap-tower/` vào `sitemap.xml`
+- [x] [2026-06-16] Claude Code: Kiểm tra browser desktop 1366px + mobile 390px → render đúng, 0 lỗi console, card Apps hiển thị đúng
+- [ ] [2026-06-16] Claude Code: Commit/push các file public lên `origin/main`
+
+## Assumption Log
+- [2026-06-16] Claude Code: Google Play link `https://play.google.com/store/apps/details?id=com.traptower.game`; iOS "Coming soon".
+- [2026-06-16] Claude Code: Nội dung điều khiển (touch joystick + full keyboard Arrows/WASD/Space trên Chromebook & PC) lấy theo ASO.md; theme đỏ/hổ phách trên nền navy khớp art game.
+- [2026-06-16] Claude Code: Không thêm Trap Tower vào trang chủ (homepage là danh sách app tuyển chọn — Rune Bounce cũng không có), chỉ thêm vào trang Apps.

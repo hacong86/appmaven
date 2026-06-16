@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Meta Tags -->
+  <title>Trap Tower - Troll Rage Platformer | 200 Levels, 50 Traps</title>
+  <meta name="title" content="Trap Tower - Troll Rage Platformer | 200 Levels, 50 Traps">
+  <meta name="description"
+    content="Play Trap Tower on Android: a troll rage platformer with 200 hand-crafted levels and 50 deadly traps. Trust nothing, jump anyway, and beat the meanest tower with tight touch and keyboard controls.">
+  <meta name="keywords"
+    content="Trap Tower, troll platformer, rage game, precision platformer, trap game, hard platformer, impossible level, jump game, hardcore platformer, obstacle game Android, troll game">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://appmavenstudio.com/apps/trap-tower/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://appmavenstudio.com/apps/trap-tower/">
+  <meta property="og:title" content="Trap Tower - Troll Rage Platformer">
+  <meta property="og:description"
+    content="Trust nothing. Jump anyway. 200 troll levels and 50 deadly traps built to make you rage-quit.">
+  <meta property="og:image"
+    content="https://appmavenstudio.com/assets/images/apps/trap-tower/gpgpc-feature-graphic-1920x1080.webp">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://appmavenstudio.com/apps/trap-tower/">
+  <meta property="twitter:title" content="Trap Tower - Troll Rage Platformer">
+  <meta property="twitter:description"
+    content="200 troll levels, 50 deadly traps. Can you beat the meanest tower on Android?">
+  <meta property="twitter:image"
+    content="https://appmavenstudio.com/assets/images/apps/trap-tower/gpgpc-feature-graphic-1920x1080.webp">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/assets/images/logo/appmaven_logo.png">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/variables.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+
+  <style>
+    .trap-page {
+      color: var(--color-text-primary);
+      background:
+        linear-gradient(180deg, rgba(6, 10, 22, 0), rgba(6, 10, 22, 0.92) 720px),
+        radial-gradient(circle at 14% 28%, rgba(239, 68, 68, 0.16), transparent 28%),
+        radial-gradient(circle at 88% 16%, rgba(245, 158, 11, 0.12), transparent 24%),
+        #060a16;
+    }
+
+    .trap-hero {
+      position: relative;
+      min-height: 650px;
+      padding: calc(var(--header-height) + var(--space-10)) var(--space-4) var(--space-12);
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      background-image:
+        linear-gradient(90deg, rgba(4, 7, 16, 0.94) 0%, rgba(4, 7, 16, 0.72) 38%, rgba(4, 7, 16, 0.26) 68%, rgba(4, 7, 16, 0.58) 100%),
+        linear-gradient(0deg, rgba(6, 10, 22, 0.94) 0%, rgba(6, 10, 22, 0.12) 42%, rgba(6, 10, 22, 0.42) 100%),
+        url("/assets/images/apps/trap-tower/gpgpc-feature-graphic-1920x1080.webp");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .trap-hero-content {
+      width: min(100%, 1180px);
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .trap-hero-copy {
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      color: #fca5a5;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      letter-spacing: 0;
+      margin-bottom: var(--space-4);
+    }
+
+    .trap-hero h1 {
+      font-size: 4.5rem;
+      line-height: 0.96;
+      margin-bottom: var(--space-4);
+      color: #fff7d6;
+      text-shadow: 0 8px 30px rgba(0, 0, 0, 0.62);
+    }
+
+    .trap-hero p {
+      font-size: 1.22rem;
+      color: rgba(245, 245, 255, 0.86);
+      line-height: 1.7;
+      max-width: 690px;
+      margin-bottom: var(--space-6);
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+      margin-bottom: var(--space-6);
+    }
+
+    .hero-tag {
+      border: 1px solid rgba(248, 113, 113, 0.34);
+      color: #fee2e2;
+      background: rgba(76, 8, 12, 0.46);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-4);
+      align-items: center;
+    }
+
+    .play-button {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-3);
+      min-height: 52px;
+      padding: 10px 18px;
+      border-radius: 8px;
+      background: #facc15;
+      color: #111827;
+      font-weight: 800;
+      text-decoration: none;
+      box-shadow: 0 12px 34px rgba(250, 204, 21, 0.26);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .play-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 44px rgba(250, 204, 21, 0.34);
+    }
+
+    .play-button svg {
+      width: 24px;
+      height: 24px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+
+    .store-soon {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      min-height: 52px;
+      padding: 10px 16px;
+      border-radius: 8px;
+      border: 1px solid rgba(248, 113, 113, 0.28);
+      background: rgba(255, 255, 255, 0.04);
+      color: rgba(245, 245, 255, 0.72);
+      font-weight: 700;
+    }
+
+    .store-soon svg {
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+
+    .store-soon .soon-pill {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      background: rgba(250, 204, 21, 0.16);
+      color: #fde68a;
+      border-radius: 999px;
+      padding: 2px 8px;
+    }
+
+    .secondary-link {
+      color: #fecdd3;
+      text-decoration: none;
+      font-weight: 700;
+      border-bottom: 1px solid rgba(254, 205, 211, 0.42);
+      padding-bottom: 2px;
+    }
+
+    .secondary-link:hover {
+      color: #fef3c7;
+      border-color: #fef3c7;
+    }
+
+    .section-band {
+      padding: var(--space-12) var(--space-4);
+    }
+
+    .section-inner {
+      width: min(100%, 1180px);
+      margin: 0 auto;
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: var(--space-8);
+    }
+
+    .section-heading h2 {
+      font-size: 2.25rem;
+      color: white;
+      margin-bottom: var(--space-3);
+    }
+
+    .section-heading p {
+      color: var(--color-text-secondary);
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.95fr);
+      gap: var(--space-8);
+      align-items: center;
+    }
+
+    .copy-block p {
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+      margin-bottom: var(--space-4);
+    }
+
+    .run-flow {
+      display: grid;
+      gap: var(--space-3);
+    }
+
+    .flow-step,
+    .feature-tile,
+    .faq-item {
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      background: rgba(15, 18, 32, 0.62);
+      border-radius: 8px;
+      padding: var(--space-5);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+    }
+
+    .flow-step {
+      display: grid;
+      grid-template-columns: 44px minmax(0, 1fr);
+      gap: var(--space-4);
+      align-items: start;
+    }
+
+    .step-number {
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #ef4444, #facc15);
+      color: #1a0608;
+      font-weight: 900;
+    }
+
+    .flow-step h3,
+    .feature-tile h3 {
+      color: white;
+      font-size: 1.05rem;
+      margin-bottom: var(--space-2);
+    }
+
+    .flow-step p,
+    .feature-tile p,
+    .faq-item p {
+      color: var(--color-text-secondary);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--space-5);
+    }
+
+    .feature-label {
+      display: inline-flex;
+      color: #fecaca;
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0;
+      margin-bottom: var(--space-3);
+    }
+
+    .screenshot-band {
+      background: rgba(2, 5, 16, 0.44);
+      border-top: 1px solid rgba(148, 163, 184, 0.14);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.14);
+    }
+
+    .screenshot-scroll {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(250px, 320px);
+      gap: var(--space-5);
+      overflow-x: auto;
+      padding: var(--space-2) 0 var(--space-5);
+      scrollbar-width: thin;
+      scrollbar-color: #ef4444 transparent;
+    }
+
+    .screenshot-card {
+      margin: 0;
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      border-radius: 8px;
+      background: rgba(15, 18, 32, 0.6);
+      overflow: hidden;
+    }
+
+    .screenshot-card img {
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      object-fit: cover;
+      display: block;
+      background: rgba(15, 18, 32, 0.92);
+    }
+
+    .screenshot-card figcaption {
+      min-height: 74px;
+      padding: var(--space-4);
+      color: var(--color-text-secondary);
+      line-height: 1.5;
+      font-size: 0.92rem;
+    }
+
+    .wide-feature {
+      display: grid;
+      grid-template-columns: minmax(260px, 0.7fr) minmax(0, 1.3fr);
+      gap: var(--space-8);
+      align-items: center;
+    }
+
+    .wide-feature img {
+      width: 100%;
+      max-width: 360px;
+      margin: 0 auto;
+      border-radius: 8px;
+      border: 1px solid rgba(148, 163, 184, 0.22);
+      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
+      background: rgba(15, 18, 32, 0.72);
+      display: block;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-5);
+    }
+
+    .legal-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-4);
+      margin-top: var(--space-6);
+    }
+
+    .legal-links a {
+      color: #fecdd3;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .legal-links a:hover {
+      color: #fde68a;
+    }
+
+    .final-cta {
+      text-align: center;
+      padding-bottom: var(--space-12);
+    }
+
+    .final-cta p {
+      color: var(--color-text-secondary);
+      margin: 0 auto var(--space-6);
+      max-width: 720px;
+      line-height: 1.75;
+    }
+
+    .final-cta .cta-row {
+      justify-content: center;
+    }
+
+    @media (max-width: 900px) {
+      .trap-hero {
+        min-height: 620px;
+        background-position: 58% center;
+      }
+
+      .trap-hero h1 {
+        font-size: 3.1rem;
+      }
+
+      .two-column,
+      .wide-feature,
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 560px) {
+      .trap-hero {
+        min-height: 680px;
+        padding-bottom: var(--space-8);
+        background-image:
+          linear-gradient(90deg, rgba(4, 7, 16, 0.94), rgba(4, 7, 16, 0.64)),
+          linear-gradient(0deg, rgba(6, 10, 22, 0.95), rgba(6, 10, 22, 0.18)),
+          url("/assets/images/apps/trap-tower/gpgpc-feature-graphic-1920x1080.webp");
+      }
+
+      .trap-hero h1 {
+        font-size: 2.45rem;
+        line-height: 1.05;
+      }
+
+      .trap-hero p {
+        font-size: 1rem;
+      }
+
+      .section-heading h2 {
+        font-size: 1.8rem;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .screenshot-scroll {
+        grid-auto-columns: minmax(220px, 78vw);
+      }
+
+      .cta-row,
+      .play-button,
+      .store-soon {
+        width: 100%;
+      }
+
+      .play-button,
+      .store-soon {
+        justify-content: center;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://appmavenstudio.com/apps/trap-tower/#webpage",
+        "url": "https://appmavenstudio.com/apps/trap-tower/",
+        "name": "Trap Tower - Troll Rage Platformer",
+        "description": "Trap Tower is an Android troll rage platformer with 200 hand-crafted levels and 50 deadly traps. Trust nothing, jump anyway, and beat the meanest tower.",
+        "inLanguage": "en-US",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "AppMaven Studio",
+          "url": "https://appmavenstudio.com/"
+        }
+      },
+      {
+        "@type": "MobileApplication",
+        "@id": "https://appmavenstudio.com/apps/trap-tower/#app",
+        "name": "Trap Tower",
+        "operatingSystem": "Android",
+        "applicationCategory": "GameApplication",
+        "genre": ["Troll platformer", "Rage game", "Precision platformer", "Arcade"],
+        "description": "Climb 200 troll levels packed with 50 deadly traps. Fake floors, runaway doors, spikes, saws, and lasers test your patience in this hardcore rage platformer.",
+        "url": "https://appmavenstudio.com/apps/trap-tower/",
+        "downloadUrl": "https://play.google.com/store/apps/details?id=com.traptower.game",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "AppMaven Studio",
+          "url": "https://appmavenstudio.com/"
+        },
+        "image": "https://appmavenstudio.com/assets/images/apps/trap-tower/gpgpc-feature-graphic-1920x1080.webp",
+        "screenshot": [
+          "https://appmavenstudio.com/assets/images/apps/trap-tower/TrapTower_S1.webp",
+          "https://appmavenstudio.com/assets/images/apps/trap-tower/TrapTower_S2.webp",
+          "https://appmavenstudio.com/assets/images/apps/trap-tower/TrapTower_S3.webp",
+          "https://appmavenstudio.com/assets/images/apps/trap-tower/TrapTower_S4.webp",
+          "https://appmavenstudio.com/assets/images/apps/trap-tower/TrapTower_S5.webp",
+          "https://appmavenstudio.com/assets/images/apps/trap-tower/TrapTower_S6.webp"
+        ],
+        "privacyPolicy": "https://appmavenstudio.com/apps/trap-tower/privacy-policy.html",
+        "termsOfService": "https://appmavenstudio.com/apps/trap-tower/terms-of-service.html"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://appmavenstudio.com/apps/trap-tower/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What kind of game is Trap Tower?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Trap Tower is a troll rage platformer. You climb 200 hand-crafted levels filled with 50 types of deadly traps, where every floor, door, and spike can be a lie waiting to spring."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where can I download Trap Tower?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Trap Tower is available now on Google Play for Android devices through the official AppMaven Studio listing. An iOS version is coming soon."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Trap Tower require an account?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No account is required. Your level progress, unlocked levels, death count, and settings are saved locally on your device, and the game does not ask for your name, email, or phone number."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Trap Tower have ads or in-app purchases?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Trap Tower is free to play and supported by Google AdMob ads: interstitial ads between levels and an optional rewarded ad to skip a hard level. There are currently no in-app purchases."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I play Trap Tower with a keyboard?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Trap Tower uses a smooth touch joystick and jump button on phones, and also supports full keyboard controls (Arrow keys, WASD, and Space) on Chromebook and PC."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body class="trap-page">
+
+  <!-- Skip to Main Content -->
+  <a href="#main-content" class="skip-to-main">Skip to main content</a>
+
+  <!-- Navigation -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar-container">
+      <a href="/" class="navbar-logo" aria-label="AppMaven Studio Home">
+        <img src="/assets/images/logo/appmaven_logo.png" alt="AppMaven Studio Logo"
+          style="height: 32px; width: 32px; border-radius: 8px;">
+        <span>AppMaven Studio</span>
+      </a>
+
+      <button class="navbar-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="navbar-menu" role="menubar">
+        <li role="none"><a href="/" role="menuitem">Home</a></li>
+        <li role="none"><a href="/apps/" class="active" role="menuitem">Apps</a></li>
+        <li role="none"><a href="/blog/" role="menuitem">Blog</a></li>
+        <li role="none"><a href="/about/" role="menuitem">About</a></li>
+        <li role="none"><a href="/support/" role="menuitem">Support</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <section class="trap-hero" aria-label="Trap Tower hero">
+      <div class="trap-hero-content">
+        <div class="trap-hero-copy">
+          <span class="eyebrow">Android troll rage platformer</span>
+          <h1>Trap Tower</h1>
+          <p>
+            Trust nothing. Jump anyway. Every floor, every door, and every harmless-looking spike is a lie waiting to
+            spring. Climb 200 hand-crafted levels stuffed with 50 types of devious traps and learn the hard way that the
+            only thing more dangerous than the tower is your own confidence.
+          </p>
+          <div class="hero-tags" aria-label="Game genres and features">
+            <span class="hero-tag">200 troll levels</span>
+            <span class="hero-tag">50 deadly traps</span>
+            <span class="hero-tag">Rage platformer</span>
+            <span class="hero-tag">Touch &amp; keyboard</span>
+          </div>
+          <div class="cta-row">
+            <a class="play-button" href="https://play.google.com/store/apps/details?id=com.traptower.game"
+              target="_blank" rel="noopener noreferrer" aria-label="Download Trap Tower on Google Play">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
+              </svg>
+              <span>Get it on Google Play</span>
+            </a>
+            <span class="store-soon" aria-label="iOS version coming soon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.09,16.67C20.06,16.74 19.67,18.11 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z" />
+              </svg>
+              <span>App Store</span>
+              <span class="soon-pill">Soon</span>
+            </span>
+            <a class="secondary-link" href="#screenshots">View screenshots</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-band">
+      <div class="section-inner two-column">
+        <div class="copy-block">
+          <div class="section-heading">
+            <span class="eyebrow">Trust nothing. Jump anyway.</span>
+            <h2>A rage platformer built to break your patience</h2>
+            <p>
+              Trap Tower turns a simple jump into a mind game. Fake floors crumble the moment you land, doors run away,
+              spikes rain from the ceiling, and saws wait in the dark. This is a rage game &mdash; you will die, a lot,
+              and that is the whole point.
+            </p>
+          </div>
+          <p>
+            Every death teaches you the next trick. Memorize the trap, time the jump, and inch your way up a tower that
+            is actively laughing at you. Controls stay tight and fair, so every mistake is yours to fix &mdash; never the
+            game's fault.
+          </p>
+          <div class="legal-links" aria-label="Trap Tower legal links">
+            <a href="/apps/trap-tower/privacy-policy.html">Privacy Policy</a>
+            <a href="/apps/trap-tower/terms-of-service.html">Terms of Service</a>
+            <a href="/support/">Support</a>
+          </div>
+        </div>
+
+        <div class="run-flow" aria-label="How a Trap Tower level works">
+          <div class="flow-step">
+            <span class="step-number">1</span>
+            <div>
+              <h3>Trust nothing</h3>
+              <p>Read each floor, door, and platform like it is out to get you &mdash; because it probably is.</p>
+            </div>
+          </div>
+          <div class="flow-step">
+            <span class="step-number">2</span>
+            <div>
+              <h3>Die and learn</h3>
+              <p>Spring the trap, respawn instantly, and remember the trick so it never catches you twice.</p>
+            </div>
+          </div>
+          <div class="flow-step">
+            <span class="step-number">3</span>
+            <div>
+              <h3>Beat the tower</h3>
+              <p>Clear the level, chase a no-death run, and wipe the smirk off the meanest tower in town.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-band">
+      <div class="section-inner">
+        <div class="section-heading">
+          <span class="eyebrow">Key features</span>
+          <h2>Why Trap Tower hurts so good</h2>
+          <p>
+            The core loop is pure precision-platforming pain: every level is a fresh trick, and every clear feels like a
+            small victory over a tower that wants you to quit.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          <div class="feature-tile">
+            <span class="feature-label">200 troll levels</span>
+            <h3>One tower, no mercy</h3>
+            <p>Fake floors, runaway doors, invisible platforms, gravity flips, ice, and dozens more ways to ruin a perfect run.</p>
+          </div>
+          <div class="feature-tile">
+            <span class="feature-label">50 deadly traps</span>
+            <h3>Spikes, saws, lasers, lies</h3>
+            <p>Spikes that pop, springs that lie, walls that squeeze, saws that chase. Memorize the trick or pay the price.</p>
+          </div>
+          <div class="feature-tile">
+            <span class="feature-label">Tight, fair controls</span>
+            <h3>Touch and keyboard ready</h3>
+            <p>A smooth joystick and jump button on mobile, plus full keyboard support (Arrows, WASD, Space) on Chromebook and PC.</p>
+          </div>
+          <div class="feature-tile">
+            <span class="feature-label">Instant restart</span>
+            <h3>Rage, restart, repeat</h3>
+            <p>No loading, no waiting. Die, respawn, and try again in a heartbeat &mdash; perfect for "just one more try."</p>
+          </div>
+          <div class="feature-tile">
+            <span class="feature-label">Beat the tower</span>
+            <h3>Hunt no-death runs</h3>
+            <p>Track your deaths, chase flawless clears, and prove you have the patience of a saint and the reflexes of a cat.</p>
+          </div>
+          <div class="feature-tile">
+            <span class="feature-label">Stuck? Skip it</span>
+            <h3>Optional rewarded ad</h3>
+            <p>Hit a brutal wall? Watch a short rewarded video to skip the level. Totally your call &mdash; never forced.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-band screenshot-band" id="screenshots">
+      <div class="section-inner">
+        <div class="section-heading">
+          <span class="eyebrow">Screenshots</span>
+          <h2>See the lies, traps, and rage-quits</h2>
+          <p>
+            These screenshots show the real promise: crumbling fake floors, deadly traps, troll taunts, instant
+            restarts, and the rare, glorious no-death clear.
+          </p>
+        </div>
+
+        <div class="screenshot-scroll" aria-label="Trap Tower screenshots">
+          <figure class="screenshot-card">
+            <img src="/assets/images/apps/trap-tower/TrapTower_S1.webp"
+              alt="Trap Tower Level 1 gameplay with a character beside a red fake floor crumbling away, a goal door, and touch controls" loading="lazy">
+            <figcaption>Trust nothing &mdash; even the floor beside you can be a crumbling lie.</figcaption>
+          </figure>
+          <figure class="screenshot-card">
+            <img src="/assets/images/apps/trap-tower/TrapTower_S2.webp"
+              alt="Trap Tower level select screen showing a grid of numbered levels with 199 of 200 cleared" loading="lazy">
+            <figcaption>200 hand-crafted troll levels in one merciless tower.</figcaption>
+          </figure>
+          <figure class="screenshot-card">
+            <img src="/assets/images/apps/trap-tower/TrapTower_S3.webp"
+              alt="Trap Tower Level 50 with a spinning red saw blade, moving platform, spikes, and a goal door" loading="lazy">
+            <figcaption>50 deadly trap types: spikes, saws, lasers, and outright lies.</figcaption>
+          </figure>
+          <figure class="screenshot-card">
+            <img src="/assets/images/apps/trap-tower/TrapTower_S4.webp"
+              alt="Trap Tower gameplay with a troll taunt reading 'Did you really just do that?' after a death" loading="lazy">
+            <figcaption>Instant respawns and troll taunts keep the rage flowing.</figcaption>
+          </figure>
+          <figure class="screenshot-card">
+            <img src="/assets/images/apps/trap-tower/TrapTower_S5.webp"
+              alt="Trap Tower level clear overlay celebrating a no-death run with confetti" loading="lazy">
+            <figcaption>Beat a level with zero deaths &mdash; if you can.</figcaption>
+          </figure>
+          <figure class="screenshot-card">
+            <img src="/assets/images/apps/trap-tower/TrapTower_S6.webp"
+              alt="Trap Tower Level 30 with red spikes raining from the ceiling, a saw blade, and a fake floor block" loading="lazy">
+            <figcaption>Every floor lies. Learn, die, and try again.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-band">
+      <div class="section-inner wide-feature">
+        <img src="/assets/images/apps/trap-tower/TrapTower_S5.webp"
+          alt="Trap Tower no-death clear screen with a CLEAR banner and a green No Deaths badge" loading="lazy">
+        <div class="copy-block">
+          <div class="section-heading">
+            <span class="eyebrow">The challenge</span>
+            <h2>Anyone can finish. Almost no one finishes clean.</h2>
+            <p>
+              Clearing a level is one thing. Clearing it without a single death is a different kind of bragging right.
+              Trap Tower counts every fall, so the real flex is the flawless run &mdash; the level you finally read
+              perfectly, trap by trap.
+            </p>
+          </div>
+          <p>
+            With instant restarts and fair, predictable controls, there is always a reason to try one more time. Learn
+            the tower, master the traps, and turn rage into the satisfying click of a clean clear.
+          </p>
+          <a class="secondary-link" href="https://play.google.com/store/apps/details?id=com.traptower.game"
+            target="_blank" rel="noopener noreferrer">Open Trap Tower on Google Play</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-band">
+      <div class="section-inner">
+        <div class="section-heading">
+          <span class="eyebrow">FAQ</span>
+          <h2>Trap Tower questions</h2>
+        </div>
+
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3>What kind of game is Trap Tower?</h3>
+            <p>
+              It is a troll rage platformer. You climb 200 hand-crafted levels packed with 50 deadly traps, where every
+              floor, door, and spike can be a lie waiting to spring.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>Where can I download Trap Tower?</h3>
+            <p>
+              Trap Tower is available now on Google Play for Android. An iOS version is coming soon.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>Does Trap Tower require an account?</h3>
+            <p>
+              No account is required. Your progress, unlocked levels, and death count are saved locally on your device,
+              and the game never asks for your name, email, or phone number.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>Does Trap Tower have ads or in-app purchases?</h3>
+            <p>
+              It is free to play with Google AdMob ads &mdash; interstitial ads between levels and an optional rewarded
+              ad to skip a hard level. There are currently no in-app purchases.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>Can I play with a keyboard or on PC?</h3>
+            <p>
+              Yes. Trap Tower supports a touch joystick and jump button on phones, plus full keyboard controls (Arrows,
+              WASD, Space) on Chromebook and PC.
+            </p>
+          </div>
+          <div class="faq-item">
+            <h3>Is Trap Tower really that hard?</h3>
+            <p>
+              Yes &mdash; that is the point. The traps are mean, but the controls are fair, so every death is a lesson
+              and every clear is earned.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-band final-cta" aria-label="Download Trap Tower">
+      <div class="section-inner">
+        <h2>Dare to climb?</h2>
+        <p>
+          The tower is laughing at you. Download Trap Tower on Android and wipe that smirk off its face &mdash; 200
+          levels and 50 traps are waiting.
+        </p>
+        <div class="cta-row">
+          <a class="play-button" href="https://play.google.com/store/apps/details?id=com.traptower.game"
+            target="_blank" rel="noopener noreferrer" aria-label="Get Trap Tower on Google Play">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z" />
+            </svg>
+            <span>Get it on Google Play</span>
+          </a>
+          <span class="store-soon" aria-label="iOS version coming soon">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.09,16.67C20.06,16.74 19.67,18.11 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z" />
+            </svg>
+            <span>App Store</span>
+            <span class="soon-pill">Soon</span>
+          </span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <div style="display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-4);">
+            <img src="/assets/images/logo/appmaven_logo.png" alt="AppMaven Studio Logo"
+              style="height: 32px; width: 32px; border-radius: 8px;">
+            <span style="font-size: var(--text-xl); font-weight: var(--font-bold);">AppMaven Studio</span>
+          </div>
+          <p style="color: var(--color-text-secondary); margin-bottom: var(--space-4); line-height: 1.6;">
+            Crafting innovative mobile experiences that users love. We combine clean design with practical mobile
+            products for Android users.
+          </p>
+        </div>
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/apps/">Apps</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/support/">Support</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Trap Tower</h4>
+          <ul>
+            <li><a href="/apps/trap-tower/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="/apps/trap-tower/terms-of-service.html">Terms of Service</a></li>
+            <li><a href="https://play.google.com/store/apps/details?id=com.traptower.game" target="_blank"
+                rel="noopener noreferrer">Google Play</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="mailto:hacong86@gmail.com">Email Us</a></li>
+            <li><a href="https://github.com/hacong86" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 AppMaven Studio. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+
+</body>
+
+</html>
