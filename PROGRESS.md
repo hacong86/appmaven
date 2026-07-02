@@ -152,3 +152,16 @@
 - Status: ✅ Done — landing page với hero feature graphic, 6 feature tiles (200 levels, 50 traps, touch+keyboard, instant restart, no-death, rewarded skip), gallery 6 screenshot thật có caption, wide feature no-death, FAQ 6 mục, CTA Google Play + App Store "Soon", JSON-LD WebPage/MobileApplication/FAQPage; nội dung từ ASO.md.
 - Verification: Browser desktop 1366px + mobile 390px → render đúng, không tràn, 0 lỗi console trên trang game; card Trap Tower hiển thị đúng trong lưới Apps.
 - Next: Commit/push các file public lên `origin/main`; sau khi GitHub Pages build, `https://appmavenstudio.com/apps/trap-tower/` trả 200.
+
+### [2026-07-02 15:57] AGENTS Code
+- Task: Tạo trang Privacy Policy cho game `Monster Survivor` để lấy URL khai báo Google Play.
+- Files dự kiến: `apps/monster-survivor/privacy-policy.html`, `privacy-policy.html`, `sitemap.xml`, `TASK.md`, `PROGRESS.md`
+- Status: Đã đọc trạng thái dự án, file nguồn policy và mẫu legal page hiện có; đang tạo trang public và nối link hệ thống.
+- Next: Kiểm tra không còn placeholder, commit và push public files lên `origin/main`.
+
+### [2026-07-02 16:03] AGENTS Code
+- Task: Tạo trang Privacy Policy cho game `Monster Survivor` để lấy URL khai báo Google Play.
+- Files: `apps/monster-survivor/privacy-policy.html`, `privacy-policy.html`, `sitemap.xml`, `TASK.md`, `PROGRESS.md`
+- Status: ✅ Done — đã tạo trang policy public theo nguồn Monster Survivor, điền các placeholder bắt buộc, thêm link vào privacy overview và sitemap; không stage thư mục `doc/` nội bộ.
+- Verification: Không còn placeholder trong public files; các cụm `com.appmaven.monstersurvivor`, AdMob, UMP, Firebase Analytics, Meta, Unity IAP đều có trong trang; `git diff --check` pass.
+- Next: Dùng URL `https://appmavenstudio.com/apps/monster-survivor/privacy-policy.html` để khai báo Google Play sau khi GitHub Pages cập nhật.

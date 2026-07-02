@@ -183,3 +183,19 @@
 - [2026-06-16] Claude Code: Google Play link `https://play.google.com/store/apps/details?id=com.traptower.game`; iOS "Coming soon".
 - [2026-06-16] Claude Code: Nội dung điều khiển (touch joystick + full keyboard Arrows/WASD/Space trên Chromebook & PC) lấy theo ASO.md; theme đỏ/hổ phách trên nền navy khớp art game.
 - [2026-06-16] Claude Code: Không thêm Trap Tower vào trang chủ (homepage là danh sách app tuyển chọn — Rune Bounce cũng không có), chỉ thêm vào trang Apps.
+
+---
+
+# Task: Tạo trang Privacy Policy Monster Survivor
+
+## Checklist
+- [x] [2026-07-02] [AGENTS Code]: Đọc `TASK.md`, `PROGRESS.md`, nguồn `doc/monster-survivor/Privacy Policy.md` và mẫu legal page hiện có
+- [x] [2026-07-02] [AGENTS Code]: Tạo trang `apps/monster-survivor/privacy-policy.html` theo nội dung nguồn, không để lại placeholder
+- [x] [2026-07-02] [AGENTS Code]: Cập nhật `privacy-policy.html` thêm link Monster Survivor
+- [x] [2026-07-02] [AGENTS Code]: Cập nhật `sitemap.xml` thêm URL policy Monster Survivor
+- [x] [2026-07-02] [AGENTS Code]: Kiểm tra HTML/link nội bộ, không còn placeholder và không stage `doc/`
+- [x] [2026-07-02] [AGENTS Code]: Commit và push các file public lên `origin/main`
+
+## Assumption Log
+- [2026-07-02] [AGENTS Code]: Dùng slug `apps/monster-survivor` theo tên game và package `com.appmaven.monstersurvivor`.
+- [2026-07-02] [AGENTS Code]: Điền các placeholder public bằng `AppMaven`, `Vietnam`, URL `https://appmavenstudio.com/apps/monster-survivor/privacy-policy.html`, Effective/Last updated `July 2, 2026`.

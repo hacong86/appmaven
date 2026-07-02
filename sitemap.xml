@@ -154,6 +154,13 @@
     <priority>0.3</priority>
   </url>
 
+  <url>
+    <loc>https://appmavenstudio.com/apps/monster-survivor/privacy-policy.html</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
   <!-- Blog -->
   <url>
     <loc>https://appmavenstudio.com/blog/</loc>
@@ -222,7 +229,7 @@
 
   <url>
     <loc>https://appmavenstudio.com/privacy-policy.html</loc>
-    <lastmod>2026-01-26</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
