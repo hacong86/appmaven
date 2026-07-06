@@ -373,7 +373,7 @@
             <li>
               <strong>Advertising ID (Google Advertising ID / GAID):</strong> a resettable identifier provided by your
               device, used to deliver and measure advertising. In regions where consent is required, personalized
-              advertising is used only if you consent.
+              advertising is used only if you consent (see Section 7).
             </li>
             <li>
               <strong>Firebase installation / app instance ID:</strong> a non-account identifier used to group analytics
@@ -389,7 +389,8 @@
             </li>
             <li>
               <strong>Gameplay and interaction events:</strong> starting or finishing a run, leveling up, choosing
-              upgrades, summoning pets, selecting heroes and maps, ad interactions, and purchase interactions.
+              upgrades, summoning pets, selecting heroes and maps, and ad/purchase interactions, including which ad
+              placement was shown and whether it completed.
             </li>
             <li>
               <strong>Attribution / install source:</strong> via the Google Play Install Referrer, used to understand
@@ -400,8 +401,9 @@
           <h3>3.2 Information related to in-app purchases</h3>
           <p>
             The Game offers optional in-app purchases, such as gem packs, "Remove Ads", and "Starter Pack". Purchases
-            are processed by <strong>Google Play Billing</strong>. We receive confirmation of the purchase so we can
-            deliver the item. Purchase events, including product identifier and price paid as reported by the store, are
+            are processed by <strong>Google Play Billing</strong>. We receive confirmation of the purchase, including
+            the product identifier and whether it succeeded, so we can deliver the item. Purchase events, including
+            product identifier and price paid as reported by the store, are
             logged to <strong>Google Analytics for Firebase</strong> and to <strong>Meta (Facebook App Events)</strong>
             for revenue analytics and advertising measurement. We do <strong>not</strong> receive or store your payment
             card or billing details.
@@ -433,7 +435,7 @@
           <h2>5. Legal Bases for Processing (EEA / UK / Switzerland)</h2>
           <p>Where the GDPR or UK GDPR applies, we rely on the following legal bases:</p>
           <ul>
-            <li><strong>Consent</strong> for personalized advertising and the use of your Advertising ID for that purpose.</li>
+            <li><strong>Consent</strong> for personalized advertising and the use of your Advertising ID for that purpose. You can withdraw consent at any time.</li>
             <li><strong>Legitimate interests</strong> for analytics, non-personalized advertising, fraud prevention, and improving and securing the Game.</li>
             <li><strong>Performance of a contract</strong> to process and deliver the in-app purchases you request.</li>
             <li><strong>Legal obligation</strong> where we must process data to comply with the law.</li>
@@ -472,7 +474,7 @@
               <strong>Meta Platforms (Facebook SDK)</strong> is used solely for advertising measurement, including app
               installs and in-app events such as level completion and purchases, so we can run and optimize install
               campaigns on Facebook and Instagram. The Game does not include Facebook Login and we receive no Facebook
-              profile information.
+              profile information. The SDK may process your Advertising ID and app-event data.
               <a href="https://www.facebook.com/privacy/policy" target="_blank" rel="noopener noreferrer">Meta Privacy
                 Policy</a>.
             </li>
@@ -485,7 +487,7 @@
           </ul>
           <p>
             These partners may use device identifiers and similar technologies, including Google's Privacy Sandbox
-            features on supported Android versions, to deliver and measure advertising.
+            features (Topics and Attribution) on supported Android versions, to deliver and measure advertising.
           </p>
 
           <h2>7. Advertising, Personalized Ads, and Your Choices</h2>
@@ -517,8 +519,9 @@
           <h3>8.1 EEA / UK / Switzerland (GDPR)</h3>
           <p>
             You have the right to access your data, rectify inaccurate data, erase your data, restrict or object to
-            certain processing, request data portability, withdraw consent at any time, and lodge a complaint with your
-            local data protection supervisory authority.
+            certain processing (including profiling for personalized ads), request data portability, withdraw consent at
+            any time, and lodge a complaint with your local data protection supervisory authority. Withdrawing consent
+            does not affect processing already carried out.
           </p>
 
           <h3>8.2 California (CCPA/CPRA) and similar US state laws</h3>
@@ -556,7 +559,7 @@
           <h2>10. Data Retention</h2>
           <ul>
             <li><strong>Local game progress:</strong> kept on your device until you uninstall the Game or clear its data.</li>
-            <li><strong>Analytics data (Firebase):</strong> retained according to our Google Analytics for Firebase retention settings.</li>
+            <li><strong>Analytics data (Firebase):</strong> retained according to our Google Analytics for Firebase retention settings. Event-level data is kept for 2 or 14 months, per Google's retention controls.</li>
             <li><strong>Advertising data:</strong> retained by Google/AdMob in accordance with Google's policies.</li>
           </ul>
           <p>
@@ -570,6 +573,7 @@
             as 16 in parts of the EEA. We do not knowingly collect personal data from children. If you believe a child
             has provided us with personal data, please contact us at
             <a href="mailto:hacong86@gmail.com">hacong86@gmail.com</a> and we will take steps to delete it.
+            Parents and guardians should supervise their children's use of mobile apps and device advertising settings.
           </p>
 
           <h2>12. Security</h2>
@@ -585,6 +589,7 @@
             above and post the new version at
             <a href="https://appmavenstudio.com/apps/monster-survivor/privacy-policy.html">https://appmavenstudio.com/apps/monster-survivor/privacy-policy.html</a>.
             Significant changes may be communicated within the Game or through the store listing.
+            Your continued use of the Game after changes take effect means you accept the updated Policy.
           </p>
 
           <h2>14. Contact Us</h2>

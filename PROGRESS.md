@@ -165,3 +165,16 @@
 - Status: ✅ Done — đã tạo trang policy public theo nguồn Monster Survivor, điền các placeholder bắt buộc, thêm link vào privacy overview và sitemap; không stage thư mục `doc/` nội bộ.
 - Verification: Không còn placeholder trong public files; các cụm `com.appmaven.monstersurvivor`, AdMob, UMP, Firebase Analytics, Meta, Unity IAP đều có trong trang; `git diff --check` pass.
 - Next: Dùng URL `https://appmavenstudio.com/apps/monster-survivor/privacy-policy.html` để khai báo Google Play sau khi GitHub Pages cập nhật.
+
+### [2026-07-06 20:41] AGENTS Code
+- Task: Cập nhật `apps/monster-survivor/privacy-policy.html` để khớp đầy đủ hơn với `doc/monster-survivor/Privacy Policy.md`.
+- Files dự kiến: `apps/monster-survivor/privacy-policy.html`, `TASK.md`, `PROGRESS.md`
+- Status: Đã đọc trạng thái dự án, xác định HTML public đang thiếu một số câu chi tiết về Firebase retention, Meta data processing, Privacy Sandbox, GDPR rights, children privacy và policy changes.
+- Next: Bổ sung đúng các đoạn thiếu, kiểm tra nội dung sau sửa và không stage thư mục `doc/`.
+
+### [2026-07-06 20:42] AGENTS Code
+- Task: Cập nhật `apps/monster-survivor/privacy-policy.html` để khớp đầy đủ hơn với `doc/monster-survivor/Privacy Policy.md`.
+- Files: `apps/monster-survivor/privacy-policy.html`, `TASK.md`, `PROGRESS.md`
+- Status: ✅ Done — đã bổ sung chi tiết Advertising ID consent, ad placement completion, purchase confirmation, Meta Advertising ID/app-event data, Privacy Sandbox Topics/Attribution, GDPR profiling/withdrawal consent, Firebase retention 2 hoặc 14 tháng, children privacy và acceptance khi tiếp tục dùng game.
+- Verification: `rg` xác nhận các cụm bổ sung có trong HTML; không còn placeholder/TODO/FIXME; `git diff --check` pass, chỉ có cảnh báo line ending CRLF hiện có của repo.
+- Next: Commit/push nếu cần đưa bản cập nhật này lên GitHub Pages.

@@ -199,3 +199,16 @@
 ## Assumption Log
 - [2026-07-02] [AGENTS Code]: Dùng slug `apps/monster-survivor` theo tên game và package `com.appmaven.monstersurvivor`.
 - [2026-07-02] [AGENTS Code]: Điền các placeholder public bằng `AppMaven`, `Vietnam`, URL `https://appmavenstudio.com/apps/monster-survivor/privacy-policy.html`, Effective/Last updated `July 2, 2026`.
+
+---
+
+# Task: Cập nhật Privacy Policy Monster Survivor khớp bản Markdown
+
+## Checklist
+- [x] Đọc `TASK.md`, `PROGRESS.md`, file nguồn `doc/monster-survivor/Privacy Policy.md` và trang HTML hiện tại
+- [x] Bổ sung các đoạn policy còn bị rút gọn trong `apps/monster-survivor/privacy-policy.html`
+- [x] Kiểm tra lại các cụm nội dung quan trọng sau khi sửa
+- [x] Cập nhật `TASK.md` và `PROGRESS.md` trước khi kết thúc
+
+## Assumption Log
+- [2026-07-06] Chỉ cập nhật trang app-specific `apps/monster-survivor/privacy-policy.html`; không sửa tài liệu nguồn `doc/` vì file Markdown đang là bản chuẩn.
