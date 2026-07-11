@@ -171,6 +171,13 @@
 
   <!-- Blog Articles -->
   <url>
+    <loc>https://appmavenstudio.com/blog/monster-survivor-pet-rpg/</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://appmavenstudio.com/blog/android-performance-2026/</loc>
     <lastmod>2026-01-10</lastmod>
     <changefreq>monthly</changefreq>

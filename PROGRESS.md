@@ -178,3 +178,16 @@
 - Status: ✅ Done — đã bổ sung chi tiết Advertising ID consent, ad placement completion, purchase confirmation, Meta Advertising ID/app-event data, Privacy Sandbox Topics/Attribution, GDPR profiling/withdrawal consent, Firebase retention 2 hoặc 14 tháng, children privacy và acceptance khi tiếp tục dùng game.
 - Verification: `rg` xác nhận các cụm bổ sung có trong HTML; không còn placeholder/TODO/FIXME; `git diff --check` pass, chỉ có cảnh báo line ending CRLF hiện có của repo.
 - Next: Commit/push nếu cần đưa bản cập nhật này lên GitHub Pages.
+
+### [2026-07-11 14:54] AGENTS Code
+- Task: Tạo bài blog SEO tiếng Anh cho `Monster Survivor: Pet RPG`.
+- Files dự kiến: `blog/monster-survivor-pet-rpg/index.html`, `blog/index.html`, `sitemap.xml`, `TASK.md`, `PROGRESS.md`.
+- Status: Đã đọc nguồn ASO, kiểm tra 8 screenshot + icon và tạo bài giới thiệu dùng nội dung/ảnh thật; Google Play dùng đúng package, iOS hiển thị Coming Soon.
+- Next: Kiểm tra HTML, metadata, liên kết, ảnh và responsive; sau đó commit/push đúng các file liên quan lên `origin/main`.
+
+### [2026-07-11 15:08] AGENTS Code
+- Task: Hoàn tất và chuẩn bị publish bài blog SEO `Monster Survivor: Pet RPG`.
+- Files: `blog/monster-survivor-pet-rpg/index.html`, `blog/index.html`, `sitemap.xml`, `assets/images/apps/monster-survivor/*`, `TASK.md`, `PROGRESS.md`.
+- Status: ✅ Done — bài tiếng Anh 841 từ, dùng đủ 8 ảnh gameplay + icon, có Google Play CTA và iOS Coming Soon; đã nối Blog index và sitemap.
+- Verification: HTML parser PASS; BlogPosting JSON-LD parse PASS; 15 asset references tồn tại; 10 thẻ ảnh có alt; canonical/package/link store đúng; responsive CSS chuyển gallery về 1 cột dưới 680px; `git diff --check` PASS.
+- Next: Stage đúng các file trên, không stage `doc/`, commit và push `origin/main`.

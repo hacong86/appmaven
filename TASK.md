@@ -212,3 +212,17 @@
 
 ## Assumption Log
 - [2026-07-06] Chỉ cập nhật trang app-specific `apps/monster-survivor/privacy-policy.html`; không sửa tài liệu nguồn `doc/` vì file Markdown đang là bản chuẩn.
+
+---
+
+# Task: Tạo bài blog SEO tiếng Anh cho Monster Survivor
+
+## Checklist
+- [x] [2026-07-11] [AGENTS Code]: Đọc `TASK.md`, `PROGRESS.md`, nguồn `doc/monster-survivor/ASO.md`, kiểm tra 8 screenshot và icon
+- [x] [2026-07-11] [AGENTS Code]: Tạo `blog/monster-survivor-pet-rpg/index.html` với nội dung tiếng Anh, metadata SEO, Open Graph và BlogPosting schema
+- [x] [2026-07-11] [AGENTS Code]: Dùng ảnh gameplay thật, gắn Google Play đúng package và hiển thị iOS Coming Soon
+- [x] [2026-07-11] [AGENTS Code]: Thêm card vào `blog/index.html` và URL vào `sitemap.xml`
+- [x] [2026-07-11] [AGENTS Code]: Kiểm tra HTML, link, ảnh, responsive; commit và push `origin/main`
+
+## Assumption Log
+- [2026-07-11] [AGENTS Code]: Dùng slug `blog/monster-survivor-pet-rpg/` để bám từ khóa tên game và thể loại; iOS chỉ hiển thị Coming Soon, không tạo link giả.
