@@ -288,3 +288,18 @@
 ## Assumption Log
 - [2026-08-06] [AGENTS Code]: Giữ nhận diện dark navy hiện tại nhưng giảm glassmorphism lặp lại; dùng ảnh app đã có trong repo, không thêm dependency hoặc tạo asset mới.
 - [2026-08-06] [AGENTS Code]: Phạm vi là trang chủ cùng mẫu `.legal-content > .glass-card` trên mobile; không sửa nội dung pháp lý, URL, metadata hoặc các trang app không dùng mẫu này.
+
+---
+
+# Task: Xuất bản Privacy Policy và Terms of Service cho FocusOne
+
+## Checklist
+- [x] [2026-08-06] [AGENTS Code]: Kiểm tra các file FocusOne đã được người dùng tạo và xác định đúng phạm vi thay đổi
+- [x] [2026-08-06] [AGENTS Code]: Nối Privacy Policy và Terms of Service từ trang FocusOne, trang legal tổng và `sitemap.xml`
+- [x] [2026-08-06] [AGENTS Code]: Kiểm tra HTML, metadata, canonical, liên kết, placeholder và giao diện desktop/mobile
+- [ ] [2026-08-06] [AGENTS Code]: Commit, push `origin/main`, chờ GitHub Pages và xác minh URL công khai
+
+## Assumption Log
+- [2026-08-06] [AGENTS Code]: Dùng URL `https://appmavenstudio.com/apps/focusone/privacy-policy.html` và `https://appmavenstudio.com/apps/focusone/terms-of-service.html` theo đúng canonical trong hai file người dùng đã tạo.
+- [2026-08-06] [AGENTS Code]: Giữ nguyên nội dung pháp lý FocusOne; task này chỉ xác minh và xuất bản website, không đối chiếu disclosure với mã nguồn Android ngoài repo.
+- [2026-08-06] [AGENTS Code]: Không stage thư mục `doc/` hoặc bất kỳ file ngoài phạm vi FocusOne/legal navigation.

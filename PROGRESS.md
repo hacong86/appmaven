@@ -257,3 +257,16 @@
 - Status: ✅ Done — commit `8b3153b` đã được push lên `origin/main`; GitHub Pages run `31079015104` hoàn tất thành công cho đúng SHA.
 - Verification live: Trang chủ, `home.css` và Privacy Policy đều trả HTTP 200. Playwright trực tiếp trên `appmavenstudio.com` xác nhận desktop 1440 px và mobile 390 px không tràn ngang, 12/12 ảnh tải được, console 0 lỗi, nút menu 44×44 px; Privacy Policy mobile có đoạn văn rộng 350 px, không còn padding/viền/bo góc lồng, trong khi desktop vẫn giữ card rộng 852 px với padding 32 px và bo góc 16 px.
 - Next: Không còn việc bắt buộc trong task này. Các thay đổi FocusOne, `sitemap.xml` và `doc/` ngoài phạm vi vẫn được giữ nguyên, không nằm trong commit giao diện.
+
+### [2026-08-06 14:12] AGENTS Code
+- Task: Bắt đầu xuất bản Privacy Policy và Terms of Service do người dùng đã tạo cho FocusOne.
+- Files dự kiến: `apps/focusone/index.html`, `apps/focusone/privacy-policy.html`, `apps/focusone/terms-of-service.html`, `privacy-policy.html`, `terms-of-service.html`, `sitemap.xml`, `TASK.md`, `PROGRESS.md`.
+- Status: Đã xác nhận hai trang legal có canonical, package `com.appmaven.focusone`, ngày hiệu lực/cập nhật và liên kết chéo; trang FocusOne cùng sitemap đã trỏ tới URL mới. Đã bổ sung đường dẫn trực tiếp trong hai trang legal tổng.
+- Next: Kiểm tra cấu trúc HTML, placeholder, asset/link và responsive trước khi narrow-stage, commit và push.
+
+### [2026-08-06 14:18] AGENTS Code
+- Task: Hoàn tất kiểm tra cục bộ nội dung public FocusOne trước khi xuất bản.
+- Files: `apps/focusone/index.html`, hai trang legal FocusOne, hai trang legal tổng và `sitemap.xml`.
+- Status: Đã sửa favicon cũ của trang FocusOne sang asset logo tồn tại; không thay đổi nội dung pháp lý người dùng đã viết.
+- Verification: HTML có đúng một `h1`/`main`, không trùng ID hoặc thiếu fragment target; canonical/package/metadata đúng, không có placeholder; sitemap XML hợp lệ, không trùng URL. Playwright desktop 1366×768 và mobile 390×844 không tràn ngang, không có ảnh hỏng, liên kết Privacy/Terms/Data Deletion hoạt động và console 0 lỗi.
+- Next: Stage đúng 8 file thuộc task, commit/push `origin/main`, chờ GitHub Pages và xác minh hai URL live.
