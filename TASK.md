@@ -297,7 +297,7 @@
 - [x] [2026-08-06] [AGENTS Code]: Kiểm tra các file FocusOne đã được người dùng tạo và xác định đúng phạm vi thay đổi
 - [x] [2026-08-06] [AGENTS Code]: Nối Privacy Policy và Terms of Service từ trang FocusOne, trang legal tổng và `sitemap.xml`
 - [x] [2026-08-06] [AGENTS Code]: Kiểm tra HTML, metadata, canonical, liên kết, placeholder và giao diện desktop/mobile
-- [ ] [2026-08-06] [AGENTS Code]: Commit, push `origin/main`, chờ GitHub Pages và xác minh URL công khai
+- [x] [2026-08-06] [AGENTS Code]: Commit, push `origin/main`, chờ GitHub Pages và xác minh URL công khai
 
 ## Assumption Log
 - [2026-08-06] [AGENTS Code]: Dùng URL `https://appmavenstudio.com/apps/focusone/privacy-policy.html` và `https://appmavenstudio.com/apps/focusone/terms-of-service.html` theo đúng canonical trong hai file người dùng đã tạo.

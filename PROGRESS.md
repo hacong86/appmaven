@@ -270,3 +270,10 @@
 - Status: Đã sửa favicon cũ của trang FocusOne sang asset logo tồn tại; không thay đổi nội dung pháp lý người dùng đã viết.
 - Verification: HTML có đúng một `h1`/`main`, không trùng ID hoặc thiếu fragment target; canonical/package/metadata đúng, không có placeholder; sitemap XML hợp lệ, không trùng URL. Playwright desktop 1366×768 và mobile 390×844 không tràn ngang, không có ảnh hỏng, liên kết Privacy/Terms/Data Deletion hoạt động và console 0 lỗi.
 - Next: Stage đúng 8 file thuộc task, commit/push `origin/main`, chờ GitHub Pages và xác minh hai URL live.
+
+### [2026-08-06 14:23] AGENTS Code
+- Task: Hoàn tất xuất bản Privacy Policy và Terms of Service cho FocusOne.
+- Files: 8 file FocusOne/legal navigation/log dự án thuộc commit `0ac414b`.
+- Status: ✅ Done — commit `0ac414b` đã được push lên `origin/main`; GitHub Pages run `31080473592` hoàn tất thành công cho đúng SHA.
+- Verification live: Privacy Policy, Terms of Service, trang FocusOne và sitemap đều trả HTTP 200; package/canonical/title đúng và sitemap có đủ hai URL. Playwright trực tiếp trên Privacy Policy ở mobile 390×844 không tràn ngang, không có ảnh hỏng, nút menu 44×44 px và console 0 lỗi.
+- Next: Dùng URL `https://appmavenstudio.com/apps/focusone/privacy-policy.html` trong Google Play Console. Nội dung disclosure cần tiếp tục được giữ đồng bộ với SDK của mỗi bản Android phát hành.
