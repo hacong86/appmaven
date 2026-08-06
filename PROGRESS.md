@@ -250,3 +250,10 @@
 - Status: Trang chủ đã có hero dùng ảnh sản phẩm thật, lưới 5 app cân đối, khu vực nguyên tắc phát triển và CTA gọn hơn. Trên mobile, chỉ card nội dung pháp lý được chuyển sang chế độ đọc toàn chiều rộng; card sản phẩm toàn website không bị ảnh hưởng.
 - Verification: Playwright PASS tại 320/390/768/1024/1440, không tràn ngang; 12/12 ảnh tải thành công; menu mobile có vùng bấm 44×44 px; console 0 lỗi. Ở viewport 390 px, đoạn văn pháp lý tăng từ 292 px lên 350 px, padding/viền/bo góc lồng bên trong đều bằng 0; desktop vẫn giữ card 852 px, padding 32 px và bo góc 16 px.
 - Next: Stage đúng các file thuộc task, commit/push `origin/main`, chờ GitHub Pages và xác minh URL công khai.
+
+### [2026-08-06 14:02] AGENTS Code
+- Task: Xuất bản và xác minh giao diện AppMaven Studio mới.
+- Files: 13 file giao diện, CSS, JavaScript, trang pháp lý và log dự án thuộc commit `8b3153b`.
+- Status: ✅ Done — commit `8b3153b` đã được push lên `origin/main`; GitHub Pages run `31079015104` hoàn tất thành công cho đúng SHA.
+- Verification live: Trang chủ, `home.css` và Privacy Policy đều trả HTTP 200. Playwright trực tiếp trên `appmavenstudio.com` xác nhận desktop 1440 px và mobile 390 px không tràn ngang, 12/12 ảnh tải được, console 0 lỗi, nút menu 44×44 px; Privacy Policy mobile có đoạn văn rộng 350 px, không còn padding/viền/bo góc lồng, trong khi desktop vẫn giữ card rộng 852 px với padding 32 px và bo góc 16 px.
+- Next: Không còn việc bắt buộc trong task này. Các thay đổi FocusOne, `sitemap.xml` và `doc/` ngoài phạm vi vẫn được giữ nguyên, không nằm trong commit giao diện.
