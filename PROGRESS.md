@@ -204,3 +204,16 @@
 - Status: ✅ Done — đã tạo policy 15 mục theo tài liệu nguồn, nối link ở trang app/privacy tổng/sitemap và push commit `2d2dd4d` lên `origin/main`; không stage `doc/` nội bộ.
 - Verification: HTML balance PASS; không có placeholder/TODO/FIXME; sitemap XML hợp lệ và URL không trùng; Playwright desktop 1366×768 + mobile 390×844 không tràn ngang, canonical đúng, 15 heading chính và 0 console error.
 - Next: Dùng URL `https://appmavenstudio.com/apps/invoice-studio/privacy-policy.html` trong Google Play Console sau khi GitHub Pages/CDN cập nhật.
+
+### [2026-08-06 12:18] AGENTS Code
+- Task: Tạo lại Privacy Policy cho `Square Race MAX` (`com.appmaven.squareracemax`) để thay link Blogger đã bị xoá.
+- Files dự kiến: `apps/square-race-max/privacy/index.html`, `apps/square-race-max/index.html`, `privacy-policy.html`, `sitemap.xml`, `TASK.md`, `PROGRESS.md`.
+- Status: Đã đọc file nguồn song ngữ, hướng dẫn triển khai, mã nguồn/SDK Unity và trang Google Play; phát hiện bản nguồn cần bổ sung vị trí gần đúng cùng mã định danh theo disclosure hiện hành của Unity Ads/LevelPlay trước khi publish.
+- Next: Tạo trang public, nối các link bắt buộc, kiểm tra desktop/mobile rồi commit và push `origin/main`.
+
+### [2026-08-06 12:31] AGENTS Code
+- Task: Hoàn tất và publish Privacy Policy mới cho `Square Race MAX`.
+- Files public: `apps/square-race-max/privacy/index.html`, `apps/square-race-max/index.html`, `privacy-policy.html`, `sitemap.xml`.
+- Status: ✅ Done — đã tạo policy song ngữ 16 mục/ngôn ngữ, bổ sung disclosure vị trí gần đúng và mã định danh theo Unity Ads/LevelPlay, nối các link bắt buộc và push commit `3149cb3` lên `origin/main`.
+- Verification: GitHub Pages run `31074322745` thành công; URL public trả HTTP 200, đúng title/canonical và có nội dung vị trí gần đúng; Playwright desktop 1366×768 + mobile 390×844 không tràn ngang, nút chuyển ngôn ngữ hoạt động, vùng bấm cao 44 px và 0 console error.
+- Next: Thay URL Blogger cũ trong Google Play Console bằng `https://appmavenstudio.com/apps/square-race-max/privacy/`; rà soát lại Data Safety để khai báo thêm Location/User IDs nếu cấu hình hiện tại yêu cầu. Link Blogger nằm trong bản game đã phát hành chỉ đổi được ở bản cập nhật ứng dụng tiếp theo.
