@@ -191,3 +191,16 @@
 - Status: ✅ Done — bài tiếng Anh 841 từ, dùng đủ 8 ảnh gameplay + icon, có Google Play CTA và iOS Coming Soon; đã nối Blog index và sitemap.
 - Verification: HTML parser PASS; BlogPosting JSON-LD parse PASS; 15 asset references tồn tại; 10 thẻ ảnh có alt; canonical/package/link store đúng; responsive CSS chuyển gallery về 1 cột dưới 680px; `git diff --check` PASS.
 - Next: Stage đúng các file trên, không stage `doc/`, commit và push `origin/main`.
+
+### [2026-08-06 11:42] AGENTS Code
+- Task: Tạo Privacy Policy cho `Tạo Hóa Đơn & Quản Lý Shop` (`com.appmaven.taohoadon`) và publish lên GitHub Pages.
+- Files dự kiến: `apps/invoice-studio/privacy-policy.html`, `apps/invoice-studio/index.html`, `privacy-policy.html`, `sitemap.xml`, `TASK.md`, `PROGRESS.md`.
+- Status: Đã đọc tài liệu nguồn, trang Google Play, yêu cầu User Data hiện hành của Google Play và mẫu legal page trong repo; đang tạo trang public theo URL hiện có của ứng dụng.
+- Next: Tạo HTML, nối link, kiểm tra nội dung/metadata rồi commit và push `origin/main`.
+
+### [2026-08-06 11:52] AGENTS Code
+- Task: Hoàn tất và publish Privacy Policy cho `Tạo Hóa Đơn & Quản Lý Shop`.
+- Files public: `apps/invoice-studio/privacy-policy.html`, `apps/invoice-studio/index.html`, `privacy-policy.html`, `sitemap.xml`.
+- Status: ✅ Done — đã tạo policy 15 mục theo tài liệu nguồn, nối link ở trang app/privacy tổng/sitemap và push commit `2d2dd4d` lên `origin/main`; không stage `doc/` nội bộ.
+- Verification: HTML balance PASS; không có placeholder/TODO/FIXME; sitemap XML hợp lệ và URL không trùng; Playwright desktop 1366×768 + mobile 390×844 không tràn ngang, canonical đúng, 15 heading chính và 0 console error.
+- Next: Dùng URL `https://appmavenstudio.com/apps/invoice-studio/privacy-policy.html` trong Google Play Console sau khi GitHub Pages/CDN cập nhật.

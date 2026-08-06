@@ -226,3 +226,18 @@
 
 ## Assumption Log
 - [2026-07-11] [AGENTS Code]: Dùng slug `blog/monster-survivor-pet-rpg/` để bám từ khóa tên game và thể loại; iOS chỉ hiển thị Coming Soon, không tạo link giả.
+
+---
+
+# Task: Tạo Privacy Policy cho Tạo Hóa Đơn & Quản Lý Shop
+
+## Checklist
+- [x] [2026-08-06] [AGENTS Code]: Đọc `TASK.md`, `PROGRESS.md`, tài liệu trong `doc/tao-hoa-don`, trang Google Play và mẫu legal page hiện có
+- [x] [2026-08-06] [AGENTS Code]: Tạo `apps/invoice-studio/privacy-policy.html` bám sát `doc/tao-hoa-don/chinh-sach-bao-mat.md`
+- [x] [2026-08-06] [AGENTS Code]: Cập nhật link policy tại trang app, trang privacy tổng và `sitemap.xml`
+- [x] [2026-08-06] [AGENTS Code]: Kiểm tra HTML, metadata, liên kết, nội dung bắt buộc và Git diff
+- [x] [2026-08-06] [AGENTS Code]: Commit, push `origin/main` và xác minh commit trên remote
+
+## Assumption Log
+- [2026-08-06] [AGENTS Code]: Dùng URL `https://appmavenstudio.com/apps/invoice-studio/privacy-policy.html` vì trang public hiện có của package `com.appmaven.taohoadon` nằm tại `apps/invoice-studio/`.
+- [2026-08-06] [AGENTS Code]: Giữ `doc/` làm tài liệu nguồn nội bộ và không stage thư mục này; chỉ publish HTML cùng các liên kết bắt buộc.
