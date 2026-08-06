@@ -230,3 +230,10 @@
 - Status: Đã tạo policy 13 mục, đồng bộ các disclosure về dữ liệu cục bộ, AdMob, UMP, Google Play Billing, In-App Review và Android Auto Backup; đã sửa các claim tuyệt đối trên trang giới thiệu; commit `e08db52` đã được push lên `origin/main`. GitHub Pages chưa đăng ký lượt build cho commit mới tại thời điểm kiểm tra đầu tiên.
 - Verification: Nội dung nguồn được nhúng đầy đủ; HTML/metadata/canonical/link nội bộ/sitemap PASS; Playwright desktop 1366×768 và mobile 390×844 không tràn ngang, liên kết xóa dữ liệu cuộn đúng vị trí và 0 console error.
 - Next: Chờ GitHub Pages triển khai và xác minh URL công khai trả HTTP 200 trước khi bàn giao.
+
+### [2026-08-06 12:54] AGENTS Code
+- Task: Hoàn tất xuất bản Privacy Policy mới cho `Trial Shield`.
+- Files: `apps/trial-shield/privacy-policy.html`, `apps/trial-shield/index.html`, `privacy-policy.html`, `sitemap.xml`, `TASK.md`, `PROGRESS.md`.
+- Status: ✅ Done — nội dung public đã được push lên `origin/main`; GitHub Pages run `31075448856` hoàn tất thành công.
+- Verification: URL policy, trang app và sitemap đều trả HTTP 200; policy đúng title, canonical, package `com.appmaven.trialshield`, có disclosure AdMob/Android Auto Backup, không còn URL Blogger cũ; trang app và sitemap đều trỏ tới policy mới.
+- Next: Thay URL Privacy Policy cũ trong Google Play Console bằng `https://appmavenstudio.com/apps/trial-shield/privacy-policy.html`. Hai hằng số URL Blogger trong `SettingsScreen.kt` và `PaywallScreen.kt` cần được đổi ở bản cập nhật Android tiếp theo.

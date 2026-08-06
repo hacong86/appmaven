@@ -267,7 +267,7 @@
 - [x] [2026-08-06] [AGENTS Code]: Sửa các claim tuyệt đối không còn khớp AdMob/Android backup trên trang Trial Shield
 - [x] [2026-08-06] [AGENTS Code]: Cập nhật link policy tại trang app, trang privacy tổng và `sitemap.xml`
 - [x] [2026-08-06] [AGENTS Code]: Kiểm tra HTML, nội dung, liên kết và giao diện desktop/mobile
-- [ ] [2026-08-06] [AGENTS Code]: Commit, push `origin/main` và xác minh URL công khai
+- [x] [2026-08-06] [AGENTS Code]: Commit, push `origin/main` và xác minh URL công khai
 
 ## Assumption Log
 - [2026-08-06] [AGENTS Code]: Dùng URL `https://appmavenstudio.com/apps/trial-shield/privacy-policy.html` theo slug public hiện có của package `com.appmaven.trialshield`.
