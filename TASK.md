@@ -256,3 +256,19 @@
 ## Assumption Log
 - [2026-08-06] [AGENTS Code]: Dùng URL `https://appmavenstudio.com/apps/square-race-max/privacy/` đúng theo cấu trúc file nguồn và hướng dẫn triển khai trong dự án trò chơi.
 - [2026-08-06] [AGENTS Code]: Chính sách public phải phản ánh disclosure hiện hành của Unity Ads/LevelPlay, kể cả vị trí gần đúng suy ra từ IP và mã định danh do SDK xử lý; phần Data Safety trong Play Console cần được rà soát lại cho đồng bộ.
+
+---
+
+# Task: Tạo lại Privacy Policy cho Trial Shield
+
+## Checklist
+- [x] [2026-08-06] [AGENTS Code]: Đọc tài liệu nguồn, mã nguồn Kotlin, SDK thực tế và trang Google Play
+- [x] [2026-08-06] [AGENTS Code]: Tạo `apps/trial-shield/privacy-policy.html` theo tài liệu `Privacy Policy .md`
+- [x] [2026-08-06] [AGENTS Code]: Sửa các claim tuyệt đối không còn khớp AdMob/Android backup trên trang Trial Shield
+- [x] [2026-08-06] [AGENTS Code]: Cập nhật link policy tại trang app, trang privacy tổng và `sitemap.xml`
+- [x] [2026-08-06] [AGENTS Code]: Kiểm tra HTML, nội dung, liên kết và giao diện desktop/mobile
+- [ ] [2026-08-06] [AGENTS Code]: Commit, push `origin/main` và xác minh URL công khai
+
+## Assumption Log
+- [2026-08-06] [AGENTS Code]: Dùng URL `https://appmavenstudio.com/apps/trial-shield/privacy-policy.html` theo slug public hiện có của package `com.appmaven.trialshield`.
+- [2026-08-06] [AGENTS Code]: Giữ nguyên tài liệu nguồn ở ổ J; bản public thay link liên hệ Blogger đã mất bằng `https://appmavenstudio.com/support/` và ghi ngày cập nhật mới.

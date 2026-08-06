@@ -217,3 +217,16 @@
 - Status: ✅ Done — đã tạo policy song ngữ 16 mục/ngôn ngữ, bổ sung disclosure vị trí gần đúng và mã định danh theo Unity Ads/LevelPlay, nối các link bắt buộc và push commit `3149cb3` lên `origin/main`.
 - Verification: GitHub Pages run `31074322745` thành công; URL public trả HTTP 200, đúng title/canonical và có nội dung vị trí gần đúng; Playwright desktop 1366×768 + mobile 390×844 không tràn ngang, nút chuyển ngôn ngữ hoạt động, vùng bấm cao 44 px và 0 console error.
 - Next: Thay URL Blogger cũ trong Google Play Console bằng `https://appmavenstudio.com/apps/square-race-max/privacy/`; rà soát lại Data Safety để khai báo thêm Location/User IDs nếu cấu hình hiện tại yêu cầu. Link Blogger nằm trong bản game đã phát hành chỉ đổi được ở bản cập nhật ứng dụng tiếp theo.
+
+### [2026-08-06 12:36] AGENTS Code
+- Task: Tạo lại Privacy Policy cho `Trial Shield` (`com.appmaven.trialshield`) để thay link Blogger cũ.
+- Files dự kiến: `apps/trial-shield/privacy-policy.html`, `apps/trial-shield/index.html`, `privacy-policy.html`, `sitemap.xml`, `TASK.md`, `PROGRESS.md`.
+- Status: Đã đọc policy/Data Safety nguồn, mã nguồn release 4 và trang Google Play; xác nhận AdMob, UMP, Billing, In-App Review, Android Auto Backup cùng dữ liệu subscription cục bộ. Trang app hiện còn claim tuyệt đối “100% Offline/Data never leaves your device” không khớp SDK.
+- Next: Tạo trang policy public, sửa claim hẹp để đồng bộ, kiểm tra trình duyệt rồi commit/push.
+
+### [2026-08-06 12:51] AGENTS Code
+- Task: Xuất bản Privacy Policy mới cho `Trial Shield`.
+- Files public: `apps/trial-shield/privacy-policy.html`, `apps/trial-shield/index.html`, `privacy-policy.html`, `sitemap.xml`.
+- Status: Đã tạo policy 13 mục, đồng bộ các disclosure về dữ liệu cục bộ, AdMob, UMP, Google Play Billing, In-App Review và Android Auto Backup; đã sửa các claim tuyệt đối trên trang giới thiệu; commit `e08db52` đã được push lên `origin/main`. GitHub Pages chưa đăng ký lượt build cho commit mới tại thời điểm kiểm tra đầu tiên.
+- Verification: Nội dung nguồn được nhúng đầy đủ; HTML/metadata/canonical/link nội bộ/sitemap PASS; Playwright desktop 1366×768 và mobile 390×844 không tràn ngang, liên kết xóa dữ liệu cuộn đúng vị trí và 0 console error.
+- Next: Chờ GitHub Pages triển khai và xác minh URL công khai trả HTTP 200 trước khi bàn giao.
