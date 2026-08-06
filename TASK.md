@@ -272,3 +272,19 @@
 ## Assumption Log
 - [2026-08-06] [AGENTS Code]: Dùng URL `https://appmavenstudio.com/apps/trial-shield/privacy-policy.html` theo slug public hiện có của package `com.appmaven.trialshield`.
 - [2026-08-06] [AGENTS Code]: Giữ nguyên tài liệu nguồn ở ổ J; bản public thay link liên hệ Blogger đã mất bằng `https://appmavenstudio.com/support/` và ghi ngày cập nhật mới.
+
+---
+
+# Task: Cải thiện giao diện AppMaven Studio
+
+## Checklist
+- [x] [2026-08-06] [AGENTS Code]: Audit giao diện live, ảnh người dùng gửi, CSS hiện tại và đo desktop/mobile bằng trình duyệt thật
+- [x] [2026-08-06] [AGENTS Code]: Làm mới hero trang chủ bằng nội dung rõ ràng và ảnh sản phẩm thật
+- [x] [2026-08-06] [AGENTS Code]: Sắp xếp lại lưới ứng dụng, khu vực Trust và CTA để giảm khoảng trống, tăng phân cấp thị giác
+- [x] [2026-08-06] [AGENTS Code]: Bỏ khung lồng/padding kép của nội dung pháp lý trên mobile mà không ảnh hưởng card toàn website
+- [x] [2026-08-06] [AGENTS Code]: Kiểm tra responsive 320/390/768/1024/1440, menu, liên kết, console và accessibility
+- [ ] [2026-08-06] [AGENTS Code]: Commit, push `origin/main` và xác minh giao diện công khai
+
+## Assumption Log
+- [2026-08-06] [AGENTS Code]: Giữ nhận diện dark navy hiện tại nhưng giảm glassmorphism lặp lại; dùng ảnh app đã có trong repo, không thêm dependency hoặc tạo asset mới.
+- [2026-08-06] [AGENTS Code]: Phạm vi là trang chủ cùng mẫu `.legal-content > .glass-card` trên mobile; không sửa nội dung pháp lý, URL, metadata hoặc các trang app không dùng mẫu này.

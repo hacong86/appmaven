@@ -21,7 +21,7 @@
   <meta property="og:title" content="AppMaven Studio - Innovating Mobile App Experiences">
   <meta property="og:description"
     content="Professional mobile app development studio. Explore our portfolio of innovative Android apps and games.">
-  <meta property="og:image" content="https://appmavenstudio.com/assets/images/og-image.png">
+  <meta property="og:image" content="https://appmavenstudio.com/assets/images/logo/appmaven_logo.png">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
@@ -29,15 +29,16 @@
   <meta property="twitter:title" content="AppMaven Studio - Innovating Mobile App Experiences">
   <meta property="twitter:description"
     content="Professional mobile app development studio. Explore our portfolio of innovative Android apps and games.">
-  <meta property="twitter:image" content="https://appmavenstudio.com/assets/images/og-image.png">
+  <meta property="twitter:image" content="https://appmavenstudio.com/assets/images/logo/appmaven_logo.png">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="/assets/images/logo/favicon.png">
+  <link rel="icon" type="image/png" href="/assets/images/logo/appmaven_logo.png">
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="/assets/css/variables.css">
   <link rel="stylesheet" href="/assets/css/main.css">
   <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/home.css">
 
   <!-- Schema.org Organization Markup -->
   <script type="application/ld+json">
@@ -75,7 +76,7 @@
   </script>
 </head>
 
-<body>
+<body class="home-page">
 
   <!-- Skip to Main Content (Accessibility) -->
   <a href="#main-content" class="skip-to-main">Skip to main content</a>
@@ -111,38 +112,92 @@
   <!-- Main Content -->
   <main id="main-content">
 
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="container">
-        <div class="hero-content animate-fadeInUp">
-          <h1 class="hero-title">Innovating the Future of Mobile Experience</h1>
-          <p class="hero-subtitle">
-            We craft exceptional mobile applications that blend innovation with user-centric design.
-            Explore our portfolio of apps trusted by thousands of users worldwide.
+    <!-- Product-led Hero -->
+    <section class="home-hero" aria-labelledby="home-hero-title">
+      <div class="container home-hero-grid">
+        <div class="home-hero-copy animate-fadeInUp">
+          <span class="home-eyebrow">Independent Android studio</span>
+          <h1 id="home-hero-title" class="home-hero-title">
+            Useful apps.<br><span>Playful games.</span><br>Built with care.
+          </h1>
+          <p class="home-hero-subtitle">
+            AppMaven Studio creates focused Android products for learning, productivity, wellbeing, and play — each
+            designed around a clear purpose and a simple experience.
           </p>
-          <div class="hero-cta">
-            <a href="/apps/" class="btn btn-primary btn-lg">View Portfolio</a>
-            <a href="/support/" class="btn btn-secondary btn-lg">Get Support</a>
+          <div class="home-hero-actions">
+            <a href="/apps/" class="btn btn-primary btn-lg">
+              Explore our apps
+              <svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"></path>
+                <path d="m13 6 6 6-6 6"></path>
+              </svg>
+            </a>
+            <a href="/support/" class="btn btn-ghost btn-lg">Get support</a>
           </div>
+          <ul class="home-hero-proof" aria-label="Studio strengths">
+            <li>
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="m5 12 4 4L19 6"></path>
+              </svg>
+              Android-first products
+            </li>
+            <li>
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"></path>
+                <path d="m9 12 2 2 4-4"></path>
+              </svg>
+              Clear privacy information
+            </li>
+            <li>
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4Z"></path>
+              </svg>
+              Direct support
+            </li>
+          </ul>
+        </div>
+
+        <div class="home-showcase" aria-label="Selected AppMaven products">
+          <a class="showcase-card showcase-card--left" href="/apps/focusone/" aria-label="View FocusOne">
+            <img src="/assets/images/apps/focusone/FocusOne_1.png" alt="FocusOne daily goal screen" width="1080"
+              height="1920">
+          </a>
+          <a class="showcase-card showcase-card--main" href="/apps/chemlab/" aria-label="View ChemLab">
+            <img src="/assets/images/apps/chemlab/S1.webp" alt="ChemLab chemistry learning screen" width="1080"
+              height="1920">
+          </a>
+          <a class="showcase-card showcase-card--right" href="/apps/square-race-max/"
+            aria-label="View Square Race MAX">
+            <img src="/assets/images/apps/square-race-max/squareracemax01.webp"
+              alt="Square Race MAX arena selection screen" width="810" height="1440">
+          </a>
         </div>
       </div>
     </section>
 
     <!-- Featured Apps Section -->
-    <section class="section">
+    <section class="home-section" aria-labelledby="featured-apps-title">
       <div class="container">
-        <div class="section-header">
-          <h2 class="animate-fadeInUp">Featured Applications</h2>
-          <p class="animate-fadeInUp animate-delay-100"
-            style="color: var(--color-text-secondary); max-width: 600px; margin: 0 auto;">
-            Discover our most popular apps across productivity, lifestyle, and gaming categories
-          </p>
+        <div class="home-section-heading">
+          <div class="home-section-heading-copy">
+            <span class="home-eyebrow">Selected work</span>
+            <h2 id="featured-apps-title">Products made for real moments</h2>
+            <p>From studying chemistry to protecting focus and unwinding at night, every app starts with one clear
+              job to do.</p>
+          </div>
+          <a href="/apps/" class="btn btn-outline">Browse all apps</a>
         </div>
 
-        <div class="grid grid-cols-4">
+        <div class="home-app-grid">
 
           <!-- App Card 0: ChemLab -->
-          <div class="app-card animate-fadeInUp animate-delay-100">
+          <div class="product-card product-card--featured animate-fadeInUp animate-delay-100">
+            <div class="product-card-visual">
+              <span class="product-card-featured-label">Featured</span>
+              <img src="/assets/images/apps/chemlab/S2.webp" alt="ChemLab interactive periodic table"
+                loading="lazy" width="1080" height="1920">
+            </div>
             <a href="/apps/chemlab/" class="app-card-link-wrapper">
               <img src="/assets/images/apps/chemlab/PlayStore_icon.webp" alt="ChemLab App Icon"
                 class="app-card-icon" loading="lazy">
@@ -176,7 +231,7 @@
           </div>
 
           <!-- App Card 1: Prompt Master AI -->
-          <div class="app-card animate-fadeInUp animate-delay-200">
+          <div class="product-card animate-fadeInUp animate-delay-200">
             <a href="/apps/prompt-master-ai/" class="app-card-link-wrapper">
               <img src="/assets/images/apps/prompt-master-ai/icon_new.png" alt="Prompt Master AI App Icon"
                 class="app-card-icon" loading="lazy">
@@ -188,6 +243,10 @@
                 </p>
               </div>
             </a>
+            <div class="product-card-promo">
+              <img src="/assets/images/apps/prompt-master-ai/Visual Prompt Gallery.png"
+                alt="Prompt Master AI visual prompt gallery" loading="lazy" width="1080" height="1920">
+            </div>
             <div class="app-card-footer">
               <div class="store-btn-group">
                 <a href="https://play.google.com/store/apps/details?id=com.appmaven.promptmaster"
@@ -210,7 +269,7 @@
             </div>
           </div>
 
-          <div class="app-card animate-fadeInUp animate-delay-300">
+          <div class="product-card animate-fadeInUp animate-delay-300">
             <a href="/apps/focusone/" class="app-card-link-wrapper">
               <img src="/assets/images/apps/focusone/icon.webp" alt="FocusOne App Icon" class="app-card-icon"
                 loading="lazy">
@@ -244,7 +303,7 @@
             </div>
           </div>
 
-          <div class="app-card animate-fadeInUp animate-delay-400">
+          <div class="product-card animate-fadeInUp animate-delay-400">
             <a href="/apps/sleep-stream/" class="app-card-link-wrapper">
               <img src="/assets/images/apps/sleep-stream/icon.webp" alt="Sleep Stream App Icon" class="app-card-icon"
                 loading="lazy">
@@ -278,7 +337,7 @@
             </div>
           </div>
 
-          <div class="app-card animate-fadeInUp animate-delay-500">
+          <div class="product-card animate-fadeInUp animate-delay-500">
             <a href="/apps/square-race-max/" class="app-card-link-wrapper">
               <img src="/assets/images/apps/square-race-max/icon.webp" alt="Square Race MAX App Icon"
                 class="app-card-icon" loading="lazy">
@@ -314,112 +373,81 @@
 
         </div>
 
-        <div style="text-align: center; margin-top: var(--space-8);">
-          <a href="/apps/" class="btn btn-outline btn-lg">View All Apps</a>
+      </div>
+    </section>
+
+    <!-- Studio Principles -->
+    <section class="home-section home-section--soft" aria-labelledby="principles-title">
+      <div class="container home-principles-grid">
+        <div class="home-principles-copy">
+          <span class="home-eyebrow">Built responsibly</span>
+          <h2 id="principles-title">Clear choices, from install to support</h2>
+          <p>Good products should explain what they do, respect the person using them, and make help easy to find.</p>
+          <a href="/about/" class="btn btn-outline">How we work</a>
+        </div>
+
+        <div class="home-principle-list">
+          <article class="home-principle">
+            <div class="home-principle-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"></path>
+                <path d="m9 12 2 2 4-4"></path>
+              </svg>
+            </div>
+            <div>
+              <h3>App-specific privacy</h3>
+              <p>Each supported product links to privacy information written for the services it actually uses.</p>
+            </div>
+            <a class="home-principle-link" href="/privacy-policy.html">View policies</a>
+          </article>
+
+          <article class="home-principle">
+            <div class="home-principle-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+                <path d="m3 7 9 6 9-6"></path>
+              </svg>
+            </div>
+            <div>
+              <h3>Direct support</h3>
+              <p>Questions and product issues go through one clear support channel instead of a maze of forms.</p>
+            </div>
+            <a class="home-principle-link" href="/support/">Contact us</a>
+          </article>
+
+          <article class="home-principle">
+            <div class="home-principle-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="5" y="2" width="14" height="20" rx="2"></rect>
+                <path d="M9 18h6"></path>
+              </svg>
+            </div>
+            <div>
+              <h3>Android-first delivery</h3>
+              <p>Our catalog is built around focused Android experiences, with direct links to each Google Play page.</p>
+            </div>
+            <a class="home-principle-link" href="/apps/">Explore apps</a>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- Trust & Compliance Section -->
-    <section class="section" style="background: var(--color-bg-secondary);">
+    <!-- Closing CTA -->
+    <section class="home-cta" aria-labelledby="home-cta-title">
       <div class="container">
-        <div class="section-header">
-          <h2>Trust & Privacy</h2>
-          <p style="color: var(--color-text-secondary); max-width: 600px; margin: 0 auto;">
-            We take your privacy and data security seriously. All our apps comply with Google Play policies and GDPR
-            standards.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-3">
-
-          <!-- Trust Item 1 -->
-          <div class="glass-card" style="text-align: center;">
-            <div
-              style="font-size: var(--text-5xl); margin-bottom: var(--space-4); display: flex; justify-content: center;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
-                stroke="var(--color-accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-              </svg>
-            </div>
-            <h3 style="font-size: var(--text-xl); margin-bottom: var(--space-3);">Data Safety</h3>
-            <p style="color: var(--color-text-secondary); margin-bottom: var(--space-4);">
-              Transparent data practices with detailed privacy policies for each app
-            </p>
-            <a href="/privacy-policy.html" class="btn btn-secondary btn-sm">View Privacy Policy</a>
+        <div class="home-cta-panel">
+          <div class="home-cta-copy">
+            <span class="home-eyebrow">Explore AppMaven</span>
+            <h2 id="home-cta-title">Find the next app for your day</h2>
+            <p>Browse the full catalog or read the latest practical notes on mobile apps, privacy, and product design.</p>
           </div>
-
-          <!-- Trust Item 2 -->
-          <div class="glass-card" style="text-align: center;">
-            <div
-              style="font-size: var(--text-5xl); margin-bottom: var(--space-4); display: flex; justify-content: center;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
-                stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                <polyline points="22 4 12 14.01 9 11.01"></polyline>
-              </svg>
-            </div>
-            <h3 style="font-size: var(--text-xl); margin-bottom: var(--space-3);">Google Play Verified</h3>
-            <p style="color: var(--color-text-secondary); margin-bottom: var(--space-4);">
-              All apps verified by Google Play and comply with platform guidelines
-            </p>
-            <a href="/apps/" class="btn btn-secondary btn-sm">Explore Apps</a>
+          <div class="home-cta-actions">
+            <a href="/apps/" class="btn btn-primary btn-lg">View all apps</a>
+            <a href="/blog/" class="btn btn-ghost btn-lg">Read the blog</a>
           </div>
-
-          <!-- Trust Item 3 -->
-          <div class="glass-card" style="text-align: center;">
-            <div
-              style="font-size: var(--text-5xl); margin-bottom: var(--space-4); display: flex; justify-content: center;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
-                stroke="var(--color-accent-secondary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-              </svg>
-            </div>
-            <h3 style="font-size: var(--text-xl); margin-bottom: var(--space-3);">User Control</h3>
-            <p style="color: var(--color-text-secondary); margin-bottom: var(--space-4);">
-              Request data deletion anytime through our dedicated support portal
-            </p>
-            <a href="/data-deletion/" class="btn btn-secondary btn-sm">Request Data Deletion</a>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="section">
-      <div class="container">
-        <div class="grid grid-cols-4" style="text-align: center;">
-
-          <div>
-            <div
-              style="font-size: var(--text-5xl); font-weight: var(--font-extrabold); color: var(--color-accent); margin-bottom: var(--space-2);">
-              15+</div>
-            <p style="color: var(--color-text-secondary);">Published Apps</p>
-          </div>
-
-          <div>
-            <div
-              style="font-size: var(--text-5xl); font-weight: var(--font-extrabold); color: var(--color-accent); margin-bottom: var(--space-2);">
-              10K+</div>
-            <p style="color: var(--color-text-secondary);">Total Downloads</p>
-          </div>
-
-          <div>
-            <div
-              style="font-size: var(--text-5xl); font-weight: var(--font-extrabold); color: var(--color-accent); margin-bottom: var(--space-2);">
-              4.5+</div>
-            <p style="color: var(--color-text-secondary);">Average Rating</p>
-          </div>
-
-          <div>
-            <div
-              style="font-size: var(--text-5xl); font-weight: var(--font-extrabold); color: var(--color-accent); margin-bottom: var(--space-2);">
-              100%</div>
-            <p style="color: var(--color-text-secondary);">Privacy Compliant</p>
-          </div>
-
         </div>
       </div>
     </section>

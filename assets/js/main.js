@@ -272,7 +272,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Add shadow on scroll
       if (scrollTop > 10) {
-        navbar.style.boxShadow = 'var(--shadow-card)';
+        navbar.style.boxShadow = 'var(--shadow-md)';
       } else {
         navbar.style.boxShadow = 'none';
       }

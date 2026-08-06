@@ -237,3 +237,16 @@
 - Status: ✅ Done — nội dung public đã được push lên `origin/main`; GitHub Pages run `31075448856` hoàn tất thành công.
 - Verification: URL policy, trang app và sitemap đều trả HTTP 200; policy đúng title, canonical, package `com.appmaven.trialshield`, có disclosure AdMob/Android Auto Backup, không còn URL Blogger cũ; trang app và sitemap đều trỏ tới policy mới.
 - Next: Thay URL Privacy Policy cũ trong Google Play Console bằng `https://appmavenstudio.com/apps/trial-shield/privacy-policy.html`. Hai hằng số URL Blogger trong `SettingsScreen.kt` và `PaywallScreen.kt` cần được đổi ở bản cập nhật Android tiếp theo.
+
+### [2026-08-06 13:20] AGENTS Code
+- Task: Bắt đầu cải thiện giao diện trang chủ AppMaven Studio và cách hiển thị nội dung pháp lý trên mobile.
+- Files dự kiến: `index.html`, `assets/css/home.css`, `assets/css/main.css`, `TASK.md`, `PROGRESS.md`.
+- Status: Đã audit giao diện live và ảnh người dùng gửi. Root cause mobile đã xác nhận: container trừ 16 px mỗi bên rồi card nội dung tiếp tục trừ 32 px mỗi bên, khiến đoạn văn chỉ rộng 292 px ở viewport 390 px. Trang chủ desktop dùng lưới 4 cột cho 5 app nên card cuối đứng lẻ và tạo khoảng trắng lớn; hero mobile cao 780 px.
+- Next: Làm mới trang chủ bằng ảnh app thật, sửa riêng card pháp lý ở breakpoint mobile, sau đó kiểm tra bằng Playwright trên 5 kích thước màn hình.
+
+### [2026-08-06 13:54] AGENTS Code
+- Task: Hoàn thiện giao diện mới và kiểm thử cục bộ trước khi xuất bản.
+- Files: `index.html`, `assets/css/home.css`, `assets/css/main.css`, `assets/css/components.css`, `assets/js/main.js`, các trang pháp lý dùng mẫu chung, `TASK.md`, `PROGRESS.md`.
+- Status: Trang chủ đã có hero dùng ảnh sản phẩm thật, lưới 5 app cân đối, khu vực nguyên tắc phát triển và CTA gọn hơn. Trên mobile, chỉ card nội dung pháp lý được chuyển sang chế độ đọc toàn chiều rộng; card sản phẩm toàn website không bị ảnh hưởng.
+- Verification: Playwright PASS tại 320/390/768/1024/1440, không tràn ngang; 12/12 ảnh tải thành công; menu mobile có vùng bấm 44×44 px; console 0 lỗi. Ở viewport 390 px, đoạn văn pháp lý tăng từ 292 px lên 350 px, padding/viền/bo góc lồng bên trong đều bằng 0; desktop vẫn giữ card 852 px, padding 32 px và bo góc 16 px.
+- Next: Stage đúng các file thuộc task, commit/push `origin/main`, chờ GitHub Pages và xác minh URL công khai.
