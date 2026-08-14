@@ -346,3 +346,4 @@
 - Status: ✅ Done.
 - Verification: `verify_pages.py` PASS 0 cảnh báo · xem bằng mắt ở desktop 1440: mục 3 đọc trôi, mục 11 nối liền mục 12 không để lại khoảng trống, số thứ tự 1–18 liên tục không thủng · quét lại toàn bộ 4 trang không còn dấu vết "UMP", "sẽ hỏi ý kiến", "Tuỳ chọn quyền riêng tư quảng cáo", "Điều 6(1)".
 - Ràng buộc đi kèm (phía ứng dụng): phạm vi phát hành trên Play Console phải giữ ở Việt Nam. Nếu sau này mở bán ở châu Âu thì phải nối lại UMP trong ứng dụng VÀ khôi phục các mục đã gỡ ở trang này.
+- Đã đẩy lên lúc 19:25 — commit `8b5e55b`, push thành công. Xác minh trên tên miền thật: cả 3 trang trả 200 và **0 dấu vết** của "sẽ hỏi ý kiến" / "Google UMP" / "Tuỳ chọn quyền riêng tư quảng cáo" / "Điều 6(1)"; số thứ tự mục trên trang chính sách chạy liên tục 1–18 không thủng.
