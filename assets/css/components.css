@@ -610,7 +610,7 @@
   text-align: center;
   position: relative;
   padding: var(--space-20) 0;
-  background-image: url('/assets/images/hero-bg.png');
+  background-image: url('/assets/images/hero-bg.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
