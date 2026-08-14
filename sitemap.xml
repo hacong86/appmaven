@@ -283,4 +283,30 @@
     <priority>0.3</priority>
   </url>
 
+  <!-- Lợi Nhuận -->
+  <url>
+    <loc>https://appmavenstudio.com/apps/loi-nhuan/</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://appmavenstudio.com/apps/loi-nhuan/privacy-policy.html</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://appmavenstudio.com/apps/loi-nhuan/terms-of-service.html</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://appmavenstudio.com/blog/cach-tinh-loi-nhuan-ban-hang-shopee-tiktok-shop-lazada/</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>

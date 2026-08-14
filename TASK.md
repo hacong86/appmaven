@@ -303,3 +303,41 @@
 - [2026-08-06] [AGENTS Code]: Dùng URL `https://appmavenstudio.com/apps/focusone/privacy-policy.html` và `https://appmavenstudio.com/apps/focusone/terms-of-service.html` theo đúng canonical trong hai file người dùng đã tạo.
 - [2026-08-06] [AGENTS Code]: Giữ nguyên nội dung pháp lý FocusOne; task này chỉ xác minh và xuất bản website, không đối chiếu disclosure với mã nguồn Android ngoài repo.
 - [2026-08-06] [AGENTS Code]: Không stage thư mục `doc/` hoặc bất kỳ file ngoài phạm vi FocusOne/legal navigation.
+
+---
+
+## Checklist
+- [x] Tạo skill `appmaven-publish` (global, `~/.claude/skills/appmaven-publish/`) để xuất bản trang app/privacy/terms/blog ngay từ thư mục dự án app/game, không phải copy tài liệu vào `doc/`
+- [x] Viết 4 script hỗ trợ: `intake_scan.py`, `to_webp.py`, `verify_pages.py`, `repo_webp_cleanup.py`
+- [x] Kiểm tra đối kháng skill (5 nhóm audit + phản biện từng phát hiện) — 31 lỗi xác nhận, đã sửa hết
+- [x] Dọn ảnh PNG/JPG trong `assets/images/` sang WebP — 42.6 MB (78 file) → 3.9 MB (57 file), có backup đầy đủ
+- [x] Tạo 3 file ảnh còn thiếu từ logo thật: `logo/favicon.png` (96×96), `logo/logo.png` (512×512), `og-image.png` (1200×630) — sửa 93 tham chiếu gãy mà không phải sửa 1 dòng HTML nào
+- [x] Sửa 31 thẻ `og:image`/`twitter:image` trong 16 trang sang URL tuyệt đối
+- [x] Sửa bộ đếm `All Apps (19)` → `(20)` trong `apps/index.html`
+- [x] Thêm thẻ `canonical` cho 22 trang còn thiếu (SEO)
+- [x] Sửa FAQ trong JSON-LD của Trap Tower cho khớp nội dung hiển thị (tránh vi phạm structured data)
+- [x] Xoá `assets/screenshots/` (1.9 MB, 4 file trùng lặp y hệt lich-am-2026, không trang nào tham chiếu)
+- [ ] Nén lại ~19 MB file WebP cũ (dino-drop-master 1 MB/ảnh, lich-am 630 KB/ảnh) — chờ user duyệt vì có đánh đổi chất lượng
+- [ ] Bổ sung 6 trang app còn thiếu trong `sitemap.xml` (chemlab, pictura, shiftcheck, smartsscanner, nhac-hoa-don, van-khan-co-truyen)
+
+
+## Assumption Log
+- [2026-08-14] [Claude Code]: Skill đặt ở phạm vi global (`~/.claude/skills/`) chứ không phải trong repo web, vì nó phải chạy được từ thư mục dự án game bất kỳ → User chốt: đúng ý (yêu cầu gốc là "làm từ thư mục khác").
+- [2026-08-14] [Claude Code]: Skill DỪNG trước khi commit/push, chờ user duyệt → User chọn: "Dừng lại cho tôi duyệt trước".
+- [2026-08-14] [Claude Code]: Ngôn ngữ trang do skill tự quyết theo thị trường app (EN cho app toàn cầu, VI cho app Việt) và phải báo lại lựa chọn → User chọn: "Tự quyết theo thị trường app".
+- [2026-08-14] [Claude Code]: Ảnh chỉ lưu `.webp`, tự resize (icon 512 / screenshot 1080 / feature 1920), không copy file gốc → User chọn cả 3 mục.
+- [2026-08-14] [Claude Code]: Bộ trang mặc định gồm 4 loại: giới thiệu app + privacy + terms + blog SEO → User chọn cả 4.
+- [2026-08-14] [Claude Code]: Chưa chạy `repo_webp_cleanup.py --apply` trên repo thật; mới chỉ chạy trên bản sao trong thư mục tạm để kiểm chứng an toàn.
+
+---
+
+## Checklist
+- [x] [2026-08-14] Xuất bản bộ trang cho ứng dụng **Lợi Nhuận** (`com.appmaven.giaban.phisan`): trang giới thiệu, chính sách bảo mật, điều khoản dịch vụ, bài blog SEO — bằng skill `appmaven-publish`
+- [x] Nối trang mới vào 6 điểm bắt buộc: card ở `apps/index.html` + bộ đếm 20→21, `sitemap.xml` (+4 URL), `privacy-policy.html` gốc, `terms-of-service.html` gốc, `blog/index.html`
+- [x] Chuyển 6 ảnh sang `.webp` trong `assets/images/apps/loi-nhuan/`
+- [x] Kiểm bằng mắt desktop 1440 + mobile 390 cho cả 4 trang, sửa 3 lỗi giao diện phát hiện được
+
+## Assumption Log
+- [2026-08-14] [Claude Code]: Ngôn ngữ trang chọn **tiếng Việt** (`lang="vi"`) vì ứng dụng chỉ nhắm thị trường Việt Nam (phí Shopee/TikTok Shop/Lazada, thuế theo Nghị định 252/2026) — theo Bước 2 của skill, tự quyết theo thị trường app.
+- [2026-08-14] [Claude Code]: CÓ tạo Terms of Service dù ứng dụng miễn phí và không có mua trong ứng dụng, vì ứng dụng hiển thị quảng cáo AdMob và đưa ra con số phí/thuế cần điều khoản miễn trừ trách nhiệm.
+- [2026-08-14] [Claude Code]: Mọi khai báo trong chính sách bảo mật đều đối chiếu mã nguồn thật của dự án Flutter (AdMob + UMP, không Firebase, không Billing, không quyền hệ thống nào trong `AndroidManifest.xml`).

@@ -277,3 +277,51 @@
 - Status: ✅ Done — commit `0ac414b` đã được push lên `origin/main`; GitHub Pages run `31080473592` hoàn tất thành công cho đúng SHA.
 - Verification live: Privacy Policy, Terms of Service, trang FocusOne và sitemap đều trả HTTP 200; package/canonical/title đúng và sitemap có đủ hai URL. Playwright trực tiếp trên Privacy Policy ở mobile 390×844 không tràn ngang, không có ảnh hỏng, nút menu 44×44 px và console 0 lỗi.
 - Next: Dùng URL `https://appmavenstudio.com/apps/focusone/privacy-policy.html` trong Google Play Console. Nội dung disclosure cần tiếp tục được giữ đồng bộ với SDK của mỗi bản Android phát hành.
+
+### [2026-08-14 11:46] Claude Code
+- Task: Tạo skill `appmaven-publish` để xuất bản trang app + Privacy Policy + Terms + blog SEO **ngay từ thư mục dự án app/game**, bỏ hẳn bước copy tài liệu vào `E:\Web\AppMaven\doc\`.
+- Files (ngoài repo này): `C:\Users\NC\.claude\skills\appmaven-publish\` — `SKILL.md`, 5 file `references/`, 4 script `scripts/` (`intake_scan.py`, `to_webp.py`, `verify_pages.py`, `repo_webp_cleanup.py`).
+- Files (repo này): `TASK.md`, `PROGRESS.md` (chỉ ghi log, không đụng trang nào).
+- Status: ✅ Done — skill đã đăng ký và gọi được. 4 script đã chạy thật trên dữ liệu thật của repo, không phải chỉ đọc code.
+- Verification: Chạy kiểm tra đối kháng 5 nhóm độc lập (đường dẫn / script / quy trình / pháp lý / an toàn), mỗi phát hiện được một agent khác phản biện — 31 lỗi xác nhận thật, 19 bị bác. Đã sửa hết 31 lỗi và test lại: `intake_scan.py` đọc đúng package Unity từ `ProjectSettings.asset` (trước đây regex không bao giờ khớp); `repo_webp_cleanup.py` không còn chạm vào `.claude/settings.local.json` (đã xác minh hash không đổi) và không còn ép ảnh vuông lớn về 512 (`hero-bg.png` 1024×1024 giữ nguyên); `verify_pages.py` chặn khi thiếu `--package` thay vì báo PASS giả.
+- Phát hiện về repo web (chưa sửa, ngoài phạm vi task này):
+  - `assets/images/logo/favicon.png` KHÔNG tồn tại nhưng **42 trang** đang trỏ tới.
+  - `assets/images/logo/logo.png` KHÔNG tồn tại — **7 trang** trỏ tới.
+  - `assets/images/og-image.png` KHÔNG tồn tại — **44 trang** trỏ tới.
+  - **31 trang** đặt `og:image`/`twitter:image` bằng đường dẫn tương đối → Facebook/X không hiển thị được ảnh khi chia sẻ.
+  - 10 file tên `icon.png` trong `assets/images/apps/*/` thực chất là file SVG đặt sai đuôi, không trang nào dùng.
+  - Nút lọc ghi `All Apps (19)` nhưng thực tế có 20 card.
+  - `assets/images/` đang chứa 42.3 MB PNG/JPG. Chạy thử chuyển WebP trên bản sao: còn **3.6 MB (giảm 91%)**, kiểm lại toàn site thấy **0 link ảnh gãy phát sinh**.
+- Next: Chờ user duyệt trước khi chạy `repo_webp_cleanup.py --apply --backup` trên repo thật và sửa 3 asset gãy nói trên. Không tự commit/push.
+
+### [2026-08-14 12:20] Claude Code
+- Task: Dọn ảnh toàn site sang WebP + sửa các lỗi asset/SEO có sẵn (user duyệt: "ok làm luôn cho gọn").
+- Files: 68 ảnh PNG/JPG bị xoá, 57 file `.webp` mới, 3 file ảnh mới (`logo/favicon.png`, `logo/logo.png`, `og-image.png`), 31 trang HTML sửa metadata/canonical, `apps/index.html` (bộ đếm), `apps/trap-tower/index.html` (FAQ JSON-LD), xoá thư mục `assets/screenshots/`.
+- Status: ✅ Done (chưa commit, chưa push — chờ user duyệt).
+- Chi tiết:
+  - **Ảnh**: 42.6 MB / 78 file PNG-JPG → 3.9 MB / 57 file WebP (giảm 91%). Tổng `assets/images` từ ~61.6 MB xuống 21.4 MB. Backup đầy đủ ảnh gốc tại thư mục tạm của phiên trước khi xoá.
+  - **3 asset gãy**: thay vì sửa 93 tham chiếu trong 60+ trang, đã tạo đúng 3 file mà các trang vẫn luôn trỏ tới, dựng từ chính logo AppMaven — `favicon.png` 96×96 (cắt riêng biểu tượng M cho đọc được ở 16px), `logo.png` 512×512 (JSON-LD publisher), `og-image.png` 1200×630 (ảnh chia sẻ mạng xã hội).
+  - **og:image tương đối**: 31 thẻ trong 16 trang đổi sang URL tuyệt đối — trước đó chia sẻ lên Facebook/Zalo không hiện ảnh.
+  - **canonical**: thêm cho 22 trang còn thiếu, URL suy ra từ đường dẫn file và đã đối chiếu với quy ước trong `sitemap.xml`.
+  - **Trap Tower**: câu hỏi FAQ trong JSON-LD ("Can I play Trap Tower with a keyboard?") không khớp nội dung hiển thị ("Can I play with a keyboard or on PC?") — đã sửa JSON-LD theo nội dung hiển thị.
+  - **Trùng lặp**: xoá `assets/screenshots/` (4 file, 1.9 MB, md5 trùng y hệt `apps/lich-am-2026/`, 0 tham chiếu).
+- Verification: `verify_pages.py --all` từ **121 ERR → 0 ERR (PASS, 29 cảnh báo)**. Kiểm bằng Chrome trên `/`, `/apps/`, `/apps/trial-shield/`: ảnh WebP hiển thị đủ và sắc nét (chữ trong ảnh chụp màn hình vẫn đọc rõ), bộ đếm hiện đúng "All Apps (20)", console 0 lỗi.
+- Ngoại lệ có chủ đích: `assets/images/logo/*` và `og-image.png` giữ định dạng PNG (favicon cần cho trình duyệt cũ; X/Twitter và vài trình thu thập không đọc được WebP nên ảnh chia sẻ để PNG). Đã ghi ngoại lệ này vào cả `repo_webp_cleanup.py` lẫn `verify_pages.py` để lần chạy sau không tự đổi.
+- Không sửa: `apps/square-race-max/privacy/index.html` có 2 thẻ `<h1>` — đó là trang song ngữ, mỗi khối ngôn ngữ 1 h1 và tại mỗi thời điểm chỉ hiện 1. Đã dạy `verify_pages.py` hiểu mẫu này thay vì sửa trang cho vừa script.
+- Next: Chờ user duyệt để commit + push. Hai việc còn mở: nén lại ~19 MB WebP cũ (có đánh đổi chất lượng) và bổ sung 6 trang app thiếu trong `sitemap.xml`.
+
+### [2026-08-14 16:05] Claude Code
+- Task: Xuất bản bộ trang web cho ứng dụng **Lợi Nhuận** (`com.appmaven.giaban.phisan`) bằng skill `appmaven-publish`, chạy từ thư mục dự án Flutter `J:\Apps\Flutter\LaiThat	inhlaisp`.
+- Files tạo mới: `apps/loi-nhuan/index.html`, `apps/loi-nhuan/privacy-policy.html`, `apps/loi-nhuan/terms-of-service.html`, `blog/cach-tinh-loi-nhuan-ban-hang-shopee-tiktok-shop-lazada/index.html`, `assets/images/apps/loi-nhuan/` (6 file `.webp`).
+- Files sửa: `apps/index.html` (thêm card + bộ đếm 20→21), `sitemap.xml` (+4 URL), `privacy-policy.html` gốc, `terms-of-service.html` gốc, `blog/index.html`.
+- Status: ✅ Done (chưa commit, chưa push — chờ user duyệt theo quy tắc 2 của skill).
+- Verification:
+  - `verify_pages.py --slug loi-nhuan --package com.appmaven.giaban.phisan --blog cach-tinh-...`: **PASS, 0 cảnh báo**.
+  - Nhìn bằng mắt trên máy chủ nội bộ cổng 8099, desktop 1440 và mobile 390, cả 4 trang. Console 0 lỗi, 0 ảnh gãy, 0 tràn ngang (`scrollWidth == clientWidth` ở cả 4 trang).
+- 3 lỗi giao diện tự phát hiện và đã sửa trong lần kiểm này:
+  1. Ô "Ứng dụng làm được gì?" ở desktop bị lưới kéo giãn cho bằng ô cạnh nó, dồn hết khoảng trống xuống đáy nhìn như khối rỗng → thêm `justify-content: center` cho `.area-overview`.
+  2. Ở mobile, tiêu đề "Nhìn qua giao diện" và câu "Lướt ngang để xem thêm" chen nhau trên một hàng nên cả hai đều bị bẻ dòng xấu → tách class `.gallery-head` / `.gallery-hint`, xếp dọc ở `max-width: 640px`.
+  3. Liên kết quay lại "← Lợi Nhuận" ở 2 trang pháp lý chỉ cao 24px, dưới ngưỡng chạm 44px của Google → thêm `min-height: 44px` + đệm dọc, bớt lề dưới tương ứng để khoảng cách nhìn thấy không đổi.
+- Hai cảnh báo tự động đã kiểm lại và xác định là **báo động giả**, không sửa gì: 5 ảnh trong bài blog báo `naturalWidth = 0` vì đang `loading="lazy"` và nằm cách đáy trang hơn 10.000px; bảng số liệu rộng 560px trong khung 378px nhưng đã nằm trong `.table-wrap` có `overflow-x: auto` nên cuộn ngang đúng ý đồ.
+- Còn tồn tại (có sẵn từ trước, ngoài phạm vi task này): các liên kết ở chân trang dùng chung toàn site chỉ cao 24px. Sửa phải đụng vào layout dùng chung của 40+ trang nên để lại, không tự ý đổi.
+- Next: Chờ user duyệt. Khi duyệt nên tách **2 commit riêng**: (1) đợt dọn WebP toàn repo còn đang dang dở từ phiên trước (68 xoá / 61 file mới / 35 HTML sửa), (2) bộ trang Lợi Nhuận. URL để dán vào Play Console sau khi đẩy lên: `https://appmavenstudio.com/apps/loi-nhuan/privacy-policy.html`.

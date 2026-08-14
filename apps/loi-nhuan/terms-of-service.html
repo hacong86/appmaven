@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Điều khoản dịch vụ — Lợi Nhuận | AppMaven</title>
+  <meta name="description"
+    content="Điều khoản dịch vụ ứng dụng Lợi Nhuận: miễn phí có quảng cáo, số liệu phí sàn chỉ là tham khảo, không phải tư vấn tài chính hay thuế.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://appmavenstudio.com/apps/loi-nhuan/terms-of-service.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://appmavenstudio.com/apps/loi-nhuan/terms-of-service.html">
+  <meta property="og:title" content="Điều khoản dịch vụ — Lợi Nhuận">
+  <meta property="og:description"
+    content="Ứng dụng miễn phí có quảng cáo. Số liệu phí sàn là tham khảo, không phải tư vấn tài chính hay tư vấn thuế.">
+  <meta property="og:image" content="https://appmavenstudio.com/assets/images/apps/loi-nhuan/s1-tinh-lai-that.webp">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Điều khoản dịch vụ — Lợi Nhuận">
+  <meta name="twitter:description"
+    content="Điều khoản sử dụng ứng dụng Lợi Nhuận: miễn phí, có quảng cáo, số liệu chỉ mang tính tham khảo.">
+  <meta name="twitter:image" content="https://appmavenstudio.com/assets/images/apps/loi-nhuan/s1-tinh-lai-that.webp">
+
+  <link rel="icon" type="image/png" href="/assets/images/logo/appmaven_logo.png">
+  <link rel="stylesheet" href="/assets/css/variables.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+
+  <style>
+    .policy-container {
+      max-width: 900px;
+      margin: var(--space-8) auto var(--space-12);
+      padding: var(--space-12) var(--space-8);
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-xl);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    .loinhuan-policy {
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+    }
+
+    .loinhuan-policy h1 {
+      margin-bottom: var(--space-4);
+      color: white;
+      font-size: clamp(1.9rem, 5vw, 2.6rem);
+      line-height: 1.2;
+      background: linear-gradient(to right, #fff, #63c79b);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .loinhuan-policy h2 {
+      margin-top: var(--space-10);
+      margin-bottom: var(--space-4);
+      padding-bottom: var(--space-2);
+      color: white;
+      font-size: 1.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .loinhuan-policy h3 {
+      margin-top: var(--space-6);
+      margin-bottom: var(--space-3);
+      color: #a7e8c8;
+      font-size: 1.15rem;
+    }
+
+    .loinhuan-policy p,
+    .loinhuan-policy ul,
+    .loinhuan-policy ol {
+      margin-bottom: var(--space-4);
+    }
+
+    .loinhuan-policy ul,
+    .loinhuan-policy ol {
+      padding-left: var(--space-6);
+    }
+
+    .loinhuan-policy li {
+      margin-bottom: var(--space-2);
+    }
+
+    .loinhuan-policy a,
+    .back-link {
+      color: #63c79b;
+      overflow-wrap: anywhere;
+    }
+
+    .loinhuan-policy code {
+      overflow-wrap: anywhere;
+    }
+
+    .loinhuan-policy table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: var(--space-5);
+      font-size: 0.95rem;
+      display: block;
+      overflow-x: auto;
+    }
+
+    .loinhuan-policy th,
+    .loinhuan-policy td {
+      padding: var(--space-2) var(--space-3);
+      text-align: left;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      vertical-align: top;
+    }
+
+    .loinhuan-policy th {
+      color: #a7e8c8;
+      white-space: nowrap;
+    }
+
+    .highlight-box {
+      margin-bottom: var(--space-5);
+      padding: var(--space-4) var(--space-5);
+      background: rgba(99, 199, 155, 0.08);
+      border-left: 3px solid #63c79b;
+      border-radius: var(--radius-md);
+    }
+
+    #xoa-du-lieu,
+    #quang-cao,
+    #sao-luu {
+      scroll-margin-top: calc(var(--header-height) + var(--space-4));
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      /* Chu chi cao 24px, ngon tay cham hut. Dem doc cho vung cham du 44px
+         theo huong dan cua Google, va bot le duoi dung bang phan da them
+         de khoang cach nhin thay van y nguyen. */
+      min-height: 44px;
+      padding: 10px 2px;
+      margin-bottom: var(--space-3);
+      text-decoration: none;
+    }
+
+    @media (max-width: 640px) {
+      .policy-container {
+        margin-top: var(--space-4);
+        padding: var(--space-8) var(--space-4);
+        border-radius: var(--radius-lg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a href="#main-content" class="skip-link">Đến nội dung chính</a>
+
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar-container">
+      <a href="/" class="navbar-logo" aria-label="AppMaven Studio Home">
+        <img src="/assets/images/logo/appmaven_logo.png" alt="AppMaven Studio Logo"
+          style="height: 32px; width: 32px; border-radius: 8px;">
+        <span>AppMaven Studio</span>
+      </a>
+      <button class="navbar-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="navbar-menu" role="menubar">
+        <li role="none"><a href="/" role="menuitem">Home</a></li>
+        <li role="none"><a href="/apps/" class="active" role="menuitem">Apps</a></li>
+        <li role="none"><a href="/blog/" role="menuitem">Blog</a></li>
+        <li role="none"><a href="/about/" role="menuitem">About</a></li>
+        <li role="none"><a href="/support/" role="menuitem">Support</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="cosmic-background"></div>
+
+  <main id="main-content" style="padding: var(--header-height) var(--space-4) 0;">
+    <article class="policy-container">
+      <a class="back-link" href="/apps/loi-nhuan/" aria-label="Quay lại trang Lợi Nhuận">
+        <span aria-hidden="true">←</span> Lợi Nhuận
+      </a>
+
+      <div class="loinhuan-policy">
+        <h1>Điều khoản dịch vụ của Lợi Nhuận</h1>
+
+        <p><strong>Ngày hiệu lực:</strong> 06.08.2026</p>
+        <p><strong>Cập nhật lần cuối:</strong> 06.08.2026</p>
+
+        <p>
+          Đây là thoả thuận giữa bạn và <strong>AppMaven Studio</strong> về việc sử dụng ứng dụng
+          <strong>Lợi Nhuận</strong> (mã ứng dụng <code>com.appmaven.giaban.phisan</code>, sau đây gọi là
+          "ứng dụng"). Cài đặt hoặc sử dụng ứng dụng nghĩa là bạn đồng ý với các điều khoản dưới đây.
+          Không đồng ý thì vui lòng gỡ ứng dụng.
+        </p>
+
+        <h2>1. Ứng dụng này làm gì</h2>
+        <p>
+          Ứng dụng là một <strong>máy tính</strong>. Bạn nhập giá vốn, giá bán và các khoản chi phí; ứng dụng
+          trừ phí sàn, thuế và chi phí rồi hiện ra số tiền còn lại mỗi đơn. Ứng dụng cũng có các công cụ tính
+          toán kinh doanh khác như đặt giá bán, tính điểm hoà vốn, tính chiết khấu.
+        </p>
+        <p>
+          Ứng dụng <strong>không</strong> bán hàng hộ bạn, <strong>không</strong> kết nối với tài khoản người
+          bán của bạn, <strong>không</strong> đọc đơn hàng thật, và <strong>không</strong> thay bạn nộp thuế.
+          Mọi con số đều do bạn tự nhập vào.
+        </p>
+
+        <h2>2. Số liệu phí và thuế chỉ là tham khảo</h2>
+        <p>
+          Đây là điều khoản quan trọng nhất, xin đọc kỹ.
+        </p>
+        <p>
+          Biểu phí có sẵn trong ứng dụng được tổng hợp từ nguồn công khai và có ghi ngày hiệu lực ở từng dòng.
+          Các sàn thương mại điện tử <strong>thay đổi biểu phí rất thường xuyên</strong>, và mức phí thực tế
+          còn phụ thuộc ngành hàng con, loại gian hàng, chương trình bạn đang tham gia và các thoả thuận riêng
+          giữa bạn với sàn. Vì vậy con số ứng dụng đưa ra là <strong>ước tính tham khảo</strong>, không phải
+          con số cuối cùng sàn sẽ trừ.
+        </p>
+        <p>
+          Trước khi chốt giá bán thật, bạn phải đối chiếu với biểu phí chính thức trong trang quản lý người bán
+          của sàn. Ứng dụng cho phép bạn tự sửa từng mức phí, tự thêm sàn và tự thêm khoản phí riêng của shop
+          mình — hãy dùng tính năng đó để con số sát với thực tế của bạn.
+        </p>
+
+        <h2>3. Không phải tư vấn tài chính hay tư vấn thuế</h2>
+        <p>
+          Kết quả tính toán trong ứng dụng <strong>không phải</strong> tư vấn tài chính, tư vấn đầu tư, tư vấn
+          kế toán hay tư vấn thuế. AppMaven Studio không phải đơn vị hành nghề tư vấn thuế.
+        </p>
+        <p>
+          Phần thuế sàn nộp thay trong ứng dụng tham chiếu Nghị định 252/2026/NĐ-CP (hiệu lực 01.07.2026) và
+          ngưỡng doanh thu theo Nghị định 141/2026/NĐ-CP. Chính sách thuế với hộ và cá nhân kinh doanh đang
+          thay đổi liên tục, và nghĩa vụ thuế của bạn còn phụ thuộc doanh thu, hình thức đăng ký kinh doanh và
+          loại hoạt động. Hãy đối chiếu với cơ quan thuế hoặc người tư vấn có chuyên môn trước khi dựa vào bất
+          kỳ con số nào.
+        </p>
+
+        <h2>4. Ứng dụng miễn phí và có quảng cáo</h2>
+        <p>
+          Ứng dụng miễn phí hoàn toàn. Không có mua trong ứng dụng, không có gói đăng ký, không có tính năng
+          nào bị khoá sau khi trả tiền.
+        </p>
+        <p>
+          Để duy trì việc phát triển, ứng dụng hiển thị quảng cáo qua Google AdMob. Nội dung quảng cáo do Google
+          chọn, không phải do AppMaven Studio chọn, và chúng tôi không xác nhận hay bảo đảm cho bất kỳ sản phẩm
+          hoặc dịch vụ nào xuất hiện trong quảng cáo. Mọi giao dịch giữa bạn và nhà quảng cáo là việc giữa bạn
+          và họ.
+        </p>
+        <p>
+          Nếu bạn ở Khu vực Kinh tế Châu Âu, Anh hoặc Thuỵ Sĩ, ứng dụng sẽ hỏi ý kiến bạn trước khi phục vụ
+          quảng cáo cá nhân hoá, và bạn đổi lựa chọn được bất cứ lúc nào trong phần Cài đặt của ứng dụng.
+        </p>
+
+        <h2>5. Không cần tài khoản</h2>
+        <p>
+          Ứng dụng không yêu cầu đăng ký, không yêu cầu đăng nhập và không có máy chủ nào của chúng tôi để nhận
+          dữ liệu của bạn. Vì không có tài khoản nên cũng không có gì để khoá, khôi phục hay chuyển nhượng.
+        </p>
+
+        <h2>6. Dữ liệu của bạn</h2>
+        <p>
+          Giá vốn, giá bán, tên sản phẩm, các khoản chi phí bạn tự khai và biểu phí bạn tự chỉnh đều được lưu
+          trong bộ nhớ riêng của ứng dụng trên thiết bị của bạn.
+        </p>
+        <p>
+          Nếu bạn đang bật tính năng sao lưu của Android, hệ điều hành có thể tự sao lưu dữ liệu ứng dụng vào
+          Google Drive của <em>chính bạn</em>. Đó là bản sao thuộc quyền của bạn, do Google quản lý theo chính
+          sách của Google; chúng tôi không xem được. Bạn tắt được trong Cài đặt Android, mục Google → Sao lưu.
+        </p>
+        <p>
+          <strong>Bạn tự chịu trách nhiệm sao lưu số liệu của mình.</strong> Gỡ ứng dụng, xoá dữ liệu ứng dụng
+          hoặc đổi máy đều có thể làm mất toàn bộ số liệu đã lưu, và chúng tôi không có cách nào khôi phục hộ.
+        </p>
+        <p>
+          Chi tiết về việc xử lý thông tin xem tại
+          <a href="/apps/loi-nhuan/privacy-policy.html">Chính sách quyền riêng tư</a>.
+        </p>
+
+        <h2>7. Bạn được và không được làm gì</h2>
+        <p>Chúng tôi cấp cho bạn quyền sử dụng ứng dụng cho mục đích cá nhân hoặc cho công việc kinh doanh của
+          chính bạn. Bạn không được:</p>
+        <ul>
+          <li>dịch ngược, tháo rời hoặc tìm cách trích xuất mã nguồn của ứng dụng;</li>
+          <li>bán lại, cho thuê hoặc phân phối lại ứng dụng;</li>
+          <li>gỡ bỏ hoặc che giấu các thông báo về quyền sở hữu trong ứng dụng;</li>
+          <li>tự bấm vào quảng cáo trong ứng dụng, hoặc dùng công cụ tự động để tạo lượt xem và lượt bấm
+            quảng cáo;</li>
+          <li>dùng ứng dụng cho mục đích vi phạm pháp luật Việt Nam.</li>
+        </ul>
+
+        <h2>8. Sở hữu trí tuệ</h2>
+        <p>
+          Ứng dụng, giao diện, biểu tượng, nội dung hướng dẫn và bộ công thức tính toán thuộc quyền sở hữu của
+          AppMaven Studio. Phông chữ Be Vietnam Pro và JetBrains Mono phát hành theo giấy phép SIL Open Font
+          License. Bộ biểu tượng ngành hàng lấy từ Noto Emoji của Google, giấy phép Apache 2.0.
+        </p>
+        <p>
+          Số liệu bạn tự nhập vào ứng dụng vẫn thuộc về bạn. Chúng tôi không đòi hỏi bất kỳ quyền nào với số
+          liệu đó.
+        </p>
+
+        <h2>9. Không liên kết với các sàn thương mại điện tử</h2>
+        <p>
+          Lợi Nhuận là công cụ độc lập do AppMaven Studio phát triển. Ứng dụng <strong>không</strong> trực
+          thuộc, không được uỷ quyền, không được tài trợ và không có bất kỳ liên kết chính thức nào với Shopee,
+          TikTok Shop, Lazada hay các công ty con của họ.
+        </p>
+        <p>
+          Mọi tên gọi thương mại và nhãn hiệu được nhắc đến chỉ nhằm mô tả tính tương thích và xác định dịch
+          vụ. Bản quyền và nhãn hiệu thuộc về chủ sở hữu tương ứng.
+        </p>
+
+        <h2>10. Dịch vụ của bên thứ ba</h2>
+        <p>
+          Ứng dụng có tích hợp Google Mobile Ads (AdMob) và Google User Messaging Platform. Việc bạn sử dụng
+          các dịch vụ này còn chịu điều chỉnh bởi điều khoản và chính sách của Google. Chúng tôi không kiểm
+          soát và không chịu trách nhiệm về hoạt động của các dịch vụ đó.
+        </p>
+
+        <h2>11. Cập nhật và tính khả dụng</h2>
+        <p>
+          Chúng tôi có thể cập nhật, thay đổi hoặc ngừng cung cấp ứng dụng bất cứ lúc nào mà không cần báo
+          trước. Biểu phí nhúng sẵn trong ứng dụng có thể lỗi thời so với thực tế nếu bạn không cập nhật ứng
+          dụng lên bản mới.
+        </p>
+
+        <h2>12. Miễn trừ bảo đảm</h2>
+        <p>
+          Ứng dụng được cung cấp "nguyên trạng" và "theo khả năng sẵn có", không kèm bất kỳ bảo đảm nào dù
+          minh thị hay ngụ ý. Chúng tôi không bảo đảm rằng ứng dụng sẽ chạy không lỗi, không gián đoạn, hay
+          rằng mọi con số ứng dụng đưa ra đều chính xác tuyệt đối so với số tiền sàn thực tế trừ của bạn.
+        </p>
+
+        <h2>13. Giới hạn trách nhiệm</h2>
+        <p>
+          Trong phạm vi pháp luật cho phép, AppMaven Studio không chịu trách nhiệm với bất kỳ thiệt hại nào
+          phát sinh từ việc bạn sử dụng ứng dụng, bao gồm nhưng không giới hạn ở: thất thu, mất lợi nhuận, chốt
+          giá bán sai, mất số liệu đã lưu, hay quyết định kinh doanh dựa trên con số ứng dụng đưa ra.
+        </p>
+        <p>
+          Nói thẳng: <strong>quyết định giá bán là của bạn.</strong> Ứng dụng chỉ giúp bạn tính nhanh hơn.
+        </p>
+
+        <h2>14. Chấm dứt</h2>
+        <p>
+          Bạn có thể ngừng sử dụng ứng dụng bất cứ lúc nào bằng cách gỡ cài đặt. Chúng tôi có thể chấm dứt
+          quyền sử dụng của bạn nếu bạn vi phạm các điều khoản này.
+        </p>
+
+        <h2>15. Luật áp dụng</h2>
+        <p>
+          Các điều khoản này được điều chỉnh bởi pháp luật Việt Nam. Mọi tranh chấp sẽ được giải quyết tại toà
+          án có thẩm quyền tại Việt Nam.
+        </p>
+
+        <h2>16. Thay đổi điều khoản</h2>
+        <p>
+          Nếu các điều khoản này thay đổi, ngày cập nhật ở đầu trang sẽ đổi theo. Tiếp tục sử dụng ứng dụng sau
+          khi điều khoản được cập nhật nghĩa là bạn chấp nhận bản mới.
+        </p>
+
+        <h2>17. Liên hệ</h2>
+        <p>
+          Thư hỗ trợ: <a href="mailto:hacong86@gmail.com">hacong86@gmail.com</a>
+        </p>
+        <p>
+          Trang ứng dụng trên Google Play:
+          <a href="https://play.google.com/store/apps/details?id=com.appmaven.giaban.phisan" target="_blank"
+            rel="noopener noreferrer">
+            play.google.com/store/apps/details?id=com.appmaven.giaban.phisan</a>
+        </p>
+        <p>
+          Xem thêm <a href="/apps/loi-nhuan/privacy-policy.html">Chính sách quyền riêng tư</a> của ứng dụng.
+        </p>
+      </div>
+
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 AppMaven Studio. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+</body>
+
+</html>

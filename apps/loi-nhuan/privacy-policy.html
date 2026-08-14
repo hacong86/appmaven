@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Chính sách quyền riêng tư — Lợi Nhuận | AppMaven</title>
+  <meta name="description"
+    content="Chính sách quyền riêng tư ứng dụng Lợi Nhuận: số liệu kinh doanh bạn nhập nằm trên máy bạn, quảng cáo AdMob thu thập gì và cách xoá dữ liệu.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://appmavenstudio.com/apps/loi-nhuan/privacy-policy.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://appmavenstudio.com/apps/loi-nhuan/privacy-policy.html">
+  <meta property="og:title" content="Chính sách quyền riêng tư — Lợi Nhuận">
+  <meta property="og:description"
+    content="Số liệu kinh doanh bạn nhập được lưu trên máy bạn. Đọc rõ quảng cáo AdMob thu thập gì và cách xoá dữ liệu.">
+  <meta property="og:image" content="https://appmavenstudio.com/assets/images/apps/loi-nhuan/s1-tinh-lai-that.webp">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Chính sách quyền riêng tư — Lợi Nhuận">
+  <meta name="twitter:description"
+    content="Ứng dụng Lợi Nhuận xử lý số liệu của bạn thế nào, quảng cáo thu thập gì và cách xoá dữ liệu.">
+  <meta name="twitter:image" content="https://appmavenstudio.com/assets/images/apps/loi-nhuan/s1-tinh-lai-that.webp">
+
+  <link rel="icon" type="image/png" href="/assets/images/logo/appmaven_logo.png">
+  <link rel="stylesheet" href="/assets/css/variables.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+
+  <style>
+    .policy-container {
+      max-width: 900px;
+      margin: var(--space-8) auto var(--space-12);
+      padding: var(--space-12) var(--space-8);
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-xl);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    .loinhuan-policy {
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+    }
+
+    .loinhuan-policy h1 {
+      margin-bottom: var(--space-4);
+      color: white;
+      font-size: clamp(1.9rem, 5vw, 2.6rem);
+      line-height: 1.2;
+      background: linear-gradient(to right, #fff, #63c79b);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .loinhuan-policy h2 {
+      margin-top: var(--space-10);
+      margin-bottom: var(--space-4);
+      padding-bottom: var(--space-2);
+      color: white;
+      font-size: 1.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .loinhuan-policy h3 {
+      margin-top: var(--space-6);
+      margin-bottom: var(--space-3);
+      color: #a7e8c8;
+      font-size: 1.15rem;
+    }
+
+    .loinhuan-policy p,
+    .loinhuan-policy ul,
+    .loinhuan-policy ol {
+      margin-bottom: var(--space-4);
+    }
+
+    .loinhuan-policy ul,
+    .loinhuan-policy ol {
+      padding-left: var(--space-6);
+    }
+
+    .loinhuan-policy li {
+      margin-bottom: var(--space-2);
+    }
+
+    .loinhuan-policy a,
+    .back-link {
+      color: #63c79b;
+      overflow-wrap: anywhere;
+    }
+
+    .loinhuan-policy code {
+      overflow-wrap: anywhere;
+    }
+
+    .loinhuan-policy table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: var(--space-5);
+      font-size: 0.95rem;
+      display: block;
+      overflow-x: auto;
+    }
+
+    .loinhuan-policy th,
+    .loinhuan-policy td {
+      padding: var(--space-2) var(--space-3);
+      text-align: left;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      vertical-align: top;
+    }
+
+    .loinhuan-policy th {
+      color: #a7e8c8;
+      white-space: nowrap;
+    }
+
+    .highlight-box {
+      margin-bottom: var(--space-5);
+      padding: var(--space-4) var(--space-5);
+      background: rgba(99, 199, 155, 0.08);
+      border-left: 3px solid #63c79b;
+      border-radius: var(--radius-md);
+    }
+
+    #xoa-du-lieu,
+    #quang-cao,
+    #sao-luu {
+      scroll-margin-top: calc(var(--header-height) + var(--space-4));
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      /* Chu chi cao 24px, ngon tay cham hut. Dem doc cho vung cham du 44px
+         theo huong dan cua Google, va bot le duoi dung bang phan da them
+         de khoang cach nhin thay van y nguyen. */
+      min-height: 44px;
+      padding: 10px 2px;
+      margin-bottom: var(--space-3);
+      text-decoration: none;
+    }
+
+    @media (max-width: 640px) {
+      .policy-container {
+        margin-top: var(--space-4);
+        padding: var(--space-8) var(--space-4);
+        border-radius: var(--radius-lg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a href="#main-content" class="skip-link">Đến nội dung chính</a>
+
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar-container">
+      <a href="/" class="navbar-logo" aria-label="AppMaven Studio Home">
+        <img src="/assets/images/logo/appmaven_logo.png" alt="AppMaven Studio Logo"
+          style="height: 32px; width: 32px; border-radius: 8px;">
+        <span>AppMaven Studio</span>
+      </a>
+      <button class="navbar-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="navbar-menu" role="menubar">
+        <li role="none"><a href="/" role="menuitem">Home</a></li>
+        <li role="none"><a href="/apps/" class="active" role="menuitem">Apps</a></li>
+        <li role="none"><a href="/blog/" role="menuitem">Blog</a></li>
+        <li role="none"><a href="/about/" role="menuitem">About</a></li>
+        <li role="none"><a href="/support/" role="menuitem">Support</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="cosmic-background"></div>
+
+  <main id="main-content" style="padding: var(--header-height) var(--space-4) 0;">
+    <article class="policy-container">
+      <a class="back-link" href="/apps/loi-nhuan/" aria-label="Quay lại trang Lợi Nhuận">
+        <span aria-hidden="true">←</span> Lợi Nhuận
+      </a>
+
+      <div class="loinhuan-policy">
+        <h1>Chính sách quyền riêng tư của Lợi Nhuận</h1>
+
+        <p><strong>Ngày hiệu lực:</strong> 06.08.2026</p>
+        <p><strong>Cập nhật lần cuối:</strong> 06.08.2026</p>
+
+        <p>
+          Trang này giải thích ứng dụng <strong>Lợi Nhuận</strong> (mã ứng dụng
+          <code>com.appmaven.giaban.phisan</code>, sau đây gọi là "ứng dụng") xử lý thông tin của bạn như thế nào.
+          Ứng dụng do <strong>AppMaven Studio</strong> phát triển và phát hành trên Google Play.
+        </p>
+
+        <div class="highlight-box">
+          <p style="margin-bottom: var(--space-2);"><strong>Đọc nhanh trong 30 giây</strong></p>
+          <ul style="margin-bottom: 0;">
+            <li><strong>Số liệu kinh doanh bạn nhập</strong> — giá vốn, giá bán, tên sản phẩm, các khoản chi phí,
+              biểu phí bạn tự chỉnh — được lưu trong bộ nhớ riêng của ứng dụng trên máy bạn. Nhà phát triển không có
+              máy chủ nào để nhận và không đọc được những số liệu đó.</li>
+            <li><strong>Không tài khoản, không đăng nhập, không mua trong ứng dụng.</strong> Ứng dụng miễn phí hoàn
+              toàn.</li>
+            <li><strong>Ứng dụng có hiển thị quảng cáo của Google AdMob.</strong> Google thu thập và chia sẻ một số
+              dữ liệu kỹ thuật để chọn và đo lường quảng cáo — <a href="#quang-cao">đọc mục 2</a>.</li>
+            <li><strong>Nếu bạn đang bật sao lưu của Android</strong>, hệ điều hành có thể tự sao chép dữ liệu ứng
+              dụng vào Google Drive của chính bạn — <a href="#sao-luu">đọc mục 4</a>.</li>
+            <li>Bạn <a href="#xoa-du-lieu">xoá sạch dữ liệu</a> bất cứ lúc nào, không cần hỏi ai.</li>
+          </ul>
+        </div>
+
+        <h2>1. Số liệu bạn nhập nằm ở đâu</h2>
+        <p>
+          Ứng dụng là công cụ tính toán chạy ngay trên máy. Những thông tin dưới đây do chính bạn nhập và được ghi
+          vào <strong>bộ nhớ riêng của ứng dụng trên thiết bị</strong> — vùng nhớ mà các ứng dụng khác không đọc
+          được:
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Loại thông tin</th>
+              <th>Ví dụ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Số liệu một đơn hàng</td>
+              <td>Giá vốn, giá bán, phí đóng gói, tiền quảng cáo, các khoản chi phí bạn tự khai</td>
+            </tr>
+            <tr>
+              <td>Sản phẩm bạn lưu lại</td>
+              <td>Tên sản phẩm, ngành hàng, sàn bán, giá vốn và giá bán đã lưu</td>
+            </tr>
+            <tr>
+              <td>Biểu phí bạn tự chỉnh</td>
+              <td>Mức phí từng sàn bạn sửa lại, sàn bạn tự thêm, khoản phí riêng của shop bạn</td>
+            </tr>
+            <tr>
+              <td>Cài đặt trong ứng dụng</td>
+              <td>Chế độ tối, bật/tắt công tắc thuế, sàn dùng mặc định</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          Về mặt kỹ thuật, ứng dụng ghi các thông tin này bằng kho lưu trữ cục bộ tiêu chuẩn của Android
+          (<code>shared_preferences</code>). <strong>Ứng dụng không có đoạn mã nào gửi những số liệu này ra
+            internet.</strong> Toàn bộ lưu lượng mạng mà ứng dụng tạo ra là của thư viện quảng cáo Google mô tả ở
+          mục 2 — và thư viện đó không nhận được nội dung bạn nhập.
+        </p>
+
+        <h2 id="quang-cao">2. Quảng cáo Google AdMob</h2>
+        <p>
+          Ứng dụng miễn phí và sống bằng quảng cáo. Chúng tôi dùng <strong>Google Mobile Ads (AdMob)</strong> để
+          hiển thị ba dạng quảng cáo: quảng cáo lúc mở ứng dụng, quảng cáo gốc nằm xen trong danh sách, và quảng cáo
+          xen kẽ toàn màn hình ở một vài điểm chuyển màn.
+        </p>
+        <p>
+          Khi hiển thị quảng cáo, <strong>Google là một bên xử lý dữ liệu độc lập</strong>. Google thu thập và chia
+          sẻ với các đối tác quảng cáo của họ những loại dữ liệu sau:
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Loại dữ liệu</th>
+              <th>Cụ thể là gì</th>
+              <th>Dùng để làm gì</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Vị trí gần đúng</td>
+              <td>Quốc gia, khu vực hoặc thành phố, suy ra từ địa chỉ IP của kết nối. Ứng dụng không xin quyền vị
+                trí và không đọc GPS.</td>
+              <td>Chọn quảng cáo phù hợp khu vực, đo lường</td>
+            </tr>
+            <tr>
+              <td>Tương tác với ứng dụng</td>
+              <td>Quảng cáo đã hiển thị, bạn có chạm vào hay không, thời lượng phiên</td>
+              <td>Đo lường hiệu quả quảng cáo, chống gian lận</td>
+            </tr>
+            <tr>
+              <td>Thông tin chẩn đoán</td>
+              <td>Loại thiết bị, phiên bản hệ điều hành, báo lỗi và hiệu năng của thư viện quảng cáo</td>
+              <td>Bảo đảm quảng cáo hiển thị đúng, sửa lỗi</td>
+            </tr>
+            <tr>
+              <td>Mã nhận dạng thiết bị</td>
+              <td>Mã quảng cáo của Android (Advertising ID) — mã bạn đặt lại hoặc xoá được bất cứ lúc nào</td>
+              <td>Chọn quảng cáo, giới hạn số lần lặp lại, chống gian lận</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          Mục đích chung của việc thu thập này là <strong>quảng cáo, phân tích hiệu quả quảng cáo và chống gian
+            lận</strong>. Dữ liệu được mã hoá khi truyền đi bằng giao thức TLS.
+        </p>
+
+        <div class="highlight-box">
+          <p style="margin-bottom: 0;">
+            <strong>Con số kinh doanh của bạn không đi kèm quảng cáo.</strong> Ứng dụng không gửi tên sản phẩm, giá
+            vốn, giá bán, biểu phí hay bất kỳ kết quả tính toán nào cho Google. Nhà phát triển cũng không nhận được
+            dữ liệu cá nhân nào từ AdMob — chúng tôi chỉ xem được báo cáo tổng hợp trong tài khoản AdMob, kiểu như
+            "hôm nay có bao nhiêu lượt hiển thị".
+          </p>
+        </div>
+
+        <h2>3. Lựa chọn của bạn về quảng cáo</h2>
+
+        <h3>Nếu bạn ở châu Âu, Anh hoặc Thuỵ Sĩ</h3>
+        <p>
+          Ứng dụng dùng công cụ hỏi ý kiến người dùng của Google (Google UMP). Lần đầu mở ứng dụng, bạn sẽ thấy một
+          bảng hỏi bạn có đồng ý cho dùng dữ liệu để hiển thị quảng cáo cá nhân hoá hay không. Bạn chọn thế nào thì
+          ứng dụng làm theo thế đó.
+        </p>
+        <p>
+          Muốn đổi ý về sau, mở <em>Cài đặt → Tuỳ chọn quyền riêng tư quảng cáo</em> ngay trong ứng dụng. Bảng hỏi
+          sẽ hiện lại để bạn chọn lại từ đầu.
+        </p>
+
+        <h3>Trên mọi thiết bị Android</h3>
+        <p>
+          Bạn đặt lại hoặc xoá hẳn mã quảng cáo của máy trong <em>Cài đặt Android → Google → Quảng cáo</em>. Khi mã
+          bị xoá, quảng cáo vẫn hiển thị nhưng không còn dựa trên lịch sử của mã đó nữa.
+        </p>
+        <p>
+          Quảng cáo trong ứng dụng được đặt giới hạn ở mức nội dung dành cho thanh thiếu niên (Teen) và không nhắm
+          tới trẻ em.
+        </p>
+
+        <h2 id="sao-luu">4. Sao lưu của Android — điểm bạn nên biết</h2>
+        <p>
+          Ứng dụng bật tính năng sao lưu tự động của Android. Nghĩa là: <strong>nếu bạn đang bật sao lưu trong tài
+            khoản Google của mình</strong>, hệ điều hành Android có thể tự sao chép phần dữ liệu ứng dụng lưu trên
+          máy (các cài đặt, biểu phí bạn chỉnh, sản phẩm bạn lưu) vào <strong>Google Drive của chính bạn</strong>,
+          hoặc chuyển thẳng sang máy mới khi bạn đổi điện thoại.
+        </p>
+        <p>
+          Việc này có ích: đổi máy không mất công chỉnh lại biểu phí. Nhưng cần nói rõ để bạn không hiểu nhầm:
+        </p>
+        <ul>
+          <li>Bản sao lưu đó <strong>thuộc quyền của bạn</strong>, nằm trong tài khoản Google của bạn, do Google
+            quản lý theo chính sách của Google.</li>
+          <li><strong>Nhà phát triển không xem được</strong> bản sao lưu đó và không có cách nào lấy về.</li>
+          <li>Bạn tắt được trong <em>Cài đặt Android → Google → Sao lưu</em>. Tắt rồi thì dữ liệu ứng dụng chỉ còn
+            nằm trên máy.</li>
+        </ul>
+
+        <h2>5. Quyền hệ thống</h2>
+        <p>
+          Ứng dụng <strong>không xin</strong> quyền camera, micrô, vị trí, danh bạ, lịch, bộ nhớ ngoài hay bất kỳ
+          quyền nhạy cảm nào khác. Những quyền dưới đây do thư viện quảng cáo của Google tự khai vào ứng dụng lúc
+          đóng gói:
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Quyền</th>
+              <th>Vì sao có</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>INTERNET</code>, <code>ACCESS_NETWORK_STATE</code></td>
+              <td>Thư viện quảng cáo cần kết nối mạng để tải quảng cáo về. Ứng dụng không dùng mạng cho việc gì
+                khác.</td>
+            </tr>
+            <tr>
+              <td><code>com.google.android.gms.permission.AD_ID</code></td>
+              <td>Từ Android 13, đây là quyền cho phép thư viện quảng cáo đọc mã quảng cáo của thiết bị. Đây không
+                phải quyền nhạy cảm và không cho phép truy cập vào bất kỳ nội dung nào của bạn.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>6. Khi bạn bấm gửi báo cáo</h2>
+        <p>
+          Ứng dụng có nút xuất báo cáo dạng chữ để bạn gửi cho khách, cho kế toán hay lưu lại. Khi bạn bấm, ứng dụng
+          tạo một đoạn văn bản rồi giao cho bảng chia sẻ của Android để bạn chọn nơi gửi (Zalo, Messenger, thư…).
+          Ứng dụng không tự gửi đi đâu, không giữ lại bản sao và không biết bạn đã chọn ứng dụng nào.
+        </p>
+
+        <h2>7. Những gì ứng dụng không có và không thu thập</h2>
+        <p>Nói cho rõ ràng, ứng dụng:</p>
+        <ul>
+          <li>không có tài khoản, không có đăng nhập, không đồng bộ đám mây;</li>
+          <li>không có mua trong ứng dụng, không có gói đăng ký, không có màn hình thanh toán;</li>
+          <li>không dùng Firebase, không gắn công cụ phân tích riêng, không có máy chủ riêng của nhà phát triển;</li>
+          <li>không hỏi tên, thư điện tử, số điện thoại, địa chỉ hay ngày sinh của bạn;</li>
+          <li>không đọc danh bạ, tin nhắn, lịch, ảnh, tệp trên máy;</li>
+          <li>không lấy vị trí GPS, không ghi âm, không dùng camera;</li>
+          <li>không bán dữ liệu cá nhân cho ai.</li>
+        </ul>
+
+        <h2>8. Dữ liệu được dùng vào việc gì</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Mục đích</th>
+              <th>Dữ liệu dùng đến</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Chạy các chức năng chính: tính lãi, bóc tách phí, so sánh sàn, 32 công cụ tính toán</td>
+              <td>Chỉ dữ liệu nằm trên máy bạn (mục 1)</td>
+            </tr>
+            <tr>
+              <td>Hiển thị quảng cáo và chọn quảng cáo phù hợp</td>
+              <td>Dữ liệu do AdMob thu thập (mục 2)</td>
+            </tr>
+            <tr>
+              <td>Đo lường hiệu quả quảng cáo, phát hiện gian lận nhấp chuột</td>
+              <td>Dữ liệu do AdMob thu thập (mục 2)</td>
+            </tr>
+            <tr>
+              <td>Giữ lại số liệu của bạn khi đổi máy, nếu bạn bật sao lưu Android</td>
+              <td>Dữ liệu ứng dụng lưu trên máy, do hệ điều hành sao chép (mục 4)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>9. Khi nào dữ liệu được chia sẻ</h2>
+        <p>Dữ liệu chỉ đi ra ngoài trong những trường hợp sau:</p>
+        <ul>
+          <li><strong>Với Google và các đối tác quảng cáo của Google</strong>, cho các mục đích quảng cáo, đo lường
+            và chống gian lận mô tả ở mục 2, theo điều khoản và chính sách riêng của Google.</li>
+          <li><strong>Với Google Drive của chính bạn</strong>, nếu bạn đang bật sao lưu Android (mục 4).</li>
+          <li><strong>Khi pháp luật yêu cầu</strong> — để tuân thủ quyết định hợp lệ của cơ quan có thẩm quyền, hoặc
+            để bảo vệ quyền và sự an toàn của người dùng và của chúng tôi.</li>
+          <li><strong>Khi chuyển nhượng doanh nghiệp</strong> — nếu AppMaven Studio sáp nhập hoặc chuyển nhượng ứng
+            dụng, bên nhận sẽ tiếp tục bị ràng buộc bởi chính sách này hoặc thông báo cho bạn về thay đổi.</li>
+        </ul>
+        <p>
+          Nhà phát triển không bán dữ liệu cá nhân và không chuyển dữ liệu cho công ty môi giới dữ liệu nào.
+        </p>
+
+        <h2 id="xoa-du-lieu">10. Xoá dữ liệu</h2>
+        <p>Bạn tự xoá được, ngay lập tức, không phải gửi yêu cầu cho ai:</p>
+        <ol>
+          <li>
+            <strong>Xoá dữ liệu trong máy.</strong> Vào <em>Cài đặt Android → Ứng dụng → Lợi Nhuận → Bộ nhớ → Xoá
+              dữ liệu</em>. Toàn bộ sản phẩm đã lưu, biểu phí đã chỉnh và cài đặt sẽ mất sạch, không khôi phục
+            được.
+          </li>
+          <li>
+            <strong>Gỡ ứng dụng.</strong> Gỡ ứng dụng cũng xoá toàn bộ dữ liệu ứng dụng lưu trên máy.
+          </li>
+          <li>
+            <strong>Bản sao lưu trên Google Drive.</strong> Nếu bạn từng bật sao lưu Android, bản sao lưu nằm trong
+            tài khoản Google của bạn và do bạn quản lý. Xoá tại
+            <a href="https://drive.google.com/drive/backups" target="_blank" rel="noopener noreferrer">
+              drive.google.com/drive/backups</a>.
+          </li>
+          <li>
+            <strong>Dữ liệu quảng cáo do Google giữ.</strong> Nhà phát triển không nắm giữ và không xoá thay bạn
+            được. Bạn đặt lại hoặc xoá mã quảng cáo trong <em>Cài đặt Android → Google → Quảng cáo</em>, và quản lý
+            dữ liệu quảng cáo trong
+            <a href="https://myadcenter.google.com/" target="_blank" rel="noopener noreferrer">
+              Trung tâm quảng cáo của Google</a> hoặc
+            <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener noreferrer">
+              trang dữ liệu và quyền riêng tư của tài khoản Google</a>.
+          </li>
+        </ol>
+        <p>
+          <strong>Không có tài khoản nào để xoá</strong>, vì ứng dụng chưa bao giờ tạo tài khoản cho bạn. Nếu bạn có
+          thắc mắc về dữ liệu, viết thư cho
+          <a href="mailto:hacong86@gmail.com">hacong86@gmail.com</a>.
+        </p>
+
+        <h2>11. Cơ sở pháp lý (châu Âu, Anh và Thuỵ Sĩ)</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Việc xử lý</th>
+              <th>Cơ sở pháp lý</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Chạy các chức năng tính toán (dữ liệu nằm trên máy bạn)</td>
+              <td>Thực hiện hợp đồng — Điều 6(1)(b): cần thiết để cung cấp dịch vụ bạn yêu cầu</td>
+            </tr>
+            <tr>
+              <td>Quảng cáo cá nhân hoá</td>
+              <td>Sự đồng ý — Điều 6(1)(a): thu thập qua bảng hỏi ý kiến ở mục 3; rút lại được bất cứ lúc nào</td>
+            </tr>
+            <tr>
+              <td>Quảng cáo không cá nhân hoá, đo lường cơ bản và chống gian lận</td>
+              <td>Lợi ích chính đáng — Điều 6(1)(f): duy trì ứng dụng miễn phí và ngăn gian lận quảng cáo</td>
+            </tr>
+            <tr>
+              <td>Tuân thủ yêu cầu của pháp luật</td>
+              <td>Nghĩa vụ pháp lý — Điều 6(1)(c)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>12. Quyền của bạn</h2>
+        <p>Tuỳ nơi bạn sinh sống, bạn có thể có các quyền sau:</p>
+        <ul>
+          <li>quyền được biết và truy cập dữ liệu liên quan tới bạn;</li>
+          <li>quyền sửa dữ liệu sai;</li>
+          <li>quyền yêu cầu xoá dữ liệu;</li>
+          <li>quyền hạn chế hoặc phản đối việc xử lý;</li>
+          <li>quyền chuyển dữ liệu sang nơi khác;</li>
+          <li>quyền rút lại sự đồng ý đã cho;</li>
+          <li>quyền khiếu nại với cơ quan bảo vệ dữ liệu tại nơi bạn ở.</li>
+        </ul>
+        <p>
+          Vì ứng dụng không có tài khoản, mọi số liệu bạn tạo ra đã nằm sẵn trong tay bạn — bạn xem, sửa và xoá
+          trực tiếp trên máy (mục 10). Với dữ liệu quảng cáo do Google nắm giữ, nhà phát triển không xác định được
+          bản ghi nào là của bạn, nên bạn hãy dùng các công cụ của Google nêu ở mục 10.
+        </p>
+        <p>
+          <strong>Người dùng ở California (CCPA/CPRA):</strong> nhà phát triển không bán dữ liệu cá nhân của bạn.
+          Tuy nhiên, vì ứng dụng có quảng cáo, việc dữ liệu được chuyển cho Google và đối tác của họ phục vụ quảng
+          cáo cá nhân hoá có thể được coi là "chia sẻ" theo định nghĩa của luật California. Bạn từ chối việc này
+          bằng cách tắt quảng cáo cá nhân hoá trong <em>Cài đặt → Tuỳ chọn quyền riêng tư quảng cáo</em> hoặc bật
+          <em>Xoá mã nhận dạng quảng cáo</em> trong cài đặt Android.
+        </p>
+
+        <h2>13. Bảo mật</h2>
+        <ul>
+          <li>Dữ liệu bạn nhập nằm trong vùng nhớ riêng, có kiểm soát của Android, các ứng dụng khác không đọc
+            được.</li>
+          <li>Dữ liệu do thư viện quảng cáo truyền đi được mã hoá bằng TLS/HTTPS.</li>
+          <li>Nhà phát triển không vận hành máy chủ và không giữ cơ sở dữ liệu người dùng nào, nên không có kho dữ
+            liệu tập trung để bị rò rỉ.</li>
+        </ul>
+        <p>
+          Không có cách lưu trữ hay truyền dữ liệu nào an toàn tuyệt đối. Hãy khoá màn hình điện thoại nếu số liệu
+          kinh doanh của bạn là thông tin nhạy cảm.
+        </p>
+
+        <h2>14. Trẻ em</h2>
+        <p>
+          Ứng dụng dành cho người kinh doanh, không nhắm tới trẻ em và không cố ý thu thập dữ liệu của trẻ dưới 13
+          tuổi. Ứng dụng không tham gia chương trình "Designed for Families" của Google Play, và quảng cáo hiển thị
+          trong ứng dụng được giới hạn ở mức nội dung dành cho thanh thiếu niên. Nếu bạn là phụ huynh và cho rằng
+          con bạn đã cung cấp thông tin cá nhân qua ứng dụng, hãy viết thư cho
+          <a href="mailto:hacong86@gmail.com">hacong86@gmail.com</a>.
+        </p>
+
+        <h2>15. Dữ liệu xử lý ở nước ngoài</h2>
+        <p>
+          Google xử lý dữ liệu quảng cáo trên máy chủ có thể đặt ngoài Việt Nam, kể cả tại Hoa Kỳ. Với dữ liệu
+          chuyển ra khỏi châu Âu, Anh hoặc Thuỵ Sĩ, Google áp dụng các biện pháp bảo vệ như Điều khoản hợp đồng tiêu
+          chuẩn của Uỷ ban châu Âu và các khung pháp lý về quyền riêng tư dữ liệu mà Google tham gia.
+        </p>
+
+        <h2>16. Tuyên bố miễn trừ trách nhiệm</h2>
+        <p>
+          Lợi Nhuận là công cụ độc lập do AppMaven Studio phát triển. Ứng dụng <strong>không</strong> trực thuộc,
+          không được uỷ quyền, không được tài trợ và không có liên kết chính thức nào với Shopee, TikTok Shop,
+          Lazada hay các công ty con của họ. Mọi tên gọi thương mại và nhãn hiệu được nhắc đến chỉ nhằm mô tả tính
+          tương thích và xác định dịch vụ; bản quyền và nhãn hiệu thuộc về chủ sở hữu tương ứng.
+        </p>
+        <p>
+          Biểu phí trong ứng dụng là số liệu tham khảo tổng hợp từ nguồn công khai. Kết quả tính toán mang tính tham
+          khảo, không phải tư vấn tài chính hay tư vấn thuế.
+        </p>
+
+        <h2>17. Nguồn tham khảo của bên thứ ba</h2>
+        <ul>
+          <li>
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
+              Chính sách quyền riêng tư của Google</a>
+          </li>
+          <li>
+            <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">
+              Cách Google sử dụng thông tin từ các trang web và ứng dụng dùng dịch vụ của Google</a>
+          </li>
+          <li>
+            <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener noreferrer">
+              Google AdMob và dữ liệu người dùng</a>
+          </li>
+          <li>
+            <a href="https://myadcenter.google.com/" target="_blank" rel="noopener noreferrer">
+              Trung tâm quảng cáo của Google</a>
+          </li>
+          <li>
+            <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener noreferrer">
+              Dữ liệu và quyền riêng tư trong tài khoản Google</a>
+          </li>
+        </ul>
+        <p>
+          Các đường dẫn trên để bạn tiện tra cứu. Bên thứ ba có thể thay đổi điều khoản và cách xử lý dữ liệu của họ
+          mà không phụ thuộc vào AppMaven Studio.
+        </p>
+
+        <h2>18. Thay đổi chính sách</h2>
+        <p>
+          Khi ứng dụng đổi tính năng, đổi thư viện hoặc khi quy định pháp luật thay đổi, chính sách này sẽ được cập
+          nhật tại trang này và ngày ở đầu trang sẽ đổi theo. Bản chính sách hiển thị trong ứng dụng (mục
+          <em>Giới thiệu</em>) được sửa cùng lúc để hai bên luôn khớp nhau.
+        </p>
+
+        <h2>19. Liên hệ</h2>
+        <p>Có thắc mắc về chính sách này, bạn viết thư cho chúng tôi:</p>
+        <p>
+          <strong>Nhà phát triển:</strong> AppMaven Studio<br />
+          <strong>Ứng dụng:</strong> Lợi Nhuận (<code>com.appmaven.giaban.phisan</code>)<br />
+          <strong>Thư hỗ trợ:</strong>
+          <a href="mailto:hacong86@gmail.com">hacong86@gmail.com</a><br />
+          <strong>Trang hỗ trợ:</strong>
+          <a href="https://appmavenstudio.com/support/" target="_blank" rel="noopener noreferrer">
+            https://appmavenstudio.com/support/</a><br />
+          <strong>Trang trên Google Play:</strong>
+          <a href="https://play.google.com/store/apps/details?id=com.appmaven.giaban.phisan" target="_blank"
+            rel="noopener noreferrer">
+            play.google.com/store/apps/details?id=com.appmaven.giaban.phisan</a>
+        </p>
+        <p>
+          Xem thêm <a href="/apps/loi-nhuan/terms-of-service.html">Điều khoản dịch vụ</a> của ứng dụng.
+        </p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 AppMaven Studio. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+</body>
+
+</html>
