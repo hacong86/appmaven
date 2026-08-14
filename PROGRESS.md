@@ -325,3 +325,14 @@
 - Hai cảnh báo tự động đã kiểm lại và xác định là **báo động giả**, không sửa gì: 5 ảnh trong bài blog báo `naturalWidth = 0` vì đang `loading="lazy"` và nằm cách đáy trang hơn 10.000px; bảng số liệu rộng 560px trong khung 378px nhưng đã nằm trong `.table-wrap` có `overflow-x: auto` nên cuộn ngang đúng ý đồ.
 - Còn tồn tại (có sẵn từ trước, ngoài phạm vi task này): các liên kết ở chân trang dùng chung toàn site chỉ cao 24px. Sửa phải đụng vào layout dùng chung của 40+ trang nên để lại, không tự ý đổi.
 - Next: Chờ user duyệt. Khi duyệt nên tách **2 commit riêng**: (1) đợt dọn WebP toàn repo còn đang dang dở từ phiên trước (68 xoá / 61 file mới / 35 HTML sửa), (2) bộ trang Lợi Nhuận. URL để dán vào Play Console sau khi đẩy lên: `https://appmavenstudio.com/apps/loi-nhuan/privacy-policy.html`.
+
+---
+
+### [2026-08-14 16:35] Claude Code
+- Task: Đẩy lên GitHub Pages sau khi user duyệt ("đẩy lên").
+- Commit: `601ab93` chore (dọn WebP toàn site, 153 file) và `bb30258` feat (bộ trang Lợi Nhuận, 17 file) — tách 2 commit đúng như đã hẹn.
+- Cách tách: chỉ `apps/index.html` lẫn cả hai loại thay đổi (4 đường dẫn ảnh WebP + card Lợi Nhuận + bộ đếm 19→20→21). Dựng bản trung gian bằng cách gỡ đúng khối card (dòng 743–775) và hạ bộ đếm về 20 để commit 1 đứng độc lập vẫn không có ảnh gãy; sau đó khôi phục nguyên bản đã kiểm bằng mắt cho commit 2. Đã đối chiếu `cmp` xác nhận file cuối giống hệt bản đã test.
+- KHÔNG commit: `doc/` (204 KB tài liệu nguồn copy từ 6 dự án khác — vi phạm nguyên tắc 1 của skill `appmaven-publish`, nên để nguyên untracked) và `.claude/settings.local.json` (danh sách quyền cục bộ của máy, không phải nội dung site).
+- Status: ✅ Done — push `61c666b..bb30258 main -> main` thành công.
+- Verification live: 6 URL đều trả 200 (`/apps/loi-nhuan/`, privacy, terms, blog, `/apps/`, `sitemap.xml`). Trang privacy live có đúng `com.appmaven.giaban.phisan`; `/apps/` live hiện đúng "All Apps (21)" và link `/apps/loi-nhuan/`. Đã xem bằng mắt trang giới thiệu và trang privacy trên tên miền thật bằng Chrome — hiển thị đúng như bản localhost đã duyệt.
+- Next: Dán `https://appmavenstudio.com/apps/loi-nhuan/privacy-policy.html` vào Play Console. Việc còn mở của repo này: nén lại ~19 MB WebP cũ, bổ sung 6 trang app thiếu trong sitemap, và cân nhắc xoá hẳn `doc/`.
