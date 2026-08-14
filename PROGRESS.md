@@ -336,3 +336,13 @@
 - Status: ✅ Done — push `61c666b..bb30258 main -> main` thành công.
 - Verification live: 6 URL đều trả 200 (`/apps/loi-nhuan/`, privacy, terms, blog, `/apps/`, `sitemap.xml`). Trang privacy live có đúng `com.appmaven.giaban.phisan`; `/apps/` live hiện đúng "All Apps (21)" và link `/apps/loi-nhuan/`. Đã xem bằng mắt trang giới thiệu và trang privacy trên tên miền thật bằng Chrome — hiển thị đúng như bản localhost đã duyệt.
 - Next: Dán `https://appmavenstudio.com/apps/loi-nhuan/privacy-policy.html` vào Play Console. Việc còn mở của repo này: nén lại ~19 MB WebP cũ, bổ sung 6 trang app thiếu trong sitemap, và cân nhắc xoá hẳn `doc/`.
+
+---
+
+### [2026-08-14 19:15] Claude Code
+- Task: Sửa 3 trang Lợi Nhuận cho khớp với ứng dụng sau khi gỡ UMP (bảng hỏi ý kiến quảng cáo).
+- Lý do: chủ ứng dụng chốt chỉ phát hành tại Việt Nam nên đã gỡ UMP khỏi ứng dụng. Ba trang đang hứa "sẽ hỏi ý kiến người dùng châu Âu" — hứa mà không làm là khai sai với Google Play, nên phải sửa.
+- Files: `apps/loi-nhuan/privacy-policy.html` (viết lại mục 3, bỏ hẳn mục 11 "Cơ sở pháp lý (châu Âu, Anh và Thuỵ Sĩ)" rồi đánh lại số 12–19 thành 11–18, sửa đoạn CCPA và mục "Dữ liệu xử lý ở nước ngoài", bỏ gạch đầu dòng "quyền rút lại sự đồng ý"), `apps/loi-nhuan/index.html` (câu trả lời FAQ về quảng cáo), `apps/loi-nhuan/terms-of-service.html` (mục quảng cáo).
+- Status: ✅ Done.
+- Verification: `verify_pages.py` PASS 0 cảnh báo · xem bằng mắt ở desktop 1440: mục 3 đọc trôi, mục 11 nối liền mục 12 không để lại khoảng trống, số thứ tự 1–18 liên tục không thủng · quét lại toàn bộ 4 trang không còn dấu vết "UMP", "sẽ hỏi ý kiến", "Tuỳ chọn quyền riêng tư quảng cáo", "Điều 6(1)".
+- Ràng buộc đi kèm (phía ứng dụng): phạm vi phát hành trên Play Console phải giữ ở Việt Nam. Nếu sau này mở bán ở châu Âu thì phải nối lại UMP trong ứng dụng VÀ khôi phục các mục đã gỡ ở trang này.

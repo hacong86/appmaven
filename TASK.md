@@ -341,3 +341,8 @@
 - [2026-08-14] [Claude Code]: Ngôn ngữ trang chọn **tiếng Việt** (`lang="vi"`) vì ứng dụng chỉ nhắm thị trường Việt Nam (phí Shopee/TikTok Shop/Lazada, thuế theo Nghị định 252/2026) — theo Bước 2 của skill, tự quyết theo thị trường app.
 - [2026-08-14] [Claude Code]: CÓ tạo Terms of Service dù ứng dụng miễn phí và không có mua trong ứng dụng, vì ứng dụng hiển thị quảng cáo AdMob và đưa ra con số phí/thuế cần điều khoản miễn trừ trách nhiệm.
 - [2026-08-14] [Claude Code]: Mọi khai báo trong chính sách bảo mật đều đối chiếu mã nguồn thật của dự án Flutter (AdMob + UMP, không Firebase, không Billing, không quyền hệ thống nào trong `AndroidManifest.xml`).
+
+- [x] [2026-08-14] Gỡ mọi nội dung nói về bảng hỏi ý kiến quảng cáo (UMP) khỏi 3 trang Lợi Nhuận — chủ ứng dụng chốt chỉ phát hành tại Việt Nam nên app không còn tính năng đó
+
+## Assumption Log
+- [2026-08-14] [Claude Code]: Bỏ hẳn mục "11. Cơ sở pháp lý (châu Âu, Anh và Thuỵ Sĩ)" trong chính sách thay vì để lại một mục rỗng, rồi đánh lại số 12–19 thành 11–18 để không thủng số thứ tự. Không thay bằng bảng cơ sở pháp lý theo luật Việt Nam vì chưa kiểm chứng được điều khoản cụ thể — không bịa nội dung pháp lý.
