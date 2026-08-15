@@ -347,3 +347,13 @@
 - Verification: `verify_pages.py` PASS 0 cảnh báo · xem bằng mắt ở desktop 1440: mục 3 đọc trôi, mục 11 nối liền mục 12 không để lại khoảng trống, số thứ tự 1–18 liên tục không thủng · quét lại toàn bộ 4 trang không còn dấu vết "UMP", "sẽ hỏi ý kiến", "Tuỳ chọn quyền riêng tư quảng cáo", "Điều 6(1)".
 - Ràng buộc đi kèm (phía ứng dụng): phạm vi phát hành trên Play Console phải giữ ở Việt Nam. Nếu sau này mở bán ở châu Âu thì phải nối lại UMP trong ứng dụng VÀ khôi phục các mục đã gỡ ở trang này.
 - Đã đẩy lên lúc 19:25 — commit `8b5e55b`, push thành công. Xác minh trên tên miền thật: cả 3 trang trả 200 và **0 dấu vết** của "sẽ hỏi ý kiến" / "Google UMP" / "Tuỳ chọn quyền riêng tư quảng cáo" / "Điều 6(1)"; số thứ tự mục trên trang chính sách chạy liên tục 1–18 không thủng.
+
+---
+
+### [2026-08-14 20:25] Claude Code
+- Task: Sửa đoạn thuế trên trang giới thiệu Lợi Nhuận cho khớp thực tế (sau review của Codex).
+- Vấn đề: trang nói người có doanh thu ≤1 tỷ "thuộc diện không phải nộp thuế" nhưng bỏ mất chi tiết quan trọng — **sàn VẪN khấu trừ trong năm**, người bán phải thông báo doanh thu với cơ quan thuế chậm nhất 31/01 rồi mới xin hoàn phần nộp thừa. Viết như cũ dễ khiến người bán tưởng tiền về tay ngay là số đã miễn thuế.
+- Đã kiểm chứng nguồn: Cổng Xây dựng chính sách (Chính phủ) — *"nếu số thuế nền tảng đã khấu trừ, nộp thay lớn hơn số phải nộp, bạn được đề nghị hoàn thuế theo quy định"*.
+- Files: `apps/loi-nhuan/index.html`.
+- Status: ✅ Done. Cùng nội dung này đã sửa đồng bộ trong ứng dụng (màn Giới thiệu, màn Biểu phí sàn) và trong mô tả cửa hàng Google Play.
+- Verification: `verify_pages.py` PASS 0 cảnh báo.
