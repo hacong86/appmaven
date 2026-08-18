@@ -86,9 +86,23 @@
 
   <url>
     <loc>https://appmavenstudio.com/apps/gieo-que-hoi-viec/</loc>
-    <lastmod>2026-01-25</lastmod>
+    <lastmod>2026-08-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://appmavenstudio.com/apps/gieo-que-hoi-viec/privacy-policy.html</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://appmavenstudio.com/apps/gieo-que-hoi-viec/terms-of-service.html</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
   </url>
 
   <url>

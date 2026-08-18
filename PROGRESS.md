@@ -357,3 +357,25 @@
 - Files: `apps/loi-nhuan/index.html`.
 - Status: ✅ Done. Cùng nội dung này đã sửa đồng bộ trong ứng dụng (màn Giới thiệu, màn Biểu phí sàn) và trong mô tả cửa hàng Google Play.
 - Verification: `verify_pages.py` PASS 0 cảnh báo.
+
+---
+
+### [2026-08-18 20:10] Claude Code
+- Task: Tạo trang Chính sách quyền riêng tư + Điều khoản cho **Gieo Quẻ Hỏi Việc**, và sửa lại trang giới thiệu cho khớp thực tế ứng dụng.
+- **Vì sao phải sửa trang giới thiệu:** trang đang mô tả một sản phẩm khác hẳn ứng dụng thật.
+  - Nói "dựa trên Kinh Dịch" — ứng dụng **không** dùng Kinh Dịch. Kinh Dịch có 64 quẻ; ứng dụng có 512 quẻ theo 64 chủ đề × 8 mặt ngửa, là hệ thống riêng.
+  - Nói "dựa trên cuốn *Tiên Thiên Phá Số — Di Bốc Tiên Tri* của cụ Thiệu Khang Tiết" và "biên tập bởi chuyên gia 40 năm kinh nghiệm" — toàn bộ lời giải **do đội ngũ biên soạn**, không lấy từ sách nào.
+  - "Ứng dụng số 1 Việt Nam", "xem bói Kinh Dịch **chuẩn xác nhất**", "khám phá tương lai" — khẳng định không có căn cứ; với ứng dụng bói toán còn là rủi ro chính sách Google Play.
+  - Mục FAQ "Ứng dụng này có chính xác không?" trả lời rằng phương pháp "cổ xưa và uy tín" — viết lại thành nói thẳng: quẻ chọn ngẫu nhiên rồi ghép lời giải soạn sẵn, không dự đoán được tương lai.
+  - Số liệu sai: "60+ Chủ Đề" → **64**; "512 Quẻ Dịch" → **512 Quẻ**.
+  - Mục "Sức Khoẻ: Bệnh tật, thai sản" → đổi thành "Sức Khoẻ & Nếp Sống" cho khớp nội dung an toàn đã làm trong ứng dụng.
+- **Đã quét lại toàn trang**: 0 lần "Kinh Dịch", 0 "số 1", 0 "chuẩn xác nhất", 0 "Tiên Thiên Phá Số", 0 "Di Bốc", 0 "tiên tri", 0 "khám phá tương lai", 0 "vận mệnh".
+- **Trang mới**: `privacy-policy.html` và `terms-of-service.html` (tiếng Việt).
+  - Nội dung khai báo đối chiếu mã nguồn thật: chỉ `google_mobile_ads 9.1.0` thu thập dữ liệu; không đăng nhập, không máy chủ, không Firebase, không mua trong ứng dụng.
+  - Nêu đúng 4 loại dữ liệu quảng cáo thu: vị trí gần đúng (từ IP), tương tác trong ứng dụng, thông tin chẩn đoán, mã nhận dạng thiết bị.
+  - Có mục **Cơ sở pháp lý tại Việt Nam** — Luật Bảo vệ dữ liệu cá nhân 91/2025/QH15 (hiệu lực 01/01/2026) và Nghị định 356/2025/NĐ-CP.
+  - CÓ tạo Điều khoản vì ứng dụng hiển thị quảng cáo AdMob.
+- **Ràng buộc phía ứng dụng đã xử lý cùng đợt này**: tắt `android:allowBackup` — trước đó Android tự sao lưu lịch sử gieo quẻ lên Google Drive, khiến câu "dữ liệu không rời khỏi máy bạn" trong chính sách là **sai sự thật**. Nay đã đúng.
+- Files: `apps/gieo-que-hoi-viec/index.html` (sửa), `apps/gieo-que-hoi-viec/privacy-policy.html` (mới), `apps/gieo-que-hoi-viec/terms-of-service.html` (mới), `sitemap.xml`, `privacy-policy.html` (gốc), `terms-of-service.html` (gốc).
+- Verification: `verify_pages.py` **PASS 0 cảnh báo**. Trình duyệt: desktop 1440 và mobile 390 đều không tràn ngang, 0 ảnh hỏng.
+- URL dán vào Play Console: https://appmavenstudio.com/apps/gieo-que-hoi-viec/privacy-policy.html

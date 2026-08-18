@@ -20,6 +20,9 @@
 - **Đang làm tiếp gì:** Chờ yêu cầu mới từ người dùng.
 - **Updated at:** 2026-04-06 16:48 PM
 
+- [x] [2026-08-18] Tạo `privacy-policy.html` + `terms-of-service.html` cho Gieo Quẻ Hỏi Việc (tiếng Việt)
+- [x] [2026-08-18] Sửa trang giới thiệu Gieo Quẻ Hỏi Việc: gỡ toàn bộ khẳng định sai về Kinh Dịch, nguồn sách, "số 1 Việt Nam", "chuẩn xác nhất"; sửa số liệu 60+ → 64 chủ đề
+
 ## Assumption Log
 - [2026-03-25] Icon: `Icon_ChPlay.png` tại thư mục ảnh ShiftCheck
 - [2026-03-25] Ảnh màn hình: `Checklist01.png` đến `Checklist06.png`
@@ -346,3 +349,4 @@
 
 ## Assumption Log
 - [2026-08-14] [Claude Code]: Bỏ hẳn mục "11. Cơ sở pháp lý (châu Âu, Anh và Thuỵ Sĩ)" trong chính sách thay vì để lại một mục rỗng, rồi đánh lại số 12–19 thành 11–18 để không thủng số thứ tự. Không thay bằng bảng cơ sở pháp lý theo luật Việt Nam vì chưa kiểm chứng được điều khoản cụ thể — không bịa nội dung pháp lý.
+- [2026-08-18] [Claude Code]: Trang Gieo Quẻ Hỏi Việc dùng **tiếng Việt** (`lang="vi"`) — ứng dụng chỉ phát hành tại Việt Nam. CÓ tạo Điều khoản vì ứng dụng có quảng cáo AdMob. Giữ lại phần nói về bảng hỏi ý kiến quảng cáo cho người dùng ở châu Âu, vì ứng dụng vẫn chạy cơ chế đó ngầm (người dùng Việt Nam không thấy gì, người đang ở châu Âu vẫn được hỏi đúng luật) — khác với cách xử lý của app Lợi Nhuận trước đây.
