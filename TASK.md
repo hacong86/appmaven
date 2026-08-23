@@ -23,6 +23,10 @@
 - [x] [2026-08-18] Tạo `privacy-policy.html` + `terms-of-service.html` cho Gieo Quẻ Hỏi Việc (tiếng Việt)
 - [x] [2026-08-18] Sửa trang giới thiệu Gieo Quẻ Hỏi Việc: gỡ toàn bộ khẳng định sai về Kinh Dịch, nguồn sách, "số 1 Việt Nam", "chuẩn xác nhất"; sửa số liệu 60+ → 64 chủ đề
 
+- [x] [2026-08-23] Dung lai trang Gieo Que Hoi Viec - Xin Xam cho ban build moi: doi ten,
+      logo moi, 8 anh chup moi, bo sung quang cao dai vao chinh sach bao mat
+- [x] [2026-08-23] Go not "I Ching" con sot trong card o `apps/index.html`
+
 ## Assumption Log
 - [2026-03-25] Icon: `Icon_ChPlay.png` tại thư mục ảnh ShiftCheck
 - [2026-03-25] Ảnh màn hình: `Checklist01.png` đến `Checklist06.png`

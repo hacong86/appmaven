@@ -379,3 +379,31 @@
 - Files: `apps/gieo-que-hoi-viec/index.html` (sửa), `apps/gieo-que-hoi-viec/privacy-policy.html` (mới), `apps/gieo-que-hoi-viec/terms-of-service.html` (mới), `sitemap.xml`, `privacy-policy.html` (gốc), `terms-of-service.html` (gốc).
 - Verification: `verify_pages.py` **PASS 0 cảnh báo**. Trình duyệt: desktop 1440 và mobile 390 đều không tràn ngang, 0 ảnh hỏng.
 - URL dán vào Play Console: https://appmavenstudio.com/apps/gieo-que-hoi-viec/privacy-policy.html
+
+---
+
+### [2026-08-23 11:00] Claude Code
+- Task: Dung lai toan bo trang **Gieo Que Hoi Viec - Xin Xam** cho ban build moi hoan toan.
+- **Vi sao phai lam lai:** app da doi ten (them "- Xin Xam" khop Play Console), doi logo
+  (bo chu Han), them quang cao dai (banner) thanh 4 loai quang cao, va co bo 8 anh chup moi.
+  Trang web giu thong tin cu se khong khop voi ban tren Play.
+- **Ba loi phat hien khi lam:**
+  1. Card app trong `apps/index.html` van ghi "I Ching fortune telling..." — tuc Kinh Dich,
+     dung thu da go khoi trang app hoi 18/08 nhung con sot cho nay. Da thay bang mo ta dung.
+  2. Emoji dong xu (U+1FA99, chuan 2020) hien thanh o vuong tren font Windows -> doi sang
+     ☯ va 🔮.
+  3. Ten dai hon lam vo tieu de tren mobile (6 dong). Da dat `clamp()` cho co chu tu co
+     theo be ngang man hinh -> con 3 dong.
+- **Chinh sach bao mat:** muc 3 nay liet ke DU 4 vi tri quang cao (mo ung dung / dai day
+  Trang chu / quang cao goc trong Lich su va cuoi man ket qua / toan man hinh). Muc 8 ghi ro
+  lan cap nhat nay CHI them cho hien thi, **cac loai du lieu thu thap khong doi** — van la
+  Google AdMob voi 4 loai du lieu cu, nen khong phai khai lai Data Safety.
+- **Anh:** thay 4 anh cu (gieoque01-04) bang 8 anh chup moi + icon moi + anh noi bat.
+  17,9 MB -> 1,1 MB (tiet kiem 94%). Da xoa anh cu sau khi xac minh khong noi nao con dung.
+- Files: `apps/gieo-que-hoi-viec/{index,privacy-policy,terms-of-service}.html`,
+  `apps/index.html`, `sitemap.xml`, `privacy-policy.html` (goc), `terms-of-service.html` (goc),
+  `assets/images/apps/gieo-que-hoi-viec/` (10 file webp moi, 4 file cu bi xoa)
+- Verification: `verify_pages.py` **PASS 0 canh bao**. Trinh duyet: desktop 1440 OK;
+  mobile 390 — noi dung 378px < viewport 390px, 0 phan tu tran, 0 loi console.
+  (Doi chieu: app FocusOne cung template bi CAT CHU o mobile, trang nay thi khong.)
+- URL dan vao Play Console: https://appmavenstudio.com/apps/gieo-que-hoi-viec/privacy-policy.html
