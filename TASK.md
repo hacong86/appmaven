@@ -373,3 +373,16 @@
 - [2026-08-28] [Claude Code]: Ngày "Cập nhật lần cuối 06/08/2026" trong chính sách bảo mật lấy từ ngày commit thật của file (`git log` — commit duy nhất 2026-08-06), không phải ngày tự đặt.
 - [2026-08-28] [Claude Code]: Ảnh minh hoạ dùng dữ liệu cửa hàng GIẢ (Cửa hàng Minh Anh, 3 khách hàng, 8 sản phẩm) nạp thẳng vào SQLite của máy ảo, vì `adb input text` không gõ được tiếng Việt có dấu. Không có dữ liệu thật của người dùng nào trong ảnh.
 - [2026-08-28] [Claude Code]: Ảnh màn hình Nâng cấp Pro bị CẮT phần dưới, vì máy ảo không kết nối được Google Play nên hiện thông báo lỗi kết nối — giữ lại đúng phần danh sách quyền lợi.
+
+## [2026-08-29] Mã khuyến mãi Pro trên bài hướng dẫn
+
+## Checklist
+- [x] Đăng 30 mã dùng thử Pro (10 mã 90 ngày + 20 mã 30 ngày) vào mục mới "Mã dùng thử Pro miễn phí"
+- [x] Ghi rõ 3 cảnh báo: mã dùng một lần, hết dùng thử tự gia hạn có tính tiền, hạn 30/11/2026
+- [x] Thêm số điện thoại hỗ trợ 0972 865 336 vào mục Liên hệ
+- [x] `verify_pages.py` PASS · kiểm mắt desktop 1440 + mobile 390 · push `f84473a` · xác minh live
+
+## Assumption Log
+- [2026-08-29] [Claude Code]: KHÔNG đăng mã tặng Pro trọn đời 100% lên trang — mã đó dành riêng cho một khách hàng, chủ dự án tự gửi.
+- [2026-08-29] [Claude Code]: Google Play không tạo được mã giảm 50%/30% (mã sản phẩm mua đứt luôn 100%, mã thuê bao chỉ có số ngày dùng thử). Chủ dự án chốt thay bằng mã dùng thử miễn phí.
+

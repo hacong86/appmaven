@@ -434,3 +434,22 @@
 - Status: ✅ Xong phan dung trang — **CHUA commit, CHUA push**, cho chu du an duyet.
 - Next: duyet xong thi commit + push, kiem URL live tra ve 200, roi moi build AAB 1.1.1.
 - URL sau khi day len: https://appmavenstudio.com/apps/invoice-studio/huong-dan-su-dung.html
+
+### [2026-08-29] Claude Code — Dang ma khuyen mai Pro len bai huong dan
+- **Task:** Them muc "Ma dung thu Pro mien phi" vao `apps/invoice-studio/huong-dan-su-dung.html`
+  + so dien thoai ho tro.
+- **Boi canh:** Chu du an muon 10 ma giam 50% + 20 ma giam 30%. Kiem tra tren form Play Console:
+  ma cho san pham mua dut CHI co o "so luong ma" (luon 100% off), ma cho thue bao CHI co o
+  "so ngay dung thu". Khong co o phan tram o bat ky dau. Giam % that phai dung "Percentage offer"
+  (Products -> One-time products -> Add offer -> Discount) nhung thu do KHONG co ma va app phai
+  sua code moi goi duoc. Chu du an chot thay bang ma dung thu mien phi.
+- **Da tao 3 khuyen mai trong Play Console** (app 4975782640292702308):
+  - `123776677` Tang Pro tron doi - 1 ma 100% off `pro_lifetime` (KHONG dang len web)
+  - `123781185` Dung thu Pro 90 ngay - 10 ma, subscription `pro`
+  - `123862574` Dung thu Pro 30 ngay - 20 ma, subscription `pro`
+  - Tat ca: 29/08/2026 -> 30/11/2026
+- Files: `apps/invoice-studio/huong-dan-su-dung.html`, `TASK.md`, `PROGRESS.md`
+- Verification: verify_pages.py **PASS**; desktop 1440 + mobile 390 OK (0 tran ngang);
+  live check: 30/30 ma co tren trang, co so dien thoai, **khong lo ma 100%**.
+- Commit `f84473a` da push.
+
