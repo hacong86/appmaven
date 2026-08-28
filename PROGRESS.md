@@ -407,3 +407,30 @@
   mobile 390 — noi dung 378px < viewport 390px, 0 phan tu tran, 0 loi console.
   (Doi chieu: app FocusOne cung template bi CAT CHU o mobile, trang nay thi khong.)
 - URL dan vao Play Console: https://appmavenstudio.com/apps/gieo-que-hoi-viec/privacy-policy.html
+
+### [2026-08-28] Claude Code — Trang Huong dan su dung cho app Tao Hoa Don
+- **Task:** Tao bai huong dan su dung chi tiet kem anh chup man hinh day du (URL nay duoc
+  app 1.1.1 tro toi tu Cai dat -> Tro giup -> Huong dan su dung, nen PHAI song truoc khi
+  phat hanh ban cap nhat).
+- **Anh:** chup 13 man hinh that tren may ao Android (Trang chu, Cai dat, soan chung tu,
+  bao gia, xem truoc, ghi khoan thu, cong no, khach hang, chi tiet khach, tat ca chung tu,
+  san pham, sao luu, nang cap Pro). Du lieu trong anh la du lieu GIA nap thang vao SQLite
+  (adb input text khong go duoc tieng Viet co dau). 2463 KB -> 710 KB webp (-71%).
+- **Trang:** `apps/invoice-studio/huong-dan-su-dung.html` — 14 muc, muc luc 2 cot, bang so
+  sanh 3 loai chung tu, 8 cau hoi thuong gap. Co canh bao ro rang: **khach chi vao danh ba
+  khi chung tu co so dien thoai** — day chinh la loi nguoi dung phan anh, da sua o 1.1.1.
+- **Noi vao site:** `sitemap.xml` (+1 URL), the "Bao Mat & Rieng Tu" + cot "Phap Ly" o
+  `apps/invoice-studio/index.html`.
+- **Hai loi cu sua luon:** favicon gay `/assets/images/logo/favicon.png` (file khong ton tai)
+  o `index.html`; thieu nhan "Ngay hieu luc"/"Cap nhat lan cuoi" o `privacy-policy.html`
+  (ngay lay tu git log, KHONG doi noi dung chinh sach).
+- Files: `apps/invoice-studio/huong-dan-su-dung.html` (moi), `apps/invoice-studio/index.html`,
+  `apps/invoice-studio/privacy-policy.html`, `sitemap.xml`,
+  `assets/images/apps/invoice-studio/hd1..hd13-*.webp` (13 file moi)
+- Verification: `verify_pages.py` **PASS** (3 canh bao cu: title dai, meta description dai,
+  khong co terms-of-service). Trinh duyet: desktop 1440 OK, bo cuc chu-trai/anh-phai chuan;
+  mobile 390 — noi dung 378px < viewport 390px, 0 phan tu tran, bang tu cuon ngang trong
+  khung rieng, 0 loi console.
+- Status: ✅ Xong phan dung trang — **CHUA commit, CHUA push**, cho chu du an duyet.
+- Next: duyet xong thi commit + push, kiem URL live tra ve 200, roi moi build AAB 1.1.1.
+- URL sau khi day len: https://appmavenstudio.com/apps/invoice-studio/huong-dan-su-dung.html

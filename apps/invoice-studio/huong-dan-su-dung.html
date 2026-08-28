@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Hướng dẫn sử dụng - Tạo Hóa Đơn &amp; Quản Lý Shop | AppMaven</title>
+  <meta name="description"
+    content="Hướng dẫn sử dụng chi tiết ứng dụng Tạo Hóa Đơn &amp; Quản Lý Shop: điền thông tin cửa hàng, tạo báo giá và hóa đơn, gửi cho khách, ghi khoản thu, theo dõi công nợ, quản lý khách hàng, sản phẩm và sao lưu dữ liệu.">
+  <link rel="canonical" href="https://appmavenstudio.com/apps/invoice-studio/huong-dan-su-dung.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://appmavenstudio.com/apps/invoice-studio/huong-dan-su-dung.html">
+  <meta property="og:title" content="Hướng dẫn sử dụng - Tạo Hóa Đơn &amp; Quản Lý Shop">
+  <meta property="og:description"
+    content="Từ lúc mở app lần đầu đến khi gửi hóa đơn cho khách và theo dõi công nợ — hướng dẫn từng bước kèm ảnh chụp màn hình thật.">
+  <meta property="og:image" content="https://appmavenstudio.com/assets/images/apps/invoice-studio/hd1-trang-chu.webp">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hướng dẫn sử dụng - Tạo Hóa Đơn &amp; Quản Lý Shop">
+  <meta name="twitter:description"
+    content="Hướng dẫn từng bước kèm ảnh chụp màn hình thật: tạo chứng từ, gửi khách, thu tiền, theo dõi công nợ.">
+  <meta name="twitter:image" content="https://appmavenstudio.com/assets/images/apps/invoice-studio/hd1-trang-chu.webp">
+
+  <link rel="icon" type="image/png" href="/assets/images/logo/appmaven_logo.png">
+  <link rel="stylesheet" href="/assets/css/variables.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+
+  <style>
+    .guide-container {
+      max-width: 980px;
+      margin: var(--space-8) auto var(--space-12);
+      padding: var(--space-12) var(--space-8);
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-xl);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    .guide-content {
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+    }
+
+    .guide-content h1 {
+      margin-bottom: var(--space-3);
+      color: white;
+      font-size: clamp(2rem, 5vw, 2.75rem);
+      line-height: 1.2;
+      background: linear-gradient(to right, #fff, #6ee7b7);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .guide-content h2 {
+      margin-top: var(--space-12);
+      margin-bottom: var(--space-4);
+      padding-bottom: var(--space-2);
+      color: white;
+      font-size: 1.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      scroll-margin-top: 90px;
+    }
+
+    .guide-content h3 {
+      margin-top: var(--space-6);
+      margin-bottom: var(--space-3);
+      color: #d1fae5;
+      font-size: 1.15rem;
+    }
+
+    .guide-content p,
+    .guide-content ul,
+    .guide-content ol {
+      margin-bottom: var(--space-4);
+    }
+
+    .guide-content ul,
+    .guide-content ol {
+      padding-left: var(--space-6);
+    }
+
+    .guide-content li {
+      margin-bottom: var(--space-2);
+    }
+
+    .guide-content a {
+      color: #6ee7b7;
+      overflow-wrap: anywhere;
+    }
+
+    .guide-content strong {
+      color: #ecfdf5;
+    }
+
+    .guide-content code {
+      padding: 2px 6px;
+      border-radius: 6px;
+      background: rgba(110, 231, 183, 0.12);
+      color: #a7f3d0;
+      font-size: 0.92em;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      margin-bottom: var(--space-5);
+      color: #6ee7b7;
+      text-decoration: none;
+    }
+
+    .lead {
+      font-size: 1.05rem;
+    }
+
+    /* --- Mục lục --- */
+    .toc {
+      margin: var(--space-6) 0 var(--space-10);
+      padding: var(--space-5) var(--space-6);
+      border: 1px solid rgba(110, 231, 183, 0.24);
+      border-radius: var(--radius-lg);
+      background: rgba(16, 185, 129, 0.08);
+    }
+
+    .toc h2 {
+      margin: 0 0 var(--space-3);
+      padding: 0;
+      border: 0;
+      font-size: 1.05rem;
+      color: #ecfdf5;
+    }
+
+    .toc ol {
+      margin: 0;
+      padding-left: var(--space-6);
+      columns: 2;
+      column-gap: var(--space-8);
+    }
+
+    .toc li {
+      margin-bottom: var(--space-1);
+      break-inside: avoid;
+    }
+
+    /* --- Bước có ảnh --- */
+    .step {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: var(--space-8);
+      align-items: start;
+      margin-bottom: var(--space-8);
+    }
+
+    .step-text > :last-child {
+      margin-bottom: 0;
+    }
+
+    .shot {
+      margin: 0;
+      text-align: center;
+    }
+
+    .shot a {
+      display: block;
+      border-radius: 18px;
+    }
+
+    .shot img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 18px;
+      background: #0b1220;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+    }
+
+    .shot figcaption {
+      margin-top: var(--space-2);
+      color: var(--color-text-muted, #94a3b8);
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+
+    .shot-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: var(--space-6);
+      margin: var(--space-6) 0 var(--space-8);
+    }
+
+    /* --- Hộp ghi chú --- */
+    .note,
+    .warn {
+      margin: var(--space-5) 0;
+      padding: var(--space-5);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(110, 231, 183, 0.24);
+      background: rgba(16, 185, 129, 0.08);
+    }
+
+    .warn {
+      border-color: rgba(251, 191, 36, 0.32);
+      background: rgba(245, 158, 11, 0.1);
+    }
+
+    .note > :last-child,
+    .warn > :last-child {
+      margin-bottom: 0;
+    }
+
+    .note-title {
+      display: block;
+      margin-bottom: var(--space-2);
+      color: #ecfdf5;
+      font-weight: 600;
+    }
+
+    /* --- Bảng --- */
+    .table-wrap {
+      overflow-x: auto;
+      margin: var(--space-5) 0 var(--space-8);
+    }
+
+    table {
+      width: 100%;
+      min-width: 520px;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+
+    th,
+    td {
+      padding: var(--space-3) var(--space-4);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      color: #ecfdf5;
+      font-weight: 600;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    /* --- FAQ --- */
+    details {
+      margin-bottom: var(--space-3);
+      padding: var(--space-4) var(--space-5);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    summary {
+      cursor: pointer;
+      color: #ecfdf5;
+      font-weight: 600;
+      min-height: 28px;
+    }
+
+    details p {
+      margin: var(--space-3) 0 0;
+    }
+
+    details > :last-child {
+      margin-bottom: 0;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-4);
+      margin-top: var(--space-8);
+    }
+
+    .cta-row .btn {
+      min-height: 48px;
+    }
+
+    @media (max-width: 780px) {
+      .step {
+        grid-template-columns: 1fr;
+        gap: var(--space-5);
+      }
+
+      .shot {
+        max-width: 300px;
+        margin: 0 auto;
+      }
+
+      .toc ol {
+        columns: 1;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .guide-container {
+        margin-top: var(--space-4);
+        padding: var(--space-8) var(--space-4);
+        border-radius: var(--radius-lg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar" role="navigation" aria-label="Điều hướng chính">
+    <div class="navbar-container">
+      <a href="/" class="navbar-logo" aria-label="Trang chủ AppMaven Studio">
+        <img src="/assets/images/logo/appmaven_logo.png" alt="Logo AppMaven Studio"
+          style="height: 32px; width: 32px; border-radius: 8px;">
+        <span>AppMaven Studio</span>
+      </a>
+      <button class="navbar-toggle" aria-label="Mở menu điều hướng" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="navbar-menu" role="menubar">
+        <li role="none"><a href="/" role="menuitem">Home</a></li>
+        <li role="none"><a href="/apps/" class="active" role="menuitem">Apps</a></li>
+        <li role="none"><a href="/blog/" role="menuitem">Blog</a></li>
+        <li role="none"><a href="/about/" role="menuitem">About</a></li>
+        <li role="none"><a href="/support/" role="menuitem">Support</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="cosmic-background"></div>
+
+  <main style="padding: var(--header-height) var(--space-4) 0;">
+    <article class="guide-container">
+      <div class="guide-content">
+        <a class="back-link" href="/apps/invoice-studio/" aria-label="Quay lại trang Tạo Hóa Đơn">
+          <span aria-hidden="true">←</span> Tạo Hóa Đơn &amp; Quản Lý Shop
+        </a>
+
+        <h1>Hướng dẫn sử dụng</h1>
+        <p class="lead">Bài này đi từ lúc bạn mở ứng dụng lần đầu cho tới khi gửi hóa đơn cho khách, thu tiền và
+          theo dõi ai còn nợ bao nhiêu. Mỗi phần đều có ảnh chụp màn hình thật của ứng dụng để bạn đối chiếu.
+          Bạn không cần biết gì về kế toán hay máy tính — cứ làm theo thứ tự là được.</p>
+
+        <nav class="toc" aria-label="Mục lục">
+          <h2>Nội dung</h2>
+          <ol>
+            <li><a href="#buoc-1">Bước 1 — Điền thông tin cửa hàng</a></li>
+            <li><a href="#buoc-2">Bước 2 — Tạo chứng từ đầu tiên</a></li>
+            <li><a href="#buoc-3">Bước 3 — Xem trước và gửi cho khách</a></li>
+            <li><a href="#ba-loai">Ba loại chứng từ và khi nào dùng</a></li>
+            <li><a href="#trang-chu">Đọc màn hình Trang chủ</a></li>
+            <li><a href="#thu-tien">Ghi tiền khách đã trả</a></li>
+            <li><a href="#cong-no">Sổ công nợ — ai còn nợ bao nhiêu</a></li>
+            <li><a href="#khach-hang">Danh bạ khách hàng</a></li>
+            <li><a href="#san-pham">Sản phẩm và tồn kho</a></li>
+            <li><a href="#chung-tu">Tìm lại chứng từ cũ</a></li>
+            <li><a href="#sao-luu">Sao lưu và chuyển sang máy mới</a></li>
+            <li><a href="#ban-pro">Bản Pro có gì thêm</a></li>
+            <li><a href="#faq">Câu hỏi thường gặp</a></li>
+            <li><a href="#ho-tro">Liên hệ hỗ trợ</a></li>
+          </ol>
+        </nav>
+
+        <div class="note">
+          <span class="note-title">Trước khi bắt đầu</span>
+          <p>Toàn bộ dữ liệu của bạn nằm <strong>trong máy của bạn</strong>, không có tài khoản, không cần đăng nhập,
+            không cần mạng để tạo chứng từ. Đổi lại, máy mất hoặc gỡ ứng dụng là dữ liệu mất theo — nên hãy đọc phần
+            <a href="#sao-luu">Sao lưu</a> ngay khi bạn bắt đầu dùng thật.</p>
+        </div>
+
+        <h2 id="buoc-1">Bước 1 — Điền thông tin cửa hàng</h2>
+        <div class="step">
+          <div class="step-text">
+            <p>Đây là việc <strong>phải làm đầu tiên</strong>. Tên, số điện thoại và địa chỉ cửa hàng sẽ được in lên
+              đầu mọi báo giá và hóa đơn bạn gửi cho khách. Bỏ trống thì chứng từ gửi đi bị trống phần đầu trang,
+              nhìn rất thiếu chuyên nghiệp.</p>
+            <p>Cách vào: ở Trang chủ, bấm biểu tượng <strong>bánh răng</strong> ở góc trên bên phải.</p>
+            <ol>
+              <li><strong>Tên cửa hàng</strong> — bắt buộc. Ví dụ: <em>Cửa hàng Minh Anh</em>.</li>
+              <li><strong>Số điện thoại</strong> — khách gọi lại theo số này.</li>
+              <li><strong>Địa chỉ</strong> — hiện dưới tên cửa hàng.</li>
+              <li><strong>Email</strong> — không bắt buộc.</li>
+              <li><strong>Thông tin ngân hàng</strong> — chọn tên ngân hàng trong danh sách, nhập số tài khoản và
+                tên chủ tài khoản <em>viết không dấu, in hoa</em> đúng như trên thẻ. Điền phần này thì hóa đơn mới
+                hiện mã QR chuyển khoản cho khách quét.</li>
+            </ol>
+            <p>Điền xong bấm <strong>Lưu</strong> ở góc trên bên phải. Nếu chưa bấm Lưu mà thoát ra, thông tin sẽ
+              không được ghi lại.</p>
+          </div>
+          <figure class="shot">
+            <a href="/assets/images/apps/invoice-studio/hd2-cai-dat-cua-hang.webp" target="_blank" rel="noopener noreferrer" aria-label="Mở ảnh cỡ lớn"><img src="/assets/images/apps/invoice-studio/hd2-cai-dat-cua-hang.webp" width="1078" height="2400"
+              loading="lazy" decoding="async"
+              alt="Màn hình Cài đặt với các ô Tên cửa hàng, số điện thoại, địa chỉ và thông tin ngân hàng đã điền"></a>
+            <figcaption>Màn hình Cài đặt — phần Thông tin cửa hàng và Thông tin ngân hàng.</figcaption>
+          </figure>
+        </div>
+
+        <div class="note">
+          <span class="note-title">Thẻ nhắc màu cam ở Trang chủ</span>
+          <p>Khi chưa có tên cửa hàng, Trang chủ hiện một thẻ <em>“Chưa có tên cửa hàng”</em>. Bấm vào thẻ đó là vào
+            thẳng màn hình Cài đặt. Điền xong tên cửa hàng thì thẻ tự biến mất.</p>
+        </div>
+
+        <h2 id="buoc-2">Bước 2 — Tạo chứng từ đầu tiên</h2>
+        <div class="step">
+          <div class="step-text">
+            <p>Ở Trang chủ, mục <strong>Tạo nhanh</strong> có ba nút: <strong>Báo giá</strong>,
+              <strong>Hóa đơn</strong>, <strong>Đặt hàng</strong>. Bấm nút tương ứng với việc bạn đang cần làm
+              (xem <a href="#ba-loai">Ba loại chứng từ</a> nếu chưa chắc chọn cái nào).</p>
+
+            <h3>Phần “Thông tin khách hàng”</h3>
+            <ul>
+              <li><strong>Tên khách</strong> — gõ tên là app tự gợi ý những khách đã có; chọn một gợi ý thì số điện
+                thoại và địa chỉ tự điền theo.</li>
+              <li><strong>Số điện thoại</strong> — rất nên nhập, xem cảnh báo ngay dưới đây.</li>
+              <li><strong>Địa chỉ</strong> — không bắt buộc.</li>
+            </ul>
+            <p>Ba ô này đều có <strong>biểu tượng micrô</strong> bên phải: bấm rồi đọc, app tự gõ thay bạn. Rất tiện
+              khi tay đang bận gói hàng.</p>
+
+            <h3>Phần “Sản phẩm / Dịch vụ”</h3>
+            <ul>
+              <li><strong>Tên sản phẩm</strong> — gõ tên, app gợi ý từ kho sản phẩm; chọn gợi ý thì đơn giá và đơn vị
+                tự điền.</li>
+              <li><strong>Quy cách, kích thước</strong> — dòng mô tả thêm, ví dụ <em>“màu đen, size L”</em>.</li>
+              <li><strong>Số lượng — Đơn vị — Đơn giá</strong> — app tự nhân ra <em>Thành tiền</em> ngay bên dưới.</li>
+              <li><strong>Giảm giá</strong> — chọn <em>Không</em>, <em>Tiền</em> (giảm số tiền cụ thể) hoặc
+                <em>%</em>.</li>
+            </ul>
+            <p>Cần thêm mặt hàng thì kéo xuống cuối và bấm nút thêm sản phẩm. Muốn bỏ một mặt hàng thì bấm biểu tượng
+              <strong>thùng rác</strong> đỏ ở dòng đó.</p>
+            <p>Thanh dưới cùng luôn hiện <strong>Tổng cộng</strong>. Xong thì bấm <strong>Xem trước</strong> — đây
+              cũng chính là lúc chứng từ được lưu lại.</p>
+          </div>
+          <figure class="shot">
+            <a href="/assets/images/apps/invoice-studio/hd3-soan-hoa-don.webp" target="_blank" rel="noopener noreferrer" aria-label="Mở ảnh cỡ lớn"><img src="/assets/images/apps/invoice-studio/hd3-soan-hoa-don.webp" width="1078" height="2400"
+              loading="lazy" decoding="async"
+              alt="Màn hình soạn hóa đơn với thông tin khách hàng và hai dòng sản phẩm, tổng cộng 5.200.000 đồng"></a>
+            <figcaption>Màn hình soạn chứng từ — thông tin khách ở trên, danh sách hàng hóa ở dưới.</figcaption>
+          </figure>
+        </div>
+
+        <div class="warn">
+          <span class="note-title">Quan trọng: muốn lưu khách vào danh bạ thì phải có số điện thoại</span>
+          <p>Ứng dụng nhận diện khách hàng <strong>bằng số điện thoại</strong>. Nếu bạn chỉ gõ tên mà bỏ trống ô số
+            điện thoại, chứng từ vẫn được lưu bình thường, nhưng khách đó <strong>không</strong> vào danh bạ Khách
+            hàng và cũng không được cộng vào sổ công nợ. Khi đó app sẽ báo:
+            <em>“Đã lưu chứng từ. Chưa lưu khách vào danh bạ vì thiếu số điện thoại.”</em></p>
+          <p>Nếu lỡ quên, cứ mở lại chứng từ đó, bấm biểu tượng <strong>bút chì</strong>, điền số điện thoại rồi lưu
+            lại — khách sẽ được đưa vào danh bạ.</p>
+        </div>
+
+        <h2 id="buoc-3">Bước 3 — Xem trước và gửi cho khách</h2>
+        <div class="step">
+          <div class="step-text">
+            <p>Màn hình <strong>Xem trước</strong> cho bạn thấy đúng những gì khách sẽ nhận: đầu trang là cửa hàng của
+              bạn, giữa là thông tin khách và danh sách hàng, cuối là tổng tiền.</p>
+            <ul>
+              <li><strong>Chia sẻ</strong> — gửi thẳng qua Zalo, Messenger, email… dưới dạng ảnh hoặc văn bản.</li>
+              <li><strong>PDF/In</strong> — xuất file PDF hoặc in ra máy in.</li>
+              <li><strong>Bút chì</strong> ở góc trên phải — quay lại sửa nội dung.</li>
+              <li><strong>Chuyển đổi</strong> — biến báo giá thành hóa đơn khi khách đã đồng ý, không phải gõ lại từ
+                đầu (xem <a href="#ba-loai">phần tiếp theo</a>).</li>
+            </ul>
+            <p>Riêng với hóa đơn còn có thêm ba nút trạng thái: <strong>Chưa thu tiền / Đã thu đủ</strong>,
+              <strong>Ghi khoản thu</strong> và <strong>Chưa giao hàng / Đã giao</strong>.</p>
+          </div>
+          <figure class="shot">
+            <a href="/assets/images/apps/invoice-studio/hd5-xem-truoc-hoa-don.webp" target="_blank" rel="noopener noreferrer" aria-label="Mở ảnh cỡ lớn"><img src="/assets/images/apps/invoice-studio/hd5-xem-truoc-hoa-don.webp" width="1078" height="2400"
+              loading="lazy" decoding="async"
+              alt="Màn hình Xem trước hóa đơn có đầu trang cửa hàng, thông tin khách, danh sách hàng và các nút Chia sẻ, PDF/In"></a>
+            <figcaption>Xem trước hóa đơn — đúng bản mà khách sẽ nhận được.</figcaption>
+          </figure>
+        </div>
+
+        <h2 id="ba-loai">Ba loại chứng từ và khi nào dùng</h2>
+        <p>Ba loại này khác nhau ở <em>giai đoạn</em> của thương vụ, không phải ở cách nhập liệu.</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Loại</th>
+                <th>Dùng khi</th>
+                <th>Đặc điểm</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Báo giá</strong> (BG)</td>
+                <td>Khách hỏi giá, bạn gửi bảng giá để khách cân nhắc.</td>
+                <td>Chưa tính là bán được hàng. Không có trạng thái thanh toán, không vào sổ công nợ. Có thể ghi
+                  “Báo giá có hiệu lực trong 15 ngày” ở ô Ghi chú.</td>
+              </tr>
+              <tr>
+                <td><strong>Đơn đặt hàng</strong> (DDH)</td>
+                <td>Khách chốt mua, bạn cần phiếu xác nhận đơn và địa chỉ giao.</td>
+                <td>Có thông tin người nhận và trạng thái giao hàng. Chuyển được sang Hóa đơn.</td>
+              </tr>
+              <tr>
+                <td><strong>Hóa đơn</strong> (HD)</td>
+                <td>Đã bán, cần theo dõi tiền và giao hàng.</td>
+                <td>Đây là loại duy nhất có <strong>tiền</strong>: ghi khoản thu, tính còn nợ bao nhiêu, cộng vào
+                  doanh thu và sổ công nợ.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="step">
+          <div class="step-text">
+            <p><strong>Đường đi thường gặp:</strong> Báo giá → khách đồng ý → mở lại báo giá đó → bấm
+              <strong>Chuyển đổi</strong> → chọn Hóa đơn. Toàn bộ khách hàng và danh sách hàng được chép sang, bạn
+              chỉ việc kiểm lại rồi lưu. Báo giá cũ vẫn còn nguyên để đối chiếu.</p>
+            <p>Mã chứng từ được app tự đặt theo dạng <code>HD-20260827-001</code> — hai chữ đầu là loại, tiếp theo là
+              ngày, cuối là số thứ tự trong ngày. Bạn không cần tự nghĩ số.</p>
+          </div>
+          <figure class="shot">
+            <a href="/assets/images/apps/invoice-studio/hd4-bao-gia.webp" target="_blank" rel="noopener noreferrer" aria-label="Mở ảnh cỡ lớn"><img src="/assets/images/apps/invoice-studio/hd4-bao-gia.webp" width="1078" height="2400" loading="lazy"
+              decoding="async" alt="Màn hình xem trước một báo giá với đầu trang cửa hàng Minh Anh"></a>
+            <figcaption>Báo giá — có nút <em>Chuyển đổi</em> ở cuối màn hình.</figcaption>
+          </figure>
+        </div>
+
+        <h2 id="trang-chu">Đọc màn hình Trang chủ</h2>
+        <div class="step">
+          <div class="step-text">
+            <p>Trang chủ là bảng điều khiển của cửa hàng. Từ trên xuống:</p>
+            <ul>
+              <li><strong>Ba biểu tượng góc trên phải</strong> — hình người là <em>Khách hàng</em>, hình thùng hàng là
+                <em>Sản phẩm</em>, bánh răng là <em>Cài đặt</em>.</li>
+              <li><strong>Tổng quan</strong> — bấm chữ <em>Hôm nay</em> để đổi khoảng thời gian: Hôm nay, Tuần này,
+                Tháng này, Năm nay hoặc Tùy chọn.</li>
+              <li><strong>Doanh thu</strong> — tổng số tiền <em>đã thực sự thu được</em> trong khoảng thời gian đó,
+                kèm mũi tên so với kỳ trước. Đây là tiền đã cầm, không phải tổng giá trị hóa đơn.</li>
+              <li><strong>Chờ thanh toán</strong> — tổng số tiền khách còn nợ. Bấm vào để mở sổ công nợ.</li>
+              <li><strong>Hóa đơn chưa giao</strong> — số đơn còn phải giao hàng.</li>
+              <li><strong>Tạo nhanh</strong> — ba nút tạo chứng từ.</li>
+              <li><strong>Gần đây</strong> — năm chứng từ mới nhất, kèm số tiền còn nợ (chữ đỏ) hoặc nhãn
+                <em>Đã thu đủ</em>. Bấm <em>Tất cả</em> để xem toàn bộ.</li>
+            </ul>
+          </div>
+          <figure class="shot">
+            <a href="/assets/images/apps/invoice-studio/hd1-trang-chu.webp" target="_blank" rel="noopener noreferrer" aria-label="Mở ảnh cỡ lớn"><img src="/assets/images/apps/invoice-studio/hd1-trang-chu.webp" width="1078" height="2400" loading="lazy"
+              decoding="async"
+              alt="Trang chủ ứng dụng với thẻ doanh thu 4.400.000 đồng, chờ thanh toán 4.950.000 đồng và danh sách chứng từ gần đây"></a>
+            <figcaption>Trang chủ — doanh thu, tiền còn phải thu và các chứng từ gần đây.</figcaption>
+          </figure>
+        </div>
+
+        <h2 id="thu-tien">Ghi tiền khách đã trả</h2>
+        <div class="step">
+          <div class="step-text">
+            <p>Khách trả tiền lúc nào thì bạn ghi lúc đó. Mở hóa đơn → bấm <strong>Ghi khoản thu</strong>.</p>
+            <ol>
+              <li><strong>Số tiền thu</strong> — app điền sẵn số còn thiếu. Khách trả một phần thì sửa lại thành số
+                thực nhận.</li>
+              <li>Chọn <strong>Tiền mặt</strong> hoặc <strong>Chuyển khoản</strong>.</li>
+              <li><strong>Ghi chú</strong> — không bắt buộc, ví dụ <em>“đặt cọc”</em>, <em>“trả đợt 2”</em>.</li>
+              <li>Bấm <strong>Xác nhận thu…</strong>.</li>
+            </ol>
+            <p>Thu được bao nhiêu lần cũng được — app cộng dồn và tự tính phần còn thiếu. Khi thu đủ, hóa đơn tự
+              chuyển sang <strong>Đã thanh toán</strong> và biến mất khỏi sổ công nợ.</p>
+            <p>Nút <strong>Chưa thu tiền / Đã thu đủ</strong> ở trên là lối tắt cho trường hợp khách trả hết một lần.
+              Nếu bạn gạt ngược lại từ <em>Đã thu đủ</em> về <em>Chưa thu</em>, app chỉ huỷ khoản thu gần nhất chứ
+              không xoá sạch lịch sử — tiền cọc đã ghi trước đó vẫn còn.</p>
+          </div>
+          <figure class="shot">
+            <a href="/assets/images/apps/invoice-studio/hd6-ghi-khoan-thu.webp" target="_blank" rel="noopener noreferrer" aria-label="Mở ảnh cỡ lớn"><img src="/assets/images/apps/invoice-studio/hd6-ghi-khoan-thu.webp" width="1078" height="2400"
+              loading="lazy" decoding="async"
+              alt="Bảng Ghi thanh toán với ô số tiền thu, lựa chọn Tiền mặt hoặc Chuyển khoản và nút xác nhận"></a>
+            <figcaption>Ghi khoản thu — nhập đúng số tiền thực nhận rồi xác nhận.</figcaption>
+          </figure>
+        </div>
+
+        <h2 id="cong-no">Sổ công nợ — ai còn nợ bao nhiêu</h2>
+        <div class="step">
+          <div class="step-text">
+            <p>Vào từ Trang chủ, bấm dòng <strong>Chờ thanh toán</strong>.</p>
+            <p>Màn hình gộp các hóa đơn chưa thu đủ theo từng khách: trên cùng là <strong>tổng công nợ</strong> của
+              cả cửa hàng, bên dưới là từng khách với số tiền còn thiếu. Bấm vào một khách để xem những hóa đơn nào
+              đang còn nợ.</p>
+            <p>Với khách có nhiều hóa đơn chưa thu, bạn có thể dùng <strong>Trả gộp</strong> để ghi một lần tiền cho
+              tất cả các hóa đơn đó.</p>
+            <div class="note">
+              <span class="note-title">Vì sao có khách không dùng được “Trả gộp”</span>
+              <p>Nếu một nhóm được ghép <strong>chỉ theo tên</strong> (các hóa đơn không có số điện thoại), rất dễ
+                xảy ra chuyện hai người trùng tên bị gộp làm một — trả gộp khi đó sẽ trừ nhầm tiền của người khác.
+                Trong trường hợp này app ẩn nút Trả gộp và nhắc bạn ghi thu trên từng hóa đơn. Cách xử lý triệt để:
+                bổ sung số điện thoại cho các hóa đơn đó.</p>
+            </div>
+          </div>
+          <figure class="shot">
+            <a href="/assets/images/apps/invoice-studio/hd7-cong-no.webp" target="_blank" rel="noopener noreferrer" aria-label="Mở ảnh cỡ lớn"><img src="/assets/images/apps/invoice-studio/hd7-cong-no.webp" width="1078" height="2400" loading="lazy"
+              decoding="async"
+              alt="Màn hình Công nợ hiển thị tổng công nợ 4.950.000 đồng và hai khách hàng còn nợ"></a>
+            <figcaption>Sổ công nợ — tổng tiền còn phải thu, tách theo từng khách.</figcaption>
+          </figure>
+        </div>
+
+        <h2 id="khach-hang">Danh bạ khách hàng</h2>
+        <p>Bấm biểu tượng <strong>hình người</strong> ở Trang chủ. Khách được tạo tự động mỗi khi bạn lập chứng từ có
+          số điện thoại, nên hầu như bạn không phải nhập tay.</p>
+        <div class="shot-row">
+          <figure class="shot">
+            <a href="/assets/images/apps/invoice-studio/hd8-khach-hang.webp" target="_blank" rel="noopener noreferrer" aria-label="Mở ảnh cỡ lớn"><img src="/assets/images/apps/invoice-studio/hd8-khach-hang.webp" width="1078" height="2400" loading="lazy"
+              decoding="async"
+              alt="Danh sách khách hàng với mục Top khách hàng theo doanh thu và danh sách tất cả khách hàng"></a>
+            <figcaption>Danh sách khách — có ô tìm kiếm, bộ lọc <em>Có công nợ</em> và bảng xếp hạng khách mua nhiều
+              nhất.</figcaption>
+          </figure>
+          <figure class="shot">
+            <a href="/assets/images/apps/invoice-studio/hd9-chi-tiet-khach-hang.webp" target="_blank" rel="noopener noreferrer" aria-label="Mở ảnh cỡ lớn"><img src="/assets/images/apps/invoice-studio/hd9-chi-tiet-khach-hang.webp" width="1078" height="2400"
+              loading="lazy" decoding="async"
+              alt="Chi tiết khách hàng với thông tin liên hệ, thống kê tổng mua và lịch sử giao dịch"></a>
+            <figcaption>Chi tiết một khách — tổng đã mua, số còn nợ và toàn bộ lịch sử giao dịch.</figcaption>
+          </figure>
+        </div>
+        <ul>
+          <li><strong>Thêm khách thủ công</strong> — bấm biểu tượng thêm người ở góc trên phải. Số điện thoại là bắt
+            buộc vì đó là thứ giúp app phân biệt khách này với khách kia.</li>
+          <li><strong>Sửa</strong> — vào chi tiết khách, bấm bút chì. Đổi tên hoặc địa chỉ ở đây thì các chứng từ
+            <em>đã gửi trước đó</em> vẫn giữ nguyên nội dung cũ, đúng như bản khách đã nhận.</li>
+          <li><strong>Xóa</strong> — biểu tượng thùng rác. Xóa khách <strong>không</strong> xóa các hóa đơn của khách
+            đó; chứng từ vẫn còn trong mục Tất cả chứng từ.</li>
+        </ul>
+        <div class="note">
+          <span class="note-title">Nếu bạn đang nâng cấp từ bản cũ</span>
+          <p>Các bản trước đây có lỗi khiến một số khách không được lưu vào danh bạ. Khi bạn mở ứng dụng sau khi cập
+            nhật, app tự dò lại toàn bộ chứng từ cũ và dựng lại những khách bị thiếu, kèm thông báo
+            <em>“Đã khôi phục N khách hàng từ chứng từ cũ”</em>. Việc này chạy một lần, không đụng vào khách bạn đã
+            chủ ý xóa.</p>
+        </div>
+
+        <h2 id="san-pham">Sản phẩm và tồn kho</h2>
+        <div class="step">
+          <div class="step-text">
+            <p>Bấm biểu tượng <strong>thùng hàng</strong> ở Trang chủ. Lưu sẵn hàng hay bán ở đây thì lúc lập chứng từ
+              chỉ cần gõ vài chữ là app tự điền tên, đơn vị và giá.</p>
+            <p>Bấm nút <strong>+</strong> ở góc dưới phải để thêm sản phẩm:</p>
+            <ul>
+              <li><strong>Tên, đơn vị, đơn giá</strong> — phần tối thiểu.</li>
+              <li><strong>Theo dõi tồn kho</strong> — bật lên thì mỗi hóa đơn bán ra sẽ tự trừ kho, và app cảnh báo
+                khi hàng sắp hết.</li>
+              <li><strong>Ngưỡng cảnh báo</strong> — còn dưới mức này thì hiện nhãn vàng <em>Tồn thấp</em>; về 0 thì
+                hiện nhãn đỏ <em>Hết hàng</em>.</li>
+            </ul>
+            <p>Ba ô đếm ở đầu màn hình cho bạn biết ngay <em>Tổng SP</em>, <em>Hết hàng</em> và <em>Tồn thấp</em> mà
+              không cần đọc hết danh sách.</p>
+            <p>Sản phẩm gắn nhãn <strong>[MẪU]</strong> là dữ liệu mẫu do app tạo sẵn để bạn thử. Xóa chúng trong
+              <em>Cài đặt → Nhắc nhở → Xóa dữ liệu mẫu</em>.</p>
+          </div>
+          <figure class="shot">
+            <a href="/assets/images/apps/invoice-studio/hd11-san-pham.webp" target="_blank" rel="noopener noreferrer" aria-label="Mở ảnh cỡ lớn"><img src="/assets/images/apps/invoice-studio/hd11-san-pham.webp" width="1078" height="2400" loading="lazy"
+              decoding="async"
+              alt="Danh sách sản phẩm với số lượng tồn kho, nhãn Hết hàng màu đỏ và Tồn thấp màu vàng"></a>
+            <figcaption>Danh sách sản phẩm — tồn kho, đã bán và cảnh báo hết hàng.</figcaption>
+          </figure>
+        </div>
+
+        <h2 id="chung-tu">Tìm lại chứng từ cũ</h2>
+        <div class="step">
+          <div class="step-text">
+            <p>Ở Trang chủ bấm <strong>Xem tất cả chứng từ</strong>.</p>
+            <ul>
+              <li><strong>Ô tìm kiếm</strong> — gõ tên khách hoặc mã chứng từ.</li>
+              <li><strong>Bộ lọc</strong> — Tất cả / Báo giá / Hóa đơn / Đơn đặt hàng.</li>
+              <li><strong>Nhãn trạng thái</strong> ngay trên mỗi thẻ: <em>Chưa T.toán</em> hay <em>Đã T.toán</em>,
+                <em>Giao</em> hay <em>Đã giao</em>. Bấm thẳng vào nhãn để đổi trạng thái, không cần mở chứng từ.</li>
+              <li><strong>Thùng rác đỏ</strong> — xóa hẳn chứng từ. Thao tác này không hoàn tác được, app sẽ hỏi lại
+                trước khi xóa.</li>
+            </ul>
+          </div>
+          <figure class="shot">
+            <a href="/assets/images/apps/invoice-studio/hd10-tat-ca-chung-tu.webp" target="_blank" rel="noopener noreferrer" aria-label="Mở ảnh cỡ lớn"><img src="/assets/images/apps/invoice-studio/hd10-tat-ca-chung-tu.webp" width="1078" height="2400"
+              loading="lazy" decoding="async"
+              alt="Màn hình Tất cả chứng từ với ô tìm kiếm, bộ lọc theo loại và danh sách chứng từ kèm nhãn trạng thái"></a>
+            <figcaption>Tất cả chứng từ — tìm kiếm, lọc theo loại và đổi trạng thái nhanh.</figcaption>
+          </figure>
+        </div>
+
+        <h2 id="sao-luu">Sao lưu và chuyển sang máy mới</h2>
+        <div class="step">
+          <div class="step-text">
+            <p>Dữ liệu nằm trong máy bạn nên <strong>sao lưu là việc bạn phải tự làm</strong>. Vào
+              <em>Cài đặt → Sao lưu &amp; khôi phục</em>.</p>
+            <ul>
+              <li><strong>Sao lưu</strong> — tạo một file <code>.json</code> chứa toàn bộ cửa hàng, khách hàng, sản
+                phẩm và chứng từ. Chọn nơi lưu: bộ nhớ máy, Google Drive, hoặc gửi cho chính mình qua Zalo/email.</li>
+              <li><strong>Khôi phục</strong> — chọn file <code>.json</code> đã lưu để nạp lại. Dùng khi đổi máy hoặc
+                lỡ gỡ ứng dụng.</li>
+            </ul>
+            <p><strong>Nên làm mỗi tuần một lần</strong>, hoặc ngay sau một ngày bán nhiều.</p>
+            <div class="warn">
+              <span class="note-title">Hai điều cần nhớ</span>
+              <p>File sao lưu <strong>không được mã hoá</strong> — nó chứa tên, số điện thoại và địa chỉ khách hàng
+                của bạn, nên đừng để ở nơi công cộng hay gửi cho người lạ.</p>
+              <p>Sao lưu &amp; khôi phục là <strong>tính năng của bản Pro</strong>.</p>
+            </div>
+          </div>
+          <figure class="shot">
+            <a href="/assets/images/apps/invoice-studio/hd12-sao-luu-khoi-phuc.webp" target="_blank" rel="noopener noreferrer" aria-label="Mở ảnh cỡ lớn"><img src="/assets/images/apps/invoice-studio/hd12-sao-luu-khoi-phuc.webp" width="1078" height="2400"
+              loading="lazy" decoding="async"
+              alt="Phần Sao lưu và khôi phục trong Cài đặt với hai nút Sao lưu và Khôi phục"></a>
+            <figcaption>Cài đặt — Sao lưu &amp; khôi phục, và mục Trợ giúp ở ngay bên dưới.</figcaption>
+          </figure>
+        </div>
+
+        <h2 id="ban-pro">Bản Pro có gì thêm</h2>
+        <div class="step">
+          <div class="step-text">
+            <p>Bản miễn phí dùng được đầy đủ các bước ở trên, giới hạn <strong>20 chứng từ mỗi tháng</strong>. Nâng
+              cấp Pro trong <em>Cài đặt → Nâng cấp Pro</em>.</p>
+            <ul>
+              <li><strong>Không giới hạn chứng từ</strong> — tạo báo giá, đơn hàng, hóa đơn thoải mái.</li>
+              <li><strong>VietQR Động</strong> — mã QR đã có sẵn số tiền, khách quét là chuyển đúng số, không gõ
+                nhầm.</li>
+              <li><strong>Không watermark</strong> — chứng từ gửi khách không còn logo ứng dụng.</li>
+              <li><strong>Xác thực sinh trắc học</strong> — khoá ứng dụng bằng vân tay hoặc khuôn mặt.</li>
+              <li><strong>Sao lưu dữ liệu</strong> — xuất và nhập file sao lưu.</li>
+              <li><strong>Hỗ trợ ưu tiên</strong>.</li>
+            </ul>
+            <p>Thanh toán do Google Play xử lý. Nếu bạn đổi máy hoặc cài lại ứng dụng, mở màn hình Nâng cấp Pro và
+              bấm <strong>Khôi phục mua hàng</strong> — dùng đúng tài khoản Google đã mua thì quyền Pro trở lại,
+              không phải trả tiền lần nữa.</p>
+          </div>
+          <figure class="shot">
+            <a href="/assets/images/apps/invoice-studio/hd13-nang-cap-pro.webp" target="_blank" rel="noopener noreferrer" aria-label="Mở ảnh cỡ lớn"><img src="/assets/images/apps/invoice-studio/hd13-nang-cap-pro.webp" width="1080" height="1736"
+              loading="lazy" decoding="async"
+              alt="Màn hình Nâng cấp Pro liệt kê các quyền lợi: không giới hạn chứng từ, VietQR động, không watermark, sinh trắc học, sao lưu, hỗ trợ ưu tiên"></a>
+            <figcaption>Danh sách quyền lợi của bản Pro.</figcaption>
+          </figure>
+        </div>
+
+        <h2 id="faq">Câu hỏi thường gặp</h2>
+
+        <details>
+          <summary>Tôi tạo hóa đơn nhưng khách không xuất hiện trong danh bạ?</summary>
+          <p>Do chứng từ đó thiếu số điện thoại. App nhận diện khách bằng số điện thoại, không phải bằng tên. Mở lại
+            chứng từ, bấm bút chì, điền số rồi lưu — khách sẽ vào danh bạ ngay. Xem thêm ở phần
+            <a href="#buoc-2">Bước 2</a>.</p>
+        </details>
+
+        <details>
+          <summary>Doanh thu ở Trang chủ khác tổng tiền các hóa đơn tôi đã lập?</summary>
+          <p>Đúng như vậy, và đó là cố ý. <strong>Doanh thu</strong> chỉ tính số tiền bạn đã thực sự thu được. Hóa đơn
+            đã lập nhưng khách chưa trả thì nằm ở mục <strong>Chờ thanh toán</strong>, không nằm trong doanh thu.</p>
+        </details>
+
+        <details>
+          <summary>Ứng dụng này có xuất hóa đơn điện tử có mã của cơ quan thuế không?</summary>
+          <p>Không. Đây là ứng dụng tạo <strong>báo giá, phiếu bán hàng và chứng từ nội bộ</strong>; ứng dụng không
+            phát hành hóa đơn điện tử có mã cơ quan thuế và không thay thế nghĩa vụ lập hóa đơn theo quy định pháp
+            luật.</p>
+        </details>
+
+        <details>
+          <summary>Không có mạng thì dùng được không?</summary>
+          <p>Được. Tạo chứng từ, xem trước, in PDF và ghi khoản thu đều chạy offline. Chỉ khi gửi cho khách qua
+            Zalo/Messenger/email, mua bản Pro hoặc dùng nhập liệu bằng giọng nói thì mới cần mạng.</p>
+        </details>
+
+        <details>
+          <summary>Đọc bằng giọng nói mà app gõ sai chính tả?</summary>
+          <p>Phần nhận dạng giọng nói do hệ điều hành của máy cung cấp, không phải của ứng dụng. Bạn hãy nói chậm và
+            rõ, hoặc sửa lại bằng bàn phím sau khi đọc. Với tên riêng và địa chỉ, gõ tay thường nhanh hơn.</p>
+        </details>
+
+        <details>
+          <summary>Đổi điện thoại thì làm sao mang dữ liệu theo?</summary>
+          <p>Ở máy cũ: <em>Cài đặt → Sao lưu</em>, lưu file <code>.json</code> vào Google Drive hoặc gửi cho chính
+            mình. Ở máy mới: cài ứng dụng, vào <em>Cài đặt → Khôi phục</em> và chọn file đó. Nhớ làm việc này
+            <strong>trước khi</strong> xoá dữ liệu ở máy cũ.</p>
+        </details>
+
+        <details>
+          <summary>Lỡ xoá nhầm một chứng từ, lấy lại được không?</summary>
+          <p>Không. Xoá chứng từ là vĩnh viễn — đó là lý do app hỏi lại trước khi xoá. Cách duy nhất để lấy lại là
+            khôi phục từ một file sao lưu được tạo trước lúc xoá.</p>
+        </details>
+
+        <details>
+          <summary>Dữ liệu của tôi có bị gửi lên máy chủ của các bạn không?</summary>
+          <p>Không. Thông tin cửa hàng, khách hàng, sản phẩm và nội dung chứng từ nằm trong máy bạn. Chi tiết đầy đủ
+            về những gì rời khỏi máy (thống kê sử dụng ẩn danh, giao dịch qua Google Play, nhận dạng giọng nói) được
+            ghi trong <a href="/apps/invoice-studio/privacy-policy.html">Chính sách bảo mật</a>.</p>
+        </details>
+
+        <h2 id="ho-tro">Liên hệ hỗ trợ</h2>
+        <p>Gặp lỗi, thấy chỗ khó dùng, hoặc muốn đề xuất tính năng — cứ viết cho chúng tôi. Nếu báo lỗi, hãy mô tả
+          bạn đang ở màn hình nào và bấm gì trước khi lỗi xảy ra, như vậy sẽ sửa được nhanh hơn nhiều.</p>
+        <ul>
+          <li><strong>Email:</strong> <a href="mailto:hacong86@gmail.com">hacong86@gmail.com</a></li>
+          <li><strong>Trang hỗ trợ:</strong> <a href="/support/">appmavenstudio.com/support</a></li>
+          <li><strong>Chính sách bảo mật:</strong>
+            <a href="/apps/invoice-studio/privacy-policy.html">Xem chính sách</a></li>
+        </ul>
+
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.appmaven.taohoadon"
+            target="_blank" rel="noopener noreferrer">Tải ứng dụng trên Google Play</a>
+          <a class="btn btn-secondary" href="/apps/invoice-studio/">Xem trang giới thiệu ứng dụng</a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 AppMaven Studio. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+</body>
+
+</html>

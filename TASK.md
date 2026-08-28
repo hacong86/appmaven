@@ -354,3 +354,22 @@
 ## Assumption Log
 - [2026-08-14] [Claude Code]: Bỏ hẳn mục "11. Cơ sở pháp lý (châu Âu, Anh và Thuỵ Sĩ)" trong chính sách thay vì để lại một mục rỗng, rồi đánh lại số 12–19 thành 11–18 để không thủng số thứ tự. Không thay bằng bảng cơ sở pháp lý theo luật Việt Nam vì chưa kiểm chứng được điều khoản cụ thể — không bịa nội dung pháp lý.
 - [2026-08-18] [Claude Code]: Trang Gieo Quẻ Hỏi Việc dùng **tiếng Việt** (`lang="vi"`) — ứng dụng chỉ phát hành tại Việt Nam. CÓ tạo Điều khoản vì ứng dụng có quảng cáo AdMob. Giữ lại phần nói về bảng hỏi ý kiến quảng cáo cho người dùng ở châu Âu, vì ứng dụng vẫn chạy cơ chế đó ngầm (người dùng Việt Nam không thấy gì, người đang ở châu Âu vẫn được hỏi đúng luật) — khác với cách xử lý của app Lợi Nhuận trước đây.
+
+---
+
+## [2026-08-28] Trang Hướng dẫn sử dụng cho Tạo Hóa Đơn & Quản Lý Shop
+
+## Checklist
+- [x] Chụp 13 ảnh màn hình thật từ máy ảo Android (app bản 1.1.1, dữ liệu mẫu tiếng Việt có dấu), chuyển sang `.webp` (2463 KB → 710 KB, tiết kiệm 71%)
+- [x] Dựng `apps/invoice-studio/huong-dan-su-dung.html` — 14 mục, mục lục, bảng so sánh 3 loại chứng từ, 8 câu hỏi thường gặp
+- [x] Nối vào site: `sitemap.xml` (+1 URL), thẻ "Bảo Mật & Riêng Tư" và cột "Pháp Lý" ở `apps/invoice-studio/index.html`
+- [x] Sửa favicon gãy `/assets/images/logo/favicon.png` → `appmaven_logo.png` ở `apps/invoice-studio/index.html`
+- [x] Sửa nhãn ngày trong `apps/invoice-studio/privacy-policy.html` để qua `verify_pages.py` (Ngày hiệu lực + Cập nhật lần cuối) — không đổi một chữ nào trong nội dung chính sách
+- [x] `verify_pages.py` PASS (3 cảnh báo cũ, không phải lỗi mới)
+- [x] Kiểm bằng mắt: desktop 1440 (Claude in Chrome) + mobile 390 (Playwright, do resize Chrome không ăn khi cửa sổ maximize)
+- [ ] Chờ chủ dự án duyệt rồi mới commit + push
+
+## Assumption Log
+- [2026-08-28] [Claude Code]: Ngày "Cập nhật lần cuối 06/08/2026" trong chính sách bảo mật lấy từ ngày commit thật của file (`git log` — commit duy nhất 2026-08-06), không phải ngày tự đặt.
+- [2026-08-28] [Claude Code]: Ảnh minh hoạ dùng dữ liệu cửa hàng GIẢ (Cửa hàng Minh Anh, 3 khách hàng, 8 sản phẩm) nạp thẳng vào SQLite của máy ảo, vì `adb input text` không gõ được tiếng Việt có dấu. Không có dữ liệu thật của người dùng nào trong ảnh.
+- [2026-08-28] [Claude Code]: Ảnh màn hình Nâng cấp Pro bị CẮT phần dưới, vì máy ảo không kết nối được Google Play nên hiện thông báo lỗi kết nối — giữ lại đúng phần danh sách quyền lợi.
