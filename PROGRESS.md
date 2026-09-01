@@ -474,3 +474,14 @@
   7 ảnh WebP mới, `TASK.md`, `PROGRESS.md`
 - Verification: verify_pages.py **PASS 0 cảnh báo**; desktop 1440 + mobile 390 soi mắt,
   không tràn ngang; bảng trong privacy có khung cuộn riêng.
+
+### [2026-09-01] Claude Code — Dọn ảnh cũ của Photo Prompt
+- Chủ dự án duyệt "dọn luôn": xoá 5 ảnh không trang nào tham chiếu (256KB)
+  `library-of-900-ready-to-use-prompts` · `customize-prompts-instantly` ·
+  `save-organize-reuse` · `promptmaster` · `icon-new1`
+- Đã kiểm khớp chính xác tên file trước khi xoá: 0 tham chiếu trong html/css/js/xml/json/md.
+  (Chuỗi "promptmaster" xuất hiện 8 lần nhưng là package name `com.appmaven.promptmaster`,
+  không phải ảnh — kiểm lại bằng `promptmaster\.webp` mới chắc.)
+- GIỮ `visual-prompt-gallery.webp` — trang chủ `index.html:247` đang dùng.
+- Còn tồn: `prompt-master-ai/icon.webp` (90KB) không trang nào dùng — lần quét trước
+  bỏ sót vì tên trùng với `icon.webp` của các app khác. Chờ chủ dự án quyết.
