@@ -386,3 +386,21 @@
 - [2026-08-29] [Claude Code]: KHÔNG đăng mã tặng Pro trọn đời 100% lên trang — mã đó dành riêng cho một khách hàng, chủ dự án tự gửi.
 - [2026-08-29] [Claude Code]: Google Play không tạo được mã giảm 50%/30% (mã sản phẩm mua đứt luôn 100%, mã thuê bao chỉ có số ngày dùng thử). Chủ dự án chốt thay bằng mã dùng thử miễn phí.
 
+
+## [2026-09-01] Dựng lại 3 trang cho Photo Prompt (com.appmaven.promptmaster)
+
+## Checklist
+- [x] Chuyển 8 ảnh sang WebP: 6.749KB → 499KB (tiết kiệm 93%)
+- [x] Dựng lại `apps/prompt-master-ai/index.html` — bản cũ còn quảng cáo "thư viện 900 prompt" đã bị xoá khỏi app, và dùng tên app cũ
+- [x] Tạo mới `apps/prompt-master-ai/privacy-policy.html` — trang này **chưa từng tồn tại**
+- [x] Tạo mới `apps/prompt-master-ai/terms-of-service.html`
+- [x] Sửa link sai ở `privacy-policy.html` gốc: đang trỏ sang trang giới thiệu, Play Console sẽ từ chối
+- [x] Thêm link ToS vào `terms-of-service.html` gốc; thêm 2 URL vào `sitemap.xml`; cập nhật card ở `apps/index.html`
+- [x] Sửa 6 lỗi tự gây do dựng sai mẫu (xem PROGRESS.md cùng ngày)
+- [x] `verify_pages.py` PASS 0 cảnh báo · soi mắt desktop 1440 + mobile 390
+- [x] Chủ dự án duyệt "đẩy lên" → commit + push + xác minh live
+
+## Assumption Log
+- [2026-09-01] [Claude Code]: Giữ slug `prompt-master-ai` dù app đã đổi tên thành Photo Prompt — ba chỗ trong site đang trỏ tới đường dẫn này và URL có thể đã nằm trong Play Console. Đổi slug là làm gãy link cũ.
+- [2026-09-01] [Claude Code]: KHÔNG làm icon mới theo yêu cầu chủ dự án (bản cũ đã có). Đã hoàn nguyên `icon.webp` sau khi lỡ ghi đè; trang dùng `icon-new.webp` sẵn có.
+- [2026-09-01] [Claude Code]: GIỮ 5 ảnh cũ không còn trang nào dùng (256KB) — chờ chủ dự án quyết, không tự xoá.

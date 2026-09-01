@@ -453,3 +453,24 @@
   live check: 30/30 ma co tren trang, co so dien thoai, **khong lo ma 100%**.
 - Commit `f84473a` da push.
 
+
+### [2026-09-01] Claude Code — Photo Prompt: trang giới thiệu + chính sách bảo mật + điều khoản
+- Task: `/appmaven-publish` cho `com.appmaven.promptmaster` (app đổi nhiều: 120 template,
+  nhóm Photo Fixes mới, 44 miễn phí). Yêu cầu: ảnh phải `.webp`, không làm icon mới.
+- Phát hiện quan trọng: **trang privacy chưa từng tồn tại**; link ở `privacy-policy.html`
+  gốc trỏ nhầm sang trang giới thiệu → dán vào Play Console sẽ bị từ chối.
+- Ảnh: 6.749KB → 499KB WebP (93%). Icon giữ bản cũ (`icon-new.webp`).
+- 6 lỗi tự gây do dựng sai mẫu, chỉ lộ ra khi soi bằng mắt:
+  1. Tự chế class `gallery-grid`/`gallery-image` không có CSS → ảnh nở 605×1076,
+     trang dài 9.096px. Trả về `screenshot-scroll`/`screenshot-img` của mẫu → 2.683px
+  2. Đổi class body trang legal sang `app-legal-body` nhưng để nguyên CSS
+     `.focusone-privacy-policy` → toàn bộ typography trang privacy không chạy
+  3. Đặt card safety sai vị trí DOM → vỡ lưới bento. Mẫu đặt safety ngay sau header (9+3)
+  4. Mobile 390: icon 120px chen chữ, tiêu đề vỡ 4 dòng → xếp dọc
+  5. Ảnh thiếu `width`/`height` → co còn 2px lúc chưa tải (layout nhảy)
+  6. Sót màu vàng `#ffdd00` của FocusOne trong 2 trang legal → đổi sang tím của app
+- Files: `apps/prompt-master-ai/{index,privacy-policy,terms-of-service}.html`,
+  `apps/index.html`, `sitemap.xml`, `privacy-policy.html`, `terms-of-service.html`,
+  7 ảnh WebP mới, `TASK.md`, `PROGRESS.md`
+- Verification: verify_pages.py **PASS 0 cảnh báo**; desktop 1440 + mobile 390 soi mắt,
+  không tràn ngang; bảng trong privacy có khung cuộn riêng.
