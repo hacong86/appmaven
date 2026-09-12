@@ -404,3 +404,19 @@
 - [2026-09-01] [Claude Code]: Giữ slug `prompt-master-ai` dù app đã đổi tên thành Photo Prompt — ba chỗ trong site đang trỏ tới đường dẫn này và URL có thể đã nằm trong Play Console. Đổi slug là làm gãy link cũ.
 - [2026-09-01] [Claude Code]: KHÔNG làm icon mới theo yêu cầu chủ dự án (bản cũ đã có). Đã hoàn nguyên `icon.webp` sau khi lỡ ghi đè; trang dùng `icon-new.webp` sẵn có.
 - [2026-09-01] [Claude Code]: GIỮ 5 ảnh cũ không còn trang nào dùng (256KB) — chờ chủ dự án quyết, không tự xoá.
+
+## AppMaven pages — 2026-09-12
+- [ ] Rebuild Photo Prompt introduction and privacy policy from current 4.0.0+8 evidence.
+- [ ] Convert the six supplied screenshots to WebP; preserve originals and existing icon.
+- [ ] Verify page structure, links, responsive layout and publication status.
+- Scope: two existing AppMaven pages, related app directory and sitemap; no IAP/UMP behavior changes, no unrelated cleanup.
+- Assumption: keep existing AppMaven slug and English locale. User confirms GDPR configured in a different AdMob account; this is not a new runtime consent test.
+- User experience: explain templates, external AI workflow and data handling; supplied screenshots show an earlier catalogue and will be labelled accordingly.
+
+### AppMaven verification — 2026-09-12
+- [x] Rebuilt introduction and privacy for 4.0.0+8; retained existing URLs and icon.
+- [x] Converted exactly six supplied PNG screenshots to 1080x1920 WebP (6,180 KB to 588 KB, about 90% smaller); originals unchanged.
+- [x] Verified 132 templates / 12 categories / 50 free / 82 PRO against current JSON.
+- [x] verify_pages.py passed with 0 warnings; mobile 390 and desktop 1440 inspected; no horizontal overflow, menu/FAQ/privacy link work, all six gallery images loaded.
+- [ ] Verify the new content on the public site after publishing.
+- Publication scope: existing introduction, privacy, six WebP assets, related app-directory description and sitemap. User requests web pages for new links and WebP when placed on the website; no Play Console changes or app behavior edits.

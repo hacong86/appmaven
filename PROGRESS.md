@@ -485,3 +485,19 @@
 - GIỮ `visual-prompt-gallery.webp` — trang chủ `index.html:247` đang dùng.
 - Còn tồn: `prompt-master-ai/icon.webp` (90KB) không trang nào dùng — lần quét trước
   bỏ sót vì tên trùng với `icon.webp` của các app khác. Chờ chủ dự án quyết.
+
+### [2026-09-12] AppMaven page refresh — started
+- Project: Photo Prompt / com.appmaven.promptmaster, 4.0.0+8.
+- Task: rebuild introduction and privacy; convert supplied screenshots to WebP.
+- Executor: Codex, acting on the user's direct page-creation request.
+- Next: author and verify the two pages; report actual local/live status.
+- Updated at: 2026-09-12, Asia/Bangkok.
+
+### [2026-09-12] AppMaven page refresh — local verification passed
+- Updated introduction, privacy, related app-directory description, sitemap and six WebP screenshots.
+- Privacy aligned with current code and Google Mobile Ads Legacy 25.4.0 disclosure, UMP guidance, Play Review disclosure and current Data safety.md. Includes local storage/backup, clipboard, Google services, optional external AI/support, retention and privacy controls. No unsupported promise to erase Google records or stop all SDK processing after an ad-free purchase.
+- Source URLs: https://developers.google.com/admob/android/privacy/play-data-disclosure ; https://developers.google.com/admob/flutter/privacy ; https://developer.android.com/guide/playcore/in-app-review ; https://support.google.com/googleplay/android-developer/answer/10787469 . Read 2026-09-12.
+- Screenshots supplied by user contain earlier 120-template catalog; gallery labels them as earlier screenshots. Current copy states 132. App remains unpublished; page labels version 4.0 as a preview.
+- Verification: verify_pages.py PASS, 0 warnings; desktop 1440/mobile 390; no page overflow; menu/FAQ/link/manual gallery load pass. Both pages contain correct package, canonical and existing site navigation.
+- Next: scoped commit/push and live content verification. Existing .claude/settings.local.json and untracked doc/ left untouched.
+- Updated at: 2026-09-12, Asia/Bangkok.
