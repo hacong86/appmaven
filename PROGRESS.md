@@ -1,4 +1,17 @@
 # PROGRESS
+
+## 2026-09-15 — Codex — StitchCount đã public
+- Sếp xác nhận email hacong86@gmail.com và yêu cầu xuất bản. Đổi contact trang StitchCount, commit/push 15 file web thuộc task trong `57e00ec`.
+- GitHub Pages run 34935050073 completed/success. Kiểm nội dung live landing/privacy/CSS/JS/catalog/privacy index/sitemap khớp local, ảnh icon/counter khớp hash; mở Chrome kiểm landing.
+- URL live: https://appmavenstudio.com/apps/stitchcount/ và https://appmavenstudio.com/apps/stitchcount/privacy-policy.html. Giữ thay đổi riêng có sẵn trong TASK/PROGRESS/.claude/doc ngoài commit để không gộp việc khác.
+
+## 2026-09-15 — Codex — StitchCount local
+- Hoàn tất landing và privacy tại `apps/stitchcount/`, CSS riêng + dialog phóng ảnh. Dùng navigation/footer hiện hữu, màu kem/tím/vàng theo app.
+- 8 WebP: 8.302.905 → 679.686 byte, giảm 91,8%. Nối catalog (22 card), privacy index và sitemap; giữ Featured homepage.
+- Validator PASS (cảnh báo Terms riêng ngoài phạm vi), parse JSON-LD/XML, decode ảnh và local links đạt. Đã preview desktop/mobile 390 px, thao tác menu/FAQ/ảnh/privacy; sửa CSS hero và contrast. Không publish/commit, không sửa các thay đổi có sẵn của người dùng.
+- Tiếp theo khi có yêu cầu xuất bản: xác nhận kênh `support@appmavenstudio.com`, deploy và kiểm URL public; sau đó đồng bộ privacy/email trong app hiện đang dùng `appmaven.studio`. Chi tiết nguồn/giới hạn: tài liệu `docs/APPMAVEN-WEB-2026-09-15.md` ở repo StitchCount.
+
+### Trạng thái lịch sử
 - **Dự án hiện tại:** AppMaven Studio Website
 - **Task đang làm:** (Đã hoàn thành nâng cấp giao diện ChemLab)
 - **Đã xong gần đây:** Tái thiết kế trang ChemLab theo cấu trúc Bento cao cấp (Premium Bento Grid) và cấu hình SEO bài viết.
@@ -501,3 +514,21 @@
 - Verification: verify_pages.py PASS, 0 warnings; desktop 1440/mobile 390; no page overflow; menu/FAQ/link/manual gallery load pass. Both pages contain correct package, canonical and existing site navigation.
 - Next: scoped commit/push and live content verification. Existing .claude/settings.local.json and untracked doc/ left untouched.
 - Updated at: 2026-09-12, Asia/Bangkok.
+
+### [2026-09-12] AppMaven page refresh — published and verified
+- Project: Photo Prompt 4.0.0+8 / com.appmaven.promptmaster.
+- Completed: introduction, privacy policy, app-directory copy, sitemap and six WebP assets. Commit d54fed8 pushed to main; Pages run 34699946755 completed/success for that SHA.
+- Live verification: introduction title/body show 132 templates, 12 categories and 50 free; privacy date September 12, correct package, Android backup, purchases, reviews and external AI sections. Six live WebP images decoded at 1080x1920.
+- URLs: https://appmavenstudio.com/apps/prompt-master-ai/ and https://appmavenstudio.com/apps/prompt-master-ai/privacy-policy.html .
+- Tests: verify_pages.py PASS 0 warnings; desktop 1440/mobile 390 checked, no horizontal page overflow; menu, FAQ, privacy link and gallery work. Image total 6180 KB -> 588 KB; source PNGs preserved.
+- Notes: supplied screenshots show 120-template prior catalog and are labelled; live page describes upcoming 4.0 while app is unpublished. Existing icon and unrelated site edits retained.
+- Next: adopting new privacy URL in app/Play Console/AdMob is separate from the completed website task. No IAP/UMP runtime fix, app build or store submission performed.
+- Updated at: 2026-09-12, Asia/Bangkok. This final verification entry is local and follows the published content commit.
+
+### [2026-09-24 15:45] Claude Code
+- Task: Xuất bản trang WoodShop Toolkit từ dự án J:\Apps\Flutter\WoodShop (skill appmaven-publish) + sửa lỗi hiển thị StitchCount.
+- Files: apps/woodshop/{index.html, privacy-policy.html, terms-of-service.html, woodshop.css, gallery.js}; assets/images/apps/woodshop/*.webp (9 file, 504 KB); apps/index.html (card Tools, All Apps 23); sitemap.xml (+3 URL); privacy-policy.html, terms-of-service.html (link app); apps/stitchcount/stitchcount.css (`.stitch-page li` có màu chữ — trước đó danh sách Free/Pro và mục xoá dữ liệu trong privacy StitchCount bị chữ trắng trên nền kem).
+- Nội dung: khai báo đối chiếu code (AdMob native/interstitial/rewarded, UMP + Privacy options, Play Billing, In-App Review, tắt cloud backup, merged manifest) và AdMob data disclosure (cập nhật 2026-09-21). Theo khuôn trang StitchCount (cùng engine), không nút Google Play vì app chưa phát hành.
+- Verification (local): verify_pages.py --slug woodshop --package com.appmaven.woodshop PASS 0 cảnh báo; 4 link Google HTTP 200; Chrome desktop 1440 + Playwright mobile 390 không tràn ngang, console 0 lỗi, lightbox/FAQ chạy. Kết quả live ghi ở TASK.md/PROGRESS.md của repo WoodShop.
+- Next: dán https://appmavenstudio.com/apps/woodshop/privacy-policy.html vào Play Console → App content → Privacy policy; đổi PRIVACY_POLICY_URL/SUPPORT_EMAIL của app.
+- Ghi chú: commit này mang theo log TASK/PROGRESS chưa commit của phiên Codex 15/09 (StitchCount, Photo Prompt — việc đã public); .claude/settings.local.json và doc/ vẫn để nguyên.

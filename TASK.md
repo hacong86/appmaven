@@ -1,5 +1,14 @@
 # Task: Thêm ứng dụng ShiftCheck
 
+- [x] 2026-09-15 — Codex: Sếp duyệt email hacong86@gmail.com và xuất bản StitchCount. Web commit 57e00ec, Pages success, kiểm nội dung live đạt tại /apps/stitchcount/ và /apps/stitchcount/privacy-policy.html.
+
+## 2026-09-15 — StitchCount — Codex
+- [x] Tạo landing en-US theo ASO và privacy theo Data Safety/code thực tế.
+- [x] Chuyển 8 ảnh được chỉ định sang WebP, giữ nguồn PNG tại dự án app.
+- [x] Nối app card, privacy index và sitemap; không thay Featured homepage.
+- [x] Kiểm metadata/liên kết/ảnh và preview desktop/mobile, menu, FAQ, gallery, privacy.
+- Trạng thái: hoàn tất local; chưa có yêu cầu commit/push. URL dự kiến `/apps/stitchcount/` và `/apps/stitchcount/privacy-policy.html` trên appmavenstudio.com. App vẫn dùng domain cũ; cần đồng bộ sau khi public. Hộp thư support và disclosure release cuối cần chủ app xác nhận.
+
 ## Checklist
 - [x] Task 1: Cập nhật TASK.md, PROGRESS.md, DISCORD_SYNC.md
 - [x] Task 2: Tạo trang `apps/shiftcheck/privacy-policy.html` (Nội dung tiếng Việt)
@@ -420,3 +429,16 @@
 - [x] verify_pages.py passed with 0 warnings; mobile 390 and desktop 1440 inspected; no horizontal overflow, menu/FAQ/privacy link work, all six gallery images loaded.
 - [ ] Verify the new content on the public site after publishing.
 - Publication scope: existing introduction, privacy, six WebP assets, related app-directory description and sitemap. User requests web pages for new links and WebP when placed on the website; no Play Console changes or app behavior edits.
+
+### AppMaven completed — 2026-09-12
+- [x] Introduction and privacy rebuilt and published: commit d54fed85ee6e59c12dd1843cdfc65bab2ce134df.
+- [x] GitHub Pages deployment 34699946755 completed successfully; both live pages opened and new content verified; all six WebP screenshots loaded at 1080x1920.
+- [x] Local structure/link checks, responsive desktop/mobile and gallery/menu/FAQ checks passed.
+- Introduction: https://appmavenstudio.com/apps/prompt-master-ai/
+- Privacy: https://appmavenstudio.com/apps/prompt-master-ai/privacy-policy.html
+- Remaining separate work: replace the old privacy URL in lib/core/widgets/legal_links.dart and Play Console/AdMob configuration when adopting this URL. No app code or Console settings changed in this website task. IAP/consent runtime findings from the earlier audit remain unresolved.
+
+### [2026-09-24 15:45] Claude Code — WoodShop Toolkit + sửa StitchCount
+- [x] Xuất bản trang WoodShop Toolkit (giới thiệu + privacy + terms) từ J:\Apps\Flutter\WoodShop — package com.appmaven.woodshop
+- [x] Sửa chữ danh sách trắng trên nền kem ở StitchCount (index + privacy dùng chung stitchcount.css)
+- [ ] Sau khi app có trên Google Play: thêm nút Google Play vào card /apps/ và trang giới thiệu WoodShop
