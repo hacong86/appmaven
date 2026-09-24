@@ -537,3 +537,9 @@
 - Task: đồng bộ card WoodShop Toolkit và StitchCount trong apps/index.html với các app khác (Sếp gửi ảnh: nút "Explore app" + "Preparing for release" lệch chuẩn).
 - Files: apps/index.html — footer 2 card thay bằng store-btn-group (Google Play → play.google.com/store/apps/details?id=com.appmaven.woodshop / com.appmaven.stitchcount, App Store Soon).
 - Verification: local Chrome 1440 — 4 card đầu cao bằng nhau (431 px), cùng kiểu nút. Lưu ý: link Google Play báo "không tìm thấy" cho tới khi app được Google duyệt công khai.
+
+### [2026-09-24 21:14] Claude Code
+- Task: bài blog hướng dẫn sử dụng WoodShop Toolkit + SEO theo bộ từ khoá ASO (Sếp yêu cầu; link sẽ gắn vào app).
+- Files: blog/woodshop-board-foot-calculator-guide/index.html (BlogPosting + FAQPage, ~1 850 từ, 9 mục có neo #home #board-feet #cut-list #optimize #pdf #fraction #spacing #reference #settings #faq); assets/images/apps/woodshop/guide-*.webp (16 ảnh chụp emulator offline 1080×2400 → 540 px, 3,0 MB PNG → 388 KB WebP); blog/index.html (card đầu); sitemap.xml (+1 URL); apps/woodshop/index.html (nút "How-to guide" + link trong mục tools).
+- Từ khoá: board foot calculator, lumber calculator/cost, cut list optimizer, plywood cut optimizer, feet and inches calculator, spacing calculator/baluster spacing, nominal lumber sizes, woodworking calculator. Câu chữ đối chiếu code (Delete line/Undo, Import CSV/Export CSV, per board foot/per piece, Equal gaps/On-center, hạn mức Free).
+- Verification (local): verify_pages.py --blog PASS 0 cảnh báo; Chrome 1440 + khung 390 px: 22 ảnh tải đủ, không tràn ngang (bảng Free/Pro cuộn trong khung), ảnh lẻ căn giữa, icon CTA căn giữa.

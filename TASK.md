@@ -443,3 +443,7 @@
 - [x] Sửa chữ danh sách trắng trên nền kem ở StitchCount (index + privacy dùng chung stitchcount.css)
 - [ ] Sau khi app có trên Google Play: thêm nút Google Play vào card /apps/ và trang giới thiệu WoodShop
 - [x] [2026-09-24] Claude Code — card WoodShop + StitchCount ở /apps/ dùng nút Google Play + App Store Soon như các app khác (Sếp yêu cầu)
+
+### [2026-09-24 21:14] Claude Code — blog hướng dẫn WoodShop
+- [x] Bài /blog/woodshop-board-foot-calculator-guide/ + 16 ảnh WebP + card blog + sitemap + link từ trang app
+- [ ] Sau khi app có trên Google Play: kiểm nút Google Play trong bài (hiện link trả "không tìm thấy" tới khi app public)
