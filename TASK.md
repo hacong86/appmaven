@@ -442,3 +442,4 @@
 - [x] Xuất bản trang WoodShop Toolkit (giới thiệu + privacy + terms) từ J:\Apps\Flutter\WoodShop — package com.appmaven.woodshop
 - [x] Sửa chữ danh sách trắng trên nền kem ở StitchCount (index + privacy dùng chung stitchcount.css)
 - [ ] Sau khi app có trên Google Play: thêm nút Google Play vào card /apps/ và trang giới thiệu WoodShop
+- [x] [2026-09-24] Claude Code — card WoodShop + StitchCount ở /apps/ dùng nút Google Play + App Store Soon như các app khác (Sếp yêu cầu)

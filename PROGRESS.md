@@ -532,3 +532,8 @@
 - Verification (local): verify_pages.py --slug woodshop --package com.appmaven.woodshop PASS 0 cảnh báo; 4 link Google HTTP 200; Chrome desktop 1440 + Playwright mobile 390 không tràn ngang, console 0 lỗi, lightbox/FAQ chạy. Kết quả live ghi ở TASK.md/PROGRESS.md của repo WoodShop.
 - Next: dán https://appmavenstudio.com/apps/woodshop/privacy-policy.html vào Play Console → App content → Privacy policy; đổi PRIVACY_POLICY_URL/SUPPORT_EMAIL của app.
 - Ghi chú: commit này mang theo log TASK/PROGRESS chưa commit của phiên Codex 15/09 (StitchCount, Photo Prompt — việc đã public); .claude/settings.local.json và doc/ vẫn để nguyên.
+
+### [2026-09-24 16:05] Claude Code
+- Task: đồng bộ card WoodShop Toolkit và StitchCount trong apps/index.html với các app khác (Sếp gửi ảnh: nút "Explore app" + "Preparing for release" lệch chuẩn).
+- Files: apps/index.html — footer 2 card thay bằng store-btn-group (Google Play → play.google.com/store/apps/details?id=com.appmaven.woodshop / com.appmaven.stitchcount, App Store Soon).
+- Verification: local Chrome 1440 — 4 card đầu cao bằng nhau (431 px), cùng kiểu nút. Lưu ý: link Google Play báo "không tìm thấy" cho tới khi app được Google duyệt công khai.
