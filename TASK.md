@@ -447,3 +447,10 @@
 ### [2026-09-24 21:14] Claude Code — blog hướng dẫn WoodShop
 - [x] Bài /blog/woodshop-board-foot-calculator-guide/ + 16 ảnh WebP + card blog + sitemap + link từ trang app
 - [ ] Sau khi app có trên Google Play: kiểm nút Google Play trong bài (hiện link trả "không tìm thấy" tới khi app public)
+
+### [2026-09-25 21:50] Claude Code — trang Gieo Quẻ Kinh Dịch - Lục Hào
+- [x] apps/gieo-que-kinh-dich/ (index + privacy + terms) + 6 ảnh WebP + card /apps/ + sitemap + 2 trang legal gốc
+- [x] Privacy Policy URL cho Play Console: https://appmavenstudio.com/apps/gieo-que-kinh-dich/privacy-policy.html
+- [x] Data deletion URL: https://appmavenstudio.com/apps/gieo-que-kinh-dich/privacy-policy.html#xoa-du-lieu
+- [ ] Khi app lên Google Play: kiểm nút Google Play trong card và trang giới thiệu (hiện link trả "không tìm thấy" tới khi app public)
+- [ ] Nếu dự án tắt Android Auto Backup sau này: sửa lại mục 2 của trang chính sách cho khớp

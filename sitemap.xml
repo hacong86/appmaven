@@ -353,4 +353,22 @@
   <url><loc>https://appmavenstudio.com/apps/woodshop/</loc><lastmod>2026-09-24</lastmod></url>
   <url><loc>https://appmavenstudio.com/apps/woodshop/privacy-policy.html</loc><lastmod>2026-09-24</lastmod></url>
   <url><loc>https://appmavenstudio.com/apps/woodshop/terms-of-service.html</loc><lastmod>2026-09-24</lastmod></url>
+  <url>
+    <loc>https://appmavenstudio.com/apps/gieo-que-kinh-dich/</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://appmavenstudio.com/apps/gieo-que-kinh-dich/privacy-policy.html</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://appmavenstudio.com/apps/gieo-que-kinh-dich/terms-of-service.html</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
 </urlset>
