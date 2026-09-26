@@ -458,3 +458,10 @@
 ### [2026-09-26 11:03] Claude Code — cập nhật trang Gieo Quẻ Kinh Dịch theo bản app mới
 - [x] Trang giới thiệu + privacy + terms + 5 ảnh WebP + sitemap lastmod (đã commit)
 - [ ] Push lên origin/main khi user nói "đẩy lên", rồi kiểm 3 trang live có nội dung mới
+
+### [2026-09-26 13:42] Claude Code — cập nhật chính sách quyền riêng tư Văn Khấn Cổ Truyền (app 1.1.2)
+- [x] apps/van-khan-co-truyen/privacy-policy.html: nội dung văn khấn tự sửa, cài đặt nhắc ngày âm lịch, quyền POST_NOTIFICATIONS + RECEIVE_BOOT_COMPLETED, cách tự xoá từng loại dữ liệu, ngày hiệu lực 26/09/2026 + dòng "Cập nhật lần cuối"
+- [x] sitemap.xml: thêm 2 URL Văn Khấn (trước giờ chưa có)
+- [x] Chỉ push commit Văn Khấn b3c6595 lên origin/main (user chọn "Chỉ đẩy Văn Khấn"); trang live đã có nội dung mới
+- [ ] (Đề xuất, chờ user duyệt) Trang Điều khoản cho Văn Khấn — app có IAP + quảng cáo, verify_pages cảnh báo thiếu ToS
+- [ ] (Đề xuất, chờ user duyệt) Ẩn TASK.md/PROGRESS.md khỏi website (hiện appmavenstudio.com/PROGRESS.md trả 200)
