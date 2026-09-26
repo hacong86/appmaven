@@ -336,6 +336,20 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Văn Khấn Cổ Truyền -->
+  <url>
+    <loc>https://appmavenstudio.com/apps/van-khan-co-truyen/</loc>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://appmavenstudio.com/apps/van-khan-co-truyen/privacy-policy.html</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
   <url>
     <loc>https://appmavenstudio.com/apps/prompt-master-ai/privacy-policy.html</loc>
     <lastmod>2026-09-12</lastmod>
