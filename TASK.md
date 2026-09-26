@@ -454,3 +454,7 @@
 - [x] Data deletion URL: https://appmavenstudio.com/apps/gieo-que-kinh-dich/privacy-policy.html#xoa-du-lieu
 - [ ] Khi app lên Google Play: kiểm nút Google Play trong card và trang giới thiệu (hiện link trả "không tìm thấy" tới khi app public)
 - [ ] Nếu dự án tắt Android Auto Backup sau này: sửa lại mục 2 của trang chính sách cho khớp
+
+### [2026-09-26 11:03] Claude Code — cập nhật trang Gieo Quẻ Kinh Dịch theo bản app mới
+- [x] Trang giới thiệu + privacy + terms + 5 ảnh WebP + sitemap lastmod (đã commit)
+- [ ] Push lên origin/main khi user nói "đẩy lên", rồi kiểm 3 trang live có nội dung mới

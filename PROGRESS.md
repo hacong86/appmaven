@@ -553,3 +553,10 @@
 - Lỗi đã bắt và sửa trước khi commit: package trên trang privacy bị nhân đôi thành com.appmaven.gieoquekinhdichkinhdich (thay chuỗi mà chuỗi mới chứa chuỗi cũ). verify_pages.py --package vẫn PASS vì kiểm dạng "có chứa"; chỉ lộ khi mở trang thật.
 - Verification: verify_pages.py --slug gieo-que-kinh-dich --package com.appmaven.gieoquekinhdich → PASS 0 cảnh báo (chạy lại sau khi sửa); Chrome 1440 px cho trang giới thiệu; bản mobile kiểm trên Chrome của máy ảo Android qua http://10.0.2.2:8099 (cửa sổ Chrome trên máy không thu nhỏ xuống 390 px được) — không tràn ngang, ảnh tải đủ, chữ đọc rõ.
 - Ghi chú: .claude/settings.local.json và doc/ vẫn để nguyên, không đưa vào commit này.
+
+### [2026-09-26 11:03] Claude Code
+- Task: cập nhật trang Gieo Quẻ Kinh Dịch - Lục Hào theo bản app mới (dự án J:\Apps\Flutter\GieoQueKinhDich); user yêu cầu commit.
+- Files: apps/gieo-que-kinh-dich/index.html (meta description/keywords/twitter bỏ "bấm độn, xin xăm, 512 quẻ"; mục tính năng bỏ "kiện tụng" vì app không có loại việc này, thêm hỏi cho người thân; khu học 32 bài / 128 câu / 200 thuật ngữ; alt ảnh mới); privacy-policy.html (mục Tuỳ chọn thêm rung/tiếng xu/lời nhắc; mục mới "Quyền ứng dụng dùng trên máy" đối chiếu manifest đã gộp; vị trí quảng cáo gốc và toàn màn hình ghi đúng theo code); terms-of-service.html ("câu thơ xăm" → "bài học"; Ngày hiệu lực 18/08 → 25/09 = ngày trang lên web lần đầu, khớp trang privacy — app chưa phát hành nên chưa ai đồng ý bản cũ); 5 ảnh WebP làm lại từ bộ ảnh store mới (feature, s1–s4, giữ nguyên tên file nên không có ảnh mồ côi); sitemap.xml lastmod 3 URL → 2026-09-26.
+- Verification: verify_pages.py --slug gieo-que-kinh-dich --package com.appmaven.gieoquekinhdich → PASS 0 cảnh báo; Chrome 1440 + khung 390 px (phiên 26/09 sáng) không tràn ngang, ảnh tải đủ.
+- Status: đã commit, CHƯA push — chờ user nói "đẩy lên" rồi mới push và kiểm trang live.
+- Ghi chú: từ commit này repo đặt user.name/user.email cục bộ = hacong86 <hacong86@gmail.com> (cấu hình chung của máy là danh tính mẫu "Example User"). .claude/settings.local.json và doc/ vẫn để nguyên, không đưa vào commit.

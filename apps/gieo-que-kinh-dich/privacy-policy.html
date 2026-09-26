@@ -189,7 +189,7 @@
         <p><strong>Ứng dụng:</strong> Gieo Quẻ Kinh Dịch - Lục Hào</p>
         <p><strong>Mã ứng dụng:</strong> <code>com.appmaven.gieoquekinhdich</code></p>
         <p><strong>Ngày hiệu lực:</strong> 25/09/2026</p>
-        <p><strong>Cập nhật lần cuối:</strong> 25/09/2026</p>
+        <p><strong>Cập nhật lần cuối:</strong> 26/09/2026</p>
 
         <div class="highlight-box">
           <p style="margin-bottom: var(--space-2);"><strong>Tóm tắt nhanh</strong></p>
@@ -223,7 +223,7 @@
           <li><strong>Lịch sử lá quẻ</strong> — quẻ đã gieo, thời điểm, cách lập quẻ, loại việc bạn hỏi.</li>
           <li><strong>Nhật ký ứng nghiệm và ghi chú</strong> — phần bạn tự ghi lại sự việc sau đó ra sao.</li>
           <li><strong>Tiến độ học</strong> — bài đã hoàn thành, câu ôn tập đã làm, thẻ đã đánh dấu thuộc.</li>
-          <li><strong>Tuỳ chọn</strong> — trường phái tính quẻ, giao diện sáng tối, đã xem phần giới thiệu hay chưa.</li>
+          <li><strong>Tuỳ chọn</strong> — trường phái tính quẻ, giao diện sáng tối, bật/tắt rung và tiếng xu, lời nhắc quẻ của ngày, đã xem phần giới thiệu hay chưa.</li>
         </ul>
         <p>
           <strong>Ứng dụng không gửi những dữ liệu này đi đâu.</strong> Chúng tôi không có máy
@@ -243,6 +243,17 @@
           </p>
         </div>
 
+        <h3>Quyền ứng dụng dùng trên máy</h3>
+        <ul>
+          <li><strong>Thông báo</strong> — chỉ để nhắc quẻ của ngày lúc 8 giờ sáng khi bạn tự bật trong Cài đặt. Lời nhắc được tạo ngay trên máy, không qua máy chủ nào. Từ Android 13, máy sẽ hỏi bạn trước; từ chối thì mọi phần khác vẫn dùng bình thường.</li>
+          <li><strong>Chạy khi khởi động máy</strong> — để đặt lại lời nhắc đó sau khi máy khởi động lại hoặc ứng dụng được cập nhật.</li>
+          <li><strong>Rung</strong> — thư viện thông báo dùng cho lời nhắc. Cái rung nhẹ lúc gieo xu là phản hồi chạm của hệ thống, tắt được bằng công tắc &ldquo;Rung khi gieo xu&rdquo; trong Cài đặt của ứng dụng.</li>
+          <li><strong>Lưu ảnh</strong> — chỉ khi bạn bấm lưu ảnh lá quẻ: ảnh được ghi vào thư mục Ảnh của máy. Ứng dụng không đọc ảnh có sẵn của bạn; trên Android 9 trở xuống máy sẽ hỏi quyền ghi bộ nhớ vào đúng lúc bạn bấm.</li>
+          <li><strong>Internet, trạng thái mạng, mã quảng cáo</strong> — chỉ phục vụ quảng cáo của Google ở mục 3. Việc tính quẻ không cần mạng.</li>
+          <li><strong>Giữ máy thức, dịch vụ chạy nền</strong> — do thư viện lên lịch tác vụ của Android đi kèm thư viện quảng cáo Google khai báo; bản thân ứng dụng không chạy dịch vụ nền nào.</li>
+        </ul>
+        <p>Ứng dụng <strong>không</strong> xin quyền vị trí, danh bạ, máy ảnh, micro hay đọc ảnh của bạn.</p>
+
         <h2>3. Quảng cáo và dữ liệu quảng cáo thu thập</h2>
         <p>
           Ứng dụng miễn phí và có hiển thị quảng cáo do <strong>Google AdMob</strong> cung cấp.
@@ -251,8 +262,8 @@
         <p>Để bạn biết trước sẽ gặp quảng cáo ở đâu, dưới đây là <strong>toàn bộ</strong> vị trí quảng cáo:</p>
         <ul>
           <li><strong>Quảng cáo mở ứng dụng</strong> — hiện ở màn chờ khi bạn mở ứng dụng, và khi bạn rời đi một lúc rồi quay lại.</li>
-          <li><strong>Quảng cáo gốc</strong> — một ô xen giữa danh sách, có gắn nhãn quảng cáo để bạn phân biệt với nội dung ứng dụng.</li>
-          <li><strong>Quảng cáo toàn màn hình</strong> — thỉnh thoảng hiện sau khi bạn đã lập vài lá quẻ, có giới hạn số lần và khoảng cách giữa hai lần.</li>
+          <li><strong>Quảng cáo gốc</strong> — một ô có gắn nhãn quảng cáo để bạn phân biệt với nội dung ứng dụng, đặt ở: màn kết quả lá quẻ, cuối mỗi bài học, và xen trong các danh sách Lịch sử, Tra cứu 64 quẻ, Từ điển thuật ngữ.</li>
+          <li><strong>Quảng cáo toàn màn hình</strong> — thỉnh thoảng hiện lúc bạn rời màn kết quả sau khi đã lập vài lá quẻ, hoặc lúc làm xong một bài ôn tập (quiz); có giới hạn số lần và khoảng cách giữa hai lần.</li>
           <li><strong>Quảng cáo có thưởng</strong> — chỉ chạy khi <em>bạn tự bấm</em> vào nút ghi rõ &ldquo;Xem 1 quảng cáo&rdquo; để mở phần luận chuyên sâu hoặc xuất ảnh lá quẻ bản đầy đủ. Bỏ ngang giữa chừng thì không mở khoá, và cũng không mất gì.</li>
         </ul>
         <p>
