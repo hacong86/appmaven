@@ -1,0 +1,19 @@
+# GitHub Pages (Jekyll) settings for appmavenstudio.com
+#
+# Keep the repo's internal notes off the website: every *.md file in this repo
+# is a work log, PRD, checklist or SEO note (TASK.md, PROGRESS.md, README.md,
+# apps/*/SEO_RESEARCH.md ...). No page of the site is written in Markdown.
+#
+# A custom "exclude" list replaces the default one, so the defaults that matter
+# (CNAME and Jekyll's Gemfile/vendor list) are repeated below.
+exclude:
+  - "*.md"
+  - doc/
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
