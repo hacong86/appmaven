@@ -463,5 +463,11 @@
 - [x] apps/van-khan-co-truyen/privacy-policy.html: nội dung văn khấn tự sửa, cài đặt nhắc ngày âm lịch, quyền POST_NOTIFICATIONS + RECEIVE_BOOT_COMPLETED, cách tự xoá từng loại dữ liệu, ngày hiệu lực 26/09/2026 + dòng "Cập nhật lần cuối"
 - [x] sitemap.xml: thêm 2 URL Văn Khấn (trước giờ chưa có)
 - [x] Chỉ push commit Văn Khấn b3c6595 lên origin/main (user chọn "Chỉ đẩy Văn Khấn"); trang live đã có nội dung mới
-- [ ] (Đề xuất, chờ user duyệt) Trang Điều khoản cho Văn Khấn — app có IAP + quảng cáo, verify_pages cảnh báo thiếu ToS
-- [ ] (Đề xuất, chờ user duyệt) Ẩn TASK.md/PROGRESS.md khỏi website (hiện appmavenstudio.com/PROGRESS.md trả 200)
+- [x] (User duyệt 26/09, đẩy 27/09 — commit b79dbed) Trang Điều khoản cho Văn Khấn — app có IAP + quảng cáo, verify_pages cảnh báo thiếu ToS
+- [x] (User duyệt 26/09 "chặn mọi .md", đẩy 27/09 — commit 3c8d7fd) Ẩn TASK.md/PROGRESS.md khỏi website (hiện appmavenstudio.com/PROGRESS.md trả 200)
+
+### [2026-09-27 17:05] Claude Code — Điều khoản Văn Khấn + chặn mọi .md khỏi website
+- [x] apps/van-khan-co-truyen/terms-of-service.html + link ở trang giới thiệu, terms-of-service.html gốc, sitemap (60 URL)
+- [x] _config.yml: Jekyll bỏ qua mọi *.md (14 file nội bộ), giữ lại mặc định CNAME/Gemfile/vendor
+- [x] Kiểm live: 60/60 URL sitemap 200; 11 URL .md → 404; app-ads.txt giống hệt repo; CNAME vẫn 404 như trước
+- [ ] Repo GitHub hacong86/appmaven vẫn công khai → các .md vẫn đọc được trên github.com (chờ user quyết có chuyển riêng tư không)
