@@ -575,3 +575,11 @@
 - Git: phần này được cất ngoài repo từ 26/09 để repo dùng chung không dirty; 27/09 dựng b79dbed (Điều khoản) + 3c8d7fd (_config.yml) thẳng trên origin/main b3c6595 bằng chỉ mục tạm, blob khớp bản đã kiểm, push b3c6595..3c8d7fd. Commit Gieo Quẻ đặt lại thành 26e854a và log Văn Khấn thành 2734148 (nội dung/tác giả/giờ/lời nhắn y nguyên) — vẫn CHƯA push, Gieo Quẻ vẫn chờ user nói "đẩy lên".
 - Verification: trước khi đẩy — verify_pages.py --slug van-khan-co-truyen --package com.appmaven.vankhan PASS 0 cảnh báo; YAML hợp lệ; mô phỏng quy tắc exclude của Jekyll trên 322 file: chỉ .md + CNAME bị ẩn; Chrome khung 1440 + 390 px không tràn ngang, console 0 lỗi. Sau khi đẩy (live sau ~50 s): 60/60 URL sitemap 200; TASK.md, PROGRESS.md (.md/.html/không đuôi), README.md, DISCORD_SYNC.md, DEPLOYMENT.md, PRD, Prompt Master…md, 2 SEO_RESEARCH.md → 404; app-ads.txt giống hệt repo; robots.txt, file xác minh Search Console, CSS/JS/ảnh 200; CNAME 404 như cũ.
 - Ghi chú: repo GitHub công khai nên các .md vẫn đọc được trên github.com.
+
+### [2026-09-28 14:05] Claude Code
+- Task: Gieo Quẻ Kinh Dịch (com.appmaven.gieoquekinhdich) — cập nhật chính sách/điều khoản cho gói "Dịch Quán Pro" (IAP mua một lần qua Google Play Billing Library) và thẻ đánh giá trong app (Play In-App Review); user cần link chính sách để khai GDPR trên AdMob.
+- Files: apps/gieo-que-kinh-dich/privacy-policy.html, terms-of-service.html, index.html; sitemap.xml (lastmod 3 trang).
+- Nguồn đối chiếu: code app (ThanhToanPlay.kt, DanhGiaPlay.kt, dich_vu_pro.dart), Data safety.md của dự án (Financial info › Purchase history), merged manifest release (com.android.vending.BILLING).
+- Verification: verify_pages.py --slug gieo-que-kinh-dich --package com.appmaven.gieoquekinhdich → PASS 0 cảnh báo; Chrome desktop 1920 + khung 390 px (iframe — cửa sổ không thu nhỏ được): không tràn ngang (374/386 px), console 0 lỗi.
+- Git: user cho đẩy cả việc tồn của Văn Khấn + Gieo Quẻ → push main gồm 26e854a (Gieo Quẻ 26/09), 2734148 + 0092d24 (log Văn Khấn) và commit này.
+- URL khai AdMob / Play Console: https://appmavenstudio.com/apps/gieo-que-kinh-dich/privacy-policy.html

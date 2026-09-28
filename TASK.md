@@ -457,7 +457,7 @@
 
 ### [2026-09-26 11:03] Claude Code — cập nhật trang Gieo Quẻ Kinh Dịch theo bản app mới
 - [x] Trang giới thiệu + privacy + terms + 5 ảnh WebP + sitemap lastmod (đã commit)
-- [ ] Push lên origin/main khi user nói "đẩy lên", rồi kiểm 3 trang live có nội dung mới
+- [x] (User nói đăng 28/09, đẩy cùng đợt 28/09) Push lên origin/main khi user nói "đẩy lên", rồi kiểm 3 trang live có nội dung mới
 
 ### [2026-09-26 13:42] Claude Code — cập nhật chính sách quyền riêng tư Văn Khấn Cổ Truyền (app 1.1.2)
 - [x] apps/van-khan-co-truyen/privacy-policy.html: nội dung văn khấn tự sửa, cài đặt nhắc ngày âm lịch, quyền POST_NOTIFICATIONS + RECEIVE_BOOT_COMPLETED, cách tự xoá từng loại dữ liệu, ngày hiệu lực 26/09/2026 + dòng "Cập nhật lần cuối"
@@ -471,3 +471,9 @@
 - [x] _config.yml: Jekyll bỏ qua mọi *.md (14 file nội bộ), giữ lại mặc định CNAME/Gemfile/vendor
 - [x] Kiểm live: 60/60 URL sitemap 200; 11 URL .md → 404; app-ads.txt giống hệt repo; CNAME vẫn 404 như trước
 - [ ] Repo GitHub hacong86/appmaven vẫn công khai → các .md vẫn đọc được trên github.com (chờ user quyết có chuyển riêng tư không)
+
+### [2026-09-28 14:05] Claude Code — Gieo Quẻ Kinh Dịch: gói Dịch Quán Pro + thẻ đánh giá trong app
+- [x] privacy-policy.html: mục 4 mới (Pro mua một lần qua Google Play — khai Lịch sử mua hàng; thẻ đánh giá trong app), bỏ "AdMob là bên duy nhất", thêm quyền thanh toán Google Play, cách xoá/khôi phục giao dịch; đánh lại số mục 5–11
+- [x] terms-of-service.html: mục 5 mới (mua trong ứng dụng, giá do Google Play, hoàn tiền theo chính sách Google Play, khôi phục, thu hồi khi hoàn tiền); đánh lại số mục 6–9
+- [x] index.html: FAQ "Dữ liệu của tôi nằm ở đâu" nhắc gói Pro; sitemap lastmod 3 trang → 2026-09-28
+- [x] User nói "đăng thay đổi trên trang web" + "đẩy luôn cả văn khấn và gieo quẻ" (28/09) → đẩy kèm 2 commit log Văn Khấn (2734148, 0092d24) và commit Gieo Quẻ 26/09 (26e854a)

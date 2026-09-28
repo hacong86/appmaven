@@ -189,7 +189,7 @@
         <p><strong>Ứng dụng:</strong> Gieo Quẻ Kinh Dịch - Lục Hào</p>
         <p><strong>Mã ứng dụng:</strong> <code>com.appmaven.gieoquekinhdich</code></p>
         <p><strong>Ngày hiệu lực:</strong> 25/09/2026</p>
-        <p><strong>Cập nhật lần cuối:</strong> 26/09/2026</p>
+        <p><strong>Cập nhật lần cuối:</strong> 28/09/2026</p>
 
         <div class="highlight-box">
           <p style="margin-bottom: var(--space-2);"><strong>Tóm tắt nhanh</strong></p>
@@ -197,7 +197,8 @@
             <li>Ứng dụng <strong>không có tài khoản đăng nhập</strong> và <strong>không có máy chủ</strong> nào của chúng tôi lưu dữ liệu của bạn.</li>
             <li>Câu hỏi, lá quẻ đã gieo, nhật ký ứng nghiệm và tiến độ học <strong>nằm trong máy bạn</strong>. Ứng dụng không gửi chúng đi đâu.</li>
             <li>Nếu bạn đang bật tính năng <strong>Sao lưu</strong> của Android, hệ điều hành có thể sao lưu dữ liệu này lên Google Drive của <strong>chính bạn</strong> — mục 2 nói rõ.</li>
-            <li>Ứng dụng có quảng cáo của Google. Phần quảng cáo này <strong>có</strong> thu thập một số thông tin về thiết bị — mục 3 liệt kê đầy đủ.</li>
+            <li>Ứng dụng có quảng cáo của Google (trừ khi bạn dùng gói <strong>Dịch Quán Pro</strong>). Phần quảng cáo này <strong>có</strong> thu thập một số thông tin về thiết bị — mục 3 liệt kê đầy đủ.</li>
+            <li>Gói <strong>Dịch Quán Pro</strong> là tuỳ chọn, mua một lần qua <strong>Google Play</strong>. Ứng dụng không bao giờ thấy số thẻ hay ví của bạn, chỉ hỏi Google Play xem tài khoản của bạn đã mua gói này chưa — mục 4.</li>
             <li>Bạn xoá được từng lá quẻ và từng ghi chép ngay trong ứng dụng; gỡ ứng dụng là xoá sạch.</li>
           </ul>
         </div>
@@ -223,6 +224,8 @@
           <li><strong>Lịch sử lá quẻ</strong> — quẻ đã gieo, thời điểm, cách lập quẻ, loại việc bạn hỏi.</li>
           <li><strong>Nhật ký ứng nghiệm và ghi chú</strong> — phần bạn tự ghi lại sự việc sau đó ra sao.</li>
           <li><strong>Tiến độ học</strong> — bài đã hoàn thành, câu ôn tập đã làm, thẻ đã đánh dấu thuộc.</li>
+          <li><strong>Trạng thái gói Pro</strong> — một dấu &ldquo;đã mua / chưa mua&rdquo; để vẫn tắt quảng cáo khi không có mạng.</li>
+          <li><strong>Mốc để hỏi đánh giá</strong> — ngày bạn mở ứng dụng lần đầu, số lá quẻ đã gieo, lần gần nhất ứng dụng nhờ Google Play hiện thẻ đánh giá. Chỉ dùng để quyết định lúc nào nên hỏi.</li>
           <li><strong>Tuỳ chọn</strong> — trường phái tính quẻ, giao diện sáng tối, bật/tắt rung và tiếng xu, lời nhắc quẻ của ngày, đã xem phần giới thiệu hay chưa.</li>
         </ul>
         <p>
@@ -249,15 +252,18 @@
           <li><strong>Chạy khi khởi động máy</strong> — để đặt lại lời nhắc đó sau khi máy khởi động lại hoặc ứng dụng được cập nhật.</li>
           <li><strong>Rung</strong> — thư viện thông báo dùng cho lời nhắc. Cái rung nhẹ lúc gieo xu là phản hồi chạm của hệ thống, tắt được bằng công tắc &ldquo;Rung khi gieo xu&rdquo; trong Cài đặt của ứng dụng.</li>
           <li><strong>Lưu ảnh</strong> — chỉ khi bạn bấm lưu ảnh lá quẻ: ảnh được ghi vào thư mục Ảnh của máy. Ứng dụng không đọc ảnh có sẵn của bạn; trên Android 9 trở xuống máy sẽ hỏi quyền ghi bộ nhớ vào đúng lúc bạn bấm.</li>
-          <li><strong>Internet, trạng thái mạng, mã quảng cáo</strong> — chỉ phục vụ quảng cáo của Google ở mục 3. Việc tính quẻ không cần mạng.</li>
+          <li><strong>Internet, trạng thái mạng, mã quảng cáo</strong> — phục vụ quảng cáo của Google ở mục 3, và kết nối Google Play khi bạn mua hoặc khôi phục gói Pro (mục 4). Việc tính quẻ không cần mạng.</li>
+          <li><strong>Thanh toán qua Google Play</strong> — quyền do thư viện thanh toán chính thức của Google khai báo, chỉ dùng khi bạn mua hoặc khôi phục gói Pro.</li>
           <li><strong>Giữ máy thức, dịch vụ chạy nền</strong> — do thư viện lên lịch tác vụ của Android đi kèm thư viện quảng cáo Google khai báo; bản thân ứng dụng không chạy dịch vụ nền nào.</li>
         </ul>
         <p>Ứng dụng <strong>không</strong> xin quyền vị trí, danh bạ, máy ảnh, micro hay đọc ảnh của bạn.</p>
 
         <h2>3. Quảng cáo và dữ liệu quảng cáo thu thập</h2>
         <p>
-          Ứng dụng miễn phí và có hiển thị quảng cáo do <strong>Google AdMob</strong> cung cấp.
-          Đây là <strong>bên duy nhất</strong> nhận dữ liệu từ ứng dụng.
+          Ứng dụng tải về miễn phí và có hiển thị quảng cáo do <strong>Google AdMob</strong> cung
+          cấp. Nếu bạn dùng gói <strong>Dịch Quán Pro</strong>, ứng dụng không tải và không hiện
+          quảng cáo nào. Ngoài Google — với vai trò nhà cung cấp quảng cáo (mục này) và cổng thanh
+          toán Google Play (mục 4) — ứng dụng không gửi dữ liệu cho bên nào khác.
         </p>
         <p>Để bạn biết trước sẽ gặp quảng cáo ở đâu, dưới đây là <strong>toàn bộ</strong> vị trí quảng cáo:</p>
         <ul>
@@ -283,7 +289,8 @@
         </p>
         <p>
           Ứng dụng <strong>không</strong> thu thập tên, email, số điện thoại, danh bạ, ảnh,
-          tin nhắn, vị trí GPS chính xác hay thông tin thanh toán của bạn.
+          tin nhắn, vị trí GPS chính xác, số thẻ hay thông tin ví của bạn. Việc mua gói Pro được
+          nói riêng ở mục 4.
         </p>
         <p>Chính sách quyền riêng tư của Google:
           <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></p>
@@ -303,18 +310,60 @@
           </p>
         </div>
 
-        <h2>4. Chúng tôi không làm những việc sau</h2>
+        <h2>4. Gói Dịch Quán Pro và thẻ đánh giá</h2>
+
+        <h3>Gói Dịch Quán Pro (tuỳ chọn)</h3>
+        <p>
+          Dịch Quán Pro là gói <strong>mua một lần</strong>, không tự gia hạn: tắt quảng cáo, mở sẵn
+          phần luận chuyên sâu và cho xuất ảnh lá quẻ bản đầy đủ. Không mua thì bạn vẫn dùng ứng
+          dụng như bình thường.
+        </p>
+        <ul>
+          <li><strong>Thanh toán do Google Play xử lý.</strong> Bạn trả tiền trong hộp thanh toán
+            của Google Play. Ứng dụng <strong>không</strong> nhận và không lưu số thẻ, tài khoản ngân
+            hàng hay ví điện tử của bạn.</li>
+          <li><strong>Ứng dụng đọc lịch sử mua của riêng gói này.</strong> Qua Thư viện thanh toán
+            Google Play (Google Play Billing Library), ứng dụng hỏi Google Play xem tài khoản Google
+            Play trên máy đã mua gói Pro chưa, giao dịch đã xong hay đang chờ thanh toán, và gửi
+            <strong>xác nhận</strong> mã giao dịch về Google Play (Google yêu cầu bước này, nếu không
+            giao dịch sẽ tự được hoàn tiền). Việc hỏi diễn ra khi bạn mở ứng dụng, khi quay lại ứng
+            dụng và khi bạn bấm &ldquo;Khôi phục giao dịch&rdquo;.</li>
+          <li><strong>Dùng vào việc gì:</strong> chỉ để mở hoặc khôi phục gói Pro, và thu hồi khi
+            giao dịch đã được hoàn tiền. Ứng dụng lưu trên máy một dấu &ldquo;đã mua&rdquo; để vẫn tắt
+            quảng cáo khi không có mạng. Chúng tôi không có máy chủ nhận những thông tin này và không
+            dùng chúng cho quảng cáo hay phân tích.</li>
+          <li><strong>Google Play</strong> lưu giao dịch trong tài khoản Google của bạn theo chính
+            sách của Google, và cung cấp cho nhà phát triển thông tin đơn hàng (như mã đơn, sản phẩm,
+            giá, trạng thái) trong Play Console để hỗ trợ hoàn tiền và đối soát.</li>
+        </ul>
+        <p>
+          Trên mục &ldquo;An toàn dữ liệu&rdquo; của Google Play, phần này được khai là
+          <strong>Lịch sử mua hàng</strong>: có thu thập, không chia sẻ, không bắt buộc, dùng cho
+          chức năng của ứng dụng.
+        </p>
+
+        <h3>Thẻ đánh giá trong ứng dụng</h3>
+        <p>
+          Sau khi bạn đã dùng ứng dụng một thời gian, lúc bạn vừa đọc xong một lá quẻ mới gieo, ứng
+          dụng có thể nhờ Google Play hiện một thẻ nhỏ để chấm sao và viết nhận xét ngay trong ứng
+          dụng — ít lần, cách nhau nhiều tháng, và bạn bỏ qua được. Số sao và lời nhận xét do
+          <strong>Google Play</strong> nhận và đăng công khai theo điều khoản của Google Play; ứng
+          dụng <strong>không nhận được</strong> nội dung đó và cũng không biết bạn có đánh giá hay
+          không.
+        </p>
+
+        <h2>5. Chúng tôi không làm những việc sau</h2>
         <ul>
           <li>Không yêu cầu bạn đăng ký hay đăng nhập.</li>
           <li>Không thu thập thông tin định danh cá nhân.</li>
           <li>Không bán dữ liệu của bạn cho bất kỳ ai.</li>
           <li>Không xây dựng hệ thống theo dõi nào của riêng mình, và không nhận dữ liệu theo dõi
-            từ ai. Riêng Google, với tư cách nhà cung cấp quảng cáo, xử lý dữ liệu theo chính
-            sách của họ (liên kết ở mục 3).</li>
+            từ ai. Riêng Google, với tư cách nhà cung cấp quảng cáo và cổng thanh toán Google
+            Play, xử lý dữ liệu theo chính sách của họ (liên kết ở mục 3).</li>
           <li>Không dùng nội dung bạn ghi trong ứng dụng để huấn luyện mô hình nào.</li>
         </ul>
 
-        <h2 id="xoa-du-lieu">5. Cách xoá dữ liệu của bạn</h2>
+        <h2 id="xoa-du-lieu">6. Cách xoá dữ liệu của bạn</h2>
         <p>
           Vì toàn bộ dữ liệu nằm trên máy bạn, bạn tự xoá được mà không cần xin phép ai và
           không cần chờ chúng tôi xử lý:
@@ -330,6 +379,11 @@
             vào <strong>Cài đặt &rarr; Google &rarr; Sao lưu &rarr; Dữ liệu ứng dụng</strong>
             trên máy, hoặc mở Google Drive &rarr; <em>Bản sao lưu</em> để xoá.</li>
           <li><strong>Dữ liệu quảng cáo:</strong> đặt lại hoặc xoá mã quảng cáo theo hướng dẫn ở mục 3.</li>
+          <li><strong>Giao dịch gói Pro:</strong> gỡ ứng dụng xoá dấu &ldquo;đã mua&rdquo; trên máy nhưng
+            <strong>không</strong> huỷ giao dịch — cài lại và bấm &ldquo;Khôi phục giao dịch&rdquo; là có lại
+            Pro. Lịch sử mua do Google Play lưu trong tài khoản Google của bạn (ứng dụng Google Play
+            &rarr; ảnh hồ sơ &rarr; Thanh toán và gói thuê bao); hoàn tiền hay xoá lịch sử đó thực
+            hiện với Google theo chính sách của họ.</li>
         </ul>
         <p>
           Nếu bạn muốn hỏi thêm hoặc cần chúng tôi hỗ trợ việc xoá, gửi email tới
@@ -339,7 +393,7 @@
           tay bạn, trên máy bạn.
         </p>
 
-        <h2>6. Trẻ em</h2>
+        <h2>7. Trẻ em</h2>
         <p>
           Ứng dụng <strong>không hướng tới trẻ em</strong> và chúng tôi không cố ý thu thập dữ
           liệu của trẻ em. Đối tượng khai báo trên Google Play là người dùng từ 18 tuổi trở lên.
@@ -349,15 +403,15 @@
           để chúng tôi hỗ trợ.
         </p>
 
-        <h2>7. Quyền của bạn</h2>
+        <h2>8. Quyền của bạn</h2>
         <ul>
           <li><strong>Xem</strong> dữ liệu đang lưu — mở tab <strong>Lịch sử</strong> trong ứng dụng.</li>
-          <li><strong>Xoá</strong> dữ liệu — theo hướng dẫn ở mục 5.</li>
+          <li><strong>Xoá</strong> dữ liệu — theo hướng dẫn ở mục 6.</li>
           <li><strong>Từ chối quảng cáo cá nhân hoá</strong> — đặt lại hoặc xoá mã quảng cáo trong Cài đặt Android (mục 3).</li>
           <li><strong>Hỏi chúng tôi</strong> bất cứ điều gì về quyền riêng tư qua email ở mục 1.</li>
         </ul>
 
-        <h2>8. Cơ sở pháp lý tại Việt Nam</h2>
+        <h2>9. Cơ sở pháp lý tại Việt Nam</h2>
         <p>
           Ứng dụng phát hành tại Việt Nam và tuân theo <strong>Luật Bảo vệ dữ liệu cá nhân
           số 91/2025/QH15</strong> (có hiệu lực từ 01/01/2026) cùng
@@ -376,14 +430,14 @@
           của ứng dụng.
         </p>
 
-        <h2>9. Thay đổi chính sách</h2>
+        <h2>10. Thay đổi chính sách</h2>
         <p>
           Khi ứng dụng có thay đổi ảnh hưởng tới quyền riêng tư (ví dụ thêm tính năng mới, thêm
           mua trong ứng dụng, hoặc đổi nhà cung cấp quảng cáo), chúng tôi sẽ cập nhật trang này
           và đổi ngày ở đầu trang.
         </p>
 
-        <h2>10. Liên hệ</h2>
+        <h2>11. Liên hệ</h2>
         <p><strong>Email:</strong> <a href="mailto:hacong86@gmail.com">hacong86@gmail.com</a></p>
         <p><strong>Nhà phát hành:</strong> AppMaven Studio</p>
         <p>Chúng tôi cố gắng phản hồi trong vòng 7 ngày làm việc.</p>
