@@ -477,3 +477,8 @@
 - [x] terms-of-service.html: mục 5 mới (mua trong ứng dụng, giá do Google Play, hoàn tiền theo chính sách Google Play, khôi phục, thu hồi khi hoàn tiền); đánh lại số mục 6–9
 - [x] index.html: FAQ "Dữ liệu của tôi nằm ở đâu" nhắc gói Pro; sitemap lastmod 3 trang → 2026-09-28
 - [x] User nói "đăng thay đổi trên trang web" + "đẩy luôn cả văn khấn và gieo quẻ" (28/09) → đẩy kèm 2 commit log Văn Khấn (2734148, 0092d24) và commit Gieo Quẻ 26/09 (26e854a)
+
+### [2026-09-28 16:5x] Claude Code — Gieo Quẻ Kinh Dịch: bỏ câu so sánh với app khác + ảnh xem trước mới
+- [x] index.html: bỏ "Nhiều ứng dụng dùng thư viện lịch âm của Trung Quốc…" → "Lịch Việt và lịch Trung Quốc lệch nhau một ngày ở một số tháng." (user chọn B)
+- [x] index.html: bỏ câu "Phần lớn ứng dụng Kinh Dịch trên điện thoại dừng ở chỗ tra 64 quẻ…" (user chọn bỏ) — không có khảo sát chứng minh
+- [x] assets/images/apps/gieo-que-kinh-dich/feature.webp (og:image) = ảnh bìa mới 28/09 (màn app hiện tại, không gạch vàng)

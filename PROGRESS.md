@@ -583,3 +583,8 @@
 - Verification: verify_pages.py --slug gieo-que-kinh-dich --package com.appmaven.gieoquekinhdich → PASS 0 cảnh báo; Chrome desktop 1920 + khung 390 px (iframe — cửa sổ không thu nhỏ được): không tràn ngang (374/386 px), console 0 lỗi.
 - Git: user cho đẩy cả việc tồn của Văn Khấn + Gieo Quẻ → push main gồm 26e854a (Gieo Quẻ 26/09), 2734148 + 0092d24 (log Văn Khấn) và commit này.
 - URL khai AdMob / Play Console: https://appmavenstudio.com/apps/gieo-que-kinh-dich/privacy-policy.html
+
+### [2026-09-28 16:5x] Claude Code
+- Task: Gieo Quẻ Kinh Dịch — gỡ 2 câu so sánh với "nhiều/phần lớn ứng dụng" khác (không có bằng chứng; rủi ro Google Play Metadata "Data comparison of apps or brands" + Luật Quảng cáo sửa đổi 2025 Điều 8 khoản 10) và thay ảnh xem trước khi chia sẻ link. User: "đẩy lên" + chọn bỏ luôn câu thứ 2.
+- Files: apps/gieo-que-kinh-dich/index.html; assets/images/apps/gieo-que-kinh-dich/feature.webp (to_webp.py từ StoreAssets/feature-graphic-1024x500.png: 630 KB → 46 KB).
+- Verification: verify_pages.py --slug gieo-que-kinh-dich --package com.appmaven.gieoquekinhdich → PASS 0 cảnh báo; Chrome desktop + khung 390 px: không cuộn ngang (374/386, chỉ dải ảnh chụp cuộn ngang theo thiết kế), console 0 lỗi; trang không còn "Nhiều ứng dụng"/"Phần lớn ứng dụng".
