@@ -487,3 +487,8 @@
 - [x] privacy-policy.html theo Privacy Policy.md 2026-09-29 (Crashlytics, dịch, QR, khoá app, sao lưu, Pro; bỏ quyền Camera) + package name + favicon đúng
 - [x] sitemap.xml: thêm trang app + trang policy
 - [ ] (tuỳ chọn) trang giới thiệu index.html: cập nhật tính năng bản 1.4 + rút title ≤ 70 ký tự
+
+### [2026-09-29 21:56] Claude Code — Smart Scanner: trang giới thiệu bản 1.4
+- [x] Nội dung + ảnh mới theo bản 1.4, title ≤ 70 ký tự, bỏ tuyên bố so sánh/thương hiệu đối thủ
+- [x] Thẻ app ở apps/index.html
+- [x] Header mobile xếp dọc

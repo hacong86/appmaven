@@ -594,3 +594,9 @@
 - Files: apps/smartsscanner-document-scanner-pdf-creator/privacy-policy.html (nội dung mới, package name, favicon appmaven_logo.png, bỏ noindex như trang policy các app khác, meta description); sitemap.xml (+2 URL trang app + policy, trước đó thiếu).
 - Verification: verify_pages.py --slug smartsscanner-document-scanner-pdf-creator --package com.appmaven.smartscanner → PASS (2 cảnh báo có sẵn: title trang giới thiệu 75 ký tự; không có ToS riêng — app dùng ToS chung /terms-of-service.html); Chrome desktop 1920 + khung 390 px (iframe): không tràn ngang (378/390), console 0 lỗi.
 - URL Play Console: https://appmavenstudio.com/apps/smartsscanner-document-scanner-pdf-creator/privacy-policy.html
+
+### [2026-09-29 21:56] Claude Code
+- Task: Smart Scanner — trang giới thiệu theo bản 1.4 (user: "cập nhật tiếp trang giới thiệu app trên website cho khớp các tính năng mới của bản 1.4").
+- Files: apps/smartsscanner-document-scanner-pdf-creator/index.html (title/meta mới, 8 tính năng, 6 ảnh mới, FAQ 6 câu gồm Pro + quảng cáo AdMob, bài dài viết lại; bỏ "Best…" và "CamScanner alternative"; bỏ "PNG" vì app chỉ xuất JPG; favicon appmaven_logo.png; header xếp dọc ở màn ≤600px); apps/index.html (mô tả thẻ app); assets/images/apps/smartsscanner-document-scanner-pdf-creator/s1…s6 .webp (1063 KB → 356 KB) thay document-scanner01–04.webp (đã xoá, không còn nơi nào dùng).
+- Ảnh: chụp app thật trên emulator 1080×2400 với tài liệu mẫu hư cấu (Example Street, 555-0100, example.com), trạng thái Pro (không quảng cáo).
+- Verification: verify_pages.py --slug smartsscanner-document-scanner-pdf-creator --package com.appmaven.smartscanner → PASS (1 cảnh báo: không có ToS riêng — app dùng /terms-of-service.html); Chrome desktop 1920 + khung 390 px: không tràn ngang (378/390), 0 ảnh lỗi.
