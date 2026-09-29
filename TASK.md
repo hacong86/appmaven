@@ -482,3 +482,8 @@
 - [x] index.html: bỏ "Nhiều ứng dụng dùng thư viện lịch âm của Trung Quốc…" → "Lịch Việt và lịch Trung Quốc lệch nhau một ngày ở một số tháng." (user chọn B)
 - [x] index.html: bỏ câu "Phần lớn ứng dụng Kinh Dịch trên điện thoại dừng ở chỗ tra 64 quẻ…" (user chọn bỏ) — không có khảo sát chứng minh
 - [x] assets/images/apps/gieo-que-kinh-dich/feature.webp (og:image) = ảnh bìa mới 28/09 (màn app hiện tại, không gạch vàng)
+
+### [2026-09-29 20:55] Claude Code — Smart Scanner: chính sách bảo mật bản 1.4
+- [x] privacy-policy.html theo Privacy Policy.md 2026-09-29 (Crashlytics, dịch, QR, khoá app, sao lưu, Pro; bỏ quyền Camera) + package name + favicon đúng
+- [x] sitemap.xml: thêm trang app + trang policy
+- [ ] (tuỳ chọn) trang giới thiệu index.html: cập nhật tính năng bản 1.4 + rút title ≤ 70 ký tự

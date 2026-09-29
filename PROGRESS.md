@@ -588,3 +588,9 @@
 - Task: Gieo Quẻ Kinh Dịch — gỡ 2 câu so sánh với "nhiều/phần lớn ứng dụng" khác (không có bằng chứng; rủi ro Google Play Metadata "Data comparison of apps or brands" + Luật Quảng cáo sửa đổi 2025 Điều 8 khoản 10) và thay ảnh xem trước khi chia sẻ link. User: "đẩy lên" + chọn bỏ luôn câu thứ 2.
 - Files: apps/gieo-que-kinh-dich/index.html; assets/images/apps/gieo-que-kinh-dich/feature.webp (to_webp.py từ StoreAssets/feature-graphic-1024x500.png: 630 KB → 46 KB).
 - Verification: verify_pages.py --slug gieo-que-kinh-dich --package com.appmaven.gieoquekinhdich → PASS 0 cảnh báo; Chrome desktop + khung 390 px: không cuộn ngang (374/386, chỉ dải ảnh chụp cuộn ngang theo thiết kế), console 0 lỗi; trang không còn "Nhiều ứng dụng"/"Phần lớn ứng dụng".
+
+### [2026-09-29 20:55] Claude Code
+- Task: Smart Scanner (com.appmaven.smartscanner) — cập nhật chính sách bảo mật cho bản 1.4 theo `Privacy Policy.md` của dự án (J:/Apps/Flutter/DocumentScanner, bản 2026-09-29): thêm Firebase Crashlytics, gói dịch ML Kit, trình quét mã QR/mã vạch (Play services), In-App Review, khoá app (sinh trắc/PIN), sao lưu, PDF mật khẩu AES-256, Smart Scanner Pro; bỏ câu "xin quyền Camera" (app không xin quyền Camera). User: "làm luôn".
+- Files: apps/smartsscanner-document-scanner-pdf-creator/privacy-policy.html (nội dung mới, package name, favicon appmaven_logo.png, bỏ noindex như trang policy các app khác, meta description); sitemap.xml (+2 URL trang app + policy, trước đó thiếu).
+- Verification: verify_pages.py --slug smartsscanner-document-scanner-pdf-creator --package com.appmaven.smartscanner → PASS (2 cảnh báo có sẵn: title trang giới thiệu 75 ký tự; không có ToS riêng — app dùng ToS chung /terms-of-service.html); Chrome desktop 1920 + khung 390 px (iframe): không tràn ngang (378/390), console 0 lỗi.
+- URL Play Console: https://appmavenstudio.com/apps/smartsscanner-document-scanner-pdf-creator/privacy-policy.html
