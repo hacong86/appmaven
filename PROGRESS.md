@@ -600,3 +600,8 @@
 - Files: apps/smartsscanner-document-scanner-pdf-creator/index.html (title/meta mới, 8 tính năng, 6 ảnh mới, FAQ 6 câu gồm Pro + quảng cáo AdMob, bài dài viết lại; bỏ "Best…" và "CamScanner alternative"; bỏ "PNG" vì app chỉ xuất JPG; favicon appmaven_logo.png; header xếp dọc ở màn ≤600px); apps/index.html (mô tả thẻ app); assets/images/apps/smartsscanner-document-scanner-pdf-creator/s1…s6 .webp (1063 KB → 356 KB) thay document-scanner01–04.webp (đã xoá, không còn nơi nào dùng).
 - Ảnh: chụp app thật trên emulator 1080×2400 với tài liệu mẫu hư cấu (Example Street, 555-0100, example.com), trạng thái Pro (không quảng cáo).
 - Verification: verify_pages.py --slug smartsscanner-document-scanner-pdf-creator --package com.appmaven.smartscanner → PASS (1 cảnh báo: không có ToS riêng — app dùng /terms-of-service.html); Chrome desktop 1920 + khung 390 px: không tràn ngang (378/390), 0 ảnh lỗi.
+
+### [2026-09-30 09:38] Claude Code
+- Task: Smart Scanner — bỏ 2 câu "offline" trên trang giới thiệu (app có AdMob + Crashlytics → không hứa offline; bài học android-play.md), thay bằng "on your phone" / "translation runs on your device".
+- Files: apps/smartsscanner-document-scanner-pdf-creator/index.html
+- Verification: verify_pages.py PASS; grep offline = 0.
