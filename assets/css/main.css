@@ -271,6 +271,11 @@ select {
   padding-right: var(--space-10);
 }
 
+select option {
+  color: var(--color-text-primary);
+  background-color: var(--color-navy-800);
+}
+
 input[type="checkbox"],
 input[type="radio"] {
   width: var(--space-5);
