@@ -7,7 +7,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://appmavenstudio.com/</loc>
-    <lastmod>2026-01-25</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -277,14 +277,14 @@
   <!-- Support & Legal Pages -->
   <url>
     <loc>https://appmavenstudio.com/support/</loc>
-    <lastmod>2026-01-25</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
     <loc>https://appmavenstudio.com/about/</loc>
-    <lastmod>2026-01-26</lastmod>
+    <lastmod>2026-10-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
