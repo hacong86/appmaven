@@ -1,3 +1,14 @@
+## 2026-10-11 — Codex — Chuẩn bố cục cho trang mới
+
+- [x] Đối chiếu CSS/trang hiện có và hai bản skill `appmaven-publish` của Codex/Claude.
+- [x] Tạo `AGENTS.md`, `PAGE_STYLE_GUIDE.md`; cập nhật hướng dẫn README sang một nguồn chuẩn.
+- [x] Chốt AppMaven Page Style v1: landing Bento chung cho app/game, legal một cột, blog một cột đọc; navbar/footer/font/màu chung.
+- [x] Cập nhật 4 file hướng dẫn ở mỗi bản skill Codex/Claude; đọc lại bằng SHA-256, khớp bản đã chuẩn bị, giữ nguyên script và tài liệu intake/legal.
+- [x] Kiểm UTF-8, code fence, 14 liên kết local và 10 token CSS; metadata skill không đổi, đúng cấu trúc name/description; diff tài liệu không lỗi whitespace.
+- Giới hạn kiểm: `quick_validate.py` không hoàn tất vì Python hiện tại thiếu PyYAML; đã kiểm riêng metadata/Markdown/liên kết, không cài dependency. Không chạy thử sinh trang mới vì task này chỉ chỉnh hướng dẫn.
+- Có thay đổi Lịch Âm/mục lục/sitemap song song trong working tree; task này không ghi các file HTML/CSS/JS/ảnh đó.
+- Phạm vi: hướng dẫn cho các lần tạo trang sau; không tạo trang sản phẩm mới, không cải tạo trang cũ, không commit/push/deploy.
+
 # Task: Thêm ứng dụng ShiftCheck
 
 - [x] 2026-09-15 — Codex: Sếp duyệt email hacong86@gmail.com và xuất bản StitchCount. Web commit 57e00ec, Pages success, kiểm nội dung live đạt tại /apps/stitchcount/ và /apps/stitchcount/privacy-policy.html.
@@ -492,3 +503,30 @@
 - [x] Nội dung + ảnh mới theo bản 1.4, title ≤ 70 ký tự, bỏ tuyên bố so sánh/thương hiệu đối thủ
 - [x] Thẻ app ở apps/index.html
 - [x] Header mobile xếp dọc
+
+
+## Xuất bản và kiểm live — 2026-10-11, Codex
+
+- Đã xuất bản theo yêu cầu chủ app: [trang giới thiệu](https://appmavenstudio.com/apps/lich-am-2026/) và [chính sách quyền riêng tư](https://appmavenstudio.com/apps/lich-am-2026/privacy-policy.html). Web commit `75ee42b9fb7741b56045628a1a2852cf449cca6e`; [GitHub Pages](https://github.com/hacong86/appmaven/actions/runs/38076074439) completed/success đúng commit.
+- Chủ app xác nhận đối tượng **từ 13 tuổi trở lên**. Nguồn policy và bản web cùng ngày hiệu lực **11/10/2026**; 145 khối chữ và 2 bảng khớp nhau.
+- Theo yêu cầu tiếp theo của chủ app, landing giới thiệu tính năng 3.0 bình thường, không có thông báo đang chuẩn bị phát hành. Đây là quyết định nội dung website, không xác nhận app 3.0 đã được Google Play duyệt.
+- Kiểm live: cả 10 file xuất bản khớp local (HTML/XML so sau chuẩn hóa xuống dòng; 5 WebP khớp SHA-256), 25 URL HTTP trả 200, 3 liên kết mục nội bộ tồn tại. Card app, privacy index và sitemap đã cập nhật.
+- URL privacy trong `licham/lib/screens/about_screen.dart` khớp đúng URL live. Chưa chạy lại Android trong lượt chỉ xuất bản web; kiểm thao tác About trước đó giữ trong `android-smoke.md`.
+- CUA: kiểm trực quan desktop 1440 px, mobile 390 px và 320 px; landing/privacy đọc được, không tràn toàn trang. Bản public đã thử privacy/back/cách xóa dữ liệu, menu mobile và FAQ. Báo cáo HTTP và ảnh nằm ở `E:/Web/AppMaven/build/licham-release/publish-live/`; preview cuối trước deploy ở `publish-preview/`.
+- Chưa thay URL hoặc biểu mẫu trên Play Console. Còn đối chiếu Target audience thực tế trên Console, Data Safety, G7.8 và các bước phát hành app trong `RELEASE.md`.
+
+- Nhật ký giữ local cùng các thay đổi tài liệu có sẵn; commit web chỉ gồm đúng 10 file trang/mục lục/sitemap/ảnh, không gộp quy chuẩn/README/.claude/doc của công việc khác.
+
+
+## Cập nhật ảnh Phone có hook — 2026-10-11, Codex
+
+- Đã tạo 6 ảnh quảng bá bằng ChatGPT Image tích hợp từ screenshot thật; bộ PNG Phone 1080×1920 và WebP xem tại `J:/Apps/Flutter/LichVanNienRe/docs/release-3.0/graphics/phone-promotional/`. Không dùng trình duyệt ChatGPT hoặc script ghép chữ/nền/UI.
+- Đã xuất bản hai WebP vào gallery landing: `v3-promo-phone-calendar.webp` (139.980 byte), `v3-promo-phone-tet.webp` (146.828 byte). Ảnh tablet và logo giữ nguyên. Tất cả ảnh sản phẩm trong gallery dùng WebP.
+- Commit `ab6366ac6b79f2ebc90738a0cb6d9587033684af`; [GitHub Pages](https://github.com/hacong86/appmaven/actions/runs/38076922604) completed/success. Kiểm lại 12 file khớp local, 25 URL HTTP 200, 3 anchor tồn tại; policy vẫn là bản đã xuất bản 11/10/2026 cho đối tượng từ 13 tuổi.
+- CUA đã xem gallery local desktop 1440/mobile 390, không tràn toàn trang. Bản public tải được cả 4 ảnh, đã chụp/xem gallery desktop; viewport được trả về mặc định. Bằng chứng ở `E:/Web/AppMaven/build/licham-release/publish-promo-live/`.
+- Website đã public đầy đủ. Ảnh/metadata app chưa được upload Play Console; repo app chưa commit/push trong lượt này. Các nhật ký, nguồn, prompt và checklist giữ local để Claude Code tiếp tục đối chiếu.
+
+## Bài blog Lịch âm 2027 — 2026-10-11, Claude Code
+
+- [x] Soạn `blog/lich-am-2027-lich-van-nien-tet-dinh-mui/index.html`, nối `blog/index.html` + `sitemap.xml`, kiểm tĩnh + xem bằng trình duyệt (desktop, 390, 320).
+- [ ] User duyệt bản nháp → commit (chỉ 3 file trang / mục lục / sitemap + nhật ký) → push → kiểm URL live.

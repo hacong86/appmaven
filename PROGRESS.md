@@ -1,5 +1,16 @@
 # PROGRESS
 
+## 2026-10-11 — Codex — Quy chuẩn bố cục trang mới
+- Trạng thái: hoàn tất hướng dẫn AppMaven Page Style v1 trong repo và cập nhật hai bản skill Codex/Claude trên máy; chưa commit/push/deploy.
+- Nguyên nhân: skill Codex cho chọn trang tương tự; skill Claude dùng mẫu game/app khác nhau và cho đổi màu theo app, nên không có một chuẩn giao diện thống nhất.
+- File/phạm vi: thêm `AGENTS.md`, `PAGE_STYLE_GUIDE.md`, chỉnh hướng dẫn thiết kế/thêm trang trong `README.md`; cập nhật nhật ký hiện có.
+- Quyết định: dùng nền navy/font của CSS chung; landing Bento cho cả app/game, khung legal Photo Prompt cho Privacy/Terms, cột đọc blog theo WoodShop; chuẩn hóa màu và navbar/footer ở bản mới.
+- Task này không sửa HTML/CSS/JS/ảnh hoặc sitemap. Trong lúc làm có thay đổi Lịch Âm/mục lục/sitemap từ công việc khác; giữ nguyên và không stage các file đó.
+- Backup skill trước chỉnh: `build/appmaven-layout-20261011/backup/codex/` và `build/appmaven-layout-20261011/backup/claude/`; đã so SHA-256 với nguồn.
+- Skill: cập nhật `SKILL.md`, `references/01-site-map.md`, `references/03-page-recipes.md`, `references/05-verify-deploy.md` tại cả `C:/Users/NC/.codex/skills/appmaven-publish/` và `C:/Users/NC/.claude/skills/appmaven-publish/`. Cả 8 file đã đọc lại bằng SHA-256 và khớp bản chuẩn bị; script và reference intake/legal giữ nguyên.
+- Kiểm chứng: 11 tài liệu đọc UTF-8 hợp lệ, code fence đóng đủ; 14 link local tồn tại; 10 token CSS có định nghĩa; metadata name/description giữ nguyên và đúng cấu trúc; PowerShell installer parse hợp lệ; `git diff --check` trên tài liệu được sửa không lỗi.
+- Giới hạn: `quick_validate.py` đã thử nhưng Python hiện tại thiếu PyYAML, không cài thêm; kiểm metadata/Markdown/liên kết bằng PowerShell thay thế. Chưa chạy thử AI tạo một trang mới, không có UI mới để preview trong task chỉ sửa hướng dẫn này.
+
 ## 2026-09-15 — Codex — StitchCount đã public
 - Sếp xác nhận email hacong86@gmail.com và yêu cầu xuất bản. Đổi contact trang StitchCount, commit/push 15 file web thuộc task trong `57e00ec`.
 - GitHub Pages run 34935050073 completed/success. Kiểm nội dung live landing/privacy/CSS/JS/catalog/privacy index/sitemap khớp local, ảnh icon/counter khớp hash; mở Chrome kiểm landing.
@@ -605,3 +616,33 @@
 - Task: Smart Scanner — bỏ 2 câu "offline" trên trang giới thiệu (app có AdMob + Crashlytics → không hứa offline; bài học android-play.md), thay bằng "on your phone" / "translation runs on your device".
 - Files: apps/smartsscanner-document-scanner-pdf-creator/index.html
 - Verification: verify_pages.py PASS; grep offline = 0.
+
+
+## Xuất bản và kiểm live — 2026-10-11, Codex
+
+- Đã xuất bản theo yêu cầu chủ app: [trang giới thiệu](https://appmavenstudio.com/apps/lich-am-2026/) và [chính sách quyền riêng tư](https://appmavenstudio.com/apps/lich-am-2026/privacy-policy.html). Web commit `75ee42b9fb7741b56045628a1a2852cf449cca6e`; [GitHub Pages](https://github.com/hacong86/appmaven/actions/runs/38076074439) completed/success đúng commit.
+- Chủ app xác nhận đối tượng **từ 13 tuổi trở lên**. Nguồn policy và bản web cùng ngày hiệu lực **11/10/2026**; 145 khối chữ và 2 bảng khớp nhau.
+- Theo yêu cầu tiếp theo của chủ app, landing giới thiệu tính năng 3.0 bình thường, không có thông báo đang chuẩn bị phát hành. Đây là quyết định nội dung website, không xác nhận app 3.0 đã được Google Play duyệt.
+- Kiểm live: cả 10 file xuất bản khớp local (HTML/XML so sau chuẩn hóa xuống dòng; 5 WebP khớp SHA-256), 25 URL HTTP trả 200, 3 liên kết mục nội bộ tồn tại. Card app, privacy index và sitemap đã cập nhật.
+- URL privacy trong `licham/lib/screens/about_screen.dart` khớp đúng URL live. Chưa chạy lại Android trong lượt chỉ xuất bản web; kiểm thao tác About trước đó giữ trong `android-smoke.md`.
+- CUA: kiểm trực quan desktop 1440 px, mobile 390 px và 320 px; landing/privacy đọc được, không tràn toàn trang. Bản public đã thử privacy/back/cách xóa dữ liệu, menu mobile và FAQ. Báo cáo HTTP và ảnh nằm ở `E:/Web/AppMaven/build/licham-release/publish-live/`; preview cuối trước deploy ở `publish-preview/`.
+- Chưa thay URL hoặc biểu mẫu trên Play Console. Còn đối chiếu Target audience thực tế trên Console, Data Safety, G7.8 và các bước phát hành app trong `RELEASE.md`.
+
+- Nhật ký giữ local cùng các thay đổi tài liệu có sẵn; commit web chỉ gồm đúng 10 file trang/mục lục/sitemap/ảnh, không gộp quy chuẩn/README/.claude/doc của công việc khác.
+
+
+## Cập nhật ảnh Phone có hook — 2026-10-11, Codex
+
+- Đã tạo 6 ảnh quảng bá bằng ChatGPT Image tích hợp từ screenshot thật; bộ PNG Phone 1080×1920 và WebP xem tại `J:/Apps/Flutter/LichVanNienRe/docs/release-3.0/graphics/phone-promotional/`. Không dùng trình duyệt ChatGPT hoặc script ghép chữ/nền/UI.
+- Đã xuất bản hai WebP vào gallery landing: `v3-promo-phone-calendar.webp` (139.980 byte), `v3-promo-phone-tet.webp` (146.828 byte). Ảnh tablet và logo giữ nguyên. Tất cả ảnh sản phẩm trong gallery dùng WebP.
+- Commit `ab6366ac6b79f2ebc90738a0cb6d9587033684af`; [GitHub Pages](https://github.com/hacong86/appmaven/actions/runs/38076922604) completed/success. Kiểm lại 12 file khớp local, 25 URL HTTP 200, 3 anchor tồn tại; policy vẫn là bản đã xuất bản 11/10/2026 cho đối tượng từ 13 tuổi.
+- CUA đã xem gallery local desktop 1440/mobile 390, không tràn toàn trang. Bản public tải được cả 4 ảnh, đã chụp/xem gallery desktop; viewport được trả về mặc định. Bằng chứng ở `E:/Web/AppMaven/build/licham-release/publish-promo-live/`.
+- Website đã public đầy đủ. Ảnh/metadata app chưa được upload Play Console; repo app chưa commit/push trong lượt này. Các nhật ký, nguồn, prompt và checklist giữ local để Claude Code tiếp tục đối chiếu.
+
+## Bài blog Lịch âm 2027 (bản nháp local) — 2026-10-11 15:18, Claude Code
+
+- Trang mới theo AppMaven Page Style v1, mẫu blog một cột: `blog/lich-am-2027-lich-van-nien-tet-dinh-mui/index.html` (tiếng Việt, khoảng 1.170 từ, BlogPosting + FAQPage). Đã nối card ở `blog/index.html` và URL ở `sitemap.xml`. Không sửa trang cũ, CSS / JS chung hay Featured.
+- Nguồn: từ khoá ở `J:/Apps/Flutter/LichVanNienRe/docs/release-3.0/aso-plan.md` mục 2, 7.3 và `custom-listing.md`; ngày âm dương 2027 tính bằng `LichViet` của app (chạy `flutter test` tạm, đã xoá file thử); tên tab / mục lấy từ mã nguồn app. Ảnh dùng lại 5 WebP có sẵn trong `assets/images/apps/lich-am-2026/`.
+- Kiểm: `verify_pages.py --slug lich-am-2026 --package com.appmaven.licham --blog lich-am-2027-lich-van-nien-tet-dinh-mui` → PASS (1 cảnh báo có sẵn: app không có trang Terms). Chrome local: desktop, khung 390px và 320px không tràn ngang; menu mobile mở / Escape đóng; console 0 lỗi; 7 ảnh tải được.
+- Lỗi đã thấy và đã sửa: bảng ngày ở mobile bị khuất cột "Ngày dương" (min-width 480px) → bảng vừa khung ở 390 và 320; nút Google Play cao 40px → 44px; nút phụ màu cam của CSS chung → đổi thành link xanh theo chuẩn; câu CTA rớt 1 chữ → rút gọn.
+- CHƯA commit, CHƯA push, chưa kiểm live. Chờ User duyệt bản nháp.
