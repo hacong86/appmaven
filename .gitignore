@@ -57,3 +57,7 @@ coverage/
 # (source docs of apps/games: ASO, policy drafts; local Claude Code settings)
 doc/
 .claude/
+
+# Internal notes: work logs, PRD, checklists, SEO research, AI instructions.
+# No page of the site is written in Markdown, so no *.md belongs in the public repo.
+*.md
