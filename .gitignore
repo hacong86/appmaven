@@ -52,3 +52,8 @@ coverage/
 
 # Misc
 .sass-cache/
+
+# Internal working files - keep off the public repo
+# (source docs of apps/games: ASO, policy drafts; local Claude Code settings)
+doc/
+.claude/
