@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Board Feet Formula &amp; Lumber Cost | AppMaven Studio</title>
+<meta name="description" content="Calculate board feet with inches or feet, work through a 4 BF example, and separate lumber volume from the supplier’s pricing tally."><meta name="author" content="AppMaven Team">
+<link rel="canonical" href="https://appmavenstudio.com/blog/how-to-calculate-board-feet/"><meta property="og:type" content="article"><meta property="og:url" content="https://appmavenstudio.com/blog/how-to-calculate-board-feet/"><meta property="og:title" content="How to Calculate Board Feet: Formula, Units and Lumber Cost"><meta property="og:description" content="Calculate board feet with inches or feet, work through a 4 BF example, and separate lumber volume from the supplier’s pricing tally."><meta property="og:site_name" content="AppMaven Studio"><meta name="twitter:card" content="summary">
+<link rel="icon" type="image/png" href="/assets/images/logo/appmaven_logo.png">
+<link rel="stylesheet" href="/assets/css/variables.css"><link rel="stylesheet" href="/assets/css/main.css"><link rel="stylesheet" href="/assets/css/components.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "How to Calculate Board Feet: Formula, Units and Lumber Cost", "description": "Calculate board feet with inches or feet, work through a 4 BF example, and separate lumber volume from the supplier’s pricing tally.", "author": {"@type": "Organization", "name": "AppMaven Studio", "url": "https://appmavenstudio.com/"}, "publisher": {"@type": "Organization", "name": "AppMaven Studio"}, "datePublished": "2026-10-18", "dateModified": "2026-10-18", "mainEntityOfPage": "https://appmavenstudio.com/blog/how-to-calculate-board-feet/", "inLanguage": "en", "articleSection": "Woodworking"}</script>
+<style>.skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      z-index: 2000;
+      padding: var(--space-3) var(--space-4);
+      background: var(--color-accent);
+      color: #fff;
+      border-radius: 0 0 var(--radius-md) 0;
+    }
+
+    .skip-link:focus {
+      left: 0;
+    }
+
+.article-container{max-width:860px;margin:0 auto}.article-header{margin-bottom:var(--space-10)}
+.article-header h1{font-size:clamp(2rem,5vw,2.75rem);line-height:1.2;color:var(--color-text-primary);margin:var(--space-5) 0}
+.article-description{font-size:1.125rem;color:var(--color-text-secondary);line-height:1.8;margin-bottom:var(--space-6)}
+.article-meta{display:flex;align-items:center;gap:var(--space-4);flex-wrap:wrap;margin-bottom:var(--space-8);padding-bottom:var(--space-6);border-bottom:1px solid var(--glass-border);color:var(--color-text-secondary)}
+.article-content{line-height:1.8;overflow-wrap:anywhere}.article-content h2{font-size:1.875rem;margin-top:48px;margin-bottom:20px;color:var(--color-text-primary);scroll-margin-top:100px}
+.article-content h3{font-size:1.5rem;margin-top:32px;margin-bottom:16px;color:var(--color-text-primary)}
+.article-content p,.article-content li{font-size:1.05rem;color:var(--color-text-secondary)}.article-content p{margin-bottom:var(--space-5)}
+.article-content ul,.article-content ol{margin-bottom:var(--space-6);padding-left:var(--space-6)}.article-content li{margin-bottom:var(--space-2)}
+.article-content strong{color:var(--color-text-primary)}.article-container a{color:var(--color-blue-300);text-underline-offset:3px}.article-container a:hover{color:var(--color-blue-400)}
+.article-container a:focus-visible,.table-scroll:focus-visible{outline:2px solid var(--color-blue-300);outline-offset:4px}
+.breadcrumb{margin-bottom:var(--space-8)}.breadcrumb ol{display:flex;gap:var(--space-2);list-style:none;padding:0;flex-wrap:wrap;color:var(--color-text-secondary);font-size:var(--text-sm)}
+.toc{background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:var(--radius-lg);padding:var(--space-6);margin:var(--space-8) 0}
+.toc .toc-title{font-size:1rem;color:var(--color-text-primary);font-weight:600;margin-bottom:var(--space-3)}.toc ol{columns:2;column-gap:var(--space-8);margin-bottom:0}.toc li{break-inside:avoid}
+.formula,.tool-note{background:var(--glass-bg);border-left:3px solid var(--color-blue-300);padding:var(--space-5);border-radius:var(--radius-lg)}
+.article-content .formula{font-family:var(--font-mono);color:var(--color-text-primary);font-size:1rem}
+.table-scroll{max-width:100%;overflow-x:auto;margin:var(--space-6) 0;border:1px solid var(--glass-border);border-radius:var(--radius-lg)}
+table{border-collapse:collapse;width:100%;font-size:1rem;color:var(--color-text-secondary)}th,td{padding:12px 16px;border-bottom:1px solid var(--glass-border);text-align:left;vertical-align:top}th{color:var(--color-text-primary);background:var(--glass-bg)}caption{text-align:left;padding:12px 16px;font-size:.95rem;color:var(--color-text-secondary)}
+.source-note{font-size:1rem}.source-note li{font-size:1rem}.tool-note p:last-child{margin-bottom:0}
+@media(max-width:768px){.toc ol{columns:1}}@media(max-width:640px){.article-container{padding-left:16px;padding-right:16px}.toc{padding:var(--space-4)}th,td{padding:10px}.article-content h2{overflow-wrap:normal}}
+
+th,td{overflow-wrap:normal;word-break:normal}table{min-width:440px}
+</style></head><body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="navbar-container">
+            <a href="/" class="navbar-logo" aria-label="AppMaven Studio Home">
+                <img src="/assets/images/logo/appmaven_logo.png" alt="AppMaven Studio Logo"
+                    style="height: 32px; width: 32px; border-radius: 8px;">
+                <span>AppMaven Studio</span>
+            </a>
+
+            <button class="navbar-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="navbar-menu" role="menubar">
+                <li role="none"><a href="/" role="menuitem">Home</a></li>
+                <li role="none"><a href="/apps/" role="menuitem">Apps</a></li>
+                <li role="none"><a href="/blog/" role="menuitem" aria-current="page">Blog</a></li>
+                <li role="none"><a href="/about/" role="menuitem">About</a></li>
+                <li role="none"><a href="/support/" role="menuitem">Support</a></li>
+            </ul>
+        </div>
+    </nav><div class="cosmic-background"></div>
+<main id="main-content" class="page-content" style="padding-top:var(--header-height)"><article class="section"><div class="container article-container">
+<nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li aria-hidden="true">/</li><li><a href="/blog/">Blog</a></li><li aria-hidden="true">/</li><li>Woodworking</li></ol></nav>
+<header class="article-header"><h1>How to Calculate Board Feet: Formula, Units and Lumber Cost</h1><p class="article-description">Calculate board feet with inches or feet, work through a 4 BF example, and separate lumber volume from the supplier’s pricing tally.</p><div class="article-meta"><span>AppMaven Team</span><time datetime="2026-10-18">October 18, 2026</time><span>Woodworking · Practical guide</span></div></header>
+<div class="article-content"><nav class="toc" aria-label="Article contents"><p class="toc-title">In this guide</p><ol><li><a href="#formula">The formula and its units</a></li><li><a href="#examples">Worked examples</a></li><li><a href="#cost">From board feet to cost</a></li><li><a href="#check">Before you order</a></li></ol></nav>
+
+<p>A board can be eight feet long without containing eight board feet. Length tells you how far the board extends; board feet describe its volume. That distinction matters when you compare two boards with different widths or thicknesses.</p>
+<h2 id="formula">The formula and its units</h2>
+<p>One board foot equals <strong>144 cubic inches</strong>: the volume of a piece 1 inch thick, 12 inches wide and 12 inches long. Penn State Extension gives the following formula for sawn lumber. <a href="#source-1">[1]</a></p>
+<p class="formula">BF = thickness (in) × width (in) × length (ft) ÷ 12</p>
+<p>Keep thickness and width in inches and length in feet for this version. If every measurement is in inches, use the other denominator:</p>
+<p class="formula">BF = thickness (in) × width (in) × length (in) ÷ 144</p>
+<p>The two formulas agree because one foot contains 12 inches. Changing the unit without changing the denominator is an easy way to make an answer twelve times too large or too small.</p>
+<h2 id="examples">Worked examples</h2>
+<h3>One board: 1 inch × 6 inches × 8 feet</h3>
+<p>Write the unit next to each measurement before entering the numbers. The calculation is <strong>1 × 6 × 8 ÷ 12 = 4 BF</strong>. As a cross-check, convert 8 feet to 96 inches: 1 × 6 × 96 ÷ 144 also equals 4 BF.</p>
+<div class="table-scroll" role="region" aria-label="Calculated board-foot examples" tabindex="0"><table><caption>Original arithmetic examples; these are input sizes, not retail size labels</caption><thead><tr><th scope="col">Thickness × width × length</th><th scope="col">Quantity</th><th scope="col">Total BF</th></tr></thead><tbody><tr><td>1 in × 6 in × 8 ft</td><td>1</td><td>4</td></tr><tr><td>1 in × 6 in × 8 ft</td><td>3</td><td>12</td></tr><tr><td>1½ in × 8 in × 6 ft</td><td>2</td><td>12</td></tr></tbody></table></div>
+<p>For the last row, one board contains 1.5 × 8 × 6 ÷ 12 = 6 BF. Two identical boards contain 12 BF. When board sizes differ, calculate each row separately and add the results; multiplying one average-looking board by the total quantity can hide a size difference.</p>
+<h2 id="cost">From board feet to cost</h2>
+<p>For a hypothetical quote of <strong>$7.50 per BF</strong>, a 12 BF tally costs 12 × $7.50 = <strong>$90</strong> before any separate tax, delivery or processing charges. This is an arithmetic example, not a current lumber price.</p>
+<p>Confirm which dimensions and rounding rules the seller uses for the invoice. Wood-Mizer’s board-foot guide illustrates lumber tallies; a seller’s tally basis and the physical volume of a surfaced board need not use the same inputs. <a href="#source-2">[2]</a> A small measured-volume result is not, by itself, proof that the bill is wrong.</p>
+<h2 id="check">Before you order</h2>
+<ol><li>Label thickness, width, length and quantity explicitly.</li><li>Keep each row’s units consistent.</li><li>Confirm the supplier’s tally and price basis before comparing quotes.</li><li>List extra stock for your project separately from the calculated volume. A purchase allowance is a planning choice, not part of the definition of a board foot.</li></ol>
+<p>Working from a nominal size such as 2×4? Read <a href="/blog/nominal-vs-actual-lumber-sizes/">nominal versus actual lumber sizes</a> before deciding which dimensions belong in your calculation.</p>
+
+<h2 id="woodshop">Keep the numbers with your project</h2><div class="tool-note"><p>WoodShop Toolkit’s board-foot tool keeps multiple boards and lumber costs in one tally. Use the same dimension and pricing basis you agreed with your supplier.</p><p><a href="/apps/woodshop/">Explore WoodShop Toolkit and its real app screens</a>. Preparing for Android release.</p></div>
+<h2 id="sources">Sources and scope</h2><ol class="source-note"><li id="source-1"><a href="https://extension.psu.edu/valuing-standing-timber">Penn State Extension — Valuing Standing Timber, Board Feet section</a>. Definition and sawn-lumber formula.</li><li id="source-2"><a href="https://woodmizer.com/us/learning-center/what-is-a-board-foot">Wood-Mizer — What is a Board Foot?</a>. Lumber tally and pricing context. Examples on this page are our own calculations.</li></ol><p class="source-note">Sources checked October 18, 2026. Calculations and example project records are AppMaven’s own illustrations. They describe the stated assumptions and are not a complete construction plan.</p>
+</div></div></article></main><footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div
+                        style="display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-4);">
+                        <img src="/assets/images/logo/appmaven_logo.png" alt="AppMaven Studio Logo"
+                            style="height: 32px; width: 32px; border-radius: 8px;">
+                        <span style="font-size: var(--text-xl); font-weight: var(--font-bold);">AppMaven Studio</span>
+                    </div>
+                    <p style="color: var(--color-text-secondary); margin-bottom: var(--space-4); line-height: 1.6;">
+                        Crafting innovative mobile experiences that users love. We combine clean design with powerful
+                        functionality to
+                        build the future, one app at a time.
+                    </p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/apps/">Apps</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="/support/">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="/data-deletion/">Data Deletion</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:hacong86@gmail.com">hacong86@gmail.com</a></li>
+                        <li><a href="tel:+84972865336">+84 972 865 336</a></li>
+                        <li><a href="https://github.com/hacong86" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AppMaven Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer><script src="/assets/js/main.js"></script></body></html>
