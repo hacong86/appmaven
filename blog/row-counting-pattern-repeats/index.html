@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Row Counting and Repeats | StitchCount | AppMaven Studio</title>
+<meta name="description" content="Track total rows, completed repeats and your next pattern row. Use worked examples, a restart checklist and clear notes in StitchCount."><meta name="author" content="AppMaven Studio"><meta name="robots" content="index, follow">
+<link rel="canonical" href="https://appmavenstudio.com/blog/row-counting-pattern-repeats/"><meta property="og:type" content="article"><meta property="og:url" content="https://appmavenstudio.com/blog/row-counting-pattern-repeats/">
+<meta property="og:title" content="Row Counting and Pattern Repeats: Keep Your Place"><meta property="og:description" content="Track total rows, completed repeats and your next pattern row. Use worked examples, a restart checklist and clear notes in StitchCount."><meta property="og:image" content="https://appmavenstudio.com/assets/images/apps/stitchcount/counter.webp">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Row Counting and Pattern Repeats: Keep Your Place"><meta name="twitter:description" content="Track total rows, completed repeats and your next pattern row. Use worked examples, a restart checklist and clear notes in StitchCount."><meta name="twitter:image" content="https://appmavenstudio.com/assets/images/apps/stitchcount/counter.webp">
+<link rel="icon" type="image/png" href="/assets/images/logo/appmaven_logo.png">
+<link rel="stylesheet" href="/assets/css/variables.css"><link rel="stylesheet" href="/assets/css/main.css"><link rel="stylesheet" href="/assets/css/components.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Row Counting and Pattern Repeats: Keep Your Place", "description": "Track total rows, completed repeats and your next pattern row. Use worked examples, a restart checklist and clear notes in StitchCount.", "inLanguage": "en", "author": {"@type": "Organization", "name": "AppMaven Studio"}, "publisher": {"@type": "Organization", "name": "AppMaven Studio"}, "dateModified": "2026-10-18", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://appmavenstudio.com/blog/row-counting-pattern-repeats/"}, "image": "https://appmavenstudio.com/assets/images/apps/stitchcount/counter.webp", "citation": ["https://www.craftyarncouncil.com/standards/how-to-read-knitting-pattern", "https://www.craftyarncouncil.com/standards/crochet-abbreviations"]}</script><style>
+    .skip-link { position: absolute; left: -9999px; top: 0; z-index: 2000; padding: var(--space-3) var(--space-4); background: var(--color-accent); color: #fff; border-radius: 0 0 var(--radius-md) 0; }
+    .skip-link:focus { left: 0; }
+    .article-container { max-width: 860px; margin: 0 auto; }
+    main.page-content { padding-top: var(--header-height); }
+    .article-header { margin-bottom: var(--space-10); }
+    .article-header h1 { font-size: clamp(2rem, 5vw, 2.75rem); line-height: 1.2; color: var(--color-text-primary); margin-bottom: var(--space-5); }
+    .article-description { font-size: 1.125rem; color: var(--color-text-secondary); line-height: 1.8; margin-bottom: var(--space-6); }
+    .article-meta { display: flex; align-items: center; gap: var(--space-4); flex-wrap: wrap; margin-bottom: var(--space-8); padding-bottom: var(--space-6); border-bottom: 1px solid var(--glass-border); color: var(--color-text-secondary); }
+    .article-content { line-height: 1.8; overflow-wrap: anywhere; }
+    .article-content h2 { margin-top: 48px; margin-bottom: 20px; font-size: 1.875rem; color: var(--color-text-primary); scroll-margin-top: 96px; }
+    .article-content h3 { margin-top: 32px; margin-bottom: 16px; font-size: 1.5rem; color: var(--color-text-primary); }
+    .article-content p { margin-bottom: var(--space-5); color: var(--color-text-secondary); font-size: 1.05rem; }
+    .article-content ul, .article-content ol { margin-bottom: var(--space-6); padding-left: var(--space-6); }
+    .article-content li { margin-bottom: var(--space-2); color: var(--color-text-secondary); font-size: 1.05rem; }
+    .article-content strong { color: var(--color-text-primary); }
+    .article-container a { color: var(--color-blue-300); }
+    .article-container a:hover { color: var(--color-blue-400); }
+    .article-container a:focus-visible, .table-scroll:focus-visible { outline: 2px solid var(--color-blue-300); outline-offset: 4px; }
+    .breadcrumb { margin-bottom: var(--space-8); }
+    .breadcrumb ol { display: flex; gap: var(--space-2); flex-wrap: wrap; list-style: none; padding: 0; color: var(--color-text-secondary); font-size: var(--text-sm); }
+    .toc { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: var(--radius-lg); padding: var(--space-6); margin: var(--space-8) 0; }
+    .toc h2 { font-size: 1rem; margin: 0 0 var(--space-3); }
+    .toc ol { columns: 2; column-gap: var(--space-8); margin-bottom: 0; }
+    .toc li { break-inside: avoid; }
+    .highlight-box { background: var(--glass-bg); border-left: 3px solid var(--color-blue-300); padding: var(--space-6); margin: var(--space-8) 0; border-radius: var(--radius-lg); }
+    .highlight-box p:last-child { margin-bottom: 0; }
+    .table-scroll { overflow-x: auto; margin-bottom: var(--space-6); }
+    table { width: 100%; border-collapse: collapse; font-size: 1rem; }
+    th, td { padding: var(--space-3); border: 1px solid var(--glass-border); text-align: left; color: var(--color-text-secondary); }
+    th { background: var(--glass-bg); color: var(--color-text-primary); }
+    .sources { border-top: 1px solid var(--glass-border); margin-top: var(--space-12); padding-top: var(--space-6); }
+    @media (max-width: 767px) { .toc ol { columns: 1; } }
+
+    .article-store-actions { display: flex; flex-wrap: wrap; gap: 12px; margin: var(--space-6) 0 var(--space-8); }
+    .article-store-actions .store-button { display: inline-flex; align-items: center; background: #000; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; padding: 6px 16px; color: #fff; text-decoration: none; min-height: 54px; min-width: 172px; }
+    .article-store-actions a.store-button:hover { background: #1a1a1a; border-color: rgba(255,255,255,0.4); color: #fff; }
+    .article-store-actions .store-button svg { width: 24px; height: 24px; margin-right: 12px; fill: currentColor; flex-shrink: 0; }
+    .article-store-actions .store-button-content { display: flex; flex-direction: column; align-items: flex-start; line-height: 1.2; }
+    .article-store-actions .store-button-subtitle { font-size: 11px; text-transform: uppercase; }
+    .article-store-actions .store-button-title { font-size: 17px; font-weight: 600; }
+    .article-store-actions .store-coming { border-style: dashed; color: var(--color-text-secondary); }
+
+  
+    .counter-example { max-width: 320px; margin: var(--space-8) auto; }
+    .counter-example img { width: 100%; height: auto; border-radius: var(--radius-xl); }
+    .counter-example figcaption { color: var(--color-text-secondary); font-size: 0.95rem; line-height: 1.8; margin-top: var(--space-3); }
+    .table-scroll table { min-width: 500px; }
+</style>
+</head><body><a href="#main-content" class="skip-link">Skip to main content</a>
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="navbar-container">
+            <a href="/" class="navbar-logo" aria-label="AppMaven Studio Home">
+                <img src="/assets/images/logo/appmaven_logo.png" alt="AppMaven Studio Logo"
+                    style="height: 32px; width: 32px; border-radius: 8px;">
+                <span>AppMaven Studio</span>
+            </a>
+
+            <button class="navbar-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="navbar-menu" role="menubar">
+                <li role="none"><a href="/" role="menuitem">Home</a></li>
+                <li role="none"><a href="/apps/" role="menuitem">Apps</a></li>
+                <li role="none"><a href="/blog/" role="menuitem" class="active">Blog</a></li>
+                <li role="none"><a href="/about/" role="menuitem">About</a></li>
+                <li role="none"><a href="/support/" role="menuitem">Support</a></li>
+            </ul>
+        </div>
+    </nav><div class="cosmic-background"></div>
+<main id="main-content" class="page-content"><article class="section"><div class="container article-container">
+<nav aria-label="Breadcrumb" class="breadcrumb"><ol><li><a href="/">Home</a></li><li aria-hidden="true">/</li><li><a href="/blog/">Blog</a></li><li aria-hidden="true">/</li><li aria-current="page">Row counting and repeats</li></ol></nav>
+<header class="article-header"><h1>Row Counting and Pattern Repeats: Keep Your Place</h1><p class="article-description">Track total rows, completed repeats and your next pattern row. Use worked examples, a restart checklist and clear notes in StitchCount.</p><div class="article-meta"><span>AppMaven Studio</span><time datetime="2026-10-18">October 18, 2026</time><span>Knitting &amp; crochet</span></div></header>
+<div class="article-content"><nav class="toc" aria-labelledby="toc-heading"><h2 id="toc-heading">In this guide</h2><ol><li><a href="#three-numbers">Give each number one job</a></li><li><a href="#worked-example">An 8-row repeat example</a></li><li><a href="#setup-rows">Setup rows and section changes</a></li><li><a href="#stitchcount">Track it with StitchCount</a></li><li><a href="#restart-checklist">A restart checklist</a></li></ol></nav>
+<p>You have worked 24 rows, but your counter also says “repeat 3.” What does each number mean? A useful tracking system separates the amount of work completed from your place in the pattern’s repeated instructions.</p>
+<p>This guide works with knitting or crochet instructions you already own. The examples below are original counting exercises, not complete patterns or a stitch tutorial.</p>
+
+<h2 id="three-numbers">Give each number one job</h2>
+<ul><li><strong>Total completed rows:</strong> how many rows you have finished from a stated starting point.</li><li><strong>Completed repeats:</strong> how many whole blocks of the repeated row sequence you have finished.</li><li><strong>Next row within the repeat:</strong> which instruction in that sequence you will work next.</li></ul>
+<p>A row repeat is different from a group of stitches repeated across one row. If you work a stitch group several times before turning, that does not mean you completed several rows. Read the pattern’s own repeat markers and instructions.</p>
+<p>For work in the round, record completed rounds instead of silently mixing rows and rounds. Keep the author’s wording nearby; a counter is a record of your actions, not an interpretation of the pattern.</p>
+
+<h2 id="worked-example">An 8-row repeat, with no setup rows</h2>
+<p><strong>Original example:</strong> imagine a repeat made of eight rows, starting immediately at the beginning of a practice piece. Start the total at zero and update it <strong>after</strong> completing a row. There are no border or setup rows in this example.</p>
+<div class="table-scroll" tabindex="0" role="region" aria-label="Completed rows and next row in an eight-row repeat"><table><thead><tr><th scope="col">Total rows finished</th><th scope="col">Whole repeats finished</th><th scope="col">Next repeat row</th></tr></thead><tbody><tr><td>8</td><td>1</td><td>1, in the second repeat</td></tr><tr><td>24</td><td>3</td><td>1, in the fourth repeat</td></tr><tr><td>25</td><td>3</td><td>2, in the fourth repeat</td></tr></tbody></table></div>
+<p>After 24 rows, 24 ÷ 8 = 3 whole repeats. After row 25, you have completed three whole repeats and the first row of the next one. The next instruction is repeat row 2.</p>
+<div class="highlight-box"><p><strong>“Next” and “last completed” are different.</strong> After finishing repeat row 8, the last completed row is 8 and the next repeat row is 1. Write which convention you use so a later restart does not add or skip a row.</p></div>
+
+<h2 id="setup-rows">Account for setup rows and section changes</h2>
+<p>Now change the example: first work four setup rows, then begin the same eight-row repeat. At 25 total completed rows, only 25 − 4 = 21 rows belong to the repeated section.</p>
+<p>Those 21 rows contain two whole repeats and five further rows. Your next instruction is repeat row 6, while the next overall row is 26. “Total 25” and “next repeat row 6” can both be correct.</p>
+<p>Subtract only rows that your actual pattern excludes from the repeat. If the designer changes the repeat length, starts a new section or asks for shaping at the same time, update your tracking note before continuing. A simple division example does not replace those instructions.</p>
+
+<h2 id="stitchcount">Use StitchCount with a clear counting convention</h2>
+<p>Our <a href="/apps/stitchcount/">StitchCount row counter and project notes app</a> supports a main row counter, linked counters and project notes. First decide what each counter represents, then label or record that meaning.</p>
+<ol><li><strong>Keep the main total.</strong> If it represents all completed rows in the piece, continue that total rather than resetting it whenever a repeat ends.</li><li><strong>Use a linked counter for the right job.</strong> The “Every N rows” link advances a counter when the main count reaches a multiple of N. With a main count starting at zero and an aligned eight-row repeat, an every-eight link can count completed blocks at 8, 16 and 24.</li><li><strong>Record the next instruction separately.</strong> A linked value of 3 does not by itself mean “work row 3 of the repeat.” Keep a note of the next repeat row and any setup-row offset.</li><li><strong>Check the alignment.</strong> The link does not infer where a pattern’s repeated section begins. For the four-setup-row example above, do not assume multiples of the overall total match the repeat boundaries. Track that section manually unless you have checked your chosen setup against the pattern.</li></ol>
+<p>The screenshot is an example project showing a main value of 24 and a repeat value of 3. Its counter settings are not shown; the eight-row arithmetic above illustrates one possible counting convention, not proof of that project’s configuration.</p>
+<figure class="counter-example"><img src="/assets/images/apps/stitchcount/counter.webp" width="940" height="1672" loading="lazy" alt="StitchCount example project showing ROWS 24 and REPEAT 3"><figcaption>Example project in StitchCount. Keep the meaning of each saved count in your project notes.</figcaption></figure>
+
+<h2 id="restart-checklist">Leave a restart note you can trust</h2>
+<p>A short pause note can contain the information a number alone leaves out. Suggested fields are: <strong>section → total rows completed → whole repeats completed → next repeat row → next overall row → any separate shaping instruction</strong>.</p>
+<p>For the setup-row example: “After 4 setup rows; total completed 25; 2 whole repeats plus 5 rows; next repeat row 6; next overall row 26.” This is an editorial note template, not a customer testimonial.</p>
+<p>Before restarting, compare the note, your actual work and the pattern. If you undo work or notice an accidental tap, correct the affected counts and the note together. When you are unsure which instruction comes next, resolve that uncertainty before adding another row.</p>
+<p>For crochet, also check <a href="/blog/us-vs-uk-crochet-terms/">whether your pattern uses US or UK stitch terms</a>. Clear terminology and clear counting conventions prevent different kinds of confusion.</p>
+
+<div class="article-store-actions" role="group" aria-label="StitchCount app availability">
+<a href="https://play.google.com/store/apps/details?id=com.appmaven.stitchcount" class="store-button" aria-label="Get StitchCount on Google Play"><!-- Existing AppMaven Google Play logo --><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.36,13.08L18.81,13.96L16.07,11.23L18.81,8.5L20.36,9.38C20.9,9.7 21.25,10.26 21.25,10.88V11.58C21.25,12.19 20.9,12.76 20.36,13.08M16.81,7.35L14.54,9.62L6.05,1.13L16.81,7.35Z" />
+                            </svg><span class="store-button-content"><span class="store-button-subtitle">Get it on</span><span class="store-button-title">Google Play</span></span></a>
+<div class="store-button store-coming" aria-label="StitchCount on the App Store: coming soon"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.13 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.43,15.65 20.08,16.66 20.08,16.66C20.03,16.8 19.7,17.96 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.37 12.36,4.26 13,3.5Z" />
+                            </svg><span class="store-button-content"><span class="store-button-subtitle">Coming soon on</span><span class="store-button-title">App Store</span></span></div>
+</div>
+
+<section class="sources" aria-labelledby="sources-heading"><h2 id="sources-heading">Sources and scope</h2><p>Pattern terminology: <a href="https://www.craftyarncouncil.com/standards/how-to-read-knitting-pattern" target="_blank" rel="noopener noreferrer">Craft Yarn Council: How to Read a Knitting Pattern</a> and <a href="https://www.craftyarncouncil.com/standards/crochet-abbreviations" target="_blank" rel="noopener noreferrer">Crochet Abbreviations Master List</a>, checked October 18, 2026.</p><p>AppMaven wrote the counting examples and note templates. No complete pattern or source diagram is reproduced. App features were checked against StitchCount’s listing and current product sources; this article is not a hands-on test of a particular pattern.</p></section>
+<p><a href="/blog/">Back to the AppMaven blog</a></p>
+</div></div></article></main><footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div
+                        style="display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-4);">
+                        <img src="/assets/images/logo/appmaven_logo.png" alt="AppMaven Studio Logo"
+                            style="height: 32px; width: 32px; border-radius: 8px;">
+                        <span style="font-size: var(--text-xl); font-weight: var(--font-bold);">AppMaven Studio</span>
+                    </div>
+                    <p style="color: var(--color-text-secondary); margin-bottom: var(--space-4); line-height: 1.6;">
+                        Crafting innovative mobile experiences that users love. We combine clean design with powerful
+                        functionality to
+                        build the future, one app at a time.
+                    </p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/apps/">Apps</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="/support/">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="/data-deletion/">Data Deletion</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:hacong86@gmail.com">hacong86@gmail.com</a></li>
+                        <li><a href="tel:+84972865336">+84 972 865 336</a></li>
+                        <li><a href="https://github.com/hacong86" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AppMaven Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer><script src="/assets/js/main.js"></script></body></html>
