@@ -177,25 +177,38 @@
                 </div>
               </div>
 
-              <!-- App Selection -->
+              <!-- App Selection: HTML fallback; app-catalog.js refreshes from /apps/. -->
               <div class="form-group" style="margin-bottom: var(--space-6);">
                 <label for="app-name">Related App</label>
-                <select id="app-name" name="app-name">
-                  <option value="">-- General Inquiry --</option>
-                  <option value="Prompt Master AI">Prompt Master AI</option>
-                  <option value="FocusOne">FocusOne: Daily Focus Planner</option>
-                  <option value="Sleep Stream">Sleep Stream: Relax & Sleep</option>
-                  <option value="Square Race MAX">Square Race MAX</option>
-                  <option value="Square Race">Square Race</option>
-                  <option value="Lịch Âm 2026">Lịch Âm 2026 - Lịch Vạn Niên</option>
-                  <option value="Gieo Quẻ Hỏi Việc">Gieo Quẻ Hỏi Việc</option>
-                  <option value="Invoice Studio">Tạo Hóa Đơn & Quản Lý Shop</option>
-                  <option value="Trial Shield">Trial Shield</option>
-                  <option value="Dino Drop Master">Dino Drop Master</option>
-                  <option value="QRCreator">QRCreator: Generator & Scanner</option>
-                  <option value="StitchCount">StitchCount: Row Counter</option>
-                  <option value="Website">Website Issue</option>
-                  <option value="Other">Other</option>
+                <select id="app-name" name="app-name" data-app-catalog>
+                  <option value="" data-static-option>-- General Inquiry --</option>
+                  <option value="Mewside: Find Cats in Hiding" data-app-path="/apps/mewside/">Mewside: Find Cats in Hiding</option>
+                  <option value="WoodShop Toolkit" data-app-path="/apps/woodshop/">WoodShop Toolkit</option>
+                  <option value="StitchCount: Row Counter" data-app-path="/apps/stitchcount/">StitchCount: Row Counter</option>
+                  <option value="ChemLab" data-app-path="/apps/chemlab/">ChemLab</option>
+                  <option value="Sổ Xe" data-app-path="/apps/quan-ly-xe-tai-xe-cong-nghe/">Sổ Xe</option>
+                  <option value="Photo Prompt: AI Portrait" data-app-path="/apps/prompt-master-ai/">Photo Prompt: AI Portrait</option>
+                  <option value="Smart Scanner" data-app-path="/apps/smartsscanner-document-scanner-pdf-creator/">Smart Scanner</option>
+                  <option value="FocusOne" data-app-path="/apps/focusone/">FocusOne</option>
+                  <option value="Sleep Stream" data-app-path="/apps/sleep-stream/">Sleep Stream</option>
+                  <option value="Square Race MAX" data-app-path="/apps/square-race-max/">Square Race MAX</option>
+                  <option value="Square Race" data-app-path="/apps/square-race/">Square Race</option>
+                  <option value="Lịch Âm - Lịch Vạn Niên" data-app-path="/apps/lich-am-2026/">Lịch Âm - Lịch Vạn Niên</option>
+                  <option value="Gieo Quẻ Kinh Dịch - Lục Hào" data-app-path="/apps/gieo-que-kinh-dich/">Gieo Quẻ Kinh Dịch - Lục Hào</option>
+                  <option value="Gieo Quẻ Hỏi Việc - Xin Xăm" data-app-path="/apps/gieo-que-hoi-viec/">Gieo Quẻ Hỏi Việc - Xin Xăm</option>
+                  <option value="Văn Khấn Cổ Truyền" data-app-path="/apps/van-khan-co-truyen/">Văn Khấn Cổ Truyền</option>
+                  <option value="Invoice Studio" data-app-path="/apps/invoice-studio/">Invoice Studio</option>
+                  <option value="Trial Shield" data-app-path="/apps/trial-shield/">Trial Shield</option>
+                  <option value="Dino Drop Master" data-app-path="/apps/dino-drop-master/">Dino Drop Master</option>
+                  <option value="QRCreator" data-app-path="/apps/qrcreator/">QRCreator</option>
+                  <option value="Trap Tower" data-app-path="/apps/trap-tower/">Trap Tower</option>
+                  <option value="Rune Bounce" data-app-path="/apps/rune-bounce/">Rune Bounce</option>
+                  <option value="Pictura ART" data-app-path="/apps/pictura-art-puzzle-journey/">Pictura ART</option>
+                  <option value="ShiftCheck" data-app-path="/apps/shiftcheck/">ShiftCheck</option>
+                  <option value="Lợi Nhuận" data-app-path="/apps/loi-nhuan/">Lợi Nhuận</option>
+                  <option value="Sổ Đóng Tiền" data-app-path="/apps/nhac-hoa-don/">Sổ Đóng Tiền</option>
+                  <option value="Website" data-static-option>Website Issue</option>
+                  <option value="Other" data-static-option>Other</option>
                 </select>
               </div>
 
@@ -523,6 +536,7 @@
   </footer>
 
   <script src="/assets/js/main.js?v=20261021-formspree"></script>
+  <script src="/assets/js/app-catalog.js?v=20261021-1"></script>
 
 </body>
 
