@@ -61,36 +61,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  const faqQuestions = document.querySelectorAll('.faq-question');
+  const faqItems = Array.from(document.querySelectorAll('.faq-item')).map(item => ({
+    item,
+    question: item.querySelector('.faq-question'),
+    answer: item.querySelector('.faq-answer')
+  })).filter(({ question, answer }) => question && answer);
 
-  faqQuestions.forEach(question => {
+  function setExpanded({ item, question, answer }, expanded) {
+    item.classList.toggle('active', expanded);
+    question.setAttribute('aria-expanded', String(expanded));
+    answer.hidden = !expanded;
+    // Long answers must remain readable when text wraps on narrow screens.
+    answer.style.maxHeight = expanded ? 'none' : '';
+  }
+
+  faqItems.forEach((faq, index) => {
+    const { question, answer } = faq;
+    question.type = 'button';
+    if (!answer.id) answer.id = `faq-answer-${index + 1}`;
+    question.setAttribute('aria-controls', answer.id);
+    setExpanded(faq, false);
+
     question.addEventListener('click', () => {
-      const answer = question.nextElementSibling;
-      const isActive = question.classList.contains('active');
-
-      // Close all other FAQs
-      faqQuestions.forEach(q => {
-        if (q !== question) {
-          q.classList.remove('active');
-          q.nextElementSibling.classList.remove('active');
-          q.setAttribute('aria-expanded', 'false');
-        }
-      });
-
-      // Toggle current FAQ
-      if (isActive) {
-        question.classList.remove('active');
-        answer.classList.remove('active');
-        question.setAttribute('aria-expanded', 'false');
-      } else {
-        question.classList.add('active');
-        answer.classList.add('active');
-        question.setAttribute('aria-expanded', 'true');
-      }
+      const expanded = question.getAttribute('aria-expanded') !== 'true';
+      faqItems.forEach(item => setExpanded(item, item === faq && expanded));
     });
-
-    // Set initial ARIA attributes
-    question.setAttribute('aria-expanded', 'false');
   });
 
 });
