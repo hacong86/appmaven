@@ -191,14 +191,16 @@
             <li>Account deletion may result in loss of access to app features and purchases</li>
           </ul>
           <p style="margin-top: var(--space-3); margin-bottom: 0;">
-            For immediate concerns or questions, contact: <a href="mailto:hacong86@gmail.com"
-              style="color: #FF9800; font-weight: var(--font-semibold);">hacong86@gmail.com</a>
+            For immediate concerns or questions, contact: <a href="mailto:support@appmavenstudio.com"
+              style="color: #FF9800; font-weight: var(--font-semibold); overflow-wrap: anywhere;">support@appmavenstudio.com</a>
           </p>
         </div>
 
         <!-- Data Deletion Form -->
         <div class="glass-card">
-          <form data-validate data-form-type="data-deletion">
+          <form action="https://formspree.io/f/xjygqpwl" method="POST" data-validate data-form-type="data-deletion">
+            <input type="hidden" name="subject" value="[AppMaven] Data Deletion Request">
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display: none;">
 
             <!-- App Selection -->
             <div class="form-group">
@@ -290,14 +292,22 @@
               </label>
             </div>
 
+            <p style="font-size: var(--text-sm); color: var(--color-text-secondary); overflow-wrap: anywhere;">
+              Formspree processes and stores your request so we can review it and contact you by email.
+              See our <a href="/privacy-policy.html#website-forms">Privacy Policy</a>.
+              You can also email <a href="mailto:support@appmavenstudio.com">support@appmavenstudio.com</a> directly.
+            </p>
+            <div data-form-status role="status" aria-live="polite" aria-atomic="true" tabindex="-1" hidden
+              style="overflow-wrap: anywhere; scroll-margin-top: 100px;"></div>
+
             <!-- Submit Button -->
-            <button type="submit" class="btn btn-primary" style="width: 100%;">
+            <button type="submit" class="btn btn-primary" style="width: 100%; white-space: normal; line-height: 1.4;">
               Submit Data Deletion Request
             </button>
 
             <p
               style="text-align: center; color: var(--color-text-muted); font-size: var(--text-sm); margin-top: var(--space-4); margin-bottom: 0;">
-              We'll send a confirmation email once your request is received
+              Submitting this form sends a request for review; it does not immediately delete your data.
             </p>
 
           </form>
@@ -315,7 +325,7 @@
               <div class="faq-answer-content">
                 <p>We typically process data deletion requests within <strong>30 days</strong> of submission. You will
                   receive a confirmation email once your data has been deleted. For urgent requests, please contact us
-                  directly at hacong86@gmail.com.</p>
+                  directly at support@appmavenstudio.com.</p>
               </div>
             </div>
           </div>
@@ -372,7 +382,7 @@
               <div class="faq-answer-content">
                 <p>Select "Other / Multiple Apps" in the form and specify which apps in the Additional Information
                   field. Alternatively, you can submit separate requests for each app, or contact us at
-                  hacong86@gmail.com for bulk deletion.</p>
+                  support@appmavenstudio.com for bulk deletion.</p>
               </div>
             </div>
           </div>

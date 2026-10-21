@@ -97,129 +97,102 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // ==========================================
-// FORM VALIDATION (Data Deletion & Support)
+// FORMSPREE SUBMISSIONS (Data Deletion & Support)
 // ==========================================
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  const forms = document.querySelectorAll('form[data-validate]');
+  document.querySelectorAll('form[data-validate]').forEach(form => {
+    const submitButton = form.querySelector('button[type="submit"]');
+    const status = form.querySelector('[data-form-status]');
+    if (!submitButton || !status) return;
 
-  forms.forEach(form => {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
+    let submitting = false;
+    const buttonText = submitButton.textContent;
 
-      let isValid = true;
-      const formData = new FormData(form);
+    function showStatus(message, type) {
+      status.textContent = message;
+      status.className = `alert alert-${type}`;
+      status.hidden = false;
+      if (type !== 'info') status.focus();
+    }
 
-      // Clear previous errors
-      form.querySelectorAll('.error-message').forEach(error => error.remove());
-      form.querySelectorAll('.error').forEach(field => field.classList.remove('error'));
-
-      // Email validation
-      const emailField = form.querySelector('input[type="email"]');
-      if (emailField && emailField.value) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(emailField.value)) {
-          showError(emailField, 'Please enter a valid email address');
-          isValid = false;
-        }
+    form.addEventListener('input', event => {
+      if (typeof event.target.setCustomValidity === 'function') {
+        event.target.setCustomValidity('');
       }
+      if (!submitting) status.hidden = true;
+    });
 
-      // Required fields validation
-      form.querySelectorAll('[required]').forEach(field => {
-        if (!field.value.trim()) {
-          showError(field, 'This field is required');
-          isValid = false;
+    form.addEventListener('submit', async event => {
+      event.preventDefault();
+      if (submitting) return;
+
+      form.querySelectorAll('input[required], textarea[required]').forEach(field => {
+        if (field.type !== 'checkbox' && field.type !== 'radio') {
+          field.setCustomValidity(field.value.trim() ? '' : 'Please complete this field.');
         }
       });
+      if (!form.reportValidity()) return;
 
-      // Checkbox consent validation
-      const consentCheckbox = form.querySelector('input[type="checkbox"][required]');
-      if (consentCheckbox && !consentCheckbox.checked) {
-        showError(consentCheckbox, 'You must agree to continue');
-        isValid = false;
+      // The public form ID belongs in HTML; no email password or API key is needed.
+      const endpoint = form.getAttribute('action') || '';
+      if (!/^https:\/\/formspree\.io\/f\/[a-zA-Z0-9]+$/.test(endpoint)) {
+        showStatus('This form is temporarily unavailable. Please email support@appmavenstudio.com. Your entries have been kept.', 'error');
+        return;
       }
 
-      // If valid, process form
-      if (isValid) {
-        handleFormSubmit(form, formData);
+      const formData = new FormData(form);
+      const isDeletion = form.dataset.formType === 'data-deletion';
+      const appName = formData.get('app-name') || 'General Inquiry';
+      formData.set('subject', `[AppMaven] ${isDeletion ? 'Data Deletion' : 'Support'} - ${appName}`);
+
+      // Capture data first, then lock fields so edits cannot be lost during a request.
+      const controls = Array.from(form.querySelectorAll('input, select, textarea, button'));
+      const disabledStates = controls.map(control => control.disabled);
+      controls.forEach(control => { control.disabled = true; });
+      submitting = true;
+      form.setAttribute('aria-busy', 'true');
+      submitButton.textContent = 'Sending…';
+      showStatus('Sending your request…', 'info');
+
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 20000);
+      try {
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          body: formData,
+          headers: { Accept: 'application/json' },
+          signal: controller.signal
+        });
+        if (!response.ok) {
+          const result = await response.json().catch(() => ({}));
+          const errors = Array.isArray(result.errors)
+            ? result.errors.map(error => error.message).filter(message => typeof message === 'string')
+            : [];
+          const detail = response.status === 429
+            ? 'The form service is busy or has reached its limit. Please try again later.'
+            : errors.join(' ') || 'The form service could not accept your request.';
+          showStatus(`${detail} Your entries have been kept. You can also email support@appmavenstudio.com.`, 'error');
+          return;
+        }
+
+        form.reset();
+        showStatus(isDeletion
+          ? 'Your data deletion request has been received for review. This does not mean your data has already been deleted. We will contact you at the email address you provided.'
+          : 'Your message has been received. We will reply to the email address you provided, usually within 24–48 hours.', 'success');
+      } catch {
+        // A timeout may occur after receipt: never automatically retry or claim failure to deliver.
+        showStatus('We could not confirm delivery. Your entries have been kept. Check your connection and try again, or email support@appmavenstudio.com.', 'error');
+      } finally {
+        clearTimeout(timeout);
+        controls.forEach((control, index) => { control.disabled = disabledStates[index]; });
+        submitButton.textContent = buttonText;
+        form.removeAttribute('aria-busy');
+        submitting = false;
       }
     });
   });
-
-  function showError(field, message) {
-    field.classList.add('error');
-    const errorDiv = document.createElement('div');
-    errorDiv.className = 'error-message';
-    errorDiv.style.color = '#ef4444';
-    errorDiv.style.fontSize = 'var(--text-sm)';
-    errorDiv.style.marginTop = 'var(--space-1)';
-    errorDiv.textContent = message;
-    field.parentNode.appendChild(errorDiv);
-  }
-
-  function handleFormSubmit(form, formData) {
-    // Get form type
-    const formType = form.dataset.formType || 'contact';
-
-    // Build email subject and body
-    let subject = '';
-    let body = '';
-
-    if (formType === 'data-deletion') {
-      const appName = formData.get('app-name');
-      const email = formData.get('email');
-      const userId = formData.get('user-id') || 'N/A';
-      const requestType = formData.get('request-type');
-      const additionalInfo = formData.get('additional-info') || 'N/A';
-
-      subject = `Data Deletion Request - ${appName}`;
-      body = `
-App Name: ${appName}
-Email: ${email}
-User ID: ${userId}
-Request Type: ${requestType}
-Additional Information: ${additionalInfo}
-
-Date: ${new Date().toLocaleString()}
-      `.trim();
-
-    } else if (formType === 'support') {
-      const name = formData.get('name');
-      const email = formData.get('email');
-      const appName = formData.get('app-name') || 'General Inquiry';
-      const message = formData.get('message');
-
-      subject = `Support Request - ${appName}`;
-      body = `
-Name: ${name}
-Email: ${email}
-App: ${appName}
-
-Message:
-${message}
-
-Date: ${new Date().toLocaleString()}
-      `.trim();
-    }
-
-    // Create mailto link
-    const mailtoLink = `mailto:support@appmavenstudio.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-    // Open mailto link
-    window.location.href = mailtoLink;
-
-    // Show success message
-    const successDiv = document.createElement('div');
-    successDiv.className = 'alert alert-success';
-    successDiv.textContent = 'Opening your email client... If it doesn\'t open automatically, please email us at support@appmavenstudio.com';
-    form.insertBefore(successDiv, form.firstChild);
-
-    // Reset form
-    setTimeout(() => {
-      form.reset();
-    }, 1000);
-  }
 
 });
 
