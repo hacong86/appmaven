@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('consent', 'default', { ad_storage: 'denied', analytics_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', region: ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'IS', 'LI', 'NO', 'GB', 'CH'] });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZBQGFRBN6K"></script>
+  <script>
+    gtag('js', new Date());
+    gtag('config', 'G-ZBQGFRBN6K');
+  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Monster Survivor: Pet RPG | Survival Roguelike With Monster Pets</title>
+    <meta name="title" content="Monster Survivor: Pet RPG | Survival Roguelike With Monster Pets">
+    <meta name="description"
+        content="Fight monster hordes with one-hand controls, pick weapon upgrades, summon monster pets and beat bosses across four themed maps. A survival roguelike RPG for Android.">
+    <meta name="keywords"
+        content="monster survivor, pet rpg, survival roguelike, roguelike rpg, monster pets, horde survival, boss fight, weapon upgrade">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://appmavenstudio.com/apps/monster-survivor/">
+    <meta property="og:title" content="Monster Survivor: Pet RPG">
+    <meta property="og:description"
+        content="Fight monster hordes, summon pets and survive roguelike arenas. Build a new hero and pet squad every run.">
+    <meta property="og:image" content="https://appmavenstudio.com/assets/images/apps/monster-survivor/logo_icon.webp">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:url" content="https://appmavenstudio.com/apps/monster-survivor/">
+    <meta property="twitter:title" content="Monster Survivor: Pet RPG">
+    <meta property="twitter:description" content="A survival roguelike RPG: dodge monster hordes, pick upgrades, summon pets and beat bosses.">
+    <meta property="twitter:image" content="https://appmavenstudio.com/assets/images/apps/monster-survivor/logo_icon.webp">
+
+    <!-- Favicon -->
+    <link rel="canonical" href="https://appmavenstudio.com/apps/monster-survivor/">
+    <link rel="icon" type="image/png" href="/assets/images/logo/appmaven_logo.png">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/assets/css/variables.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/components.css">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "VideoGame",
+        "name": "Monster Survivor: Pet RPG",
+        "url": "https://appmavenstudio.com/apps/monster-survivor/",
+        "image": "https://appmavenstudio.com/assets/images/apps/monster-survivor/logo_icon.webp",
+        "description": "A survival roguelike RPG: move with one finger while weapons attack on their own, pick upgrades as you level up, summon and capture monster pets, and beat bosses across four themed maps.",
+        "genre": ["Action", "Role-playing", "Roguelike"],
+        "gamePlatform": "Android",
+        "operatingSystem": "Android",
+        "applicationCategory": "GameApplication",
+        "author": {
+            "@type": "Organization",
+            "name": "AppMaven Studio",
+            "url": "https://appmavenstudio.com/"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "url": "https://play.google.com/store/apps/details?id=com.appmaven.monstersurvivor"
+        }
+    }
+    </script>
+
+    <style>
+        /* Skip link: off-screen until keyboard focus, so it never covers the header. */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            top: 0;
+            z-index: 2000;
+            padding: var(--space-3) var(--space-4);
+            background: var(--color-accent);
+            color: #fff;
+            border-radius: 0 0 var(--radius-md) 0;
+        }
+
+        .skip-link:focus {
+            left: 0;
+        }
+
+        /* Bento Grid Layout Specifics */
+        .bento-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--space-8) var(--space-4);
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: auto auto auto;
+            gap: var(--space-6);
+        }
+
+        .bento-container > * {
+            min-width: 0;
+        }
+
+        .bento-card {
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-xl);
+            padding: var(--space-8);
+            overflow: hidden;
+            position: relative;
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .bento-card:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Grid Areas */
+        .area-header {
+            grid-column: span 12;
+            grid-row: span 1;
+            display: flex;
+            align-items: center;
+            gap: var(--space-8);
+        }
+
+        @media (min-width: 992px) {
+            .area-header {
+                grid-column: span 9;
+            }
+
+            .area-safety {
+                grid-column: span 3;
+                grid-row: span 1;
+            }
+
+            .area-overview {
+                grid-column: span 5;
+            }
+
+            .area-features {
+                grid-column: span 7;
+            }
+
+            .area-gallery {
+                grid-column: span 7;
+            }
+
+            .area-faq {
+                grid-column: span 5;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .area-header,
+            .area-safety,
+            .area-overview,
+            .area-features,
+            .area-gallery,
+            .area-faq {
+                grid-column: span 12;
+            }
+        }
+
+        /* Header Content */
+        .app-icon-large {
+            width: 120px;
+            height: 120px;
+            border-radius: var(--radius-xl);
+            flex-shrink: 0;
+        }
+
+        .app-title {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            line-height: 1.2;
+            font-weight: 700;
+            color: var(--color-text-primary);
+            margin-bottom: var(--space-2);
+        }
+
+        .app-lead {
+            font-size: 1.25rem;
+            color: var(--color-text-secondary);
+            max-width: 600px;
+        }
+
+        .app-meta {
+            margin-top: var(--space-3);
+            font-size: 0.95rem;
+            color: var(--color-text-secondary);
+        }
+
+        /* Store Buttons CSS */
+        .store-button {
+            display: inline-flex;
+            align-items: center;
+            background: #000;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 6px 16px;
+            min-height: 48px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin-right: 12px;
+            margin-bottom: 12px;
+        }
+
+        .store-button:hover {
+            background: #1a1a1a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .store-button svg {
+            width: 24px;
+            height: 24px;
+            margin-right: 12px;
+            fill: currentColor;
+        }
+
+        .store-button-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            line-height: 1.2;
+        }
+
+        .store-button-subtitle {
+            font-size: 10px;
+            text-transform: uppercase;
+            opacity: 0.8;
+        }
+
+        .store-button-title {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        /* Feature List */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+            gap: var(--space-6);
+        }
+
+        .feature-item {
+            display: flex;
+            gap: var(--space-3);
+            min-width: 0;
+        }
+
+        .feature-item h4 {
+            color: var(--color-text-primary);
+            margin-bottom: 2px;
+        }
+
+        .feature-item p {
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+        }
+
+        .feature-icon-box {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Overview text */
+        .overview-text {
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+        }
+
+        .overview-text + .overview-text {
+            margin-top: var(--space-4);
+        }
+
+        /* Screenshots */
+        .gallery-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--space-2);
+        }
+
+        .gallery-hint {
+            font-size: 0.9rem;
+            font-weight: normal;
+            color: var(--color-text-secondary);
+        }
+
+        .screenshot-scroll {
+            display: flex;
+            gap: var(--space-4);
+            overflow-x: auto;
+            padding-bottom: var(--space-4);
+            scrollbar-width: thin;
+            scrollbar-color: var(--color-accent) transparent;
+        }
+
+        .screenshot-img {
+            height: 400px;
+            width: auto;
+            aspect-ratio: 9 / 16;
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            flex-shrink: 0;
+        }
+
+        /* Sidebar Links */
+        .safety-title {
+            margin-bottom: var(--space-4);
+            font-size: 1.1rem;
+            color: var(--color-text-primary);
+        }
+
+        .safety-link {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            padding: var(--space-3);
+            min-height: 44px;
+            border-radius: var(--radius-md);
+            color: var(--color-text-secondary);
+            transition: all 0.2s;
+        }
+
+        .safety-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .safety-facts {
+            margin-top: auto;
+            padding-top: var(--space-4);
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: var(--color-text-secondary);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* FAQ */
+        .faq-summary {
+            padding: var(--space-4);
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--space-3);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+
+        .faq-summary:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        details[open] .faq-summary {
+            background: var(--glass-bg);
+            box-shadow: inset 3px 0 0 var(--color-blue-300);
+        }
+
+        .faq-text {
+            padding: var(--space-4);
+            color: var(--color-text-secondary);
+        }
+
+        .faq-text a,
+        .seo-content-section a {
+            color: var(--color-blue-300);
+        }
+
+        .faq-text a:hover,
+        .seo-content-section a:hover {
+            color: var(--color-blue-400);
+        }
+
+        .seo-content-section {
+            color: var(--color-text-secondary);
+        }
+
+        .seo-content-section h2 {
+            color: var(--color-text-primary);
+        }
+
+        .seo-content-section h3 {
+            color: var(--color-text-primary);
+            margin-top: var(--space-4);
+            margin-bottom: var(--space-2);
+            font-size: 1.1rem;
+        }
+
+        .seo-content-section p {
+            margin-bottom: var(--space-4);
+            line-height: 1.7;
+        }
+
+        h2 {
+            margin-bottom: var(--space-4);
+            font-size: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: var(--space-2);
+        }
+
+        @media (max-width: 640px) {
+            .bento-card {
+                padding: var(--space-6) var(--space-4);
+            }
+
+            .area-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: var(--space-4);
+            }
+
+            .app-icon-large {
+                width: 88px;
+                height: 88px;
+            }
+
+            .app-lead {
+                font-size: 1.1rem;
+            }
+
+            .screenshot-img {
+                height: 360px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="navbar-container">
+            <a href="/" class="navbar-logo" aria-label="AppMaven Studio Home">
+                <img src="/assets/images/logo/appmaven_logo.png" alt="AppMaven Studio Logo"
+                    style="height: 32px; width: 32px; border-radius: 8px;">
+                <span>AppMaven Studio</span>
+            </a>
+
+            <button class="navbar-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="navbar-menu" role="menubar">
+                <li role="none"><a href="/" role="menuitem">Home</a></li>
+                <li role="none"><a href="/apps/" class="active" role="menuitem">Apps</a></li>
+                <li role="none"><a href="/blog/" role="menuitem">Blog</a></li>
+                <li role="none"><a href="/about/" role="menuitem">About</a></li>
+                <li role="none"><a href="/support/" role="menuitem">Support</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Cosmic Background -->
+    <div class="cosmic-background"></div>
+
+    <!-- Main Content: Bento Grid -->
+    <main id="main-content" style="padding-top: calc(var(--header-height) + var(--space-4)); padding-bottom: var(--space-12);">
+
+        <div class="bento-container">
+
+            <!-- 1. Header Area -->
+            <div class="bento-card area-header">
+                <img src="/assets/images/apps/monster-survivor/logo_icon.webp" alt="Monster Survivor icon: a young hero with a sword next to cute monster pets"
+                    class="app-icon-large" width="120" height="120">
+                <div>
+                    <h1 class="app-title">Monster Survivor: Pet RPG</h1>
+                    <p class="app-lead">
+                        Dodge monster hordes with one finger, pick upgrades as you level up, and summon monster pets to fight beside you.
+                    </p>
+                    <p class="app-meta">Survival roguelike RPG · Android phones and tablets · For players 18+</p>
+
+                    <div style="margin-top: var(--space-6); display: flex; flex-wrap: wrap;">
+                        <!-- Google Play Button -->
+                        <a href="https://play.google.com/store/apps/details?id=com.appmaven.monstersurvivor" target="_blank"
+                            rel="noopener noreferrer" class="store-button">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path
+                                    d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.36,13.08L18.81,13.96L16.07,11.23L18.81,8.5L20.36,9.38C20.9,9.7 21.25,10.26 21.25,10.88V11.58C21.25,12.19 20.9,12.76 20.36,13.08M16.81,7.35L14.54,9.62L6.05,1.13L16.81,7.35Z" />
+                            </svg>
+                            <div class="store-button-content">
+                                <span class="store-button-subtitle">Get it on</span>
+                                <span class="store-button-title">Google Play</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Data Safety & Privacy (Top Right Sidebar) -->
+            <div class="bento-card area-safety" style="display: flex; flex-direction: column; justify-content: center;">
+                <h2 class="safety-title" style="border-bottom: none; padding-bottom: 0;">Data Safety &amp; Privacy</h2>
+                <div style="display: flex; flex-direction: column; gap: var(--space-2);">
+                    <a href="/apps/monster-survivor/privacy-policy.html" class="safety-link">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        </svg>
+                        Privacy Policy
+                    </a>
+                    <a href="/apps/monster-survivor/terms-of-service.html" class="safety-link">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                            <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" />
+                        </svg>
+                        Terms of Service
+                    </a>
+                    <a href="/support/" class="safety-link">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24" aria-hidden="true">
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 2.5-3 4.5M12 17.5h.01" />
+                        </svg>
+                        Support
+                    </a>
+                </div>
+                <p class="safety-facts">
+                    Contains ads (Google AdMob) · Optional in-app purchases through Google Play · No account or sign-in · Game progress is saved on your device.
+                </p>
+            </div>
+
+            <!-- 3. Overview -->
+            <div class="bento-card area-overview">
+                <h2>How It Plays</h2>
+                <p class="overview-text">
+                    <strong>Monster Survivor: Pet RPG</strong> is a survival roguelike. Each run starts simple: move
+                    with one finger, dodge the monsters closing in, and collect Soul while your weapons attack on their own.
+                </p>
+                <p class="overview-text">
+                    Every level-up offers a choice of new weapons and upgrades, and the right combinations evolve into
+                    stronger forms. Summon monster pets in the middle of battle, capture creatures for your collection,
+                    and survive long enough to face the boss of the map.
+                </p>
+                <p class="overview-text">
+                    Between runs, spend gold on permanent upgrades, level up and evolve your pets, unlock new heroes and
+                    open new maps. Come back stronger and push your survivor further.
+                </p>
+            </div>
+
+            <!-- 4. Key Features -->
+            <div class="bento-card area-features">
+                <h2>Key Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon-box" aria-hidden="true">👆</div>
+                        <div>
+                            <h4>One-Finger Action</h4>
+                            <p>Move and dodge with one finger in portrait mode. Your weapons fire on their own.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-box" aria-hidden="true">⚔️</div>
+                        <div>
+                            <h4>Build Your Arsenal</h4>
+                            <p>Pick weapons such as Whirl Axe, Fire Nova and Boomerang, then upgrade and evolve them.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-box" aria-hidden="true">🐾</div>
+                        <div>
+                            <h4>Summon Monster Pets</h4>
+                            <p>Call pets into the arena to fight beside your hero, and capture monsters to grow your squad.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-box" aria-hidden="true">🧙</div>
+                        <div>
+                            <h4>Six Heroes</h4>
+                            <p>Wave, Lyra, Karl, Sol, Nyx and Pip each play differently.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-box" aria-hidden="true">🗺️</div>
+                        <div>
+                            <h4>Four Worlds and Bosses</h4>
+                            <p>Meadow, Cemetery, Inferno and Snowfield, each with its own monsters and boss fight.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-box" aria-hidden="true">📈</div>
+                        <div>
+                            <h4>Grow Between Runs</h4>
+                            <p>Permanent upgrades, pet evolution and fusion, daily rewards and quests.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Screenshots -->
+            <div class="bento-card area-gallery">
+                <h2 class="gallery-title">
+                    In Action
+                    <span class="gallery-hint">Swipe to see more</span>
+                </h2>
+                <div class="screenshot-scroll">
+                    <img src="/assets/images/apps/monster-survivor/Monster_Survivor__1_.webp"
+                        alt="Survive the monster swarm. A green-hooded hero fights a wave of mushroom monsters in a sunny meadow."
+                        class="screenshot-img" width="1080" height="1920" loading="lazy">
+                    <img src="/assets/images/apps/monster-survivor/Monster_Survivor__2_.webp"
+                        alt="Choose your hero. The hero select screen shows Wave, Lyra, Karl, Sol, Nyx and Pip."
+                        class="screenshot-img" width="1080" height="1920" loading="lazy">
+                    <img src="/assets/images/apps/monster-survivor/Monster_Survivor__3_.webp"
+                        alt="Build your perfect arsenal. The level-up panel offers Whirl Axe, Fire Nova or Boomerang, with an optional reroll."
+                        class="screenshot-img" width="1080" height="1920" loading="lazy">
+                    <img src="/assets/images/apps/monster-survivor/Monster_Survivor__4_.webp"
+                        alt="Master every battlefield. A mage fights shadow monsters in the foggy night Cemetery map."
+                        class="screenshot-img" width="1080" height="1920" loading="lazy">
+                    <img src="/assets/images/apps/monster-survivor/Monster_Survivor__5_.webp"
+                        alt="Conquer four unique worlds. The map select lists Meadow, Cemetery, Inferno and Snowfield."
+                        class="screenshot-img" width="1080" height="1920" loading="lazy">
+                    <img src="/assets/images/apps/monster-survivor/Monster_Survivor__6_.webp"
+                        alt="Grow your monster squad. The main menu with Daily, Shop, Quests, Heroes, Upgrades, Pets, Evolve and Fuse."
+                        class="screenshot-img" width="1080" height="1920" loading="lazy">
+                    <img src="/assets/images/apps/monster-survivor/Monster_Survivor__7_.webp"
+                        alt="Face the inferno horde. A hero is surrounded by a red demon swarm on the burning lava map."
+                        class="screenshot-img" width="1080" height="1920" loading="lazy">
+                    <img src="/assets/images/apps/monster-survivor/Monster_Survivor__8_.webp"
+                        alt="Unleash powerful magic. Purple magic blasts clear monsters on the frozen Snowfield map."
+                        class="screenshot-img" width="1080" height="1920" loading="lazy">
+                </div>
+            </div>
+
+            <!-- 6. FAQ -->
+            <div class="bento-card area-faq">
+                <h2>FAQ</h2>
+
+                <details>
+                    <summary class="faq-summary">How do I control my hero?</summary>
+                    <div class="faq-text">
+                        Put your thumb anywhere on the screen and a virtual joystick appears under it; drag to move. Your
+                        weapons attack automatically, so you can focus on dodging and collecting Soul.
+                    </div>
+                </details>
+
+                <details>
+                    <summary class="faq-summary">How do monster pets work?</summary>
+                    <div class="faq-text">
+                        During a run you can summon pets into the arena to fight with you, and capture monsters to add them
+                        to your collection. Between runs you can level up, evolve and fuse your pets.
+                    </div>
+                </details>
+
+                <details>
+                    <summary class="faq-summary">How do I unlock new maps and heroes?</summary>
+                    <div class="faq-text">
+                        Swipe between maps on the map select screen and unlock new ones with Gold or Gems. Wave is ready
+                        from the start; other heroes unlock with Gold or Gems, by capturing enough monster species, or by
+                        reaching a higher player level.
+                    </div>
+                </details>
+
+                <details>
+                    <summary class="faq-summary">Does the game have ads?</summary>
+                    <div class="faq-text">
+                        Yes. Rewarded videos are optional, for example to revive, reroll upgrade choices or get extra gold.
+                        Full-screen ads may appear after some lost runs, and banner ads show in menus. Remove Ads turns off
+                        the banner and full-screen ads; rewarded videos stay optional.
+                    </div>
+                </details>
+
+                <details>
+                    <summary class="faq-summary">Is my progress saved?</summary>
+                    <div class="faq-text">
+                        Yes, on your device. There is no account or cloud save, so uninstalling the game or clearing its
+                        data removes your progress. Remove Ads and the Starter Pack are tied to your Google account and can
+                        be restored from Google Play; Gems are not restored. See the
+                        <a href="/apps/monster-survivor/privacy-policy.html">privacy policy</a> for details.
+                    </div>
+                </details>
+
+            </div>
+
+            <!-- 7. Detailed Description (SEO Content) -->
+            <div class="bento-card" style="grid-column: span 12;">
+                <div class="seo-content-section">
+                    <h2>A Survival Roguelike Where Your Pets Join the Fight</h2>
+
+                    <p>
+                        In <strong>Monster Survivor: Pet RPG</strong>, every run is a short fight for survival. Monsters
+                        pour in from every side, and your position matters more than your reflexes on a button. Find the
+                        gaps, keep moving and let your weapons thin out the horde.
+                    </p>
+
+                    <h3>Every Run Is a New Build</h3>
+                    <p>
+                        Level-ups pause the action and offer a few choices: a new weapon, an upgrade for one you already
+                        have, or a passive bonus. Weapons can be combined and evolved, so the same hero can play very
+                        differently from one run to the next.
+                    </p>
+
+                    <h3>Pets Matter in Battle</h3>
+                    <p>
+                        Monster pets are not just collection icons. Summon them during a run and they fight beside your
+                        hero. Capture new monsters along the way, then level up, evolve and fuse your favorites between
+                        runs.
+                    </p>
+
+                    <h3>Bosses and Themed Maps</h3>
+                    <p>
+                        Each map ends in a boss fight that rewards reading its attacks and dodging at the right time. The
+                        sunny Meadow, the foggy Cemetery, the burning Inferno and the frozen Snowfield each bring their own
+                        monsters and a higher challenge.
+                    </p>
+
+                    <h3>Ads and Purchases</h3>
+                    <p>
+                        The game is free to play and shows ads. Optional in-app purchases are Gem packs (Gem Pouch, Gem
+                        Box, Gem Chest and Gem Vault), Remove Ads and a Starter Pack. Purchases are handled by Google Play.
+                        Read more in our <a href="/blog/monster-survivor-pet-rpg/">Monster Survivor guide</a>.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div
+                        style="display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-4);">
+                        <img src="/assets/images/logo/appmaven_logo.png" alt="AppMaven Studio Logo"
+                            style="height: 32px; width: 32px; border-radius: 8px;">
+                        <span style="font-size: var(--text-xl); font-weight: var(--font-bold);">AppMaven Studio</span>
+                    </div>
+                    <p style="color: var(--color-text-secondary); margin-bottom: var(--space-4); line-height: 1.6;">
+                        Crafting innovative mobile experiences that users love. We combine clean design with powerful
+                        functionality to
+                        build the future, one app at a time.
+                    </p>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/apps/">Apps</a></li>
+                        <li><a href="/blog/">Blog</a></li>
+                        <li><a href="/about/">About</a></li>
+                        <li><a href="/support/">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="/terms-of-service.html">Terms of Service</a></li>
+                        <li><a href="/data-deletion/">Data Deletion</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:hacong86@gmail.com">hacong86@gmail.com</a></li>
+                        <li><a href="tel:+84972865336">+84 972 865 336</a></li>
+                        <li><a href="https://github.com/hacong86" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 AppMaven Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/assets/js/main.js"></script>
+
+</body>
+
+</html>
