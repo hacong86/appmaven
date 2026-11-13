@@ -17,13 +17,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Primary Meta Tags -->
-  <title>Behind the Scenes: Our App Design Process at AppMaven Studio</title>
-  <meta name="title" content="Behind the Scenes: Our App Design Process at AppMaven Studio">
+  <title>App Design Process for Solo Android Developers: 7 Steps</title>
+  <meta name="title" content="App Design Process for Solo Android Developers: 7 Steps">
   <meta name="description"
-    content="Go behind the scenes of AppMaven&#x27;s app design process: how we approach UX design, user research, prototyping and product development.">
+    content="A practical 7-step app design process for solo Android developers: one clear job, Play research, wireframes, Material 3, accessibility and testing.">
   <meta name="keywords"
-    content="app design, UX design, product development, user research, design process, mobile design, prototyping, user experience">
-  <meta name="author" content="AppMaven Team">
+    content="app design process, Android app design, solo developer, Material Design 3, wireframes, usability testing, accessibility, window size classes, Google Play testing">
+  <meta name="author" content="AppMaven Studio">
 
   <!-- Canonical URL -->
   <link rel="canonical" href="https://appmavenstudio.com/blog/app-design-process/">
@@ -31,12 +31,12 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://appmavenstudio.com/blog/app-design-process/">
-  <meta property="og:title" content="Behind the Scenes: Our App Design Process at AppMaven Studio">
+  <meta property="og:title" content="App Design Process for Solo Android Developers: 7 Steps">
   <meta property="og:description"
-    content="Learn how we approach app design, from user research to final implementation, to create exceptional mobile experiences.">
+    content="A practical 7-step app design process for solo Android developers: one clear job, Play research, wireframes, Material 3, accessibility and testing.">
   <meta property="og:image" content="https://appmavenstudio.com/assets/images/blog/app-design-process-og.jpg">
   <meta property="article:published_time" content="2026-01-05T09:00:00Z">
-  <meta property="article:author" content="AppMaven Team">
+  <meta property="article:author" content="AppMaven Studio">
   <meta property="article:section" content="Design">
   <meta property="article:tag" content="Design">
   <meta property="article:tag" content="UX">
@@ -44,8 +44,8 @@
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://appmavenstudio.com/blog/app-design-process/">
-  <meta property="twitter:title" content="Behind the Scenes: Our App Design Process at AppMaven Studio">
-  <meta property="twitter:description" content="Learn how we approach app design and product development.">
+  <meta property="twitter:title" content="App Design Process for Solo Android Developers: 7 Steps">
+  <meta property="twitter:description" content="A practical 7-step app design process for solo Android developers: one clear job, Play research, wireframes, Material 3, accessibility and testing.">
   <meta property="twitter:image" content="https://appmavenstudio.com/assets/images/blog/app-design-process-og.jpg">
 
   <!-- Favicon -->
@@ -61,8 +61,8 @@
   {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "headline": "Behind the Scenes: Our App Design Process at AppMaven Studio",
-    "description": "Learn how we approach app design, from user research to final implementation, to create exceptional mobile experiences.",
+    "headline": "App Design Process for Solo Android Developers: 7 Steps",
+    "description": "A practical 7-step app design process for solo Android developers: one clear job, Play research, wireframes, Material 3, accessibility and testing.",
     "image": "https://appmavenstudio.com/assets/images/blog/app-design-process-og.jpg",
     "author": {
       "@type": "Organization",
@@ -78,14 +78,14 @@
       }
     },
     "datePublished": "2026-01-05T09:00:00Z",
-    "dateModified": "2026-01-05T09:00:00Z",
+    "dateModified": "2026-11-13T09:00:00Z",
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https://appmavenstudio.com/blog/app-design-process/"
     },
-    "keywords": "app design, UX design, product development, user research",
+    "keywords": "app design process, Android app design, solo developer, Material Design 3, wireframes, usability testing, accessibility, window size classes, Google Play testing",
     "articleSection": "Design",
-    "wordCount": "1160"
+    "wordCount": "1845"
   }
   </script>
 
@@ -264,7 +264,7 @@
             <span class="badge badge-lifestyle">Design</span>
           </div>
           <h1 style="margin-bottom: var(--space-6); font-size: clamp(2rem, 6vw, var(--text-5xl)); line-height: 1.2;">
-            Behind the Scenes: Our App Design Process at AppMaven Studio
+            App Design Process for Solo Android Developers: 7 Steps
           </h1>
 
           <div class="article-meta">
@@ -273,8 +273,8 @@
                 style="width: 40px; height: 40px; background: #0f1635 url('/assets/images/logo/appmaven_logo.png') center / cover no-repeat; border-radius: var(--radius-full);">
               </div>
               <div>
-                <div style="font-weight: var(--font-semibold); color: var(--color-text-primary);">AppMaven Team</div>
-                <div style="font-size: var(--text-sm); color: var(--color-text-tertiary);">Developer & Writer</div>
+                <div style="font-weight: var(--font-semibold); color: var(--color-text-primary);">AppMaven Studio</div>
+                <div style="font-size: var(--text-sm); color: var(--color-text-tertiary);">Independent Android developer</div>
               </div>
             </div>
             <div style="color: var(--color-text-tertiary); font-size: var(--text-sm);">
@@ -293,7 +293,7 @@
                 <circle cx="12" cy="12" r="10" />
                 <polyline points="12 6 12 12 16 14" />
               </svg>
-              9 min read
+              8 min read
             </div>
           </div>
         </header>
@@ -306,255 +306,251 @@
         </div>
 
         <div class="article-content">
-
           <p class="lead"
             style="font-size: var(--text-xl); color: var(--color-text-primary); margin-bottom: var(--space-8);">
-            Great apps don't happen by accident. They're the result of deliberate, methodical design processes that
-            prioritize user needs over developer preferences. Here's an honest look at how we design apps at AppMaven
-            Studio—the good, the challenging, and the lessons we've learned along the way.
-          </p>
-
-          <h2>It Starts with a Problem, Not a Solution</h2>
-          <p>
-            The biggest mistake in app design is starting with a solution. "We should build an app that does X" is
-            backwards thinking. Instead, we start with questions: What problem exists? Who experiences this problem? How
-            do they currently solve it? What are the pain points?
+            Most design advice assumes a team with a researcher, a designer and a developer. If you build Android apps
+            alone or with one or two people, you play all of those roles, and time is your scarcest resource. This
+            guide turns the usual design process into seven practical steps that fit a small team, with links to the
+            official Android and Google Play documentation behind each one.
           </p>
 
           <p>
-            For every app we've built, we've spent weeks in problem discovery before writing a single line of code or
-            creating any wireframes. This groundwork prevents the classic trap of building something nobody wants.
+            AppMaven Studio is an independent developer that publishes Android apps and games on Google Play. What
+            follows is a general guide for Android developers, not a description of a large studio workflow.
           </p>
 
-          <h2>Phase 1: Discovery and Research</h2>
+          <h2>Step 1: Write Down One Clear Job for the App</h2>
           <p>
-            Discovery is where we develop deep empathy for users and understanding of the problem space.
+            Before you sketch anything, write one sentence that says who the app is for, what they are trying to get
+            done and what gets in their way. A simple template is "[person] wants to [job], but [obstacle]". For
+            example: "A home cook wants to scale a recipe to a different number of servings, but doing the math by hand
+            is slow and error-prone." Keep that sentence visible while you design. When you are unsure whether a screen
+            or feature belongs in the app, check it against the sentence.
           </p>
-
-          <h3>User Interviews</h3>
           <ul>
-            <li><strong>Find Real Users:</strong> We interview people who experience the problem we're investigating—not
-              friends or family who want to be supportive. Real users provide honest, sometimes harsh, feedback.</li>
-            <li><strong>Ask Open-Ended Questions:</strong> "Tell me about the last time you tried to..." rather than
-              "Would you use an app that...?" People are terrible at predicting what they'll do, but excellent at
-              describing what they've done.</li>
-            <li><strong>Listen for Pain, Not Features:</strong> Users describe symptoms and frustrations. Our job is
-              diagnosing the underlying problem. When someone says "I wish this app had..." we ask "What are you trying
-              to accomplish?"</li>
+            <li><strong>Name the one task</strong> the first version must do well.</li>
+            <li><strong>List what the app will not do</strong> in version one. This list protects your schedule.</li>
+            <li><strong>Describe how people solve the problem today:</strong> paper, a spreadsheet, a chat with
+              themselves, or another app.</li>
+            <li><strong>Decide what success looks like</strong> in plain terms, for example "a first-time user
+              completes the main task without help".</li>
           </ul>
 
-          <h3>Competitive Analysis</h3>
-          <ul>
-            <li><strong>Study Existing Solutions:</strong> What apps or methods do people currently use? What do they
-              like? What frustrates them? Often, the opportunity is in solving the frustrations, not copying the
-              successes.</li>
-            <li><strong>Identify Gaps:</strong> Where do existing solutions fall short? Is there an underserved user
-              segment? A use case nobody addresses well?</li>
-            <li><strong>Learn from App Store Reviews:</strong> Reviews reveal user sentiment in their own words. We mine
-              reviews of competing apps for feature requests and complaints.</li>
-          </ul>
-
+          <h2>Step 2: Study Competitors on Google Play</h2>
           <p>
-            For one of our productivity apps, we spent six weeks interviewing users and analyzing competitors before
-            designing anything. That research prevented us from building features users didn't want and revealed two
-            critical needs competitors ignored.
+            Google Play is free research material. Search for the words your users would type, open the top results
+            and treat them as a reference library rather than a template.
+          </p>
+          <ul>
+            <li><strong>Read the store listings.</strong> Note what each title and short description promises and
+              which screenshot appears first. That tells you which benefit the developer thinks matters most.</li>
+            <li><strong>Read the reviews, especially the middle ratings.</strong> Two- and three-star reviews often
+              explain what almost works. Sort by most recent so you see current problems, not ones fixed years ago.</li>
+            <li><strong>Collect recurring complaints.</strong> Intrusive ads, confusing setup, missing export or a
+              stretched tablet layout are design requirements for your app.</li>
+            <li><strong>Install two or three apps and do the main task</strong> in each one. Count the taps and note
+              where you hesitate.</li>
+          </ul>
+          <p>
+            Do not copy layouts, text or graphics. You are looking for unmet needs and for conventions that users
+            already expect, such as where settings live or how a list is sorted.
           </p>
 
-          <h2>Phase 2: Strategy and Positioning</h2>
+          <h2>Step 3: Scope a Small First Version</h2>
           <p>
-            With research complete, we define what we're building and why it matters.
+            Small teams rarely fail because the first version was too small. Pick the smallest version that completes
+            the job from step 1 from start to finish, then write down the list of screens it needs.
+          </p>
+          <ul>
+            <li>One core flow that works end to end, including saving the result.</li>
+            <li>Only the settings that the core flow needs.</li>
+            <li>Accounts, sync, themes and sharing deferred unless the job depends on them.</li>
+            <li>For every screen: what the user sees on first launch, while loading, when there is no data and when
+              something fails.</li>
+          </ul>
+          <p>
+            Empty, loading and error states are part of the design, not polish to add later. A first-time user always
+            meets the empty state first, so it should explain what to do next.
           </p>
 
-          <h3>Problem Statement</h3>
+          <h2>Step 4: Sketch on Paper, Then Build Low-Fidelity Wireframes</h2>
           <p>
-            We write a clear problem statement: "[User type] needs [solution] because [reason]." This becomes our north
-            star. When we debate features or design decisions later, we return to this statement.
+            Paper sketches cost minutes and are easy to throw away, which is exactly what you want at this stage. Draw
+            the core flow as a strip of phone-shaped boxes, one per screen, and walk through it as if you were a new
+            user. Then turn the strongest version into greyscale wireframes in any tool you like.
+          </p>
+          <ul>
+            <li><strong>One primary action per screen.</strong> If two buttons compete for attention, one of them
+              probably belongs somewhere else.</li>
+            <li><strong>Order information by importance,</strong> not by how it is stored in your database.</li>
+            <li><strong>Use realistic content:</strong> long names, large numbers and translated strings break layouts
+              that looked fine with short placeholder text.</li>
+            <li><strong>Leave color and branding for later.</strong> Greyscale keeps feedback focused on flow and
+              hierarchy.</li>
+          </ul>
+          <p>
+            If you build with Jetpack Compose, previews make cheap wireframes too. The
+            <a href="https://developer.android.com/develop/ui/compose/layouts/adaptive">Android adaptive layout
+              guide</a> points to preview annotations such as <code>@PreviewScreenSizes</code>,
+            <code>@PreviewFontScale</code> and <code>@PreviewLightDark</code>, which show the same composable at
+            several screen sizes, font scales and in light and dark themes.
           </p>
 
-          <h3>User Personas</h3>
-          <ul>
-            <li><strong>Based on Real Data:</strong> Personas summarize research findings, not stereotypes. We create
-              2-3 personas representing different user segments we're designing for.</li>
-            <li><strong>Include Goals and Context:</strong> What are they trying to achieve? What constraints do they
-              face (time, technical skill, environment)? What frustrates them?</li>
-            <li><strong>Use Throughout Design:</strong> When designing features, we ask "How would Sarah use this?"
-              using our persona names. It keeps design user-centered.</li>
-          </ul>
-
-          <h3>Core Experience</h3>
+          <h2>Step 5: Follow Material Design 3 and Plan for Every Screen Size</h2>
           <p>
-            We define the one core experience that must be excellent. Apps fail when they try to do everything
-            adequately rather than one thing exceptionally. What's the one flow that, if perfect, makes the app
-            valuable?
+            <a href="https://m3.material.io/">Material Design 3</a> is Google's design system for Android. Following
+            it means your controls behave the way Android users expect, and you get tested components instead of
+            designing every button yourself. In Compose, the
+            <a href="https://developer.android.com/develop/ui/compose/designsystems/material3">Material 3 library</a>
+            builds a theme from three parts: a color scheme, typography and shapes. On Android 12 and higher it can
+            also use dynamic color derived from the user's wallpaper, with your own light and dark schemes as the
+            fallback.
           </p>
 
-          <h2>Phase 3: Ideation and Concepts</h2>
+          <h3>Use Window Size Classes, Not Device Checks</h3>
           <p>
-            Now we explore solutions. This phase is divergent—we generate many ideas before converging on the best one.
+            Your app will run on phones, foldables and tablets, often in split-screen. Android's
+            <a href="https://developer.android.com/develop/ui/compose/layouts/adaptive/use-window-size-classes">window
+              size classes</a> group the space available to your app into a few breakpoints. Width is usually the one
+            that matters:
+          </p>
+          <ul>
+            <li><strong>Compact:</strong> narrower than 600dp, which covers almost all phones in portrait.</li>
+            <li><strong>Medium:</strong> 600dp to under 840dp, such as most tablets and large unfolded displays in
+              portrait.</li>
+            <li><strong>Expanded:</strong> 840dp to under 1200dp, such as most tablets in landscape.</li>
+            <li><strong>Large and extra-large:</strong> 1200dp and wider, for large tablets and desktop displays.</li>
+          </ul>
+          <p>
+            The class describes the app window, not the device, and it can change while the app runs when the user
+            rotates, folds or resizes it. Android's documentation says explicitly that size classes are not meant for
+            "is this a tablet" logic. In Compose you read the current class with
+            <code>currentWindowAdaptiveInfo().windowSizeClass</code>.
+          </p>
+          <ul>
+            <li><strong>Navigation:</strong> a bottom navigation bar on compact windows and a navigation rail on
+              larger ones. <code>NavigationSuiteScaffold</code> switches between them for you.</li>
+            <li><strong>Lists and details:</strong> show the list and the selected item side by side on expanded
+              windows and one at a time on smaller ones. <code>ListDetailPaneScaffold</code> implements this
+              pattern.</li>
+            <li><strong>Keep state</strong> when the window changes, so a rotation or fold does not reset what the
+              user was doing.</li>
+          </ul>
+          <p>
+            This also matters for discovery. The
+            <a href="https://developer.android.com/develop/ui/compose/layouts/adaptive">adaptive apps overview</a>
+            states that Google Play ranks apps optimized for large screens higher than unoptimized ones, and that
+            apps which do not meet its large screen quality standards can show a warning on their details page.
           </p>
 
-          <h3>Sketching and Wireframes</h3>
-          <ul>
-            <li><strong>Quantity Over Quality:</strong> We sketch many concepts quickly. Rough sketches prevent
-              attachment to ideas and encourage exploration.</li>
-            <li><strong>Focus on Flow, Not Visuals:</strong> Early sketches focus on information architecture and user
-              flow. Visual polish comes later.</li>
-            <li><strong>Explore Extremes:</strong> We deliberately explore extreme approaches—minimalist, feature-rich,
-              unconventional navigation. This prevents defaulting to the obvious solution.</li>
-          </ul>
-
-          <h3>User Stories and Flows</h3>
-          <ul>
-            <li><strong>Map Complete Journeys:</strong> We document complete user journeys from motivation through task
-              completion. This reveals gaps and edge cases sketches miss.</li>
-            <li><strong>Happy and Unhappy Paths:</strong> What happens when things go right? What about errors, slow
-              networks, or first-time users?</li>
-            <li><strong>Reduce Friction:</strong> Every screen and tap is friction. Can we eliminate steps? Defer
-              decisions? Remember preferences?</li>
-          </ul>
-
-          <h2>Phase 4: Prototyping and Testing</h2>
+          <h2>Step 6: Design for Accessibility From the First Sketch</h2>
           <p>
-            Prototypes answer questions: Does this solution work? Can users accomplish their goals? What confuses them?
+            Accessibility is much cheaper to design in than to retrofit. Android's
+            <a href="https://developer.android.com/guide/topics/ui/accessibility/apps">accessibility guidelines</a>
+            give concrete targets you can check in a wireframe:
+          </p>
+          <ul>
+            <li><strong>Touch targets of at least 48dp by 48dp</strong> for every interactive element. Material
+              components such as <code>Button</code> and <code>IconButton</code> already enforce this; custom controls
+              need it set by hand.</li>
+            <li><strong>Text contrast of at least 4.5:1</strong> for text smaller than 18sp, or bold text smaller
+              than 14sp, and at least 3:1 for other text.</li>
+            <li><strong>A description for every meaningful icon or image</strong> that states its purpose ("Share",
+              not "Share button"). Purely decorative images get no description so screen readers skip them.</li>
+            <li><strong>Cues other than color.</strong> Pair color with text, icons or shape so people with color
+              vision deficiencies can tell options apart.</li>
+            <li><strong>Room for larger text.</strong> Users can raise the system font size. Size text in sp and
+              check that labels wrap instead of being cut off.</li>
+          </ul>
+          <p>
+            Then test on a real device with TalkBack, the Android screen reader that announces content aloud, and
+            check color contrast with an online contrast checker or the Accessibility Scanner app, as Android's
+            guidelines suggest.
           </p>
 
-          <h3>Fidelity Progression</h3>
-          <ul>
-            <li><strong>Low-Fidelity First:</strong> Paper prototypes or basic digital wireframes test concepts without
-              investing in polish. We can iterate quickly based on feedback.</li>
-            <li><strong>Interactive Prototypes:</strong> Tools like Figma let us create clickable prototypes that feel
-              like real apps. This reveals interaction issues static mockups hide.</li>
-            <li><strong>High-Fidelity Prototypes:</strong> Once the concept is validated, we add visual design,
-              animation, and realistic content.</li>
-          </ul>
+          <h2>Step 7: Test With a Few People, Then With Google Play Testing Tracks</h2>
 
-          <h3>Usability Testing</h3>
-          <ul>
-            <li><strong>Test Early and Often:</strong> We test prototypes with real users throughout design. Five users
-              typically reveal 85% of usability issues.</li>
-            <li><strong>Task-Based Testing:</strong> We give users realistic tasks and observe. Where do they hesitate?
-              What confuses them? What delights them?</li>
-            <li><strong>Think Aloud Protocol:</strong> We ask users to narrate their thought process. "I'm looking
-              for... I expected... I'm confused by..." This reveals mental models.</li>
-            <li><strong>Iterate Based on Findings:</strong> Testing is worthless if we don't act on findings. We
-              prioritize issues and iterate the design.</li>
-          </ul>
-
+          <h3>Quick Usability Tests</h3>
           <p>
-            We've discarded entire interaction models after testing. It's humbling but essential. What makes sense to
-            designers who live in the app doesn't always make sense to users seeing it for the first time.
+            You do not need a lab. In his article
+            <a href="https://www.nngroup.com/articles/why-you-only-need-to-test-with-5-users/">"Why You Only Need to
+              Test with 5 Users"</a>, Jakob Nielsen argues that a test with five users finds about 85% of the
+            usability problems, and that three studies of five users each, with fixes in between, improve a design
+            more than one large study. The five-user figure applies to comparable users. If your app serves very
+            different groups, the article suggests three to four users from each group when there are two groups,
+            and three per group when there are more.
+          </p>
+          <ul>
+            <li>Give each person a goal ("add a recipe and double it"), not step-by-step instructions.</li>
+            <li>Ask them to think aloud, and do not help unless they are completely stuck.</li>
+            <li>Write down where they hesitate, tap the wrong thing or ask a question.</li>
+            <li>Fix the biggest problems, then test again with new people.</li>
+          </ul>
+
+          <h3>Google Play Testing Tracks</h3>
+          <p>
+            Once you have a build, Play Console offers three ways to
+            <a href="https://support.google.com/googleplay/android-developer/answer/9845334">run an internal, closed
+              or open test</a>:
+          </p>
+          <ul>
+            <li><strong>Internal testing:</strong> up to 100 testers per app, and a new build becomes available to
+              them within minutes. Useful for checking the real install and update path.</li>
+            <li><strong>Closed testing:</strong> testers you invite through email lists (up to 2,000 people per list)
+              or Google Groups.</li>
+            <li><strong>Open testing:</strong> anyone can join and send you private feedback. You can leave it
+              unlimited or set a cap of at least 1,000 testers.</li>
+          </ul>
+          <p>
+            Feedback from testers does not affect your public rating. If you have a personal developer account created
+            after November 13, 2023, Google Play
+            <a href="https://support.google.com/googleplay/android-developer/answer/14151465">requires a closed
+              test</a> with at least 12 testers who stay opted in for at least 14 consecutive days before you can
+            apply for production access, so plan that time into your schedule.
           </p>
 
-          <h2>Phase 5: Visual Design</h2>
+          <h2>After Launch: Keep Designing With Real Data</h2>
           <p>
-            With validated interactions and flows, we layer on visual design that enhances usability and creates
-            emotional connection.
+            Launch is where you finally see how the design holds up across many devices and people. Play Console
+            gives a small team three useful feedback loops:
           </p>
-
-          <h3>Design System Foundation</h3>
           <ul>
-            <li><strong>Color Palette:</strong> We choose colors that reflect brand personality and ensure accessibility
-              (WCAG contrast requirements).</li>
-            <li><strong>Typography:</strong> Readable fonts sized appropriately for mobile. Hierarchy that guides
-              attention.</li>
-            <li><strong>Spacing and Layout:</strong> Consistent spacing system creates visual rhythm and polish.</li>
-            <li><strong>Components:</strong> We design reusable components (buttons, cards, inputs) ensuring consistency
-              across the app.</li>
+            <li><strong><a href="https://support.google.com/googleplay/android-developer/answer/9844486">Android
+                  vitals</a>:</strong> tracks stability, including the user-perceived crash rate and ANR (app not
+              responding) rate. The bad behavior thresholds are 1.09% of daily users for crashes and 0.47% of daily
+              active users for ANRs overall, and 8% on any single device model. Apps above them are likely to be less
+              discoverable on Google Play.</li>
+            <li><strong><a href="https://support.google.com/googleplay/android-developer/answer/138230">Ratings and
+                  reviews</a>:</strong> you can post one public reply per review, and the reviewer is notified. Filter
+              by app version and device to connect complaints to a specific release or screen size.</li>
+            <li><strong><a href="https://support.google.com/googleplay/android-developer/answer/6227309">Store listing
+                  experiments</a>:</strong> once the app is published, you can A/B test the icon, feature graphic,
+              screenshots and descriptions with up to two variants against the current listing.</li>
           </ul>
-
-          <h3>Motion and Interaction</h3>
-          <ul>
-            <li><strong>Purposeful Animation:</strong> Animation guides attention, provides feedback, and creates
-              delight—but only when purposeful. Gratuitous animation annoys users.</li>
-            <li><strong>State Communication:</strong> Visual feedback for loading, success, errors, and disabled states
-              prevents user confusion.</li>
-            <li><strong>Platform Conventions:</strong> We follow iOS and Android design guidelines. Users have platform
-              expectations—fighting them creates friction.</li>
-          </ul>
-
-          <h2>Phase 6: Development and Refinement</h2>
           <p>
-            Design doesn't stop when development begins—it continues throughout implementation.
-          </p>
-
-          <h3>Design-Development Collaboration</h3>
-          <ul>
-            <li><strong>Shared Understanding:</strong> Designers and developers work together, not in isolation. We
-              discuss feasibility, performance implications, and edge cases together.</li>
-            <li><strong>Design Specs:</strong> We provide clear specifications—measurements, colors, states,
-              animations—but remain flexible. Implementation realities sometimes require design adjustments.</li>
-            <li><strong>Review Builds:</strong> Designers test builds throughout development, catching visual bugs and
-              interaction issues early.</li>
-          </ul>
-
-          <h3>Beta Testing</h3>
-          <ul>
-            <li><strong>Real-World Usage:</strong> Beta testers use the app in their actual context—revealing issues lab
-              testing misses.</li>
-            <li><strong>Analytics Integration:</strong> We track how beta users actually use the app. Which features do
-              they use? Where do they get stuck?</li>
-            <li><strong>Feedback Loops:</strong> Beta testers provide qualitative feedback complementing quantitative
-              analytics.</li>
-          </ul>
-
-          <h2>Phase 7: Launch and Learning</h2>
-          <p>
-            Launch is the beginning, not the end. Real users at scale reveal what testing cannot.
-          </p>
-
-          <h3>Post-Launch Monitoring</h3>
-          <ul>
-            <li><strong>Analytics Review:</strong> Are users completing key flows? Where do they drop off? What features
-              go unused?</li>
-            <li><strong>App Store Reviews:</strong> Reviews reveal user sentiment and feature requests. We read every
-              review.</li>
-            <li><strong>Support Inquiries:</strong> Support tickets identify pain points and confusing interfaces.</li>
-          </ul>
-
-          <h3>Continuous Improvement</h3>
-          <p>
-            We maintain a prioritized backlog of improvements based on data and feedback. Each update addresses
-            high-priority issues and adds carefully considered features. Design is never "done"—it evolves with user
-            needs.
+            Treat each update as another small round of the same process: pick one problem from vitals, reviews or
+            your own tests, design a fix, test it with a few people and ship it.
           </p>
 
           <div
             style="background: rgba(0, 212, 255, 0.1); border-left: 4px solid var(--color-accent); padding: var(--space-6); border-radius: var(--radius-md); margin: var(--space-10) 0;">
             <h3 style="margin-top: 0;">Key Takeaways</h3>
             <ul style="margin-bottom: 0;">
-              <li>Start with problem discovery, not solutions—understand users first</li>
-              <li>Test early and often with real users, not assumptions</li>
-              <li>Focus on one core experience that must be exceptional</li>
-              <li>Use low-fidelity prototypes early to test concepts cheaply</li>
-              <li>Design and development are collaborative, not sequential</li>
-              <li>Launch is just the beginning—iterate based on real usage</li>
+              <li>Start from one written job the app does, and list what version one will not do.</li>
+              <li>Use Google Play listings and reviews to find unmet needs, not layouts to copy.</li>
+              <li>Design empty, loading and error states as part of the first version.</li>
+              <li>Follow Material Design 3 and make layout decisions with window size classes, not device checks.</li>
+              <li>Build in 48dp touch targets, sufficient contrast, labels and larger text from the first sketch.</li>
+              <li>Run small usability tests with about five people, fix, and test again.</li>
+              <li>Use internal, closed and open testing on Google Play, then keep improving with vitals and reviews.</li>
             </ul>
           </div>
-
-          <h2>Conclusion</h2>
-          <p>
-            Our design process is structured but flexible. We follow these phases for every app, but the timeline and
-            emphasis vary based on project complexity and uncertainty. A simple utility app might spend less time in
-            research than a novel concept.
-          </p>
-
-          <p>
-            The common thread is user-centricity. Every decision—from feature prioritization to button placement—is
-            guided by user needs and validated through testing. We design for real people solving real problems, not for
-            design awards or personal preferences.
-          </p>
-
-          <p>
-            Great design requires both creativity and rigor—imagination to envision better experiences, and discipline
-            to validate ideas through research and testing. This process isn't glamorous, but it works. It's how we've
-            built apps people actually use and enjoy.
-          </p>
 
         </div>
 
         <div class="share-buttons">
           <span style="color: var(--color-text-tertiary); margin-right: var(--space-2);">Share:</span>
-          <button class="share-button" aria-label="Share on Twitter" onclick="shareOnTwitter()">
+          <button class="share-button" aria-label="Share on X" onclick="shareOnTwitter()">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
               <path
                 d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
@@ -584,9 +580,7 @@
           <div>
             <h3 style="margin-bottom: var(--space-2);">About the Author</h3>
             <p style="margin-bottom: var(--space-3); color: var(--color-text-secondary);">
-              The <strong>AppMaven Team</strong> consists of passionate developers and designers dedicated to creating
-              exceptional mobile experiences. We share insights from our journey building apps used by thousands of
-              users worldwide.
+              <strong>AppMaven Studio</strong> is an independent Android developer based in Vietnam. We publish practical apps and casual games on Google Play and write about what we learn while building them.
             </p>
             <a href="/about/" style="color: var(--color-accent); text-decoration: none; font-size: var(--text-sm);">
               Learn more about us →

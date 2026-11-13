@@ -17,13 +17,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Primary Meta Tags -->
-  <title>Privacy-First Development: Building GDPR-Compliant Mobile Apps</title>
-  <meta name="title" content="Privacy-First Development: Building GDPR-Compliant Mobile Apps">
+  <title>Privacy-First Android Apps: GDPR and Google Play Guide</title>
+  <meta name="title" content="Privacy-First Android Apps: GDPR and Google Play Guide">
   <meta name="description"
-    content="Learn how to build privacy-first mobile apps with GDPR compliance. Comprehensive guide covering data protection, user consent, privacy by design, and best practices for respecting user privacy.">
+    content="Build privacy-first Android apps: data minimisation, GDPR rights, Data safety, account deletion, UMP consent for ads, safer permissions and storage.">
   <meta name="keywords"
-    content="privacy, GDPR, data protection, user privacy, privacy by design, data security, CCPA, mobile privacy, consent management">
-  <meta name="author" content="AppMaven Team">
+    content="privacy by design, GDPR, android privacy, google play data safety, account deletion, UMP consent, EU user consent policy, photo picker, android keystore">
+  <meta name="author" content="AppMaven Studio">
 
   <!-- Canonical URL -->
   <link rel="canonical" href="https://appmavenstudio.com/blog/privacy-first-development/">
@@ -31,12 +31,12 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://appmavenstudio.com/blog/privacy-first-development/">
-  <meta property="og:title" content="Privacy-First Development: Building GDPR-Compliant Mobile Apps">
+  <meta property="og:title" content="Privacy-First Android Apps: GDPR and Google Play Guide">
   <meta property="og:description"
-    content="Learn how to build privacy-first mobile apps with GDPR compliance and data protection best practices.">
+    content="Build privacy-first Android apps: data minimisation, GDPR rights, Data safety, account deletion, UMP consent for ads, safer permissions and storage.">
   <meta property="og:image" content="https://appmavenstudio.com/assets/images/blog/privacy-first-development-og.jpg">
   <meta property="article:published_time" content="2025-12-28T09:00:00Z">
-  <meta property="article:author" content="AppMaven Team">
+  <meta property="article:author" content="AppMaven Studio">
   <meta property="article:section" content="Development">
   <meta property="article:tag" content="Privacy">
   <meta property="article:tag" content="GDPR">
@@ -44,8 +44,8 @@
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://appmavenstudio.com/blog/privacy-first-development/">
-  <meta property="twitter:title" content="Privacy-First Development: Building GDPR-Compliant Mobile Apps">
-  <meta property="twitter:description" content="Learn how to build privacy-first mobile apps with GDPR compliance.">
+  <meta property="twitter:title" content="Privacy-First Android Apps: GDPR and Google Play Guide">
+  <meta property="twitter:description" content="Build privacy-first Android apps: data minimisation, GDPR rights, Data safety, account deletion, UMP consent for ads, safer permissions and storage.">
   <meta property="twitter:image" content="https://appmavenstudio.com/assets/images/blog/privacy-first-development-og.jpg">
 
   <!-- Favicon -->
@@ -61,8 +61,8 @@
   {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "headline": "Privacy-First Development: Building GDPR-Compliant Mobile Apps",
-    "description": "Learn how to build privacy-first mobile apps with GDPR compliance and data protection best practices.",
+    "headline": "Privacy-First Android Apps: GDPR and Google Play Guide",
+    "description": "Build privacy-first Android apps: data minimisation, GDPR rights, Data safety, account deletion, UMP consent for ads, safer permissions and storage.",
     "image": "https://appmavenstudio.com/assets/images/blog/privacy-first-development-og.jpg",
     "author": {
       "@type": "Organization",
@@ -78,14 +78,14 @@
       }
     },
     "datePublished": "2025-12-28T09:00:00Z",
-    "dateModified": "2025-12-28T09:00:00Z",
+    "dateModified": "2026-11-13T09:00:00Z",
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https://appmavenstudio.com/blog/privacy-first-development/"
     },
-    "keywords": "privacy, GDPR, data protection, user privacy",
+    "keywords": "privacy by design, GDPR, android privacy, google play data safety, account deletion, UMP consent, EU user consent policy, photo picker, android keystore",
     "articleSection": "Development",
-    "wordCount": "1170"
+    "wordCount": "1417"
   }
   </script>
 
@@ -264,7 +264,7 @@
             <span class="badge badge-tools">Tools & Tips</span>
           </div>
           <h1 style="margin-bottom: var(--space-6); font-size: clamp(2rem, 6vw, var(--text-5xl)); line-height: 1.2;">
-            Privacy-First Development: Building GDPR-Compliant Mobile Apps
+            Privacy-First Android Apps: GDPR and Google Play Guide
           </h1>
 
           <div class="article-meta">
@@ -273,8 +273,8 @@
                 style="width: 40px; height: 40px; background: #0f1635 url('/assets/images/logo/appmaven_logo.png') center / cover no-repeat; border-radius: var(--radius-full);">
               </div>
               <div>
-                <div style="font-weight: var(--font-semibold); color: var(--color-text-primary);">AppMaven Team</div>
-                <div style="font-size: var(--text-sm); color: var(--color-text-tertiary);">Developer & Writer</div>
+                <div style="font-weight: var(--font-semibold); color: var(--color-text-primary);">AppMaven Studio</div>
+                <div style="font-size: var(--text-sm); color: var(--color-text-tertiary);">Independent Android developer</div>
               </div>
             </div>
             <div style="color: var(--color-text-tertiary); font-size: var(--text-sm);">
@@ -293,7 +293,7 @@
                 <circle cx="12" cy="12" r="10" />
                 <polyline points="12 6 12 12 16 14" />
               </svg>
-              9 min read
+              6 min read
             </div>
           </div>
         </header>
@@ -306,199 +306,196 @@
         </div>
 
         <div class="article-content">
-
           <p class="lead"
             style="font-size: var(--text-xl); color: var(--color-text-primary); margin-bottom: var(--space-8);">
-            Privacy isn't just a legal checkbox—it's a competitive advantage. Users increasingly choose apps that
-            respect their data, and regulators worldwide are enforcing strict privacy requirements. Here's how we build
-            privacy into every app from day one, not as an afterthought.
+            Privacy on Android is no longer only a legal question. Google Play asks every developer to describe their
+            data handling in the Data safety form, requires account deletion in apps that have accounts, and requires a
+            certified consent tool for ads shown in Europe. This guide covers the design principles, what the GDPR
+            actually says about consent and user rights, and the Android and Google Play requirements to meet in 2026.
           </p>
 
-          <h2>The Privacy Landscape in 2025</h2>
+          <h2>Privacy by Design Starts With Less Data</h2>
           <p>
-            GDPR transformed the privacy landscape in 2018, and since then regulations have only tightened. California's
-            CCPA, Brazil's LGPD, and similar laws worldwide create a complex web of compliance requirements. The good
-            news: following GDPR principles generally satisfies most privacy regulations.
+            Article 25 of the <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32016R0679">GDPR</a>
+            is titled "Data protection by design and by default". It asks controllers to make sure that, by default,
+            only the personal data necessary for each specific purpose is processed, which covers how much you collect,
+            how far you process it and how long you keep it. That translates into a few habits:
           </p>
-
-          <p>
-            Beyond regulation, platform policies are stricter than ever. Apple's App Tracking Transparency (ATT) and
-            Android's Privacy Sandbox fundamentally changed how apps can track users. Google Play's Data Safety section
-            forces transparency about data collection. Privacy is no longer optional—it's baked into the ecosystem.
-          </p>
-
-          <h2>Privacy by Design Principles</h2>
-          <p>
-            Privacy by Design means building privacy into your app's architecture from the start. It's far easier and
-            more effective than retrofitting privacy later.
-          </p>
-
-          <h3>Core Principles</h3>
           <ul>
-            <li><strong>Data Minimization:</strong> Only collect data you actually need. Every data point collected is a
-              liability—storage costs, security risks, compliance burden. Question each collection point: "Do we truly
-              need this?"</li>
-            <li><strong>Purpose Limitation:</strong> Use data only for the purpose you collected it. Don't repurpose
-              user data without explicit consent.</li>
-            <li><strong>Storage Limitation:</strong> Don't keep data longer than necessary. Implement automatic deletion
-              policies.</li>
-            <li><strong>Transparency:</strong> Be clear about what you collect, why you collect it, and how you use it.
-              Plain language, not legal jargon.</li>
-            <li><strong>User Control:</strong> Give users control over their data—ability to view, export, and delete
+            <li><strong>Data minimisation:</strong> for every field and every SDK, ask whether the feature works without
+              it. Data you never collect cannot leak, does not need a deletion process and does not appear in your
+              Data safety form.</li>
+            <li><strong>Purpose limitation:</strong> use data only for the purpose you told users about.</li>
+            <li><strong>Storage limitation:</strong> decide how long each type of data is kept and delete it on a
+              schedule.</li>
+            <li><strong>On-device first:</strong> if a calculation can run on the phone, the data does not need to leave
               it.</li>
+            <li><strong>Privacy-friendly defaults:</strong> optional sharing should start switched off.</li>
           </ul>
 
+          <h2>What the GDPR Requires, Precisely</h2>
           <p>
-            At AppMaven Studio, we conduct privacy impact assessments before implementing new features. If a feature
-            requires collecting sensitive data, we explore privacy-preserving alternatives first.
+            The GDPR can apply to a developer outside the EU when the app is offered to people in the Union or monitors
+            their behaviour there; recitals 23 and 24 explain how that is judged. A few points are often
+            oversimplified:
+          </p>
+          <ul>
+            <li><strong>Lawful basis:</strong> consent is one basis among several, alongside contract, legal obligation
+              and legitimate interests. Pick the right one for each purpose and document it.</li>
+            <li><strong>Consent:</strong> it needs a clear affirmative act. Silence, pre-ticked boxes or inactivity are
+              not consent (recital 32), and under Article 7(3) it must be as easy to withdraw consent as to give it.</li>
+            <li><strong>Response time:</strong> requests from users must be answered without undue delay and within one
+              month, which can be extended by two further months for complex or numerous requests (Article 12(3)).</li>
+            <li><strong>Erasure is not unconditional:</strong> Article 17 gives a right to erasure on specific grounds,
+              such as the data no longer being necessary or consent being withdrawn with no other legal ground. It
+              does not apply where processing is needed, for example, to comply with a legal obligation or to
+              establish, exercise or defend legal claims.</li>
+            <li><strong>Portability is narrower than it sounds:</strong> Article 20 applies only when processing is
+              based on consent or a contract and is carried out by automated means. In that case users can receive the
+              data they provided in a structured, commonly used and machine-readable format.</li>
+            <li><strong>Penalties:</strong> the highest tier of fines reaches 20 million euros or 4% of total worldwide
+              annual turnover, whichever is higher (Article 83(5)).</li>
+          </ul>
+          <p>
+            Following the GDPR does not automatically make an app compliant everywhere. Other countries and US states
+            have their own definitions, deadlines and opt-out rules, so check the laws of each market you target.
           </p>
 
-          <h2>Understanding GDPR Requirements</h2>
+          <h2>Google Play Requirements You Cannot Skip</h2>
+          <h3>Data Safety Section</h3>
           <p>
-            GDPR applies to any app serving EU users, regardless of where your company is located. The penalties are
-            severe—up to 4% of global revenue or €20 million, whichever is higher.
+            Every app on Google Play must complete the
+            <a href="https://support.google.com/googleplay/android-developer/answer/10787469">Data safety form</a>,
+            including apps that collect no user data, and every app needs a privacy policy. The form covers data
+            handled by the SDKs and libraries inside your app, not only your own code. "Collection" means transmitting
+            data off the device; "sharing" means transferring it to a third party, with service providers that process
+            data on your behalf generally excluded. Before you fill it in, list every SDK in the final build and read
+            each vendor's data disclosure.
+          </p>
+          <h3>Account Deletion</h3>
+          <p>
+            If users can create an account from within your app, Google Play's
+            <a href="https://support.google.com/googleplay/android-developer/answer/13327111">account deletion
+            requirements</a> apply. You must offer an in-app path to delete the account and its data, and a web link
+            resource where people can request deletion of the account and its data. Data you declared as collected in the Data
+            safety section is in scope. You may keep some data for reasons such as security, fraud prevention or
+            regulatory compliance, but you have to tell users, for example in your privacy policy.
+          </p>
+          <h3>Families Policy</h3>
+          <p>
+            If children are one of your target audiences, the
+            <a href="https://support.google.com/googleplay/android-developer/answer/9893335">Families policy</a> adds
+            stricter rules. Apps that solely target children must not send the advertising ID or hardware identifiers,
+            and may not request location permission. Ads shown to children or users of unknown age must come from
+            Google Play Families Self-Certified Ads SDKs, without interest-based advertising or remarketing. The app and
+            its SDKs must also comply with laws such as COPPA and the GDPR.
           </p>
 
-          <h3>Key GDPR Requirements</h3>
-          <ul>
-            <li><strong>Lawful Basis:</strong> You need a legal basis to process personal data. For most apps, this is
-              either user consent or legitimate interest. Consent must be freely given, specific, informed, and
-              unambiguous.</li>
-            <li><strong>Consent Management:</strong> Pre-ticked boxes don't count as consent. Consent must be an active
-              opt-in. Users can withdraw consent as easily as they gave it.</li>
-            <li><strong>Right to Access:</strong> Users can request a copy of all data you hold about them. You have one
-              month to respond.</li>
-            <li><strong>Right to Erasure:</strong> Users can request deletion of their data. Implement this
-              functionality proactively—don't wait for requests.</li>
-            <li><strong>Right to Portability:</strong> Users can receive their data in a structured, machine-readable
-              format. JSON or CSV exports work well.</li>
-            <li><strong>Privacy Policy:</strong> Must be clear, accessible, and comprehensive. Explain what data you
-              collect, why, how long you keep it, and who you share it with.</li>
-          </ul>
-
-          <h2>Practical Privacy Implementation</h2>
+          <h2>Consent for Ads in Europe</h2>
           <p>
-            Theory is great, but implementation is where privacy happens. Here's how we build privacy-respecting apps.
+            Google <a href="https://support.google.com/admob/answer/13554116">requires publishers</a> to use a
+            Google-certified consent management platform integrated with the IAB Transparency and Consent Framework
+            when serving ads to users in the EEA and the UK (since 16 January 2024) and in Switzerland (since 31 July
+            2024). Google's own Privacy &amp; messaging European regulations messages are certified, and on Android they
+            are shown through the <a href="https://developers.google.com/admob/android/privacy">User Messaging
+            Platform (UMP) SDK</a>. A typical flow:
+          </p>
+          <ul>
+            <li>Call <code>requestConsentInfoUpdate()</code> at every app launch.</li>
+            <li>Call <code>loadAndShowConsentFormIfRequired()</code> once the consent status is known.</li>
+            <li>Check <code>canRequestAds()</code> before requesting any ad.</li>
+            <li>If <code>getPrivacyOptionsRequirementStatus()</code> returns <code>REQUIRED</code>, add a visible
+              settings entry that calls <code>showPrivacyOptionsForm()</code>, so users can change their choice at
+              any time.</li>
+          </ul>
+          <p>
+            Our own apps that show ads ask for consent in the EEA and UK through Google's UMP.
           </p>
 
-          <h3>Consent Management</h3>
-          <ul>
-            <li><strong>Granular Consent:</strong> Let users consent to different types of processing separately. Don't
-              bundle everything into one "accept all" button.</li>
-            <li><strong>Consent SDK:</strong> Use established consent management platforms (CMPs) like Google's UMP SDK.
-              Don't build consent flows from scratch—it's complex and error-prone.</li>
-            <li><strong>Document Consent:</strong> Store when users gave consent, what they consented to, and consent
-              version. You need audit trails.</li>
-            <li><strong>Respect Withdrawal:</strong> When users withdraw consent, immediately stop processing and delete
-              unnecessary data.</li>
-          </ul>
-
-          <h3>Data Handling</h3>
-          <ul>
-            <li><strong>Encryption:</strong> Encrypt sensitive data at rest and in transit. Use HTTPS exclusively—no
-              exceptions. For highly sensitive data, consider end-to-end encryption.</li>
-            <li><strong>Anonymization:</strong> When possible, anonymize or pseudonymize data. Analytics don't need
-              personally identifiable information.</li>
-            <li><strong>Local Processing:</strong> Process data on-device when possible. Less data transmitted means
-              less exposure.</li>
-            <li><strong>Secure Storage:</strong> Use platform-provided secure storage (Keychain on iOS,
-              EncryptedSharedPreferences on Android) for sensitive data.</li>
-          </ul>
-
-          <h3>Third-Party Services</h3>
-          <ul>
-            <li><strong>Data Processing Agreements:</strong> Ensure third-party services you use have GDPR-compliant
-              data processing agreements.</li>
-            <li><strong>SDK Audit:</strong> Review what data each SDK collects. Some analytics and ad SDKs are
-              surprisingly invasive. Use privacy-respecting alternatives when possible.</li>
-            <li><strong>Data Transfers:</strong> If data leaves the EU, ensure adequate safeguards (Standard Contractual
-              Clauses, adequacy decisions).</li>
-          </ul>
-
-          <h2>Platform-Specific Privacy Features</h2>
+          <h2>Ask for Less on the Device</h2>
           <p>
-            iOS and Android have introduced powerful privacy features. Using them demonstrates privacy commitment and
-            often improves user trust.
+            Every runtime permission is a question users have to answer and a line in your Data safety form. Before
+            adding one, look for an API that does the job without it.
           </p>
-
-          <h3>iOS Privacy Features</h3>
           <ul>
-            <li><strong>App Tracking Transparency:</strong> Request permission before tracking users across apps or
-              websites. Most users decline, so build your analytics around first-party data.</li>
-            <li><strong>Privacy Nutrition Labels:</strong> Apple requires detailed privacy disclosures in App Store
-              listings. Be thorough and accurate—Apple reviews these.</li>
-            <li><strong>Private Relay:</strong> Respect users who enable Private Relay. Don't try to circumvent it.</li>
-            <li><strong>Mail Privacy Protection:</strong> Don't rely on email open tracking—iOS blocks it for many
-              users.</li>
+            <li><strong>Photos and videos:</strong> the
+              <a href="https://developer.android.com/training/data-storage/shared/photopicker">photo picker</a> gives
+              your app access only to the photos and videos the user selects, instead of the whole media library.
+              Google Play's
+              <a href="https://support.google.com/googleplay/android-developer/answer/14115180">photo and video
+              permissions policy</a> limits <code>READ_MEDIA_IMAGES</code> and <code>READ_MEDIA_VIDEO</code> to apps
+              whose core functionality needs broad access.</li>
+            <li><strong>Location:</strong> declare <code>ACCESS_COARSE_LOCATION</code> and add
+              <code>ACCESS_FINE_LOCATION</code> only if a feature truly benefits from precision. Approximate location
+              is accurate to about 3 square kilometres, and users can choose it even when you ask for precise
+              location, so your app should still work with it. Background location requires its own permission and is
+              restricted by Play's location policy. Apps targeting Android 17 (API level 37) whose features only need
+              location for a single session must use the location button, according to the
+              <a href="https://developer.android.com/develop/sensors-and-location/location/permissions">location
+              permissions guide</a>.</li>
+            <li><strong>Check your SDKs:</strong> libraries can add permissions to the merged manifest. Review it before
+              every release.</li>
           </ul>
+<pre><code style="background: none; padding: 0;">val pickMedia = rememberLauncherForActivityResult(PickVisualMedia()) { uri -&gt;
+    if (uri != null) onImagePicked(uri)
+}
 
-          <h3>Android Privacy Features</h3>
-          <ul>
-            <li><strong>Privacy Dashboard:</strong> Shows users which permissions apps have used recently. Make sure
-              your usage is justified and expected.</li>
-            <li><strong>Data Safety:</strong> Google Play requires detailed data collection disclosures. These are
-              visible before installation—users make decisions based on this.</li>
-            <li><strong>Permission Auto-Reset:</strong> Permissions are automatically revoked for unused apps. Handle
-              permission revocation gracefully.</li>
-            <li><strong>Approximate Location:</strong> Offer approximate location option when precise location isn't
-              necessary.</li>
-          </ul>
+Button(onClick = {
+    pickMedia.launch(PickVisualMediaRequest(PickVisualMedia.ImageOnly))
+}) {
+    Text("Choose photo")
+}</code></pre>
 
-          <h2>Building User Trust</h2>
+          <h2>Store Sensitive Data Safely</h2>
           <p>
-            Compliance is the minimum. Building trust requires going beyond legal requirements.
+            Many older guides recommend <code>EncryptedSharedPreferences</code> and <code>EncryptedFile</code> from
+            <code>androidx.security:security-crypto</code>. That advice is outdated: the
+            <a href="https://developer.android.com/jetpack/androidx/releases/security">release notes</a> show that all
+            of the library's APIs were deprecated in version 1.1.0 in favour of existing platform APIs and direct use of
+            the Android Keystore.
           </p>
-
-          <h3>Trust-Building Practices</h3>
           <ul>
-            <li><strong>Clear Privacy Policy:</strong> Write for humans, not lawyers. Explain in plain language what you
-              do and don't do with data.</li>
-            <li><strong>Privacy Dashboard:</strong> Build an in-app privacy dashboard where users can view, export, and
-              delete their data without contacting support.</li>
-            <li><strong>Proactive Communication:</strong> Notify users about privacy policy changes. Don't hide updates
-              in app release notes.</li>
-            <li><strong>Security Transparency:</strong> When breaches occur (and they eventually will), communicate
-              quickly and honestly. Explain what happened, what data was affected, and what you're doing about it.</li>
-            <li><strong>Privacy-Focused Defaults:</strong> Default settings should favor privacy. Make users opt into
-              sharing, not opt out.</li>
+            <li><strong>Keep keys in the Keystore:</strong> the
+              <a href="https://developer.android.com/privacy-and-security/keystore">Android Keystore</a> keeps key
+              material out of your app process and, where the hardware supports it, inside a Trusted Execution
+              Environment or StrongBox secure element.</li>
+            <li><strong>Restrict key use:</strong> you can limit a key to specific algorithms and purposes, or require
+              recent user authentication before it can be used.</li>
+            <li><strong>Mind the main thread:</strong> cryptographic operations can be slow, so run them off the UI
+              thread.</li>
+            <li><strong>Encrypt in transit:</strong> send personal data only over HTTPS, and keep it out of logs and
+              crash reports.</li>
           </ul>
+
+          <h2>Be Transparent and Easy to Reach</h2>
+          <p>
+            Write the privacy policy in plain language: what you collect, why, which SDKs receive it, how long you keep
+            it and how people can contact you or delete their data. Keep it consistent with your Data safety form. At
+            AppMaven Studio, each app has its own privacy policy and terms alongside our studio-wide
+            <a href="/privacy-policy.html">privacy policy</a>, and anyone can ask for their data to
+            be deleted through our <a href="/data-deletion/">data deletion page</a>; we handle those requests within 30
+            days.
+          </p>
 
           <div
             style="background: rgba(0, 212, 255, 0.1); border-left: 4px solid var(--color-accent); padding: var(--space-6); border-radius: var(--radius-md); margin: var(--space-10) 0;">
             <h3 style="margin-top: 0;">Key Takeaways</h3>
             <ul style="margin-bottom: 0;">
-              <li>Build privacy into your architecture from day one—Privacy by Design</li>
-              <li>Only collect data you actually need—every data point is a liability</li>
-              <li>Use established consent management platforms, don't build from scratch</li>
-              <li>Encrypt sensitive data at rest and in transit—no exceptions</li>
-              <li>Give users control: view, export, and delete their data</li>
-              <li>Be transparent about data collection in plain language</li>
+              <li>Collect only what each feature needs; it shrinks your Data safety form and your risk</li>
+              <li>GDPR rights have conditions: erasure has exceptions, portability covers consent or contract data</li>
+              <li>Every Play app needs a Data safety form and a privacy policy, including SDK data</li>
+              <li>Apps with accounts must offer in-app and web account deletion</li>
+              <li>Ads in the EEA, UK and Switzerland need a Google-certified CMP such as the UMP SDK</li>
+              <li>Prefer the photo picker and approximate location over broad permissions</li>
+              <li>Replace deprecated security-crypto with platform APIs and the Android Keystore</li>
             </ul>
           </div>
-
-          <h2>Conclusion</h2>
-          <p>
-            Privacy-first development isn't just about avoiding fines—it's about building sustainable, trustworthy
-            products. Users are increasingly privacy-conscious. Apps that respect privacy gain competitive advantage.
-          </p>
-
-          <p>
-            Start by auditing your current data practices. What do you collect? Why? How long do you keep it? Then
-            implement the basics: consent management, data encryption, user data access. Finally, go beyond
-            compliance—build privacy dashboards, use clear language, default to privacy-friendly settings.
-          </p>
-
-          <p>
-            Privacy regulations will only get stricter. Platform policies will continue favoring user privacy. The apps
-            that thrive will be those that embraced privacy early, not those forced into compliance. Build
-            privacy-first, and you'll never have to retrofit it later.
-          </p>
 
         </div>
 
         <div class="share-buttons">
           <span style="color: var(--color-text-tertiary); margin-right: var(--space-2);">Share:</span>
-          <button class="share-button" aria-label="Share on Twitter" onclick="shareOnTwitter()">
+          <button class="share-button" aria-label="Share on X" onclick="shareOnTwitter()">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
               <path
                 d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
@@ -528,9 +525,7 @@
           <div>
             <h3 style="margin-bottom: var(--space-2);">About the Author</h3>
             <p style="margin-bottom: var(--space-3); color: var(--color-text-secondary);">
-              The <strong>AppMaven Team</strong> consists of passionate developers and designers dedicated to creating
-              exceptional mobile experiences. We share insights from our journey building apps used by thousands of
-              users worldwide.
+              <strong>AppMaven Studio</strong> is an independent Android developer based in Vietnam. We publish practical apps and casual games on Google Play and write about what we learn while building them.
             </p>
             <a href="/about/" style="color: var(--color-accent); text-decoration: none; font-size: var(--text-sm);">
               Learn more about us →

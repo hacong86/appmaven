@@ -17,13 +17,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Primary Meta Tags -->
-  <title>Designing Accessible Mobile Apps: A WCAG Implementation Guide</title>
-  <meta name="title" content="Designing Accessible Mobile Apps: A WCAG Implementation Guide">
+  <title>Accessible Android Apps: A Practical WCAG 2.2 Guide</title>
+  <meta name="title" content="Accessible Android Apps: A Practical WCAG 2.2 Guide">
   <meta name="description"
-    content="Learn how to design accessible mobile apps: WCAG guidelines, inclusive design principles and practical accessibility testing strategies.">
+    content="Build accessible Android apps: TalkBack labels, Compose semantics, 48dp touch targets, text scaling, contrast and testing, mapped to WCAG 2.2.">
   <meta name="keywords"
-    content="accessibility, WCAG, inclusive design, mobile accessibility, a11y, accessible apps, screen readers, disability access">
-  <meta name="author" content="AppMaven Team">
+    content="android accessibility, accessible mobile apps, WCAG 2.2, TalkBack, Jetpack Compose semantics, touch target size, color contrast, Switch Access, Accessibility Scanner">
+  <meta name="author" content="AppMaven Studio">
 
   <!-- Canonical URL -->
   <link rel="canonical" href="https://appmavenstudio.com/blog/accessible-mobile-apps/">
@@ -31,12 +31,12 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://appmavenstudio.com/blog/accessible-mobile-apps/">
-  <meta property="og:title" content="Designing Accessible Mobile Apps: A WCAG Implementation Guide">
+  <meta property="og:title" content="Accessible Android Apps: A Practical WCAG 2.2 Guide">
   <meta property="og:description"
-    content="Learn how to design accessible mobile apps following WCAG guidelines and inclusive design principles.">
+    content="Build accessible Android apps: TalkBack labels, Compose semantics, 48dp touch targets, text scaling, contrast and testing, mapped to WCAG 2.2.">
   <meta property="og:image" content="https://appmavenstudio.com/assets/images/blog/accessible-mobile-apps-og.jpg">
   <meta property="article:published_time" content="2026-01-20T09:00:00Z">
-  <meta property="article:author" content="AppMaven Team">
+  <meta property="article:author" content="AppMaven Studio">
   <meta property="article:section" content="Development">
   <meta property="article:tag" content="Accessibility">
   <meta property="article:tag" content="WCAG">
@@ -44,8 +44,8 @@
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://appmavenstudio.com/blog/accessible-mobile-apps/">
-  <meta property="twitter:title" content="Designing Accessible Mobile Apps: A WCAG Implementation Guide">
-  <meta property="twitter:description" content="Learn how to design accessible mobile apps following WCAG guidelines.">
+  <meta property="twitter:title" content="Accessible Android Apps: A Practical WCAG 2.2 Guide">
+  <meta property="twitter:description" content="Build accessible Android apps: TalkBack labels, Compose semantics, 48dp touch targets, text scaling, contrast and testing, mapped to WCAG 2.2.">
   <meta property="twitter:image" content="https://appmavenstudio.com/assets/images/blog/accessible-mobile-apps-og.jpg">
 
   <!-- Favicon -->
@@ -61,8 +61,8 @@
   {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "headline": "Designing Accessible Mobile Apps: A WCAG Implementation Guide",
-    "description": "Learn how to design accessible mobile apps following WCAG guidelines and inclusive design principles.",
+    "headline": "Accessible Android Apps: A Practical WCAG 2.2 Guide",
+    "description": "Build accessible Android apps: TalkBack labels, Compose semantics, 48dp touch targets, text scaling, contrast and testing, mapped to WCAG 2.2.",
     "image": "https://appmavenstudio.com/assets/images/blog/accessible-mobile-apps-og.jpg",
     "author": {
       "@type": "Organization",
@@ -78,14 +78,14 @@
       }
     },
     "datePublished": "2026-01-20T09:00:00Z",
-    "dateModified": "2026-01-20T09:00:00Z",
+    "dateModified": "2026-11-13T09:00:00Z",
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https://appmavenstudio.com/blog/accessible-mobile-apps/"
     },
-    "keywords": "accessibility, WCAG, inclusive design, mobile accessibility",
+    "keywords": "android accessibility, accessible mobile apps, WCAG 2.2, TalkBack, Jetpack Compose semantics, touch target size, color contrast, Switch Access, Accessibility Scanner",
     "articleSection": "Development",
-    "wordCount": "1180"
+    "wordCount": "1428"
   }
   </script>
 
@@ -264,7 +264,7 @@
             <span class="badge badge-tools">Tools & Tips</span>
           </div>
           <h1 style="margin-bottom: var(--space-6); font-size: clamp(2rem, 6vw, var(--text-5xl)); line-height: 1.2;">
-            Designing Accessible Mobile Apps: A WCAG Implementation Guide
+            Accessible Android Apps: A Practical WCAG 2.2 Guide
           </h1>
 
           <div class="article-meta">
@@ -273,8 +273,8 @@
                 style="width: 40px; height: 40px; background: #0f1635 url('/assets/images/logo/appmaven_logo.png') center / cover no-repeat; border-radius: var(--radius-full);">
               </div>
               <div>
-                <div style="font-weight: var(--font-semibold); color: var(--color-text-primary);">AppMaven Team</div>
-                <div style="font-size: var(--text-sm); color: var(--color-text-tertiary);">Developer & Writer</div>
+                <div style="font-weight: var(--font-semibold); color: var(--color-text-primary);">AppMaven Studio</div>
+                <div style="font-size: var(--text-sm); color: var(--color-text-tertiary);">Independent Android developer</div>
               </div>
             </div>
             <div style="color: var(--color-text-tertiary); font-size: var(--text-sm);">
@@ -293,7 +293,7 @@
                 <circle cx="12" cy="12" r="10" />
                 <polyline points="12 6 12 12 16 14" />
               </svg>
-              10 min read
+              6 min read
             </div>
           </div>
         </header>
@@ -306,197 +306,223 @@
         </div>
 
         <div class="article-content">
-
           <p class="lead"
             style="font-size: var(--text-xl); color: var(--color-text-primary); margin-bottom: var(--space-8);">
-            Accessibility isn't optional—it's a fundamental right. Over 15% of the world's population lives with some
-            form of disability, and that number grows to 25% when considering temporary and situational disabilities.
-            Here's how we ensure our apps work for everyone, not just the average user.
+            An estimated 1.3 billion people, about 16% of the world's population, experience a significant
+            disability. Many of them use Android with TalkBack, Switch Access, large fonts or a keyboard. This guide
+            covers what an Android developer can actually do in code to make an app work for them, how the current
+            WCAG 2.2 rules map to Android, and how to test the result.
           </p>
 
-          <h2>Why Accessibility Matters</h2>
+          <h2>Why Accessibility Is Worth the Effort</h2>
           <p>
-            Building accessible apps isn't just about compliance or avoiding lawsuits. It's about reaching a broader
-            audience, improving usability for everyone, and doing the right thing. When you design for accessibility,
-            you create better experiences for all users—clearer navigation benefits everyone, not just screen reader
-            users.
+            The <a href="https://www.who.int/news-room/fact-sheets/detail/disability-and-health">World Health
+            Organization</a> estimates that 1.3 billion people experience a significant disability today, and notes
+            that the number is growing as people live longer. Android's own
+            <a href="https://developer.android.com/guide/topics/ui/accessibility/apps">accessibility guidance</a>
+            lists the groups you are designing for: people with impaired vision, colour blindness, impaired hearing,
+            impaired dexterity and cognitive disabilities.
           </p>
-
           <p>
-            At AppMaven Studio, we've found that accessibility considerations often lead to innovative design solutions.
-            Constraints breed creativity. Plus, many accessibility features benefit users in unexpected ways: captions
-            help people in noisy environments, voice control assists users with full hands, and high contrast modes
-            reduce eye strain.
+            The same fixes help everyone. Clear labels, larger touch targets, readable contrast and text that scales
+            make an app easier to use on a bumpy bus, in bright sunlight or with one hand. If you publish on Google
+            Play, the pre-launch report also runs automated accessibility tests on builds you upload to a release
+            track, so many problems show up in Play Console even before users report them.
           </p>
 
-          <h2>Understanding WCAG Guidelines</h2>
+          <h2>WCAG 2.2 and How It Maps to Android</h2>
           <p>
-            The Web Content Accessibility Guidelines (WCAG) provide a framework for accessibility. While originally
-            designed for web content, the principles translate directly to mobile apps. WCAG is organized around four
-            principles: Perceivable, Operable, Understandable, and Robust (POUR).
+            The Web Content Accessibility Guidelines are written for web content, but their principles carry over to
+            native apps. <a href="https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/">WCAG 2.2</a> became a
+            W3C Recommendation on 5 October 2023 and is the current version. It adds nine success criteria to WCAG 2.1
+            and removes the obsolete 4.1.1 Parsing. Each criterion has a conformance level of A, AA or AAA, and AA is
+            the usual target for an app.
           </p>
-
-          <h3>The POUR Principles</h3>
+          <p>
+            Several of the new criteria matter on a phone:
+          </p>
           <ul>
-            <li><strong>Perceivable:</strong> Information must be presentable in ways users can perceive. This means
-              providing text alternatives, captions, and ensuring sufficient color contrast.</li>
-            <li><strong>Operable:</strong> Interface components must be operable by all users. This includes keyboard
-              navigation, sufficient time to interact, and avoiding content that causes seizures.</li>
-            <li><strong>Understandable:</strong> Information and operation must be understandable. Use clear language,
-              predictable navigation, and help users avoid and correct mistakes.</li>
-            <li><strong>Robust:</strong> Content must work with current and future technologies, including assistive
-              technologies like screen readers.</li>
+            <li><strong>2.5.8 Target Size (Minimum), level AA:</strong> pointer targets of at least 24 by 24 CSS pixels,
+              or enough spacing around smaller ones. The stricter
+              <a href="https://www.w3.org/WAI/WCAG22/Understanding/target-size-enhanced.html">2.5.5 Target Size
+              (Enhanced)</a> asks for 44 by 44 CSS pixels and is level AAA.</li>
+            <li><strong>2.5.7 Dragging Movements, level AA:</strong> anything done by dragging must also be possible
+              with a single pointer without dragging, unless dragging is essential.</li>
+            <li><strong>2.4.11 Focus Not Obscured (Minimum), level AA:</strong> a component that receives keyboard focus
+              must not be entirely hidden by content you added, such as a sticky bottom bar.</li>
+            <li><strong>3.3.8 Accessible Authentication (Minimum), level AA:</strong> do not make people remember,
+              solve or retype something to sign in unless you offer help, such as password manager support and paste.</li>
+          </ul>
+          <p>
+            Android has its own numbers on top of WCAG. The platform guidance recommends touch targets of at least
+            48dp by 48dp, and specific contrast ratios for text measured in sp. Use those as your Android targets and
+            treat WCAG as the shared vocabulary for audits and reports.
+          </p>
+
+          <h2>1. Label Everything That Is Not Text</h2>
+          <p>
+            TalkBack reads <code>Text</code> composables automatically. Icons and images need a
+            <code>contentDescription</code>, written as a localized string that describes the purpose, not the
+            picture:
+          </p>
+<pre><code style="background: none; padding: 0;">IconButton(onClick = onShare) {
+    Icon(
+        imageVector = Icons.Filled.Share,
+        contentDescription = stringResource(R.string.label_share)
+    )
+}</code></pre>
+          <ul>
+            <li><strong>Describe the action:</strong> "Share" or "Submit", not "Submit button". Use the
+              <code>Role</code> semantics property (for example <code>Role.Button</code> or <code>Role.Switch</code>)
+              so TalkBack announces the type for you.</li>
+            <li><strong>Skip decoration:</strong> pass <code>contentDescription = null</code> for purely decorative
+              images and icons inside an already labelled control.</li>
+            <li><strong>Keep labels unique in lists:</strong> each item in a <code>LazyColumn</code> should be
+              distinguishable by its own content, such as a city name.</li>
+            <li><strong>Group related content:</strong> wrap a row of avatar, name and date in a container with
+              <code>Modifier.semantics(mergeDescendants = true) {}</code> so it is read as one item.</li>
+            <li><strong>Mark headings:</strong> <code>Modifier.semantics { heading() }</code> lets screen reader users
+              jump between sections.</li>
+            <li><strong>Announce changes:</strong> mark snackbars and status messages with
+              <code>liveRegion = LiveRegionMode.Polite</code>. Do not use live regions on content that updates
+              constantly, such as countdown timers.</li>
+            <li><strong>Explain non-obvious actions:</strong> <code>onClickLabel</code> and
+              <code>onLongClickLabel</code> turn "Double tap to activate" into "Double tap to open this article".</li>
+          </ul>
+          <p>
+            The details are in the Compose <a href="https://developer.android.com/develop/ui/compose/accessibility/semantics">semantics
+            guide</a> and Android's <a href="https://developer.android.com/guide/topics/ui/accessibility/principles">principles
+            for improving app accessibility</a>.
+          </p>
+
+          <h2>2. Make Touch Targets at Least 48dp</h2>
+          <p>
+            Material components such as <code>Checkbox</code>, <code>RadioButton</code>, <code>Switch</code> and
+            <code>Slider</code> reserve a 48dp target when they are interactive. Custom controls need it set by hand.
+            If an element must stay visually small, the Material 3
+            <a href="https://developer.android.com/develop/ui/compose/accessibility/api-defaults"><code>minimumInteractiveComponentSize()</code></a>
+            modifier reserves at least 48dp of layout space around it. Put it before any size modifier:
+          </p>
+<pre><code style="background: none; padding: 0;">Box(
+    Modifier
+        .clickable { onToggle() }
+        .minimumInteractiveComponentSize()
+        .size(24.dp)
+)</code></pre>
+          <p>
+            Leave space between neighbouring targets so a slightly missed tap does not trigger the wrong action. For
+            gestures, follow the spirit of 2.5.7: if a list supports swipe to dismiss or drag to reorder, expose the
+            same action as a button or as a custom accessibility action with
+            <code>CustomAccessibilityAction</code>, so TalkBack, Switch Access and Voice Access users can reach it.
+          </p>
+
+          <h2>3. Let Text Scale</h2>
+          <p>
+            Define every text size in sp. Since <a href="https://developer.android.com/about/versions/14/features">Android
+            14</a> users can scale fonts up to 200%, with a nonlinear curve so large text grows less than small text.
+            Apps that use sp get this automatically, but layouts still break if they assume a fixed height.
+          </p>
+          <ul>
+            <li>Use sp for text and line height, and dp for padding and sizes. With nonlinear scaling, 4sp plus 20sp
+              is not guaranteed to equal 24sp.</li>
+            <li>Avoid fixed heights on containers that hold text; let them grow or scroll.</li>
+            <li>Test at the maximum font size in <strong>Settings &gt; Accessibility &gt; Display size and
+              text</strong>, and also with a larger display size.</li>
+            <li>Do not hardcode calculations based on <code>Configuration.fontScale</code> or
+              <code>scaledDensity</code>; use <code>TypedValue.applyDimension()</code> to convert.</li>
           </ul>
 
+          <h2>4. Contrast and Colour</h2>
           <p>
-            WCAG has three conformance levels: A (minimum), AA (recommended for most content), and AAA (enhanced). We
-            target WCAG 2.1 Level AA for all our apps, which strikes a balance between accessibility and practical
-            implementation.
+            Android recommends a contrast ratio of at least 4.5:1 for text smaller than 18sp, or bold text smaller
+            than 14sp, and at least 3:1 for larger text. Check pairs with Accessibility Scanner or a contrast checker,
+            including text placed over images and gradients.
+          </p>
+          <p>
+            Never use colour as the only signal. An error state should add an icon and a message, not just turn a field
+            red; a chart should use labels or patterns as well as hues. Android Studio's Compose UI Check mode can
+            preview a screen for different types of colour vision deficiency and flag low contrast in previews.
           </p>
 
-          <h2>Screen Reader Support</h2>
-          <p>
-            Screen readers are essential for users with visual impairments. On Android, TalkBack is the primary screen
-            reader; on iOS, it's VoiceOver. Supporting screen readers requires intentional design and development.
-          </p>
-
-          <h3>Best Practices</h3>
+          <h2>5. Focus, Order and Sign-In</h2>
           <ul>
-            <li><strong>Meaningful Content Descriptions:</strong> Every interactive element needs a content description.
-              Don't just say "button"—explain what the button does: "Submit form" or "Add to cart."</li>
-            <li><strong>Logical Focus Order:</strong> Ensure screen readers navigate content in a logical sequence. Test
-              with your eyes closed—does the order make sense?</li>
-            <li><strong>Live Region Announcements:</strong> Use live regions to announce dynamic content changes. When a
-              form submission succeeds, screen reader users need to know.</li>
-            <li><strong>Avoid Redundant Descriptions:</strong> If a button has visible text, don't duplicate it in the
-              content description—the text is already read aloud.</li>
-            <li><strong>Group Related Content:</strong> Use proper semantic grouping for related items like form fields
-              or list items.</li>
+            <li><strong>Logical order:</strong> swipe through a screen with TalkBack and confirm the reading order
+              matches the visual order. The pre-launch report flags traversal order problems under
+              "Implementation".</li>
+            <li><strong>Nothing hides the focused item:</strong> people using a keyboard or Switch Access move focus
+              step by step. Make sure persistent bars, overlays and bottom sheets never cover the item that has
+              focus.</li>
+            <li><strong>Easy sign-in:</strong> allow paste and autofill in password and code fields so password
+              managers work, in line with 3.3.8.</li>
+            <li><strong>Pane titles:</strong> give custom sheets and panes a <code>paneTitle</code> so accessibility
+              services can announce when they appear.</li>
           </ul>
 
+          <h2>6. Test With Real Assistive Technology</h2>
           <p>
-            We test every feature with TalkBack and VoiceOver enabled. It's eye-opening to experience your app without
-            sight—you quickly discover navigation issues and unclear labels.
+            Android's <a href="https://developer.android.com/guide/topics/ui/accessibility/testing">accessibility testing
+            guide</a> recommends combining four approaches: manual testing, analysis tools, automated tests and user
+            testing.
           </p>
-
-          <h2>Color and Contrast</h2>
-          <p>
-            Color blindness affects approximately 8% of men and 0.5% of women. Relying solely on color to convey
-            information excludes these users.
-          </p>
-
-          <h3>Color Accessibility Guidelines</h3>
+          <h3>Manual Testing</h3>
           <ul>
-            <li><strong>Minimum Contrast Ratios:</strong> WCAG AA requires 4.5:1 contrast for normal text and 3:1 for
-              large text (18pt or 14pt bold). Use tools like Color Contrast Analyzer to verify.</li>
-            <li><strong>Don't Rely on Color Alone:</strong> Use icons, labels, or patterns in addition to color. Error
-              messages shouldn't just turn red—add an error icon and descriptive text.</li>
-            <li><strong>Test with Simulators:</strong> Use color blindness simulators to see how your UI appears to
-              users with different types of color vision deficiency.</li>
-            <li><strong>Support Dark Mode:</strong> Many users with light sensitivity or dyslexia prefer dark mode.
-              Ensure your app respects system appearance settings.</li>
+            <li><strong>TalkBack:</strong> turn it on, open the app and swipe through every element. Check that each
+              announcement explains the purpose, that main workflows can be completed, that every element is reachable
+              and that temporary messages are read aloud.</li>
+            <li><strong>Switch Access:</strong> assign volume down as "Next" and volume up as "Select". Confirm that only
+              actionable items are highlighted, each only once, and that everything available through gestures is also
+              available as a control or custom action.</li>
+            <li><strong>Large text and display size:</strong> repeat key screens at the largest settings.</li>
           </ul>
-
-          <p>
-            In our apps, we use shape, position, and text labels alongside color to convey state. A success message
-            might be green, but it also shows a checkmark icon and clear success text.
-          </p>
-
-          <h2>Touch Targets and Motor Accessibility</h2>
-          <p>
-            Users with motor impairments, arthritis, or tremors need adequately sized touch targets and forgiving
-            interactions.
-          </p>
-
-          <h3>Touch Target Recommendations</h3>
+          <h3>Analysis Tools</h3>
           <ul>
-            <li><strong>Minimum Size:</strong> WCAG recommends 44x44 points (iOS) or 48x48dp (Android) for touch
-              targets. Smaller targets are difficult for many users.</li>
-            <li><strong>Adequate Spacing:</strong> Provide sufficient spacing between interactive elements to prevent
-              accidental taps.</li>
-            <li><strong>Avoid Time Limits:</strong> Don't force users to complete actions within arbitrary time limits.
-              If timeouts are necessary, allow users to extend or disable them.</li>
-            <li><strong>Support Multiple Input Methods:</strong> Support keyboard navigation, voice control, and switch
-              access in addition to touch.</li>
-            <li><strong>Avoid Precise Gestures:</strong> Multi-finger gestures and complex swipe patterns are difficult
-              for users with motor impairments. Provide alternative interaction methods.</li>
+            <li><strong>Accessibility Scanner</strong> on a device suggests fixes for labels, touch targets and
+              contrast.</li>
+            <li><strong>Compose UI Check</strong> in Android Studio audits previews before you run the app.</li>
+            <li><strong>Pre-launch report</strong> on Google Play lists touch target size, low contrast, content
+              labelling and implementation issues with screenshots.</li>
           </ul>
-
-          <h2>Cognitive Accessibility</h2>
+          <h3>Automated Checks in Compose Tests</h3>
           <p>
-            Cognitive disabilities range from dyslexia to memory impairments to attention disorders. Designing for
-            cognitive accessibility improves usability for everyone.
+            Starting with Compose 1.8.0 you can run the Accessibility Test Framework, the engine behind Accessibility
+            Scanner, inside UI tests. Add the <code>ui-test-junit4-accessibility</code> dependency, then
+            <a href="https://developer.android.com/develop/ui/compose/accessibility/testing">enable the checks</a>:
           </p>
+<pre><code style="background: none; padding: 0;">@get:Rule
+val composeTestRule = createAndroidComposeRule&lt;ComponentActivity&gt;()
 
-          <h3>Design Strategies</h3>
-          <ul>
-            <li><strong>Simple, Clear Language:</strong> Avoid jargon and complex sentences. Write at a 6th to 8th grade
-              reading level for general audiences.</li>
-            <li><strong>Consistent Navigation:</strong> Keep navigation patterns consistent throughout your app. Users
-              shouldn't have to relearn how to navigate each screen.</li>
-            <li><strong>Clear Visual Hierarchy:</strong> Use headings, spacing, and visual grouping to organize content
-              logically.</li>
-            <li><strong>Error Prevention and Recovery:</strong> Prevent errors when possible with clear labels and
-              validation. When errors occur, provide clear instructions for fixing them.</li>
-            <li><strong>Reduce Cognitive Load:</strong> Don't overwhelm users with information. Break complex tasks into
-              smaller steps.</li>
-          </ul>
-
-          <h2>Testing for Accessibility</h2>
+@Test
+fun settingsScreen_passesAccessibilityChecks() {
+    composeTestRule.setContent { SettingsScreen() }
+    composeTestRule.enableAccessibilityChecks()
+    // Any action, such as performClick(), also runs the checks.
+    composeTestRule.onRoot().tryPerformAccessibilityChecks()
+}</code></pre>
           <p>
-            Automated testing catches many accessibility issues, but manual testing with real assistive technologies is
-            essential.
+            The checks catch missing labels, low contrast, small touch targets and traversal order problems. They do
+            not replace a session with TalkBack, and neither replaces feedback from people who rely on assistive
+            technology every day.
           </p>
-
-          <h3>Testing Strategy</h3>
-          <ul>
-            <li><strong>Automated Tools:</strong> Use Android's Accessibility Scanner or iOS's Accessibility Inspector
-              to identify common issues.</li>
-            <li><strong>Screen Reader Testing:</strong> Test complete user flows with TalkBack (Android) and VoiceOver
-              (iOS) enabled.</li>
-            <li><strong>Keyboard Navigation:</strong> Ensure all functionality is accessible via keyboard (Bluetooth
-              keyboard on mobile).</li>
-            <li><strong>Color Contrast Analysis:</strong> Verify all text and interactive elements meet WCAG contrast
-              requirements.</li>
-            <li><strong>User Testing:</strong> Include users with disabilities in your testing process. They'll identify
-              issues automated tools miss.</li>
-          </ul>
 
           <div
             style="background: rgba(0, 212, 255, 0.1); border-left: 4px solid var(--color-accent); padding: var(--space-6); border-radius: var(--radius-md); margin: var(--space-10) 0;">
             <h3 style="margin-top: 0;">Key Takeaways</h3>
             <ul style="margin-bottom: 0;">
-              <li>Accessibility benefits everyone, not just users with disabilities</li>
-              <li>Target WCAG 2.1 Level AA for mobile apps</li>
-              <li>Test with screen readers—experience your app without sight</li>
-              <li>Ensure 4.5:1 contrast ratio and don't rely on color alone</li>
-              <li>Use 44x44pt minimum touch targets with adequate spacing</li>
-              <li>Include users with disabilities in your testing process</li>
+              <li>Use WCAG 2.2 as the reference; on Android, aim for 48dp touch targets and sp-based text</li>
+              <li>Give icons and images a purpose-based <code>contentDescription</code>, and null for decoration</li>
+              <li>Use Compose semantics: <code>Role</code>, <code>heading()</code>, <code>mergeDescendants</code> and
+                live regions</li>
+              <li>Meet 4.5:1 contrast for normal text and never rely on colour alone</li>
+              <li>Offer a non-drag alternative for every drag or swipe action</li>
+              <li>Test with TalkBack, Switch Access, maximum font size and automated accessibility checks</li>
             </ul>
           </div>
-
-          <h2>Conclusion</h2>
-          <p>
-            Accessibility is not a feature—it's a requirement. At AppMaven Studio, we integrate accessibility into our
-            design and development process from day one. It's far easier to build accessibility in than to retrofit it
-            later.
-          </p>
-
-          <p>
-            Start with awareness: understand that your users have diverse needs. Learn the WCAG guidelines and assistive
-            technology basics. Use automated tools, but don't rely on them exclusively—manual testing is irreplaceable.
-          </p>
-
-          <p>
-            Most importantly, involve users with disabilities in your design and testing process. They're the experts on
-            accessibility. Their feedback will transform your understanding and lead to better products for everyone.
-          </p>
 
         </div>
 
         <div class="share-buttons">
           <span style="color: var(--color-text-tertiary); margin-right: var(--space-2);">Share:</span>
-          <button class="share-button" aria-label="Share on Twitter" onclick="shareOnTwitter()">
+          <button class="share-button" aria-label="Share on X" onclick="shareOnTwitter()">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
               <path
                 d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
@@ -526,9 +552,7 @@
           <div>
             <h3 style="margin-bottom: var(--space-2);">About the Author</h3>
             <p style="margin-bottom: var(--space-3); color: var(--color-text-secondary);">
-              The <strong>AppMaven Team</strong> consists of passionate developers and designers dedicated to creating
-              exceptional mobile experiences. We share insights from our journey building apps used by thousands of
-              users worldwide.
+              <strong>AppMaven Studio</strong> is an independent Android developer based in Vietnam. We publish practical apps and casual games on Google Play and write about what we learn while building them.
             </p>
             <a href="/about/" style="color: var(--color-accent); text-decoration: none; font-size: var(--text-sm);">
               Learn more about us →

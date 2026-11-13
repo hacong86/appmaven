@@ -17,13 +17,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Primary Meta Tags -->
-  <title>Optimizing Android App Performance in 2026: A Developer's Guide</title>
-  <meta name="title" content="Optimizing Android App Performance in 2026: A Developer's Guide">
+  <title>Android App Performance in 2026: Vitals, Startup and Jank</title>
+  <meta name="title" content="Android App Performance in 2026: Vitals, Startup and Jank">
   <meta name="description"
-    content="Proven techniques to optimize Android app performance: profiling tools, memory management, battery efficiency and faster launch times.">
+    content="A 2026 checklist for Android app performance: Android vitals thresholds, Baseline Profiles, R8, fast startup, Compose jank, memory and 16 KB pages.">
   <meta name="keywords"
-    content="android performance, app optimization, memory management, battery efficiency, profiling tools, android development, mobile performance">
-  <meta name="author" content="AppMaven Team">
+    content="android performance, android vitals, app startup time, baseline profiles, R8, macrobenchmark, jetpack compose performance, ANR, 16 KB page size">
+  <meta name="author" content="AppMaven Studio">
 
   <!-- Canonical URL -->
   <link rel="canonical" href="https://appmavenstudio.com/blog/android-performance-2026/">
@@ -31,12 +31,12 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://appmavenstudio.com/blog/android-performance-2026/">
-  <meta property="og:title" content="Optimizing Android App Performance in 2026: A Developer's Guide">
+  <meta property="og:title" content="Android App Performance in 2026: Vitals, Startup and Jank">
   <meta property="og:description"
-    content="Learn proven techniques to optimize Android app performance including profiling, memory management, and battery efficiency.">
+    content="A 2026 checklist for Android app performance: Android vitals thresholds, Baseline Profiles, R8, fast startup, Compose jank, memory and 16 KB pages.">
   <meta property="og:image" content="https://appmavenstudio.com/assets/images/blog/android-performance-2026-og.jpg">
   <meta property="article:published_time" content="2026-01-10T09:00:00Z">
-  <meta property="article:author" content="AppMaven Team">
+  <meta property="article:author" content="AppMaven Studio">
   <meta property="article:section" content="Development">
   <meta property="article:tag" content="Android">
   <meta property="article:tag" content="Performance">
@@ -44,8 +44,8 @@
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://appmavenstudio.com/blog/android-performance-2026/">
-  <meta property="twitter:title" content="Optimizing Android App Performance in 2026">
-  <meta property="twitter:description" content="Learn proven techniques to optimize Android app performance.">
+  <meta property="twitter:title" content="Android App Performance in 2026: Vitals, Startup and Jank">
+  <meta property="twitter:description" content="A 2026 checklist for Android app performance: Android vitals thresholds, Baseline Profiles, R8, fast startup, Compose jank, memory and 16 KB pages.">
   <meta property="twitter:image" content="https://appmavenstudio.com/assets/images/blog/android-performance-2026-og.jpg">
 
   <!-- Favicon -->
@@ -61,8 +61,8 @@
   {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "headline": "Optimizing Android App Performance in 2026: A Developer's Guide",
-    "description": "Learn proven techniques to optimize Android app performance including profiling, memory management, and battery efficiency.",
+    "headline": "Android App Performance in 2026: Vitals, Startup and Jank",
+    "description": "A 2026 checklist for Android app performance: Android vitals thresholds, Baseline Profiles, R8, fast startup, Compose jank, memory and 16 KB pages.",
     "image": "https://appmavenstudio.com/assets/images/blog/android-performance-2026-og.jpg",
     "author": {
       "@type": "Organization",
@@ -78,14 +78,14 @@
       }
     },
     "datePublished": "2026-01-10T09:00:00Z",
-    "dateModified": "2026-01-10T09:00:00Z",
+    "dateModified": "2026-11-13T09:00:00Z",
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https://appmavenstudio.com/blog/android-performance-2026/"
     },
-    "keywords": "android performance, app optimization, memory management",
+    "keywords": "android performance, android vitals, app startup time, baseline profiles, R8, macrobenchmark, jetpack compose performance, ANR, 16 KB page size",
     "articleSection": "Development",
-    "wordCount": "1150"
+    "wordCount": "1440"
   }
   </script>
 
@@ -264,7 +264,7 @@
             <span class="badge badge-productivity">Development</span>
           </div>
           <h1 style="margin-bottom: var(--space-6); font-size: clamp(2rem, 6vw, var(--text-5xl)); line-height: 1.2;">
-            Optimizing Android App Performance in 2026: A Developer's Guide
+            Android App Performance in 2026: Vitals, Startup and Jank
           </h1>
 
           <div class="article-meta">
@@ -273,8 +273,8 @@
                 style="width: 40px; height: 40px; background: #0f1635 url('/assets/images/logo/appmaven_logo.png') center / cover no-repeat; border-radius: var(--radius-full);">
               </div>
               <div>
-                <div style="font-weight: var(--font-semibold); color: var(--color-text-primary);">AppMaven Team</div>
-                <div style="font-size: var(--text-sm); color: var(--color-text-tertiary);">Developer & Writer</div>
+                <div style="font-weight: var(--font-semibold); color: var(--color-text-primary);">AppMaven Studio</div>
+                <div style="font-size: var(--text-sm); color: var(--color-text-tertiary);">Independent Android developer</div>
               </div>
             </div>
             <div style="color: var(--color-text-tertiary); font-size: var(--text-sm);">
@@ -293,7 +293,7 @@
                 <circle cx="12" cy="12" r="10" />
                 <polyline points="12 6 12 12 16 14" />
               </svg>
-              8 min read
+              7 min read
             </div>
           </div>
         </header>
@@ -306,183 +306,210 @@
         </div>
 
         <div class="article-content">
-
           <p class="lead"
             style="font-size: var(--text-xl); color: var(--color-text-primary); margin-bottom: var(--space-8);">
-            Performance isn't just a technical metric—it's a user experience imperative. In 2026, with users expecting
-            instant responses and seamless interactions, optimizing your Android app's performance is more critical than
-            ever. Here's how we keep our apps running smoothly across diverse devices.
+            Android performance work in 2026 has a clear target: Google Play publishes the exact thresholds it treats
+            as bad behaviour, and Jetpack ships the tools to measure and fix them. This checklist goes from what Play
+            measures, through startup, rendering, memory and battery, to the build settings that make a release faster
+            and the 16 KB page size requirement for apps with native code.
           </p>
 
-          <h2>Why Performance Matters</h2>
+          <h2>1. Start With What Google Play Measures</h2>
           <p>
-            Studies consistently show that users abandon apps that are slow or unresponsive. A delay of just 100
-            milliseconds can reduce conversion rates by 7%. More importantly, poor performance leads to negative
-            reviews, decreased retention, and ultimately, uninstalls.
+            <a href="https://developer.android.com/topic/performance/vitals">Android vitals</a> collects quality data
+            from users who allow it and shows it in Play Console. The core vitals affect your app's visibility on Google
+            Play, and an app that exceeds a bad behaviour threshold may get less visibility and a warning on its store
+            listing. Play assesses the last 28 days of data.
           </p>
-
-          <p>
-            At AppMaven Studio, we've learned that performance optimization isn't a one-time task—it's an ongoing
-            commitment. Every feature we add, every line of code we write, is evaluated through the lens of performance
-            impact.
-          </p>
-
-          <h2>1. Profiling: Know Before You Optimize</h2>
-          <p>
-            The first rule of optimization: never guess. Android Studio's Profiler is your best friend for identifying
-            bottlenecks.
-          </p>
-
-          <h3>Essential Profiling Tools</h3>
           <ul>
-            <li><strong>CPU Profiler:</strong> Identify methods consuming excessive CPU time. Look for unnecessary
-              loops, inefficient algorithms, or blocking operations on the main thread.</li>
-            <li><strong>Memory Profiler:</strong> Track memory allocations, identify leaks, and monitor garbage
-              collection events. Memory leaks are silent killers of app performance.</li>
-            <li><strong>Network Profiler:</strong> Analyze network requests, payload sizes, and connection times. Slow
-              or excessive network calls directly impact perceived performance.</li>
-            <li><strong>Energy Profiler:</strong> Monitor battery consumption. Users quickly uninstall apps that drain
-              their battery.</li>
+            <li><strong>User-perceived crash rate:</strong> 1.09% overall, 8% on any single phone model.</li>
+            <li><strong>User-perceived ANR rate:</strong> 0.47% overall, 8% on any single phone model.</li>
+            <li><strong>Excessive partial wake locks:</strong> 5% overall.</li>
+            <li><strong>Memory usage and bitmap memory usage:</strong> thresholds depend on the device RAM tier and app
+              state, and differ for apps and games. Together with the DEX code optimization check, these may affect
+              store visibility starting February 2027.</li>
+          </ul>
+          <p>
+            Startup time is not a core vital, but Android vitals still flags
+            <a href="https://developer.android.com/google/play/vitals/launch-time">excessive startup</a>: a cold start
+            of 5 seconds or longer, a warm start of 2 seconds or longer, or a hot start of 1.5 seconds or longer,
+            measured as time to initial display (TTID). An ANR happens when the app does not respond to an input event
+            within 5 seconds, or when a foreground <code>BroadcastReceiver</code> does not finish within 10 to 20
+            seconds. Google's <a href="https://developer.android.com/topic/performance/anrs/keep-your-app-responsive">ANR
+            guide</a> also notes that users generally start to perceive slowness beyond 100 to 200 ms.
+          </p>
+
+          <h2>2. Measure Before You Optimise</h2>
+          <ul>
+            <li><strong>Macrobenchmark:</strong> the
+              <a href="https://developer.android.com/topic/performance/benchmarking/macrobenchmark-overview">Macrobenchmark
+              library</a> measures real user journeys with <code>StartupTimingMetric</code> and
+              <code>FrameTimingMetric</code>. Run it on a physical device, not an emulator, against a build that is
+              non-debuggable and minified like your release.</li>
+            <li><strong>Time to full display:</strong> call <code>reportFullyDrawn()</code>, or use
+              <code>ReportDrawnWhen</code> in Compose, when the screen is actually usable. Without it, only TTID is
+              reported.</li>
+            <li><strong>Tracing:</strong> system traces in Android Studio or Perfetto show what the main thread is doing
+              during startup and janky frames, including Compose recomposition, layout and draw slices.</li>
+            <li><strong>JankStats:</strong> the <a href="https://developer.android.com/topic/performance/jankstats">JankStats
+              library</a> reports per-frame timing from real sessions, with UI state attached. By default it counts a
+              frame as jank when it takes twice as long as the current refresh period. Remember that a frame lasts about
+              16.7 ms at 60 Hz but only 8.3 ms at 120 Hz.</li>
+            <li><strong>Network Inspector:</strong> the old Network Profiler is now the
+              <a href="https://developer.android.com/studio/debug/network-profiler">Network Inspector</a> under
+              <strong>View &gt; Tool Windows &gt; App Inspection</strong>. It supports <code>HttpsURLConnection</code>
+              and OkHttp, which covers Retrofit.</li>
+            <li><strong>Power Profiler:</strong> the
+              <a href="https://developer.android.com/studio/profile/power-profiler">Power Profiler</a> shows power per
+              subsystem (CPU, display, WLAN, cellular and more) on Pixel 6 and later Pixel devices running Android 10 or
+              higher. Other devices report battery-level data instead.</li>
+            <li><strong>StrictMode:</strong> enable
+              <a href="https://developer.android.com/reference/android/os/StrictMode">StrictMode</a> in debug builds to
+              catch accidental disk and network access on the main thread.</li>
+          </ul>
+<pre><code style="background: none; padding: 0;">// app/build.gradle.kts: a release-like variant for benchmarks
+buildTypes {
+    getByName("release") {
+        isMinifyEnabled = true
+        isShrinkResources = true
+        proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"))
+    }
+    create("benchmark") {
+        initWith(getByName("release"))
+        signingConfig = signingConfigs.getByName("debug")
+    }
+}</code></pre>
+
+          <h2>3. Ship Baseline Profiles and Turn On R8</h2>
+          <p>
+            <a href="https://developer.android.com/topic/performance/baselineprofiles/overview">Baseline Profiles</a>
+            list the code paths used at startup and in key journeys so ART can compile them ahead of time. Google
+            reports that they improve code execution speed by about 30% from the first launch. Generate them with the
+            Baseline Profile Gradle plugin and a Macrobenchmark test, and add a Startup Profile so R8 can lay out the
+            DEX files for faster startup.
+          </p>
+          <p>
+            <a href="https://developer.android.com/topic/performance/app-optimization/enable-app-optimization">R8</a>
+            removes unused code and resources, inlines and merges classes and shortens names. Google lists faster
+            startup, lower memory use, better rendering and fewer ANRs as the result. In practice:
+          </p>
+          <ul>
+            <li>Set <code>isMinifyEnabled = true</code> and <code>isShrinkResources = true</code> for release, with
+              <code>proguard-android-optimize.txt</code>, as in the snippet above. AGP 9.3 adds a simpler
+              <code>optimization { enable = true }</code> block that does both.</li>
+            <li>R8 full mode is the default since AGP 8.0. Remove <code>android.enableR8.fullMode=false</code> from
+              <code>gradle.properties</code> if an old project still has it.</li>
+            <li>Refine broad keep rules: the broadest rules are the ones that prevent the most optimisation.</li>
+            <li>Android vitals now checks DEX optimisation: apps with more than 10 MB of DEX code (50 MB for games)
+              should reach at least 25% optimisation, obfuscation and shrinking.</li>
           </ul>
 
-          <p>
-            We profile our apps regularly during development, not just when performance issues arise. This proactive
-            approach helps us catch regressions before they reach users.
-          </p>
-
-          <h2>2. Memory Management Best Practices</h2>
-          <p>
-            Memory is a finite resource on mobile devices. Poor memory management leads to frequent garbage collection
-            pauses, out-of-memory crashes, and sluggish UI.
-          </p>
-
-          <h3>Key Strategies</h3>
+          <h2>4. Make Startup Cheap</h2>
           <ul>
-            <li><strong>Avoid Memory Leaks:</strong> Use weak references for listeners and callbacks. Always unregister
-              receivers and cancel background tasks in lifecycle methods.</li>
-            <li><strong>Optimize Bitmap Loading:</strong> Use libraries like Coil or Glide that handle image caching and
-              downsampling automatically. Never load full-resolution images when thumbnails suffice.</li>
-            <li><strong>Be Mindful of Context:</strong> Holding references to Activity contexts can prevent garbage
-              collection. Use Application context when appropriate.</li>
-            <li><strong>Leverage ViewBinding:</strong> It's more efficient than findViewById and helps prevent memory
-              leaks compared to synthetic properties.</li>
+            <li><strong>Keep <code>Application.onCreate()</code> light:</strong> initialise only what the first screen
+              needs and create the rest on first use.</li>
+            <li><strong>Use App Startup:</strong> the
+              <a href="https://developer.android.com/topic/libraries/app-startup">App Startup library</a> lets libraries
+              share a single content provider instead of one each, and
+              <code>AppInitializer.getInstance(context).initializeComponent(...)</code> lets you initialise a component
+              lazily.</li>
+            <li><strong>Defer non-critical UI:</strong> show the first screen with placeholder data, then load images
+              and secondary content in the background.</li>
+            <li><strong>Use the SplashScreen API:</strong> custom splash activities add time; Android 12 and later
+              require the <code>SplashScreen</code> API, and the compat library backports it.</li>
           </ul>
 
+          <h2>5. Keep the Main Thread Free and Frames Smooth</h2>
           <p>
-            In our apps, we use LeakCanary during development to detect memory leaks immediately. It's caught numerous
-            issues that would have otherwise made it to production.
+            Move disk, network, database and heavy computation off the main thread with coroutines on
+            <code>Dispatchers.IO</code> or <code>Dispatchers.Default</code>, launched from <code>viewModelScope</code>
+            or a <code>LaunchedEffect</code>. Never do I/O inside a composable. For Compose, the
+            <a href="https://developer.android.com/develop/ui/compose/performance/bestpractices">performance best
+            practices</a> boil down to a short list:
           </p>
-
-          <h2>3. Launch Time Optimization</h2>
-          <p>
-            First impressions matter. Users judge your app within the first few seconds. A slow launch time creates
-            immediate frustration.
-          </p>
-
-          <h3>Cold Start Optimization</h3>
           <ul>
-            <li><strong>Defer Non-Critical Initialization:</strong> Only initialize components critical for the first
-              screen. Move other initialization to background threads or lazy-load when needed.</li>
-            <li><strong>Use App Startup Library:</strong> Google's App Startup library provides a structured way to
-              initialize components without multiple ContentProviders.</li>
-            <li><strong>Avoid Heavy Operations in Application.onCreate():</strong> This blocks app launch. Consider
-              using coroutines for async initialization.</li>
-            <li><strong>Optimize Layout Hierarchy:</strong> Deep or complex layouts increase inflation time. Use
-              ConstraintLayout to flatten hierarchies.</li>
+            <li>Cache expensive work with <code>remember(keys)</code>, or move it to the <code>ViewModel</code>.</li>
+            <li>Give lazy list items stable keys and a <code>contentType</code> for mixed lists.</li>
+            <li>Use <code>derivedStateOf</code> when a fast-changing state should only trigger recomposition when a
+              derived value changes, such as "is the list scrolled".</li>
+            <li>Defer state reads with lambda modifiers such as <code>offset { }</code> and
+              <code>drawBehind { }</code>, so scroll and animation changes skip composition.</li>
+            <li>Never write to state that has already been read in the same composition (backwards writes).</li>
+          </ul>
+<pre><code style="background: none; padding: 0;">LazyColumn {
+    items(
+        items = notes,
+        key = { note -&gt; note.id },
+        contentType = { note -&gt; note.type }
+    ) { note -&gt;
+        NoteRow(note)
+    }
+}</code></pre>
+
+          <h2>6. Memory</h2>
+          <p>
+            Memory is now a core vital, measured as anonymous RSS plus swap and as bitmap memory, with separate limits
+            per device RAM tier and app state. On a 4 GB device, for example, the foreground threshold for apps is
+            2.00 GB. The practical rules are familiar:
+          </p>
+          <ul>
+            <li>Decode bitmaps at the size you display them, not at full camera resolution.</li>
+            <li>Release caches when the system calls <code>onTrimMemory()</code>.</li>
+            <li>Avoid holding an <code>Activity</code> or <code>View</code> in long-lived objects, and cancel work tied
+              to a screen when the screen goes away.</li>
+            <li>Run <a href="https://square.github.io/leakcanary/">LeakCanary</a>, Square's open-source memory leak
+              detection library, in debug builds to catch leaks during development.</li>
           </ul>
 
+          <h2>7. Battery and Background Work</h2>
           <p>
-            We measure launch time using Android Vitals in Play Console. Our target: under 1.5 seconds for cold starts
-            on mid-range devices.
+            Use <a href="https://developer.android.com/develop/background-work/background-tasks/persistent">WorkManager</a>
+            for work that must survive the app closing or the device restarting, such as syncing or uploading logs. It
+            supports constraints like an unmetered network, an idle device or sufficient battery, and it respects Doze.
+            Use coroutines for work that can stop when the user leaves, and keep exact alarms for real alarms. Batch
+            network requests where you can: the Power Profiler documentation shows how many small requests and one
+            large request produce different power signatures on the WLAN rail. Hold partial wake locks only as long as
+            necessary, since excessive wake locks are a core vital.
           </p>
 
-          <h2>4. UI Rendering and Frame Rate</h2>
+          <h2>8. Support 16 KB Page Sizes</h2>
           <p>
-            Smooth UI is non-negotiable. Android targets 60 FPS (or 120 FPS on modern devices), meaning each frame has
-            only 16 milliseconds to render.
+            Starting with Android 15, devices can use a 16 KB memory page size. According to the
+            <a href="https://developer.android.com/guide/practices/page-sizes">page size guide</a>, all apps targeting
+            Android 15 (API level 35) or higher must support 16 KB page sizes on 64-bit devices on Google Play, and
+            starting February 1, 2027 you will not be able to release updates that do not.
           </p>
-
-          <h3>Achieving 60 FPS</h3>
           <ul>
-            <li><strong>Keep Main Thread Free:</strong> Never perform network, database, or file I/O on the main thread.
-              Use coroutines, WorkManager, or background threads.</li>
-            <li><strong>Optimize RecyclerView:</strong> Use DiffUtil for efficient updates. Set fixed size and enable
-              nested scrolling optimization. Prefetch items using LinearLayoutManager's prefetch feature.</li>
-            <li><strong>Reduce Overdraw:</strong> Use Android Studio's GPU Overdraw visualization. Remove unnecessary
-              backgrounds in view hierarchies.</li>
-            <li><strong>Profile GPU Rendering:</strong> Enable "Profile GPU Rendering" in Developer Options. Green bars
-              below the 16ms line indicate smooth rendering.</li>
-          </ul>
-
-          <h2>5. Battery Efficiency</h2>
-          <p>
-            Users are acutely aware of which apps drain their battery. Poor battery optimization leads to uninstalls and
-            negative reviews.
-          </p>
-
-          <h3>Battery Optimization Techniques</h3>
-          <ul>
-            <li><strong>Batch Network Requests:</strong> Combine multiple small requests when possible. Use WorkManager
-              with constraints to defer non-urgent work.</li>
-            <li><strong>Optimize Location Updates:</strong> Use coarse location when high accuracy isn't needed. Request
-              location updates only when necessary and use fused location provider.</li>
-            <li><strong>Reduce Wake Locks:</strong> Minimize screen wake locks. Use high-priority notifications
-              sparingly.</li>
-            <li><strong>Test with Battery Historian:</strong> This tool provides detailed battery consumption analysis.
-            </li>
-          </ul>
-
-          <h2>6. Network Performance</h2>
-          <p>
-            Network latency is often the biggest performance bottleneck in modern apps.
-          </p>
-
-          <h3>Network Optimization</h3>
-          <ul>
-            <li><strong>Use HTTP/2 or HTTP/3:</strong> These protocols support multiplexing and reduce overhead.</li>
-            <li><strong>Implement Caching:</strong> Use OkHttp's cache for network responses. Implement offline-first
-              architecture where appropriate.</li>
-            <li><strong>Compress Data:</strong> Use gzip compression for text-based payloads. Consider binary formats
-              like Protocol Buffers for large datasets.</li>
-            <li><strong>Prefetch Strategically:</strong> Predict user actions and prefetch data, but avoid
-              over-fetching.</li>
+            <li>Apps written only in Kotlin or Java, including all their libraries and SDKs, already support 16 KB
+              devices.</li>
+            <li>If your app or any SDK ships <code>.so</code> files, check them in the APK Analyzer, which flags
+              alignment problems.</li>
+            <li>AGP 8.5.1 or higher and NDK r28 or higher produce 16 KB aligned builds by default. NDK r27 and lower need the
+              <code>-Wl,-z,max-page-size=16384</code> and <code>-Wl,-z,common-page-size=16384</code> linker
+              flags.</li>
+            <li>Test on the 16 KB Android emulator system image and verify with
+              <code>zipalign -c -P 16 -v 4 app.apk</code>.</li>
           </ul>
 
           <div
             style="background: rgba(0, 212, 255, 0.1); border-left: 4px solid var(--color-accent); padding: var(--space-6); border-radius: var(--radius-md); margin: var(--space-10) 0;">
             <h3 style="margin-top: 0;">Key Takeaways</h3>
             <ul style="margin-bottom: 0;">
-              <li>Profile before optimizing—data beats assumptions</li>
-              <li>Memory leaks are performance killers—use LeakCanary</li>
-              <li>Launch time under 1.5 seconds is critical for first impressions</li>
-              <li>Maintain 60 FPS by keeping the main thread free</li>
-              <li>Battery efficiency directly impacts user retention</li>
+              <li>Track the core vitals: crash rate under 1.09%, ANR rate under 0.47%, plus wake locks and memory</li>
+              <li>Android vitals flags cold starts of 5 s, warm starts of 2 s and hot starts of 1.5 s or longer</li>
+              <li>Measure with Macrobenchmark, traces and JankStats before changing code</li>
+              <li>Ship Baseline Profiles and a Startup Profile, and keep R8 enabled for release</li>
+              <li>Keep I/O off the main thread and follow the Compose basics: remember, keys, deferred reads</li>
+              <li>Use WorkManager for persistent background work and batch network calls</li>
+              <li>If you ship native code, make sure it is 16 KB aligned before February 1, 2027</li>
             </ul>
           </div>
-
-          <h2>Conclusion</h2>
-          <p>
-            Performance optimization is a continuous journey, not a destination. At AppMaven Studio, we've integrated
-            performance monitoring into our development workflow. We set performance budgets for key metrics and reject
-            changes that regress performance without justification.
-          </p>
-
-          <p>
-            The tools are available—Android Studio's Profiler, Firebase Performance Monitoring, Android Vitals. The
-            challenge is building a culture where performance is everyone's responsibility, from designers to developers
-            to product managers.
-          </p>
-
-          <p>
-            Start small: pick one area (launch time, memory, or battery) and measure your baseline. Set a target. Make
-            incremental improvements. Your users will notice, and your app's ratings will reflect it.
-          </p>
 
         </div>
 
         <div class="share-buttons">
           <span style="color: var(--color-text-tertiary); margin-right: var(--space-2);">Share:</span>
-          <button class="share-button" aria-label="Share on Twitter" onclick="shareOnTwitter()">
+          <button class="share-button" aria-label="Share on X" onclick="shareOnTwitter()">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
               <path
                 d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
@@ -512,9 +539,7 @@
           <div>
             <h3 style="margin-bottom: var(--space-2);">About the Author</h3>
             <p style="margin-bottom: var(--space-3); color: var(--color-text-secondary);">
-              The <strong>AppMaven Team</strong> consists of passionate developers and designers dedicated to creating
-              exceptional mobile experiences. We share insights from our journey building apps used by thousands of
-              users worldwide.
+              <strong>AppMaven Studio</strong> is an independent Android developer based in Vietnam. We publish practical apps and casual games on Google Play and write about what we learn while building them.
             </p>
             <a href="/about/" style="color: var(--color-accent); text-decoration: none; font-size: var(--text-sm);">
               Learn more about us →
