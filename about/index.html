@@ -17,10 +17,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Primary Meta Tags -->
-  <title>About Us | AppMaven Studio</title>
-  <meta name="title" content="About Us | AppMaven Studio">
+  <title>About AppMaven Studio | Independent Android App &amp; Game Developer</title>
+  <meta name="title" content="About AppMaven Studio | Independent Android App &amp; Game Developer">
   <meta name="description"
-    content="Learn about AppMaven Studio. Transparent developer information, mission, and values.">
+    content="AppMaven Studio is an independent Android developer from Vietnam. See what we build, how we handle privacy and support, and our verified developer profile.">
   <meta name="keywords" content="appmaven studio, developer profile, mobile apps, android developer, about us">
 
   <!-- Canonical URL -->
@@ -29,18 +29,21 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://appmavenstudio.com/about/">
-  <meta property="og:title" content="About Us | AppMaven Studio">
+  <meta property="og:title" content="About AppMaven Studio | Independent Android App &amp; Game Developer">
   <meta property="og:description"
-    content="Learn about AppMaven Studio. Transparent developer information, mission, and values.">
+    content="AppMaven Studio is an independent Android developer from Vietnam. See what we build, how we handle privacy and support, and our verified developer profile.">
+  <meta property="og:site_name" content="AppMaven Studio">
   <meta property="og:image" content="https://appmavenstudio.com/assets/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
 
   <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://appmavenstudio.com/about/">
-  <meta property="twitter:title" content="About Us | AppMaven Studio">
-  <meta property="twitter:description"
-    content="Learn about AppMaven Studio. Transparent developer information, mission, and values.">
-  <meta property="twitter:image" content="https://appmavenstudio.com/assets/images/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://appmavenstudio.com/about/">
+  <meta name="twitter:title" content="About AppMaven Studio | Independent Android App &amp; Game Developer">
+  <meta name="twitter:description"
+    content="AppMaven Studio is an independent Android developer from Vietnam. See what we build, how we handle privacy and support, and our verified developer profile.">
+  <meta name="twitter:image" content="https://appmavenstudio.com/assets/images/og-image.png">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/assets/images/logo/favicon.png">
@@ -49,6 +52,104 @@
   <link rel="stylesheet" href="/assets/css/variables.css">
   <link rel="stylesheet" href="/assets/css/main.css">
   <link rel="stylesheet" href="/assets/css/components.css">
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About AppMaven Studio",
+    "url": "https://appmavenstudio.com/about/",
+    "description": "AppMaven Studio is an independent Android developer from Vietnam. See what we build, how we handle privacy and support, and our verified developer profile.",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "AppMaven Studio",
+      "url": "https://appmavenstudio.com",
+      "logo": "https://appmavenstudio.com/assets/images/logo/logo.png"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://appmavenstudio.com/" },
+      { "@type": "ListItem", "position": 2, "name": "About", "item": "https://appmavenstudio.com/about/" }
+    ]
+  }
+  </script>
+
+  <style>
+    /* About content (2026-11-13): "What we build" and "How we work" blocks */
+    .about-block { max-width: 1000px; }
+    .about-eyebrow {
+      display: inline-block;
+      margin-bottom: var(--space-3);
+      font-size: var(--text-sm);
+      font-weight: var(--font-semibold);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-blue-300);
+    }
+    .about-block h2 { margin-bottom: var(--space-4); }
+    .about-intro {
+      max-width: 760px;
+      margin-bottom: 0;
+      font-size: var(--text-lg);
+      line-height: 1.7;
+      color: var(--color-text-secondary);
+    }
+    .about-cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--space-6);
+      margin-top: var(--space-8);
+    }
+    .about-cards--two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .about-card {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+      min-width: 0;
+      padding: var(--space-6);
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-xl);
+    }
+    .about-card-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-lg);
+      background: rgba(77, 148, 255, 0.14);
+      border: 1px solid rgba(77, 148, 255, 0.3);
+      color: var(--color-blue-300);
+    }
+    .about-card h3 { margin: 0; font-size: var(--text-xl); }
+    .about-card p { margin: 0; line-height: 1.65; color: var(--color-text-secondary); }
+    .about-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      min-height: 44px;
+      margin-top: auto;
+      font-weight: var(--font-semibold);
+      color: var(--color-blue-300);
+      text-decoration: none;
+    }
+    .about-card-link:hover { color: var(--color-blue-400); text-decoration: underline; }
+    .about-actions { margin-top: var(--space-8); }
+
+    @media (max-width: 900px) {
+      .about-cards { grid-template-columns: 1fr; gap: var(--space-4); }
+    }
+    @media (max-width: 640px) {
+      .about-cards--two { grid-template-columns: 1fr; }
+      .about-card { padding: var(--space-5); }
+    }
+  </style>
 </head>
 
 <body>
@@ -93,14 +194,91 @@
         <h1 class="animate-fadeInUp">Transparency &amp; Innovation</h1>
         <p class="animate-fadeInUp animate-delay-100"
           style="max-width: 700px; margin: 0 auto; font-size: var(--text-xl); color: var(--color-text-secondary);">
-          We believe in building trust through transparency. Here is our complete developer profile and contact
-          information.
+          Who we are, what we build and how we handle privacy and support, followed by our complete developer
+          profile and contact information.
         </p>
       </div>
     </section>
 
+    <!-- What we build -->
+    <section class="section" style="padding-top: var(--space-12); padding-bottom: 0;" aria-labelledby="about-build-title">
+      <div class="container about-block">
+        <span class="about-eyebrow">The studio</span>
+        <h2 id="about-build-title">What we build</h2>
+        <p class="about-intro">
+          AppMaven Studio is an independent Android developer based in Vietnam. We publish focused apps and casual
+          games on Google Play, each built around one clear job. Some are made for Vietnamese users, others for an
+          international audience.
+        </p>
+
+        <div class="about-cards">
+          <article class="about-card">
+            <div class="about-card-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg></div>
+            <h3>Practical tools</h3>
+            <p>Calculators, scanners and reference apps for specific tasks, such as WoodShop Toolkit for lumber math,
+              ChemLab for chemistry and Smart Scanner for documents.</p>
+          </article>
+          <article class="about-card">
+            <div class="about-card-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path><path d="m9 16 2 2 4-4"></path></svg></div>
+            <h3>Planning and daily life</h3>
+            <p>Apps that keep work and routines in order: FocusOne for daily focus, Invoice Studio for invoices and
+              StitchCount for knitting and crochet rows.</p>
+          </article>
+          <article class="about-card">
+            <div class="about-card-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="6"></rect><path d="M6 12h4M8 10v4"></path><circle cx="15" cy="13" r="1"></circle><circle cx="18" cy="11" r="1"></circle></svg></div>
+            <h3>Casual games</h3>
+            <p>Puzzle, arcade and survival games for Android, including Mewside, Monster Survivor, Dino Jump and
+              Pictura.</p>
+          </article>
+        </div>
+
+        <div class="about-actions">
+          <a href="/apps/" class="btn btn-outline">Browse all apps and games</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- How we work -->
+    <section class="section" style="padding-top: var(--space-16); padding-bottom: 0;" aria-labelledby="about-work-title">
+      <div class="container about-block">
+        <span class="about-eyebrow">Built responsibly</span>
+        <h2 id="about-work-title">How we work</h2>
+        <p class="about-intro">The same basics apply across the catalog, from the first install to a support request.</p>
+
+        <div class="about-cards about-cards--two">
+          <article class="about-card">
+            <div class="about-card-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"></path><path d="m9 12 2 2 4-4"></path></svg></div>
+            <h3>Privacy written per app</h3>
+            <p>Every app in the catalog has its own privacy policy and terms of service, describing the services that
+              app actually uses instead of one generic document.</p>
+            <a class="about-card-link" href="/privacy-policy.html">View policies <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+          </article>
+          <article class="about-card">
+            <div class="about-card-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="m3 7 9 6 9-6"></path></svg></div>
+            <h3>One support channel</h3>
+            <p>Questions and bug reports go through a single support page and email address. We typically reply within
+              24&ndash;48 hours.</p>
+            <a class="about-card-link" href="/support/">Contact support <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+          </article>
+          <article class="about-card">
+            <div class="about-card-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"></path><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></div>
+            <h3>Data deletion on request</h3>
+            <p>You can ask us to delete personal data held by any of our apps through one form. Requests are processed
+              within 30 days.</p>
+            <a class="about-card-link" href="/data-deletion/">Request deletion <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+          </article>
+          <article class="about-card">
+            <div class="about-card-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"></rect><path d="M9 18h6"></path></svg></div>
+            <h3>Distributed through Google Play</h3>
+            <p>App pages link to the official Google Play listing, so installs and updates come through the store.</p>
+            <a class="about-card-link" href="/apps/">See the catalog <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- Developer Profile Section -->
-    <section class="section" style="padding-top: var(--space-12);">
+    <section class="section" style="padding-top: var(--space-16);" aria-label="Developer profile">
       <div class="container" style="max-width: 1000px;">
 
         <div class="glass-card" style="padding: var(--space-8); border: 1px solid var(--color-blue-900);">
