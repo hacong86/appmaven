@@ -45,6 +45,8 @@
   <link rel="icon" type="image/png" href="/assets/images/logo/favicon.png">
 
   <!-- Stylesheets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="/assets/css/variables.css">
   <link rel="stylesheet" href="/assets/css/main.css">
   <link rel="stylesheet" href="/assets/css/components.css">
@@ -68,6 +70,27 @@
     .stitchcount-store-badge.google img { width: 160px; height: auto; }
     .stitchcount-store-badge:focus-visible { outline: 3px solid var(--color-blue-300); outline-offset: 2px; }
     .app-card-footer .stitchcount-store-links { margin: 0; }
+
+    /* Catalog polish (2026-11-13): filter chips with a visible selected state, compact cards on phones */
+    .app-filter { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-3); margin-bottom: var(--space-12); }
+    .app-filter .btn { min-height: 44px; padding: var(--space-2) var(--space-5); border: 1px solid var(--glass-border); border-radius: var(--radius-full); background: var(--glass-bg); color: var(--color-text-secondary); font-size: var(--text-sm); box-shadow: none; }
+    .app-filter .btn:hover { transform: none; border-color: var(--glass-border-bright); background: var(--glass-bg-hover); color: var(--color-text-primary); box-shadow: none; }
+    .app-filter .btn.active { border-color: transparent; background: var(--gradient-blue); color: #fff; box-shadow: var(--shadow-blue); }
+    .app-card-title { font-size: var(--text-xl); line-height: 1.25; margin-top: var(--space-3); }
+    .app-card-description { font-size: var(--text-sm); }
+    .app-card-link-wrapper > div { min-width: 0; }
+
+    @media (max-width: 640px) {
+      .app-filter { flex-wrap: nowrap; justify-content: flex-start; margin: 0 calc(var(--space-4) * -1) var(--space-8); padding: 0 var(--space-4) var(--space-2); overflow-x: auto; scrollbar-width: none; }
+      .app-filter::-webkit-scrollbar { display: none; }
+      .app-filter .btn { flex: 0 0 auto; }
+      .app-card { padding: var(--space-4); }
+      .app-card-link-wrapper { flex-direction: row; align-items: flex-start; gap: var(--space-4); }
+      .app-card-icon { flex: 0 0 auto; width: 64px; height: 64px; margin-bottom: 0; }
+      .app-card-title { margin-top: var(--space-2); margin-bottom: var(--space-1); font-size: var(--text-lg); }
+      .app-card-description { margin-bottom: var(--space-4); -webkit-line-clamp: 2; line-clamp: 2; }
+      .app-card-footer { padding-top: var(--space-3); }
+    }
   </style>
 </head>
 
@@ -110,7 +133,7 @@
     <!-- Page Header -->
     <section class="section">
       <div class="container">
-        <div style="text-align: center; max-width: 800px; margin: 0 auto var(--space-12);">
+        <div style="text-align: center; max-width: 800px; margin: 0 auto var(--space-10);">
           <h1 class="animate-fadeInUp">Our Apps & Games</h1>
           <p class="animate-fadeInUp animate-delay-100"
             style="font-size: var(--text-xl); color: var(--color-text-secondary);">
@@ -120,8 +143,7 @@
         </div>
 
         <!-- Filter Tabs -->
-        <div class="animate-fadeInUp animate-delay-200"
-          style="display: flex; justify-content: center; gap: var(--space-4); margin-bottom: var(--space-12); flex-wrap: wrap;">
+        <div class="app-filter animate-fadeInUp animate-delay-200" role="group" aria-label="Filter apps by category">
           <button class="btn btn-secondary active" data-filter-tab="all">All Apps (27)</button>
           <button class="btn btn-secondary" data-filter-tab="tools">Tools</button>
           <button class="btn btn-secondary" data-filter-tab="games">Games</button>
@@ -931,7 +953,7 @@
             </a>
             <div class="app-card-footer">
               <div class="store-btn-group">
-                <a href="#"
+                <a href="https://play.google.com/store/apps/details?id=com.appmaven.nhacdongtien"
                   class="btn-store btn-google-play" target="_blank" rel="noopener noreferrer">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path

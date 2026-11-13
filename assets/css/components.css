@@ -31,6 +31,15 @@
   outline-offset: 4px;
 }
 
+/* Very narrow phones: let a long button label wrap instead of pushing the page wider */
+@media (max-width: 400px) {
+  .btn {
+    white-space: normal;
+    text-align: center;
+    line-height: 1.25;
+  }
+}
+
 /* Button Sizes */
 .btn-sm {
   padding: var(--space-2) var(--space-4);
@@ -273,9 +282,10 @@
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
-  padding: 6px 12px;
+  min-height: 40px;
+  padding: 8px 14px;
   border-radius: var(--radius-full);
-  font-size: var(--text-xs);
+  font-size: var(--text-sm);
   font-weight: var(--font-medium);
   text-decoration: none;
   transition: all var(--duration-fast) var(--ease-smooth);
@@ -285,20 +295,26 @@
 
 /* Google Play Button */
 .btn-google-play {
-  background: rgba(0, 255, 170, 0.1);
-  color: var(--color-accent);
-  border-color: rgba(0, 255, 170, 0.2);
+  background: rgba(16, 185, 129, 0.12);
+  color: var(--color-text-primary);
+  border-color: rgba(16, 185, 129, 0.4);
 }
 
 .btn-google-play:hover {
-  background: rgba(0, 255, 170, 0.2);
+  background: rgba(16, 185, 129, 0.22);
+  color: var(--color-text-primary);
   transform: translateY(-1px);
 }
 
 .btn-google-play svg {
   width: 16px;
   height: 16px;
-  fill: currentColor;
+  fill: #34d399;
+}
+
+.btn-store:disabled {
+  cursor: not-allowed;
+  opacity: 0.75;
 }
 
 /* App Store Button (Coming Soon) */
@@ -323,7 +339,7 @@
 }
 
 .coming-soon-badge {
-  font-size: 9px;
+  font-size: 10px;
   background: rgba(255, 255, 255, 0.1);
   padding: 2px 4px;
   border-radius: 4px;
@@ -769,6 +785,17 @@
   .footer-grid {
     grid-template-columns: 1fr;
     gap: var(--space-6);
+  }
+
+  .footer-column li {
+    margin-bottom: 0;
+  }
+
+  .footer-column ul a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    overflow-wrap: anywhere;
   }
 
   .footer {

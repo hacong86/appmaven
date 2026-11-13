@@ -54,7 +54,7 @@
 
    /* Functional Colors */
    --color-success: #10b981;
-   --color-warning: --color-amber-500;
+   --color-warning: var(--color-amber-500);
    --color-error: #ef4444;
    --color-info: #06b6d4;
 

@@ -303,7 +303,9 @@
 
 .home-product-preview {
   display: flex;
-  height: 232px;
+  /* Same box at every width; close to the 1024x500 store banner so it is not letterboxed heavily */
+  height: auto;
+  aspect-ratio: 1024 / 560;
   flex: 0 0 auto;
   align-items: center;
   justify-content: center;

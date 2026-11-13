@@ -75,6 +75,11 @@
     .form-group.checkbox label {
       margin: 0;
       flex: 1;
+      font-weight: var(--font-normal);
+      line-height: var(--leading-relaxed);
+      letter-spacing: 0;
+      text-transform: none;
+      color: var(--color-text-secondary);
     }
 
     .radio-group {
@@ -85,23 +90,34 @@
 
     .radio-group label {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: var(--space-2);
+      margin: 0;
+      font-weight: var(--font-normal);
+      letter-spacing: 0;
+      text-transform: none;
       cursor: pointer;
-      padding: var(--space-3);
+      padding: var(--space-4);
       background: var(--glass-bg);
       border: 1px solid var(--glass-border);
       border-radius: var(--radius-md);
-      transition: all var(--transition-base);
+      transition: border-color var(--duration-fast) var(--ease-smooth), background var(--duration-fast) var(--ease-smooth);
     }
 
     .radio-group label:hover {
-      border-color: var(--color-accent-primary);
-      background: rgba(0, 212, 255, 0.05);
+      border-color: var(--color-blue-400);
+      background: var(--glass-bg-hover);
     }
 
     .radio-group input[type="radio"] {
-      width: auto;
+      flex: 0 0 auto;
+      width: var(--space-5);
+      margin-top: 2px;
+    }
+
+    .radio-group label:has(input:checked) {
+      border-color: var(--color-blue-500);
+      background: rgba(26, 117, 255, 0.08);
     }
 
     .legal-notice {
@@ -165,14 +181,23 @@
   </nav>
 
   <!-- Main Content -->
-  <main id="main-content" style="padding-top: calc(var(--header-height) + var(--space-8));">
+  <main id="main-content" style="padding-top: var(--header-height);">
 
     <section class="section">
       <div class="container" style="max-width: 800px;">
 
         <!-- Page Header -->
         <div style="text-align: center; margin-bottom: var(--space-12);">
-          <div style="font-size: var(--text-6xl); margin-bottom: var(--space-4);">🗑️</div>
+          <div class="legal-page-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M3 6h18"></path>
+              <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path>
+              <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+              <path d="M10 11v6"></path>
+              <path d="M14 11v6"></path>
+            </svg>
+          </div>
           <h1>Data Deletion Request</h1>
           <p style="font-size: var(--text-lg); color: var(--color-text-secondary); max-width: 600px; margin: 0 auto;">
             We respect your right to privacy. Use this form to request deletion of your personal data from our apps.
