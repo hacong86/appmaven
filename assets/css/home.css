@@ -384,17 +384,6 @@
   font-weight: var(--font-semibold);
 }
 
-/* Footer column titles are h3 on the homepage so heading levels do not skip (h2 -> h3).
-   Same look as `.footer-column h4` in components.css. */
-.home-page .footer-column h3 {
-  font-size: var(--text-lg);
-  font-weight: var(--font-semibold);
-  color: var(--color-text-primary);
-  margin-bottom: var(--space-4);
-  text-transform: uppercase;
-  letter-spacing: var(--tracking-wide);
-}
-
 @media (prefers-reduced-motion: reduce) {
   .home-product-card {
     transition: none;

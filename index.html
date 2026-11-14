@@ -101,10 +101,11 @@
   <div class="cosmic-background"></div>
 
   <!-- Navigation -->
+  <!-- site:header -->
   <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="navbar-container">
       <a href="/" class="navbar-logo" aria-label="AppMaven Studio Home">
-        <img src="/assets/images/logo/appmaven_logo-96.webp" alt="AppMaven Studio Logo"
+        <img src="/assets/images/logo/appmaven_logo-96.webp" alt="AppMaven Studio logo" width="32" height="32"
           style="height: 32px; width: 32px; border-radius: 8px;">
         <span>AppMaven Studio</span>
       </a>
@@ -116,7 +117,7 @@
       </button>
 
       <ul class="navbar-menu" role="menubar">
-        <li role="none"><a href="/" role="menuitem" class="active">Home</a></li>
+        <li role="none"><a href="/" role="menuitem" class="active" aria-current="page">Home</a></li>
         <li role="none"><a href="/apps/" role="menuitem">Apps</a></li>
         <li role="none"><a href="/blog/" role="menuitem">Blog</a></li>
         <li role="none"><a href="/about/" role="menuitem">About</a></li>
@@ -124,6 +125,7 @@
       </ul>
     </div>
   </nav>
+  <!-- /site:header -->
 
   <!-- Main Content -->
   <main id="main-content">
@@ -415,27 +417,22 @@
   </main>
 
   <!-- Footer -->
+  <!-- site:footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
-
-        <!-- Column 1: Brand -->
         <div class="footer-column">
           <div style="display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-4);">
-            <img src="/assets/images/logo/appmaven_logo-96.webp" alt="AppMaven Studio Logo"
+            <img src="/assets/images/logo/appmaven_logo-96.webp" alt="AppMaven Studio logo" width="32" height="32"
               style="height: 32px; width: 32px; border-radius: 8px;">
             <span style="font-size: var(--text-xl); font-weight: var(--font-bold);">AppMaven Studio</span>
           </div>
           <p style="color: var(--color-text-secondary); margin-bottom: var(--space-4); line-height: 1.6;">
-            Crafting innovative mobile experiences that users love. We combine clean design with powerful functionality
-            to
-            build the future, one app at a time.
+            Focused Android apps and casual games by an independent developer in Vietnam, each built around one clear job.
           </p>
         </div>
-
-        <!-- Column 2: Quick Links -->
         <div class="footer-column">
-          <h3>Quick Links</h3>
+          <h2>Quick Links</h2>
           <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/apps/">Apps</a></li>
@@ -444,20 +441,16 @@
             <li><a href="/support/">Support</a></li>
           </ul>
         </div>
-
-        <!-- Column 3: Legal -->
         <div class="footer-column">
-          <h3>Legal</h3>
+          <h2>Legal</h2>
           <ul>
             <li><a href="/privacy-policy.html">Privacy Policy</a></li>
             <li><a href="/terms-of-service.html">Terms of Service</a></li>
             <li><a href="/data-deletion/">Data Deletion</a></li>
           </ul>
         </div>
-
-        <!-- Column 4: Contact -->
         <div class="footer-column">
-          <h3>Contact</h3>
+          <h2>Contact</h2>
           <ul>
             <li><a href="mailto:support@appmavenstudio.com">support@appmavenstudio.com</a></li>
             <li><a href="mailto:hacong86@gmail.com">hacong86@gmail.com</a></li>
@@ -465,14 +458,13 @@
             <li><a href="https://github.com/hacong86" target="_blank" rel="noopener noreferrer">GitHub</a></li>
           </ul>
         </div>
-
       </div>
-
       <div class="footer-bottom">
         <p>&copy; 2026 AppMaven Studio. All rights reserved.</p>
       </div>
     </div>
   </footer>
+  <!-- /site:footer -->
 
   <!-- Main JavaScript -->
   <script src="/assets/js/main.js"></script>

@@ -169,7 +169,7 @@
       width: 80px;
       height: 80px;
       border-radius: var(--radius-full);
-      background: #0f1635 url('/assets/images/logo/appmaven_logo.png') center / cover no-repeat;
+      background: #0f1635 url('/assets/images/logo/appmaven_logo-96.webp') center / cover no-repeat;
       flex-shrink: 0;
     }
 
@@ -214,26 +214,21 @@
   <a href="#main-content" class="skip-to-main">Skip to main content</a>
   <div class="cosmic-background"></div>
 
+  <!-- site:header -->
   <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="navbar-container">
       <a href="/" class="navbar-logo" aria-label="AppMaven Studio Home">
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="32" height="32" rx="8" fill="url(#logo-gradient)" />
-          <path d="M16 8L24 24H8L16 8Z" fill="white" />
-          <defs>
-            <linearGradient id="logo-gradient" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#00d4ff" />
-              <stop offset="1" stop-color="#7c3aed" />
-            </linearGradient>
-          </defs>
-        </svg>
+        <img src="/assets/images/logo/appmaven_logo-96.webp" alt="AppMaven Studio logo" width="32" height="32"
+          style="height: 32px; width: 32px; border-radius: 8px;">
         <span>AppMaven Studio</span>
       </a>
+
       <button class="navbar-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
       </button>
+
       <ul class="navbar-menu" role="menubar">
         <li role="none"><a href="/" role="menuitem">Home</a></li>
         <li role="none"><a href="/apps/" role="menuitem">Apps</a></li>
@@ -243,6 +238,7 @@
       </ul>
     </div>
   </nav>
+  <!-- /site:header -->
 
   <main id="main-content" class="page-content">
     <article class="section">
@@ -270,7 +266,7 @@
           <div class="article-meta">
             <div style="display: flex; align-items: center; gap: var(--space-3);">
               <div
-                style="width: 40px; height: 40px; background: #0f1635 url('/assets/images/logo/appmaven_logo.png') center / cover no-repeat; border-radius: var(--radius-full);">
+                style="width: 40px; height: 40px; background: #0f1635 url('/assets/images/logo/appmaven_logo-96.webp') center / cover no-repeat; border-radius: var(--radius-full);">
               </div>
               <div>
                 <div style="font-weight: var(--font-semibold); color: var(--color-text-primary);">AppMaven Studio</div>
@@ -551,23 +547,22 @@ buildTypes {
     </article>
   </main>
 
+  <!-- site:footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-column">
           <div style="display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-4);">
-            <img src="/assets/images/logo/appmaven_logo.png" alt="AppMaven Studio Logo"
+            <img src="/assets/images/logo/appmaven_logo-96.webp" alt="AppMaven Studio logo" width="32" height="32"
               style="height: 32px; width: 32px; border-radius: 8px;">
             <span style="font-size: var(--text-xl); font-weight: var(--font-bold);">AppMaven Studio</span>
           </div>
           <p style="color: var(--color-text-secondary); margin-bottom: var(--space-4); line-height: 1.6;">
-            Crafting innovative mobile experiences that users love. We combine clean design with powerful functionality
-            to
-            build the future, one app at a time.
+            Focused Android apps and casual games by an independent developer in Vietnam, each built around one clear job.
           </p>
         </div>
         <div class="footer-column">
-          <h4>Quick Links</h4>
+          <h2>Quick Links</h2>
           <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/apps/">Apps</a></li>
@@ -577,7 +572,7 @@ buildTypes {
           </ul>
         </div>
         <div class="footer-column">
-          <h4>Legal</h4>
+          <h2>Legal</h2>
           <ul>
             <li><a href="/privacy-policy.html">Privacy Policy</a></li>
             <li><a href="/terms-of-service.html">Terms of Service</a></li>
@@ -585,8 +580,9 @@ buildTypes {
           </ul>
         </div>
         <div class="footer-column">
-          <h4>Contact</h4>
+          <h2>Contact</h2>
           <ul>
+            <li><a href="mailto:support@appmavenstudio.com">support@appmavenstudio.com</a></li>
             <li><a href="mailto:hacong86@gmail.com">hacong86@gmail.com</a></li>
             <li><a href="tel:+84972865336">+84 972 865 336</a></li>
             <li><a href="https://github.com/hacong86" target="_blank" rel="noopener noreferrer">GitHub</a></li>
@@ -598,6 +594,7 @@ buildTypes {
       </div>
     </div>
   </footer>
+  <!-- /site:footer -->
 
   <script src="/assets/js/main.js"></script>
   <script>

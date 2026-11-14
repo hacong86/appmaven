@@ -98,21 +98,31 @@
 <body>
 
   <!-- Navigation -->
-  <nav class="navbar">
+  <!-- site:header -->
+  <nav class="navbar" role="navigation" aria-label="Điều hướng chính">
     <div class="navbar-container">
-      <a href="/" class="navbar-logo">
-        <img src="/assets/images/logo/appmaven_logo.png" alt="AppMaven Studio Logo" style="height: 32px; width: 32px; border-radius: 8px;">
+      <a href="/" class="navbar-logo" aria-label="Trang chủ AppMaven Studio">
+        <img src="/assets/images/logo/appmaven_logo-96.webp" alt="Logo AppMaven Studio" width="32" height="32"
+          style="height: 32px; width: 32px; border-radius: 8px;">
         <span>AppMaven Studio</span>
       </a>
-      <ul class="navbar-menu">
-        <li><a href="/">Home</a></li>
-        <li><a href="/apps/" class="active">Apps</a></li>
-        <li><a href="/blog/">Blog</a></li>
-        <li><a href="/about/">About</a></li>
-        <li><a href="/support/">Support</a></li>
+
+      <button class="navbar-toggle" aria-label="Mở menu điều hướng" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="navbar-menu" role="menubar">
+        <li role="none"><a href="/" role="menuitem">Trang chủ</a></li>
+        <li role="none"><a href="/apps/" role="menuitem" class="active">Ứng dụng</a></li>
+        <li role="none"><a href="/blog/" role="menuitem">Blog</a></li>
+        <li role="none"><a href="/about/" role="menuitem">Giới thiệu</a></li>
+        <li role="none"><a href="/support/" role="menuitem">Hỗ trợ</a></li>
       </ul>
     </div>
   </nav>
+  <!-- /site:header -->
 
   <!-- Cosmic Background -->
   <div class="cosmic-background"></div>
@@ -245,14 +255,17 @@
     </div>
   </main>
 
+  <!-- site:footer legal -->
   <footer class="footer">
     <div class="container">
       <div class="footer-bottom">
-        <p>&copy; 2026 AppMaven Studio. All rights reserved.</p>
+        <p>&copy; 2026 AppMaven Studio. Bảo lưu mọi quyền.</p>
       </div>
     </div>
   </footer>
+  <!-- /site:footer -->
 
+<script src="/assets/js/main.js"></script>
 </body>
 
 </html>
