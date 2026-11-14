@@ -86,6 +86,13 @@
           ],
           "privacyPolicy": "https://appmavenstudio.com/apps/dino-jump/privacy-policy.html",
           "termsOfService": "https://appmavenstudio.com/apps/dino-jump/terms-of-service.html",
+          "installUrl": "https://play.google.com/store/apps/details?id=com.appmaven.dinojump",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "url": "https://play.google.com/store/apps/details?id=com.appmaven.dinojump"
+          },
           "publisher": {
             "@type": "Organization",
             "name": "AppMaven Studio",
@@ -263,6 +270,31 @@
         .app-meta {
             margin-top: var(--space-3);
             font-size: 0.95rem;
+            color: var(--color-text-secondary);
+        }
+
+        /* Official Google Play badge: the image already carries Google's clear space, so no extra padding or border. */
+        .play-badge {
+            display: inline-block;
+            margin-top: var(--space-3);
+            margin-left: -12px;
+            border-radius: 12px;
+        }
+
+        .play-badge img {
+            display: block;
+            width: 200px;
+            height: auto;
+        }
+
+        .play-badge:focus-visible {
+            outline: 3px solid var(--color-blue-300);
+            outline-offset: 2px;
+        }
+
+        .play-badge-legal {
+            margin-top: var(--space-1);
+            font-size: 0.75rem;
             color: var(--color-text-secondary);
         }
 
@@ -564,7 +596,10 @@
                         A one-tap dino game: jump lava pits, grab amber and outrun the volcano.
                     </p>
                     <p class="app-meta">Arcade runner · Android phones and tablets · Portrait, one hand</p>
-                    <p class="app-meta"><strong>Coming soon to Google Play.</strong> The game is in testing and not yet available to download.</p>
+                    <a class="play-badge" href="https://play.google.com/store/apps/details?id=com.appmaven.dinojump" target="_blank"
+                        rel="noopener noreferrer" aria-label="Get Dino Jump: Volcano Escape on Google Play"><img
+                            src="/assets/images/google-play-badge.webp" width="646" height="250" alt="Get it on Google Play"></a>
+                    <p class="play-badge-legal">Google Play and the Google Play logo are trademarks of Google LLC.</p>
                 </div>
             </div>
 
