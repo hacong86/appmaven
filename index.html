@@ -45,11 +45,15 @@
   <meta name="twitter:image" content="https://appmavenstudio.com/assets/images/og-image.png">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="/assets/images/logo/appmaven_logo.png">
+  <link rel="icon" type="image/png" href="/assets/images/logo/appmaven_logo-96.png">
 
   <!-- Fonts: connect early -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Same URL as the @import in /assets/css/variables.css, so the font CSS downloads in parallel with it.
+       Keep the two URLs identical. -->
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;family=IBM+Plex+Sans:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap">
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="/assets/css/variables.css">
@@ -100,7 +104,7 @@
   <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="navbar-container">
       <a href="/" class="navbar-logo" aria-label="AppMaven Studio Home">
-        <img src="/assets/images/logo/appmaven_logo.png" alt="AppMaven Studio Logo"
+        <img src="/assets/images/logo/appmaven_logo-96.webp" alt="AppMaven Studio Logo"
           style="height: 32px; width: 32px; border-radius: 8px;">
         <span>AppMaven Studio</span>
       </a>
@@ -172,16 +176,22 @@
 
         <div class="home-showcase" aria-label="Selected AppMaven products">
           <a class="showcase-card showcase-card--left" href="/apps/focusone/" aria-label="View FocusOne">
-            <img src="/assets/images/apps/focusone/focusone-1.webp" alt="FocusOne daily goal screen" width="1080"
-              height="1920">
+            <img src="/assets/images/apps/focusone/focusone-1.webp"
+              srcset="/assets/images/apps/focusone/focusone-1-288w.webp 288w, /assets/images/apps/focusone/focusone-1-540w.webp 540w, /assets/images/apps/focusone/focusone-1.webp 1080w"
+              sizes="(max-width: 640px) 104px, (max-width: 768px) 150px, (max-width: 1120px) 180px, 210px"
+              alt="FocusOne daily goal screen" width="1080" height="1920">
           </a>
           <a class="showcase-card showcase-card--main" href="/apps/chemlab/" aria-label="View ChemLab">
-            <img src="/assets/images/apps/chemlab/S1.webp" alt="ChemLab chemistry learning screen" width="1080"
-              height="1920" fetchpriority="high">
+            <img src="/assets/images/apps/chemlab/S1.webp"
+              srcset="/assets/images/apps/chemlab/S1-288w.webp 288w, /assets/images/apps/chemlab/S1-540w.webp 540w, /assets/images/apps/chemlab/S1.webp 1080w"
+              sizes="(max-width: 640px) 130px, (max-width: 768px) 190px, (max-width: 1120px) 225px, 255px"
+              alt="ChemLab chemistry learning screen" width="1080" height="1920" fetchpriority="high">
           </a>
           <a class="showcase-card showcase-card--right" href="/apps/square-race-max/"
             aria-label="View Square Race: Battle Arena">
             <img src="/assets/images/apps/square-race-max/squareracemax01.webp"
+              srcset="/assets/images/apps/square-race-max/squareracemax01-288w.webp 288w, /assets/images/apps/square-race-max/squareracemax01-540w.webp 540w, /assets/images/apps/square-race-max/squareracemax01.webp 810w"
+              sizes="(max-width: 640px) 104px, (max-width: 768px) 150px, (max-width: 1120px) 180px, 210px"
               alt="Square Race: Battle Arena arena selection screen" width="810" height="1440">
           </a>
         </div>
@@ -203,10 +213,12 @@
 
         <!-- Add a new product card here using its existing landing page and real images. -->
         <div class="home-products-grid">
-          <a href="/apps/woodshop/" class="home-product-card" aria-labelledby="pick-woodshop">
+          <a href="/apps/woodshop/" class="home-product-card">
             <div class="home-product-preview home-product-preview--banner">
-                <img src="/assets/images/apps/woodshop/feature.webp" alt="WoodShop Toolkit: board feet to cut plans"
-                  loading="lazy" width="1024" height="500">
+                <img src="/assets/images/apps/woodshop/feature.webp"
+                  srcset="/assets/images/apps/woodshop/feature-512w.webp 512w, /assets/images/apps/woodshop/feature-768w.webp 768w, /assets/images/apps/woodshop/feature.webp 1024w"
+                  sizes="(max-width: 640px) calc(100vw - 42px), (max-width: 1120px) calc(50vw - 30px), 393px"
+                  alt="WoodShop Toolkit: board feet to cut plans" loading="lazy" width="1024" height="500">
             </div>
             <div class="home-product-copy">
               <span class="home-product-type">Tools</span>
@@ -221,10 +233,12 @@
             </div>
           </a>
 
-          <a href="/apps/stitchcount/" class="home-product-card" aria-labelledby="pick-stitchcount">
+          <a href="/apps/stitchcount/" class="home-product-card">
             <div class="home-product-preview home-product-preview--banner">
-                <img src="/assets/images/apps/stitchcount/feature.webp" alt="StitchCount: keep your place, enjoy every stitch"
-                  loading="lazy" width="1024" height="500">
+                <img src="/assets/images/apps/stitchcount/feature.webp"
+                  srcset="/assets/images/apps/stitchcount/feature-512w.webp 512w, /assets/images/apps/stitchcount/feature-768w.webp 768w, /assets/images/apps/stitchcount/feature.webp 1024w"
+                  sizes="(max-width: 640px) calc(100vw - 42px), (max-width: 1120px) calc(50vw - 30px), 393px"
+                  alt="StitchCount: keep your place, enjoy every stitch" loading="lazy" width="1024" height="500">
             </div>
             <div class="home-product-copy">
               <span class="home-product-type">Lifestyle</span>
@@ -239,12 +253,12 @@
             </div>
           </a>
 
-          <a href="/apps/lich-am-2026/" class="home-product-card" aria-labelledby="pick-lich-am-2026">
+          <a href="/apps/lich-am-2026/" class="home-product-card">
             <div class="home-product-preview home-product-preview--screens">
-                <img src="/assets/images/apps/lich-am-2026/v3-promo-phone-calendar.webp" alt="Lịch Âm: tra cứu lịch âm dương"
-                  loading="lazy" width="1080" height="1920">
-                <img src="/assets/images/apps/lich-am-2026/v3-promo-phone-tet.webp" alt="Lịch Âm: đếm ngược đến Tết"
-                  loading="lazy" width="1080" height="1920">
+                <img src="/assets/images/apps/lich-am-2026/v3-promo-phone-calendar-360w.webp" alt="Lịch Âm: tra cứu lịch âm dương"
+                  loading="lazy" width="360" height="640">
+                <img src="/assets/images/apps/lich-am-2026/v3-promo-phone-tet-360w.webp" alt="Lịch Âm: đếm ngược đến Tết"
+                  loading="lazy" width="360" height="640">
             </div>
             <div class="home-product-copy">
               <span class="home-product-type">Lifestyle</span>
@@ -259,12 +273,12 @@
             </div>
           </a>
 
-          <a href="/apps/smartsscanner-document-scanner-pdf-creator/" class="home-product-card" aria-labelledby="pick-smartsscanner-document-scanner-pdf-creator">
+          <a href="/apps/smartsscanner-document-scanner-pdf-creator/" class="home-product-card">
             <div class="home-product-preview home-product-preview--screens">
-                <img src="/assets/images/apps/smartsscanner-document-scanner-pdf-creator/s1-library.webp" alt="Smart Scanner document library"
-                  loading="lazy" width="1080" height="2400">
-                <img src="/assets/images/apps/smartsscanner-document-scanner-pdf-creator/s4-translate.webp" alt="Smart Scanner document translation"
-                  loading="lazy" width="1080" height="2400">
+                <img src="/assets/images/apps/smartsscanner-document-scanner-pdf-creator/s1-library-360w.webp" alt="Smart Scanner document library"
+                  loading="lazy" width="360" height="800">
+                <img src="/assets/images/apps/smartsscanner-document-scanner-pdf-creator/s4-translate-360w.webp" alt="Smart Scanner document translation"
+                  loading="lazy" width="360" height="800">
             </div>
             <div class="home-product-copy">
               <span class="home-product-type">Productivity</span>
@@ -279,10 +293,12 @@
             </div>
           </a>
 
-          <a href="/apps/rune-bounce/" class="home-product-card" aria-labelledby="pick-rune-bounce">
+          <a href="/apps/rune-bounce/" class="home-product-card">
             <div class="home-product-preview home-product-preview--banner">
-                <img src="/assets/images/apps/rune-bounce-magic-defense/RuneBounce_Feature_graphic.webp" alt="Rune Bounce wizard and spell battles"
-                  loading="lazy" width="1024" height="500">
+                <img src="/assets/images/apps/rune-bounce-magic-defense/RuneBounce_Feature_graphic.webp"
+                  srcset="/assets/images/apps/rune-bounce-magic-defense/RuneBounce_Feature_graphic-512w.webp 512w, /assets/images/apps/rune-bounce-magic-defense/RuneBounce_Feature_graphic-768w.webp 768w, /assets/images/apps/rune-bounce-magic-defense/RuneBounce_Feature_graphic.webp 1024w"
+                  sizes="(max-width: 640px) calc(100vw - 42px), (max-width: 1120px) calc(50vw - 30px), 393px"
+                  alt="Rune Bounce wizard and spell battles" loading="lazy" width="1024" height="500">
             </div>
             <div class="home-product-copy">
               <span class="home-product-type">Games</span>
@@ -297,12 +313,12 @@
             </div>
           </a>
 
-          <a href="/apps/dino-drop-master/" class="home-product-card" aria-labelledby="pick-dino-drop-master">
+          <a href="/apps/dino-drop-master/" class="home-product-card">
             <div class="home-product-preview home-product-preview--screens">
-                <img src="/assets/images/apps/dino-drop-master/s1-drop-match.webp" alt="Dino Drop Master: drop eggs and match three"
-                  loading="lazy" width="1080" height="1920">
-                <img src="/assets/images/apps/dino-drop-master/s3-grow.webp" alt="Dino Drop Master: grow baby dinosaurs into adults"
-                  loading="lazy" width="1080" height="1920">
+                <img src="/assets/images/apps/dino-drop-master/s1-drop-match-360w.webp" alt="Dino Drop Master: drop eggs and match three"
+                  loading="lazy" width="360" height="640">
+                <img src="/assets/images/apps/dino-drop-master/s3-grow-360w.webp" alt="Dino Drop Master: grow baby dinosaurs into adults"
+                  loading="lazy" width="360" height="640">
             </div>
             <div class="home-product-copy">
               <span class="home-product-type">Games</span>
@@ -406,7 +422,7 @@
         <!-- Column 1: Brand -->
         <div class="footer-column">
           <div style="display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-4);">
-            <img src="/assets/images/logo/appmaven_logo.png" alt="AppMaven Studio Logo"
+            <img src="/assets/images/logo/appmaven_logo-96.webp" alt="AppMaven Studio Logo"
               style="height: 32px; width: 32px; border-radius: 8px;">
             <span style="font-size: var(--text-xl); font-weight: var(--font-bold);">AppMaven Studio</span>
           </div>
@@ -419,7 +435,7 @@
 
         <!-- Column 2: Quick Links -->
         <div class="footer-column">
-          <h4>Quick Links</h4>
+          <h3>Quick Links</h3>
           <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/apps/">Apps</a></li>
@@ -431,7 +447,7 @@
 
         <!-- Column 3: Legal -->
         <div class="footer-column">
-          <h4>Legal</h4>
+          <h3>Legal</h3>
           <ul>
             <li><a href="/privacy-policy.html">Privacy Policy</a></li>
             <li><a href="/terms-of-service.html">Terms of Service</a></li>
@@ -441,7 +457,7 @@
 
         <!-- Column 4: Contact -->
         <div class="footer-column">
-          <h4>Contact</h4>
+          <h3>Contact</h3>
           <ul>
             <li><a href="mailto:support@appmavenstudio.com">support@appmavenstudio.com</a></li>
             <li><a href="mailto:hacong86@gmail.com">hacong86@gmail.com</a></li>
