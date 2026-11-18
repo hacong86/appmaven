@@ -165,7 +165,7 @@
 
         <!-- Effective Date -->
         <div class="effective-date">
-          <strong>Effective Date:</strong> January 25, 2026 | <strong>Last Updated:</strong> November 1, 2026
+          <strong>Effective Date:</strong> January 25, 2026 | <strong>Last Updated:</strong> November 18, 2026
         </div>
 
         <!-- Privacy Policy Content -->
@@ -203,8 +203,24 @@
               address and any information you voluntarily provide, such as your name, selected app, message,
               account identifier, and deletion request details</li>
           </ul>
-          <p>Our support and data deletion forms use Formspree to receive and store submissions and send notifications
-            to support@appmavenstudio.com. We use Private Email to receive and reply to those messages.
+          <p>When you send our support or data deletion form, your submission is passed through a small
+            AppMaven service running on Cloudflare Workers. The service checks it and delivers it as an email to
+            support@appmavenstudio.com. The service does not store the content of your submission. It uses your IP
+            address briefly to limit repeated submissions and to run the anti-spam check.</p>
+          <p>To block automated spam, the forms use Cloudflare Turnstile. It loads as soon as you click or tap into a
+            form, or move into it with the keyboard, even before you type anything. It processes signals such as your
+            IP address, browser identifier (User-Agent) and connection fingerprint to tell people from bots. We use
+            Turnstile only to protect our forms from spam and automated abuse, based on our legitimate interest in
+            keeping them secure. Cloudflare processes these signals on our behalf to run the check, and also, as an
+            independent controller, to improve Turnstile's bot detection, as described in the
+            <a href="https://www.cloudflare.com/turnstile-privacy-policy/" target="_blank" rel="noopener noreferrer">Turnstile
+              Privacy Addendum</a>.</p>
+          <p>Our support mailbox is hosted by Namecheap Private Email, where we receive and reply to your messages.
+            These forms were previously handled by Formspree. Until we close our old Formspree forms, a submission sent
+            from an older copy of this website saved in your browser may still go to Formspree. Formspree may hold
+            such submissions, and those sent before November 18, 2026, under its own
+            <a href="https://formspree.io/legal/privacy-policy/" target="_blank" rel="noopener noreferrer">privacy
+              policy</a>.
             We use the information you submit to respond to your inquiry or review your deletion request.</p>
 
           <h3>2.2 Mobile Apps Data</h3>
@@ -252,9 +268,11 @@
           <h3>4.1 Third-Party Services</h3>
           <p>We use the following trusted third-party services that may collect and process data:</p>
           <ul>
-            <li><strong>Formspree:</strong> Receives and stores website support and data deletion submissions and
-              sends email notifications (<a href="https://formspree.io/legal/privacy-policy/" target="_blank"
-                rel="noopener noreferrer">Formspree Privacy Policy</a>)</li>
+            <li><strong>Cloudflare (Workers and Turnstile):</strong> Runs the service that delivers website support and
+              data deletion submissions to our mailbox, and checks that submissions come from people rather than bots (<a
+                href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">Cloudflare
+                Privacy Policy</a>, <a href="https://www.cloudflare.com/turnstile-privacy-policy/" target="_blank"
+                rel="noopener noreferrer">Turnstile Privacy Addendum</a>)</li>
             <li><strong>Namecheap Private Email:</strong> Hosts our support mailbox, including incoming form
               notifications and our replies to you</li>
             <li><strong>Google Analytics / Firebase:</strong> Website and app usage analytics and crash reporting (<a

@@ -225,8 +225,8 @@
 
         <!-- Data Deletion Form -->
         <div class="glass-card">
-          <form action="https://formspree.io/f/xjygqpwl" method="POST" data-validate data-form-type="data-deletion">
-            <input type="hidden" name="subject" value="[AppMaven] Data Deletion Request">
+          <form action="https://appmaven-forms.appmavenstudio.workers.dev/data-deletion" method="POST" data-validate data-form-type="data-deletion">
+            <input type="hidden" name="ref">
             <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display: none;">
 
             <!-- App Selection: HTML fallback; app-catalog.js refreshes from /apps/. -->
@@ -267,7 +267,7 @@
             <div class="form-group">
               <label for="email">Email Address <span style="color: #ef4444;">*</span></label>
               <input type="email" id="email" name="email" placeholder="your.email@example.com" required
-                autocomplete="email">
+                autocomplete="email" maxlength="254">
               <small
                 style="color: var(--color-text-muted); font-size: var(--text-sm); display: block; margin-top: var(--space-2);">
                 The email associated with your app account
@@ -277,7 +277,7 @@
             <!-- User ID (Optional) -->
             <div class="form-group">
               <label for="user-id">User ID or Account Identifier (Optional)</label>
-              <input type="text" id="user-id" name="user-id"
+              <input type="text" id="user-id" name="user-id" maxlength="200"
                 placeholder="e.g., user_12345 or account ID from app settings">
               <small
                 style="color: var(--color-text-muted); font-size: var(--text-sm); display: block; margin-top: var(--space-2);">
@@ -334,15 +334,20 @@
             </div>
 
             <p style="font-size: var(--text-sm); color: var(--color-text-secondary); overflow-wrap: anywhere;">
-              Formspree processes and stores your request so we can review it and contact you by email.
-              See our <a href="/privacy-policy.html#website-forms">Privacy Policy</a>.
+              Your request is checked for spam by Cloudflare and delivered to our support mailbox so we can
+              review it and contact you by email. See our <a href="/privacy-policy.html#website-forms">Privacy Policy</a>.
               You can also email <a href="mailto:support@appmavenstudio.com">support@appmavenstudio.com</a> directly.
             </p>
-            <div data-form-status role="status" aria-live="polite" aria-atomic="true" tabindex="-1" hidden
+            <noscript>
+              <p class="alert alert-warning">This form needs JavaScript. Please email
+                <a href="mailto:support@appmavenstudio.com">support@appmavenstudio.com</a> instead.</p>
+            </noscript>
+            <div data-turnstile data-sitekey="0x4AAAAAAGGVI6qGyJNrCXFI" style="margin-bottom: var(--space-4);"></div>
+            <div data-form-status role="status" aria-live="polite" aria-atomic="true" tabindex="-1"
               style="overflow-wrap: anywhere; scroll-margin-top: 100px;"></div>
 
             <!-- Submit Button -->
-            <button type="submit" class="btn btn-primary" style="width: 100%; white-space: normal; line-height: 1.4;">
+            <button type="submit" class="btn btn-primary" style="width: 100%; white-space: normal; line-height: 1.4;" disabled>
               Submit Data Deletion Request
             </button>
 
@@ -505,7 +510,7 @@
   </footer>
   <!-- /site:footer -->
 
-  <script src="/assets/js/main.js?v=20261021-faq"></script>
+  <script src="/assets/js/main.js?v=20261118-forms"></script>
   <script src="/assets/js/app-catalog.js?v=20261021-1"></script>
 
 </body>

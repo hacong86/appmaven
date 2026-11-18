@@ -172,8 +172,8 @@
               Fill out the form below and we'll get back to you as soon as possible.
             </p>
 
-            <form action="https://formspree.io/f/mrpewoqy" method="POST" data-validate data-form-type="support">
-              <input type="hidden" name="subject" value="[AppMaven] Support Request">
+            <form action="https://appmaven-forms.appmavenstudio.workers.dev/support" method="POST" data-validate data-form-type="support">
+              <input type="hidden" name="ref">
               <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display: none;">
 
               <!-- Name & Email Row -->
@@ -186,7 +186,7 @@
                 <div class="form-group">
                   <label for="email">Email Address <span style="color: var(--color-error);">*</span></label>
                   <input type="email" id="email" name="email" placeholder="your.email@example.com" required
-                    autocomplete="email">
+                    autocomplete="email" maxlength="254">
                 </div>
               </div>
 
@@ -236,15 +236,20 @@
               </div>
 
               <p style="font-size: var(--text-sm); color: var(--color-text-secondary); overflow-wrap: anywhere;">
-                Formspree processes and stores your submission so we can respond by email.
-                See our <a href="/privacy-policy.html#website-forms">Privacy Policy</a>.
+                Your message is checked for spam by Cloudflare and delivered to our support mailbox so we can
+                respond by email. See our <a href="/privacy-policy.html#website-forms">Privacy Policy</a>.
                 You can also email <a href="mailto:support@appmavenstudio.com">support@appmavenstudio.com</a> directly.
               </p>
-              <div data-form-status role="status" aria-live="polite" aria-atomic="true" tabindex="-1" hidden
+              <noscript>
+                <p class="alert alert-warning">This form needs JavaScript. Please email
+                  <a href="mailto:support@appmavenstudio.com">support@appmavenstudio.com</a> instead.</p>
+              </noscript>
+              <div data-turnstile data-sitekey="0x4AAAAAAGGVI6qGyJNrCXFI" style="margin-bottom: var(--space-4);"></div>
+              <div data-form-status role="status" aria-live="polite" aria-atomic="true" tabindex="-1"
                 style="overflow-wrap: anywhere; scroll-margin-top: 100px;"></div>
 
               <!-- Submit Button -->
-              <button type="submit" class="btn btn-primary" style="width: 100%;">
+              <button type="submit" class="btn btn-primary" style="width: 100%;" disabled>
                 Send Message
               </button>
 
@@ -548,7 +553,7 @@
   </footer>
   <!-- /site:footer -->
 
-  <script src="/assets/js/main.js?v=20261021-faq"></script>
+  <script src="/assets/js/main.js?v=20261118-forms"></script>
   <script src="/assets/js/app-catalog.js?v=20261021-1"></script>
 
 </body>
