@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('consent', 'default', { ad_storage: 'denied', analytics_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', region: ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'IS', 'LI', 'NO', 'GB', 'CH'] });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZBQGFRBN6K"></script>
+  <script>
+    gtag('js', new Date());
+    gtag('config', 'G-ZBQGFRBN6K');
+  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Hoopwise: Embroidery Viewer for PES, DST, JEF Files</title>
+    <meta name="description"
+        content="Open machine embroidery files on iPhone and iPad. See the design, match thread brands, convert PES, DST, JEF, EXP, VP3 and print a color worksheet.">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://appmavenstudio.com/apps/hoopwise/">
+    <meta property="og:title" content="Hoopwise: Embroidery Viewer">
+    <meta property="og:description"
+        content="See your embroidery files before you stitch. Open, convert and print PES, DST, JEF, EXP, VP3 and more on iPhone and iPad.">
+    <meta property="og:image" content="https://appmavenstudio.com/assets/images/apps/hoopwise/s1-library.webp">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hoopwise: Embroidery Viewer">
+    <meta name="twitter:description"
+        content="See your embroidery files before you stitch. Open, convert and print embroidery files on iPhone and iPad.">
+    <meta name="twitter:image" content="https://appmavenstudio.com/assets/images/apps/hoopwise/s1-library.webp">
+
+    <link rel="canonical" href="https://appmavenstudio.com/apps/hoopwise/">
+    <link rel="icon" type="image/png" href="/assets/images/logo/appmaven_logo-96.png">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/assets/css/variables.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/components.css">
+
+    <style>
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            top: 0;
+            z-index: 2000;
+            padding: var(--space-3) var(--space-4);
+            background: var(--color-accent);
+            color: #fff;
+            border-radius: 0 0 var(--radius-md) 0;
+        }
+
+        .skip-link:focus {
+            left: 0;
+        }
+
+        /* Bento Grid Layout (AppMaven Page Style v1) */
+        .bento-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--space-8) var(--space-4);
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: var(--space-6);
+        }
+
+        @media (min-width: 768px) {
+            .bento-container {
+                padding: var(--space-8);
+            }
+        }
+
+        .bento-card {
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-xl);
+            padding: var(--space-8);
+            overflow: hidden;
+            position: relative;
+            min-width: 0;
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        .bento-card:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .area-header {
+            grid-column: span 12;
+            display: flex;
+            align-items: center;
+            gap: var(--space-8);
+        }
+
+        .area-header > div {
+            min-width: 0;
+        }
+
+        @media (min-width: 992px) {
+            .area-header { grid-column: span 9; }
+            .area-safety { grid-column: span 3; }
+            .area-overview { grid-column: span 5; }
+            .area-features { grid-column: span 7; }
+            .area-gallery { grid-column: span 7; }
+            .area-faq { grid-column: span 5; }
+        }
+
+        @media (max-width: 991px) {
+            .area-header,
+            .area-safety,
+            .area-overview,
+            .area-features,
+            .area-gallery,
+            .area-faq {
+                grid-column: span 12;
+            }
+        }
+
+        .area-wide {
+            grid-column: span 12;
+        }
+
+        .app-icon-large {
+            width: 120px;
+            height: 120px;
+            border-radius: var(--radius-xl);
+            flex-shrink: 0;
+        }
+
+        .area-header h1 {
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            line-height: 1.2;
+            font-weight: 700;
+            color: var(--color-text-primary);
+            margin-bottom: var(--space-2);
+        }
+
+        .app-tagline {
+            font-size: 1.25rem;
+            color: var(--color-text-secondary);
+            max-width: 620px;
+        }
+
+        .app-meta {
+            margin-top: var(--space-4);
+            color: var(--color-text-secondary);
+            font-size: 1rem;
+        }
+
+        .release-status {
+            display: inline-block;
+            margin-top: var(--space-4);
+            padding: var(--space-2) var(--space-4);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            background: var(--glass-bg);
+            color: var(--color-text-primary);
+            font-size: 0.95rem;
+        }
+
+        .bento-card h2 {
+            margin-bottom: var(--space-4);
+            font-size: 1.5rem;
+            color: var(--color-text-primary);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: var(--space-2);
+        }
+
+        .card-text {
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+        }
+
+        .card-text + .card-text {
+            margin-top: var(--space-4);
+        }
+
+        .card-text a,
+        .faq-text a,
+        .format-note a {
+            color: var(--color-blue-300);
+        }
+
+        .card-text a:hover,
+        .faq-text a:hover,
+        .format-note a:hover {
+            color: var(--color-blue-400);
+        }
+
+        /* Features */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+            gap: var(--space-6);
+        }
+
+        .feature-item {
+            display: flex;
+            gap: var(--space-3);
+            min-width: 0;
+        }
+
+        .feature-icon-box {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--color-blue-300);
+        }
+
+        .feature-icon-box svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .feature-item h3 {
+            color: var(--color-text-primary);
+            font-size: 1rem;
+            margin-bottom: 2px;
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
+            color: var(--color-text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Screenshots */
+        .gallery-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: var(--space-2);
+        }
+
+        .gallery-hint {
+            font-size: 0.9rem;
+            font-weight: normal;
+            color: var(--color-text-secondary);
+        }
+
+        .screenshot-scroll {
+            display: flex;
+            gap: var(--space-4);
+            overflow-x: auto;
+            padding-bottom: var(--space-4);
+            scrollbar-width: thin;
+            scrollbar-color: var(--color-accent) transparent;
+        }
+
+        .screenshot-scroll figure {
+            margin: 0;
+            flex-shrink: 0;
+        }
+
+        .screenshot-img {
+            height: 400px;
+            width: auto;
+            aspect-ratio: 1080 / 2347;
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: block;
+        }
+
+        .screenshot-scroll figcaption {
+            margin-top: var(--space-2);
+            font-size: 0.875rem;
+            color: var(--color-text-secondary);
+            text-align: center;
+        }
+
+        /* Safety links */
+        .safety-title {
+            margin-bottom: var(--space-4);
+            font-size: 1.1rem;
+            color: var(--color-text-primary);
+        }
+
+        .safety-link {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            padding: var(--space-3);
+            min-height: 44px;
+            border-radius: var(--radius-md);
+            color: var(--color-text-secondary);
+            transition: all 0.2s;
+            overflow-wrap: anywhere;
+        }
+
+        .safety-link svg {
+            flex-shrink: 0;
+        }
+
+        .safety-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .safety-note {
+            margin-top: var(--space-4);
+            padding-top: var(--space-4);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: var(--color-text-secondary);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        /* FAQ */
+        .faq-summary {
+            padding: var(--space-4);
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--space-3);
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--color-text-primary);
+            transition: background 0.2s;
+        }
+
+        .faq-summary:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        details[open] .faq-summary {
+            background: rgba(128, 179, 255, 0.15);
+        }
+
+        .faq-text {
+            padding: 0 var(--space-4) var(--space-4);
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Format table */
+        .table-scroll {
+            overflow-x: auto;
+        }
+
+        .format-table {
+            width: 100%;
+            border-collapse: collapse;
+            color: var(--color-text-secondary);
+        }
+
+        .format-table th,
+        .format-table td {
+            padding: var(--space-2) var(--space-4) var(--space-2) 0;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            vertical-align: top;
+        }
+
+        .format-table th {
+            color: var(--color-text-primary);
+            white-space: nowrap;
+        }
+
+        .format-note {
+            margin-top: var(--space-4);
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+        }
+
+        @media (max-width: 640px) {
+            .bento-card { padding: var(--space-6) var(--space-4); }
+            .area-header { flex-direction: column; align-items: flex-start; gap: var(--space-4); }
+            .area-header > div { width: 100%; }
+            .app-icon-large { width: 88px; height: 88px; }
+            .area-header h1 { overflow-wrap: anywhere; }
+            .app-tagline { font-size: 1.0625rem; }
+            .screenshot-img { height: 360px; }
+        }
+    </style>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://appmavenstudio.com/"}, {"@type": "ListItem", "position": 2, "name": "Apps", "item": "https://appmavenstudio.com/apps/"}, {"@type": "ListItem", "position": 3, "name": "Hoopwise", "item": "https://appmavenstudio.com/apps/hoopwise/"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Hoopwise: Embroidery Viewer", "operatingSystem": "iOS, iPadOS", "applicationCategory": "DesignApplication", "description": "Open, view, convert and print machine embroidery files (PES, DST, JEF, EXP, VP3 and more) on iPhone and iPad.", "image": "https://appmavenstudio.com/assets/images/apps/hoopwise/icon.webp", "url": "https://appmavenstudio.com/apps/hoopwise/", "author": {"@type": "Organization", "name": "AppMaven Studio", "url": "https://appmavenstudio.com/"}}
+  </script>
+</head>
+
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- site:header -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <div class="navbar-container">
+        <a href="/" class="navbar-logo" aria-label="AppMaven Studio Home">
+          <img src="/assets/images/logo/appmaven_logo-96.webp" alt="AppMaven Studio logo" width="32" height="32"
+            style="height: 32px; width: 32px; border-radius: 8px;">
+          <span>AppMaven Studio</span>
+        </a>
+
+        <button class="navbar-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="navbar-menu" role="menubar">
+          <li role="none"><a href="/" role="menuitem">Home</a></li>
+          <li role="none"><a href="/apps/" role="menuitem" class="active">Apps</a></li>
+          <li role="none"><a href="/blog/" role="menuitem">Blog</a></li>
+          <li role="none"><a href="/about/" role="menuitem">About</a></li>
+          <li role="none"><a href="/support/" role="menuitem">Support</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- /site:header -->
+
+    <!-- Cosmic Background -->
+    <div class="cosmic-background"></div>
+
+    <main id="main-content" style="padding-top: calc(var(--header-height) + var(--space-4)); padding-bottom: var(--space-12);">
+
+        <div class="bento-container">
+
+            <!-- 1. Header -->
+            <div class="bento-card area-header">
+                <img src="/assets/images/apps/hoopwise/icon.webp" alt="Hoopwise app icon: a needle with a red thread" class="app-icon-large" width="512" height="512">
+                <div>
+                    <h1>Hoopwise: Embroidery Viewer</h1>
+                    <p class="app-tagline">See your embroidery files before you stitch. Open PES, DST, JEF, EXP, VP3 and more on iPhone and iPad, convert them for your machine and print a color worksheet.</p>
+                    <p class="app-meta">Graphics &amp; Design &middot; iPhone and iPad &middot; English</p>
+                    <p class="release-status">Coming soon to the App Store</p>
+                </div>
+            </div>
+
+            <!-- 2. Safety and support -->
+            <div class="bento-card area-safety">
+                <h2 class="safety-title" style="border-bottom: none; padding-bottom: 0;">Privacy &amp; Support</h2>
+                <div style="display: flex; flex-direction: column; gap: var(--space-2);">
+                    <a href="/apps/hoopwise/privacy-policy.html" class="safety-link">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        </svg>
+                        Privacy Policy
+                    </a>
+                    <a href="/apps/hoopwise/terms-of-service.html" class="safety-link">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                            <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" />
+                        </svg>
+                        Terms of Use
+                    </a>
+                    <a href="mailto:hacong86@gmail.com?subject=Hoopwise%20support" class="safety-link">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" />
+                            <path d="M22 6l-10 7L2 6" />
+                        </svg>
+                        Email support
+                    </a>
+                </div>
+                <p class="safety-note">Your designs stay on your device. No account, no uploads. The free version shows Google ads; <a href="/apps/hoopwise/privacy-policy.html#advertising" style="color: var(--color-blue-300);">see what they collect</a>.</p>
+            </div>
+
+            <!-- 3. Overview -->
+            <div class="bento-card area-overview">
+                <h2>Know the file before you hoop</h2>
+                <p class="card-text">
+                    You bought a design, unzipped it and found ten files in formats you have never heard of. Which one does your machine read? Will it fit your hoop? What thread do you need?
+                </p>
+                <p class="card-text">
+                    <strong>Hoopwise</strong> opens existing machine embroidery files and shows the real design: true stitch count, size in mm and inches, thread colors in stitching order, and a simulator that stitches it on screen. When your machine needs another format, Hoopwise converts the file and tells you before saving what that format cannot keep.
+                </p>
+                <p class="card-text">
+                    Hoopwise does not turn pictures into embroidery. It works with embroidery files that already exist.
+                </p>
+            </div>
+
+            <!-- 4. Features -->
+            <div class="bento-card area-features">
+                <h2>Key Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon-box"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><path d="M14 2v6h6" /></svg></div>
+                        <div>
+                            <h3>Open 12 formats</h3>
+                            <p>PES, DST, JEF, EXP, VP3, HUS, PCS, SEW, XXX, PEC, U01 and 10o, from Files, other apps or a ZIP.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-box"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l14 9-14 9V3z" /></svg></div>
+                        <div>
+                            <h3>Stitch simulator</h3>
+                            <p>Watch the design stitch in order, color by color, at four speeds.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-box"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 3a9 9 0 0 0 0 18" /></svg></div>
+                        <div>
+                            <h3>Match thread brands</h3>
+                            <p>Swap any color, or match the whole design to Isacord, Sulky, Robison-Anton, Brother, Janome and more.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-box"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h12M12 6l6 6-6 6" /><path d="M20 4v16" /></svg></div>
+                        <div>
+                            <h3>Convert for your machine</h3>
+                            <p>Save as PES, DST, EXP, JEF, VP3, PEC, XXX or U01. Every needle point is kept, and you see what changes before saving.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-box"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9V2h12v7" /><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" /><path d="M6 14h12v8H6z" /></svg></div>
+                        <div>
+                            <h3>PDF worksheet</h3>
+                            <p>Print the color order with thread codes, design info and an optional 1:1 template to check size on fabric.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon-box"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" /><path d="M7 7h10v10H7z" /></svg></div>
+                        <div>
+                            <h3>Will it fit my hoop?</h3>
+                            <p>Pick your machine's embroidery area once; every design shows if it fits, fits when rotated, or how much it is too big.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Screenshots -->
+            <div class="bento-card area-gallery">
+                <h2 class="gallery-title">
+                    In Action
+                    <span class="gallery-hint">Swipe to see more</span>
+                </h2>
+                <div class="screenshot-scroll">
+                    <figure>
+                        <img src="/assets/images/apps/hoopwise/s1-library.webp" alt="Hoopwise Library on iPhone with flower, border and lettering sample designs, each showing size and stitch count" class="screenshot-img" width="1080" height="2347" loading="lazy">
+                        <figcaption>Your design library</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="/assets/images/apps/hoopwise/s2-design-viewer.webp" alt="A flower design opened in Hoopwise showing PES format, 2.63 by 3.11 inches and 5,108 stitches" class="screenshot-img" width="1080" height="2347" loading="lazy">
+                        <figcaption>See the real design</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="/assets/images/apps/hoopwise/s3-stitch-simulator.webp" alt="Stitch simulator stitching the flower design, at stitch 655 of 5,108 with speed controls" class="screenshot-img" width="1080" height="2347" loading="lazy">
+                        <figcaption>Stitch simulator</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="/assets/images/apps/hoopwise/s4-thread-colors.webp" alt="Colors list with five Brother thread colors in stitching order and stitch counts" class="screenshot-img" width="1080" height="2347" loading="lazy">
+                        <figcaption>Thread colors in order</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="/assets/images/apps/hoopwise/s5-match-thread-brand.webp" alt="Match all to a brand preview converting Brother colors to the closest Isacord Polyester threads" class="screenshot-img" width="1080" height="2347" loading="lazy">
+                        <figcaption>Match to your thread brand</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="/assets/images/apps/hoopwise/s6-export-formats.webp" alt="Export screen listing PES, DST, EXP, JEF, VP3, PEC, XXX and U01 with the machine brands that use each" class="screenshot-img" width="1080" height="2347" loading="lazy">
+                        <figcaption>Convert for your machine</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="/assets/images/apps/hoopwise/s7-pdf-worksheet.webp" alt="PDF worksheet preview with paper size, design picture, design info and thread colors in stitch order" class="screenshot-img" width="1080" height="2347" loading="lazy">
+                        <figcaption>Print a color worksheet</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <!-- 6. FAQ -->
+            <div class="bento-card area-faq">
+                <h2>FAQ</h2>
+
+                <details>
+                    <summary class="faq-summary">Can it turn a picture into an embroidery file?</summary>
+                    <div class="faq-text">
+                        No. Hoopwise opens embroidery files that already exist. Turning a picture into stitches (digitizing) needs separate digitizing software.
+                    </div>
+                </details>
+
+                <details>
+                    <summary class="faq-summary">Can it open EMB, ART or JAN files?</summary>
+                    <div class="faq-text">
+                        No. Those are design files from desktop software, not machine files. Ask the designer for DST or PES, which Hoopwise opens and can convert.
+                    </div>
+                </details>
+
+                <details>
+                    <summary class="faq-summary">Does converting change my design?</summary>
+                    <div class="faq-text">
+                        No. Every needle point is kept in order; only the way it is written changes. Before saving, Hoopwise lists what the new format cannot store, such as colors in DST. Always stitch a test on scrap fabric first.
+                    </div>
+                </details>
+
+                <details>
+                    <summary class="faq-summary">Is it free? Is there a subscription?</summary>
+                    <div class="faq-text">
+                        Viewing, simulating and changing colors are free. You get 3 free exports, then you can watch a short ad for an extra export (up to 3 a day). Pro is a one-time purchase for unlimited exports and no ads. There is no subscription.
+                    </div>
+                </details>
+
+                <details>
+                    <summary class="faq-summary">Are my files uploaded anywhere?</summary>
+                    <div class="faq-text">
+                        No. Your designs stay on your iPhone or iPad. There is no account. Details are in the <a href="/apps/hoopwise/privacy-policy.html">Privacy Policy</a>.
+                    </div>
+                </details>
+
+                <details>
+                    <summary class="faq-summary">How do I get the file onto my machine?</summary>
+                    <div class="faq-text">
+                        Tap Export, choose your machine's format, tap Save to&hellip; and pick your USB drive (iPhone and iPad need a USB-C or Lightning adapter). Then plug the drive into your machine. Hoopwise does not send files to machines over Wi-Fi.
+                    </div>
+                </details>
+            </div>
+
+            <!-- 7. Format guide -->
+            <div class="bento-card area-wide">
+                <h2>Which format does my machine use?</h2>
+                <div class="table-scroll">
+                <table class="format-table">
+                    <thead>
+                        <tr><th>Format</th><th>Common machines</th><th>Hoopwise</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>PES</td><td>Brother, Baby Lock</td><td>Open and save</td></tr>
+                        <tr><td>DST</td><td>Tajima and most commercial machines</td><td>Open and save</td></tr>
+                        <tr><td>EXP</td><td>Melco, Bernina</td><td>Open and save</td></tr>
+                        <tr><td>JEF</td><td>Janome, Elna</td><td>Open and save</td></tr>
+                        <tr><td>VP3</td><td>Husqvarna Viking, Pfaff</td><td>Open and save</td></tr>
+                        <tr><td>PEC</td><td>Brother, Baby Lock</td><td>Open and save</td></tr>
+                        <tr><td>XXX</td><td>Singer</td><td>Open and save</td></tr>
+                        <tr><td>U01</td><td>Barudan</td><td>Open and save</td></tr>
+                        <tr><td>HUS, PCS, SEW</td><td>Older Husqvarna Viking (HUS), Pfaff (PCS), Janome and Elna (SEW)</td><td>Open</td></tr>
+                        <tr><td>10o</td><td>Toyota</td><td>Open</td></tr>
+                    </tbody>
+                </table>
+                </div>
+                <p class="format-note">Your machine's manual has the final word on which files it reads. DST, EXP, 10o and U01 files do not store thread colors, so Hoopwise shows placeholder colors you can change. Colors on screen are a guide; check your real thread chart.</p>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- site:footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-column">
+            <div style="display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-4);">
+              <img src="/assets/images/logo/appmaven_logo-96.webp" alt="AppMaven Studio logo" width="32" height="32"
+                style="height: 32px; width: 32px; border-radius: 8px;">
+              <span style="font-size: var(--text-xl); font-weight: var(--font-bold);">AppMaven Studio</span>
+            </div>
+            <p style="color: var(--color-text-secondary); margin-bottom: var(--space-4); line-height: 1.6;">
+              Focused Android apps and casual games by an independent developer in Vietnam, each built around one clear job.
+            </p>
+          </div>
+          <div class="footer-column">
+            <h2>Quick Links</h2>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/apps/">Apps</a></li>
+              <li><a href="/blog/">Blog</a></li>
+              <li><a href="/about/">About</a></li>
+              <li><a href="/support/">Support</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h2>Legal</h2>
+            <ul>
+              <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+              <li><a href="/terms-of-service.html">Terms of Service</a></li>
+              <li><a href="/data-deletion/">Data Deletion</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h2>Contact</h2>
+            <ul>
+              <li><a href="mailto:support@appmavenstudio.com">support@appmavenstudio.com</a></li>
+              <li><a href="mailto:hacong86@gmail.com">hacong86@gmail.com</a></li>
+              <li><a href="tel:+84972865336">+84 972 865 336</a></li>
+              <li><a href="https://github.com/hacong86" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 AppMaven Studio. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <!-- /site:footer -->
+
+    <script src="/assets/js/main.js"></script>
+
+</body>
+
+</html>
